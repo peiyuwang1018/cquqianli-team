@@ -95,6 +95,7 @@
           layout: "three",
           cards: [
             {
+              id: "unit-heavy",
               title: "重装组",
               meta: "原英雄与工程合并",
               description: "统筹重装方向的机器人项目与赛季任务。",
@@ -102,6 +103,7 @@
               tone: "rose",
             },
             {
+              id: "unit-sentry",
               title: "步哨组",
               meta: "合组管理，兵种独立",
               description: "步兵与哨兵保留独立兵种目标，在同一组内共享组织与协作接口。",
@@ -110,6 +112,7 @@
               tone: "teal",
             },
             {
+              id: "unit-aerial-dart",
               title: "空中飞镖组",
               meta: "合组管理，兵种独立",
               description: "空中与飞镖保留独立兵种目标，在同一组内共享组织与协作接口。",

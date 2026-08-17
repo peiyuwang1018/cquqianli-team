@@ -10,7 +10,8 @@
   const stage = root.querySelector("[data-organization-stage]");
   const context = root.querySelector("[data-organization-context]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let activeView = config.defaultView;
+  const requestedView = new URLSearchParams(window.location.search).get("view");
+  let activeView = config.views[requestedView] ? requestedView : config.defaultView;
   let switching = false;
 
   function createTag(tag) {
@@ -24,6 +25,7 @@
     const article = document.createElement("article");
     article.className = "org-card";
     article.tabIndex = 0;
+    if (card.id) article.id = card.id;
     if (card.variant) article.classList.add(`org-card--${card.variant}`);
     if (card.tone) article.classList.add(`org-card--tone-${card.tone}`);
 
@@ -132,6 +134,14 @@
     context.append(label, text);
   }
 
+  function syncPrimaryNavigation(key) {
+    const unitLink = document.querySelector('[data-nav="unit"]');
+    const aboutLink = document.querySelector('[data-nav="about"]');
+    const unitIsActive = key === "unit";
+    unitLink?.classList.toggle("is-active", unitIsActive);
+    aboutLink?.classList.toggle("is-active", !unitIsActive);
+  }
+
   function renderView(key) {
     const view = config.views[key];
     if (!view) return;
@@ -141,12 +151,20 @@
     description.textContent = view.description;
     stage.replaceChildren(...view.lanes.map(createLane));
     setDefaultContext(view);
+    syncPrimaryNavigation(key);
     tabs.querySelectorAll("button").forEach((button) => {
       const selected = button.dataset.view === key;
       button.classList.toggle("is-active", selected);
       button.setAttribute("aria-selected", String(selected));
       button.tabIndex = selected ? 0 : -1;
     });
+
+    const targetId = window.location.hash.slice(1);
+    if (targetId) {
+      window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ block: "center" });
+      });
+    }
   }
 
   function switchView(key) {

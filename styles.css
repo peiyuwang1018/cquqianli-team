@@ -1552,6 +1552,28 @@
   filter: brightness(0) saturate(100%);
 }
 
+.nav-dropdown a.nav-item-with-icon--unit {
+  grid-template-columns: minmax(0, 1fr) 48px;
+}
+
+.nav-item-logo-pair {
+  display: inline-flex;
+  grid-column: 2;
+  grid-row: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  width: 48px;
+  height: 24px;
+}
+
+.nav-item-logo-pair img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%);
+}
+
 .nav-item-mdi {
   font-size: 20px;
   font-style: normal;
@@ -1566,6 +1588,14 @@
 
 :root[data-theme="dark"] .nav-item-logo img {
   filter: brightness(0) saturate(100%) invert(1);
+}
+
+:root[data-theme="dark"] .nav-item-logo-pair img {
+  filter: none;
+}
+
+.org-card[id] {
+  scroll-margin-top: 112px;
 }
 
 @media (max-width: 860px) {
