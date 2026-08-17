@@ -17,5 +17,8 @@ jobs:
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
+      - name: Remove files not needed for the site
+        run: rm -rf .git .github
+
       - name: Upload to OSS
-        run: ossutil cp -rf ./ oss://qianli-team/ --exclude ".git/*" --exclude ".github/*"
+        run: ossutil cp -rf ./ oss://qianli-team/
