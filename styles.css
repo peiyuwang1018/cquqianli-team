@@ -1620,7 +1620,7 @@
   position: absolute;
   z-index: 0;
   top: auto;
-  bottom: 5px;
+  bottom: 11px;
   left: 50%;
   color: currentColor;
   font-size: 18px;
@@ -1719,7 +1719,7 @@
 @media (max-width: 860px) {
   .nav-link-watermark {
     left: 50%;
-    bottom: 3px;
+    bottom: 7px;
     font-size: 15px;
   }
 
