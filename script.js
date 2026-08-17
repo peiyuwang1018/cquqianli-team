@@ -169,7 +169,6 @@ const galleryClose = document.querySelector("[data-gallery-close]");
 const galleryPrev = document.querySelector("[data-gallery-prev]");
 const galleryNext = document.querySelector("[data-gallery-next]");
 const gallerySeasonSwitch = document.querySelector("[data-gallery-season-switch]");
-const gallerySeasonLabel = document.querySelector("[data-gallery-season-label]");
 const gallerySeasonDescription = document.querySelector("[data-gallery-season-description]");
 const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
 let galleryRobots = [];
@@ -259,7 +258,6 @@ function renderRobotGallery(seasonId) {
   if (!season) return;
 
   galleryRobots = Array.isArray(season.robots) ? season.robots : [];
-  if (gallerySeasonLabel) gallerySeasonLabel.textContent = season.label;
   if (gallerySeasonDescription) gallerySeasonDescription.textContent = season.description;
 
   gallerySeasonSwitch?.querySelectorAll("button").forEach((button) => {
@@ -283,6 +281,8 @@ function renderRobotGallery(seasonId) {
     image.decoding = "async";
     image.style.setProperty("--robot-scale", String(robot.scale || 1));
     image.style.setProperty("--robot-scale-hover", String((robot.scale || 1) * 1.025));
+    image.style.setProperty("--robot-x", robot.shiftX || "0%");
+    image.style.setProperty("--robot-y", robot.shiftY || "0%");
     visual.append(image);
 
     const caption = document.createElement("span");

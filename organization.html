@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
-    <title>精神和文化 | 重庆大学千里战队</title>
+    <meta name="description" content="重庆大学千里战队组织架构，展示技术、职责、兵种和赛季定位四种组织视角。" />
+    <title>组织架构 | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
@@ -35,16 +35,28 @@
         </button>
       </nav>
     </header>
-    <main>
-  <section class="page-hero"><div><p class="page-label">SPIRIT & CULTURE</p><h1>精神和文化</h1></div><p>这里承接队伍的精神内核、价值观、团队传统与文化表达。</p></section>
-  <section class="section-block text-stack"><h2>待填充方向</h2><p>可以放队训、团队口号、传承故事中提炼出的价值观，以及队服、Logo、IP 设计背后的表达。这个页面会比“故事会”更正式，比“档案馆”更有精神提炼。</p></section>
-</main>
+    <main class="organization-page">
+      <section class="section-block organization-section" data-organization-map>
+        <div class="organization-intro">
+          <div>
+            <p class="page-label" data-organization-eyebrow></p>
+            <h1 data-organization-heading></h1>
+          </div>
+          <p data-organization-description></p>
+        </div>
+        <div class="organization-tabs" role="tablist" aria-label="切换组织架构视角" data-organization-tabs></div>
+        <div class="organization-stage" data-organization-stage></div>
+        <div class="organization-context" aria-live="polite" data-organization-context></div>
+      </section>
+    </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="script.js?v=20260817-4"></script>
+    <script src="config/organization.js?v=20260817-2"></script>
+    <script src="organization.js?v=20260817-2"></script>
   </body>
 </html>
 

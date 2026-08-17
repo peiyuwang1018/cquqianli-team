@@ -50,14 +50,14 @@ window.QIANLI_GALLERY = {
       label: "RMUC 2023",
       description: "2023 赛季机器人阵容。图片标注已清理，档案信息来自历代阵容展示表。",
       robots: [
-        robotRecord("2023", "英雄机器人", { title: "英雄机器人", meta: "RMUC 2023 · 英雄", cutout: "assets/content/archive/gallery/robots/2023/photos/hero-1.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/hero-1.jpg", scale: 0.94 }),
-        robotRecord("2023", "工程机器人", { title: "工程机器人", meta: "RMUC 2023 · 工程", cutout: "assets/content/archive/gallery/robots/2023/photos/engineer-2.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/engineer-2.jpg", scale: 0.92 }),
-        robotRecord("2023", "3号步兵机器人", { title: "3号步兵机器人", meta: "RMUC 2023 · 步兵", cutout: "assets/content/archive/gallery/robots/2023/photos/infantry-3.png", photo: "assets/content/archive/gallery/robots/2023/photos/infantry-3.png", scale: 0.94 }),
-        robotRecord("2023", "4号步兵机器人", { title: "4号步兵机器人", meta: "RMUC 2023 · 步兵", cutout: "assets/content/archive/gallery/robots/2023/photos/infantry-4.png", photo: "assets/content/archive/gallery/robots/2023/photos/infantry-4.png", scale: 0.94 }),
-        robotRecord("2023", "5号步兵机器人", { title: "5号步兵机器人", meta: "RMUC 2023 · 步兵", cutout: "assets/content/archive/gallery/robots/2023/photos/infantry-5.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/infantry-5.jpg", scale: 0.94 }),
-        robotRecord("2023", "空中机器人", { title: "空中机器人", meta: "RMUC 2023 · 空中机器人", cutout: "assets/content/archive/gallery/robots/2023/photos/drone-6.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/drone-6.jpg", scale: 0.9 }),
-        robotRecord("2023", "哨兵机器人", { title: "哨兵机器人", meta: "RMUC 2023 · 哨兵", cutout: "assets/content/archive/gallery/robots/2023/photos/sentry-7.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/sentry-7.jpg", scale: 0.92 }),
-        robotRecord("2023", "飞镖机器人", { title: "飞镖机器人", meta: "RMUC 2023 · 飞镖", cutout: "assets/content/archive/gallery/robots/2023/photos/dart-8.png", photo: "assets/content/archive/gallery/robots/2023/photos/dart-8.png", scale: 0.9 })
+        robotRecord("2023", "英雄机器人", { title: "英雄机器人", meta: "RMUC 2023 · 英雄", cutout: "assets/content/archive/gallery/robots/2023/photos/hero-1.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/hero-1.jpg", scale: 1.28, shiftX: "-5%", shiftY: "-3%" }),
+        robotRecord("2023", "工程机器人", { title: "工程机器人", meta: "RMUC 2023 · 工程", cutout: "assets/content/archive/gallery/robots/2023/photos/engineer-2.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/engineer-2.jpg", scale: 1.02, shiftX: "-4%" }),
+        robotRecord("2023", "3号步兵机器人", { title: "3号步兵机器人", meta: "RMUC 2023 · 步兵", cutout: "assets/content/archive/gallery/robots/2023/photos/infantry-3.png", photo: "assets/content/archive/gallery/robots/2023/photos/infantry-3.png", scale: 1.32, shiftX: "-4%", shiftY: "-4%" }),
+        robotRecord("2023", "4号步兵机器人", { title: "4号步兵机器人", meta: "RMUC 2023 · 步兵", cutout: "assets/content/archive/gallery/robots/2023/photos/infantry-4.png", photo: "assets/content/archive/gallery/robots/2023/photos/infantry-4.png", scale: 1.5, shiftY: "-3%" }),
+        robotRecord("2023", "5号步兵机器人", { title: "5号步兵机器人", meta: "RMUC 2023 · 步兵", cutout: "assets/content/archive/gallery/robots/2023/photos/infantry-5.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/infantry-5.jpg", scale: 1.34, shiftX: "-4%", shiftY: "-4%" }),
+        robotRecord("2023", "空中机器人", { title: "空中机器人", meta: "RMUC 2023 · 空中机器人", cutout: "assets/content/archive/gallery/robots/2023/photos/drone-6.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/drone-6.jpg", scale: 1.08, shiftX: "-3%" }),
+        robotRecord("2023", "哨兵机器人", { title: "哨兵机器人", meta: "RMUC 2023 · 哨兵", cutout: "assets/content/archive/gallery/robots/2023/photos/sentry-7.jpg", photo: "assets/content/archive/gallery/robots/2023/photos/sentry-7.jpg", scale: 1.18, shiftX: "-2%", shiftY: "-2%" }),
+        robotRecord("2023", "飞镖机器人", { title: "飞镖机器人", meta: "RMUC 2023 · 飞镖", cutout: "assets/content/archive/gallery/robots/2023/photos/dart-8.png", photo: "assets/content/archive/gallery/robots/2023/photos/dart-8.png", scale: 1.2, shiftX: "-8%", shiftY: "-2%" })
       ]
     }
   ]
