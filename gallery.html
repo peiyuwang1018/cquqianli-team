@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <meta name="description" content="重庆大学千里战队照片墙，收录赛季机器人、成员定妆、日常、赛场与设计影像。" />
     <title>照片墙 | 重庆大学千里战队</title>
     <script>
       (() => {
@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="styles.css?v=20260817-12" />
+    <link rel="stylesheet" href="styles.css?v=20260817-14" />
     <link rel="icon" type="image/png" href="assets/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -35,25 +35,60 @@
         </button>
       </nav>
     </header>
-    <main><section class="page-hero"><div><p class="page-label">PHOTO WALL</p><h1>照片墙</h1></div><p>按主题标签进入不同照片预览。</p></section><section class="section-block"><div class="entry-grid"><a class="entry-card" href="#">
-    
-    <span></span><strong>合照和个人定妆照</strong><small>队伍合照、组别合照、个人定妆照。</small>
-  </a><a class="entry-card" href="#">
-    
-    <span></span><strong>日常风采</strong><small>实验室、加工、联调、团建和日常记录。</small>
-  </a><a class="entry-card" href="#">
-    
-    <span></span><strong>赛场时刻</strong><small>备赛、检录、比赛、庆祝和复盘。</small>
-  </a><a class="entry-card" href="#">
-    
-    <span></span><strong>队服和设计 IP</strong><small>队服、Logo、周边、视觉系统和设计草稿。</small>
-  </a></div></section></main>
+    <main class="gallery-page">
+      <section class="page-hero">
+        <div><p class="page-label">PHOTO WALL</p><h1>照片墙</h1></div>
+        <p>队伍机器人、成员、日常、赛场与视觉设计的影像档案。</p>
+      </section>
+
+      <section class="gallery-shell" data-gallery>
+        <div class="gallery-tabs" role="tablist" aria-label="照片主题">
+          <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="gallery-robots" id="gallery-tab-robots" data-gallery-tab="robots"><i class="mdi mdi-robot-outline" aria-hidden="true"></i><span>队伍机器人</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="gallery-portraits" id="gallery-tab-portraits" data-gallery-tab="portraits" tabindex="-1"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i><span>合照与定妆</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="gallery-daily" id="gallery-tab-daily" data-gallery-tab="daily" tabindex="-1"><i class="mdi mdi-camera-outline" aria-hidden="true"></i><span>日常风采</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="gallery-competition" id="gallery-tab-competition" data-gallery-tab="competition" tabindex="-1"><i class="mdi mdi-flag-checkered" aria-hidden="true"></i><span>赛场时刻</span></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="gallery-design" id="gallery-tab-design" data-gallery-tab="design" tabindex="-1"><i class="mdi mdi-palette-outline" aria-hidden="true"></i><span>队服与设计 IP</span></button>
+        </div>
+
+        <section class="gallery-panel" id="gallery-robots" role="tabpanel" aria-labelledby="gallery-tab-robots" data-gallery-panel="robots">
+          <header class="gallery-section-heading">
+            <div><p class="page-label">RMUC 2024</p><h2>队伍机器人</h2></div>
+            <p>2024 赛季机器人阵容。选择任一机器人查看原始定妆照。</p>
+          </header>
+          <div class="robot-gallery-grid" data-robot-gallery aria-live="polite"></div>
+        </section>
+
+        <section class="gallery-panel" id="gallery-portraits" role="tabpanel" aria-labelledby="gallery-tab-portraits" data-gallery-panel="portraits" hidden>
+          <div class="gallery-empty"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i><h2>合照与定妆</h2><p>队伍合照、组别合照与个人定妆照将整理在这里。</p></div>
+        </section>
+        <section class="gallery-panel" id="gallery-daily" role="tabpanel" aria-labelledby="gallery-tab-daily" data-gallery-panel="daily" hidden>
+          <div class="gallery-empty"><i class="mdi mdi-camera-outline" aria-hidden="true"></i><h2>日常风采</h2><p>实验室、加工、联调、团建和日常记录将整理在这里。</p></div>
+        </section>
+        <section class="gallery-panel" id="gallery-competition" role="tabpanel" aria-labelledby="gallery-tab-competition" data-gallery-panel="competition" hidden>
+          <div class="gallery-empty"><i class="mdi mdi-flag-checkered" aria-hidden="true"></i><h2>赛场时刻</h2><p>备赛、检录、比赛、庆祝和复盘影像将整理在这里。</p></div>
+        </section>
+        <section class="gallery-panel" id="gallery-design" role="tabpanel" aria-labelledby="gallery-tab-design" data-gallery-panel="design" hidden>
+          <div class="gallery-empty"><i class="mdi mdi-palette-outline" aria-hidden="true"></i><h2>队服与设计 IP</h2><p>队服、Logo、周边、视觉系统和设计草稿将整理在这里。</p></div>
+        </section>
+      </section>
+
+      <dialog class="gallery-lightbox" data-gallery-lightbox aria-labelledby="gallery-lightbox-title">
+        <button class="gallery-lightbox-close" type="button" aria-label="关闭照片" data-gallery-close><i class="mdi mdi-close" aria-hidden="true"></i></button>
+        <button class="gallery-lightbox-nav gallery-lightbox-prev" type="button" aria-label="上一张照片" data-gallery-prev><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
+        <figure>
+          <img alt="" data-gallery-lightbox-image />
+          <figcaption><span data-gallery-lightbox-meta></span><strong id="gallery-lightbox-title" data-gallery-lightbox-title></strong></figcaption>
+        </figure>
+        <button class="gallery-lightbox-nav gallery-lightbox-next" type="button" aria-label="下一张照片" data-gallery-next><i class="mdi mdi-chevron-right" aria-hidden="true"></i></button>
+      </dialog>
+    </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
-    <script src="script.js?v=20260816-7"></script>
+    <script src="config/gallery.js?v=20260817-1"></script>
+    <script src="script.js?v=20260817-1"></script>
   </body>
 </html>
 

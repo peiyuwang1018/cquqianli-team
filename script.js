@@ -153,5 +153,126 @@ if (videoCarousel) {
   videoNext?.addEventListener("click", () => renderVideo((videoIndex + 1) % videos.length));
 }
 
+const gallery = document.querySelector("[data-gallery]");
+const galleryTabs = gallery ? [...gallery.querySelectorAll("[data-gallery-tab]")] : [];
+const galleryPanels = gallery ? [...gallery.querySelectorAll("[data-gallery-panel]")] : [];
+const robotGallery = document.querySelector("[data-robot-gallery]");
+const galleryLightbox = document.querySelector("[data-gallery-lightbox]");
+const galleryLightboxImage = document.querySelector("[data-gallery-lightbox-image]");
+const galleryLightboxTitle = document.querySelector("[data-gallery-lightbox-title]");
+const galleryLightboxMeta = document.querySelector("[data-gallery-lightbox-meta]");
+const galleryClose = document.querySelector("[data-gallery-close]");
+const galleryPrev = document.querySelector("[data-gallery-prev]");
+const galleryNext = document.querySelector("[data-gallery-next]");
+const galleryRobots = Array.isArray(window.QIANLI_GALLERY?.robots) ? window.QIANLI_GALLERY.robots : [];
+let galleryRobotIndex = 0;
+
+function activateGalleryTab(name, moveFocus = false) {
+  const activeTab = galleryTabs.find((tab) => tab.dataset.galleryTab === name);
+  if (!activeTab) return;
+
+  galleryTabs.forEach((tab) => {
+    const active = tab === activeTab;
+    tab.classList.toggle("is-active", active);
+    tab.setAttribute("aria-selected", String(active));
+    tab.tabIndex = active ? 0 : -1;
+  });
+
+  galleryPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.galleryPanel !== name;
+  });
+
+  if (moveFocus) activeTab.focus();
+}
+
+function renderGalleryLightbox(index) {
+  if (!galleryLightbox || !galleryLightboxImage || !galleryRobots[index]) return;
+
+  const robot = galleryRobots[index];
+  galleryRobotIndex = index;
+  galleryLightboxImage.src = robot.photo;
+  galleryLightboxImage.alt = `${robot.title}原始定妆照`;
+  if (galleryLightboxTitle) galleryLightboxTitle.textContent = robot.title;
+  if (galleryLightboxMeta) galleryLightboxMeta.textContent = robot.meta;
+
+  if (!galleryLightbox.open) {
+    galleryLightbox.showModal();
+    document.documentElement.classList.add("has-gallery-lightbox");
+  }
+}
+
+function changeGalleryRobot(offset) {
+  if (!galleryRobots.length) return;
+  renderGalleryLightbox((galleryRobotIndex + offset + galleryRobots.length) % galleryRobots.length);
+}
+
+if (robotGallery && galleryRobots.length) {
+  const robotButtons = galleryRobots.map((robot, index) => {
+    const button = document.createElement("button");
+    button.className = "robot-gallery-item";
+    button.type = "button";
+    button.setAttribute("aria-label", `查看${robot.title}原始定妆照`);
+
+    const visual = document.createElement("span");
+    visual.className = "robot-gallery-visual";
+    const image = document.createElement("img");
+    image.src = robot.cutout;
+    image.alt = robot.title;
+    image.loading = index < 5 ? "eager" : "lazy";
+    image.decoding = "async";
+    visual.append(image);
+
+    const caption = document.createElement("span");
+    caption.className = "robot-gallery-caption";
+    const title = document.createElement("strong");
+    title.textContent = robot.title;
+    const meta = document.createElement("small");
+    meta.textContent = robot.meta;
+    caption.append(title, meta);
+
+    button.append(visual, caption);
+    button.addEventListener("click", () => renderGalleryLightbox(index));
+    return button;
+  });
+
+  robotGallery.replaceChildren(...robotButtons);
+}
+
+galleryTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab));
+  tab.addEventListener("keydown", (event) => {
+    let nextIndex = null;
+    if (event.key === "ArrowRight") nextIndex = (index + 1) % galleryTabs.length;
+    if (event.key === "ArrowLeft") nextIndex = (index - 1 + galleryTabs.length) % galleryTabs.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = galleryTabs.length - 1;
+    if (nextIndex === null) return;
+    event.preventDefault();
+    activateGalleryTab(galleryTabs[nextIndex].dataset.galleryTab, true);
+  });
+});
+
+galleryClose?.addEventListener("click", () => galleryLightbox?.close());
+galleryPrev?.addEventListener("click", () => changeGalleryRobot(-1));
+galleryNext?.addEventListener("click", () => changeGalleryRobot(1));
+
+galleryLightbox?.addEventListener("click", (event) => {
+  if (event.target === galleryLightbox) galleryLightbox.close();
+});
+
+galleryLightbox?.addEventListener("close", () => {
+  document.documentElement.classList.remove("has-gallery-lightbox");
+  if (galleryLightboxImage) {
+    galleryLightboxImage.removeAttribute("src");
+    galleryLightboxImage.alt = "";
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!galleryLightbox?.open) return;
+  if (event.key === "ArrowLeft") changeGalleryRobot(-1);
+  if (event.key === "ArrowRight") changeGalleryRobot(1);
+});
+
 
 
