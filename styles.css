@@ -1388,6 +1388,9 @@
 
 @media (max-width: 860px) {
   .page-hero {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 18px;
     margin-top: 34px;
     padding-bottom: 22px;
   }
@@ -2948,6 +2951,203 @@
 
   .robot-gallery-item {
     aspect-ratio: 1.05 / 1;
+  }
+}
+
+/* Frontline news and preparation calendar. */
+.frontline-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.55fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.frontline-panel {
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  padding: 26px;
+}
+
+.frontline-panel--primary {
+  min-height: 300px;
+}
+
+.frontline-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.frontline-panel-head .page-label {
+  margin-bottom: 5px;
+}
+
+.frontline-panel-head h2,
+.calendar-phases .section-heading h2 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.frontline-panel-head > span {
+  flex: 0 0 auto;
+  color: var(--subtle);
+  font-size: 13px;
+}
+
+.calendar-status {
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  color: var(--accent) !important;
+}
+
+.frontline-empty {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  padding-top: 42px;
+}
+
+.frontline-empty > i {
+  color: var(--accent);
+  font-size: 44px;
+  line-height: 1;
+}
+
+.frontline-empty h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.frontline-empty p {
+  max-width: 650px;
+}
+
+.frontline-meta-list {
+  margin: 0;
+}
+
+.frontline-meta-list > div {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 16px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.frontline-meta-list > div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.frontline-meta-list dt {
+  color: var(--subtle);
+  font-size: 13px;
+}
+
+.frontline-meta-list dd {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.calendar-phases {
+  margin-top: -20px;
+}
+
+.calendar-phases .section-heading {
+  margin-bottom: 20px;
+}
+
+.calendar-phase-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.calendar-phase-grid article {
+  min-width: 0;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.calendar-phase-grid article:last-child {
+  border-right: 0;
+}
+
+.calendar-phase-grid i {
+  color: var(--accent);
+  font-size: 24px;
+}
+
+.calendar-phase-grid h3 {
+  margin: 14px 0 4px;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.calendar-phase-grid p {
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .frontline-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .calendar-phase-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .calendar-phase-grid article:nth-child(3) {
+    border-right: 0;
+  }
+
+  .calendar-phase-grid article:nth-child(n + 4) {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 620px) {
+  .frontline-panel {
+    padding: 20px;
+  }
+
+  .frontline-panel-head {
+    gap: 12px;
+  }
+
+  .frontline-empty {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
+    padding-top: 30px;
+  }
+
+  .frontline-empty > i {
+    font-size: 34px;
+  }
+
+  .calendar-phase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-phase-grid article,
+  .calendar-phase-grid article:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-right: 0;
+  }
+
+  .calendar-phase-grid article:first-child {
+    border-top: 0;
   }
 }
 
