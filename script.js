@@ -161,6 +161,10 @@ const galleryLightbox = document.querySelector("[data-gallery-lightbox]");
 const galleryLightboxImage = document.querySelector("[data-gallery-lightbox-image]");
 const galleryLightboxTitle = document.querySelector("[data-gallery-lightbox-title]");
 const galleryLightboxMeta = document.querySelector("[data-gallery-lightbox-meta]");
+const galleryLightboxSummary = document.querySelector("[data-gallery-lightbox-summary]");
+const galleryLightboxLegacy = document.querySelector("[data-gallery-lightbox-legacy]");
+const galleryLightboxService = document.querySelector("[data-gallery-lightbox-service]");
+const galleryLightboxContributors = document.querySelector("[data-gallery-lightbox-contributors]");
 const galleryClose = document.querySelector("[data-gallery-close]");
 const galleryPrev = document.querySelector("[data-gallery-prev]");
 const galleryNext = document.querySelector("[data-gallery-next]");
@@ -170,6 +174,18 @@ const gallerySeasonDescription = document.querySelector("[data-gallery-season-de
 const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
 let galleryRobots = [];
 let galleryRobotIndex = 0;
+
+function parseRobotRecord(record = "") {
+  const sections = [...record.matchAll(/【([^】]+)】([\s\S]*?)(?=【|$)/g)].map((match) => ({
+    label: match[1].trim(),
+    value: match[2].trim(),
+  }));
+  return {
+    summary: sections.find((section) => section.label === "简介")?.value || "档案内容待补充。",
+    service: sections.find((section) => section.label === "服役周期")?.value || "未记录",
+    contributors: sections.filter((section) => !["简介", "服役周期"].includes(section.label) && section.value),
+  };
+}
 
 function activateGalleryTab(name, moveFocus = false) {
   const activeTab = galleryTabs.find((tab) => tab.dataset.galleryTab === name);
@@ -193,11 +209,30 @@ function renderGalleryLightbox(index) {
   if (!galleryLightbox || !galleryLightboxImage || !galleryRobots[index]?.photo) return;
 
   const robot = galleryRobots[index];
+  const details = parseRobotRecord(robot.record);
   galleryRobotIndex = index;
   galleryLightboxImage.src = robot.photo;
-  galleryLightboxImage.alt = `${robot.title}原始定妆照`;
+  galleryLightboxImage.alt = `${robot.title}图片`;
   if (galleryLightboxTitle) galleryLightboxTitle.textContent = robot.title;
   if (galleryLightboxMeta) galleryLightboxMeta.textContent = robot.meta;
+  if (galleryLightboxSummary) galleryLightboxSummary.textContent = details.summary;
+  if (galleryLightboxLegacy) {
+    galleryLightboxLegacy.textContent = robot.legacy;
+    galleryLightboxLegacy.hidden = !robot.legacy;
+  }
+  if (galleryLightboxService) galleryLightboxService.textContent = details.service;
+  if (galleryLightboxContributors) {
+    const contributorRows = details.contributors.map((contributor) => {
+      const row = document.createElement("div");
+      const label = document.createElement("span");
+      const people = document.createElement("strong");
+      label.textContent = contributor.label;
+      people.textContent = contributor.value;
+      row.append(label, people);
+      return row;
+    });
+    galleryLightboxContributors.replaceChildren(...contributorRows);
+  }
 
   if (!galleryLightbox.open) {
     galleryLightbox.showModal();
@@ -234,12 +269,10 @@ function renderRobotGallery(seasonId) {
   });
 
   const robotButtons = galleryRobots.map((robot, index) => {
-    const item = document.createElement(robot.photo ? "button" : "article");
-    item.className = `robot-gallery-item${robot.photo ? "" : " is-static"}`;
-    if (robot.photo) {
-      item.type = "button";
-      item.setAttribute("aria-label", `查看${robot.title}高清原始定妆照`);
-    }
+    const item = document.createElement("button");
+    item.className = "robot-gallery-item";
+    item.type = "button";
+    item.setAttribute("aria-label", `查看${robot.title}图片与档案`);
 
     const visual = document.createElement("span");
     visual.className = "robot-gallery-visual";
@@ -248,6 +281,8 @@ function renderRobotGallery(seasonId) {
     image.alt = robot.title;
     image.loading = index < 5 ? "eager" : "lazy";
     image.decoding = "async";
+    image.style.setProperty("--robot-scale", String(robot.scale || 1));
+    image.style.setProperty("--robot-scale-hover", String((robot.scale || 1) * 1.025));
     visual.append(image);
 
     const caption = document.createElement("span");
@@ -259,7 +294,7 @@ function renderRobotGallery(seasonId) {
     caption.append(title, meta);
 
     item.append(visual, caption);
-    if (robot.photo) item.addEventListener("click", () => renderGalleryLightbox(index));
+    item.addEventListener("click", () => renderGalleryLightbox(index));
     return item;
   });
 

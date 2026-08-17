@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="styles.css?v=20260817-15" />
+    <link rel="stylesheet" href="styles.css?v=20260817-16" />
     <link rel="icon" type="image/png" href="assets/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -55,7 +55,7 @@
             <div><p class="page-label" data-gallery-season-label>RMUC 2025</p><h2>队伍机器人</h2></div>
             <div class="gallery-season-info">
               <div class="gallery-season-switch" role="group" aria-label="选择机器人赛季" data-gallery-season-switch></div>
-              <p data-gallery-season-description>2025 赛季机器人阵容，现阶段以抠图档案陈列。</p>
+              <p data-gallery-season-description>2025 赛季机器人阵容。选择任一机器人查看图片与队史档案。</p>
             </div>
           </header>
           <div class="robot-gallery-grid" data-robot-gallery aria-live="polite"></div>
@@ -78,10 +78,22 @@
       <dialog class="gallery-lightbox" data-gallery-lightbox aria-labelledby="gallery-lightbox-title">
         <button class="gallery-lightbox-close" type="button" aria-label="关闭照片" data-gallery-close><i class="mdi mdi-close" aria-hidden="true"></i></button>
         <button class="gallery-lightbox-nav gallery-lightbox-prev" type="button" aria-label="上一张照片" data-gallery-prev><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
-        <figure>
-          <img alt="" data-gallery-lightbox-image />
-          <figcaption><span data-gallery-lightbox-meta></span><strong id="gallery-lightbox-title" data-gallery-lightbox-title></strong></figcaption>
-        </figure>
+        <div class="gallery-lightbox-content">
+          <figure><img alt="" data-gallery-lightbox-image /></figure>
+          <aside class="gallery-robot-record">
+            <div class="gallery-record-heading">
+              <span data-gallery-lightbox-meta></span>
+              <strong data-gallery-lightbox-legacy hidden></strong>
+              <h2 id="gallery-lightbox-title" data-gallery-lightbox-title></h2>
+            </div>
+            <p class="gallery-record-summary" data-gallery-lightbox-summary></p>
+            <dl class="gallery-record-service"><dt>服役周期</dt><dd data-gallery-lightbox-service></dd></dl>
+            <section class="gallery-record-contributors">
+              <h3>贡献者</h3>
+              <div data-gallery-lightbox-contributors></div>
+            </section>
+          </aside>
+        </div>
         <button class="gallery-lightbox-nav gallery-lightbox-next" type="button" aria-label="下一张照片" data-gallery-next><i class="mdi mdi-chevron-right" aria-hidden="true"></i></button>
       </dialog>
     </main>
@@ -90,8 +102,9 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
-    <script src="config/gallery.js?v=20260817-2"></script>
-    <script src="script.js?v=20260817-2"></script>
+    <script src="config/gallery-records.js?v=20260817-1"></script>
+    <script src="config/gallery.js?v=20260817-3"></script>
+    <script src="script.js?v=20260817-3"></script>
   </body>
 </html>
 
