@@ -60,5 +60,33 @@ window.QIANLI_GALLERY = {
         robotRecord("2023", "飞镖机器人", { title: "飞镖机器人", meta: "RMUC 2023 · 飞镖", cutout: "assets/content/archive/gallery/robots/2023/photos/dart-8.png", photo: "assets/content/archive/gallery/robots/2023/photos/dart-8.png", scale: 1.2, shiftX: "-8%", shiftY: "-2%" })
       ]
     }
-  ]
+  ],
+  collections: {
+    portraits: [
+      {
+        title: "RMUC 2024 南部分区赛",
+        meta: "2024 · 长沙贺龙体育馆",
+        preview: "assets/content/archive/gallery/team-photos/previews/2024-south-division-he-long.jpg",
+        photo: "assets/content/archive/gallery/team-photos/originals/2024-south-division-he-long.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RMUC 2024 超级对抗赛南部分区赛期间的队伍合照。【服役周期】2024 年 · 长沙贺龙体育馆"
+      },
+      {
+        title: "RMUC 2024 复活赛",
+        meta: "2024 · 深圳春茧体育馆",
+        preview: "assets/content/archive/gallery/team-photos/previews/2024-revival-shenzhen-spring-cocoon.jpg",
+        photo: "assets/content/archive/gallery/team-photos/originals/2024-revival-shenzhen-spring-cocoon.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RMUC 2024 全国总决赛阶段复活赛期间的队伍合照。【服役周期】2024 年 · 深圳春茧体育馆"
+      },
+      {
+        title: "RMUC 2025 中部分区赛",
+        meta: "2025 · 长沙贺龙体育馆",
+        preview: "assets/content/archive/gallery/team-photos/previews/2025-central-division-he-long.jpg",
+        photo: "assets/content/archive/gallery/team-photos/originals/2025-central-division-he-long.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RMUC 2025 超级对抗赛中部分区赛期间的队伍合照。【服役周期】2025 年 · 长沙贺龙体育馆"
+      }
+    ]
+  }
 };

@@ -170,7 +170,11 @@ const galleryPrev = document.querySelector("[data-gallery-prev]");
 const galleryNext = document.querySelector("[data-gallery-next]");
 const gallerySeasonSwitch = document.querySelector("[data-gallery-season-switch]");
 const gallerySeasonDescription = document.querySelector("[data-gallery-season-description]");
+const galleryLightboxServiceLabel = document.querySelector("[data-gallery-lightbox-service-label]");
+const galleryContributorsSection = document.querySelector("[data-gallery-lightbox-contributors-section]");
+const teamPhotoGallery = document.querySelector("[data-team-photo-gallery]");
 const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
+const galleryCollections = window.QIANLI_GALLERY?.collections || {};
 let galleryRobots = [];
 let galleryRobotIndex = 0;
 
@@ -220,6 +224,7 @@ function renderGalleryLightbox(index) {
     galleryLightboxLegacy.hidden = !robot.legacy;
   }
   if (galleryLightboxService) galleryLightboxService.textContent = details.service;
+  if (galleryLightboxServiceLabel) galleryLightboxServiceLabel.textContent = robot.serviceLabel || "服役周期";
   if (galleryLightboxContributors) {
     const contributorRows = details.contributors.map((contributor) => {
       const row = document.createElement("div");
@@ -231,6 +236,7 @@ function renderGalleryLightbox(index) {
       return row;
     });
     galleryLightboxContributors.replaceChildren(...contributorRows);
+    if (galleryContributorsSection) galleryContributorsSection.hidden = !contributorRows.length;
   }
 
   if (!galleryLightbox.open) {
@@ -301,6 +307,39 @@ function renderRobotGallery(seasonId) {
   robotGallery.replaceChildren(...robotButtons);
 }
 
+function renderTeamPhotoGallery() {
+  if (!teamPhotoGallery) return;
+  const photos = Array.isArray(galleryCollections.portraits) ? galleryCollections.portraits : [];
+  const photoButtons = photos.map((photo, index) => {
+    const item = document.createElement("button");
+    item.className = "team-photo-item";
+    item.type = "button";
+    item.setAttribute("aria-label", `查看${photo.title}原图与拍摄信息`);
+
+    const image = document.createElement("img");
+    image.src = photo.preview || photo.photo;
+    image.alt = photo.title;
+    image.loading = index === 0 ? "eager" : "lazy";
+    image.decoding = "async";
+
+    const caption = document.createElement("span");
+    caption.className = "team-photo-caption";
+    const meta = document.createElement("small");
+    meta.textContent = photo.meta;
+    const title = document.createElement("strong");
+    title.textContent = photo.title;
+    caption.append(meta, title);
+
+    item.append(image, caption);
+    item.addEventListener("click", () => {
+      galleryRobots = photos;
+      renderGalleryLightbox(index);
+    });
+    return item;
+  });
+  teamPhotoGallery.replaceChildren(...photoButtons);
+}
+
 if (gallerySeasonSwitch && gallerySeasons.length) {
   const seasonButtons = gallerySeasons.map((season, index) => {
     const button = document.createElement("button");
@@ -315,6 +354,8 @@ if (gallerySeasonSwitch && gallerySeasons.length) {
   gallerySeasonSwitch.replaceChildren(...seasonButtons);
   renderRobotGallery(gallerySeasons[0].id);
 }
+
+renderTeamPhotoGallery();
 
 galleryTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab));
