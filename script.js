@@ -164,7 +164,11 @@ const galleryLightboxMeta = document.querySelector("[data-gallery-lightbox-meta]
 const galleryClose = document.querySelector("[data-gallery-close]");
 const galleryPrev = document.querySelector("[data-gallery-prev]");
 const galleryNext = document.querySelector("[data-gallery-next]");
-const galleryRobots = Array.isArray(window.QIANLI_GALLERY?.robots) ? window.QIANLI_GALLERY.robots : [];
+const gallerySeasonSwitch = document.querySelector("[data-gallery-season-switch]");
+const gallerySeasonLabel = document.querySelector("[data-gallery-season-label]");
+const gallerySeasonDescription = document.querySelector("[data-gallery-season-description]");
+const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
+let galleryRobots = [];
 let galleryRobotIndex = 0;
 
 function activateGalleryTab(name, moveFocus = false) {
@@ -186,7 +190,7 @@ function activateGalleryTab(name, moveFocus = false) {
 }
 
 function renderGalleryLightbox(index) {
-  if (!galleryLightbox || !galleryLightboxImage || !galleryRobots[index]) return;
+  if (!galleryLightbox || !galleryLightboxImage || !galleryRobots[index]?.photo) return;
 
   const robot = galleryRobots[index];
   galleryRobotIndex = index;
@@ -202,16 +206,40 @@ function renderGalleryLightbox(index) {
 }
 
 function changeGalleryRobot(offset) {
-  if (!galleryRobots.length) return;
-  renderGalleryLightbox((galleryRobotIndex + offset + galleryRobots.length) % galleryRobots.length);
+  const photoIndexes = galleryRobots.reduce((indexes, robot, index) => {
+    if (robot.photo) indexes.push(index);
+    return indexes;
+  }, []);
+  if (!photoIndexes.length) return;
+
+  const currentPhotoIndex = photoIndexes.indexOf(galleryRobotIndex);
+  const nextPhotoIndex = (currentPhotoIndex + offset + photoIndexes.length) % photoIndexes.length;
+  renderGalleryLightbox(photoIndexes[nextPhotoIndex]);
 }
 
-if (robotGallery && galleryRobots.length) {
+function renderRobotGallery(seasonId) {
+  if (!robotGallery) return;
+
+  const season = gallerySeasons.find((item) => item.id === seasonId) || gallerySeasons[0];
+  if (!season) return;
+
+  galleryRobots = Array.isArray(season.robots) ? season.robots : [];
+  if (gallerySeasonLabel) gallerySeasonLabel.textContent = season.label;
+  if (gallerySeasonDescription) gallerySeasonDescription.textContent = season.description;
+
+  gallerySeasonSwitch?.querySelectorAll("button").forEach((button) => {
+    const active = button.dataset.gallerySeason === season.id;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
   const robotButtons = galleryRobots.map((robot, index) => {
-    const button = document.createElement("button");
-    button.className = "robot-gallery-item";
-    button.type = "button";
-    button.setAttribute("aria-label", `查看${robot.title}原始定妆照`);
+    const item = document.createElement(robot.photo ? "button" : "article");
+    item.className = `robot-gallery-item${robot.photo ? "" : " is-static"}`;
+    if (robot.photo) {
+      item.type = "button";
+      item.setAttribute("aria-label", `查看${robot.title}高清原始定妆照`);
+    }
 
     const visual = document.createElement("span");
     visual.className = "robot-gallery-visual";
@@ -230,12 +258,27 @@ if (robotGallery && galleryRobots.length) {
     meta.textContent = robot.meta;
     caption.append(title, meta);
 
-    button.append(visual, caption);
-    button.addEventListener("click", () => renderGalleryLightbox(index));
-    return button;
+    item.append(visual, caption);
+    if (robot.photo) item.addEventListener("click", () => renderGalleryLightbox(index));
+    return item;
   });
 
   robotGallery.replaceChildren(...robotButtons);
+}
+
+if (gallerySeasonSwitch && gallerySeasons.length) {
+  const seasonButtons = gallerySeasons.map((season, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.gallerySeason = season.id;
+    button.className = index === 0 ? "is-active" : "";
+    button.setAttribute("aria-pressed", String(index === 0));
+    button.textContent = season.id;
+    button.addEventListener("click", () => renderRobotGallery(season.id));
+    return button;
+  });
+  gallerySeasonSwitch.replaceChildren(...seasonButtons);
+  renderRobotGallery(gallerySeasons[0].id);
 }
 
 galleryTabs.forEach((tab, index) => {
