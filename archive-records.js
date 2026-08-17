@@ -6,10 +6,86 @@
   const tabs = root.querySelector("[data-match-season-tabs]");
   const summary = root.querySelector("[data-match-season-summary]");
   const list = root.querySelector("[data-match-list]");
+  const scope = root.querySelector("[data-match-scope]");
   const resultLabels = { win: "胜", loss: "负", draw: "平" };
+  let lightboxItems = [];
+  let lightboxIndex = 0;
 
-  function isQianli(team) {
-    return team.includes("重庆大学");
+  if (scope && archive.scope) scope.textContent = archive.scope;
+
+  const lightbox = document.createElement("dialog");
+  lightbox.className = "match-media-lightbox";
+  lightbox.innerHTML = `
+    <div class="match-media-lightbox__inner">
+      <button class="match-media-lightbox__close" type="button" aria-label="关闭大图"><i class="mdi mdi-close" aria-hidden="true"></i></button>
+      <button class="match-media-lightbox__arrow match-media-lightbox__arrow--prev" type="button" aria-label="上一张"><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
+      <figure>
+        <img alt="" data-match-lightbox-image />
+        <figcaption><span data-match-lightbox-title></span><small data-match-lightbox-counter></small></figcaption>
+      </figure>
+      <button class="match-media-lightbox__arrow match-media-lightbox__arrow--next" type="button" aria-label="下一张"><i class="mdi mdi-chevron-right" aria-hidden="true"></i></button>
+    </div>`;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector("[data-match-lightbox-image]");
+  const lightboxTitle = lightbox.querySelector("[data-match-lightbox-title]");
+  const lightboxCounter = lightbox.querySelector("[data-match-lightbox-counter]");
+  const previousButton = lightbox.querySelector(".match-media-lightbox__arrow--prev");
+  const nextButton = lightbox.querySelector(".match-media-lightbox__arrow--next");
+
+  function updateLightbox() {
+    const item = lightboxItems[lightboxIndex];
+    if (!item) return;
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.alt;
+    lightboxTitle.textContent = item.title;
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxItems.length}`;
+    const hasMultiple = lightboxItems.length > 1;
+    previousButton.hidden = !hasMultiple;
+    nextButton.hidden = !hasMultiple;
+  }
+
+  function openLightbox(items) {
+    lightboxItems = items;
+    lightboxIndex = 0;
+    updateLightbox();
+    document.body.classList.add("has-match-lightbox");
+    lightbox.showModal();
+  }
+
+  function moveLightbox(direction) {
+    lightboxIndex = (lightboxIndex + direction + lightboxItems.length) % lightboxItems.length;
+    updateLightbox();
+  }
+
+  lightbox.querySelector(".match-media-lightbox__close").addEventListener("click", () => lightbox.close());
+  previousButton.addEventListener("click", () => moveLightbox(-1));
+  nextButton.addEventListener("click", () => moveLightbox(1));
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+  lightbox.addEventListener("close", () => document.body.classList.remove("has-match-lightbox"));
+  lightbox.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" && lightboxItems.length > 1) moveLightbox(-1);
+    if (event.key === "ArrowRight" && lightboxItems.length > 1) moveLightbox(1);
+  });
+
+  function createRecordFragment(season) {
+    const fragment = document.createDocumentFragment();
+    const win = document.createElement("span");
+    win.className = "is-wins";
+    win.textContent = `${season.stats.wins} 胜`;
+    const loss = document.createElement("span");
+    loss.className = "is-losses";
+    loss.textContent = `${season.stats.losses} 负`;
+    fragment.append(win, loss);
+    if (season.stats.draws) {
+      const draw = document.createElement("span");
+      draw.className = "is-draws";
+      draw.textContent = `${season.stats.draws} 平`;
+      fragment.append(draw);
+    }
+    return fragment;
   }
 
   function renderSummary(season) {
@@ -18,7 +94,7 @@
     const label = document.createElement("span");
     label.textContent = season.label;
     const record = document.createElement("strong");
-    record.textContent = `${season.stats.wins} 胜 ${season.stats.losses} 负`;
+    record.appendChild(createRecordFragment(season));
     title.append(label, record);
 
     const review = document.createElement("p");
@@ -27,18 +103,45 @@
     const facts = document.createElement("div");
     facts.className = "match-summary-facts";
     const values = [
-      ["比赛", season.stats.matches],
-      ["胜场", season.stats.wins],
-      ["负场", season.stats.losses],
+      ["比赛", season.stats.matches, "is-matches"],
+      ["胜场", season.stats.wins, "is-wins"],
+      ["负场", season.stats.losses, "is-losses"],
     ];
-    if (season.stats.draws) values.push(["平局", season.stats.draws]);
-    values.forEach(([name, value]) => {
+    if (season.stats.draws) values.push(["平局", season.stats.draws, "is-draws"]);
+    values.forEach(([name, value, className]) => {
       const item = document.createElement("span");
-      item.innerHTML = `<small>${name}</small><strong>${value}</strong>`;
+      item.className = className;
+      const key = document.createElement("small");
+      key.textContent = name;
+      const number = document.createElement("strong");
+      number.textContent = value;
+      item.append(key, number);
       facts.appendChild(item);
     });
 
     summary.replaceChildren(title, review, facts);
+  }
+
+  function createMediaButton(match, images, label, icon) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "match-media-trigger";
+    button.title = `查看${label}大图`;
+    const thumbnail = document.createElement("img");
+    thumbnail.src = images[0];
+    thumbnail.alt = "";
+    thumbnail.loading = "lazy";
+    const text = document.createElement("span");
+    text.innerHTML = `<i class="mdi ${icon}" aria-hidden="true"></i><b>${label}</b><small>${images.length}</small>`;
+    button.append(thumbnail, text);
+    button.addEventListener("click", () => {
+      openLightbox(images.map((src, index) => ({
+        src,
+        alt: `${match.season} ${match.round} ${label} ${index + 1}`,
+        title: `${match.season} ${match.round} · ${label}`,
+      })));
+    });
+    return button;
   }
 
   function createMatch(match) {
@@ -59,15 +162,19 @@
 
     const scoreboard = document.createElement("div");
     scoreboard.className = "match-scoreboard";
-    const teamA = document.createElement("span");
-    teamA.textContent = match.teamA;
-    if (isQianli(match.teamA)) teamA.classList.add("is-qianli");
+    const redTeam = document.createElement("span");
+    redTeam.className = "match-team match-team--red";
+    redTeam.textContent = match.redTeam;
+    if (match.redTeam.includes("重庆大学")) redTeam.classList.add("is-qianli");
     const score = document.createElement("strong");
-    score.textContent = match.score;
-    const teamB = document.createElement("span");
-    teamB.textContent = match.teamB;
-    if (isQianli(match.teamB)) teamB.classList.add("is-qianli");
-    scoreboard.append(teamA, score, teamB);
+    score.className = "match-score";
+    const [redScore = "-", blueScore = "-"] = match.score.split(":");
+    score.innerHTML = `<span class="match-score--red">${redScore}</span><b>:</b><span class="match-score--blue">${blueScore}</span>`;
+    const blueTeam = document.createElement("span");
+    blueTeam.className = "match-team match-team--blue";
+    blueTeam.textContent = match.blueTeam;
+    if (match.blueTeam.includes("重庆大学")) blueTeam.classList.add("is-qianli");
+    scoreboard.append(redTeam, score, blueTeam);
 
     const outcome = document.createElement("div");
     outcome.className = "match-record-outcome";
@@ -85,6 +192,27 @@
       outcome.appendChild(mvp);
     }
 
+    const actions = document.createElement("div");
+    actions.className = "match-record-actions";
+    if (match.dataPanels?.length) {
+      actions.appendChild(createMediaButton(match, match.dataPanels, "小局数据", "mdi-chart-box-outline"));
+    }
+    if (match.mvpImages?.length) {
+      actions.appendChild(createMediaButton(match, match.mvpImages, "MVP", "mdi-account-star-outline"));
+    }
+    if (match.videoUrl) {
+      const video = document.createElement("a");
+      video.className = "match-video-link";
+      video.href = match.videoUrl;
+      video.target = "_blank";
+      video.rel = "noopener noreferrer";
+      video.title = "在哔哩哔哩观看比赛录像";
+      video.setAttribute("aria-label", "在哔哩哔哩观看比赛录像");
+      video.innerHTML = '<i class="mdi mdi-play-circle-outline" aria-hidden="true"></i>';
+      actions.appendChild(video);
+    }
+    outcome.appendChild(actions);
+
     article.append(index, context, scoreboard, outcome);
     return article;
   }
@@ -98,7 +226,14 @@
       button.tabIndex = selected ? 0 : -1;
     });
     renderSummary(season);
-    list.replaceChildren(...season.matches.map(createMatch));
+    if (season.matches.length) {
+      list.replaceChildren(...season.matches.map(createMatch));
+    } else {
+      const empty = document.createElement("p");
+      empty.className = "match-list-empty";
+      empty.textContent = "本赛季暂无 RMUC 超级对抗赛比赛记录。";
+      list.replaceChildren(empty);
+    }
   }
 
   archive.seasons.forEach((season, index) => {
