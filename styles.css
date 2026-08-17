@@ -2166,9 +2166,9 @@
 
 .match-record {
   display: grid;
-  grid-template-columns: 48px minmax(190px, 0.76fr) minmax(350px, 1.38fr) minmax(250px, 0.95fr);
+  grid-template-columns: 48px 170px minmax(350px, 0.9fr) minmax(330px, 1.1fr);
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   min-height: 142px;
   padding: 22px 0;
   border-top: 1px solid var(--line);
@@ -2205,15 +2205,37 @@
 
 .match-scoreboard {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(130px, 1fr) 44px minmax(130px, 1fr);
   align-items: center;
-  gap: 18px;
+  gap: 12px;
 }
 
-.match-scoreboard span {
+.match-team {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1px;
   font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 1.35;
+}
+
+.match-team__school,
+.match-team__name {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.match-team__school {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.76;
+}
+
+.match-team__name {
   font-size: 14px;
-  line-height: 1.45;
+  font-weight: 500;
 }
 
 .match-scoreboard .match-team--red,
@@ -2226,16 +2248,17 @@
   color: var(--match-blue);
 }
 
-.match-scoreboard span:last-child {
+.match-scoreboard > .match-team:last-child {
+  align-items: flex-end;
   text-align: right;
 }
 
-.match-scoreboard span.is-qianli {
+.match-scoreboard .match-team.is-qianli .match-team__name {
   font-weight: 600;
 }
 
 .match-scoreboard > strong {
-  min-width: 54px;
+  min-width: 44px;
   font-family: var(--brand-font);
   font-size: 24px;
   font-weight: 400;
@@ -2480,7 +2503,7 @@
 
 @media (max-width: 1180px) {
   .match-record {
-    grid-template-columns: 42px minmax(150px, 0.7fr) minmax(300px, 1.22fr) minmax(230px, 0.9fr);
+    grid-template-columns: 42px 145px minmax(300px, 0.92fr) minmax(255px, 1.08fr);
     gap: 18px;
   }
 
@@ -2625,7 +2648,11 @@
     min-width: 0;
   }
 
-  .match-scoreboard span {
+  .match-team__school {
+    font-size: 11px;
+  }
+
+  .match-team__name {
     font-size: 12px;
   }
 

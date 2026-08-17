@@ -144,6 +144,25 @@
     return button;
   }
 
+  function createTeamName(team, side) {
+    const parts = team.trim().split(/\s+/);
+    const schoolName = parts.shift() || "待补充";
+    const teamName = parts.join(" ") || "战队名称待补充";
+    const wrapper = document.createElement("div");
+    wrapper.className = `match-team match-team--${side}`;
+    wrapper.title = team;
+    if (team.includes("重庆大学")) wrapper.classList.add("is-qianli");
+
+    const school = document.createElement("span");
+    school.className = "match-team__school";
+    school.textContent = schoolName;
+    const name = document.createElement("strong");
+    name.className = "match-team__name";
+    name.textContent = teamName;
+    wrapper.append(school, name);
+    return wrapper;
+  }
+
   function createMatch(match) {
     const article = document.createElement("article");
     article.className = `match-record match-record--${match.result}`;
@@ -162,18 +181,12 @@
 
     const scoreboard = document.createElement("div");
     scoreboard.className = "match-scoreboard";
-    const redTeam = document.createElement("span");
-    redTeam.className = "match-team match-team--red";
-    redTeam.textContent = match.redTeam;
-    if (match.redTeam.includes("重庆大学")) redTeam.classList.add("is-qianli");
+    const redTeam = createTeamName(match.redTeam, "red");
     const score = document.createElement("strong");
     score.className = "match-score";
     const [redScore = "-", blueScore = "-"] = match.score.split(":");
     score.innerHTML = `<span class="match-score--red">${redScore}</span><b>:</b><span class="match-score--blue">${blueScore}</span>`;
-    const blueTeam = document.createElement("span");
-    blueTeam.className = "match-team match-team--blue";
-    blueTeam.textContent = match.blueTeam;
-    if (match.blueTeam.includes("重庆大学")) blueTeam.classList.add("is-qianli");
+    const blueTeam = createTeamName(match.blueTeam, "blue");
     scoreboard.append(redTeam, score, blueTeam);
 
     const outcome = document.createElement("div");
