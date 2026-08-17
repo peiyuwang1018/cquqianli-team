@@ -3,7 +3,6 @@ const navLinks = document.querySelector(".nav-links");
 const themeToggle = document.querySelector(".theme-toggle");
 const root = document.documentElement;
 const savedTheme = localStorage.getItem("theme");
-const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function applyTheme(theme) {
@@ -12,7 +11,7 @@ function applyTheme(theme) {
   themeToggle?.setAttribute("aria-pressed", String(theme === "dark"));
 }
 
-applyTheme(savedTheme || preferredTheme);
+applyTheme(savedTheme || "dark");
 
 navToggle?.addEventListener("click", () => {
   const open = navLinks.classList.toggle("is-open");
