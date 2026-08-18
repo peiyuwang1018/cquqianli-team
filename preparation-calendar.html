@@ -16,7 +16,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="styles.css?v=20260818-24" />
+    <link rel="stylesheet" href="styles.css?v=20260818-25" />
     <link rel="icon" type="image/png" href="assets/brand/千里马头logo.PNG" />
   </head>
   <body data-page="frontline">
@@ -35,36 +35,68 @@
       </nav>
     </header>
     <main>
-      <section class="page-hero">
-        <div><p class="page-label">PREPARATION CALENDAR</p><h1>备赛日历</h1></div>
-        <p>集中呈现最新赛季节点、评审、测试、联调与比赛准备安排。</p>
+      <section class="page-hero season-calendar-hero">
+        <div><p class="page-label">SEASON CALENDAR</p><h1>备赛日历</h1></div>
+        <p>从预研、集中研发到战术演练与赛场，把一个赛季放进同一条时间轴。</p>
       </section>
-      <section class="section-block frontline-grid" aria-label="备赛日历状态">
-        <article class="frontline-panel frontline-panel--primary">
-          <header class="frontline-panel-head"><div><p class="page-label">LATEST CYCLE</p><h2>最新备赛周期</h2></div><span class="calendar-status">待队伍确认</span></header>
-          <div class="frontline-empty">
-            <i class="mdi mdi-calendar-clock-outline" aria-hidden="true"></i>
-            <div><h3>赛程节点待确认</h3><p>具体日期将在队伍确认后录入，避免把临时安排误作正式日程。</p></div>
+
+      <section class="section-block season-calendar" aria-labelledby="season-calendar-title">
+        <header class="season-calendar-head">
+          <div>
+            <p class="page-label">RM 2027 SEASON</p>
+            <h2 id="season-calendar-title">2027 赛季进程</h2>
+            <p class="season-calendar-note">当前版本以队内已知节点为骨架；校历、官方考核与比赛日期将在资料到位后校准。</p>
           </div>
-        </article>
-        <aside class="frontline-panel">
-          <header class="frontline-panel-head"><div><p class="page-label">STATUS</p><h2>日历状态</h2></div></header>
-          <dl class="frontline-meta-list">
-            <div><dt>当前周期</dt><dd>待队伍确认</dd></div>
-            <div><dt>最后更新</dt><dd>待首次录入</dd></div>
-            <div><dt>时间范围</dt><dd>方案、样机、联调、验收与比赛</dd></div>
-          </dl>
-        </aside>
-      </section>
-      <section class="section-block calendar-phases" aria-labelledby="calendar-phases-title">
-        <div class="section-heading"><p class="page-label">MILESTONES</p><h2 id="calendar-phases-title">节点分类</h2></div>
-        <div class="calendar-phase-grid">
-          <article><i class="mdi mdi-file-document-check-outline" aria-hidden="true"></i><h3>方案评审</h3><p>日期待确认</p></article>
-          <article><i class="mdi mdi-robot-industrial-outline" aria-hidden="true"></i><h3>样机集成</h3><p>日期待确认</p></article>
-          <article><i class="mdi mdi-connection" aria-hidden="true"></i><h3>系统联调</h3><p>日期待确认</p></article>
-          <article><i class="mdi mdi-clipboard-check-outline" aria-hidden="true"></i><h3>赛前验收</h3><p>日期待确认</p></article>
-          <article><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><h3>比赛安排</h3><p>日期待确认</p></article>
+          <div class="season-view-switch" role="tablist" aria-label="切换日历视角">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-season-view="month"><i class="mdi mdi-calendar-month-outline" aria-hidden="true"></i><span>月份视角</span></button>
+            <button type="button" role="tab" aria-selected="false" data-season-view="overview"><i class="mdi mdi-chart-timeline-variant-shimmer" aria-hidden="true"></i><span>赛季总览</span></button>
+          </div>
+        </header>
+
+        <div class="season-legend" aria-label="事件分类与日期状态">
+          <div class="season-category-filters" data-season-filters></div>
+          <div class="season-status-key">
+            <span><i class="season-status-sample season-status-sample--confirmed"></i>已确认</span>
+            <span><i class="season-status-sample season-status-sample--tentative"></i>暂定</span>
+            <span><i class="season-status-sample season-status-sample--derived"></i>倒推</span>
+          </div>
         </div>
+
+        <section class="season-view is-active" data-season-panel="month" role="tabpanel">
+          <div class="season-month-toolbar">
+            <button class="season-icon-button" type="button" data-month-prev aria-label="上一个月"><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
+            <div class="season-month-heading">
+              <p data-month-kicker>2026 / 08</p>
+              <h3 data-month-title>2026 年 8 月</h3>
+              <span data-month-line>新赛季重启：复盘上一程，也为下一程建立问题清单。</span>
+            </div>
+            <button class="season-icon-button" type="button" data-month-next aria-label="下一个月"><i class="mdi mdi-chevron-right" aria-hidden="true"></i></button>
+          </div>
+
+          <div class="season-month-layout">
+            <div class="season-month-scroll" tabindex="0" aria-label="月份日历，可横向滚动查看">
+              <div class="season-month-calendar">
+                <div class="season-weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+                <div class="season-month-grid" data-calendar-month-grid></div>
+              </div>
+            </div>
+            <aside class="season-event-detail" data-season-detail aria-live="polite"></aside>
+          </div>
+        </section>
+
+        <section class="season-view" data-season-panel="overview" role="tabpanel" hidden>
+          <div class="season-overview-intro">
+            <div><p class="page-label">FULL SEASON</p><h3>从开季到交接</h3></div>
+            <p>横向观察各阶段的衔接关系；悬浮或点按色条可查看日期、依据与状态。</p>
+          </div>
+          <div class="season-overview-scroll" tabindex="0" aria-label="赛季总览，可横向滚动查看">
+            <div class="season-overview" data-season-overview></div>
+          </div>
+          <aside class="season-event-detail season-event-detail--overview" data-overview-detail aria-live="polite"></aside>
+        </section>
+
+        <p class="season-calendar-source"><i class="mdi mdi-information-outline" aria-hidden="true"></i>寒假集训暂按 2027 年春节前一周结束；校历限制、官方节点和比赛窗口均会随正式资料更新。</p>
+        <div class="season-tooltip" data-season-tooltip role="tooltip" hidden></div>
       </section>
     </main>
     <footer class="site-footer">
@@ -72,6 +104,8 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
+    <script src="season-calendar-data.js?v=20260818-1"></script>
+    <script src="season-calendar.js?v=20260818-1"></script>
     <script src="script.js?v=20260817-5"></script>
   </body>
 </html>

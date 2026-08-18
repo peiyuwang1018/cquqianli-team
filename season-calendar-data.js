@@ -1,0 +1,321 @@
+(function () {
+  "use strict";
+
+  window.QIANLI_SEASON_CALENDAR = {
+    season: {
+      title: "RM 2027 赛季",
+      start: "2026-08-11",
+      end: "2027-08-10",
+      defaultMonth: "2026-08"
+    },
+    categories: {
+      research: { label: "研发阶段", color: "#50f28a", icon: "mdi-flask-outline" },
+      official: { label: "官方节点", color: "#4c8dff", icon: "mdi-flag-outline" },
+      competition: { label: "比赛周期", color: "#ff6268", icon: "mdi-trophy-outline" },
+      activity: { label: "队伍活动", color: "#d7a33d", icon: "mdi-account-group-outline" },
+      training: { label: "集训演练", color: "#39bdd0", icon: "mdi-robot-industrial-outline" },
+      academic: { label: "校历约束", color: "#747d88", icon: "mdi-school-outline" },
+      memorial: { label: "纪念节点", color: "#e8568a", icon: "mdi-star-outline" }
+    },
+    lanes: [
+      { id: "research", label: "研发阶段" },
+      { id: "official", label: "官方与比赛" },
+      { id: "activity", label: "队伍活动" },
+      { id: "academic", label: "校历约束" },
+      { id: "milestone", label: "关键节点" }
+    ],
+    months: {
+      "2026-08": "新赛季重启：复盘上一程，也为下一程建立问题清单。",
+      "2026-09": "预研换挡：完成招新，也把方向收束成可以验证的方案。",
+      "2026-10": "集训与交流：让外部经验进入规则理解和技术路线。",
+      "2026-11": "集中研发开启：明确架构、接口与第一轮交付目标。",
+      "2026-12": "稳定迭代：用样机、测试和记录消除系统不确定性。",
+      "2027-01": "学业优先：考试期降低强度，随后进入寒假集中推进。",
+      "2027-02": "寒训收束：把研发成果转成可维护、可训练的整机状态。",
+      "2027-03": "返校与联盟赛窗口：研发、训练和实战开始并行。",
+      "2027-04": "验收与战术演练：整机问题必须在赛场压力前暴露。",
+      "2027-05": "分区赛窗口：围绕可靠性、操作与临场协作完成交付。",
+      "2027-06": "阶段复盘：修复分区赛暴露的问题，重组国赛方案。",
+      "2027-07": "全国赛冲刺：训练、保障和版本冻结围绕赛场展开。",
+      "2027-08": "总决赛、总结与交接：把一年的经验留给下一赛季。"
+    },
+    events: [
+      {
+        id: "season-start",
+        title: "2027 赛季开季",
+        shortTitle: "开季",
+        category: "memorial",
+        lane: "milestone",
+        start: "2026-08-11",
+        end: "2026-08-11",
+        status: "confirmed",
+        description: "以上一赛季全国赛阶段结束次日作为新赛季起点，开始复盘、交接与预研。",
+        source: "队内赛季定义"
+      },
+      {
+        id: "pre-research-1",
+        title: "预研一期",
+        shortTitle: "预研一期",
+        category: "research",
+        lane: "research",
+        start: "2026-08-11",
+        end: "2026-09-07",
+        status: "confirmed",
+        description: "围绕上赛季问题、规则趋势和关键技术风险开展开放式预研。",
+        source: "队内规划"
+      },
+      {
+        id: "autumn-recruitment",
+        title: "27 赛季秋季招新",
+        shortTitle: "秋季招新",
+        category: "activity",
+        lane: "activity",
+        start: "2026-09-07",
+        end: "2026-09-30",
+        status: "confirmed",
+        description: "面向 2027 赛季的新成员招募、宣讲、考核与组别匹配。",
+        source: "队内规划"
+      },
+      {
+        id: "pre-research-2",
+        title: "预研二期",
+        shortTitle: "预研二期",
+        category: "research",
+        lane: "research",
+        start: "2026-09-08",
+        end: "2026-10-31",
+        status: "confirmed",
+        description: "将预研方向收束为规则发布后可执行的技术路线与验证计划。",
+        source: "队内规划"
+      },
+      {
+        id: "national-day-training",
+        title: "国庆集训与交流期",
+        shortTitle: "国庆集训",
+        category: "training",
+        lane: "activity",
+        start: "2026-10-01",
+        end: "2026-10-07",
+        status: "confirmed",
+        description: "部分成员前往其他学校交流，其余成员特别是梯队在校集中培训并完成阶段任务。",
+        source: "队内规划"
+      },
+      {
+        id: "rules-week",
+        title: "规则发布周",
+        shortTitle: "规则发布周",
+        category: "official",
+        lane: "official",
+        start: "2026-10-25",
+        end: "2026-10-31",
+        status: "tentative",
+        description: "暂按十月最后一周标注，正式日期以 RoboMaster 当赛季规则发布安排为准。",
+        source: "历年节奏估计"
+      },
+      {
+        id: "upper-rd",
+        title: "上半段集中研发期",
+        shortTitle: "集中研发（上）",
+        category: "research",
+        lane: "research",
+        start: "2026-11-01",
+        end: "2027-01-03",
+        status: "tentative",
+        description: "从规则发布周结束后进入集中研发，当前暂按 1 月 3 日结束，待校历确定。",
+        source: "队内规划，结束日待校历校准"
+      },
+      {
+        id: "exam-review",
+        title: "考试复习弹性工作期",
+        shortTitle: "弹性复习期",
+        category: "academic",
+        lane: "academic",
+        start: "2026-12-21",
+        end: "2027-01-03",
+        status: "tentative",
+        description: "暂按集中考试周前两周设置；如无必要不要求到实验室打卡，优先完成课程复习。",
+        source: "队内原则，日期待校历校准"
+      },
+      {
+        id: "exam-weeks",
+        title: "期末集中考试周",
+        shortTitle: "集中考试周",
+        category: "academic",
+        lane: "academic",
+        start: "2027-01-04",
+        end: "2027-01-17",
+        status: "tentative",
+        description: "当前用连续两周作占位，期间研发与训练原则上降至最低强度。",
+        source: "临时占位，待重庆大学校历校准"
+      },
+      {
+        id: "winter-training",
+        title: "寒假集训期",
+        shortTitle: "寒假集训",
+        category: "training",
+        lane: "activity",
+        start: "2027-01-18",
+        end: "2027-01-30",
+        status: "tentative",
+        description: "暂按第二个集中考试周结束后开始，并在春节前一周结束。2027 年春节为 2 月 6 日。",
+        source: "依据队内原则与 2027 年春节日期推算"
+      },
+      {
+        id: "spring-return",
+        title: "春季返校",
+        shortTitle: "返校",
+        category: "academic",
+        lane: "milestone",
+        start: "2027-03-01",
+        end: "2027-03-01",
+        status: "tentative",
+        description: "当前以 3 月 1 日作为返校与下半段研发起点，待校历修正。",
+        source: "临时占位"
+      },
+      {
+        id: "lower-rd",
+        title: "下半段集中研发期",
+        shortTitle: "集中研发（下）",
+        category: "research",
+        lane: "research",
+        start: "2027-03-01",
+        end: "2027-04-16",
+        status: "tentative",
+        description: "从返校持续到分区赛前三周左右，并与分区赛战术演练阶段保留约一周重合。",
+        source: "队内节奏推算"
+      },
+      {
+        id: "rmul-window",
+        title: "RMUL 高校联盟赛窗口",
+        shortTitle: "RMUL 联盟赛",
+        category: "competition",
+        lane: "official",
+        start: "2027-03-15",
+        end: "2027-03-31",
+        status: "tentative",
+        description: "暂按历年三月中下旬标注；具体站点、参赛安排与日期以官方通知为准。",
+        source: "历年比赛节奏估计"
+      },
+      {
+        id: "rmul-rehearsal",
+        title: "联盟赛战术演练阶段",
+        shortTitle: "联盟赛演练",
+        category: "training",
+        lane: "activity",
+        start: "2027-02-22",
+        end: "2027-03-14",
+        status: "derived",
+        description: "按联盟赛窗口前约三周倒推，用于操作训练、战术磨合与临场流程验证。",
+        source: "由暂定比赛窗口倒推"
+      },
+      {
+        id: "regional-mock-1",
+        title: "分区赛一模验收",
+        shortTitle: "一模",
+        category: "research",
+        lane: "milestone",
+        start: "2027-03-20",
+        end: "2027-03-20",
+        status: "derived",
+        description: "第一轮整机和基础战术验收，重点暴露结构、供电、控制与流程问题。",
+        source: "由分区赛演练阶段倒推"
+      },
+      {
+        id: "regional-mock-2",
+        title: "分区赛二模验收",
+        shortTitle: "二模",
+        category: "research",
+        lane: "milestone",
+        start: "2027-03-27",
+        end: "2027-03-27",
+        status: "derived",
+        description: "验证整改结果与多兵种协同，逐步收紧版本变更范围。",
+        source: "由分区赛演练阶段倒推"
+      },
+      {
+        id: "regional-mock-3",
+        title: "分区赛三模验收",
+        shortTitle: "三模",
+        category: "research",
+        lane: "milestone",
+        start: "2027-04-03",
+        end: "2027-04-03",
+        status: "derived",
+        description: "以接近比赛的节奏完成最终综合验收，为战术演练和版本冻结提供依据。",
+        source: "由分区赛演练阶段倒推"
+      },
+      {
+        id: "regional-rehearsal",
+        title: "分区赛战术演练阶段",
+        shortTitle: "分区赛演练",
+        category: "training",
+        lane: "activity",
+        start: "2027-04-10",
+        end: "2027-05-07",
+        status: "derived",
+        description: "覆盖分区赛前约四周；首周与集中研发重合，随后逐步转入训练、可靠性维护与版本冻结。",
+        source: "由暂定分区赛窗口倒推"
+      },
+      {
+        id: "regional-window",
+        title: "RMUC 超级对抗赛分区赛窗口",
+        shortTitle: "RMUC 分区赛",
+        category: "competition",
+        lane: "official",
+        start: "2027-05-08",
+        end: "2027-05-23",
+        status: "tentative",
+        description: "暂按历年五月上中旬至下旬标注，实际赛区和行程以官方通知为准。",
+        source: "历年比赛节奏估计"
+      },
+      {
+        id: "regional-review",
+        title: "分区赛复盘与国赛重构",
+        shortTitle: "分区赛复盘",
+        category: "research",
+        lane: "research",
+        start: "2027-05-24",
+        end: "2027-06-27",
+        status: "derived",
+        description: "复盘比赛数据与故障，完成国赛版本的取舍、修复和再验证。",
+        source: "由暂定比赛窗口推算"
+      },
+      {
+        id: "national-rehearsal",
+        title: "全国赛战术演练阶段",
+        shortTitle: "国赛演练",
+        category: "training",
+        lane: "activity",
+        start: "2027-06-28",
+        end: "2027-07-25",
+        status: "derived",
+        description: "覆盖全国赛前四周，集中完成高强度对抗、保障流程和最终版本冻结。",
+        source: "由暂定全国赛窗口倒推"
+      },
+      {
+        id: "national-window",
+        title: "RMUC 全国总决赛阶段",
+        shortTitle: "RMUC 全国赛",
+        category: "competition",
+        lane: "official",
+        start: "2027-07-26",
+        end: "2027-08-08",
+        status: "tentative",
+        description: "暂按七月最后一周至八月第一周标注，包含全国赛复活赛与全国总决赛阶段。",
+        source: "历年比赛节奏估计"
+      },
+      {
+        id: "season-handover",
+        title: "赛季总结与交接",
+        shortTitle: "总结交接",
+        category: "memorial",
+        lane: "milestone",
+        start: "2027-08-09",
+        end: "2027-08-10",
+        status: "derived",
+        description: "整理比赛资料、研发记录与管理经验，为下一赛季开季做准备。",
+        source: "由赛季周期定义推算"
+      }
+    ]
+  };
+}());
