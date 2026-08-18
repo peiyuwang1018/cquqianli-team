@@ -3245,7 +3245,8 @@
 }
 
 .season-calendar button {
-  font: inherit;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  letter-spacing: 0;
 }
 
 .season-calendar-head {
@@ -3918,7 +3919,7 @@
 }
 
 .season-calendar-hero h1 {
-  font-size: clamp(36px, 3.25vw, 50px);
+  font-size: clamp(32px, 2.8vw, 44px);
   white-space: nowrap;
 }
 
@@ -3929,7 +3930,7 @@
 
 .season-calendar-hero-side > p {
   max-width: 560px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .season-calendar {
@@ -3942,16 +3943,16 @@
 }
 
 .season-view-switch button {
-  min-height: 44px;
+  min-height: 40px;
   padding: 0 11px;
   font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1;
 }
 
 .season-view-switch button i {
   margin-right: 5px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .season-legend {
@@ -3959,13 +3960,17 @@
 }
 
 .season-category-filter {
-  min-height: 32px;
-  padding: 4px 9px;
-  font-size: 12px;
+  min-height: 30px;
+  padding: 3px 8px;
+  font-size: 11px;
 }
 
 .season-category-filter i {
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.season-status-key {
+  font-size: 11px;
 }
 
 .season-status-sample {
@@ -3985,7 +3990,6 @@
   padding-top: 22px;
 }
 
-.season-progress-intro,
 .season-progress-zoom-head {
   display: flex;
   align-items: end;
@@ -3993,22 +3997,16 @@
   gap: 26px;
 }
 
-.season-progress-intro {
-  margin-bottom: 18px;
-}
-
-.season-progress-intro h2,
 .season-progress-zoom-head h3 {
   margin: 0;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.25;
   font-weight: 500;
 }
 
-.season-progress-intro > p,
 .season-progress-zoom-head > p {
   max-width: 540px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .season-progress-master {
@@ -4041,7 +4039,7 @@
   background: transparent;
   color: var(--subtle);
   font-family: Arial, "Microsoft YaHei", sans-serif !important;
-  font-size: 11px;
+  font-size: 10px;
   cursor: pointer;
 }
 
@@ -4073,7 +4071,7 @@
   background: var(--progress-color);
   color: #111;
   font-family: Arial, "Microsoft YaHei", sans-serif !important;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 58px;
   text-align: left;
   text-overflow: ellipsis;
@@ -4114,7 +4112,7 @@
   margin-top: 2px;
   color: var(--muted);
   font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .season-progress-zoom-head {
@@ -4160,7 +4158,7 @@
   background: transparent;
   color: var(--text);
   font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   cursor: pointer;
 }
 
@@ -4248,7 +4246,6 @@
     gap: 14px;
   }
 
-  .season-progress-intro,
   .season-progress-zoom-head {
     align-items: flex-start;
     flex-direction: column;
@@ -4258,7 +4255,7 @@
 
 @media (max-width: 620px) {
   .season-calendar-hero h1 {
-    font-size: clamp(31px, 9.5vw, 40px);
+    font-size: clamp(28px, 8.5vw, 34px);
   }
 
   .season-view-switch {
@@ -4266,7 +4263,7 @@
   }
 
   .season-view-switch button {
-    min-height: 42px;
+    min-height: 38px;
     padding: 0 5px;
     font-size: 11px;
   }
@@ -4276,9 +4273,8 @@
     font-size: 15px;
   }
 
-  .season-progress-intro h2,
   .season-progress-zoom-head h3 {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .season-progress-master {
