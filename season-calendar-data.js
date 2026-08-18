@@ -9,10 +9,10 @@
       defaultMonth: "2026-08"
     },
     categories: {
-      research: { label: "研发阶段", color: "#50f28a", icon: "mdi-flask-outline" },
+      research: { label: "研发阶段", color: "#f0b44d", icon: "mdi-flask-outline" },
       official: { label: "官方节点", color: "#4c8dff", icon: "mdi-flag-outline" },
       competition: { label: "比赛周期", color: "#ff6268", icon: "mdi-trophy-outline" },
-      activity: { label: "队伍活动", color: "#d7a33d", icon: "mdi-account-group-outline" },
+      activity: { label: "队伍活动", color: "#d97b59", icon: "mdi-account-group-outline" },
       training: { label: "集训演练", color: "#39bdd0", icon: "mdi-robot-industrial-outline" },
       academic: { label: "校历约束", color: "#747d88", icon: "mdi-school-outline" },
       festival: { label: "节日活动", color: "#b985ff", icon: "mdi-party-popper" },
@@ -40,6 +40,20 @@
       "2027-07": "全国赛冲刺：训练、保障和版本冻结围绕赛场展开。",
       "2027-08": "总决赛、总结与交接：把一年的经验留给下一赛季。"
     },
+    progressStages: [
+      { id: "stage-pre-1", title: "预研一期", type: "research", start: "2026-08-11", end: "2026-09-07" },
+      { id: "stage-pre-2", title: "预研二期", type: "research", start: "2026-09-08", end: "2026-10-31" },
+      { id: "stage-upper-rd", title: "上半段集中研发", type: "research", start: "2026-11-01", end: "2027-01-03" },
+      { id: "stage-transition", title: "节奏切换", type: "pause", start: "2027-01-04", end: "2027-01-24" },
+      { id: "stage-winter", title: "休整与寒训", type: "training", start: "2027-01-25", end: "2027-02-21" },
+      { id: "stage-lower-rd", title: "下半段集中研发", type: "research", start: "2027-02-22", end: "2027-04-09" },
+      { id: "stage-regional-training", title: "分区赛战术演练", type: "training", start: "2027-04-10", end: "2027-05-07" },
+      { id: "stage-regional", title: "分区赛窗口", type: "competition", start: "2027-05-08", end: "2027-05-23" },
+      { id: "stage-national-rd", title: "国赛版本研发", type: "research", start: "2027-05-24", end: "2027-06-27" },
+      { id: "stage-national-training", title: "全国赛战术演练", type: "training", start: "2027-06-28", end: "2027-07-25" },
+      { id: "stage-national", title: "全国赛窗口", type: "competition", start: "2027-07-26", end: "2027-08-08" },
+      { id: "stage-handover", title: "总结交接", type: "pause", start: "2027-08-09", end: "2027-08-10" }
+    ],
     events: [
       {
         id: "season-start",

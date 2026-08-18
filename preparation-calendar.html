@@ -16,7 +16,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="styles.css?v=20260818-26" />
+    <link rel="stylesheet" href="styles.css?v=20260818-27" />
     <link rel="icon" type="image/png" href="assets/brand/千里马头logo.PNG" />
   </head>
   <body data-page="frontline">
@@ -36,23 +36,18 @@
     </header>
     <main>
       <section class="page-hero season-calendar-hero">
-        <div><p class="page-label">SEASON CALENDAR</p><h1>备赛日历</h1></div>
-        <p>从预研、集中研发到战术演练与赛场，把一个赛季放进同一条时间轴。</p>
+        <div><p class="page-label">SEASON CALENDAR</p><h1 id="season-calendar-title">备赛日历（2027赛季）</h1></div>
+        <div class="season-calendar-hero-side">
+          <p>从预研、集中研发到战术演练与赛场，把一个赛季放进同一条时间轴。</p>
+          <div class="season-view-switch" role="tablist" aria-label="切换日历视角">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-season-view="progress"><i class="mdi mdi-ray-start-arrow" aria-hidden="true"></i><span>进度视角</span></button>
+            <button type="button" role="tab" aria-selected="false" data-season-view="month"><i class="mdi mdi-calendar-month-outline" aria-hidden="true"></i><span>月份视角</span></button>
+            <button type="button" role="tab" aria-selected="false" data-season-view="node"><i class="mdi mdi-timeline-outline" aria-hidden="true"></i><span>节点视角</span></button>
+          </div>
+        </div>
       </section>
 
       <section class="section-block season-calendar" aria-labelledby="season-calendar-title">
-        <header class="season-calendar-head">
-          <div>
-            <p class="page-label">RM 2027 SEASON</p>
-            <h2 id="season-calendar-title">2027 赛季进程</h2>
-            <p class="season-calendar-note">当前版本以队内已知节点为骨架；校历、官方考核与比赛日期将在资料到位后校准。</p>
-          </div>
-          <div class="season-view-switch" role="tablist" aria-label="切换日历视角">
-            <button class="is-active" type="button" role="tab" aria-selected="true" data-season-view="month"><i class="mdi mdi-calendar-month-outline" aria-hidden="true"></i><span>月份视角</span></button>
-            <button type="button" role="tab" aria-selected="false" data-season-view="overview"><i class="mdi mdi-chart-timeline-variant-shimmer" aria-hidden="true"></i><span>赛季总览</span></button>
-          </div>
-        </header>
-
         <div class="season-legend" aria-label="事件分类与日期状态">
           <div class="season-category-filters" data-season-filters></div>
           <div class="season-status-key">
@@ -62,7 +57,26 @@
           </div>
         </div>
 
-        <section class="season-view is-active" data-season-panel="month" role="tabpanel">
+        <section class="season-view is-active" data-season-panel="progress" role="tabpanel">
+          <div class="season-progress-intro">
+            <div><p class="page-label">SEASON PROGRESS</p><h2>一条主线，三个月放大</h2></div>
+            <p>拖动锚点选择连续三个月；总进度只保留研发、演练和比赛主线。</p>
+          </div>
+          <div class="season-progress-master">
+            <div class="season-progress-months" data-progress-months aria-label="赛季月份"></div>
+            <div class="season-progress-track" data-progress-track aria-label="完整赛季进度条"></div>
+            <input class="season-progress-range" type="range" min="0" max="10" step="1" value="0" data-progress-anchor aria-label="拖动选择三个月窗口" />
+            <p class="season-progress-window-label"><i class="mdi mdi-arrow-left-right" aria-hidden="true"></i><span data-progress-window-label>2026 年 8 月 - 10 月</span></p>
+          </div>
+          <div class="season-progress-zoom-head">
+            <div><p class="page-label">THREE-MONTH WINDOW</p><h3 data-progress-window-title>2026 年 8 月至 10 月</h3></div>
+            <p>点按月份标题可进入该月的详细日历。</p>
+          </div>
+          <div class="season-progress-zoom" data-progress-zoom></div>
+          <aside class="season-event-detail season-event-detail--overview season-progress-detail" data-progress-detail aria-live="polite"></aside>
+        </section>
+
+        <section class="season-view" data-season-panel="month" role="tabpanel" hidden>
           <div class="season-month-toolbar">
             <button class="season-icon-button" type="button" data-month-prev aria-label="上一个月"><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
             <div class="season-month-heading">
@@ -84,10 +98,10 @@
           </div>
         </section>
 
-        <section class="season-view" data-season-panel="overview" role="tabpanel" hidden>
+        <section class="season-view" data-season-panel="node" role="tabpanel" hidden>
           <div class="season-overview-intro">
-            <div><p class="page-label">FULL SEASON</p><h3>从开季到交接</h3></div>
-            <p>横向观察各阶段的衔接关系；悬浮或点按色条可查看日期、依据与状态。</p>
+            <div><p class="page-label">MILESTONE MAP</p><h3>赛季节点地图</h3></div>
+            <p>用于查阅完整节点；点按月份可直接进入对应月份视角。</p>
           </div>
           <div class="season-overview-scroll" tabindex="0" aria-label="赛季总览，可横向滚动查看">
             <div class="season-overview" data-season-overview></div>
@@ -104,8 +118,8 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
-    <script src="season-calendar-data.js?v=20260818-2"></script>
-    <script src="season-calendar.js?v=20260818-2"></script>
+    <script src="season-calendar-data.js?v=20260818-4"></script>
+    <script src="season-calendar.js?v=20260818-5"></script>
     <script src="script.js?v=20260817-5"></script>
   </body>
 </html>

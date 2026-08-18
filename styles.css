@@ -3911,6 +3911,388 @@
   }
 }
 
+/* Season calendar view hierarchy and continuous progress treatment. */
+.season-calendar-hero {
+  grid-template-columns: minmax(0, 1.05fr) minmax(440px, 0.95fr);
+  align-items: end;
+}
+
+.season-calendar-hero h1 {
+  font-size: clamp(36px, 3.25vw, 50px);
+  white-space: nowrap;
+}
+
+.season-calendar-hero-side {
+  display: grid;
+  gap: 18px;
+}
+
+.season-calendar-hero-side > p {
+  max-width: 560px;
+  font-size: 15px;
+}
+
+.season-calendar {
+  margin-top: 22px;
+}
+
+.season-view-switch {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+}
+
+.season-view-switch button {
+  min-height: 44px;
+  padding: 0 11px;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.season-view-switch button i {
+  margin-right: 5px;
+  font-size: 17px;
+}
+
+.season-legend {
+  padding: 12px 0;
+}
+
+.season-category-filter {
+  min-height: 32px;
+  padding: 4px 9px;
+  font-size: 12px;
+}
+
+.season-category-filter i {
+  font-size: 15px;
+}
+
+.season-status-sample {
+  background: #aeb6c2;
+}
+
+.season-status-sample--tentative {
+  border-color: #aeb6c2;
+  background: transparent;
+}
+
+.season-status-sample--derived {
+  background: repeating-linear-gradient(135deg, #aeb6c2 0 3px, transparent 3px 6px);
+}
+
+.season-view {
+  padding-top: 22px;
+}
+
+.season-progress-intro,
+.season-progress-zoom-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.season-progress-intro {
+  margin-bottom: 18px;
+}
+
+.season-progress-intro h2,
+.season-progress-zoom-head h3 {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.season-progress-intro > p,
+.season-progress-zoom-head > p {
+  max-width: 540px;
+  font-size: 13px;
+}
+
+.season-progress-master {
+  overflow-x: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  scrollbar-color: var(--text) var(--surface);
+}
+
+.season-progress-months,
+.season-progress-track,
+.season-progress-range,
+.season-progress-window-label {
+  min-width: 920px;
+}
+
+.season-progress-months {
+  display: flex;
+}
+
+.season-progress-month,
+.season-overview-months button {
+  display: grid;
+  place-items: center;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif !important;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.season-progress-month:hover,
+.season-progress-month:focus-visible,
+.season-overview-months button:hover,
+.season-overview-months button:focus-visible {
+  background: var(--surface);
+  color: var(--text);
+  outline: 0;
+}
+
+.season-progress-track {
+  position: relative;
+  height: 58px;
+  margin-top: 3px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.season-progress-segment {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid color-mix(in srgb, #101011 38%, transparent);
+  background: var(--progress-color);
+  color: #111;
+  font-family: Arial, "Microsoft YaHei", sans-serif !important;
+  font-size: 11px;
+  line-height: 58px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: help;
+}
+
+.season-progress-segment--pause {
+  color: #f4f4f4;
+}
+
+.season-progress-window {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  border: 2px solid var(--text);
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+  box-shadow: inset 0 -5px 0 color-mix(in srgb, var(--text) 72%, transparent);
+  pointer-events: none;
+  transition: left 160ms ease, width 160ms ease;
+}
+
+.season-progress-range {
+  display: block;
+  width: 100%;
+  height: 22px;
+  margin: 12px 0 0;
+  accent-color: var(--text);
+  cursor: ew-resize;
+}
+
+.season-progress-window-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 2px;
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+}
+
+.season-progress-zoom-head {
+  margin: 28px 0 14px;
+}
+
+.season-progress-zoom {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.season-progress-zoom-ruler,
+.season-progress-zoom-row {
+  display: grid;
+  grid-template-columns: 122px minmax(0, 1fr);
+  min-width: 720px;
+}
+
+.season-progress-zoom-corner,
+.season-progress-zoom-label {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.season-progress-zoom-ruler {
+  height: 40px;
+}
+
+.season-progress-zoom-months {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.season-progress-zoom-months button {
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.season-progress-zoom-months button:hover,
+.season-progress-zoom-months button:focus-visible {
+  background: var(--surface);
+  color: var(--accent);
+  outline: 0;
+}
+
+.season-progress-zoom-row {
+  min-height: 68px;
+  border-top: 1px solid var(--line);
+}
+
+.season-progress-zoom-track {
+  position: relative;
+  min-height: 68px;
+  background-image: linear-gradient(90deg, transparent calc(33.333% - 1px), var(--line) calc(33.333% - 1px) 33.333%, transparent 33.333% calc(66.666% - 1px), var(--line) calc(66.666% - 1px) 66.666%, transparent 66.666%);
+}
+
+.season-progress-zoom-bar {
+  position: absolute;
+  height: 21px;
+  overflow: hidden;
+  padding: 0 7px;
+  border: 0;
+  background: var(--event-color);
+  color: #111;
+  font-family: Arial, "Microsoft YaHei", sans-serif !important;
+  font-size: 10px;
+  line-height: 21px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.season-progress-detail {
+  margin-top: 12px;
+}
+
+.season-overview-months button {
+  flex: 0 0 auto;
+}
+
+.season-month-grid {
+  gap: 0;
+}
+
+.season-day {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.season-day:nth-child(7n) {
+  border-right: 0;
+}
+
+.season-day-events {
+  margin-right: -7px;
+  margin-left: -7px;
+}
+
+.season-day-event {
+  padding-right: 7px;
+  padding-left: 7px;
+}
+
+.season-day-event.season-event--tentative {
+  border-right: 0 !important;
+  border-left: 0 !important;
+}
+
+@media (max-width: 980px) {
+  .season-calendar-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .season-calendar-hero h1 {
+    white-space: normal;
+  }
+
+  .season-calendar-hero-side {
+    gap: 14px;
+  }
+
+  .season-progress-intro,
+  .season-progress-zoom-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 620px) {
+  .season-calendar-hero h1 {
+    font-size: clamp(31px, 9.5vw, 40px);
+  }
+
+  .season-view-switch {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .season-view-switch button {
+    min-height: 42px;
+    padding: 0 5px;
+    font-size: 11px;
+  }
+
+  .season-view-switch button i {
+    margin-right: 3px;
+    font-size: 15px;
+  }
+
+  .season-progress-intro h2,
+  .season-progress-zoom-head h3 {
+    font-size: 21px;
+  }
+
+  .season-progress-master {
+    padding: 12px;
+  }
+
+  .season-progress-months,
+  .season-progress-track,
+  .season-progress-range,
+  .season-progress-window-label {
+    min-width: 760px;
+  }
+}
+
 
 
 

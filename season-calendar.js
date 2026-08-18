@@ -12,8 +12,10 @@
   var selectedEvent = null;
   var monthGrid = root.querySelector("[data-calendar-month-grid]");
   var monthDetail = root.querySelector("[data-season-detail]");
+  var progressDetail = root.querySelector("[data-progress-detail]");
   var overviewDetail = root.querySelector("[data-overview-detail]");
   var tooltip = root.querySelector("[data-season-tooltip]");
+  var progressWindowIndex = 0;
 
   function parseDate(value) {
     var parts = value.split("-").map(Number);
@@ -29,6 +31,17 @@
 
   function monthKey(date) {
     return isoDate(date).slice(0, 7);
+  }
+
+  function seasonMonths() {
+    var months = [];
+    var cursor = parseDate(data.season.start.slice(0, 7) + "-01");
+    var end = parseDate(data.season.end.slice(0, 7) + "-01");
+    while (cursor <= end) {
+      months.push(new Date(cursor.getFullYear(), cursor.getMonth(), 1));
+      cursor = new Date(cursor.getFullYear(), cursor.getMonth() + 1, 1);
+    }
+    return months;
   }
 
   function addDays(date, amount) {
@@ -49,6 +62,14 @@
   function dateRange(event) {
     if (event.start === event.end) return formatDate(event.start);
     return formatDate(event.start) + " - " + formatDate(event.end);
+  }
+
+  function compactMonthLabel(date) {
+    return (date.getMonth() + 1) + "月";
+  }
+
+  function fullMonthLabel(date) {
+    return date.getFullYear() + " 年 " + (date.getMonth() + 1) + " 月";
   }
 
   function eventVisible(event) {
@@ -90,6 +111,7 @@
         button.classList.toggle("is-active", activeCategories.has(key));
         button.setAttribute("aria-pressed", String(activeCategories.has(key)));
         renderMonth();
+        renderProgressWindow();
         renderOverview();
       });
       container.appendChild(button);
@@ -160,7 +182,7 @@
     bindEventTargets(monthGrid, monthDetail);
   }
 
-  function renderDetail(container, event, emptyText, relatedEvents) {
+  function renderDetail(container, event, emptyText, relatedEvents, relatedLabel) {
     container.innerHTML = "";
     if (!event) {
       var empty = createElement("div", "season-detail-empty");
@@ -185,7 +207,7 @@
 
     if (relatedEvents && relatedEvents.length > 1) {
       var related = createElement("div", "season-detail-related");
-      related.appendChild(createElement("p", "", "本月节点"));
+      related.appendChild(createElement("p", "", relatedLabel || "本月节点"));
       relatedEvents.forEach(function (item) {
         var button = createElement("button", item.id === event.id ? "is-active" : "", item.shortTitle);
         button.type = "button";
@@ -197,7 +219,7 @@
         var button = clickEvent.target.closest("[data-detail-event-id]");
         if (!button) return;
         selectedEvent = eventForId(button.dataset.detailEventId);
-        renderDetail(container, selectedEvent, emptyText, relatedEvents);
+        renderDetail(container, selectedEvent, emptyText, relatedEvents, relatedLabel);
       });
       container.appendChild(related);
     }
@@ -245,6 +267,135 @@
     tooltip.hidden = true;
   }
 
+  function progressTypeColor(type) {
+    if (data.categories[type]) return data.categories[type].color;
+    return "#68707b";
+  }
+
+  function showProgressStageTooltip(pointerEvent) {
+    var stage = data.progressStages.find(function (item) { return item.id === pointerEvent.currentTarget.dataset.progressId; });
+    if (!stage) return;
+    tooltip.innerHTML = "<strong>" + stage.title + "</strong><span>" + dateRange(stage) + "</span><small>赛季主进度</small>";
+    tooltip.hidden = false;
+    moveTooltip(pointerEvent);
+  }
+
+  function renderProgress() {
+    var monthsContainer = root.querySelector("[data-progress-months]");
+    var track = root.querySelector("[data-progress-track]");
+    var range = root.querySelector("[data-progress-anchor]");
+    var months = seasonMonths();
+    var start = parseDate(data.season.start);
+    var end = parseDate(data.season.end);
+    var seasonDays = daysBetween(start, end) + 1;
+
+    monthsContainer.innerHTML = "";
+    months.forEach(function (date) {
+      var monthStart = date < start ? start : date;
+      var nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+      var monthEnd = addDays(nextMonth, -1) > end ? end : addDays(nextMonth, -1);
+      var button = createElement("button", "season-progress-month", compactMonthLabel(date));
+      button.type = "button";
+      button.dataset.jumpMonth = monthKey(date);
+      button.style.width = ((daysBetween(monthStart, monthEnd) + 1) / seasonDays * 100) + "%";
+      button.setAttribute("aria-label", "查看" + fullMonthLabel(date));
+      monthsContainer.appendChild(button);
+    });
+
+    track.innerHTML = "";
+    data.progressStages.forEach(function (stage) {
+      var segment = createElement("button", "season-progress-segment season-progress-segment--" + stage.type, stage.title);
+      segment.type = "button";
+      segment.dataset.progressId = stage.id;
+      segment.style.setProperty("--progress-color", progressTypeColor(stage.type));
+      segment.style.left = (daysBetween(start, parseDate(stage.start)) / seasonDays * 100) + "%";
+      segment.style.width = ((daysBetween(parseDate(stage.start), parseDate(stage.end)) + 1) / seasonDays * 100) + "%";
+      segment.setAttribute("aria-label", stage.title + "，" + dateRange(stage));
+      segment.addEventListener("mouseenter", showProgressStageTooltip);
+      segment.addEventListener("mousemove", moveTooltip);
+      segment.addEventListener("mouseleave", hideTooltip);
+      segment.addEventListener("focus", showProgressStageTooltip);
+      segment.addEventListener("blur", hideTooltip);
+      track.appendChild(segment);
+    });
+    track.appendChild(createElement("div", "season-progress-window"));
+
+    range.max = String(Math.max(0, months.length - 3));
+    range.value = String(Math.min(progressWindowIndex, Number(range.max)));
+    bindMonthJumpTargets(monthsContainer);
+    renderProgressWindow();
+  }
+
+  function renderProgressWindow() {
+    var zoom = root.querySelector("[data-progress-zoom]");
+    var range = root.querySelector("[data-progress-anchor]");
+    var windowMarker = root.querySelector(".season-progress-window");
+    if (!zoom || !range || !windowMarker) return;
+
+    var months = seasonMonths();
+    progressWindowIndex = Math.min(Number(range.value), Math.max(0, months.length - 3));
+    var selectedMonths = months.slice(progressWindowIndex, progressWindowIndex + 3);
+    var seasonStart = parseDate(data.season.start);
+    var seasonEnd = parseDate(data.season.end);
+    var seasonDays = daysBetween(seasonStart, seasonEnd) + 1;
+    var windowStart = selectedMonths[0] < seasonStart ? seasonStart : selectedMonths[0];
+    var afterWindow = new Date(selectedMonths[selectedMonths.length - 1].getFullYear(), selectedMonths[selectedMonths.length - 1].getMonth() + 1, 1);
+    var windowEnd = addDays(afterWindow, -1) > seasonEnd ? seasonEnd : addDays(afterWindow, -1);
+    var windowDays = daysBetween(windowStart, windowEnd) + 1;
+    var label = fullMonthLabel(selectedMonths[0]) + " - " + compactMonthLabel(selectedMonths[selectedMonths.length - 1]);
+    root.querySelector("[data-progress-window-label]").textContent = label;
+    root.querySelector("[data-progress-window-title]").textContent = fullMonthLabel(selectedMonths[0]) + "至" + compactMonthLabel(selectedMonths[selectedMonths.length - 1]);
+    windowMarker.style.left = (daysBetween(seasonStart, windowStart) / seasonDays * 100) + "%";
+    windowMarker.style.width = (windowDays / seasonDays * 100) + "%";
+
+    zoom.innerHTML = "";
+    var ruler = createElement("div", "season-progress-zoom-ruler");
+    ruler.appendChild(createElement("div", "season-progress-zoom-corner", "三个月窗口"));
+    var rulerMonths = createElement("div", "season-progress-zoom-months");
+    selectedMonths.forEach(function (date) {
+      var button = createElement("button", "", fullMonthLabel(date));
+      button.type = "button";
+      button.dataset.jumpMonth = monthKey(date);
+      rulerMonths.appendChild(button);
+    });
+    ruler.appendChild(rulerMonths);
+    zoom.appendChild(ruler);
+
+    [
+      { id: "research", label: "研发周期" },
+      { id: "training", label: "演练周期" },
+      { id: "competition", label: "比赛周期" }
+    ].forEach(function (lane) {
+      var row = createElement("div", "season-progress-zoom-row");
+      row.appendChild(createElement("div", "season-progress-zoom-label", lane.label));
+      var laneTrack = createElement("div", "season-progress-zoom-track");
+      data.events.filter(function (event) {
+        return eventVisible(event) && event.category === lane.id && parseDate(event.start) <= windowEnd && parseDate(event.end) >= windowStart;
+      }).forEach(function (event, eventIndex) {
+        var visibleStart = parseDate(event.start) < windowStart ? windowStart : parseDate(event.start);
+        var visibleEnd = parseDate(event.end) > windowEnd ? windowEnd : parseDate(event.end);
+        var bar = createElement("button", "season-progress-zoom-bar", event.shortTitle);
+        bar.type = "button";
+        applyEventStyle(bar, event);
+        bar.style.left = (daysBetween(windowStart, visibleStart) / windowDays * 100) + "%";
+        bar.style.width = ((daysBetween(visibleStart, visibleEnd) + 1) / windowDays * 100) + "%";
+        bar.style.top = (11 + (eventIndex % 2) * 25) + "px";
+        bar.setAttribute("aria-label", event.title + "，" + dateRange(event));
+        laneTrack.appendChild(bar);
+      });
+      row.appendChild(laneTrack);
+      zoom.appendChild(row);
+    });
+
+    var windowEvents = data.events.filter(function (event) {
+      return eventVisible(event) && ["research", "training", "competition"].includes(event.category) && parseDate(event.start) <= windowEnd && parseDate(event.end) >= windowStart;
+    });
+    if (!selectedEvent || !windowEvents.some(function (event) { return event.id === selectedEvent.id; })) selectedEvent = windowEvents[0] || null;
+    renderDetail(progressDetail, selectedEvent, "这个窗口内没有启用的研发、演练或比赛事件。", windowEvents, "窗口节点");
+    bindOverviewTargets(zoom, progressDetail);
+    bindMonthJumpTargets(zoom);
+  }
+
   function renderOverview() {
     var container = root.querySelector("[data-season-overview]");
     var start = parseDate(data.season.start);
@@ -260,7 +411,10 @@
       var segmentStart = cursor < start ? start : cursor;
       var nextMonth = new Date(cursor.getFullYear(), cursor.getMonth() + 1, 1);
       var segmentEnd = addDays(nextMonth, -1) > end ? end : addDays(nextMonth, -1);
-      var segment = createElement("span", "", (cursor.getMonth() + 1) + "月");
+      var segment = createElement("button", "", (cursor.getMonth() + 1) + "月");
+      segment.type = "button";
+      segment.dataset.jumpMonth = monthKey(cursor);
+      segment.setAttribute("aria-label", "查看" + fullMonthLabel(cursor));
       segment.style.width = ((daysBetween(segmentStart, segmentEnd) + 1) / seasonDays * 100) + "%";
       months.appendChild(segment);
       cursor = nextMonth;
@@ -297,22 +451,52 @@
       container.appendChild(row);
     });
 
-    bindOverviewTargets(container);
+    bindOverviewTargets(container, overviewDetail);
+    bindMonthJumpTargets(container);
     var firstVisible = data.events.find(eventVisible);
     renderDetail(overviewDetail, selectedEvent && eventVisible(selectedEvent) ? selectedEvent : firstVisible, "当前没有启用的事件分类。");
   }
 
-  function bindOverviewTargets(container) {
+  function bindOverviewTargets(container, detailContainer) {
     container.querySelectorAll("[data-event-id]").forEach(function (target) {
       target.addEventListener("click", function () {
         selectedEvent = eventForId(target.dataset.eventId);
-        renderDetail(overviewDetail, selectedEvent, "");
+        renderDetail(detailContainer || overviewDetail, selectedEvent, "");
       });
       target.addEventListener("mouseenter", showTooltip);
       target.addEventListener("mousemove", moveTooltip);
       target.addEventListener("mouseleave", hideTooltip);
       target.addEventListener("focus", showTooltip);
       target.addEventListener("blur", hideTooltip);
+    });
+  }
+
+  function activateView(view) {
+    document.querySelectorAll("[data-season-view]").forEach(function (item) {
+      var active = item.dataset.seasonView === view;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
+    root.querySelectorAll("[data-season-panel]").forEach(function (panel) {
+      var active = panel.dataset.seasonPanel === view;
+      panel.classList.toggle("is-active", active);
+      panel.hidden = !active;
+    });
+    if (view === "progress") renderProgressWindow();
+    if (view === "month") renderMonth();
+    if (view === "node") renderOverview();
+  }
+
+  function jumpToMonth(key) {
+    monthCursor = parseDate(key + "-01");
+    selectedEvent = null;
+    activateView("month");
+    root.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function bindMonthJumpTargets(container) {
+    container.querySelectorAll("[data-jump-month]").forEach(function (button) {
+      button.addEventListener("click", function () { jumpToMonth(button.dataset.jumpMonth); });
     });
   }
 
@@ -328,24 +512,20 @@
     renderMonth();
   });
 
-  root.querySelectorAll("[data-season-view]").forEach(function (button) {
+  root.querySelector("[data-progress-anchor]").addEventListener("input", function (event) {
+    progressWindowIndex = Number(event.currentTarget.value);
+    selectedEvent = null;
+    renderProgressWindow();
+  });
+
+  document.querySelectorAll("[data-season-view]").forEach(function (button) {
     button.addEventListener("click", function () {
-      var view = button.dataset.seasonView;
-      root.querySelectorAll("[data-season-view]").forEach(function (item) {
-        var active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-selected", String(active));
-      });
-      root.querySelectorAll("[data-season-panel]").forEach(function (panel) {
-        var active = panel.dataset.seasonPanel === view;
-        panel.classList.toggle("is-active", active);
-        panel.hidden = !active;
-      });
-      if (view === "overview") renderOverview();
+      activateView(button.dataset.seasonView);
     });
   });
 
   renderFilters();
   renderMonth();
+  renderProgress();
   renderOverview();
 }());
