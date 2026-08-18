@@ -3540,6 +3540,12 @@
   color: var(--text) !important;
 }
 
+.season-event--major {
+  outline: 1px solid var(--text);
+  outline-offset: 1px;
+  font-weight: 700 !important;
+}
+
 .season-day-more {
   color: var(--subtle);
   font-family: Arial, sans-serif;

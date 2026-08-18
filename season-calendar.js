@@ -69,6 +69,7 @@
   function applyEventStyle(element, event) {
     element.style.setProperty("--event-color", data.categories[event.category].color);
     element.classList.add("season-event--" + event.status);
+    if (event.importance === "major") element.classList.add("season-event--major");
     element.dataset.eventId = event.id;
   }
 
@@ -169,7 +170,9 @@
     }
     var category = data.categories[event.category];
     container.style.setProperty("--event-color", category.color);
-    var meta = createElement("p", "season-detail-meta", category.label + " / " + statusLabels[event.status]);
+    var metaText = category.label + " / " + statusLabels[event.status];
+    if (event.importance === "major") metaText += " / 重点标记";
+    var meta = createElement("p", "season-detail-meta", metaText);
     var title = createElement("h4", "", event.title);
     var range = createElement("p", "season-detail-range", dateRange(event));
     var description = createElement("p", "season-detail-description", event.description);
@@ -222,7 +225,8 @@
   function showTooltip(pointerEvent) {
     var event = eventForId(pointerEvent.currentTarget.dataset.eventId);
     if (!event) return;
-    tooltip.innerHTML = "<strong>" + event.title + "</strong><span>" + dateRange(event) + "</span><small>" + statusLabels[event.status] + " · " + data.categories[event.category].label + "</small>";
+    var importance = event.importance === "major" ? " · 重点标记" : "";
+    tooltip.innerHTML = "<strong>" + event.title + "</strong><span>" + dateRange(event) + "</span><small>" + statusLabels[event.status] + " · " + data.categories[event.category].label + importance + "</small>";
     tooltip.hidden = false;
     moveTooltip(pointerEvent);
   }

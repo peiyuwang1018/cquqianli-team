@@ -15,6 +15,7 @@
       activity: { label: "队伍活动", color: "#d7a33d", icon: "mdi-account-group-outline" },
       training: { label: "集训演练", color: "#39bdd0", icon: "mdi-robot-industrial-outline" },
       academic: { label: "校历约束", color: "#747d88", icon: "mdi-school-outline" },
+      festival: { label: "节日活动", color: "#b985ff", icon: "mdi-party-popper" },
       memorial: { label: "纪念节点", color: "#e8568a", icon: "mdi-star-outline" }
     },
     lanes: [
@@ -26,12 +27,12 @@
     ],
     months: {
       "2026-08": "新赛季重启：复盘上一程，也为下一程建立问题清单。",
-      "2026-09": "预研换挡：完成招新，也把方向收束成可以验证的方案。",
-      "2026-10": "集训与交流：让外部经验进入规则理解和技术路线。",
+      "2026-09": "开学、招新与中秋：新成员和新方案一起进入赛季。",
+      "2026-10": "集训、交流与规则周：让外部经验进入技术路线。",
       "2026-11": "集中研发开启：明确架构、接口与第一轮交付目标。",
-      "2026-12": "稳定迭代：用样机、测试和记录消除系统不确定性。",
-      "2027-01": "学业优先：考试期降低强度，随后进入寒假集中推进。",
-      "2027-02": "寒训收束：把研发成果转成可维护、可训练的整机状态。",
+      "2026-12": "稳定迭代与复习切换：在圣诞活动后逐步降低研发强度。",
+      "2027-01": "学业优先：完成考试后，用春节前窗口集中推进。",
+      "2027-02": "春节、返校与再出发：从假期节奏切回研发和训练。",
       "2027-03": "返校与联盟赛窗口：研发、训练和实战开始并行。",
       "2027-04": "验收与战术演练：整机问题必须在赛场压力前暴露。",
       "2027-05": "分区赛窗口：围绕可靠性、操作与临场协作完成交付。",
@@ -65,6 +66,30 @@
         source: "队内规划"
       },
       {
+        id: "fall-registration",
+        title: "第一学期报到注册",
+        shortTitle: "报到注册",
+        category: "academic",
+        lane: "milestone",
+        start: "2026-09-05",
+        end: "2026-09-05",
+        status: "confirmed",
+        description: "2026-2027 学年第一学期学生报到注册。",
+        source: "重庆大学 2026-2027 学年第一学期校历"
+      },
+      {
+        id: "fall-teaching",
+        title: "第一学期行课期",
+        shortTitle: "第一学期行课",
+        category: "academic",
+        lane: "academic",
+        start: "2026-09-07",
+        end: "2027-01-10",
+        status: "confirmed",
+        description: "第一学期共 18 个教学周，研发和训练安排需同时考虑课程负担。",
+        source: "重庆大学 2026-2027 学年第一学期校历"
+      },
+      {
         id: "autumn-recruitment",
         title: "27 赛季秋季招新",
         shortTitle: "秋季招新",
@@ -89,6 +114,18 @@
         source: "队内规划"
       },
       {
+        id: "mid-autumn",
+        title: "欢度中秋",
+        shortTitle: "欢度中秋",
+        category: "festival",
+        lane: "activity",
+        start: "2026-09-25",
+        end: "2026-09-25",
+        status: "confirmed",
+        description: "队伍中秋活动节点，在集中研发之外保留共同庆祝与成员交流的时间。",
+        source: "重庆大学校历与队伍活动惯例"
+      },
+      {
         id: "national-day-training",
         title: "国庆集训与交流期",
         shortTitle: "国庆集训",
@@ -99,6 +136,18 @@
         status: "confirmed",
         description: "部分成员前往其他学校交流，其余成员特别是梯队在校集中培训并完成阶段任务。",
         source: "队内规划"
+      },
+      {
+        id: "halloween",
+        title: "万圣节小活动",
+        shortTitle: "万圣节活动",
+        category: "festival",
+        lane: "activity",
+        start: "2026-10-31",
+        end: "2026-10-31",
+        status: "confirmed",
+        description: "队内轻量节日活动，作为规则周与集中研发切换前的小型交流节点。",
+        source: "队伍活动惯例"
       },
       {
         id: "rules-week",
@@ -121,8 +170,20 @@
         start: "2026-11-01",
         end: "2027-01-03",
         status: "tentative",
-        description: "从规则发布周结束后进入集中研发，当前暂按 1 月 3 日结束，待校历确定。",
-        source: "队内规划，结束日待校历校准"
+        description: "从规则发布周结束后进入集中研发，并在集中考试周前一周到来之前收束。",
+        source: "队内规划与重庆大学校历"
+      },
+      {
+        id: "christmas",
+        title: "圣诞节小活动",
+        shortTitle: "圣诞节活动",
+        category: "festival",
+        lane: "activity",
+        start: "2026-12-25",
+        end: "2026-12-25",
+        status: "confirmed",
+        description: "队内轻量节日活动，在期末复习节奏开始前为成员保留短暂交流时间。",
+        source: "队伍活动惯例"
       },
       {
         id: "exam-review",
@@ -130,11 +191,23 @@
         shortTitle: "弹性复习期",
         category: "academic",
         lane: "academic",
-        start: "2026-12-21",
-        end: "2027-01-03",
-        status: "tentative",
-        description: "暂按集中考试周前两周设置；如无必要不要求到实验室打卡，优先完成课程复习。",
-        source: "队内原则，日期待校历校准"
+        start: "2026-12-28",
+        end: "2027-01-10",
+        status: "confirmed",
+        description: "集中考试周前两周实行弹性工作；如无必要不要求到实验室打卡，优先完成课程复习。",
+        source: "队内原则与重庆大学校历"
+      },
+      {
+        id: "new-years-day",
+        title: "元旦",
+        shortTitle: "元旦",
+        category: "festival",
+        lane: "milestone",
+        start: "2027-01-01",
+        end: "2027-01-01",
+        status: "confirmed",
+        description: "法定节假日，也是上半段集中研发收束阶段的重要时间标记。",
+        source: "重庆大学 2026-2027 学年第一学期校历"
       },
       {
         id: "exam-weeks",
@@ -142,11 +215,23 @@
         shortTitle: "集中考试周",
         category: "academic",
         lane: "academic",
-        start: "2027-01-04",
-        end: "2027-01-17",
-        status: "tentative",
-        description: "当前用连续两周作占位，期间研发与训练原则上降至最低强度。",
-        source: "临时占位，待重庆大学校历校准"
+        start: "2027-01-11",
+        end: "2027-01-24",
+        status: "confirmed",
+        description: "第一学期集中考试阶段，研发与训练原则上降至最低强度。",
+        source: "重庆大学 2026-2027 学年第一学期校历"
+      },
+      {
+        id: "winter-vacation",
+        title: "寒假",
+        shortTitle: "寒假",
+        category: "academic",
+        lane: "academic",
+        start: "2027-01-25",
+        end: "2027-02-21",
+        status: "confirmed",
+        description: "第一学期校历安排的四周寒假，其中春节前一周结束前安排队伍寒训。",
+        source: "重庆大学 2026-2027 学年第一学期校历"
       },
       {
         id: "winter-training",
@@ -154,23 +239,48 @@
         shortTitle: "寒假集训",
         category: "training",
         lane: "activity",
-        start: "2027-01-18",
+        start: "2027-01-25",
         end: "2027-01-30",
-        status: "tentative",
-        description: "暂按第二个集中考试周结束后开始，并在春节前一周结束。2027 年春节为 2 月 6 日。",
-        source: "依据队内原则与 2027 年春节日期推算"
+        status: "derived",
+        description: "集中考试第二周结束后开始，并在春节前一周结束。2027 年春节为 2 月 6 日。",
+        source: "依据队内原则、重庆大学校历与春节日期推算"
+      },
+      {
+        id: "spring-festival",
+        title: "春节",
+        shortTitle: "春节",
+        category: "festival",
+        lane: "milestone",
+        start: "2027-02-06",
+        end: "2027-02-06",
+        status: "confirmed",
+        importance: "major",
+        description: "农历新年，是寒假期间最重要的节日节点；寒训在此前一周结束，为成员返乡团聚预留完整时间。",
+        source: "重庆大学校历"
       },
       {
         id: "spring-return",
-        title: "春季返校",
-        shortTitle: "返校",
+        title: "第二学期报到注册",
+        shortTitle: "返校报到",
         category: "academic",
         lane: "milestone",
-        start: "2027-03-01",
-        end: "2027-03-01",
-        status: "tentative",
-        description: "当前以 3 月 1 日作为返校与下半段研发起点，待校历修正。",
-        source: "临时占位"
+        start: "2027-02-20",
+        end: "2027-02-20",
+        status: "confirmed",
+        description: "第二学期报到注册，队伍由假期节奏切换回校内研发与训练。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "spring-teaching",
+        title: "第二学期行课期",
+        shortTitle: "第二学期行课",
+        category: "academic",
+        lane: "academic",
+        start: "2027-02-22",
+        end: "2027-06-20",
+        status: "confirmed",
+        description: "第二学期共 17 个教学周，包含分区赛备赛和赛后研发阶段。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
       },
       {
         id: "lower-rd",
@@ -178,11 +288,11 @@
         shortTitle: "集中研发（下）",
         category: "research",
         lane: "research",
-        start: "2027-03-01",
+        start: "2027-02-22",
         end: "2027-04-16",
         status: "tentative",
-        description: "从返校持续到分区赛前三周左右，并与分区赛战术演练阶段保留约一周重合。",
-        source: "队内节奏推算"
+        description: "从第二学期正式行课开始持续到分区赛前三周左右，并与分区赛战术演练阶段保留约一周重合。",
+        source: "队内节奏与重庆大学校历推算"
       },
       {
         id: "rmul-window",
@@ -279,6 +389,102 @@
         status: "derived",
         description: "复盘比赛数据与故障，完成国赛版本的取舍、修复和再验证。",
         source: "由暂定比赛窗口推算"
+      },
+      {
+        id: "qingming-festival",
+        title: "清明节",
+        shortTitle: "清明节",
+        category: "festival",
+        lane: "milestone",
+        start: "2027-04-05",
+        end: "2027-04-05",
+        status: "confirmed",
+        description: "校历标注的法定节假日，赛前验收安排需为成员出行与纪念活动保留弹性。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "spring-sports-meeting",
+        title: "重庆大学春季运动会",
+        shortTitle: "春季运动会",
+        category: "academic",
+        lane: "activity",
+        start: "2027-04-09",
+        end: "2027-04-10",
+        status: "confirmed",
+        description: "学校春季运动会，需避免与大型验收或高强度训练安排冲突。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "labour-day",
+        title: "劳动节",
+        shortTitle: "劳动节",
+        category: "festival",
+        lane: "milestone",
+        start: "2027-05-01",
+        end: "2027-05-01",
+        status: "confirmed",
+        description: "校历标注的法定节假日，临近分区赛时仍需单独确认训练和出行安排。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "dragon-boat-festival",
+        title: "端午节",
+        shortTitle: "端午节",
+        category: "festival",
+        lane: "milestone",
+        start: "2027-06-09",
+        end: "2027-06-09",
+        status: "confirmed",
+        description: "校历标注的法定节假日，处于分区赛复盘与期末复习阶段。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "spring-exam-review",
+        title: "第二学期考试复习弹性工作期",
+        shortTitle: "弹性复习期",
+        category: "academic",
+        lane: "academic",
+        start: "2027-06-07",
+        end: "2027-06-20",
+        status: "confirmed",
+        description: "集中考试周前两周实行弹性工作，国赛研发保留必要任务，其余成员优先完成课程复习。",
+        source: "队内原则与重庆大学校历"
+      },
+      {
+        id: "spring-exam-week",
+        title: "第二学期集中考试周",
+        shortTitle: "集中考试周",
+        category: "academic",
+        lane: "academic",
+        start: "2027-06-21",
+        end: "2027-06-27",
+        status: "confirmed",
+        description: "第二学期集中考试周，研发与训练原则上降至最低强度。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "short-semester",
+        title: "短教学周",
+        shortTitle: "短教学周",
+        category: "academic",
+        lane: "academic",
+        start: "2027-06-28",
+        end: "2027-07-11",
+        status: "confirmed",
+        description: "校历安排的两周短教学周，与全国赛战术演练阶段并行。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
+      },
+      {
+        id: "summer-vacation",
+        title: "暑假",
+        shortTitle: "暑假",
+        category: "academic",
+        lane: "academic",
+        start: "2027-07-12",
+        end: "2027-08-10",
+        status: "confirmed",
+        description: "校历暑假自 7 月 12 日开始并持续八周；本日历仅显示至 2027 赛季交接日。",
+        source: "重庆大学 2026-2027 学年第二学期校历"
       },
       {
         id: "national-rehearsal",
