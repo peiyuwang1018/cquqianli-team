@@ -16,7 +16,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="styles.css?v=20260818-28" />
+    <link rel="stylesheet" href="styles.css?v=20260818-30" />
     <link rel="icon" type="image/png" href="assets/brand/千里马头logo.PNG" />
   </head>
   <body data-page="frontline">
@@ -43,6 +43,7 @@
             <button class="is-active" type="button" role="tab" aria-selected="true" data-season-view="progress"><i class="mdi mdi-ray-start-arrow" aria-hidden="true"></i><span>进度视角</span></button>
             <button type="button" role="tab" aria-selected="false" data-season-view="month"><i class="mdi mdi-calendar-month-outline" aria-hidden="true"></i><span>月份视角</span></button>
             <button type="button" role="tab" aria-selected="false" data-season-view="node"><i class="mdi mdi-timeline-outline" aria-hidden="true"></i><span>节点视角</span></button>
+            <button type="button" role="tab" aria-selected="false" data-season-view="memo"><i class="mdi mdi-notebook-check-outline" aria-hidden="true"></i><span>备忘录视角</span></button>
           </div>
         </div>
       </section>
@@ -105,6 +106,14 @@
           <aside class="season-event-detail season-event-detail--overview" data-overview-detail aria-live="polite"></aside>
         </section>
 
+        <section class="season-view" data-season-panel="memo" role="tabpanel" hidden>
+          <div class="season-memo-head">
+            <div><p class="page-label">OFFICIAL MEMO</p><h3>赛季官方节点备忘</h3></div>
+            <p>仅收录赛事官方要求事项；日期将在参赛手册和官方通知发布后校准。</p>
+          </div>
+          <div class="season-memo-list" data-season-memo></div>
+        </section>
+
         <p class="season-calendar-source"><i class="mdi mdi-information-outline" aria-hidden="true"></i>校历节点依据重庆大学 2026-2027 学年校历；官方考核与比赛窗口仍会随正式参赛资料更新。</p>
         <div class="season-tooltip" data-season-tooltip role="tooltip" hidden></div>
       </section>
@@ -114,8 +123,8 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
-    <script src="season-calendar-data.js?v=20260818-4"></script>
-    <script src="season-calendar.js?v=20260818-5"></script>
+    <script src="season-calendar-data.js?v=20260818-5"></script>
+    <script src="season-calendar.js?v=20260818-6"></script>
     <script src="script.js?v=20260817-5"></script>
   </body>
 </html>

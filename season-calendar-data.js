@@ -9,14 +9,14 @@
       defaultMonth: "2026-08"
     },
     categories: {
-      research: { label: "研发阶段", color: "#f0b44d", icon: "mdi-flask-outline" },
-      official: { label: "官方节点", color: "#4c8dff", icon: "mdi-flag-outline" },
-      competition: { label: "比赛周期", color: "#ff6268", icon: "mdi-trophy-outline" },
-      activity: { label: "队伍活动", color: "#d97b59", icon: "mdi-account-group-outline" },
-      training: { label: "集训演练", color: "#39bdd0", icon: "mdi-robot-industrial-outline" },
-      academic: { label: "校历约束", color: "#747d88", icon: "mdi-school-outline" },
-      festival: { label: "节日活动", color: "#b985ff", icon: "mdi-party-popper" },
-      memorial: { label: "纪念节点", color: "#e8568a", icon: "mdi-star-outline" }
+      research: { label: "研发阶段", color: "#e7c88f", icon: "mdi-flask-outline" },
+      official: { label: "官方节点", color: "#a9c4e8", icon: "mdi-flag-outline" },
+      competition: { label: "比赛周期", color: "#e7a5ad", icon: "mdi-trophy-outline" },
+      activity: { label: "队伍活动", color: "#e6b39d", icon: "mdi-account-group-outline" },
+      training: { label: "集训演练", color: "#9fd5d8", icon: "mdi-robot-industrial-outline" },
+      academic: { label: "校历约束", color: "#b2bac4", icon: "mdi-school-outline" },
+      festival: { label: "节日活动", color: "#ceb4df", icon: "mdi-party-popper" },
+      memorial: { label: "纪念节点", color: "#e4afc3", icon: "mdi-star-outline" }
     },
     lanes: [
       { id: "research", label: "研发阶段" },
@@ -40,19 +40,43 @@
       "2027-07": "全国赛冲刺：训练、保障和版本冻结围绕赛场展开。",
       "2027-08": "总决赛、总结与交接：把一年的经验留给下一赛季。"
     },
+    progressMonthWeights: {
+      "2026-08": 0.65,
+      "2026-09": 0.85,
+      "2026-10": 0.9,
+      "2026-11": 0.9,
+      "2026-12": 0.85,
+      "2027-01": 0.8,
+      "2027-02": 0.8,
+      "2027-03": 1.35,
+      "2027-04": 0.9,
+      "2027-05": 1.65,
+      "2027-06": 0.9,
+      "2027-07": 1.55,
+      "2027-08": 1.2
+    },
     progressStages: [
-      { id: "stage-pre-1", title: "预研一期", type: "research", start: "2026-08-11", end: "2026-09-07" },
-      { id: "stage-pre-2", title: "预研二期", type: "research", start: "2026-09-08", end: "2026-10-31" },
-      { id: "stage-upper-rd", title: "上半段集中研发", type: "research", start: "2026-11-01", end: "2027-01-03" },
-      { id: "stage-transition", title: "节奏切换", type: "pause", start: "2027-01-04", end: "2027-01-24" },
-      { id: "stage-winter", title: "休整与寒训", type: "training", start: "2027-01-25", end: "2027-02-21" },
-      { id: "stage-lower-rd", title: "下半段集中研发", type: "research", start: "2027-02-22", end: "2027-04-09" },
-      { id: "stage-regional-training", title: "分区赛战术演练", type: "training", start: "2027-04-10", end: "2027-05-07" },
-      { id: "stage-regional", title: "分区赛窗口", type: "competition", start: "2027-05-08", end: "2027-05-23" },
-      { id: "stage-national-rd", title: "国赛版本研发", type: "research", start: "2027-05-24", end: "2027-06-27" },
-      { id: "stage-national-training", title: "全国赛战术演练", type: "training", start: "2027-06-28", end: "2027-07-25" },
-      { id: "stage-national", title: "全国赛窗口", type: "competition", start: "2027-07-26", end: "2027-08-08" },
-      { id: "stage-handover", title: "总结交接", type: "pause", start: "2027-08-09", end: "2027-08-10" }
+      { id: "stage-pre-1", title: "预研一期", type: "research", color: "#d9c39a", start: "2026-08-11", end: "2026-09-07" },
+      { id: "stage-pre-2", title: "预研二期", type: "research", color: "#cbb993", start: "2026-09-08", end: "2026-10-31" },
+      { id: "stage-upper-rd", title: "上半赛季正式研发期", type: "research", color: "#a9cbb9", start: "2026-11-01", end: "2027-01-24" },
+      { id: "stage-winter", title: "寒假集训期", type: "training", color: "#a6d2dc", start: "2027-01-25", end: "2027-01-30" },
+      { id: "stage-lower-rd", title: "下半赛季正式研发期", type: "research", color: "#b6c3e2", start: "2027-02-22", end: "2027-04-09" },
+      { id: "stage-regional-training", title: "分区赛战术演练", type: "training", color: "#afd2c9", start: "2027-04-10", end: "2027-05-07" },
+      { id: "stage-regional", title: "分区赛窗口", type: "competition", color: "#dfa7b0", start: "2027-05-08", end: "2027-05-23" },
+      { id: "stage-national-rd", title: "国赛版本研发", type: "research", color: "#c6bcdf", start: "2027-05-24", end: "2027-06-27" },
+      { id: "stage-national-training", title: "全国赛战术演练", type: "training", color: "#a9ced8", start: "2027-06-28", end: "2027-07-25" },
+      { id: "stage-national", title: "全国赛窗口", type: "competition", color: "#dda4ad", start: "2027-07-26", end: "2027-08-08" },
+      { id: "stage-handover", title: "总结交接", type: "pause", color: "#b7bec8", start: "2027-08-09", end: "2027-08-10" }
+    ],
+    progressHighlights: [
+      { id: "highlight-national-day", title: "国庆交流集训期", type: "training", color: "#a9d4ce", start: "2026-10-01", end: "2026-10-07" },
+      { id: "highlight-rmul", title: "联盟赛窗口", type: "competition", color: "#dfa7b0", start: "2027-03-20", end: "2027-03-26" }
+    ],
+    officialMemo: [
+      { id: "memo-rules", title: "规则发布周", dateLabel: "2026 年 10 月 25 日 - 31 日", status: "tentative", note: "当前按十月最后一周预留，等待当赛季官方通知校准。" },
+      { id: "memo-rmuc-mid", title: "RMUC 中期考核", dateLabel: "日期待官方公布", status: "pending", note: "收到参赛手册后补充提交窗口、材料要求和责任人。" },
+      { id: "memo-rmul-form", title: "RMUL 完整形态考核", dateLabel: "日期待官方公布", status: "pending", note: "仅保留官方要求节点，联盟赛比赛日程另在月份视角维护。" },
+      { id: "memo-rmuc-form", title: "RMUC 完整形态考核", dateLabel: "日期待官方公布", status: "pending", note: "收到参赛手册后补充截止时间、考核内容和提交入口。" }
     ],
     events: [
       {
@@ -141,8 +165,8 @@
       },
       {
         id: "national-day-training",
-        title: "国庆集训与交流期",
-        shortTitle: "国庆集训",
+        title: "国庆交流集训期",
+        shortTitle: "国庆交流集训",
         category: "training",
         lane: "activity",
         start: "2026-10-01",
@@ -177,14 +201,14 @@
       },
       {
         id: "upper-rd",
-        title: "上半段集中研发期",
-        shortTitle: "集中研发（上）",
+        title: "上半赛季正式研发期",
+        shortTitle: "正式研发（上）",
         category: "research",
         lane: "research",
         start: "2026-11-01",
-        end: "2027-01-03",
+        end: "2027-01-24",
         status: "tentative",
-        description: "从规则发布周结束后进入集中研发，并在集中考试周前一周到来之前收束。",
+        description: "从规则发布周结束后进入正式研发；主进度延续至第一学期考试周结束，复习与考试期间按校历约束弹性执行。",
         source: "队内规划与重庆大学校历"
       },
       {
@@ -220,7 +244,7 @@
         start: "2027-01-01",
         end: "2027-01-01",
         status: "confirmed",
-        description: "法定节假日，也是上半段集中研发收束阶段的重要时间标记。",
+        description: "法定节假日，也是上半赛季正式研发期中的重要时间标记。",
         source: "重庆大学 2026-2027 学年第一学期校历"
       },
       {
@@ -244,7 +268,7 @@
         start: "2027-01-25",
         end: "2027-02-21",
         status: "confirmed",
-        description: "第一学期校历安排的四周寒假，其中春节前一周结束前安排队伍寒训。",
+        description: "第一学期校历安排的四周寒假，其中春节前一周结束前安排队伍寒假集训。",
         source: "重庆大学 2026-2027 学年第一学期校历"
       },
       {
@@ -298,8 +322,8 @@
       },
       {
         id: "lower-rd",
-        title: "下半段集中研发期",
-        shortTitle: "集中研发（下）",
+        title: "下半赛季正式研发期",
+        shortTitle: "正式研发（下）",
         category: "research",
         lane: "research",
         start: "2027-02-22",

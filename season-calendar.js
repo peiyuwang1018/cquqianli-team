@@ -14,6 +14,7 @@
   var monthDetail = root.querySelector("[data-season-detail]");
   var progressDetail = root.querySelector("[data-progress-detail]");
   var overviewDetail = root.querySelector("[data-overview-detail]");
+  var memoContainer = root.querySelector("[data-season-memo]");
   var tooltip = root.querySelector("[data-season-tooltip]");
   var progressWindowIndex = 0;
 
@@ -272,10 +273,60 @@
     return "#68707b";
   }
 
+  function progressAxis() {
+    var seasonStart = parseDate(data.season.start);
+    var seasonEnd = parseDate(data.season.end);
+    var offset = 0;
+    var items = seasonMonths().map(function (date) {
+      var start = date < seasonStart ? seasonStart : date;
+      var nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+      var end = addDays(nextMonth, -1) > seasonEnd ? seasonEnd : addDays(nextMonth, -1);
+      var weight = (data.progressMonthWeights && data.progressMonthWeights[monthKey(date)]) || 1;
+      var item = {
+        date: date,
+        start: start,
+        end: end,
+        days: daysBetween(start, end) + 1,
+        weight: weight,
+        offset: offset
+      };
+      offset += weight;
+      return item;
+    });
+    return { items: items, total: offset, start: seasonStart, end: seasonEnd };
+  }
+
+  function progressPoint(date, axis) {
+    if (date <= axis.start) return 0;
+    if (date > axis.end) return 100;
+    for (var index = 0; index < axis.items.length; index += 1) {
+      var item = axis.items[index];
+      if (date >= item.start && date <= item.end) {
+        var fraction = daysBetween(item.start, date) / item.days;
+        return (item.offset + fraction * item.weight) / axis.total * 100;
+      }
+    }
+    return 100;
+  }
+
+  function progressRange(start, end, axis) {
+    var left = progressPoint(start, axis);
+    var right = progressPoint(addDays(end, 1), axis);
+    return { left: left, width: Math.max(0.35, right - left) };
+  }
+
   function showProgressStageTooltip(pointerEvent) {
     var stage = data.progressStages.find(function (item) { return item.id === pointerEvent.currentTarget.dataset.progressId; });
     if (!stage) return;
     tooltip.innerHTML = "<strong>" + stage.title + "</strong><span>" + dateRange(stage) + "</span><small>赛季主进度</small>";
+    tooltip.hidden = false;
+    moveTooltip(pointerEvent);
+  }
+
+  function showProgressHighlightTooltip(pointerEvent) {
+    var highlight = data.progressHighlights.find(function (item) { return item.id === pointerEvent.currentTarget.dataset.progressHighlightId; });
+    if (!highlight) return;
+    tooltip.innerHTML = "<strong>" + highlight.title + "</strong><span>" + dateRange(highlight) + "</span><small>赛季重点窗口</small>";
     tooltip.hidden = false;
     moveTooltip(pointerEvent);
   }
@@ -285,19 +336,15 @@
     var track = root.querySelector("[data-progress-track]");
     var range = root.querySelector("[data-progress-anchor]");
     var months = seasonMonths();
-    var start = parseDate(data.season.start);
-    var end = parseDate(data.season.end);
-    var seasonDays = daysBetween(start, end) + 1;
+    var axis = progressAxis();
 
     monthsContainer.innerHTML = "";
-    months.forEach(function (date) {
-      var monthStart = date < start ? start : date;
-      var nextMonth = new Date(date.getFullYear(), date.getMonth() + 1, 1);
-      var monthEnd = addDays(nextMonth, -1) > end ? end : addDays(nextMonth, -1);
+    axis.items.forEach(function (item) {
+      var date = item.date;
       var button = createElement("button", "season-progress-month", compactMonthLabel(date));
       button.type = "button";
       button.dataset.jumpMonth = monthKey(date);
-      button.style.width = ((daysBetween(monthStart, monthEnd) + 1) / seasonDays * 100) + "%";
+      button.style.width = (item.weight / axis.total * 100) + "%";
       button.setAttribute("aria-label", "查看" + fullMonthLabel(date));
       monthsContainer.appendChild(button);
     });
@@ -307,9 +354,10 @@
       var segment = createElement("button", "season-progress-segment season-progress-segment--" + stage.type, stage.title);
       segment.type = "button";
       segment.dataset.progressId = stage.id;
-      segment.style.setProperty("--progress-color", progressTypeColor(stage.type));
-      segment.style.left = (daysBetween(start, parseDate(stage.start)) / seasonDays * 100) + "%";
-      segment.style.width = ((daysBetween(parseDate(stage.start), parseDate(stage.end)) + 1) / seasonDays * 100) + "%";
+      segment.style.setProperty("--progress-color", stage.color || progressTypeColor(stage.type));
+      var stageRange = progressRange(parseDate(stage.start), parseDate(stage.end), axis);
+      segment.style.left = stageRange.left + "%";
+      segment.style.width = stageRange.width + "%";
       segment.setAttribute("aria-label", stage.title + "，" + dateRange(stage));
       segment.addEventListener("mouseenter", showProgressStageTooltip);
       segment.addEventListener("mousemove", moveTooltip);
@@ -317,6 +365,22 @@
       segment.addEventListener("focus", showProgressStageTooltip);
       segment.addEventListener("blur", hideTooltip);
       track.appendChild(segment);
+    });
+    data.progressHighlights.forEach(function (highlight) {
+      var marker = createElement("button", "season-progress-highlight", highlight.title);
+      var highlightRange = progressRange(parseDate(highlight.start), parseDate(highlight.end), axis);
+      marker.type = "button";
+      marker.dataset.progressHighlightId = highlight.id;
+      marker.style.setProperty("--highlight-color", highlight.color || progressTypeColor(highlight.type));
+      marker.style.left = highlightRange.left + "%";
+      marker.style.width = highlightRange.width + "%";
+      marker.setAttribute("aria-label", highlight.title + "，" + dateRange(highlight));
+      marker.addEventListener("mouseenter", showProgressHighlightTooltip);
+      marker.addEventListener("mousemove", moveTooltip);
+      marker.addEventListener("mouseleave", hideTooltip);
+      marker.addEventListener("focus", showProgressHighlightTooltip);
+      marker.addEventListener("blur", hideTooltip);
+      track.appendChild(marker);
     });
     track.appendChild(createElement("div", "season-progress-window"));
 
@@ -335,9 +399,9 @@
     var months = seasonMonths();
     progressWindowIndex = Math.min(Number(range.value), Math.max(0, months.length - 3));
     var selectedMonths = months.slice(progressWindowIndex, progressWindowIndex + 3);
-    var seasonStart = parseDate(data.season.start);
-    var seasonEnd = parseDate(data.season.end);
-    var seasonDays = daysBetween(seasonStart, seasonEnd) + 1;
+    var axis = progressAxis();
+    var seasonStart = axis.start;
+    var seasonEnd = axis.end;
     var windowStart = selectedMonths[0] < seasonStart ? seasonStart : selectedMonths[0];
     var afterWindow = new Date(selectedMonths[selectedMonths.length - 1].getFullYear(), selectedMonths[selectedMonths.length - 1].getMonth() + 1, 1);
     var windowEnd = addDays(afterWindow, -1) > seasonEnd ? seasonEnd : addDays(afterWindow, -1);
@@ -345,8 +409,9 @@
     var label = fullMonthLabel(selectedMonths[0]) + " - " + compactMonthLabel(selectedMonths[selectedMonths.length - 1]);
     root.querySelector("[data-progress-window-label]").textContent = label;
     root.querySelector("[data-progress-window-title]").textContent = fullMonthLabel(selectedMonths[0]) + "至" + compactMonthLabel(selectedMonths[selectedMonths.length - 1]);
-    windowMarker.style.left = (daysBetween(seasonStart, windowStart) / seasonDays * 100) + "%";
-    windowMarker.style.width = (windowDays / seasonDays * 100) + "%";
+    var markerRange = progressRange(windowStart, windowEnd, axis);
+    windowMarker.style.left = markerRange.left + "%";
+    windowMarker.style.width = markerRange.width + "%";
 
     zoom.innerHTML = "";
     var ruler = createElement("div", "season-progress-zoom-ruler");
@@ -457,6 +522,26 @@
     renderDetail(overviewDetail, selectedEvent && eventVisible(selectedEvent) ? selectedEvent : firstVisible, "当前没有启用的事件分类。");
   }
 
+  function renderMemo() {
+    if (!memoContainer) return;
+    memoContainer.innerHTML = "";
+    var memoStatusLabels = { confirmed: "已确认", tentative: "暂定", pending: "待公布" };
+    data.officialMemo.forEach(function (item, index) {
+      var row = createElement("article", "season-memo-item season-memo-item--" + item.status);
+      var number = createElement("span", "season-memo-number", String(index + 1).padStart(2, "0"));
+      var main = createElement("div", "season-memo-main");
+      main.appendChild(createElement("h4", "", item.title));
+      main.appendChild(createElement("p", "season-memo-date", item.dateLabel));
+      var status = createElement("span", "season-memo-status", memoStatusLabels[item.status] || item.status);
+      var note = createElement("p", "season-memo-note", item.note);
+      row.appendChild(number);
+      row.appendChild(main);
+      row.appendChild(status);
+      row.appendChild(note);
+      memoContainer.appendChild(row);
+    });
+  }
+
   function bindOverviewTargets(container, detailContainer) {
     container.querySelectorAll("[data-event-id]").forEach(function (target) {
       target.addEventListener("click", function () {
@@ -472,6 +557,7 @@
   }
 
   function activateView(view) {
+    root.classList.toggle("is-memo-view", view === "memo");
     document.querySelectorAll("[data-season-view]").forEach(function (item) {
       var active = item.dataset.seasonView === view;
       item.classList.toggle("is-active", active);
@@ -485,6 +571,7 @@
     if (view === "progress") renderProgressWindow();
     if (view === "month") renderMonth();
     if (view === "node") renderOverview();
+    if (view === "memo") renderMemo();
   }
 
   function jumpToMonth(key) {
@@ -528,4 +615,5 @@
   renderMonth();
   renderProgress();
   renderOverview();
+  renderMemo();
 }());

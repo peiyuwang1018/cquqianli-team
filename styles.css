@@ -3537,7 +3537,7 @@
 }
 
 .season-event--derived {
-  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--event-color) 82%, transparent) 0 4px, color-mix(in srgb, var(--event-color) 28%, var(--card-bg)) 4px 8px) !important;
+  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--event-color) 58%, transparent) 0 4px, color-mix(in srgb, var(--event-color) 20%, var(--card-bg)) 4px 8px) !important;
   color: var(--text) !important;
 }
 
@@ -3938,7 +3938,7 @@
 }
 
 .season-view-switch {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   width: 100%;
 }
 
@@ -3953,6 +3953,14 @@
 .season-view-switch button i {
   margin-right: 5px;
   font-size: 15px;
+}
+
+.season-view-switch button.is-active,
+:root:not([data-theme="dark"]) .season-view-switch button.is-active {
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--line));
+  background: color-mix(in srgb, var(--accent) 20%, var(--card-bg));
+  color: var(--text);
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--accent) 70%, transparent);
 }
 
 .season-legend {
@@ -4054,7 +4062,7 @@
 
 .season-progress-track {
   position: relative;
-  height: 58px;
+  height: 68px;
   margin-top: 3px;
   overflow: hidden;
   background: var(--surface);
@@ -4064,15 +4072,19 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  display: flex;
+  align-items: flex-start;
   overflow: hidden;
-  padding: 0 8px;
+  padding: 11px 8px 0;
   border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--progress-color) 72%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--progress-color) 72%, transparent);
   border-right: 1px solid color-mix(in srgb, #101011 38%, transparent);
-  background: var(--progress-color);
-  color: #111;
+  background: color-mix(in srgb, var(--progress-color) 54%, var(--card-bg));
+  color: var(--text);
   font-family: Arial, "Microsoft YaHei", sans-serif !important;
   font-size: 10px;
-  line-height: 58px;
+  line-height: 1.2;
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -4080,7 +4092,26 @@
 }
 
 .season-progress-segment--pause {
-  color: #f4f4f4;
+  color: var(--muted);
+}
+
+.season-progress-highlight {
+  position: absolute;
+  z-index: 2;
+  bottom: 6px;
+  min-width: max-content;
+  height: 20px;
+  overflow: visible;
+  padding: 0 7px;
+  border: 1px solid color-mix(in srgb, var(--highlight-color) 82%, var(--line));
+  background: color-mix(in srgb, var(--highlight-color) 42%, var(--card-bg));
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif !important;
+  font-size: 9px;
+  line-height: 18px;
+  white-space: nowrap;
+  cursor: help;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--card-bg) 74%, transparent);
 }
 
 .season-progress-window {
@@ -4197,8 +4228,103 @@
   cursor: pointer;
 }
 
+.season-day-event:not(.season-event--tentative):not(.season-event--derived),
+.season-overview-bar:not(.season-event--tentative):not(.season-event--derived),
+.season-progress-zoom-bar:not(.season-event--tentative):not(.season-event--derived) {
+  border-top: 1px solid color-mix(in srgb, var(--event-color) 68%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--event-color) 68%, transparent);
+  background: color-mix(in srgb, var(--event-color) 54%, var(--card-bg));
+  color: var(--text);
+}
+
 .season-progress-detail {
   margin-top: 12px;
+}
+
+.season-calendar.is-memo-view .season-legend {
+  display: none;
+}
+
+.season-memo-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.season-memo-head h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.season-memo-head > p {
+  max-width: 620px;
+  font-size: 12px;
+}
+
+.season-memo-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.season-memo-item {
+  display: grid;
+  grid-template-columns: 56px minmax(220px, 0.75fr) 84px minmax(300px, 1.4fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 94px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.season-memo-item:first-child {
+  border-top: 0;
+}
+
+.season-memo-number {
+  color: var(--accent);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+}
+
+.season-memo-main h4 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.season-memo-date,
+.season-memo-note,
+.season-memo-status {
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+.season-memo-date {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.season-memo-status {
+  justify-self: start;
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, #a9c4e8 70%, var(--line));
+  background: color-mix(in srgb, #a9c4e8 16%, var(--card-bg));
+  color: var(--text);
+  font-size: 10px;
+}
+
+.season-memo-item--pending .season-memo-status {
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.season-memo-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
 }
 
 .season-overview-months button {
@@ -4251,6 +4377,16 @@
     flex-direction: column;
     gap: 8px;
   }
+
+  .season-memo-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .season-memo-item {
+    grid-template-columns: 42px minmax(190px, 0.8fr) 76px minmax(220px, 1.2fr);
+  }
 }
 
 @media (max-width: 620px) {
@@ -4259,18 +4395,18 @@
   }
 
   .season-view-switch {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .season-view-switch button {
     min-height: 38px;
-    padding: 0 5px;
-    font-size: 11px;
+    padding: 0 3px;
+    font-size: 10px;
   }
 
   .season-view-switch button i {
-    margin-right: 3px;
-    font-size: 15px;
+    margin-right: 2px;
+    font-size: 14px;
   }
 
   .season-progress-zoom-head h3 {
@@ -4279,6 +4415,17 @@
 
   .season-progress-master {
     padding: 12px;
+  }
+
+  .season-memo-item {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 10px;
+    min-height: 0;
+    padding: 15px 0;
+  }
+
+  .season-memo-note {
+    grid-column: 2 / -1;
   }
 
   .season-progress-months,
