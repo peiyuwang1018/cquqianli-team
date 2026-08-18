@@ -59,8 +59,8 @@
       { id: "stage-pre-1", title: "预研一期", type: "research", color: "#e4b958", start: "2026-08-11", end: "2026-09-07" },
       { id: "stage-pre-2", title: "预研二期", type: "research", color: "#cf9f4f", start: "2026-09-08", end: "2026-10-31" },
       { id: "stage-upper-rd", title: "上半赛季正式研发期", type: "research", color: "#67aa8b", start: "2026-11-01", end: "2027-01-24" },
-      { id: "stage-winter", title: "寒假集训期", type: "training", color: "#4eafc1", start: "2027-01-25", end: "2027-02-05" },
-      { id: "stage-spring-break", title: "春节假期", type: "pause", color: "#9aa6b5", start: "2027-02-06", end: "2027-02-21" },
+      { id: "stage-winter", title: "寒假集训期", type: "training", color: "#4eafc1", start: "2027-01-25", end: "2027-01-30" },
+      { id: "stage-spring-break", title: "春节假期", type: "pause", color: "#9aa6b5", start: "2027-01-31", end: "2027-02-21" },
       { id: "stage-lower-rd", title: "下半赛季正式研发期", type: "research", color: "#849cd0", start: "2027-02-22", end: "2027-04-09" },
       { id: "stage-regional-training", title: "分区赛战术演练", type: "training", color: "#65ad9b", start: "2027-04-10", end: "2027-05-07" },
       { id: "stage-regional", title: "分区赛窗口", type: "competition", color: "#d77986", start: "2027-05-08", end: "2027-05-23" },
@@ -279,9 +279,9 @@
         category: "training",
         lane: "activity",
         start: "2027-01-25",
-        end: "2027-02-05",
+        end: "2027-01-30",
         status: "derived",
-        description: "集中考试第二周结束后开始，持续至春节前；2027 年春节为 2 月 6 日。",
+        description: "集中考试第二周结束后开始，于春节前一周开始前结束；2027 年春节为 2 月 6 日。",
         source: "依据队内原则、重庆大学校历与春节日期推算"
       },
       {

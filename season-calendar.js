@@ -444,7 +444,7 @@
         applyEventStyle(bar, event);
         bar.style.left = (daysBetween(windowStart, visibleStart) / windowDays * 100) + "%";
         bar.style.width = ((daysBetween(visibleStart, visibleEnd) + 1) / windowDays * 100) + "%";
-        bar.style.top = (15 + (eventIndex % 2) * 32) + "px";
+        bar.style.top = (11 + (eventIndex % 2) * 25) + "px";
         bar.setAttribute("aria-label", event.title + "，" + dateRange(event));
         laneTrack.appendChild(bar);
       });

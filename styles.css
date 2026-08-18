@@ -4127,6 +4127,16 @@
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--card-bg) 74%, transparent);
 }
 
+.season-progress-highlight[data-progress-highlight-id="highlight-national-day"] {
+  bottom: 5px;
+  height: 28px;
+  padding: 0 9px;
+  border: 0;
+  background: color-mix(in srgb, var(--highlight-color) 66%, var(--card-bg));
+  line-height: 28px;
+  box-shadow: none;
+}
+
 .season-progress-window {
   position: absolute;
   z-index: 3;
@@ -4188,7 +4198,7 @@
 }
 
 .season-progress-zoom-ruler {
-  height: 46px;
+  height: 40px;
 }
 
 .season-progress-zoom-months {
@@ -4214,19 +4224,19 @@
 }
 
 .season-progress-zoom-row {
-  min-height: 92px;
+  min-height: 68px;
   border-top: 1px solid var(--line);
 }
 
 .season-progress-zoom-track {
   position: relative;
-  min-height: 92px;
+  min-height: 68px;
   background-image: linear-gradient(90deg, transparent calc(33.333% - 1px), var(--line) calc(33.333% - 1px) 33.333%, transparent 33.333% calc(66.666% - 1px), var(--line) calc(66.666% - 1px) 66.666%, transparent 66.666%);
 }
 
 .season-progress-zoom-bar {
   position: absolute;
-  height: 25px;
+  height: 21px;
   overflow: hidden;
   padding: 0 7px;
   border: 0;
@@ -4234,7 +4244,7 @@
   color: #111;
   font-family: Arial, "Microsoft YaHei", sans-serif !important;
   font-size: 10px;
-  line-height: 25px;
+  line-height: 21px;
   text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
