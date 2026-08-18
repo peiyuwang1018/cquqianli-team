@@ -427,15 +427,14 @@
     zoom.appendChild(ruler);
 
     [
-      { id: "research", label: "研发周期" },
-      { id: "training", label: "演练周期" },
-      { id: "competition", label: "比赛周期" }
+      { categories: ["research"], label: "研发周期" },
+      { categories: ["training", "competition"], label: "演练与比赛" }
     ].forEach(function (lane) {
       var row = createElement("div", "season-progress-zoom-row");
       row.appendChild(createElement("div", "season-progress-zoom-label", lane.label));
       var laneTrack = createElement("div", "season-progress-zoom-track");
       data.events.filter(function (event) {
-        return eventVisible(event) && event.category === lane.id && parseDate(event.start) <= windowEnd && parseDate(event.end) >= windowStart;
+        return eventVisible(event) && lane.categories.includes(event.category) && parseDate(event.start) <= windowEnd && parseDate(event.end) >= windowStart;
       }).forEach(function (event, eventIndex) {
         var visibleStart = parseDate(event.start) < windowStart ? windowStart : parseDate(event.start);
         var visibleEnd = parseDate(event.end) > windowEnd ? windowEnd : parseDate(event.end);
