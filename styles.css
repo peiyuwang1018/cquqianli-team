@@ -4111,29 +4111,19 @@
 .season-progress-highlight {
   position: absolute;
   z-index: 2;
-  bottom: 6px;
-  min-width: max-content;
-  height: 20px;
-  overflow: visible;
-  padding: 0 7px;
-  border: 1px solid color-mix(in srgb, var(--highlight-color) 82%, var(--line));
-  background: color-mix(in srgb, var(--highlight-color) 42%, var(--card-bg));
-  color: var(--text);
-  font-family: Arial, "Microsoft YaHei", sans-serif !important;
-  font-size: 9px;
-  line-height: 18px;
-  white-space: nowrap;
-  cursor: help;
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--card-bg) 74%, transparent);
-}
-
-.season-progress-highlight[data-progress-highlight-id="highlight-national-day"] {
   bottom: 5px;
+  min-width: max-content;
   height: 28px;
+  overflow: visible;
   padding: 0 9px;
   border: 0;
   background: color-mix(in srgb, var(--highlight-color) 66%, var(--card-bg));
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif !important;
+  font-size: 9px;
   line-height: 28px;
+  white-space: nowrap;
+  cursor: help;
   box-shadow: none;
 }
 
