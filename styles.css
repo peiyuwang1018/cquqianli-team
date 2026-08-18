@@ -3030,6 +3030,70 @@
   max-width: 650px;
 }
 
+.moment-list {
+  display: grid;
+}
+
+.moment-entry {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 156px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.moment-entry:last-child {
+  border-bottom: 0;
+}
+
+.moment-entry:hover,
+.moment-entry:focus-visible {
+  background: var(--surface);
+  outline: 0;
+}
+
+.moment-entry-icon {
+  color: var(--accent);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.moment-entry-copy {
+  min-width: 0;
+}
+
+.moment-entry-meta {
+  margin-bottom: 5px;
+  color: var(--accent);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.moment-entry h3 {
+  margin: 0 0 7px;
+  font-size: 21px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.moment-entry-copy > p:last-child {
+  max-width: 620px;
+  font-size: 14px;
+}
+
+.moment-entry-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
 .frontline-meta-list {
   margin: 0;
 }
@@ -3134,6 +3198,21 @@
 
   .frontline-empty > i {
     font-size: 34px;
+  }
+
+  .moment-entry {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px 0;
+  }
+
+  .moment-entry-icon {
+    font-size: 32px;
+  }
+
+  .moment-entry-action {
+    grid-column: 2;
+    justify-self: start;
   }
 
   .calendar-phase-grid {
