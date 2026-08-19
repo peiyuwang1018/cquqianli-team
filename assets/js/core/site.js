@@ -52,6 +52,7 @@ const quoteSource = document.querySelector("[data-quote-source]");
 const quoteButton = document.querySelector(".quote-random-button");
 const fallbackQuotes = [{ text: "运筹帷幄，决胜千里", source: "重庆大学 千里战队" }];
 const quotes = Array.isArray(window.QIANLI_QUOTES) && window.QIANLI_QUOTES.length ? window.QIANLI_QUOTES : fallbackQuotes;
+const quoteRotationMs = Number(window.QIANLI_QUOTE_ROTATION_MS) || 4000;
 let quoteIndex = 0;
 let quoteTimer = null;
 
@@ -81,7 +82,7 @@ function scheduleNextQuote() {
   window.clearInterval(quoteTimer);
   quoteTimer = window.setInterval(() => {
     updateQuote((quoteIndex + 1) % quotes.length);
-  }, 5000);
+  }, quoteRotationMs);
 }
 
 quoteButton?.addEventListener("click", () => {

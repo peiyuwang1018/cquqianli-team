@@ -1,4 +1,8 @@
-﻿window.QIANLI_QUOTES = [
+// Homepage quote settings. Add or edit entries as { text, source }.
+// Leave source empty when no attribution should be shown.
+window.QIANLI_QUOTE_ROTATION_MS = 4000;
+
+window.QIANLI_QUOTES = [
   { text: "运筹帷幄，决胜千里", source: "重庆大学 千里战队" },
   { text: "日拱一卒，功不唐捐", source: "上海交通大学 交龙战队" },
   { text: "理想臣服实践，勤恳铸就巅峰", source: "东北大学 TDT 战队" },
