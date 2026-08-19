@@ -332,6 +332,8 @@
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--card-bg);
+  color: inherit;
+  text-decoration: none;
   outline: none;
   transition:
     opacity 160ms linear,
@@ -377,10 +379,15 @@
 
 .org-card-head {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 5px 12px;
+  gap: 12px;
+}
+
+.org-card-title {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
 }
 
 .org-card-head h3 {
@@ -390,10 +397,47 @@
   line-height: 1.35;
 }
 
-.org-card-head > span {
+.org-card-title > span {
   color: var(--accent);
   font-size: 12px;
   line-height: 1.5;
+}
+
+.org-card-logo {
+  display: grid;
+  flex: 0 0 44px;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--accent);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.org-card-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%);
+}
+
+.org-card-logo--pair {
+  grid-template-columns: repeat(2, 1fr);
+  width: 56px;
+  flex-basis: 56px;
+}
+
+.org-card-logo--pair img {
+  width: 27px;
+  height: 27px;
+}
+
+:root[data-theme="dark"] .org-card-logo img {
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+:root[data-theme="dark"] .org-card-logo--pair img {
+  filter: none;
 }
 
 .org-card-detail {
@@ -2001,17 +2045,19 @@ html.has-recruit-letter {
 }
 
 .nav-dropdown {
-  gap: 4px;
-  padding: 12px;
+  min-width: 172px;
+  gap: 3px;
+  padding: 10px;
 }
 
 .nav-dropdown a.nav-item-with-icon {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 24px;
+  grid-template-columns: minmax(86px, max-content) 24px;
+  justify-content: start;
   align-items: center;
-  gap: 10px;
-  min-height: 38px;
-  padding: 4px 8px;
+  gap: 9px;
+  min-height: 34px;
+  padding: 3px 6px;
   transition:
     color 160ms ease,
     background-color 160ms ease;
@@ -2048,7 +2094,7 @@ html.has-recruit-letter {
 }
 
 .nav-dropdown a.nav-item-with-icon--unit {
-  grid-template-columns: minmax(0, 1fr) 48px;
+  grid-template-columns: minmax(86px, max-content) 48px;
 }
 
 .nav-item-logo-pair {
@@ -2147,15 +2193,11 @@ html.has-recruit-letter {
   transform: translate(-50%, 0) scale(1);
 }
 
-.nav-dropdown {
-  gap: 6px;
-}
-
 /* Organization mega menu: technical, responsibility and robot-unit groups. */
 .nav-dropdown--organization {
-  width: min(760px, calc(100vw - 40px));
+  width: min(800px, calc(100vw - 32px));
   min-width: 0;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   padding: 0;
 }
@@ -2163,9 +2205,9 @@ html.has-recruit-letter {
 .nav-dropdown-column {
   display: grid;
   align-content: start;
-  gap: 4px;
+  gap: 3px;
   min-width: 0;
-  padding: 14px;
+  padding: 10px;
 }
 
 .nav-dropdown-column + .nav-dropdown-column {
@@ -2176,9 +2218,9 @@ html.has-recruit-letter {
   display: flex;
   align-items: center;
   gap: 7px;
-  min-height: 38px;
-  margin-bottom: 3px;
-  padding: 3px 8px 8px;
+  min-height: 34px;
+  margin-bottom: 2px;
+  padding: 2px 6px 7px;
   border-bottom: 1px solid var(--line);
   color: var(--text);
 }
@@ -2197,6 +2239,11 @@ html.has-recruit-letter {
 
 .nav-dropdown--organization a.nav-item-with-icon {
   width: 100%;
+  grid-template-columns: minmax(86px, max-content) 24px;
+}
+
+.nav-dropdown--organization a.nav-item-with-icon--unit {
+  grid-template-columns: minmax(86px, max-content) 48px;
 }
 
 /* Dedicated robot-unit pages. */

@@ -22,9 +22,14 @@
   }
 
   function createCard(card) {
-    const article = document.createElement("article");
+    const article = document.createElement(card.href ? "a" : "article");
     article.className = "org-card";
-    article.tabIndex = 0;
+    if (card.href) {
+      article.href = card.href;
+      article.setAttribute("aria-label", `进入${card.title}页面`);
+    } else {
+      article.tabIndex = 0;
+    }
     if (card.id) article.id = card.id;
     if (card.variant) article.classList.add(`org-card--${card.variant}`);
     if (card.tone) article.classList.add(`org-card--tone-${card.tone}`);
@@ -32,14 +37,44 @@
     const head = document.createElement("div");
     head.className = "org-card-head";
 
+    const titleWrap = document.createElement("div");
+    titleWrap.className = "org-card-title";
+
     const title = document.createElement("h3");
     title.textContent = card.title;
-    head.appendChild(title);
+    titleWrap.appendChild(title);
 
     if (card.meta) {
       const meta = document.createElement("span");
       meta.textContent = card.meta;
-      head.appendChild(meta);
+      titleWrap.appendChild(meta);
+    }
+
+    head.appendChild(titleWrap);
+
+    if (card.logo || card.logos?.length || card.mdi) {
+      const logo = document.createElement("span");
+      logo.className = "org-card-logo";
+      logo.setAttribute("aria-hidden", "true");
+      if (card.logos?.length) {
+        logo.classList.add("org-card-logo--pair");
+        card.logos.forEach((source) => {
+          const image = document.createElement("img");
+          image.src = source;
+          image.alt = "";
+          logo.appendChild(image);
+        });
+      } else if (card.logo) {
+        const image = document.createElement("img");
+        image.src = card.logo;
+        image.alt = "";
+        logo.appendChild(image);
+      } else {
+        const icon = document.createElement("i");
+        icon.className = `mdi ${card.mdi}`;
+        logo.appendChild(icon);
+      }
+      head.appendChild(logo);
     }
 
     article.appendChild(head);

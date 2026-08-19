@@ -27,13 +27,6 @@ function buildNavigation(active) {
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/history.html"><span class="nav-item-label">发展历程</span><i class="mdi mdi-timeline-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
-          <span class="nav-menu">
-            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
-            <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
-            </span>
-          </span>
           <span class="nav-menu nav-menu--organization">
             <a${activeAttributes(active, "organization")} href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
@@ -57,6 +50,19 @@ function buildNavigation(active) {
                 <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-sentry.html"><span class="nav-item-label">步哨组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></span></a>
                 <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-aerial-dart.html"><span class="nav-item-label">空中飞镖组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></span></a>
               </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><strong>定位组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-advisors.html"><span class="nav-item-label">顾问层</span><i class="mdi mdi-account-tie-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">RM一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu">
@@ -72,7 +78,12 @@ function buildNavigation(active) {
           </span>
           <span class="nav-menu">
             <a${activeAttributes(active, "join")} href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">加入我们</span></a>
-            <span class="nav-dropdown"><a href="join/index.html#recruit">招新信息</a><a href="join/index.html#groups">各组方向</a><a href="join/index.html#persona">人才画像</a><a href="join/index.html#qa">Q&amp;A</a></span>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#persona"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
           </span>
           <a${activeAttributes(active, "contact")} href="contact/index.html" data-nav="contact"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系方式</span></a>
         </div>`;
@@ -94,7 +105,7 @@ for (const file of htmlFiles) {
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
   html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
-  html = html.replace(/styles\.css\?v=20260819-\d+/g, "styles.css?v=20260819-8");
+  html = html.replace(/styles\.css\?v=20260819-\d+/g, "styles.css?v=20260819-9");
   fs.writeFileSync(file, html);
 }
 

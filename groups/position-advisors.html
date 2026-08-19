@@ -4,8 +4,8 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队留言板，收集成员、校友、支持者与访客写给队伍的话。" />
-    <title>留言板 | 重庆大学千里战队</title>
+    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <title>顾问层 | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=20260819-9" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="archive">
+  <body data-page="organization">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -39,7 +39,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--organization">
-            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -77,7 +77,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a class="is-active" aria-current="page" href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -105,20 +105,9 @@
       </nav>
     </header>
     <main>
-      <section class="page-hero"><div><p class="page-label">MESSAGE BOARD</p><h1>留言板</h1></div><p>给队伍、赛季、成员和后来者留下可被看见的话。</p></section>
-      <section class="section-block split-section">
-        <div class="text-stack">
-          <h2>展示方式建议</h2>
-          <p>静态网站不能直接保存访客提交内容。正式上线时，推荐使用外部表单收集留言，审核后生成公开展示；这样比匿名即时发布更稳，也更适合队伍官网。</p>
-          <p>可选实现包括腾讯问卷/飞书表单收集、GitHub Issues 审核展示，或后续接入轻量数据库。当前页面先保留展示版式。</p>
-        </div>
-        <div class="message-wall">
-          <article><span>2026</span><p>愿后来者在这里看到曾经的热爱，也留下新的火种。</p><strong>千里战队</strong></article>
-          <article><span>校友</span><p>把训练场上的问题、夜里的调试和赛场边的瞬间，都认真记下来。</p><strong>待补充</strong></article>
-          <article><span>访客</span><p>这里可以放来自招新、开放日、比赛现场和校友回访的留言。</p><strong>待补充</strong></article>
-        </div>
-      </section>
-    </main>
+  <section class="page-hero"><div><p class="page-label">ADVISORY LAYER</p><h1>顾问层</h1></div><p>连接队伍历史经验、行业资源与长期发展的支持层。</p></section>
+  <section class="section-block text-stack"><h2>定位与职责</h2><p>顾问层主要由已退役但仍与战队保持紧密联系的成员构成，在技术路线、项目管理、行业经验和关键决策等方面提供建议。顾问不承担日常执行职责，但会在重要节点帮助团队补足视野与经验。</p></section>
+</main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
@@ -127,6 +116,9 @@
     <script src="assets/js/core/site.js?v=20260819-7"></script>
   </body>
 </html>
+
+
+
 
 
 

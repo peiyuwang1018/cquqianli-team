@@ -14,10 +14,10 @@
           note: "围绕机器人系统形成相互衔接的专业能力。",
           layout: "four",
           cards: [
-            { title: "机械", meta: "机器人本体", description: "负责结构、机构、加工装配、测试维护与机械系统迭代。", tone: "amber" },
-            { title: "电控", meta: "控制与软件", description: "负责机器人控制系统、运动控制、通信与整车软件集成。", tone: "blue" },
-            { title: "硬件", meta: "电气系统", description: "负责电路、电气连接、供电与全兵种硬件支持，不归属单一兵种。", variant: "global", tone: "green" },
-            { title: "视觉", meta: "感知与算法", description: "负责环境感知、目标识别、定位与赛场算法能力。", tone: "violet" },
+            { title: "机械", meta: "机器人本体", description: "负责结构、机构、加工装配、测试维护与机械系统迭代。", tone: "amber", href: "groups/mechanical.html", logo: "assets/images/brand/vector-icons/mechanical.svg" },
+            { title: "电控", meta: "控制与软件", description: "负责机器人控制系统、运动控制、通信与整车软件集成。", tone: "blue", href: "groups/control.html", logo: "assets/images/brand/vector-icons/control.svg" },
+            { title: "硬件", meta: "电气系统", description: "负责电路、电气连接、供电与全兵种硬件支持，不归属单一兵种。", variant: "global", tone: "green", href: "groups/hardware.html", logo: "assets/images/brand/vector-icons/hardware.svg" },
+            { title: "视觉", meta: "感知与算法", description: "负责环境感知、目标识别、定位与赛场算法能力。", tone: "violet", href: "groups/vision.html", logo: "assets/images/brand/vector-icons/vision.svg" },
           ],
         },
         {
@@ -26,7 +26,7 @@
           note: "面向全队提供长期、跨项目的传播和运营支持。",
           layout: "single",
           cards: [
-            { title: "宣传运营", meta: "全队覆盖", description: "统筹团队传播、活动组织与财务事务，不归属单一兵种。", tags: ["宣传设计", "组织策划", "财务管理"], variant: "global", tone: "rose" },
+            { title: "宣传运营", meta: "全队覆盖", description: "统筹团队传播、活动组织与财务事务，不归属单一兵种。", tags: ["宣传设计", "组织策划", "财务管理"], variant: "global", tone: "rose", href: "groups/operations.html", logo: "assets/images/brand/vector-icons/operations.svg" },
           ],
         },
       ],
@@ -49,6 +49,8 @@
               meta: "特殊职责组",
               description: "由常设管理职责与研发协调接口共同组成，承担跨组决策和资源协调。",
               variant: "management",
+              href: "groups/responsibility-management.html",
+              logo: "assets/images/brand/group-icons/horse.png",
               sections: [
                 { label: "常设管理职责", tags: ["指导老师", "队长", "项目管理", "质量管理", "运营经理"] },
                 { label: "研发协调接口", tags: ["技术组负责人", "兵种负责人"] },
@@ -62,8 +64,8 @@
           note: "按赛季需求组织，由相关技术组和兵种组队员兼任。",
           layout: "two",
           cards: [
-            { title: "基建效率组", meta: "设施、测试与工具", description: "研发服务机器人的场地设施、测试体系和效率工具。", tags: ["场地设施", "测试框架", "网站工具"], tone: "blue" },
-            { title: "竞技战术组", meta: "比赛准备与执行", description: "负责战术分析、赛场信息整理与操作手训练。", tags: ["战术分析", "操作手"], tone: "amber" },
+            { title: "基建效率组", meta: "设施、测试与工具", description: "研发服务机器人的场地设施、测试体系和效率工具。", tags: ["场地设施", "测试框架", "网站工具"], tone: "blue", href: "groups/responsibility-infrastructure.html", logo: "assets/images/brand/group-icons/infrastructure.png" },
+            { title: "竞技战术组", meta: "比赛准备与执行", description: "负责战术分析、赛场信息整理与操作手训练。", tags: ["战术分析", "操作手"], tone: "amber", href: "groups/responsibility-tactics.html", logo: "assets/images/brand/group-icons/horse.png" },
           ],
         },
         {
@@ -72,11 +74,11 @@
           note: "每个技术组独立建设培训体系，并在赛季交接阶段承担新人培养。",
           layout: "five",
           cards: [
-            { title: "机械培训", meta: "机械结构组", description: "负责机械设计、加工装配与工程实践能力培养。", tone: "amber" },
-            { title: "电控培训", meta: "电控组", description: "负责控制系统、软件工程与整车调试能力培养。", tone: "blue" },
-            { title: "硬件培训", meta: "硬件组", description: "负责电路、电气与硬件工程能力培养。", tone: "green" },
-            { title: "视觉培训", meta: "视觉组", description: "负责机器视觉、算法与感知能力培养。", tone: "violet" },
-            { title: "运营培训", meta: "运营组", description: "负责宣传设计、组织策划与财务管理能力培养。", tone: "rose" },
+            { title: "机械培训", meta: "机械结构组", description: "负责机械设计、加工装配与工程实践能力培养。", tone: "amber", href: "groups/mechanical.html", logo: "assets/images/brand/vector-icons/mechanical.svg" },
+            { title: "电控培训", meta: "电控组", description: "负责控制系统、软件工程与整车调试能力培养。", tone: "blue", href: "groups/control.html", logo: "assets/images/brand/vector-icons/control.svg" },
+            { title: "硬件培训", meta: "硬件组", description: "负责电路、电气与硬件工程能力培养。", tone: "green", href: "groups/hardware.html", logo: "assets/images/brand/vector-icons/hardware.svg" },
+            { title: "视觉培训", meta: "视觉组", description: "负责机器视觉、算法与感知能力培养。", tone: "violet", href: "groups/vision.html", logo: "assets/images/brand/vector-icons/vision.svg" },
+            { title: "运营培训", meta: "运营组", description: "负责宣传设计、组织策划与财务管理能力培养。", tone: "rose", href: "groups/operations.html", logo: "assets/images/brand/vector-icons/operations.svg" },
           ],
         },
       ],
@@ -101,6 +103,8 @@
               description: "统筹重装方向的机器人项目与赛季任务。",
               tags: ["机械", "电控", "视觉"],
               tone: "rose",
+              href: "groups/unit-heavy.html",
+              logos: ["assets/images/brand/vector-icons/hero.svg", "assets/images/brand/vector-icons/engineer.svg"],
             },
             {
               id: "unit-sentry",
@@ -110,6 +114,8 @@
               childUnits: ["步兵兵种", "哨兵兵种"],
               tags: ["机械", "电控", "视觉"],
               tone: "teal",
+              href: "groups/unit-sentry.html",
+              logos: ["assets/images/brand/vector-icons/infantry.svg", "assets/images/brand/vector-icons/sentry.svg"],
             },
             {
               id: "unit-aerial-dart",
@@ -119,6 +125,8 @@
               childUnits: ["空中兵种", "飞镖兵种"],
               tags: ["机械", "电控", "视觉"],
               tone: "violet",
+              href: "groups/unit-aerial-dart.html",
+              logos: ["assets/images/brand/vector-icons/aerial.svg", "assets/images/brand/vector-icons/dart.svg"],
             },
           ],
         },
@@ -128,8 +136,8 @@
           note: "不进入单一兵种编制，但覆盖所有兵种和相关技术工作。",
           layout: "two",
           cards: [
-            { title: "硬件", meta: "覆盖全部兵种", description: "为全部兵种提供电气系统、供电、连接与硬件支持。", variant: "global", tone: "green" },
-            { title: "宣传运营", meta: "覆盖全队", description: "为兵种与技术工作提供宣传设计、组织策划与财务管理支持。", tags: ["宣传设计", "组织策划", "财务管理"], variant: "global", tone: "rose" },
+            { title: "硬件", meta: "覆盖全部兵种", description: "为全部兵种提供电气系统、供电、连接与硬件支持。", variant: "global", tone: "green", href: "groups/hardware.html", logo: "assets/images/brand/vector-icons/hardware.svg" },
+            { title: "宣传运营", meta: "覆盖全队", description: "为兵种与技术工作提供宣传设计、组织策划与财务管理支持。", tags: ["宣传设计", "组织策划", "财务管理"], variant: "global", tone: "rose", href: "groups/operations.html", logo: "assets/images/brand/vector-icons/operations.svg" },
           ],
         },
       ],
@@ -147,7 +155,7 @@
           note: "已经退役但保持紧密联系，为团队提供经验、资源与关键判断支持。",
           layout: "single",
           cards: [
-            { title: "顾问", meta: "经验支持", description: "在技术路线、项目管理、行业经验和长期发展方面提供指导。", variant: "advisor" },
+            { title: "顾问", meta: "经验支持", description: "在技术路线、项目管理、行业经验和长期发展方面提供指导。", variant: "advisor", href: "groups/position-advisors.html", mdi: "mdi-account-tie-outline" },
           ],
         },
         {
@@ -156,8 +164,8 @@
           note: "本赛季研发主体，由核心队员和正式队员共同构成。",
           layout: "two",
           cards: [
-            { title: "核心队员", meta: "关键承担", description: "承担关键研发、兵种统筹、技术决策或团队公共责任。", variant: "core" },
-            { title: "正式队员", meta: "赛季研发主体", description: "承担明确赛季职责，完成设计、研发、维护与复盘工作。", variant: "formal" },
+            { title: "核心队员", meta: "关键承担", description: "承担关键研发、兵种统筹、技术决策或团队公共责任。", variant: "core", href: "groups/position-members.html", mdi: "mdi-account-star-outline" },
+            { title: "正式队员", meta: "赛季研发主体", description: "承担明确赛季职责，完成设计、研发、维护与复盘工作。", variant: "formal", href: "groups/position-members.html", mdi: "mdi-account-check-outline" },
           ],
         },
         {
@@ -166,7 +174,7 @@
           note: "通过培训和实习逐步进入真实项目，为未来赛季积累能力与经验。",
           layout: "single",
           cards: [
-            { title: "梯队队员", meta: "培养与实习", description: "参与培训、基础训练项目和兵种实习，逐步形成独立承担能力。", variant: "trainee" },
+            { title: "梯队队员", meta: "培养与实习", description: "参与培训、基础训练项目和兵种实习，逐步形成独立承担能力。", variant: "trainee", href: "groups/position-trainees.html", mdi: "mdi-school-outline" },
           ],
         },
       ],
