@@ -27,6 +27,25 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 
+function initBrandWordmarkFlip() {
+  document.querySelectorAll(".brand-text small").forEach((wordmark) => {
+    if (wordmark.querySelector(".brand-flip-inner")) return;
+
+    const label = wordmark.textContent.trim();
+    wordmark.classList.add("brand-flip");
+    wordmark.innerHTML = `
+      <span class="brand-flip-inner">
+        <span class="brand-flip-face brand-flip-face--front">${label}</span>
+        <span class="brand-flip-face brand-flip-face--back">
+          <img src="assets/brand/千里文字logo.PNG" alt="" />
+        </span>
+      </span>
+    `;
+  });
+}
+
+initBrandWordmarkFlip();
+
 const quoteStage = document.querySelector("[data-quote-stage]");
 const quoteText = document.querySelector("[data-quote-text]");
 const quoteSource = document.querySelector("[data-quote-source]");
