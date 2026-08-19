@@ -134,12 +134,11 @@
     context.append(label, text);
   }
 
-  function syncPrimaryNavigation(key) {
-    const unitLink = document.querySelector('[data-nav="unit"]');
+  function syncPrimaryNavigation() {
+    const organizationLink = document.querySelector('[data-nav="organization"]');
     const aboutLink = document.querySelector('[data-nav="about"]');
-    const unitIsActive = key === "unit";
-    unitLink?.classList.toggle("is-active", unitIsActive);
-    aboutLink?.classList.toggle("is-active", !unitIsActive);
+    organizationLink?.classList.add("is-active");
+    aboutLink?.classList.remove("is-active");
   }
 
   function renderView(key) {
@@ -151,7 +150,7 @@
     description.textContent = view.description;
     stage.replaceChildren(...view.lanes.map(createLane));
     setDefaultContext(view);
-    syncPrimaryNavigation(key);
+    syncPrimaryNavigation();
     tabs.querySelectorAll("button").forEach((button) => {
       const selected = button.dataset.view === key;
       button.classList.toggle("is-active", selected);

@@ -1,36 +1,25 @@
-<!doctype html>
-<html lang="zh-CN">
-  <head>
-    <base href="../" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队留言板，收集成员、校友、支持者与访客写给队伍的话。" />
-    <title>留言板 | 重庆大学千里战队</title>
-    <script>
-      (() => {
-        try {
-          const savedTheme = localStorage.getItem("theme");
-          document.documentElement.dataset.theme = savedTheme || "dark";
-        } catch {
-          document.documentElement.dataset.theme = "dark";
-        }
-      })();
-    </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260819-8" />
-    <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
-  </head>
-  <body data-page="archive">
-    <header class="site-header">
-      <nav class="nav" aria-label="主导航">
-        <a class="brand" href="index.html" aria-label="返回首页">
-          <span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span>
-          <span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
-        <div class="nav-links" id="nav-links">
+const fs = require("node:fs");
+const path = require("node:path");
+
+const root = path.resolve(__dirname, "..");
+
+function collectHtmlFiles(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    if (entry.name === ".git") return [];
+    const target = path.join(directory, entry.name);
+    if (entry.isDirectory()) return collectHtmlFiles(target);
+    return entry.isFile() && entry.name.endsWith(".html") ? [target] : [];
+  });
+}
+
+function activeAttributes(active, key) {
+  return active === key ? ' class="is-active" aria-current="page"' : "";
+}
+
+function buildNavigation(active) {
+  return `        <div class="nav-links" id="nav-links">
           <span class="nav-menu">
-            <a href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
+            <a${activeAttributes(active, "about")} href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/index.html"><span class="nav-item-label">战队简介</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/culture.html"><span class="nav-item-label">精神和文化</span><i class="mdi mdi-fire nav-item-mdi" aria-hidden="true"></i></a>
@@ -39,14 +28,14 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu nav-menu--organization">
-            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a${activeAttributes(active, "organization")} href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -71,7 +60,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a class="is-active" aria-current="page" href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <a${activeAttributes(active, "archive")} href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -82,47 +71,31 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">加入我们</span></a>
+            <a${activeAttributes(active, "join")} href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">加入我们</span></a>
             <span class="nav-dropdown"><a href="join/index.html#recruit">招新信息</a><a href="join/index.html#groups">各组方向</a><a href="join/index.html#persona">人才画像</a><a href="join/index.html#qa">Q&amp;A</a></span>
           </span>
-          <a href="contact/index.html" data-nav="contact"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系方式</span></a>
-        </div>
-        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
-        </button>
-      </nav>
-    </header>
-    <main>
-      <section class="page-hero"><div><p class="page-label">MESSAGE BOARD</p><h1>留言板</h1></div><p>给队伍、赛季、成员和后来者留下可被看见的话。</p></section>
-      <section class="section-block split-section">
-        <div class="text-stack">
-          <h2>展示方式建议</h2>
-          <p>静态网站不能直接保存访客提交内容。正式上线时，推荐使用外部表单收集留言，审核后生成公开展示；这样比匿名即时发布更稳，也更适合队伍官网。</p>
-          <p>可选实现包括腾讯问卷/飞书表单收集、GitHub Issues 审核展示，或后续接入轻量数据库。当前页面先保留展示版式。</p>
-        </div>
-        <div class="message-wall">
-          <article><span>2026</span><p>愿后来者在这里看到曾经的热爱，也留下新的火种。</p><strong>千里战队</strong></article>
-          <article><span>校友</span><p>把训练场上的问题、夜里的调试和赛场边的瞬间，都认真记下来。</p><strong>待补充</strong></article>
-          <article><span>访客</span><p>这里可以放来自招新、开放日、比赛现场和校友回访的留言。</p><strong>待补充</strong></article>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <p>© 2026 重庆大学千里战队</p>
-      <p>网站建设：重庆大学千里战队 × Codex</p>
-      <p>域名规划：team.cquqianli.cn</p>
-    </footer>
-    <script src="assets/js/core/site.js?v=20260819-7"></script>
-  </body>
-</html>
+          <a${activeAttributes(active, "contact")} href="contact/index.html" data-nav="contact"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系方式</span></a>
+        </div>`;
+}
 
+const htmlFiles = collectHtmlFiles(root);
 
+for (const file of htmlFiles) {
+  const relative = path.relative(root, file).replaceAll(path.sep, "/");
+  let html = fs.readFileSync(file, "utf8");
+  const organizationPage = relative === "about/organization.html" || relative.startsWith("groups/");
 
+  if (organizationPage) {
+    html = html.replace(/<body data-page="[^"]+">/, '<body data-page="organization">');
+  }
 
+  const page = html.match(/<body data-page="([^"]+)">/)?.[1] || "";
+  const navPattern = /        <div class="nav-links" id="nav-links">[\s\S]*?<\/div>\r?\n        <button class="theme-toggle"/;
+  if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
+  html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
+  html = html.replace(/styles\.css\?v=20260819-\d+/g, "styles.css?v=20260819-8");
+  fs.writeFileSync(file, html);
+}
 
-
-
-
-
+console.log(`Updated navigation in ${htmlFiles.length} pages.`);
