@@ -417,64 +417,42 @@ function initRecruitLetter() {
           <i class="mdi mdi-close" aria-hidden="true"></i>
         </button>
       </header>
+      <div class="recruit-letter-body">
       <article class="recruit-letter-content">
         <div class="recruit-letter-opening">
-          <p>刚进入大学的时候，很多人其实都处在一种很相似的状态。</p>
-          <p>高中结束了，没有人再每天告诉你下一步该做什么。课程之外突然多出了很多可以自己支配的时间，你可以参加学生组织，可以打比赛，可以进实验室，可以刷绩点，可以谈恋爱，可以打游戏，也可以什么都先试一试。</p>
-          <p>自由当然很好，但自由的另一面，是很多事情开始没有标准答案了。</p>
-          <p>大学四年应该怎么过？以后想做什么？自己究竟擅长什么？喜欢什么？哪些事情值得投入大量时间？</p>
-          <p>这些问题，我们也没有办法替你回答。</p>
-          <p>RoboMaster 更不是这些问题的标准答案。</p>
-          <p>但如果你希望大学里不只是上课、考试、完成作业，而是真的和一群人一起把一些东西做出来，那么千里战队可能是你值得了解的一种选择。</p>
+          <p>刚进入大学的时候，很多人其实都处在一种很相似的状态 —— 自由放松了一段时间，但又开始为新的旅途感到兴奋且迷茫。</p>
+          <p>高中结束了，没有既定的环境和规则让你随波逐流，没有家长或者老师日复一日地给你提要求——上了大学，在课程之外突然多出了相当多可以自己支配的时间。你可以选择参加学生组织，或是参加某一项学科竞赛，可以找到合适的创新创业项目或进到实验室课题组实习，可以花费大量的时间备考刷绩点。此外你也可以谈恋爱，可以打游戏，可以出去游山玩水，也可以什么都先体验一番。</p>
+          <p>自由当然看似美好，但自由的另一面是，很多事情开始没有标准答案了。</p>
+          <p>大学四年应该怎么过？以后想做什么？自己究竟擅长什么？真正喜欢什么？哪些事情值得投入大量时间？哪些事情自己愿意投入大量精力？这些问题，我们也没有办法替你回答。而 RoboMaster 更不会是这些问题的标准答案。但如果你希望自己在大学生涯中不只是上课、完成作业、考试，而是拥有突破课堂和教材、动手实践的机会，能够真正和一群志同道合的伙伴一起创造出漂亮的工程作品，那么千里战队一定是值得你了解的一个选项。</p>
+          <p>在接下来的篇幅中，我们将对RoboMaster与千里战队进行详细的介绍与讲解。如果你对于参加RM比赛、加入千里战队、从事和机器人相关的技术工作感兴趣，请耐心阅读。</p>
         </div>
 
-        <section>
+        <section id="recruit-letter-section-01">
           <h3><span>01</span>我们到底在做什么</h3>
-          <p>RoboMaster 是一项机器人竞技赛事。</p>
-          <p>和很多完成一个作品、提交一次答辩就结束的比赛不同，RM 的周期很长。一整个赛季里，我们要自己设计、制造、调试一整套机器人系统，并最终把这些机器人送上赛场，与其他高校的机器人进行真实对抗。</p>
-          <p>这里面会有机械结构、电路与嵌入式系统、控制算法、计算机视觉、通信、软件、运营管理等很多方向。</p>
-          <p>但真正进入队伍以后，你会慢慢发现，我们做的事情其实很难被简单分成“机械的事情”“电控的事情”“视觉的事情”或者“宣运的事情”。</p>
-          <div class="recruit-letter-lines">
-            <p>机械改动一个结构，可能会影响电路安装；</p>
-            <p>电控修改一个通信协议，可能会影响算法和视觉；</p>
-            <p>机器人的重量、成本、加工条件、维护难度、比赛时间，都可能让一个理论上很好的方案最后不得不被放弃。</p>
-          </div>
-          <p>真实工程就是这样。</p>
-          <p>它很少给你一道已经写好条件、只需要求出唯一答案的题。</p>
-          <p>你需要在很多约束里面不断做选择，也需要不断和别人交流、妥协、推翻自己的方案，再重新来过。</p>
+          <p>RoboMaster 是一项机器人竞技赛事。和很多完成一个作品、提交一次答辩就结束的比赛不同，RM 的备赛周期很长。一整个赛季里，我们要自己设计、制造、调试一整套机器人系统，并最终把这些机器人送上赛场，与其他高校的机器人进行真实对抗。而这里会有机械结构、电路与嵌入式系统、控制算法、计算机视觉、通信、软件、运营管理等很多方向。但真正进入队伍以后，你会慢慢发现，我们做的事情其实很难被简单分成“机械的事情”，“电控的事情”，“视觉的事情”或者“宣运的事情”。</p>
+          <p>机械改动一个结构，可能会影响电路安装；电控修改一个通信协议，可能会影响算法和视觉；机器人的重量、成本、加工条件、维护难度、比赛时间，都可能让一个理论上很好的方案最后不得不被放弃。真实工程就是这样——它很少给你一道已经写好条件、只需要求出唯一答案的题。你需要在很多约束里面不断做选择，也需要不断和别人交流、妥协、推翻自己的方案，再重新来过。</p>
           <p>这也是我们认为 RoboMaster 最有价值的地方之一。</p>
         </section>
 
-        <section>
-          <h3><span>02</span>如果我现在什么都不会，可以来吗？</h3>
-          <p>完全可以。</p>
-          <p>我们当然希望你来的时候已经有一些基础。也许你写过一点代码，也许接触过机械设计，也许自己做过一些小项目。</p>
-          <p>但如果这些你都没有接触过，也并不意味着你没有机会。</p>
-          <p>千里有相对完整的培训体系，有已经经历过多个赛季的老队员，也有和你们年龄相差不大的年轻队员。我们有真实的机器人项目，有固定工位、设备、加工条件和实验室，也愿意把我们已经走过的路、踩过的坑和积累下来的东西告诉后来的人。</p>
-          <p>这些东西能够让你少走很多弯路。原本一个人可能需要几个月才能摸清楚的问题，也许有人一句话就可以帮你指出方向。</p>
-          <p>但是有一点需要提前说明：我们不能保证你加入千里以后一定会变强。</p>
-          <p>没有任何培训体系能够做到这一点。</p>
-          <p>我们可以给你资源，给你方向，给你项目，也可以在你遇到困难的时候帮助你，但是最后真正需要把这些知识学会、把任务做出来的人，始终还是你自己。这条路总归需要自己走。</p>
-          <p>我们更愿意培养一个基础普通，但是愿意主动学习、愿意交流、愿意长期投入的人，而不是一个基础很好，却始终只是把自己当成旁观者的人。</p>
+        <section id="recruit-letter-section-02">
+          <h3><span>02</span>我现在什么都不会，可以来吗？</h3>
+          <p>答案是完全可以。</p>
+          <p>我们当然希望你来的时候已经有一些基础。也许你写过一点代码，也许接触过机械设计，也许自己做过一些小项目。但如果这些你都没有接触过，完全并不意味着你没有机会。</p>
+          <p>千里有相对完整的培训体系，有已经经历过多个赛季的老队员，也有和你们年龄相差不大的年轻队员。我们有真实的机器人项目，有固定工位、设备、加工条件和实验室，也愿意把我们已经走过的路、踩过的坑和积累下来的东西告诉后来的人——这些东西能够让一个新人工程师少走很多弯路。原本一个人可能需要几个月才能摸清楚的问题，也许有人一句话就可以帮你指出方向。</p>
+          <p>但是有一点需要提前说明——我们不能保证你加入千里以后一定会变强。</p>
+          <p>没有任何培训体系能够做到这一点。我们可以给你资源，给你方向，给你项目，也可以在你遇到困难的时候帮助你，但是最后真正需要把这些知识学会、把任务做出来的人，始终还是你自己。这条路总归需要自己走。</p>
+          <p>从成长的潜力来看，我们更愿意培养一个基础普通，但是愿意主动学习、交流且长期投入的人，而不是一个基础很好，却始终只是把自己当成旁观者的人。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-03">
           <h3><span>03</span>为什么不自己学？</h3>
-          <p>现在想学一项技术其实比以前容易得多。网上有课程、有开源项目、有文档，也有越来越方便的 AI 工具。</p>
-          <p>如果你的目标仅仅是学会 STM32、Fusion 的基础操作，ROS、RL 的运行架构或者几种主流运动控制算法，那么完全可以自己学习。</p>
+          <p>现在想学一项技术其实比以前容易得多。网上有课程、有开源项目、有文档，也有越来越方便的 AI 工具。如果你的目标仅仅是学会 STM32、Fusion的基础操作，ROS、RL的运行架构或者几种主流运动控制算法，那么完全可以自己学习。</p>
           <p>但我们始终认为：与人合作、与人交流，比一个人闭门造车成长得更快，也更接近真正的工程。</p>
-          <p>一个人做自己的项目时，进度慢几天，大不了自己晚几天完成。但在一个团队里，你负责的东西会真正影响别人。</p>
-          <div class="recruit-letter-lines">
-            <p>你的板子没有做完，整车可能不能联调；</p>
-            <p>你的结构没有加工出来，后面的测试可能全部推迟；</p>
-            <p>你的接口没有讲清楚，其他人就可能陪着你一起排查问题。</p>
-          </div>
-          <p>这时候你才会慢慢意识到：会一项技术，只是工程能力的一部分。</p>
-          <p>一个真正能够承担项目的人，还需要学会沟通、规划、协作、判断和负责。</p>
-          <p>所以千里并不是一个单纯教技术的地方。我们更希望你在这里经历完整的工程过程。</p>
+          <p>一个人做自己的项目时，进度慢几天，大不了自己晚几天完成。但在一个团队里，你负责的东西会真正影响别人。你的板子没有做完，整车可能不能联调；你的结构没有加工出来，后面的测试可能全部推迟；你的接口没有讲清楚，其他人就可能陪着你一起排查问题。这时候你才会慢慢意识到：掌握一项技术的基础，只是工程能力的一部分而已。一个真正能够承担项目的人，还需要学会沟通、规划、协作、判断和负责。</p>
+          <p>所以，千里并不是一个单纯教技术的地方。我们更希望你在这里经历完整的工程项目训练的洗礼。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-04">
           <h3><span>04</span>在千里，你会遇到很多不同的人</h3>
           <p>千里的队员来自数十个不同专业。</p>
           <p>有的人做机械，有的人做电控，有的人做视觉、算法，也有人负责运营、管理和其他工作。</p>
@@ -492,7 +470,7 @@ function initRecruitLetter() {
           <p>所以我们不太希望有人抱着“我来这里学点东西就走”的想法加入。你当然会得到很多东西，但与此同时，你也会逐渐开始承担责任。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-05">
           <h3><span>05</span>我们看重什么</h3>
           <p>如果一定要说我们最希望新队员具备什么，我们最看重三件事情：责任心，沟通能力，以及长期投入的意愿。</p>
           <p>能力可以慢慢提高。很多知识也可以从零开始学。</p>
@@ -503,7 +481,7 @@ function initRecruitLetter() {
           <p>我们需要的是愿意承担这些事情的人。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-06">
           <h3><span>06</span>以人为本，不意味着没有标准</h3>
           <p>千里希望成为一个尊重人、接纳人的团队。</p>
           <p>我们不会因为一个人成长慢，就轻易否定他。如果你愿意认真投入，也愿意和大家交流，我们也愿意花更多时间帮助你。</p>
@@ -514,7 +492,7 @@ function initRecruitLetter() {
           <p>我们希望这种判断建立在充分尝试和相互尊重的基础上，而不是简单地把一个人划成“行”或者“不行”。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-07">
           <h3><span>07</span>在报名之前，有一些事情必须说清楚</h3>
           <p>如果前面这些内容让你觉得很有兴趣，那么接下来这一部分反而更需要认真看。</p>
           <p>RoboMaster 是一个投入非常高的比赛。</p>
@@ -534,7 +512,7 @@ function initRecruitLetter() {
           <p>我们不希望用“热血”“梦想”这样的词，让一个本来已经有清晰规划的人做出不适合自己的选择。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-08">
           <h3><span>08</span>那为什么我们还是选择了这里？</h3>
           <p>因为对于很多留下来的人而言，RM 最后带来的东西早已经不只是一个奖项。</p>
           <p>你可能会从一个刚进入大学、习惯寻找标准答案的人，慢慢开始学会面对没有标准答案的问题。</p>
@@ -554,7 +532,7 @@ function initRecruitLetter() {
           <p>而是一个开始知道自己为什么做一件事情，也愿意为自己的选择承担责任的人。</p>
         </section>
 
-        <section>
+        <section id="recruit-letter-section-09">
           <h3><span>09</span>最后</h3>
           <p>如果看到这里，你仍然没有确定自己到底要不要加入千里，也完全正常。</p>
           <p>事实上，我们也不希望你仅仅因为看了一封信，就立刻决定把大学里大量的时间投入这里。</p>
@@ -575,14 +553,65 @@ function initRecruitLetter() {
           <a href="join.html">查看招新信息 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
         </footer>
       </article>
+      <nav class="recruit-letter-toc" aria-label="信件目录">
+        <p>目录</p>
+        <ol>
+          <li><button type="button" data-letter-target="recruit-letter-section-01"><span>01</span>我们到底在做什么</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-02"><span>02</span>我现在什么都不会，可以来吗？</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-03"><span>03</span>为什么不自己学？</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-04"><span>04</span>在千里，你会遇到很多不同的人</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-05"><span>05</span>我们看重什么</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-06"><span>06</span>以人为本，不意味着没有标准</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-07"><span>07</span>报名之前必须说清楚的事</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-08"><span>08</span>为什么我们还是选择了这里？</button></li>
+          <li><button type="button" data-letter-target="recruit-letter-section-09"><span>09</span>最后</button></li>
+        </ol>
+      </nav>
+      </div>
     </div>
   `;
 
   const closeButton = dialog.querySelector(".recruit-letter-close");
+  const letterContent = dialog.querySelector(".recruit-letter-content");
+  const tocButtons = [...dialog.querySelectorAll("[data-letter-target]")];
+  const letterSections = [...dialog.querySelectorAll(".recruit-letter-content section[id]")];
+  const setActiveSection = (sectionId) => {
+    tocButtons.forEach((button) => {
+      const isActive = button.dataset.letterTarget === sectionId;
+      button.classList.toggle("is-active", isActive);
+      if (isActive) button.setAttribute("aria-current", "true");
+      else button.removeAttribute("aria-current");
+    });
+  };
+
+  tocButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const section = dialog.querySelector(`#${button.dataset.letterTarget}`);
+      if (section && letterContent) {
+        letterContent.scrollTop = Math.max(0, section.offsetTop - letterContent.offsetTop - 8);
+      }
+      setActiveSection(button.dataset.letterTarget);
+    });
+  });
+
+  if (letterContent && "IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { root: letterContent, rootMargin: "-12% 0px -66%", threshold: [0, 0.15, 0.45] }
+    );
+    letterSections.forEach((section) => sectionObserver.observe(section));
+  }
+
   const openLetter = () => {
     if (typeof dialog.showModal === "function") dialog.showModal();
     else dialog.setAttribute("open", "");
     document.documentElement.classList.add("has-recruit-letter");
+    setActiveSection("recruit-letter-section-01");
   };
   const closeLetter = () => {
     if (typeof dialog.close === "function") dialog.close();
