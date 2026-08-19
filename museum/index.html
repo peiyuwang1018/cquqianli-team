@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <base href="../" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <title>千里档案 | 重庆大学千里战队</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          document.documentElement.dataset.theme = savedTheme || "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260819-6" />
+    <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
+  </head>
+  <body data-page="archive">
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="index.html" aria-label="返回首页">
+          <span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span>
+          <span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links"><span class="nav-menu"><a class="" href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a><span class="nav-dropdown"><a class="nav-item-with-icon nav-item-with-icon--about" href="about/index.html"><span class="nav-item-label">战队简介</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--about" href="about/organization.html"><span class="nav-item-label">组织架构</span><i class="mdi mdi-sitemap-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--about" href="about/culture.html"><span class="nav-item-label">精神和文化</span><i class="mdi mdi-fire nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理和协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--about" href="about/history.html"><span class="nav-item-label">发展历程</span><i class="mdi mdi-timeline-outline nav-item-mdi" aria-hidden="true"></i></a></span></span><span class="nav-menu"><a class="" href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a><span class="nav-dropdown"><a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a></span></span><span class="nav-menu"><a class="" href="groups/technical.html" data-nav="technology" aria-haspopup="true"><i class="mdi mdi-cog-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">技术组别</span></a><span class="nav-dropdown"><a class="nav-item-with-icon nav-item-with-icon--mechanical" href="groups/mechanical.html"><span class="nav-item-label">机械结构组</span><span class="nav-item-logo nav-item-logo--mechanical" aria-hidden="true"><img src="assets/images/brand/vector-icons/mechanical.svg" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--control" href="groups/control.html"><span class="nav-item-label">电气控制组</span><span class="nav-item-logo nav-item-logo--control" aria-hidden="true"><img src="assets/images/brand/vector-icons/control.svg" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--vision" href="groups/vision.html"><span class="nav-item-label">视觉算法组</span><span class="nav-item-logo nav-item-logo--vision" aria-hidden="true"><img src="assets/images/brand/vector-icons/vision.svg" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--hardware" href="groups/hardware.html"><span class="nav-item-label">硬件开发组</span><span class="nav-item-logo nav-item-logo--hardware" aria-hidden="true"><img src="assets/images/brand/vector-icons/hardware.svg" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--operations" href="groups/operations.html"><span class="nav-item-label">宣传运营组</span><span class="nav-item-logo nav-item-logo--operations" aria-hidden="true"><img src="assets/images/brand/vector-icons/operations.svg" alt="" /></span></a></span></span><span class="nav-menu"><a class="" href="groups/responsibility.html" data-nav="responsibility" aria-haspopup="true"><i class="mdi mdi-clipboard-account-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">责任组别</span></a><span class="nav-dropdown"><a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a></span></span><span class="nav-menu"><a class="" href="about/organization.html?view=unit" data-nav="unit" aria-haspopup="true"><i class="mdi mdi-robot nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">兵种组别</span></a><span class="nav-dropdown nav-dropdown--unit"><a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-heavy.html"><span class="nav-item-label">重装组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/hero.svg" alt="" /><img src="assets/images/brand/vector-icons/engineer.svg" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-sentry.html"><span class="nav-item-label">步哨组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></span></a><a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-aerial-dart.html"><span class="nav-item-label">空中飞镖组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></span></a></span></span><span class="nav-menu"><a class="is-active" href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a><span class="nav-dropdown"><a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/records.html"><span class="nav-item-label">档案馆</span><i class="mdi mdi-archive-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/hall-of-fame.html"><span class="nav-item-label">名人堂</span><i class="mdi mdi-account-star-outline nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a><a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a></span></span><span class="nav-menu"><a class="" href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">加入我们</span></a><span class="nav-dropdown"><a href="join/index.html#recruit">招新信息</a><a href="join/index.html#groups">各组方向</a><a href="join/index.html#persona">人才画像</a><a href="join/index.html#qa">Q&A</a></span></span><a class="" href="contact/index.html" data-nav="contact"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系方式</span></a></div>
+        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+        </button>
+      </nav>
+    </header>
+    <main>
+  <section class="page-hero"><div><p class="page-label">QIANLI ARCHIVE</p><h1>千里档案</h1></div><p>这里承接队伍的记忆、正式档案、影像、人物、留言和资料站。</p></section>
+  <section class="section-block video-feature" data-video-carousel>
+    <div class="section-heading">
+      <h2>影像志</h2>
+      <p>纪录片、宣传片和赛季回顾建议集中放在这里；比赛录像入口继续放在档案馆。</p>
+    </div>
+    <div class="video-carousel">
+      <div class="video-frame" data-video-frame>
+        <div class="video-placeholder">
+          <strong>等待补充 B 站 BV 号</strong>
+          <span>在 assets/js/data/videos.js 中加入视频后，这里会自动生成嵌入播放器。</span>
+        </div>
+      </div>
+      <div class="video-copy">
+        <p class="page-label" data-video-type>VIDEO ARCHIVE</p>
+        <p class="video-subtitle" data-video-subtitle>RMUC2024 回忆</p>
+        <h3 data-video-title>《千里征途》</h3>
+        <p data-video-description>2025 赛季元旦发布，主要记录和回望重庆大学千里战队 2024 赛季的训练、协作与赛场记忆。</p>
+        <div class="video-actions">
+          <button type="button" data-video-prev aria-label="上一支影片">‹</button>
+          <button type="button" data-video-next aria-label="下一支影片">›</button>
+        </div>
+      </div>
+    </div>
+    <div class="video-list" data-video-list aria-label="影像列表"></div>
+  </section>
+
+  <section class="section-block"><div class="entry-grid"><a class="entry-card" href="museum/resources.html">
+    
+    <span></span><strong>资料站</strong><small>视频课程、技术文档和下载入口。</small>
+  </a><a class="entry-card" href="museum/gallery.html">
+    
+    <span></span><strong>照片墙</strong><small>合照、日常、赛场与设计 IP。</small>
+  </a><a class="entry-card" href="museum/records.html">
+    
+    <span></span><strong>档案馆</strong><small>每赛季机器人阵容以及比赛记录。</small>
+  </a><a class="entry-card" href="museum/hall-of-fame.html">
+    
+    <span></span><strong>名人堂</strong><small>成员、校友、队长、贡献者和代表人物。</small>
+  </a><a class="entry-card" href="museum/stories.html">
+    
+    <span></span><strong>故事会</strong><small>建队和延续过程中的个人视角叙述合集。</small>
+  </a><a class="entry-card" href="museum/guestbook.html">
+    
+    <span></span><strong>留言板</strong><small>给队伍、赛季和后来者留下公开留言。</small>
+  </a></div></section>
+
+</main>
+    <footer class="site-footer">
+      <p>© 2026 重庆大学千里战队</p>
+      <p>网站建设：重庆大学千里战队 × Codex</p>
+      <p>域名规划：team.cquqianli.cn</p>
+    </footer>
+    <script src="assets/js/data/videos.js?v=20260816-1"></script>
+    <script src="assets/js/core/site.js?v=20260819-7"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
