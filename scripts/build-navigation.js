@@ -106,7 +106,7 @@ for (const file of htmlFiles) {
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
   html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
-  html = html.replace(/styles\.css\?v=20260819-\d+/g, "styles.css?v=20260819-12");
+  html = html.replace(/styles\.css\?v=20260819-\d+/g, "styles.css?v=20260819-13");
   html = html.replace(/site\.js\?v=20260819-\d+/g, "site.js?v=20260819-8");
   fs.writeFileSync(file, html);
 }

@@ -1480,6 +1480,14 @@ html.has-recruit-letter {
   transform: scale(2.55);
 }
 
+:root:not([data-theme="dark"]) .sponsor-card--flashforge .thanks-logo-frame {
+  background: #fff;
+}
+
+:root[data-theme="dark"] .sponsor-card--flashforge img {
+  filter: brightness(0) invert(1);
+}
+
 .logo-cqu img {
   max-width: 80%;
   max-height: 54px;
