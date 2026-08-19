@@ -2045,14 +2045,14 @@ html.has-recruit-letter {
 }
 
 .nav-dropdown {
-  min-width: 172px;
+  min-width: 148px;
   gap: 3px;
   padding: 10px;
 }
 
 .nav-dropdown a.nav-item-with-icon {
   display: grid;
-  grid-template-columns: minmax(86px, max-content) 24px;
+  grid-template-columns: minmax(80px, max-content) 24px;
   justify-content: start;
   align-items: center;
   gap: 9px;
@@ -2094,7 +2094,7 @@ html.has-recruit-letter {
 }
 
 .nav-dropdown a.nav-item-with-icon--unit {
-  grid-template-columns: minmax(86px, max-content) 48px;
+  grid-template-columns: minmax(80px, max-content) 48px;
 }
 
 .nav-item-logo-pair {
@@ -2195,9 +2195,10 @@ html.has-recruit-letter {
 
 /* Organization mega menu: technical, responsibility and robot-unit groups. */
 .nav-dropdown--organization {
-  width: min(800px, calc(100vw - 32px));
+  width: max-content;
+  max-width: calc(100vw - 32px);
   min-width: 0;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: 150px 150px 174px 150px;
   gap: 0;
   padding: 0;
 }
@@ -2239,11 +2240,11 @@ html.has-recruit-letter {
 
 .nav-dropdown--organization a.nav-item-with-icon {
   width: 100%;
-  grid-template-columns: minmax(86px, max-content) 24px;
+  grid-template-columns: minmax(80px, max-content) 24px;
 }
 
 .nav-dropdown--organization a.nav-item-with-icon--unit {
-  grid-template-columns: minmax(86px, max-content) 48px;
+  grid-template-columns: minmax(80px, max-content) 48px;
 }
 
 /* Dedicated robot-unit pages. */
