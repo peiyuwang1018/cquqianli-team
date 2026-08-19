@@ -59,15 +59,13 @@
       { id: "stage-pre-1", title: "预研一期", type: "research", color: "#e4b958", start: "2026-08-11", end: "2026-09-07" },
       { id: "stage-pre-2", title: "预研二期", type: "research", color: "#cf9f4f", start: "2026-09-08", end: "2026-10-31" },
       { id: "stage-upper-rd", title: "上半赛季正式研发期", type: "research", color: "#67aa8b", start: "2026-11-01", end: "2027-01-24" },
-      { id: "stage-winter", title: "寒假集训期", type: "training", color: "#4eafc1", start: "2027-01-25", end: "2027-01-30" },
-      { id: "stage-spring-break", title: "春节假期", type: "pause", color: "#9aa6b5", start: "2027-01-31", end: "2027-02-21" },
+      { id: "stage-winter", title: "寒假集训期", type: "training", color: "#4eafc1", start: "2027-01-25", end: "2027-02-21" },
       { id: "stage-lower-rd", title: "下半赛季正式研发期", type: "research", color: "#849cd0", start: "2027-02-22", end: "2027-04-09" },
       { id: "stage-regional-training", title: "分区赛战术演练", type: "training", color: "#65ad9b", start: "2027-04-10", end: "2027-05-07" },
       { id: "stage-regional", title: "分区赛窗口", type: "competition", color: "#d77986", start: "2027-05-08", end: "2027-05-23" },
       { id: "stage-national-rd", title: "国赛迭代研发期", type: "research", color: "#9a85c1", start: "2027-05-24", end: "2027-06-27" },
       { id: "stage-national-training", title: "全国赛战术演练", type: "training", color: "#5babbc", start: "2027-06-28", end: "2027-07-25" },
-      { id: "stage-national", title: "全国赛窗口", type: "competition", color: "#cf6f7c", start: "2027-07-26", end: "2027-08-08" },
-      { id: "stage-handover", title: "总结交接", type: "pause", color: "#96a1af", start: "2027-08-09", end: "2027-08-10" }
+      { id: "stage-national", title: "全国赛窗口", type: "competition", color: "#cf6f7c", start: "2027-07-26", end: "2027-08-08" }
     ],
     progressHighlights: [
       { id: "highlight-national-day", title: "国庆交流集训期", type: "training", color: "#a9d4ce", start: "2026-10-01", end: "2026-10-07" },

@@ -3460,9 +3460,16 @@
 .season-month-scroll,
 .season-overview-scroll {
   min-width: 0;
-  overflow-x: auto;
   border: 1px solid var(--line);
+}
+
+.season-month-scroll {
+  overflow-x: auto;
   scrollbar-color: var(--accent) var(--surface);
+}
+
+.season-overview-scroll {
+  overflow-x: hidden;
 }
 
 .season-month-calendar {
@@ -3664,7 +3671,8 @@
 }
 
 .season-overview {
-  min-width: 1120px;
+  width: 100%;
+  min-width: 0;
   background: var(--card-bg);
 }
 
