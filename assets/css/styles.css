@@ -1904,6 +1904,20 @@ html.has-recruit-letter {
 }
 
 /* Brand wordmark and shared dropdown icon system. */
+.brand-text {
+  align-items: center;
+  line-height: 1;
+}
+
+.brand-text strong {
+  align-items: center;
+  line-height: 1;
+}
+
+.brand-text strong::after {
+  transform: none;
+}
+
 .brand-text small {
   font-family:
     "DIN 1451 Fette Breitschrift 1936",
@@ -1918,11 +1932,11 @@ html.has-recruit-letter {
 .brand-text small.brand-flip {
   position: relative;
   display: inline-block;
-  width: 140px;
-  height: 24px;
+  width: 154px;
+  height: 40px;
   overflow: hidden;
   line-height: 1;
-  perspective: 420px;
+  perspective: 560px;
 }
 
 .brand-flip-inner {
@@ -1940,20 +1954,23 @@ html.has-recruit-letter {
   inset: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding-inline: 6px;
   backface-visibility: hidden;
 }
 
 .brand-flip-face--front {
-  transform: rotateX(0deg) translateZ(12px);
+  transform: rotateX(0deg) translateZ(20px);
 }
 
 .brand-flip-face--back {
-  transform: rotateX(-90deg) translateZ(12px);
+  transform: rotateX(-90deg) translateZ(20px);
 }
 
 .brand-flip-face--back img {
-  width: 94px;
+  width: 78px;
   height: auto;
+  max-height: 38px;
   object-fit: contain;
 }
 
