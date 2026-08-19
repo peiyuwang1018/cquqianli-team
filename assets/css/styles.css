@@ -2201,27 +2201,38 @@ html.has-recruit-letter {
   content: "";
   position: absolute;
   top: 50%;
-  width: 1px;
-  height: 16px;
-  background: var(--accent);
-  box-shadow: 0 0 7px color-mix(in srgb, var(--accent) 58%, transparent);
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--accent) 72%, transparent) 24%,
+    var(--accent) 50%,
+    color-mix(in srgb, var(--accent) 72%, transparent) 76%,
+    transparent 100%
+  );
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 52%, transparent);
   opacity: 0;
   transform: translateY(-50%) scaleY(0.35);
   transition: opacity 180ms ease, transform 220ms ease;
 }
 
 .nav-link-label::before {
-  left: -10px;
+  left: -12px;
 }
 
 .nav-link-label::after {
-  right: -10px;
+  right: -12px;
 }
 
-.nav-links > a.is-active .nav-link-label::before,
-.nav-links > a.is-active .nav-link-label::after,
-.nav-menu > a.is-active .nav-link-label::before,
-.nav-menu > a.is-active .nav-link-label::after {
+.nav-links > a:hover .nav-link-label::before,
+.nav-links > a:hover .nav-link-label::after,
+.nav-links > a:focus-visible .nav-link-label::before,
+.nav-links > a:focus-visible .nav-link-label::after,
+.nav-menu > a:hover .nav-link-label::before,
+.nav-menu > a:hover .nav-link-label::after,
+.nav-menu > a:focus-visible .nav-link-label::before,
+.nav-menu > a:focus-visible .nav-link-label::after {
   opacity: 0.72;
   transform: translateY(-50%) scaleY(1);
 }
