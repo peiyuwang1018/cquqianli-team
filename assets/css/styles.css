@@ -2112,7 +2112,7 @@ html.has-recruit-letter {
   align-items: center;
   gap: 9px;
   min-height: 34px;
-  padding: 3px 6px;
+  padding: 3px 6px 3px 10px;
   transition:
     color 160ms ease,
     background-color 160ms ease;
