@@ -397,6 +397,11 @@
   line-height: 1.35;
 }
 
+.org-lane-track--five .org-card-head h3 {
+  font-size: 17px;
+  white-space: nowrap;
+}
+
 .org-card-title > span {
   color: var(--accent);
   font-size: 12px;
