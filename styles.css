@@ -827,6 +827,24 @@ html.has-recruit-letter {
   margin-top: 10px;
 }
 
+.recruit-letter-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.recruit-letter-content .recruit-letter-lead,
+.recruit-letter-content .recruit-letter-closing {
+  color: var(--text);
+}
+
+.recruit-letter-content .recruit-letter-lead {
+  margin-bottom: 15px;
+}
+
+.recruit-letter-content .recruit-letter-closing {
+  margin-top: 18px;
+}
+
 .recruit-letter-opening {
   padding: 30px 0 26px;
 }
@@ -898,6 +916,29 @@ html.has-recruit-letter {
   text-align: center;
 }
 
+.recruit-letter-content .recruit-letter-callout {
+  padding: 15px 18px;
+  border: 0;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: left;
+  text-indent: 0;
+}
+
+.recruit-letter-content .recruit-letter-warning {
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+}
+
+.recruit-letter-content .recruit-letter-dialogue {
+  width: min(100%, 30em);
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 18px;
+  font-style: italic;
+}
+
 .recruit-letter-signature {
   display: flex;
   align-items: center;
@@ -923,6 +964,11 @@ html.has-recruit-letter {
   padding: 28px 20px;
   border-left: 1px solid var(--line);
   background: color-mix(in srgb, var(--surface) 74%, var(--card-bg));
+  scrollbar-width: none;
+}
+
+.recruit-letter-toc::-webkit-scrollbar {
+  display: none;
 }
 
 .recruit-letter-toc > p {
