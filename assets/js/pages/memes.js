@@ -13,6 +13,8 @@
   let activeEntry = null;
   let activeImage = 0;
   let returnFocus = null;
+  let streamGeneration = 0;
+  let activeStream = null;
 
   const dialog = document.createElement("dialog");
   dialog.className = "meme-dialog";
@@ -57,47 +59,138 @@
       : entries.filter((entry) => entry.hotYears.includes(activeYear));
   }
 
-  function makeWord(entry, index, interactive = true) {
+  function randomBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function shuffle(items) {
+    const result = [...items];
+    for (let index = result.length - 1; index > 0; index -= 1) {
+      const target = Math.floor(Math.random() * (index + 1));
+      [result[index], result[target]] = [result[target], result[index]];
+    }
+    return result;
+  }
+
+  function makeWord(entry) {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `meme-barrage-word meme-barrage-word--${entry.tone} meme-barrage-word--v${(index % 3) + 1}`;
+    button.className = `meme-barrage-word meme-barrage-word--${entry.tone}`;
     button.dataset.memeId = entry.id;
     button.style.setProperty("--meme-weight", entry.weight || 3);
     button.innerHTML = `<strong>${entry.term}</strong><span>${entry.hotYears.join(" / ")}</span>`;
-    if (!interactive) {
-      button.tabIndex = -1;
-      button.setAttribute("aria-hidden", "true");
-    } else {
-      button.setAttribute("aria-label", `查看词条：${entry.term}`);
-    }
+    button.setAttribute("aria-label", `查看词条：${entry.term}`);
     return button;
   }
 
-  function makeSequence(pool, lane, interactive) {
-    const sequence = document.createElement("div");
-    sequence.className = "meme-track-sequence";
-    const count = Math.max(8, pool.length * 5);
-    for (let index = 0; index < count; index += 1) {
-      const entry = pool[(index + lane) % pool.length];
-      sequence.appendChild(makeWord(entry, index + lane, interactive));
+  function chooseLane(state) {
+    const now = performance.now();
+    const ranked = state.laneReady
+      .map((readyAt, lane) => ({ lane, wait: Math.max(0, readyAt - now) }))
+      .sort((left, right) => left.wait - right.wait);
+    const bestWait = ranked[0].wait;
+    const candidates = ranked.filter((item) => item.wait <= bestWait + 900).slice(0, 3);
+    return candidates[Math.floor(Math.random() * candidates.length)].lane;
+  }
+
+  function scheduleParticle(entry, state, lane, targetFraction = null) {
+    if (state.generation !== streamGeneration) return;
+
+    const particle = document.createElement("div");
+    particle.className = "meme-particle";
+    const button = makeWord(entry);
+    particle.appendChild(button);
+    streams.appendChild(particle);
+
+    const stageWidth = streams.clientWidth;
+    const stageHeight = streams.clientHeight;
+    const itemWidth = button.offsetWidth;
+    const laneStep = (stageHeight - 88) / Math.max(1, state.laneCount - 1);
+    const top = Math.max(14, Math.min(stageHeight - 70, 26 + lane * laneStep + randomBetween(-5, 5)));
+    particle.style.top = `${top}px`;
+    particle.style.setProperty("--meme-tilt", `${randomBetween(-0.8, 0.8).toFixed(2)}deg`);
+
+    if (state.reduceMotion) {
+      particle.classList.add("is-static");
+      particle.style.left = `${Math.max(2, Math.min(82, (targetFraction ?? Math.random()) * 100))}%`;
+      return;
     }
-    return sequence;
+
+    const distance = stageWidth + itemWidth + 96;
+    const speed = state.laneSpeeds[lane] * randomBetween(0.96, 1.04);
+    const duration = (distance / speed) * 1000;
+    const verticalDrift = randomBetween(-4, 4);
+    const animation = particle.animate(
+      [
+        { transform: "translate3d(0, 0, 0)" },
+        { transform: `translate3d(-${distance}px, ${verticalDrift}px, 0)` },
+      ],
+      { duration, easing: "linear", fill: "forwards" },
+    );
+
+    if (targetFraction !== null) {
+      const targetX = stageWidth * targetFraction;
+      const progress = Math.max(0, Math.min(0.94, (stageWidth - targetX) / distance));
+      animation.currentTime = duration * progress;
+    }
+
+    const pause = () => animation.pause();
+    const resume = () => animation.play();
+    button.addEventListener("pointerenter", pause);
+    button.addEventListener("pointerleave", resume);
+    button.addEventListener("focus", pause);
+    button.addEventListener("blur", resume);
+
+    state.laneReady[lane] = performance.now() + randomBetween(2600, 4700);
+    animation.addEventListener("finish", () => {
+      particle.remove();
+      if (state.generation !== streamGeneration) return;
+      const timer = window.setTimeout(() => {
+        state.timers.delete(timer);
+        scheduleParticle(entry, state, chooseLane(state));
+      }, randomBetween(500, 2400));
+      state.timers.add(timer);
+    });
+  }
+
+  function clearStream() {
+    streamGeneration += 1;
+    activeStream?.timers.forEach((timer) => window.clearTimeout(timer));
+    activeStream = null;
+    streams.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
+    streams.replaceChildren();
+  }
+
+  function initialLane(index, count, laneCount) {
+    if (count < laneCount) {
+      return Math.floor(((index + 1) * laneCount) / (count + 1));
+    }
+    return index % laneCount;
   }
 
   function renderStreams() {
-    const pool = visibleEntries();
-    streams.replaceChildren();
-    for (let lane = 0; lane < 4; lane += 1) {
-      const viewport = document.createElement("div");
-      viewport.className = "meme-stream";
-      const track = document.createElement("div");
-      track.className = `meme-track ${lane % 2 ? "meme-track--reverse" : ""}`;
-      track.style.setProperty("--meme-duration", `${34 + lane * 7}s`);
-      track.style.setProperty("--meme-delay", `${-lane * 8}s`);
-      track.append(makeSequence(pool, lane, true), makeSequence(pool, lane, false));
-      viewport.appendChild(track);
-      streams.appendChild(viewport);
-    }
+    clearStream();
+    const pool = shuffle(visibleEntries());
+    const laneCount = 7;
+    const state = {
+      generation: streamGeneration,
+      laneCount,
+      laneReady: Array.from({ length: laneCount }, () => 0),
+      laneSpeeds: Array.from({ length: laneCount }, () => randomBetween(38, 51)),
+      reduceMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches || pool.length <= 2,
+      timers: new Set(),
+    };
+    activeStream = state;
+
+    const columns = Math.max(1, Math.ceil(pool.length / laneCount));
+    pool.forEach((entry, index) => {
+      const lane = initialLane(index, pool.length, laneCount);
+      const column = Math.floor(index / laneCount);
+      const columnStep = 0.82 / columns;
+      const stagger = lane % 2 ? columnStep * 0.5 : 0;
+      const targetFraction = (0.08 + column * columnStep + stagger) % 0.9;
+      scheduleParticle(entry, state, lane, targetFraction);
+    });
     summary.textContent = `已收录 ${pool.length} 条 · ${new Set(pool.flatMap((entry) => entry.hotYears)).size} 个赛季 · 解释权归集体记忆所有`;
   }
 
@@ -219,6 +312,12 @@
   dialog.addEventListener("close", () => {
     document.documentElement.classList.remove("has-meme-dialog");
     returnFocus?.focus?.({ preventScroll: true });
+  });
+
+  let resizeTimer = 0;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(renderStreams, 180);
   });
 
   renderFilters();
