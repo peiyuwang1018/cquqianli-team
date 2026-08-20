@@ -3808,51 +3808,63 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
 /* Hierarchical page return control */
 .page-back-nav {
-  width: min(var(--max-width), calc(100% - 40px));
-  margin: 18px auto -38px;
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: 128px;
+  left: max(20px, calc((100% - var(--max-width)) / 2));
+  z-index: 19;
+  width: 54px;
+  height: 54px;
+}
+
+body:has(.page-back-nav) .page-hero > div:first-child {
+  padding-left: 72px;
 }
 
 .page-back-link {
-  min-height: 34px;
-  display: inline-flex;
+  display: grid;
+  width: 54px;
+  height: 54px;
   align-items: center;
-  gap: 7px;
-  padding: 4px 10px 4px 7px;
-  border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--card-bg) 90%, transparent);
-  color: var(--muted);
-  font-family: "Noto Serif SC", "Source Han Serif SC", serif;
-  font-size: 13px;
+  justify-items: center;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 72%, var(--line));
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--accent);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
   line-height: 1;
   transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease, transform 180ms ease;
 }
 
 .page-back-link .mdi {
-  font-size: 19px;
+  font-size: 25px;
   line-height: 1;
 }
 
 .page-back-link:hover,
 .page-back-link:focus-visible {
   border-color: var(--accent);
-  background: var(--surface);
-  color: var(--accent);
-  transform: translateX(-2px);
+  background: var(--accent);
+  color: #111;
+  transform: translateX(-4px);
   outline: none;
 }
 
 @media (max-width: 860px) {
   .page-back-nav {
-    width: calc(100% - 28px);
-    margin-top: 12px;
-    margin-bottom: -32px;
+    top: 106px;
+    left: 14px;
+    width: 48px;
+    height: 48px;
   }
 
   .page-back-link {
-    min-height: 32px;
-    font-size: 12px;
+    width: 48px;
+    height: 48px;
+  }
+
+  body:has(.page-back-nav) .page-hero > div:first-child {
+    padding-left: 62px;
   }
 }
 

@@ -49,7 +49,7 @@ function buildBackNavigation(relative) {
 
   return `    <div class="page-back-nav">
       <a class="page-back-link" href="${target.href}" aria-label="${target.label}" title="${target.label}">
-        <i class="mdi mdi-arrow-left" aria-hidden="true"></i><span>${target.label}</span>
+        <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>`;
 }
@@ -177,7 +177,7 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-7");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-8");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260821-2");
   fs.writeFileSync(file, html);
 }
