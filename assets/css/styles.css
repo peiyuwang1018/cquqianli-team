@@ -4045,6 +4045,10 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.contact-entry-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .contact-entry {
   position: relative;
   display: grid;
@@ -4125,6 +4129,104 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 .contact-address-list a:hover,
 .contact-address-list a:focus-visible {
   color: var(--text);
+}
+
+.contact-channel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contact-channel-card {
+  min-width: 0;
+  min-height: 126px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--card-bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.contact-channel-card--qr {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.contact-channel-card--qr > img {
+  display: block;
+  width: 92px;
+  height: 92px;
+  padding: 5px;
+  border-radius: 4px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.contact-channel-card--qr > div,
+.contact-channel-card--direct > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.contact-channel-card--qr > div {
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+}
+
+.contact-channel-card--qr i {
+  grid-row: 1 / span 2;
+}
+
+.contact-channel-card i {
+  color: var(--accent);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.contact-channel-card strong {
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.contact-channel-card span,
+.contact-channel-card em {
+  min-width: 0;
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.contact-channel-card--direct {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px 12px;
+  padding: 18px;
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.contact-channel-card--direct > i {
+  grid-row: 1 / span 2;
+  font-size: 24px;
+}
+
+.contact-channel-card--direct > em {
+  grid-column: 2;
+}
+
+a.contact-channel-card--direct:hover,
+a.contact-channel-card--direct:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--line));
+  background: color-mix(in srgb, var(--accent) 7%, var(--card-bg));
 }
 
 .partner-section,
@@ -4385,7 +4487,9 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
 @media (max-width: 980px) {
   .contact-entry-grid,
-  .contact-entry-grid--four {
+  .contact-entry-grid--four,
+  .contact-entry-grid--two,
+  .contact-channel-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -4397,6 +4501,8 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 @media (max-width: 680px) {
   .contact-entry-grid,
   .contact-entry-grid--four,
+  .contact-entry-grid--two,
+  .contact-channel-grid,
   .sponsor-contact {
     grid-template-columns: 1fr;
   }
@@ -4739,6 +4845,11 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   padding-top: 26px;
 }
 
+.past-member-season:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
 .past-member-season > header {
   padding-right: 26px;
 }
@@ -4767,7 +4878,19 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   gap: 18px;
 }
 
+.past-member-pending {
+  width: fit-content;
+  margin: 0;
+  padding: 7px 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 46%, var(--line));
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+}
+
 .past-member-group {
+  --member-tone: var(--accent);
   display: grid;
   grid-template-columns: 104px minmax(0, 1fr);
   gap: 16px;
@@ -4775,7 +4898,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
 .past-member-group h4 {
   margin: 0;
-  color: var(--text);
+  color: var(--member-tone);
   font-size: 14px;
   font-weight: 500;
 }
@@ -4783,7 +4906,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 .past-member-group h4 small {
   display: block;
   margin-top: 2px;
-  color: var(--subtle);
+  color: color-mix(in srgb, var(--member-tone) 62%, var(--muted));
   font-family: Arial, "Microsoft YaHei", sans-serif;
   font-size: 10px;
   font-weight: 400;
@@ -4796,13 +4919,33 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .past-member-group > div span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
   padding: 5px 9px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--muted);
+  border: 1px solid color-mix(in srgb, var(--member-tone) 44%, var(--line));
+  background: color-mix(in srgb, var(--member-tone) 8%, var(--surface));
+  color: color-mix(in srgb, var(--member-tone) 76%, var(--text));
   font-family: Arial, "Microsoft YaHei", sans-serif;
   font-size: 12px;
-  line-height: 1.35;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.past-member-group[data-member-kind="member"] {
+  --member-tone: #e5a44b;
+}
+
+.past-member-group[data-member-kind="trainee"] {
+  --member-tone: #5aa9f8;
+}
+
+.past-member-group[data-member-kind="advisor"] {
+  --member-tone: #a78bfa;
+}
+
+.past-member-group[data-member-kind="teacher"] {
+  --member-tone: #57d68d;
 }
 
 .member-section-rail {

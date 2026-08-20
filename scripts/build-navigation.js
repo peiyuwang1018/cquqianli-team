@@ -103,7 +103,6 @@ function buildNavigation(active) {
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>
                 <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/sponsorship.html"><span class="nav-item-label">赞助合作</span><i class="mdi mdi-domain nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/outreach.html"><span class="nav-item-label">科创教育活动</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/social.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
               </span>
             </span>
           </span>
@@ -126,7 +125,7 @@ for (const file of htmlFiles) {
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
   html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-3");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-4");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260820-1");
   fs.writeFileSync(file, html);
 }

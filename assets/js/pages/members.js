@@ -103,9 +103,22 @@
       <header><div><span>RMUC ${season.season}</span><h3>${season.season} 赛季</h3></div><p>${season.event}</p></header>
       <div class="past-member-groups"></div>`;
     const groups = article.querySelector(".past-member-groups");
+    if (!season.groups.length) {
+      const pending = document.createElement("p");
+      pending.className = "past-member-pending";
+      pending.textContent = "待更新";
+      groups.appendChild(pending);
+    }
     season.groups.forEach(([label, names]) => {
       const group = document.createElement("section");
       group.className = "past-member-group";
+      const kindMap = {
+        "正式队员": "member",
+        "梯队队员": "trainee",
+        "顾问": "advisor",
+        "指导老师": "teacher"
+      };
+      group.dataset.memberKind = kindMap[label] || "other";
       group.innerHTML = `<h4>${label}<small>${names.length}</small></h4><div></div>`;
       const list = group.querySelector("div");
       names.forEach((name) => {
