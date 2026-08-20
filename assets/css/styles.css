@@ -4116,6 +4116,17 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   font-size: 20px;
 }
 
+.contact-address-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 34px;
+}
+
+.contact-address-list a:hover,
+.contact-address-list a:focus-visible {
+  color: var(--text);
+}
+
 .partner-section,
 .partnership-history {
   display: grid;
@@ -4268,6 +4279,67 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   border-top: 1px solid var(--line);
 }
 
+.find-qianli-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.find-qianli-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.find-qianli-qr {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: clamp(18px, 2.4vw, 34px);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+
+.find-qianli-qr img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.find-qianli-card-copy {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px 20px;
+}
+
+.find-qianli-card-copy > i {
+  color: var(--accent);
+  font-size: 27px;
+}
+
+.find-qianli-card-copy > div {
+  display: grid;
+  gap: 4px;
+}
+
+.find-qianli-card-copy strong {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.find-qianli-card-copy span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.social-platform-list--direct {
+  margin-top: 8px;
+}
+
 .social-platform-list > a,
 .social-platform-list > article {
   display: grid;
@@ -4316,6 +4388,10 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   .contact-entry-grid--four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .find-qianli-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 680px) {
@@ -4345,6 +4421,22 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   .contact-cta {
     align-items: start;
     flex-direction: column;
+  }
+
+  .find-qianli-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .find-qianli-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(150px, 1fr);
+    align-items: stretch;
+  }
+
+  .find-qianli-qr {
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    padding: 14px;
   }
 
   .social-platform-list > a,
