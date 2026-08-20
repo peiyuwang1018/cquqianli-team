@@ -3976,6 +3976,370 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   }
 }
 
+/* Museum landing: eight entrances in one compact 4 x 2 index. */
+.museum-entry-section {
+  margin-top: 54px;
+}
+
+.museum-entry-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.museum-entry-grid .entry-card {
+  min-height: 164px;
+  padding: 20px;
+}
+
+.museum-entry-grid .entry-card strong {
+  font-size: 20px;
+}
+
+.museum-entry-grid .entry-card small {
+  margin-top: 7px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Team member archive. */
+.team-members-hero h1 {
+  font-size: clamp(42px, 4.7vw, 70px);
+}
+
+.team-member-section {
+  scroll-margin-top: 112px;
+}
+
+.team-member-section-head {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.68fr) minmax(320px, 1.32fr);
+  gap: 42px;
+  align-items: end;
+  margin-bottom: 32px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.team-member-section-head h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.team-member-section-head > p {
+  justify-self: end;
+  max-width: 660px;
+  font-size: 15px;
+}
+
+.current-member-groups {
+  display: grid;
+  gap: 44px;
+}
+
+.current-member-group > header {
+  display: flex;
+  gap: 22px;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.current-member-group > header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.current-member-group > header p {
+  font-size: 13px;
+}
+
+.current-member-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.current-member-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.current-member-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+}
+
+.current-member-card figure {
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.current-member-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(0.2);
+  transition: filter 180ms ease, transform 260ms ease;
+}
+
+.current-member-card:hover img {
+  filter: grayscale(0);
+  transform: scale(1.025);
+}
+
+.current-member-card > div {
+  min-height: 82px;
+  padding: 13px 14px 15px;
+}
+
+.current-member-card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.current-member-card p {
+  margin-top: 5px;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.past-member-archive {
+  display: grid;
+  gap: 24px;
+}
+
+.past-member-season {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  border-top: 1px solid var(--line);
+  padding-top: 26px;
+}
+
+.past-member-season > header {
+  padding-right: 26px;
+}
+
+.past-member-season > header span {
+  color: var(--accent);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.past-member-season > header h3 {
+  margin: 5px 0 8px;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.past-member-season > header p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.past-member-groups {
+  display: grid;
+  gap: 18px;
+}
+
+.past-member-group {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.past-member-group h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.past-member-group h4 small {
+  display: block;
+  margin-top: 2px;
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.past-member-group > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.past-member-group > div span {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.member-section-rail {
+  position: fixed;
+  z-index: 18;
+  top: 50%;
+  left: clamp(30px, 3.2vw, 58px);
+  display: grid;
+  gap: 8px;
+  transform: translateY(-50%);
+}
+
+.member-section-rail button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4px;
+  place-items: center;
+  width: 24px;
+  height: 58px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.member-section-rail button > span {
+  width: 3px;
+  height: 42px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--muted) 46%, transparent);
+  transition: height 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.member-section-rail button > b {
+  position: absolute;
+  left: 19px;
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.member-section-rail button > em {
+  position: absolute;
+  left: 32px;
+  width: max-content;
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 10px;
+  font-style: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-5px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.member-section-rail button:is(:hover, :focus-visible, .is-active) > span {
+  height: 52px;
+  background: var(--accent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 72%, transparent);
+}
+
+.member-section-rail button:is(:hover, :focus-visible, .is-active) > b,
+.member-section-rail button:is(:hover, :focus-visible) > em {
+  opacity: 1;
+}
+
+.member-section-rail button:is(:hover, :focus-visible) > em {
+  transform: translateX(0);
+}
+
+.member-section-rail button:focus-visible {
+  outline: 0;
+}
+
+@media (max-width: 1100px) {
+  .museum-entry-grid,
+  .current-member-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .museum-entry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-member-section-head,
+  .past-member-season {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-section-head {
+    gap: 14px;
+  }
+
+  .team-member-section-head > p {
+    justify-self: start;
+  }
+
+  .current-member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .past-member-season > header {
+    padding: 0 0 18px;
+  }
+
+  .member-section-rail {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .museum-entry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .current-member-group > header {
+    display: block;
+  }
+
+  .current-member-group > header p {
+    margin-top: 6px;
+  }
+
+  .current-member-grid {
+    gap: 9px;
+  }
+
+  .current-member-card > div {
+    min-height: 74px;
+    padding: 11px;
+  }
+
+  .current-member-card h3 {
+    font-size: 16px;
+  }
+
+  .past-member-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 /* Photo wall */
 .gallery-shell {
   width: min(var(--max-width), calc(100% - 40px));

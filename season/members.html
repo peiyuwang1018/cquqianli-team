@@ -4,8 +4,8 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
-    <title>电气控制组 | 重庆大学千里战队</title>
+    <meta name="description" content="重庆大学千里战队现任成员与历届超级对抗赛报名成员档案。" />
+    <title>战队成员 | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=20260820-4" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
+  <body data-page="frontline">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -40,7 +40,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--organization">
-            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -71,7 +71,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">RM一线</span></a>
+            <a class="is-active" aria-current="page" href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">RM一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -115,31 +115,34 @@
       </nav>
     </header>
     <main>
-    <section class="page-hero"><div><p class="page-label">Electrical Control</p><h1>电气控制组</h1></div><p>负责机器人控制软件、运动控制、通信链路、整车状态机与赛季联调。</p></section>
-    <section class="section-block group-detail">
-      <figure class="group-symbol"><img src="assets/images/brand/电气控制组.png" alt="电气控制组" /></figure>
-      <div class="detail-panel"><h2>技术栈 / 工具栈</h2><div class="tag-cloud"><span>C / C++</span><span>嵌入式开发</span><span>控制算法</span><span>通信协议</span><span>调试与数据记录</span></div></div>
-    </section>
-    <section class="section-block process-grid"><article><span>01</span><h2>底盘、云台、发射等核心控制</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>02</span><h2>整车状态机和模块接口</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>03</span><h2>跨机械、视觉、硬件的联调</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>04</span><h2>赛场稳定性和异常处理</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article></section>
-  </main>
+      <section class="page-hero team-members-hero">
+        <div><p class="page-label">QIANLI TEAM</p><h1>战队成员</h1></div>
+        <p>记录此刻并肩前行的人，也保存历届超级对抗赛报名系统里的队伍姓名。</p>
+      </section>
+
+      <section class="section-block team-member-section" id="current-members" data-member-section="current">
+        <header class="team-member-section-head">
+          <div><p class="page-label">CURRENT TEAM</p><h2>现任团队成员</h2></div>
+          <p>照片与职责资料将随各组归档持续补充；当前先呈现已完成整理的成员档案。</p>
+        </header>
+        <div class="current-member-groups" data-current-members></div>
+      </section>
+
+      <section class="section-block team-member-section" id="past-members" data-member-section="past">
+        <header class="team-member-section-head">
+          <div><p class="page-label">TEAM ARCHIVE</p><h2>历届队伍成员</h2></div>
+          <p>信息无法涵盖所有参与队员，人员与身份以当赛季 RoboMaster 超级对抗赛报名系统呈现为准。</p>
+        </header>
+        <div class="past-member-archive" data-past-members></div>
+      </section>
+    </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
+    <script src="assets/js/data/members.js?v=20260820-1"></script>
+    <script src="assets/js/pages/members.js?v=20260820-1"></script>
     <script src="assets/js/core/site.js?v=20260820-1"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
