@@ -1681,6 +1681,21 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   --meme-color: #65aee8;
 }
 
+.meme-barrage-word--cyan,
+.meme-dialog[data-tone="cyan"] {
+  --meme-color: #48c6ca;
+}
+
+.meme-barrage-word--violet,
+.meme-dialog[data-tone="violet"] {
+  --meme-color: #a88be8;
+}
+
+.meme-barrage-word--mint,
+.meme-dialog[data-tone="mint"] {
+  --meme-color: #71cf9b;
+}
+
 .meme-stage-footer {
   display: flex;
   justify-content: space-between;
@@ -1890,6 +1905,12 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   line-height: 1.05;
 }
 
+.meme-dialog.is-long-term .meme-dialog-copy h2 {
+  max-width: 420px;
+  font-size: clamp(30px, 3.7vw, 48px);
+  line-height: 1.16;
+}
+
 .meme-dialog-summary {
   margin-top: 14px;
   color: var(--text);
@@ -2078,6 +2099,10 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
   .meme-dialog-copy h2 {
     font-size: 40px;
+  }
+
+  .meme-dialog.is-long-term .meme-dialog-copy h2 {
+    font-size: 30px;
   }
 
   .meme-definition-list > div {

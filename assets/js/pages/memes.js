@@ -143,6 +143,7 @@
     activeEntry = entry;
     activeImage = 0;
     dialog.dataset.tone = entry.tone;
+    dialog.classList.toggle("is-long-term", entry.term.length > 6);
     dialog.querySelector("[data-meme-season]").textContent = entry.season;
     dialog.querySelector("[data-meme-term]").textContent = entry.term;
     dialog.querySelector("[data-meme-short]").textContent = entry.summary;
