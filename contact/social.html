@@ -4,30 +4,17 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
-    <title>硬件开发组 | 重庆大学千里战队</title>
-    <script>
-      (() => {
-        try {
-          const savedTheme = localStorage.getItem("theme");
-          document.documentElement.dataset.theme = savedTheme || "dark";
-        } catch {
-          document.documentElement.dataset.theme = "dark";
-        }
-      })();
-    </script>
+    <meta name="description" content="重庆大学千里战队社交媒体账号与内容平台入口。" />
+    <title>社交媒体 | 重庆大学千里战队</title>
+    <script>(() => { try { document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark"; } catch { document.documentElement.dataset.theme = "dark"; } })();</script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css?v=20260821-1" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
-    <header class="site-header">
-      <nav class="nav" aria-label="主导航">
-        <a class="brand" href="index.html" aria-label="返回首页">
-          <span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span>
-          <span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+  <body data-page="contact">
+    <header class="site-header"><nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span><span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
         <div class="nav-links" id="nav-links">
           <span class="nav-menu">
             <a href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
@@ -40,7 +27,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--organization">
-            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -98,7 +85,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--contact">
-            <a href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-handshake-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
+            <a class="is-active" aria-current="page" href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-handshake-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
             <span class="nav-dropdown nav-dropdown--contact">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
@@ -116,38 +103,20 @@
             </span>
           </span>
         </div>
-        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
-        </button>
-      </nav>
-    </header>
+        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false"><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2Z" /></svg><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg></button>
+    </nav></header>
     <main>
-    <section class="page-hero"><div><p class="page-label">Hardware Development</p><h1>硬件开发组</h1></div><p>负责电路、电气连接、供电保护、传感器接入和全兵种硬件可靠性支持。</p></section>
-    <section class="section-block group-detail">
-      <figure class="group-symbol"><img src="assets/images/brand/硬件开发组.png" alt="硬件开发组" /></figure>
-      <div class="detail-panel"><h2>技术栈 / 工具栈</h2><div class="tag-cloud"><span>PCB 设计</span><span>电源与保护</span><span>传感器接口</span><span>线束规范</span><span>硬件测试</span></div></div>
-    </section>
-    <section class="section-block process-grid"><article><span>01</span><h2>自研板卡与接口规范</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>02</span><h2>供电、通信和电气安全</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>03</span><h2>整车硬件排故与维护</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>04</span><h2>跨兵种硬件支持</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article></section>
-  </main>
-    <footer class="site-footer">
-      <p>© 2026 重庆大学千里战队</p>
-      <p>网站建设：重庆大学千里战队 × Codex</p>
-      <p>域名规划：team.cquqianli.cn</p>
-    </footer>
+      <section class="page-hero"><div><p class="page-label">SOCIAL MEDIA</p><h1>社交媒体</h1></div><p>关注训练、比赛、技术分享与队伍日常；尚未归档的平台入口会在确认后开放。</p></section>
+      <section class="section-block social-directory" aria-labelledby="social-title">
+        <div class="section-heading"><div><p class="page-label">FOLLOW QIANLI</p><h2 id="social-title">平台账号</h2></div><p>同一支队伍，不同的观察窗口。</p></div>
+        <div class="social-platform-list">
+          <a href="https://space.bilibili.com/282638295" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-television-play" aria-hidden="true"></i><div><strong>Bilibili</strong><span>比赛录像、纪录片与技术视频</span></div><em>进入主页</em></a>
+          <article><i class="mdi mdi-wechat" aria-hidden="true"></i><div><strong>微信公众号</strong><span>千里时刻、赛季记录与队伍资讯</span></div><em>账号待补充</em></article>
+          <article><i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i><div><strong>小红书</strong><span>队伍日常、赛场影像与视觉内容</span></div><em>账号待补充</em></article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><p>© 2026 重庆大学千里战队</p><p>网站建设：重庆大学千里战队 × Codex</p><p>域名规划：team.cquqianli.cn</p></footer>
     <script src="assets/js/core/site.js?v=20260820-1"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

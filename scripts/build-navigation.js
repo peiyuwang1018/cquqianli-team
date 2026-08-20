@@ -16,6 +16,10 @@ function activeAttributes(active, key) {
   return active === key ? ' class="is-active" aria-current="page"' : "";
 }
 
+function activeAnyAttributes(active, keys) {
+  return keys.includes(active) ? ' class="is-active" aria-current="page"' : "";
+}
+
 function buildNavigation(active) {
   return `        <div class="nav-links" id="nav-links">
           <span class="nav-menu">
@@ -86,16 +90,24 @@ function buildNavigation(active) {
               </span>
             </span>
           </span>
-          <span class="nav-menu">
-            <a${activeAttributes(active, "join")} href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">加入我们</span></a>
-            <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#persona"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+          <span class="nav-menu nav-menu--contact">
+            <a${activeAnyAttributes(active, ["join", "contact"])} href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-handshake-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
+            <span class="nav-dropdown nav-dropdown--contact">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#persona"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/sponsorship.html"><span class="nav-item-label">赞助合作</span><i class="mdi mdi-domain nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/outreach.html"><span class="nav-item-label">科创教育活动</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/social.html"><span class="nav-item-label">社交媒体</span><i class="mdi mdi-share-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
             </span>
           </span>
-          <a${activeAttributes(active, "contact")} href="contact/index.html" data-nav="contact"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系方式</span></a>
         </div>`;
 }
 
@@ -115,7 +127,7 @@ for (const file of htmlFiles) {
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
   html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260820-4");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-1");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260820-1");
   fs.writeFileSync(file, html);
 }
