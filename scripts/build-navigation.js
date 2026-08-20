@@ -20,6 +20,40 @@ function activeAnyAttributes(active, keys) {
   return keys.includes(active) ? ' class="is-active" aria-current="page"' : "";
 }
 
+function getBackTarget(relative) {
+  if (relative === "index.html") return null;
+
+  const primaryPages = new Set([
+    "about/index.html",
+    "about/organization.html",
+    "season/index.html",
+    "museum/index.html",
+    "contact/index.html",
+  ]);
+
+  if (primaryPages.has(relative)) return { href: "index.html", label: "返回主页" };
+  if (relative.startsWith("groups/")) return { href: "about/organization.html", label: "返回组织架构" };
+  if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
+  if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回 RM 一线" };
+  if (relative.startsWith("museum/")) return { href: "museum/index.html", label: "返回千里博物馆" };
+  if (relative === "join/index.html" || relative.startsWith("contact/")) {
+    return { href: "contact/index.html", label: "返回联系我们" };
+  }
+
+  return { href: "index.html", label: "返回主页" };
+}
+
+function buildBackNavigation(relative) {
+  const target = getBackTarget(relative);
+  if (!target) return "";
+
+  return `    <div class="page-back-nav">
+      <a class="page-back-link" href="${target.href}" aria-label="${target.label}" title="${target.label}">
+        <i class="mdi mdi-arrow-left" aria-hidden="true"></i><span>${target.label}</span>
+      </a>
+    </div>`;
+}
+
 function buildNavigation(active) {
   return `        <div class="nav-links" id="nav-links">
           <span class="nav-menu">
@@ -135,7 +169,15 @@ for (const file of htmlFiles) {
     );
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-5");
+  html = html.replace(/\s*<div class="page-back-nav">[\s\S]*?<\/div>\s*(?=<main\b)/, "\n");
+  const backNavigation = buildBackNavigation(relative);
+  if (backNavigation) {
+    const mainPattern = /(\r?\n\s*)<main\b/;
+    if (!mainPattern.test(html)) throw new Error(`Main content not found in ${relative}`);
+    html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
+  }
+
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-6");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260821-2");
   fs.writeFileSync(file, html);
 }

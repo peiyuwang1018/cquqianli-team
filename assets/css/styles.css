@@ -3768,6 +3768,56 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   }
 }
 
+/* Hierarchical page return control */
+.page-back-nav {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 18px auto -38px;
+  position: relative;
+  z-index: 2;
+}
+
+.page-back-link {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px 4px 7px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+  color: var(--muted);
+  font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+  font-size: 13px;
+  line-height: 1;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.page-back-link .mdi {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.page-back-link:hover,
+.page-back-link:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  transform: translateX(-2px);
+  outline: none;
+}
+
+@media (max-width: 860px) {
+  .page-back-nav {
+    width: calc(100% - 28px);
+    margin-top: 12px;
+    margin-bottom: -32px;
+  }
+
+  .page-back-link {
+    min-height: 32px;
+    font-size: 12px;
+  }
+}
+
 .nav-links > a,
 .nav-menu > a {
   isolation: isolate;
