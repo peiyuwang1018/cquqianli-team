@@ -68,13 +68,21 @@ function buildNavigation(active) {
           </span>
           <span class="nav-menu">
             <a${activeAttributes(active, "archive")} href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
-            <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/records.html"><span class="nav-item-label">档案馆</span><i class="mdi mdi-archive-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/hall-of-fame.html"><span class="nav-item-label">名人堂</span><i class="mdi mdi-account-star-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a>
+            <span class="nav-dropdown nav-dropdown--museum">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/records.html"><span class="nav-item-label">档案馆</span><i class="mdi mdi-archive-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/hall-of-fame.html"><span class="nav-item-label">名人堂</span><i class="mdi mdi-account-star-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-party-popper" aria-hidden="true"></i><strong>轻松一刻</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/memes.html"><span class="nav-item-label">梗指南</span><i class="mdi mdi-lightbulb-on-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/shop.html"><span class="nav-item-label">周边小店</span><i class="mdi mdi-shopping-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
             </span>
           </span>
           <span class="nav-menu">
@@ -106,8 +114,8 @@ for (const file of htmlFiles) {
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
   html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260820-1");
-  html = html.replace(/site\.js\?v=20260819-\d+/g, "site.js?v=20260819-8");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260820-2");
+  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260820-1");
   fs.writeFileSync(file, html);
 }
 

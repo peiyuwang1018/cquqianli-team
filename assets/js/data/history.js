@@ -1,11 +1,36 @@
 window.QIANLI_HISTORY = {
+  phases: [
+    {
+      id: "pre-qianli",
+      label: "第一阶段",
+      years: "2004-2022",
+      title: "前千里时期",
+      summary: "从“巴将军”到 Allspark、MechaX，机器人竞赛传统逐渐转向 RoboMaster，并在中断后重新接续。",
+    },
+    {
+      id: "growth",
+      label: "第二阶段",
+      years: "2023-2025",
+      title: "建设成长时期",
+      summary: "千里完成定名、组织重建与培养体系建设，重新走进深圳春茧，并持续补齐完整赛季能力。",
+    },
+    {
+      id: "restart",
+      label: "第三阶段",
+      years: "2026-至今",
+      title: "重启新时期",
+      summary: "在挫折中重新审视责任、传承与研发节奏，把未完成的积累带入新的赛季。",
+    },
+  ],
   entries: [
     {
       id: "robocup-origin",
+      phase: "pre-qianli",
       years: "2004-2011",
       era: "ROBOCUP ERA",
       title: "巴将军与机器人竞赛传统",
       summary: "从“巴将军”机器人竞赛团队出发，重庆大学逐步建立机器人竞赛与学生创新实践的组织基础。",
+      cover: { placeholder: true, label: "巴将军时期代表合照待归档" },
       facts: [
         ["起点", "2004 年组建“巴将军”"],
         ["代表成绩", "2008 年 RoboCup 中国机器人大赛冠军一项、亚军一项"],
@@ -23,10 +48,12 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "rm-origin",
+      phase: "pre-qianli",
       years: "2014-2015",
       era: "FIRST ROBOMASTER",
       title: "从 RoboCup 走向 RoboMaster",
       summary: "机器人创新实验室成立，队伍完成 RoboMaster 建队并走上第一届机甲大师赛赛场。",
+      cover: { placeholder: true, label: "首届 RoboMaster 参赛合照待归档" },
       facts: [
         ["实验室", "2014 年成立机器人创新实验室"],
         ["首次参赛", "2015 年参加首届 RoboMaster"],
@@ -44,10 +71,16 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "allspark",
+      phase: "pre-qianli",
       years: "2016-2018",
       era: "ALLSPARK ERA",
       title: "Allspark 成形",
       summary: "队伍启用 Allspark 名称，形成更完整的机器人阵容，并在分区赛与复活赛持续积累经验。",
+      cover: {
+        src: "assets/images/content/about/history/allspark/2017-group.png",
+        alt: "Allspark 战队成员与机器人合影",
+        caption: "Allspark 时期 · 队员与机器人合影",
+      },
       facts: [
         ["队名", "“巴将军”更名为 Allspark 机器人战队"],
         ["RM 2017", "西部赛区亚军、全国 32 强"],
@@ -68,10 +101,12 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "interruption",
+      phase: "pre-qianli",
       years: "2019-2020",
       era: "INTERRUPTION",
       title: "断代与线上赛季",
       summary: "人员流失与管理变动使传承出现断层，队伍经历弃赛与线上单项赛。",
+      cover: { placeholder: true, label: "断代时期代表影像待归档" },
       facts: [
         ["2019 赛季", "未参加正式赛事"],
         ["2020 赛季", "参加线上单项赛"],
@@ -89,10 +124,12 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "restart-mechax",
+      phase: "pre-qianli",
       years: "2021-2022",
       era: "RESTART & MECHAX",
       title: "重启、组织转接与 MechaX",
       summary: "队伍从近乎重新建队开始恢复研发，转入学生交叉创新中心，并以 MechaX 名称进入过渡赛季。",
+      cover: { placeholder: true, label: "MechaX 时期代表合照待归档" },
       facts: [
         ["重启", "2021 年重新构建面向超级对抗赛的队伍"],
         ["联盟赛", "黑龙江站三等奖"],
@@ -109,20 +146,53 @@ window.QIANLI_HISTORY = {
       ],
     },
     {
-      id: "qianli-return",
-      years: "2023-2024",
+      id: "qianli-2023",
+      phase: "growth",
+      years: "2023 赛季",
       era: "QIANLI BEGINS",
-      title: "千里启程，重返全国赛",
-      summary: "MechaX 更名为千里；队伍重返超级对抗赛，并在联盟赛、分区赛和全国赛取得连续突破。",
+      title: "千里定名，建设重新起步",
+      summary: "MechaX 更名为千里，队伍重新梳理组织身份、培养路径与面向完整赛季的研发基础。",
+      cover: {
+        src: "assets/images/content/archive/gallery/robots/2023/photos/hero-1.jpg",
+        alt: "2023 赛季英雄机器人",
+        caption: "2023 赛季 · 英雄机器人",
+      },
       facts: [
         ["新队名", "MechaX 更名为“千里”"],
-        ["联盟赛", "高校联盟赛西南站冠军"],
-        ["超级对抗赛", "区域赛一等奖、全国二等奖"],
+        ["建设主线", "恢复组织、培训与完整兵种研发"],
+        ["传承工作", "分级培养、基建任务与知识库开始搭建"],
       ],
       paragraphs: [
-        "在 2023 年启动的 RM 2024 赛季，MechaX 更名为“千里”。新名称承接既有队史，也表达了队伍在长期工程实践中持续前行的愿望。",
-        "这一赛季，千里获得 RoboMaster 高校联盟赛西南站冠军、超级对抗赛区域赛一等奖及全国二等奖，完成断代后首次重返超级对抗赛全国赛阶段。与此同时，队伍开始建立梯队分级培养，重构培训内容，将基建项目引入新人培养，并逐步搭建知识库。",
-        "在机器人研发上，队伍首次拥有能够稳定执行建筑打击任务的飞镖系统、舵轮步兵与轮腿步兵，并在复活赛启用具备吊射能力的英雄机器人。更完整的兵种阵容与更清晰的培养路径，共同构成千里时期的第一个重要台阶。",
+        "2023 年，MechaX 更名为“千里”。新名称承接既有队史，也表达了队伍在长期工程实践中持续前行的愿望。",
+        "队伍开始重新梳理组织身份与研发目标，建立梯队分级培养，重构培训内容，将基建项目引入新人培养，并逐步搭建知识库。这个赛季没有把答案写在奖项上，而是把下一次完整出征所需要的人员、项目与协作基础重新搭了起来。",
+      ],
+      gallery: [
+        { src: "assets/images/content/archive/gallery/robots/2023/photos/hero-1.jpg", alt: "2023 赛季英雄机器人", caption: "2023 赛季 · 英雄机器人" },
+        { src: "assets/images/content/archive/gallery/robots/2023/photos/engineer-2.jpg", alt: "2023 赛季工程机器人", caption: "2023 赛季 · 工程机器人" },
+        { src: "assets/images/content/archive/gallery/robots/2023/photos/infantry-3.png", alt: "2023 赛季步兵机器人", caption: "2023 赛季 · 步兵机器人" },
+        { placeholder: true, label: "2023 赛季 · 队伍合照待归档" },
+      ],
+    },
+    {
+      id: "qianli-2024",
+      phase: "growth",
+      years: "2024 赛季",
+      era: "BACK TO SPRING COCOON",
+      title: "重返春茧",
+      summary: "千里在联盟赛、分区赛与复活赛连续突破，完成断代后首次回到深圳春茧。",
+      cover: {
+        src: "assets/images/content/archive/gallery/team-photos/previews/2024-revival-shenzhen-spring-cocoon.jpg",
+        alt: "2024 全国赛阶段复活赛队伍合影",
+        caption: "2024 · 深圳春茧体育馆 · 全国赛阶段复活赛",
+      },
+      facts: [
+        ["联盟赛", "高校联盟赛西南站冠军"],
+        ["超级对抗赛", "区域赛一等奖、全国二等奖"],
+        ["关键节点", "断代后首次重返深圳春茧"],
+      ],
+      paragraphs: [
+        "2024 赛季，千里获得 RoboMaster 高校联盟赛西南站冠军、超级对抗赛区域赛一等奖及全国二等奖，并在全国赛阶段复活赛重新走进深圳春茧。对经历过断代与重建的队伍而言，这不只是一次成绩上的回升，也是组织重新具备完整赛季参赛能力的证明。",
+        "机器人研发上，队伍首次拥有能够稳定执行建筑打击任务的飞镖系统、舵轮步兵与轮腿步兵，并在复活赛启用具备吊射能力的英雄机器人。更完整的兵种阵容与逐渐清晰的培养路径，共同构成千里时期的第一个重要台阶。",
       ],
       gallery: [
         { src: "assets/images/content/archive/gallery/team-photos/previews/2024-south-division-he-long.jpg", alt: "2024 南部分区赛队伍合影", caption: "2024 · 长沙贺龙体育馆 · 南部分区赛" },
@@ -133,10 +203,16 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "system-building",
-      years: "2024-2025",
+      phase: "growth",
+      years: "2025 赛季",
       era: "SYSTEM BUILDING",
       title: "培养体系与工程能力建设",
       summary: "队伍细化项目管理和培养机制，在机器人底层模块、传动与整机迭代上继续向前。",
+      cover: {
+        src: "assets/images/content/archive/gallery/team-photos/previews/2025-central-division-he-long.jpg",
+        alt: "2025 中部分区赛队伍合影",
+        caption: "2025 · 长沙贺龙体育馆 · 中部分区赛",
+      },
       facts: [
         ["联盟赛", "西南站甲级组三等奖"],
         ["超级对抗赛", "区域赛二等奖"],
@@ -156,10 +232,16 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "setback-rebuild",
-      years: "2025-2026",
+      phase: "restart",
+      years: "2026 赛季",
       era: "SETBACK & REBUILD",
       title: "挫折、重整与传承蓄力",
       summary: "组织与研发力量经历波动；联盟赛取得阶段成绩，但队伍未能获得超级对抗赛资格。",
+      cover: {
+        src: "assets/images/content/about/history/recent/2026-rmul-team-a.jpg",
+        alt: "RM 2026 联盟赛重庆站队伍合影",
+        caption: "RM 2026 · 高校联盟赛重庆站",
+      },
       facts: [
         ["联盟赛", "重庆站甲级组二等奖、小组赛出线"],
         ["超级对抗赛", "未通过完整形态与视频考核"],
@@ -178,10 +260,12 @@ window.QIANLI_HISTORY = {
     },
     {
       id: "next-season",
-      years: "2026-2027",
+      phase: "restart",
+      years: "2027 赛季",
       era: "TO BE CONTINUED",
       title: "下一段路，正在书写",
       summary: "延续研发、重建传承、重新冲击超级对抗赛；新的赛季尚未写下结论。",
+      cover: { placeholder: true, label: "2027 赛季代表合照将在关键节点后归档" },
       facts: [
         ["当前状态", "RM 2027 赛季进行中"],
         ["工作主线", "延续研发、组织建设与梯队培养"],

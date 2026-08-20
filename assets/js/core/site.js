@@ -571,7 +571,11 @@ function initRecruitLetter() {
     button.addEventListener("click", () => {
       const section = dialog.querySelector(`#${button.dataset.letterTarget}`);
       if (section && letterContent) {
-        letterContent.scrollTop = Math.max(0, section.offsetTop - letterContent.offsetTop - 8);
+        const targetTop = Math.max(0, section.offsetTop - letterContent.offsetTop - 8);
+        letterContent.scrollTo({
+          top: targetTop,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        });
       }
       setActiveSection(button.dataset.letterTarget);
     });
@@ -594,6 +598,7 @@ function initRecruitLetter() {
     if (typeof dialog.showModal === "function") dialog.showModal();
     else dialog.setAttribute("open", "");
     document.documentElement.classList.add("has-recruit-letter");
+    letterContent?.scrollTo({ top: 0, behavior: "auto" });
     setActiveSection("recruit-letter-section-01");
   };
   const closeLetter = () => {

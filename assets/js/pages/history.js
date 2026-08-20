@@ -40,6 +40,7 @@
     item.className = "history-node";
     item.id = entry.id;
     item.innerHTML = `
+      <figure class="history-node-cover"></figure>
       <button class="history-node-card" type="button" aria-haspopup="dialog" aria-label="打开 ${entry.years} ${entry.title} 档案">
         <span class="history-node-era">${entry.era}</span>
         <span class="history-node-years">${entry.years}</span>
@@ -48,8 +49,83 @@
         <span class="history-node-open"><i class="mdi mdi-arrow-top-right" aria-hidden="true"></i><span>阅读档案</span></span>
       </button>
       <span class="history-node-marker" aria-hidden="true"><b>${String(index + 1).padStart(2, "0")}</b></span>`;
+
+    const cover = item.querySelector(".history-node-cover");
+    if (entry.cover?.src) {
+      const image = document.createElement("img");
+      image.src = entry.cover.src;
+      image.alt = entry.cover.alt || entry.title;
+      image.loading = index < 3 ? "eager" : "lazy";
+      image.decoding = "async";
+      const caption = document.createElement("figcaption");
+      caption.textContent = entry.cover.caption || entry.title;
+      cover.append(image, caption);
+    } else {
+      cover.classList.add("is-placeholder");
+      cover.innerHTML = `<i class="mdi mdi-image-outline" aria-hidden="true"></i><span>${entry.cover?.label || "代表照片待归档"}</span>`;
+    }
     item.querySelector("button").addEventListener("click", () => openEntry(entry));
     return item;
+  }
+
+  function makePhase(phase, startIndex) {
+    const section = document.createElement("section");
+    section.className = "history-phase";
+    section.id = `history-phase-${phase.id}`;
+    section.dataset.historyPhase = phase.id;
+    section.innerHTML = `
+      <header class="history-phase-header">
+        <div><span>${phase.label}</span><p>${phase.years}</p><h2>${phase.title}</h2></div>
+        <p>${phase.summary}</p>
+      </header>
+      <div class="history-phase-nodes"></div>`;
+    const phaseEntries = archive.entries.filter((entry) => entry.phase === phase.id);
+    section.querySelector(".history-phase-nodes").replaceChildren(
+      ...phaseEntries.map((entry, index) => makeNode(entry, startIndex + index))
+    );
+    return { section, count: phaseEntries.length };
+  }
+
+  function buildPhaseRail() {
+    if (!archive.phases?.length) return;
+    const rail = document.createElement("nav");
+    rail.className = "history-phase-rail";
+    rail.setAttribute("aria-label", "队史阶段导航");
+    archive.phases.forEach((phase, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.phaseTarget = phase.id;
+      button.setAttribute("aria-label", `前往${phase.title}`);
+      button.innerHTML = `<span aria-hidden="true"></span><b>${String(index + 1).padStart(2, "0")}</b><em>${phase.title}</em>`;
+      button.addEventListener("click", () => {
+        document.querySelector(`#history-phase-${phase.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      rail.appendChild(button);
+    });
+    document.body.appendChild(rail);
+
+    const activate = (phaseId) => {
+      rail.querySelectorAll("button").forEach((button) => {
+        const active = button.dataset.phaseTarget === phaseId;
+        button.classList.toggle("is-active", active);
+        if (active) button.setAttribute("aria-current", "step");
+        else button.removeAttribute("aria-current");
+      });
+    };
+    activate(archive.phases[0].id);
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const current = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (current) activate(current.target.dataset.historyPhase);
+        },
+        { rootMargin: "-18% 0px -58%", threshold: [0, 0.12, 0.35] }
+      );
+      document.querySelectorAll("[data-history-phase]").forEach((section) => observer.observe(section));
+    }
   }
 
   function renderSlide() {
@@ -125,7 +201,14 @@
     dialog.showModal();
   }
 
-  list.replaceChildren(...archive.entries.map(makeNode));
+  let nodeIndex = 0;
+  const phaseSections = (archive.phases || []).map((phase) => {
+    const result = makePhase(phase, nodeIndex);
+    nodeIndex += result.count;
+    return result.section;
+  });
+  list.replaceChildren(...phaseSections);
+  buildPhaseRail();
   dialog.querySelector(".history-dialog-close").addEventListener("click", () => dialog.close());
   previous.addEventListener("click", () => moveSlide(-1));
   next.addEventListener("click", () => moveSlide(1));
