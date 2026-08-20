@@ -121,12 +121,22 @@ for (const file of htmlFiles) {
   }
 
   const page = html.match(/<body data-page="([^"]+)">/)?.[1] || "";
-  const navPattern = /        <div class="nav-links" id="nav-links">[\s\S]*?<\/div>\r?\n        <button class="theme-toggle"/;
+  const navPattern = /        <div class="nav-links" id="nav-links">[\s\S]*?<\/div>\r?\n(?=        (?:<div class="nav-utilities">|<button class="theme-toggle"))/;
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
-  html = html.replace(navPattern, `${buildNavigation(page)}\n        <button class="theme-toggle"`);
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-4");
-  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260820-1");
+  html = html.replace(navPattern, `${buildNavigation(page)}\n`);
+
+  if (!html.includes('class="nav-map-link"')) {
+    const themeButtonPattern = /(        <button class="theme-toggle"[\s\S]*?<\/button>)/;
+    if (!themeButtonPattern.test(html)) throw new Error(`Theme toggle not found in ${relative}`);
+    html = html.replace(
+      themeButtonPattern,
+      `        <div class="nav-utilities">\n          <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>\n$1\n        </div>`,
+    );
+  }
+
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-5");
+  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260821-2");
   fs.writeFileSync(file, html);
 }
 

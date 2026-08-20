@@ -27,6 +27,28 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 
+const qrPreviewButtons = [...document.querySelectorAll("[data-qr-preview]")];
+const qrLightbox = document.querySelector("[data-qr-lightbox]");
+const qrLightboxImage = qrLightbox?.querySelector("[data-qr-lightbox-image]");
+const qrLightboxTitle = qrLightbox?.querySelector("[data-qr-lightbox-title]");
+const qrLightboxClose = qrLightbox?.querySelector("[data-qr-close]");
+
+qrPreviewButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const image = button.querySelector("img");
+    if (!qrLightbox || !qrLightboxImage || !image) return;
+    qrLightboxImage.src = image.src;
+    qrLightboxImage.alt = image.alt;
+    if (qrLightboxTitle) qrLightboxTitle.textContent = button.dataset.qrTitle || image.alt;
+    qrLightbox.showModal();
+  });
+});
+
+qrLightboxClose?.addEventListener("click", () => qrLightbox.close());
+qrLightbox?.addEventListener("click", (event) => {
+  if (event.target === qrLightbox) qrLightbox.close();
+});
+
 function initBrandWordmarkFlip() {
   document.querySelectorAll(".brand-text small").forEach((wordmark) => {
     if (wordmark.querySelector(".brand-flip-inner")) return;

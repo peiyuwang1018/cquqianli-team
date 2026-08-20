@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-4" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-5" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="contact">
@@ -114,10 +114,13 @@
             </span>
           </span>
         </div>
+        <div class="nav-utilities">
+          <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
         <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
           <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
           <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
         </button>
+        </div>
       </nav>
     </header>
     <main>
@@ -129,18 +132,21 @@
     </div>
     <div class="contact-channel-grid">
       <article class="contact-channel-card contact-channel-card--qr">
-        <img src="assets/images/contact/qq-group-qr.png" alt="千里战队 QQ 群二维码" />
-        <div><i class="mdi mdi-qqchat" aria-hidden="true"></i><strong>QQ 群</strong><span>招新咨询与队伍交流</span></div>
+        <i class="mdi mdi-qqchat" aria-hidden="true"></i>
+        <div><strong>QQ 群</strong><span>招新咨询与队伍交流</span></div>
+        <button class="contact-qr-preview" type="button" data-qr-preview data-qr-title="千里战队 QQ 群"><img src="assets/images/contact/qq-group-qr.png" alt="千里战队 QQ 群二维码" /></button>
       </article>
       <article class="contact-channel-card contact-channel-card--qr">
-        <img src="assets/images/contact/wechat-official-qr.jpg" alt="重庆大学千里战队微信公众号二维码" />
-        <div><i class="mdi mdi-wechat" aria-hidden="true"></i><strong>微信公众号</strong><span>赛季记录与队伍资讯</span></div>
+        <i class="mdi mdi-wechat" aria-hidden="true"></i>
+        <div><strong>微信公众号</strong><span>赛季记录与队伍资讯</span></div>
+        <button class="contact-qr-preview" type="button" data-qr-preview data-qr-title="重庆大学千里战队微信公众号"><img src="assets/images/contact/wechat-official-qr.jpg" alt="重庆大学千里战队微信公众号二维码" /></button>
       </article>
       <article class="contact-channel-card contact-channel-card--qr">
-        <img src="assets/images/contact/xiaohongshu-qr.png" alt="重庆大学千里战队小红书二维码" />
-        <div><i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i><strong>小红书</strong><span>队伍日常与赛场影像</span></div>
+        <i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i>
+        <div><strong>小红书</strong><span>队伍日常与赛场影像</span></div>
+        <button class="contact-qr-preview" type="button" data-qr-preview data-qr-title="重庆大学千里战队小红书"><img src="assets/images/contact/xiaohongshu-qr.png" alt="重庆大学千里战队小红书二维码" /></button>
       </article>
-      <a class="contact-channel-card contact-channel-card--direct" href="https://space.bilibili.com/282638295" target="_blank" rel="noopener noreferrer">
+      <a class="contact-channel-card contact-channel-card--direct" href="https://space.bilibili.com/1432987899" target="_blank" rel="noopener noreferrer">
         <i class="mdi mdi-television-play" aria-hidden="true"></i><div><strong>Bilibili</strong><span>比赛录像、纪录片与技术视频</span></div><em>进入主页</em>
       </a>
       <a class="contact-channel-card contact-channel-card--direct" href="mailto:Qianli@lark.cquqian.li">
@@ -150,6 +156,12 @@
         <i class="mdi mdi-map-marker-outline" aria-hidden="true"></i><div><strong>实验室</strong><span>重庆大学虎溪校区交叉创新中心 1F</span></div><em>机器人实验室</em>
       </address>
     </div>
+    <dialog class="contact-qr-lightbox" data-qr-lightbox aria-labelledby="contact-qr-lightbox-title">
+      <div class="contact-qr-lightbox__panel">
+        <button class="contact-qr-lightbox__close" type="button" data-qr-close aria-label="关闭二维码大图"><i class="mdi mdi-close" aria-hidden="true"></i></button>
+        <figure><img src="" alt="" data-qr-lightbox-image /><figcaption id="contact-qr-lightbox-title" data-qr-lightbox-title></figcaption></figure>
+      </div>
+    </dialog>
   </section>
   <section class="section-block contact-hub" aria-labelledby="recruit-channel-title">
     <div class="section-heading contact-hub-heading">
@@ -179,7 +191,7 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
-    <script src="assets/js/core/site.js?v=20260820-1"></script>
+    <script src="assets/js/core/site.js?v=20260821-2"></script>
   </body>
 </html>
 
