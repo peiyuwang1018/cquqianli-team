@@ -1451,8 +1451,10 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
 .meme-stage-toolbar {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 18px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 14px;
 }
 
 .meme-stage-actions,
@@ -1602,6 +1604,12 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 .meme-stream-corner strong {
   font-size: 11px;
   letter-spacing: .12em;
+}
+
+.meme-stream-corner--toolbar {
+  position: static;
+  flex: 0 0 auto;
+  min-width: 116px;
 }
 
 .meme-streams {
@@ -2007,11 +2015,15 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
 @media (max-width: 900px) {
   .meme-stage-toolbar {
+    flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 12px 18px;
   }
 
   .meme-stage-actions {
+    flex: 1 1 420px;
     flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .meme-dialog-shell {
@@ -3380,6 +3392,10 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   margin-top: 54px;
 }
 
+.page-hero + .meme-stage {
+  margin-top: 26px;
+}
+
 .video-feature {
   border-top: 0;
   padding-top: 0;
@@ -3400,6 +3416,10 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
   .page-hero + .section-block {
     margin-top: 38px;
+  }
+
+  .page-hero + .meme-stage {
+    margin-top: 24px;
   }
 }
 
