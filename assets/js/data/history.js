@@ -1,0 +1,201 @@
+window.QIANLI_HISTORY = {
+  entries: [
+    {
+      id: "robocup-origin",
+      years: "2004-2011",
+      era: "ROBOCUP ERA",
+      title: "巴将军与机器人竞赛传统",
+      summary: "从“巴将军”机器人竞赛团队出发，重庆大学逐步建立机器人竞赛与学生创新实践的组织基础。",
+      facts: [
+        ["起点", "2004 年组建“巴将军”"],
+        ["代表成绩", "2008 年 RoboCup 中国机器人大赛冠军一项、亚军一项"],
+        ["组织建设", "2010 年成立大学生创新实践中心及机器人创新团队"],
+      ],
+      paragraphs: [
+        "2004 年，重庆大学组建“巴将军”机器人竞赛团队。此后数年，团队持续参加中国机器人大赛与机器人足球锦标赛：2005 年获得中国机器人大赛亚军，2006 年获得中国机器人大赛季军及机器人足球锦标赛 Human Robot Game 季军，2007 年获得 RoboCup 中国机器人大赛一等奖。",
+        "2008 年，“巴将军”获得 RoboCup 中国机器人大赛冠军一项、亚军一项。2010 年，重庆大学成立大学生创新实践中心及其下属机器人创新团队；2011 年，团队再获 RoboCup 项目两项亚军。后来走向 RoboMaster 的队伍，正是在这段机器人竞赛传统上继续生长。",
+      ],
+      gallery: [
+        { placeholder: true, label: "2004-2008 · 巴将军早期赛事影像待归档" },
+        { placeholder: true, label: "2010 · 大学生创新实践中心建设影像待归档" },
+        { placeholder: true, label: "2011 · RoboCup 参赛影像待归档" },
+      ],
+    },
+    {
+      id: "rm-origin",
+      years: "2014-2015",
+      era: "FIRST ROBOMASTER",
+      title: "从 RoboCup 走向 RoboMaster",
+      summary: "机器人创新实验室成立，队伍完成 RoboMaster 建队并走上第一届机甲大师赛赛场。",
+      facts: [
+        ["实验室", "2014 年成立机器人创新实验室"],
+        ["首次参赛", "2015 年参加首届 RoboMaster"],
+        ["赛季结果", "西南分区赛前四强、全国三等奖"],
+      ],
+      paragraphs: [
+        "2014 年，“巴将军”获得 RoboCup 中国机器人大赛一项冠军，重庆大学机器人创新实验室成立。同年，面向新兴的机甲大师赛事，队伍完成第一届 RoboMaster 建队。",
+        "2015 年，“巴将军”首次参加 RoboMaster 机甲大师赛，进入西南分区赛前四强并获得全国三等奖。自此，队伍的工程实践从既有机器人竞赛体系进一步转向多兵种机器人系统研发与真实对抗。",
+      ],
+      gallery: [
+        { placeholder: true, label: "2014 · 机器人创新实验室影像待归档" },
+        { placeholder: true, label: "2015 · 首届 RoboMaster 参赛影像待归档" },
+        { placeholder: true, label: "2015 · 西南分区赛阵容影像待归档" },
+      ],
+    },
+    {
+      id: "allspark",
+      years: "2016-2018",
+      era: "ALLSPARK ERA",
+      title: "Allspark 成形",
+      summary: "队伍启用 Allspark 名称，形成更完整的机器人阵容，并在分区赛与复活赛持续积累经验。",
+      facts: [
+        ["队名", "“巴将军”更名为 Allspark 机器人战队"],
+        ["RM 2017", "西部赛区亚军、全国 32 强"],
+        ["RM 2018", "分区赛 16 强、复活赛 32 强"],
+      ],
+      paragraphs: [
+        "2016 年启动的 RM 2017 赛季，队伍由“巴将军”更名为 Allspark 机器人战队，并取得西部赛区亚军、全国 32 强。新的名称标志着队伍开始建立面向 RoboMaster 的独立身份。",
+        "随后一个赛季，Allspark 进入分区赛 16 强与复活赛 32 强。英雄、工程、步兵等机器人阵容逐渐成形，队伍也开始积累跨专业协作、赛场维护与完整赛季组织经验。",
+      ],
+      gallery: [
+        { src: "assets/images/content/about/history/allspark/spark-logo.png", alt: "Allspark 战队早期标志", caption: "Allspark 战队早期标志" },
+        { src: "assets/images/content/about/history/allspark/2017-awards.jpg", alt: "2017 赛季获奖队伍合影", caption: "2017 赛季 · 西部赛区获奖队伍合影" },
+        { src: "assets/images/content/about/history/allspark/2017-lineup.png", alt: "2017 赛季机器人阵容", caption: "2017 赛季 · 机器人阵容" },
+        { src: "assets/images/content/about/history/allspark/2017-workshop.png", alt: "2017 赛季实验室联调", caption: "2017 赛季 · 实验室联调" },
+        { src: "assets/images/content/about/history/allspark/2017-field.png", alt: "Allspark 赛场机器人陈列", caption: "Allspark 时期 · 赛场机器人陈列" },
+        { src: "assets/images/content/about/history/allspark/2017-group.png", alt: "Allspark 战队成员合影", caption: "Allspark 时期 · 队员与机器人合影" },
+      ],
+    },
+    {
+      id: "interruption",
+      years: "2019-2020",
+      era: "INTERRUPTION",
+      title: "断代与线上赛季",
+      summary: "人员流失与管理变动使传承出现断层，队伍经历弃赛与线上单项赛。",
+      facts: [
+        ["2019 赛季", "未参加正式赛事"],
+        ["2020 赛季", "参加线上单项赛"],
+        ["长期影响", "人员、经验和管理链路出现断层"],
+      ],
+      paragraphs: [
+        "2019 与 2020 赛季，队伍经历了较为严重的断代。人员流失和管理变动使经验没有被完整传递，2019 赛季未能参赛，2020 赛季则以线上单项赛为主。",
+        "这一阶段留下的教训此后反复影响队伍：机器人可以被重新制造，但缺失的组织经验、文档与培养体系需要更长时间重建。如何让知识真正留在团队中，逐渐成为后续数个赛季的重要命题。",
+      ],
+      gallery: [
+        { placeholder: true, label: "2019 · 队伍留存影像待归档" },
+        { placeholder: true, label: "2020 · 线上单项赛影像待归档" },
+        { placeholder: true, label: "断代时期 · 实验室资料待整理" },
+      ],
+    },
+    {
+      id: "restart-mechax",
+      years: "2021-2022",
+      era: "RESTART & MECHAX",
+      title: "重启、组织转接与 MechaX",
+      summary: "队伍从近乎重新建队开始恢复研发，转入学生交叉创新中心，并以 MechaX 名称进入过渡赛季。",
+      facts: [
+        ["重启", "2021 年重新构建面向超级对抗赛的队伍"],
+        ["联盟赛", "黑龙江站三等奖"],
+        ["组织变化", "上属转入重庆大学学生交叉创新中心"],
+      ],
+      paragraphs: [
+        "2021 年，队伍需要从近乎零基础重新构建一支以超级对抗赛为目标的参赛队伍，并在高校联盟赛黑龙江站获得三等奖。这次重启所形成的人员与工作链路，成为此后队伍延续至今的重要起点。",
+        "随后，队伍上属由自动化学院转入重庆大学学生交叉创新中心。2022 赛季，Allspark 更名为 MechaX；交叉创新中心仍处于建设阶段，叠加特殊时期影响，队伍未参加正式比赛，但围绕组织重建、兵种研发与新空间建设继续积累。",
+      ],
+      gallery: [
+        { placeholder: true, label: "2021 · 断代重启影像待归档" },
+        { placeholder: true, label: "2021 · 联盟赛黑龙江站影像待归档" },
+        { placeholder: true, label: "2022 · MechaX 与交叉创新中心建设影像待归档" },
+      ],
+    },
+    {
+      id: "qianli-return",
+      years: "2023-2024",
+      era: "QIANLI BEGINS",
+      title: "千里启程，重返全国赛",
+      summary: "MechaX 更名为千里；队伍重返超级对抗赛，并在联盟赛、分区赛和全国赛取得连续突破。",
+      facts: [
+        ["新队名", "MechaX 更名为“千里”"],
+        ["联盟赛", "高校联盟赛西南站冠军"],
+        ["超级对抗赛", "区域赛一等奖、全国二等奖"],
+      ],
+      paragraphs: [
+        "在 2023 年启动的 RM 2024 赛季，MechaX 更名为“千里”。新名称承接既有队史，也表达了队伍在长期工程实践中持续前行的愿望。",
+        "这一赛季，千里获得 RoboMaster 高校联盟赛西南站冠军、超级对抗赛区域赛一等奖及全国二等奖，完成断代后首次重返超级对抗赛全国赛阶段。与此同时，队伍开始建立梯队分级培养，重构培训内容，将基建项目引入新人培养，并逐步搭建知识库。",
+        "在机器人研发上，队伍首次拥有能够稳定执行建筑打击任务的飞镖系统、舵轮步兵与轮腿步兵，并在复活赛启用具备吊射能力的英雄机器人。更完整的兵种阵容与更清晰的培养路径，共同构成千里时期的第一个重要台阶。",
+      ],
+      gallery: [
+        { src: "assets/images/content/archive/gallery/team-photos/previews/2024-south-division-he-long.jpg", alt: "2024 南部分区赛队伍合影", caption: "2024 · 长沙贺龙体育馆 · 南部分区赛" },
+        { src: "assets/images/content/archive/gallery/team-photos/previews/2024-revival-shenzhen-spring-cocoon.jpg", alt: "2024 全国赛阶段复活赛队伍合影", caption: "2024 · 深圳春茧体育馆 · 全国赛阶段复活赛" },
+        { src: "assets/images/content/archive/gallery/robots/2024/cutouts/dart-8.png", alt: "2024 赛季飞镖系统", caption: "2024 赛季 · 飞镖系统" },
+        { src: "assets/images/content/archive/gallery/robots/2024/cutouts/infantry-3.png", alt: "2024 赛季步兵机器人", caption: "2024 赛季 · 步兵机器人" },
+      ],
+    },
+    {
+      id: "system-building",
+      years: "2024-2025",
+      era: "SYSTEM BUILDING",
+      title: "培养体系与工程能力建设",
+      summary: "队伍细化项目管理和培养机制，在机器人底层模块、传动与整机迭代上继续向前。",
+      facts: [
+        ["联盟赛", "西南站甲级组三等奖"],
+        ["超级对抗赛", "区域赛二等奖"],
+        ["体系建设", "寒假集训、自主打卡与研发日志"],
+      ],
+      paragraphs: [
+        "RM 2025 赛季，千里进一步细化规章制度与项目管理机制，并在新人培养中引入寒假集训、自主打卡路径和研发日志。队伍获得高校联盟赛西南站甲级组三等奖、超级对抗赛区域赛二等奖。",
+        "技术研发继续向底层模块与整机可靠性深入：机械组完成串联腿方案验证、自研 17 mm 中心供弹模块、鹅颈云台与舵轮模块，也尝试推进自研轮系减速结构。部分方案未能在赛季内完全成熟，但测试、复盘与迭代开始成为更明确的共同方法。",
+        "这个赛季也暴露出培养效果、责任意识与人员留存之间的落差。体系开始建立，并不意味着传承问题已经解决；如何把制度转化为真实的工程能力，成为下一阶段必须面对的问题。",
+      ],
+      gallery: [
+        { src: "assets/images/content/archive/gallery/team-photos/previews/2025-central-division-he-long.jpg", alt: "2025 中部分区赛队伍合影", caption: "2025 · 长沙贺龙体育馆 · 中部分区赛" },
+        { src: "assets/images/content/archive/gallery/robots/2025/cutouts/hero-1.png", alt: "2025 赛季英雄机器人", caption: "2025 赛季 · 英雄机器人" },
+        { src: "assets/images/content/archive/gallery/robots/2025/cutouts/infantry-series-4.png", alt: "2025 赛季步兵机器人", caption: "2025 赛季 · 串联腿步兵机器人" },
+        { src: "assets/images/content/archive/gallery/robots/2025/cutouts/drone-6.png", alt: "2025 赛季空中机器人", caption: "2025 赛季 · 空中机器人" },
+      ],
+    },
+    {
+      id: "setback-rebuild",
+      years: "2025-2026",
+      era: "SETBACK & REBUILD",
+      title: "挫折、重整与传承蓄力",
+      summary: "组织与研发力量经历波动；联盟赛取得阶段成绩，但队伍未能获得超级对抗赛资格。",
+      facts: [
+        ["联盟赛", "重庆站甲级组二等奖、小组赛出线"],
+        ["超级对抗赛", "未通过完整形态与视频考核"],
+        ["赛季关键词", "重整组织、培养新人、保留研发连续性"],
+      ],
+      paragraphs: [
+        "RM 2026 赛季，队伍在组织架构和项目推进上经历较大波动。有效研发力量不足、老队员进入毕业阶段、新人培养尚未完全接续，使整车联调与测试窗口受到明显压缩。",
+        "千里在高校联盟赛重庆站获得甲级组二等奖并从小组赛出线，但在完整形态与视频考核中未能获得超级对抗赛资格。这是队伍连续三个赛季参加超级对抗赛后第一次缺席。",
+        "挫折也推动队伍重新审视组织责任、技术传承和研发节奏。赛季后段，成员围绕基建项目、工程大臂和既有机器人维护继续推进，把未能在当季兑现的积累留给下一赛季。",
+      ],
+      gallery: [
+        { src: "assets/images/content/about/history/recent/2026-rmul-team-a.jpg", alt: "RM 2026 联盟赛重庆站队伍合影", caption: "RM 2026 · 高校联盟赛重庆站" },
+        { src: "assets/images/content/about/history/recent/2026-rmul-team-b.jpg", alt: "RM 2026 联盟赛重庆站参赛成员合影", caption: "RM 2026 · 联盟赛参赛成员与机器人" },
+        { placeholder: true, label: "RM 2026 · 赛季研发与复盘影像待归档" },
+      ],
+    },
+    {
+      id: "next-season",
+      years: "2026-2027",
+      era: "TO BE CONTINUED",
+      title: "下一段路，正在书写",
+      summary: "延续研发、重建传承、重新冲击超级对抗赛；新的赛季尚未写下结论。",
+      facts: [
+        ["当前状态", "RM 2027 赛季进行中"],
+        ["工作主线", "延续研发、组织建设与梯队培养"],
+        ["页面状态", "随赛季关键节点持续更新"],
+      ],
+      paragraphs: [
+        "RM 2027 赛季已经开始。上一赛季留下的技术路线、组织反思和新人力量，将在这一年继续接受工程实践与赛场的检验。",
+        "队史并不是只由奖项构成。那些尚未完成的机器人、被重新设计的方案、一次次联调与复盘，以及愿意把经验继续传下去的人，同样决定了队伍会走向哪里。这个节点暂不写下结论，等待新的赛季由正在参与其中的人共同完成。",
+      ],
+      gallery: [
+        { placeholder: true, label: "RM 2027 · 赛季影像将在关键节点后归档" },
+        { placeholder: true, label: "RM 2027 · 新机器人影像待发布" },
+        { placeholder: true, label: "RM 2027 · 赛场记录待续" },
+      ],
+    },
+  ],
+};
