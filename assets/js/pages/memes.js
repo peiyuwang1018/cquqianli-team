@@ -63,15 +63,6 @@
     return min + Math.random() * (max - min);
   }
 
-  function shuffle(items) {
-    const result = [...items];
-    for (let index = result.length - 1; index > 0; index -= 1) {
-      const target = Math.floor(Math.random() * (index + 1));
-      [result[index], result[target]] = [result[target], result[index]];
-    }
-    return result;
-  }
-
   function makeWord(entry) {
     const button = document.createElement("button");
     button.type = "button";
@@ -83,17 +74,47 @@
     return button;
   }
 
-  function chooseLane(state) {
-    const now = performance.now();
-    const ranked = state.laneReady
-      .map((readyAt, lane) => ({ lane, wait: Math.max(0, readyAt - now) }))
-      .sort((left, right) => left.wait - right.wait);
-    const bestWait = ranked[0].wait;
-    const candidates = ranked.filter((item) => item.wait <= bestWait + 900).slice(0, 3);
-    return candidates[Math.floor(Math.random() * candidates.length)].lane;
+  function particleX(record) {
+    const elapsed = Number(record.animation?.currentTime || 0) / 1000;
+    return record.startX - record.speed * elapsed;
   }
 
-  function scheduleParticle(entry, state, lane, targetFraction = null) {
+  function removeRecord(state, record) {
+    const lane = state.lanes[record.lane];
+    lane.records = lane.records.filter((item) => item !== record);
+    const count = state.activeCounts.get(record.entry.id) || 1;
+    state.activeCounts.set(record.entry.id, Math.max(0, count - 1));
+    record.particle.remove();
+  }
+
+  function chooseEntry(state, lane, proposedX) {
+    const stageWidth = streams.clientWidth;
+    const ranked = state.pool.map((entry) => {
+      const activeCount = state.activeCounts.get(entry.id) || 0;
+      const recentIndex = state.recent.indexOf(entry.id);
+      let score = activeCount * 28 + Math.random() * 8;
+      if (recentIndex >= 0) score += (state.recent.length - recentIndex) * 14;
+
+      state.lanes.forEach((otherLane, laneIndex) => {
+        otherLane.records.forEach((record) => {
+          if (record.entry.id !== entry.id) return;
+          const horizontalDistance = Math.abs(particleX(record) - proposedX);
+          const laneDistance = Math.abs(laneIndex - lane);
+          if (horizontalDistance < stageWidth * 0.5) score += 110;
+          if (horizontalDistance < stageWidth * 0.3 && laneDistance < 2) score += 220;
+        });
+      });
+      return { entry, score };
+    }).sort((left, right) => left.score - right.score);
+
+    const shortlist = ranked.slice(0, Math.min(4, ranked.length));
+    const pick = shortlist[Math.floor(Math.pow(Math.random(), 1.8) * shortlist.length)] || ranked[0];
+    state.recent.push(pick.entry.id);
+    if (state.recent.length > Math.min(8, state.pool.length)) state.recent.shift();
+    return pick.entry;
+  }
+
+  function spawnParticle(entry, state, lane, startX) {
     if (state.generation !== streamGeneration) return;
 
     const particle = document.createElement("div");
@@ -102,109 +123,126 @@
     particle.appendChild(button);
     streams.appendChild(particle);
 
-    const stageWidth = streams.clientWidth;
     const stageHeight = streams.clientHeight;
     const itemWidth = button.offsetWidth;
-    const laneStep = (stageHeight - 88) / Math.max(1, state.laneCount - 1);
-    const top = Math.max(14, Math.min(stageHeight - 70, 26 + lane * laneStep + randomBetween(-5, 5)));
+    const laneStep = (stageHeight - 82) / Math.max(1, state.laneCount - 1);
+    const top = Math.max(12, Math.min(stageHeight - 66, 20 + lane * laneStep + state.laneJitter[lane]));
     particle.style.top = `${top}px`;
     particle.style.setProperty("--meme-tilt", `${randomBetween(-0.8, 0.8).toFixed(2)}deg`);
 
     if (state.reduceMotion) {
       particle.classList.add("is-static");
-      particle.style.left = `${Math.max(2, Math.min(82, (targetFraction ?? Math.random()) * 100))}%`;
-      return;
+      particle.style.left = `${startX}px`;
+      return { particle, entry, lane, width: itemWidth, startX, speed: 0, animation: null };
     }
 
-    const distance = stageWidth + itemWidth + 96;
-    const speed = state.laneSpeeds[lane] * randomBetween(0.96, 1.04);
-    const duration = (distance / speed) * 1000;
-    const verticalDrift = randomBetween(-4, 4);
+    const speed = state.laneSpeeds[lane];
+    const endX = -itemWidth - 90;
+    const duration = ((startX - endX) / speed) * 1000;
     const animation = particle.animate(
       [
-        { transform: "translate3d(0, 0, 0)" },
-        { transform: `translate3d(-${distance}px, ${verticalDrift}px, 0)` },
+        { transform: `translate3d(${startX}px, 0, 0)` },
+        { transform: `translate3d(${endX}px, 0, 0)` },
       ],
       { duration, easing: "linear", fill: "forwards" },
     );
+    const record = { particle, entry, lane, width: itemWidth, startX, speed, animation };
+    animation.addEventListener("finish", () => removeRecord(state, record));
+    return record;
+  }
 
-    if (targetFraction !== null) {
-      const targetX = stageWidth * targetFraction;
-      const progress = Math.max(0, Math.min(0.94, (stageWidth - targetX) / distance));
-      animation.currentTime = duration * progress;
-    }
+  function addParticle(state, lane, startX) {
+    const entry = chooseEntry(state, lane, startX);
+    const record = spawnParticle(entry, state, lane, startX);
+    state.lanes[lane].records.push(record);
+    state.activeCounts.set(entry.id, (state.activeCounts.get(entry.id) || 0) + 1);
+    return record;
+  }
 
-    const pause = () => animation.pause();
-    const resume = () => animation.play();
-    button.addEventListener("pointerenter", pause);
-    button.addEventListener("pointerleave", resume);
-    button.addEventListener("focus", pause);
-    button.addEventListener("blur", resume);
+  function rightmostRecord(state, lane) {
+    return state.lanes[lane].records.reduce((rightmost, record) => {
+      const edge = particleX(record) + record.width;
+      return !rightmost || edge > rightmost.edge ? { record, edge } : rightmost;
+    }, null);
+  }
 
-    state.laneReady[lane] = performance.now() + randomBetween(2600, 4700);
-    animation.addEventListener("finish", () => {
-      particle.remove();
-      if (state.generation !== streamGeneration) return;
-      const timer = window.setTimeout(() => {
-        state.timers.delete(timer);
-        scheduleParticle(entry, state, chooseLane(state));
-      }, randomBetween(500, 2400));
-      state.timers.add(timer);
+  function maintainDensity(state) {
+    if (state.generation !== streamGeneration || document.hidden || state.reduceMotion) return;
+    const stageWidth = streams.clientWidth;
+    state.lanes.forEach((_, lane) => {
+      const rightmost = rightmostRecord(state, lane);
+      if (rightmost && rightmost.edge > stageWidth + 70) return;
+      const gap = randomBetween(72, 154);
+      const startX = Math.max(stageWidth + randomBetween(55, 110), (rightmost?.edge || stageWidth) + gap);
+      addParticle(state, lane, startX);
     });
   }
 
   function clearStream() {
     streamGeneration += 1;
-    activeStream?.timers.forEach((timer) => window.clearTimeout(timer));
+    if (activeStream?.maintenanceTimer) window.clearInterval(activeStream.maintenanceTimer);
     activeStream = null;
     streams.getAnimations({ subtree: true }).forEach((animation) => animation.cancel());
     streams.replaceChildren();
   }
 
-  function initialLane(index, count, laneCount) {
-    if (count < laneCount) {
-      return Math.floor(((index + 1) * laneCount) / (count + 1));
-    }
-    return index % laneCount;
-  }
-
   function renderStreams() {
     clearStream();
-    const pool = shuffle(visibleEntries());
-    const laneCount = 7;
+    const pool = visibleEntries();
+    const laneCount = streams.clientHeight < 440 ? 5 : 7;
     const state = {
       generation: streamGeneration,
+      pool,
       laneCount,
-      laneReady: Array.from({ length: laneCount }, () => 0),
-      laneSpeeds: Array.from({ length: laneCount }, () => randomBetween(38, 51)),
-      reduceMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches || pool.length <= 2,
-      timers: new Set(),
+      laneSpeeds: Array.from({ length: laneCount }, () => randomBetween(36, 45)),
+      laneJitter: Array.from({ length: laneCount }, () => randomBetween(-3, 3)),
+      lanes: Array.from({ length: laneCount }, () => ({ records: [] })),
+      activeCounts: new Map(pool.map((entry) => [entry.id, 0])),
+      recent: [],
+      reduceMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      maintenanceTimer: 0,
     };
     activeStream = state;
 
-    const columns = Math.max(1, Math.ceil(pool.length / laneCount));
-    pool.forEach((entry, index) => {
-      const lane = initialLane(index, pool.length, laneCount);
-      const column = Math.floor(index / laneCount);
-      const columnStep = 0.82 / columns;
-      const stagger = lane % 2 ? columnStep * 0.5 : 0;
-      const targetFraction = (0.08 + column * columnStep + stagger) % 0.9;
-      scheduleParticle(entry, state, lane, targetFraction);
+    const stageWidth = streams.clientWidth;
+    state.lanes.forEach((_, lane) => {
+      let cursor = randomBetween(-240, 30) + (lane % 2 ? 95 : 0);
+      while (cursor < stageWidth + 120) {
+        const record = addParticle(state, lane, cursor);
+        cursor += record.width + randomBetween(72, 154);
+      }
     });
+    if (!state.reduceMotion) state.maintenanceTimer = window.setInterval(() => maintainDensity(state), 360);
     summary.textContent = `已收录 ${pool.length} 条 · ${new Set(pool.flatMap((entry) => entry.hotYears)).size} 个赛季 · 解释权归集体记忆所有`;
   }
 
   function renderFilters() {
-    const options = [{ value: "all", label: "全部词条" }, ...years.map((year) => ({ value: year, label: `${year} 赛季` }))];
-    filters.replaceChildren(...options.map((option) => {
+    const allButton = document.createElement("button");
+    allButton.type = "button";
+    allButton.textContent = "全部词条";
+    allButton.dataset.memeYear = "all";
+    allButton.classList.toggle("is-active", activeYear === "all");
+    allButton.setAttribute("aria-pressed", String(activeYear === "all"));
+
+    const picker = document.createElement("details");
+    picker.className = "meme-season-picker";
+    picker.classList.toggle("is-active", activeYear !== "all");
+    const pickerSummary = document.createElement("summary");
+    pickerSummary.innerHTML = `<span>选择赛季</span><i class="mdi mdi-chevron-down" aria-hidden="true"></i>`;
+    pickerSummary.setAttribute("aria-label", activeYear === "all" ? "选择赛季" : `当前筛选：${activeYear} 赛季`);
+    const menu = document.createElement("div");
+    menu.className = "meme-season-menu";
+    years.forEach((year) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.textContent = option.label;
-      button.dataset.memeYear = option.value;
-      button.classList.toggle("is-active", option.value === activeYear);
-      button.setAttribute("aria-pressed", String(option.value === activeYear));
-      return button;
-    }));
+      button.textContent = `${year} 赛季`;
+      button.dataset.memeYear = year;
+      button.classList.toggle("is-active", year === activeYear);
+      button.setAttribute("aria-pressed", String(year === activeYear));
+      menu.appendChild(button);
+    });
+    picker.append(pickerSummary, menu);
+    filters.replaceChildren(allButton, picker);
   }
 
   function renderImage() {
@@ -279,6 +317,7 @@
     const button = event.target.closest("[data-meme-year]");
     if (!button) return;
     activeYear = button.dataset.memeYear;
+    button.closest("details")?.removeAttribute("open");
     renderFilters();
     renderStreams();
   });
@@ -318,6 +357,13 @@
   window.addEventListener("resize", () => {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(renderStreams, 180);
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      if (activeStream?.maintenanceTimer) window.clearInterval(activeStream.maintenanceTimer);
+      return;
+    }
+    renderStreams();
   });
 
   renderFilters();

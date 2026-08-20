@@ -413,5 +413,36 @@ window.QIANLI_MEME_CONFIG = {
         },
       ],
     },
+    {
+      id: "cloud-trumpet",
+      term: "☁🎺",
+      season: "2025 赛季",
+      hotYears: ["2025"],
+      tone: "violet",
+      weight: 4,
+      summary: "云朵吹响小号，规则又有新节目。",
+      origin:
+        "☁🎺 是 RM 圈内广泛流传的双 emoji 梗，指代 RoboMaster 规则组赛务云浩。参赛队常用它调侃规则更新天马行空、反复折腾备赛方案。2025 赛季的“吊射大赛”期间，还出现了云朵吹小号、吐出 42 mm 大弹丸的恶搞动画。",
+      meaning:
+        "用来代指让参赛队措手不及的规则更新、赛事机制变化，或又一次需要围绕新规则重新设计和调试的时刻。这里调侃的是赛务风格与参赛体验，不等同于对个人作事实评价。",
+      example: "“规则又更新了？”“☁🎺，42 mm 已经吹出来了。”",
+      images: [
+        {
+          placeholder: true,
+          label: "云朵吹号恶搞动画",
+          caption: "建议归档 2025 赛季流传的代表动画画面",
+        },
+        {
+          placeholder: true,
+          label: "2025 吊射规则或赛场图",
+          caption: "42 mm 弹丸与吊射版本的现场背景",
+        },
+        {
+          placeholder: true,
+          label: "RM 圈传播截图",
+          caption: "记录这个双 emoji 梗的传播语境",
+        },
+      ],
+    },
   ],
 };
