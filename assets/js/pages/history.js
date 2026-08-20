@@ -35,10 +35,22 @@
   let activeEntry = null;
   let activeSlide = 0;
 
+  function makeYearMarker(years) {
+    const values = String(years).match(/\d{4}/g) || [];
+    if (values.length > 1 && values[0] !== values[values.length - 1]) {
+      return {
+        className: " is-range",
+        content: `<b><span>${values[0]}</span><i aria-hidden="true">-</i><span>${values[values.length - 1]}</span></b>`,
+      };
+    }
+    return { className: "", content: `<b>${values[0] || years}</b>` };
+  }
+
   function makeNode(entry, index) {
     const item = document.createElement("article");
     item.className = "history-node";
     item.id = entry.id;
+    const marker = makeYearMarker(entry.years);
     item.innerHTML = `
       <figure class="history-node-cover"></figure>
       <button class="history-node-card" type="button" aria-haspopup="dialog" aria-label="打开 ${entry.years} ${entry.title} 档案">
@@ -48,7 +60,7 @@
         <p>${entry.summary}</p>
         <span class="history-node-open"><i class="mdi mdi-arrow-top-right" aria-hidden="true"></i><span>阅读档案</span></span>
       </button>
-      <span class="history-node-marker" aria-hidden="true"><b>${String(index + 1).padStart(2, "0")}</b></span>`;
+      <span class="history-node-marker${marker.className}" aria-hidden="true">${marker.content}</span>`;
 
     const cover = item.querySelector(".history-node-cover");
     if (entry.cover?.src) {
@@ -79,7 +91,7 @@
         <p>${phase.summary}</p>
       </header>
       <div class="history-phase-nodes"></div>`;
-    const phaseEntries = archive.entries.filter((entry) => entry.phase === phase.id);
+    const phaseEntries = archive.entries.filter((entry) => entry.phase === phase.id).reverse();
     section.querySelector(".history-phase-nodes").replaceChildren(
       ...phaseEntries.map((entry, index) => makeNode(entry, startIndex + index))
     );
@@ -87,16 +99,17 @@
   }
 
   function buildPhaseRail() {
-    if (!archive.phases?.length) return;
+    if (!displayPhases.length) return;
     const rail = document.createElement("nav");
     rail.className = "history-phase-rail";
     rail.setAttribute("aria-label", "队史阶段导航");
-    archive.phases.forEach((phase, index) => {
+    displayPhases.forEach((phase) => {
       const button = document.createElement("button");
       button.type = "button";
       button.dataset.phaseTarget = phase.id;
       button.setAttribute("aria-label", `前往${phase.title}`);
-      button.innerHTML = `<span aria-hidden="true"></span><b>${String(index + 1).padStart(2, "0")}</b><em>${phase.title}</em>`;
+      const phaseNumber = phase.label.match(/第([一二三四五六七八九十]+)阶段/)?.[1] || "";
+      button.innerHTML = `<span aria-hidden="true"></span><b>${phaseNumber}</b><em>${phase.title}</em>`;
       button.addEventListener("click", () => {
         document.querySelector(`#history-phase-${phase.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
       });
@@ -112,7 +125,7 @@
         else button.removeAttribute("aria-current");
       });
     };
-    activate(archive.phases[0].id);
+    activate(displayPhases[0].id);
 
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
@@ -202,7 +215,8 @@
   }
 
   let nodeIndex = 0;
-  const phaseSections = (archive.phases || []).map((phase) => {
+  const displayPhases = (archive.phases || []).slice().reverse();
+  const phaseSections = displayPhases.map((phase) => {
     const result = makePhase(phase, nodeIndex);
     nodeIndex += result.count;
     return result.section;
