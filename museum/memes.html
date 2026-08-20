@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260820-2" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260820-3" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -113,12 +113,40 @@
         </button>
       </nav>
     </header>
-    <main><section class="page-hero"><div><p class="page-label">QIANLI MEMES</p><h1>梗指南</h1></div><p>收录实验室、赛场与历届队员之间自然生长出来的千里黑话和共同记忆。</p></section><section class="section-block text-stack"><h2>条目正在整理</h2><p>后续按词条补充来源、使用场景与相关故事，让新队员读得懂，老队员看得会心一笑。</p></section></main>
+    <main>
+      <section class="page-hero meme-page-hero">
+        <div><p class="page-label">QIANLI MEME ARCHIVE</p><h1>梗指南</h1></div>
+        <p>有些词只活在一个赛季里，有些词成功熬成了队史。这里保存千里语境里那些一听就懂、越解释越好笑的共同记忆。</p>
+      </section>
+      <section class="section-block meme-stage" aria-labelledby="meme-stage-title">
+        <header class="meme-stage-header">
+          <div>
+            <p class="page-label">LIVE VOCABULARY</p>
+            <h2 id="meme-stage-title">实验室语言气象图</h2>
+            <p>流行语随赛季迁徙，偶尔返场，通常伴随一段不宜忘记的现场。</p>
+          </div>
+          <div class="meme-stage-actions">
+            <div class="meme-year-filters" data-meme-filters aria-label="按年份筛选词条"></div>
+            <button class="meme-random-button" data-meme-random type="button"><i class="mdi mdi-dice-multiple-outline" aria-hidden="true"></i><span>随机抽取</span></button>
+          </div>
+        </header>
+        <div class="meme-stream-shell">
+          <div class="meme-stream-corner" aria-hidden="true"><span>QIANLI</span><strong>MEME<br />MONITOR</strong></div>
+          <div class="meme-streams" data-meme-streams></div>
+        </div>
+        <footer class="meme-stage-footer">
+          <span data-meme-summary></span>
+          <p>本馆收录的是共同记忆与自我调侃；对事留档，不给具体的人贴标签。</p>
+        </footer>
+      </section>
+    </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
+    <script src="assets/js/data/memes.js?v=20260820-1"></script>
+    <script src="assets/js/pages/memes.js?v=20260820-1"></script>
     <script src="assets/js/core/site.js?v=20260820-1"></script>
   </body>
 </html>
