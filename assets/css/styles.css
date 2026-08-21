@@ -1465,9 +1465,13 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
 .culture-manifesto h2 {
   margin: 0;
-  font-size: clamp(26px, 2.55vw, 40px);
+  font-size: clamp(24px, 2.05vw, 32px);
   font-weight: 500;
-  line-height: 1.32;
+  line-height: 1.38;
+}
+
+.culture-manifesto h2 span {
+  display: block;
 }
 
 .culture-manifesto > p:not(.culture-kicker) {
