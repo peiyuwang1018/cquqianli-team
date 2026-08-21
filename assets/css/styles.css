@@ -4808,6 +4808,13 @@ html.has-culture-report {
   gap: 8px;
 }
 
+@media (min-width: 1101px) {
+  .nav-utilities {
+    position: relative;
+    right: clamp(24px, 1.8vw, 30px);
+  }
+}
+
 .nav-map-link {
   width: 42px;
   height: 42px;
