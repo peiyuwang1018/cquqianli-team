@@ -3833,8 +3833,8 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 /* Hierarchical page return control */
 .page-back-nav {
   position: fixed;
-  top: 50%;
-  left: clamp(30px, 3.2vw, 58px);
+  top: clamp(170px, 19vh, 210px);
+  left: max(12px, calc((100vw - var(--max-width)) / 2 - 74px));
   z-index: 19;
   width: 54px;
   height: 54px;
@@ -3871,9 +3871,17 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   outline: none;
 }
 
+@media (min-width: 861px) and (max-width: 1300px) {
+  body:has(.page-back-nav) .page-hero {
+    width: calc(100% - 130px);
+    margin-right: 40px;
+    margin-left: 90px;
+  }
+}
+
 @media (max-width: 860px) {
   .page-back-nav {
-    top: 50%;
+    top: 142px;
     left: 12px;
     width: 48px;
     height: 48px;
@@ -3882,6 +3890,12 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   .page-back-link {
     width: 48px;
     height: 48px;
+  }
+
+  body:has(.page-back-nav) .page-hero {
+    width: calc(100% - 92px);
+    margin-right: 16px;
+    margin-left: 76px;
   }
 }
 
