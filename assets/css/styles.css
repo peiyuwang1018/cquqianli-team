@@ -1647,7 +1647,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 .persona-page {
   --trait-self: #edb858;
   --trait-team: #68a9ed;
-  --trait-work: #5cc99a;
+  --trait-work: #e86b72;
 }
 
 .join-lead {
@@ -1791,15 +1791,15 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .member-section-rail button.persona-rail-self {
-  --accent: var(--trait-self);
+  --accent: #edb858;
 }
 
 .member-section-rail button.persona-rail-team {
-  --accent: var(--trait-team);
+  --accent: #68a9ed;
 }
 
 .member-section-rail button.persona-rail-work {
-  --accent: var(--trait-work);
+  --accent: #e86b72;
 }
 
 @media (max-width: 980px) {
