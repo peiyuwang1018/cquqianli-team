@@ -1,8 +1,9 @@
 (() => {
   const archive = window.QIANLI_MEMBERS;
   const currentRoot = document.querySelector("[data-current-members]");
+  const tabSlot = document.querySelector("[data-member-tabs]");
   const pastRoot = document.querySelector("[data-past-members]");
-  if (!archive || !currentRoot || !pastRoot) return;
+  if (!archive || !currentRoot || !tabSlot || !pastRoot) return;
 
   const imageRoot = ["assets", "images", "content", "members", "current", ""].join("/");
   const departmentOrder = ["management", "mechanical", "control", "hardware", "vision", "operations"];
@@ -115,8 +116,9 @@
     });
   }
 
-  currentRoot.append(tabList, stage);
-  activateDepartment(departments.find((department) => department.key === "mechanical")?.key || departments[0]?.key);
+  tabSlot.appendChild(tabList);
+  currentRoot.appendChild(stage);
+  activateDepartment(departments.find((department) => department.key === "management")?.key || departments[0]?.key);
 
   archive.seasons.forEach((season) => {
     const article = document.createElement("article");

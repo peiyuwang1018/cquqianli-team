@@ -5888,7 +5888,7 @@ a.contact-channel-card--direct:focus-visible {
 
 .team-member-section-head {
   display: grid;
-  grid-template-columns: minmax(260px, 0.68fr) minmax(320px, 1.32fr);
+  grid-template-columns: minmax(250px, 0.48fr) minmax(620px, 1.52fr);
   gap: 42px;
   align-items: end;
   margin-bottom: 32px;
@@ -5903,10 +5903,9 @@ a.contact-channel-card--direct:focus-visible {
   line-height: 1.2;
 }
 
-.team-member-section-head > p {
-  justify-self: end;
-  max-width: 660px;
-  font-size: 15px;
+.member-department-tabs-slot {
+  align-self: end;
+  min-width: 0;
 }
 
 .current-member-groups {
@@ -6360,8 +6359,8 @@ a.contact-channel-card--direct:focus-visible {
     gap: 14px;
   }
 
-  .team-member-section-head > p {
-    justify-self: start;
+  .member-department-tabs-slot {
+    width: 100%;
   }
 
   .member-department-tabs {
