@@ -36,7 +36,7 @@ function getBackTarget(relative) {
   if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
   if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回 RM 一线" };
   if (relative.startsWith("museum/")) return { href: "museum/index.html", label: "返回千里博物馆" };
-  if (relative === "join/index.html" || relative.startsWith("contact/")) {
+  if (relative.startsWith("join/") || relative.startsWith("contact/")) {
     return { href: "contact/index.html", label: "返回联系我们" };
   }
 
@@ -130,7 +130,7 @@ function buildNavigation(active) {
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#persona"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
               <span class="nav-dropdown-column">
@@ -177,7 +177,7 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-14");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-15");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260821-2");
   fs.writeFileSync(file, html);
 }
