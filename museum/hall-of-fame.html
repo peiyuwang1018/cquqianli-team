@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-22" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-28" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -104,7 +104,7 @@
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>
@@ -128,13 +128,81 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main><section class="page-hero"><div><p class="page-label">HALL OF FAME</p><h1>名人堂</h1></div><p>合并成员和校友展示，记录重要贡献者与人才去向。</p></section><section class="section-block text-stack"><h2>人物分类</h2><p>建议包含：现任负责人、往届队长、核心贡献者、优秀校友、长期顾问。</p></section></main>
+<main>
+  <section class="page-hero hall-page-hero">
+    <div><p class="page-label">HALL OF FAME</p><h1>名人堂</h1></div>
+    <div class="hall-tabs" role="tablist" aria-label="名人堂栏目">
+      <button class="is-active" type="button" role="tab" aria-selected="true" data-hall-tab="legacy"><i class="mdi mdi-star-four-points-outline" aria-hidden="true"></i>传承功勋</button>
+      <button type="button" role="tab" aria-selected="false" data-hall-tab="destinations"><i class="mdi mdi-routes" aria-hidden="true"></i>人才去向</button>
+    </div>
+    <p>记住曾经承担、创造与传递的人，也看见他们从千里走向何处。</p>
+  </section>
+  <section class="section-block hall-of-fame">
+    <div class="hall-panel" role="tabpanel" data-hall-panel="legacy">
+      <div class="section-heading hall-panel-heading"><div><p class="page-label">LEGACY</p><h2>传承功勋</h2></div><p>人物档案将结合队史材料、赛季贡献记录和本人确认逐步补齐。</p></div>
+      <div class="legacy-grid">
+        <article><i class="mdi mdi-flag-outline" aria-hidden="true"></i><p class="page-label">FOUNDATION</p><h3>建队与重启</h3><p>记录在关键历史节点承担组织重建、方向选择与资源开拓的人。</p><span>档案整理中</span></article>
+        <article><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><p class="page-label">COMPETITION</p><h3>赛场贡献</h3><p>记录在研发、联调、战术与赛事执行中留下关键成果的人。</p><span>档案整理中</span></article>
+        <article><i class="mdi mdi-transit-connection-variant" aria-hidden="true"></i><p class="page-label">INHERITANCE</p><h3>技术与传承</h3><p>记录让知识、规范和责任跨越赛季继续流动的人。</p><span>档案整理中</span></article>
+      </div>
+    </div>
+    <div class="hall-panel" role="tabpanel" data-hall-panel="destinations" hidden>
+      <div class="hall-alumni-toolbar">
+        <div class="section-heading hall-panel-heading"><div><p class="page-label">ALUMNI PATHS</p><h2>人才去向</h2></div></div>
+        <label class="alumni-filter" for="alumni-group-filter">
+          <i class="mdi mdi-filter-variant" aria-hidden="true"></i>
+          <select id="alumni-group-filter" aria-label="按组别筛选人才去向">
+            <option value="all">显示全部</option>
+            <option value="management">管理层</option>
+            <option value="mechanical">机械组</option>
+            <option value="control">电控组</option>
+            <option value="hardware">硬件组</option>
+            <option value="vision">视觉组</option>
+            <option value="operations">宣运组</option>
+          </select>
+          <i class="mdi mdi-chevron-down alumni-filter-chevron" aria-hidden="true"></i>
+        </label>
+      </div>
+      <div class="hall-alumni-board">
+        <section class="alumni-period" data-alumni-period>
+          <div class="section-heading"><h2>前千里时期</h2><p>2020 至 2023 赛季参与队伍建设与技术传承的成员。</p></div>
+          <div class="alumni-grid">
+            <article class="alumni-card" data-alumni-card data-groups="mechanical">
+              <div class="alumni-card-main"><div class="alumni-card-head"><h3>冯灏霆</h3><p class="alumni-seasons">2020 / 2021 赛季 <small class="alumni-role">前机械组组长</small></p><span>辛辛那提联合学院 · 机械设计制造及其自动化 · 2023 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/hku.png" alt="香港大学" /></div><strong><span class="alumni-stage stage-phd">博士</span>香港大学 · The University of Hong Kong (HKU)</strong><small>机械系统 · 机器人研发</small></div><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/ucb.png" alt="加州大学伯克利分校" /></div><strong><span class="alumni-stage stage-master">硕士</span>加州大学伯克利分校 · University of California Berkeley (UC Berkeley)</strong><small>机械系统 · 机器人研发</small></div></div></div>
+            </article>
+            <article class="alumni-card" data-alumni-card data-groups="management">
+              <div class="alumni-card-main"><div class="alumni-card-head"><h3>傅佳键</h3><p class="alumni-seasons">2021 / 2022 赛季 <small class="alumni-role">前战队队长</small></p><span>国家卓越工程师学院 · 机器人工程 · 2024 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/ucsd.png" alt="加州大学圣迭戈分校" /></div><strong><span class="alumni-stage stage-master">硕士</span>加州大学圣地亚哥分校 · University of California San Diego (UC San Diego)</strong><small>机械工程 · 机器人相关方向</small></div></div></div>
+            </article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical control">
+              <div class="alumni-card-main"><div class="alumni-card-head"><h3>伍宇杰</h3><p class="alumni-seasons">2021 / 2022 / 2023 赛季 <small class="alumni-role">前步兵研发代表，机械组员兼电控组员</small></p><span>机械与运载工程学院 · 机器人工程 · 2024 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/wuji.tech.svg" alt="舞肌科技" /></div><strong><span class="alumni-stage stage-work">就业</span>舞肌科技 · Wuji Technology</strong><small>灵巧手产品 · 机械研发</small></div></div></div>
+            </article>
+          </div>
+        </section>
+        <section class="alumni-period" data-alumni-period>
+          <div class="section-heading"><h2>千里时期</h2><p>2024 赛季及以后参与千里战队研发与传承的成员。</p></div>
+          <div class="alumni-grid">
+            <article class="alumni-card" data-alumni-card data-groups="management mechanical"><div class="alumni-card-main"><div class="alumni-card-head"><h3>汪沛宇</h3><p class="alumni-seasons">2021 / 2022 / 2024 / 2025 赛季 <small class="alumni-role">前战队项管、机械组组长、英雄研发代表</small></p><span>机械与运载工程学院 · 机械电子工程 · 2025 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/kit.png" alt="卡尔斯鲁厄理工学院" /></div><strong><span class="alumni-stage stage-master">硕士</span>卡尔斯鲁厄理工学院 · Karlsruhe Institute of Technology (KIT)</strong><small>机械工程 · 机械电子工程 · 机器人工程</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical"><div class="alumni-card-main"><div class="alumni-card-head"><h3>洪瑞珑</h3><p class="alumni-seasons">2024 / 2025 赛季 <small class="alumni-role">前英雄研发代表</small></p><span>机械与运载工程学院 · 机械电子工程 · 2026 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/dji.svg" alt="大疆创新" /></div><strong><span class="alumni-stage stage-work">就业</span>大疆创新 · DJI</strong><small>机械工程 · 机械电子工程 · 机器人工程</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical control"><div class="alumni-card-main"><div class="alumni-card-head"><h3>粟宇</h3><p class="alumni-seasons">2024 / 2025 / 2026 赛季 <small class="alumni-role">前哨兵研发代表，机械组员兼串联腿电控组员</small></p><span>机械与运载工程学院 · 机器人工程 · 2026 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/hit.png" alt="哈尔滨工业大学（深圳）" /></div><strong><span class="alumni-stage stage-master">硕士</span>哈尔滨工业大学（深圳） · Harbin Institute of Technology, Shenzhen</strong><small>机器人技术 · 控制与机械系统</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical"><div class="alumni-card-main"><div class="alumni-card-head"><h3>覃宇铭</h3><p class="alumni-seasons">2024 / 2025 赛季 <small class="alumni-role">前步兵研发代表</small></p><span>机械与运载工程学院 · 智能制造 · 2026 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/cqu.png" alt="重庆大学" /></div><strong><span class="alumni-stage stage-master">硕士</span>重庆大学 · Chongqing University</strong><small>机械工程 · 智能制造</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical control"><div class="alumni-card-main"><div class="alumni-card-head"><h3>江晨曦</h3><p class="alumni-seasons">2024 / 2025 赛季 <small class="alumni-role">前飞镖电控组员、工程机械组员</small></p><span>机械与运载工程学院 · 机器人工程 · 2026 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/cqu.png" alt="重庆大学" /></div><strong><span class="alumni-stage stage-master">硕士</span>重庆大学 · Chongqing University</strong><small>机器人工程 · 机电系统</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical"><div class="alumni-card-main"><div class="alumni-card-head"><h3>韦许韬</h3><p class="alumni-seasons">2024 赛季 <small class="alumni-role">前哨兵机械组员</small></p><span>机械与运载工程学院 · 智能制造 · 2026 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/tju.png" alt="天津大学" /></div><strong><span class="alumni-stage stage-master">硕士</span>天津大学 · Tianjin University</strong><small>机械工程 · 智能制造</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical"><div class="alumni-card-main"><div class="alumni-card-head"><h3>何煦</h3><p class="alumni-seasons">2024 赛季 <small class="alumni-role">前步兵研发代表</small></p><span>机械与运载工程学院 · 机械设计制造及其自动化 · 2026 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square"><img src="assets/images/alumni/bhu.png" alt="北京航空航天大学" /></div><strong><span class="alumni-stage stage-master">硕士</span>北京航空航天大学 · Beihang University</strong><small>机械工程 · 机器人方向</small></div></div></div></article>
+            <article class="alumni-card" data-alumni-card data-groups="mechanical"><div class="alumni-card-main"><div class="alumni-card-head"><h3>李页丹</h3><p class="alumni-seasons">2022 / 2023 / 2024 赛季 <small class="alumni-role">前空中研发代表</small></p><span>国家卓越工程师学院 · 机器人工程 · 2025 届</span></div><div class="alumni-timeline"><div class="alumni-experience"><div class="alumni-logo-square logo-nus"><img src="assets/images/alumni/nus.png" alt="新加坡国立大学" /></div><strong><span class="alumni-stage stage-master">硕士</span>新加坡国立大学 · National University of Singapore (NUS)</strong><small>机器人技术 · 智能系统</small></div></div></div></article>
+          </div>
+        </section>
+        <p class="alumni-empty" id="alumni-empty" hidden>该组资料暂待补充。</p>
+      </div>
+    </div>
+  </section>
+</main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260821-2"></script>
+    <script src="assets/js/pages/hall-of-fame.js?v=20260821-3"></script>
   </body>
 </html>
 

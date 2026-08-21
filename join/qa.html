@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <base href="../" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重庆大学千里战队招新 Q&A：回答成绩、保研加分、沟通协作、赛事兴趣、面试准备与各组学习路径等常见问题。" />
+    <title>Q&A | 重庆大学千里战队</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          document.documentElement.dataset.theme = savedTheme || "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-4" />
+    <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
+  </head>
+  <body data-page="join">
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="index.html" aria-label="返回首页">
+          <span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span>
+          <span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links">
+          <span class="nav-menu">
+            <a href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/history.html"><span class="nav-item-label">发展历程</span><i class="mdi mdi-timeline-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/resources.html"><span class="nav-item-label">团队资源</span><i class="mdi mdi-toolbox-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/culture.html"><span class="nav-item-label">精神和文化</span><i class="mdi mdi-fire nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理和协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--organization">
+            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <span class="nav-dropdown nav-dropdown--organization">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--mechanical" href="groups/mechanical.html"><span class="nav-item-label">机械结构组</span><span class="nav-item-logo nav-item-logo--mechanical" aria-hidden="true"><img src="assets/images/brand/vector-icons/mechanical.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--control" href="groups/control.html"><span class="nav-item-label">电气控制组</span><span class="nav-item-logo nav-item-logo--control" aria-hidden="true"><img src="assets/images/brand/vector-icons/control.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--vision" href="groups/vision.html"><span class="nav-item-label">视觉算法组</span><span class="nav-item-logo nav-item-logo--vision" aria-hidden="true"><img src="assets/images/brand/vector-icons/vision.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--hardware" href="groups/hardware.html"><span class="nav-item-label">硬件开发组</span><span class="nav-item-logo nav-item-logo--hardware" aria-hidden="true"><img src="assets/images/brand/vector-icons/hardware.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--operations" href="groups/operations.html"><span class="nav-item-label">宣传运营组</span><span class="nav-item-logo nav-item-logo--operations" aria-hidden="true"><img src="assets/images/brand/vector-icons/operations.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-clipboard-account-outline" aria-hidden="true"></i><strong>责任组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-robot" aria-hidden="true"></i><strong>兵种组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-heavy.html"><span class="nav-item-label">重装组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/hero.svg" alt="" /><img src="assets/images/brand/vector-icons/engineer.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-sentry.html"><span class="nav-item-label">步哨组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-aerial-dart.html"><span class="nav-item-label">空中飞镖组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><strong>定位组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-advisors.html"><span class="nav-item-label">顾问层</span><i class="mdi mdi-account-tie-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">RM一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <span class="nav-dropdown nav-dropdown--museum">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/records.html"><span class="nav-item-label">档案馆</span><i class="mdi mdi-archive-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/hall-of-fame.html"><span class="nav-item-label">名人堂</span><i class="mdi mdi-account-star-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-party-popper" aria-hidden="true"></i><strong>轻松一刻</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/memes.html"><span class="nav-item-label">梗指南</span><i class="mdi mdi-lightbulb-on-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/shop.html"><span class="nav-item-label">周边小店</span><i class="mdi mdi-shopping-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--contact">
+            <a class="is-active" aria-current="page" href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
+            <span class="nav-dropdown nav-dropdown--contact">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/sponsorship.html"><span class="nav-item-label">赞助合作</span><i class="mdi mdi-domain nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/outreach.html"><span class="nav-item-label">科创教育活动</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+        </div>
+        <div class="nav-utilities">
+          <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
+          <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="page-back-nav">
+      <a class="page-back-link" href="contact/index.html" aria-label="返回联系我们" title="返回联系我们">
+        <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
+      </a>
+    </div>
+<main class="qa-page">
+      <section class="page-hero qa-page-hero">
+        <div><p class="page-label">JOIN Q&amp;A</p><h1>Q&amp;A</h1></div>
+        <p>把招新前最常见的担心先摊开说清楚：成绩、加分、沟通协作、赛事兴趣，以及每个方向真正需要准备什么。</p>
+      </section>
+
+      <section class="section-block qa-section" aria-labelledby="qa-heading">
+        <div class="section-heading qa-heading">
+          <div><p class="page-label">QUESTION BANK</p><h2 id="qa-heading">常见问题</h2></div>
+        <div class="qa-chip-row" aria-label="问题分类快捷筛选">
+          <button class="is-active" type="button" data-qa-filter="all">全部</button>
+          <button type="button" data-qa-filter="general">通用</button>
+          <button type="button" data-qa-filter="mechanical">机械</button>
+          <button type="button" data-qa-filter="control">电控</button>
+          <button type="button" data-qa-filter="vision">视觉</button>
+          <button type="button" data-qa-filter="hardware">硬件</button>
+          <button type="button" data-qa-filter="operations">宣运</button>
+          <button type="button" data-qa-filter="management">管理</button>
+        </div>
+          <label class="qa-filter" for="qa-filter">
+            <i class="mdi mdi-filter-variant" aria-hidden="true"></i>
+            <select id="qa-filter" aria-label="筛选问题分类">
+              <option value="all">全部问题</option>
+              <option value="general">通用问题</option>
+              <option value="mechanical">机械结构组</option>
+              <option value="control">电气控制组</option>
+              <option value="vision">视觉算法组</option>
+              <option value="hardware">硬件开发组</option>
+              <option value="operations">宣传运营组</option>
+              <option value="management">管理与协作</option>
+            </select>
+            <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
+          </label>
+        </div>
+        <div class="qa-list" data-qa-list>
+          <details class="qa-item" data-qa-category="general">
+            <summary><span>通用问题</span><strong>我的成绩不是很好，绩点不是很高，有没有机会加入战队？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>首先我们需要认识到的一件事情是，成绩和能力并不完全是正相关的，甚至在当今以考试评分作为为主流评价指标的工科教育体系当中，绩点和实践能力会出现相互独立的情况。</p>
+              <p>在往届队伍的筛选和培养中，也确实有过一些本身成绩很好，但是动手实践能力较差也不敢突破常规范式进行创造的队员，同时也有部分队员虽然在课业上表现平平，但是依靠对于机器人的热爱和勤奋投入，做出了非常出色的工作。如果说你是一个绩点较高想要去竞争保研资格的同学，但确实因为学习能力一般，可能需要花费比较大的精力在课业上，很难再匀出多余的时间在战队做出较多的贡献，我们确实不是特别推荐你加入这样一个需要高投入的比赛团队；而如果你是一个想要毕业后直接就业，更看重项目实践精力和团队协作素养的同学，这里对你来说再合适不过。</p>
+              <p>战队也曾经有过能够靠短时间高效率复习保住绩点，也热衷于泡在实验室做技术工作的“强者”，如果说你做的技术工作和你的专业匹配度较高，战队的技术工作反而能够促进你去提前学习专业知识并加深理解，这个时候就产生了一举两得的正向收益。</p>
+              <p>当然，一些个体案例并不能代替全部的情况，还需要根据你自己分配精力、管理时间以及学习效率等方面综合评估。不过我们相信，在热爱面前，由于绩点低缺乏自信或者由于绩点高保研压力大等问题，都不会成为阻碍你前进的难题。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="general">
+            <summary><span>通用问题</span><strong>我想了解一下关于保研加分/综测加分方面的收益？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>RM比赛在保研加分方面相较于其他比赛并没有竞争力，甚至可以说是性价比下水道的存在。</p>
+              <p>为什么这么说？因为RM作为一个大规模的团队比赛，本身要求非常大的投入和奉献，最后在奖项同等定位下，加分一定会被人数稀释，投入产出比也会因为其相当高的付出量被拉低。如果是希望拥有加分方向的同学，我们建议考虑其他短线、小团队或者个人比赛。</p>
+              <p>我们希望来到RM赛场的同学，都只是出于对机器人本身的热爱和对RM赛场的激情，而不报有任何加分方向的功利主义幻想。但是话又说回来，加分并不一定和个人能力的成长等价，如果你的定位是成为一个好的科研工作者，RM团队中的历练一定会提升你独立思考和解决问题的能力，激发你的创新潜能；如果你的定位是就业成为一个好的机器人工程师，RM比赛的履历一定会成为你学生时代浓墨重彩的一笔，也会为你积累相当多的经验，从而提升你在就业市场当中的竞争力。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="general">
+            <summary><span>通用问题</span><strong>我性格比较内敛，习惯于个人独立工作，个人能力较好，有机会加入团队吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>我们的原则是对团队忠诚，对队友坦诚，在日常工作中能够及时沟通交流是队伍中每个人在团队协作过程中必须具备的能力。</p>
+              <p>性格内敛不是不愿沟通交流的挡箭牌，作为团队中的一员，沟通交流的能力是基础中的基础，这是抛开社交属性的能力。如果团队的内部沟通交流都不顺畅，个人能力再怎么突出也没办法了解到团队的需求和目标，久而久之会慢慢地与团队脱离，这样对于自身和团队的发展都是极其有害的。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="general">
+            <summary><span>通用问题</span><strong>我只想来战队学习精进技术，但是对比赛本身兴趣一般，我可以加入学习吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>不推荐。</p>
+              <p>战队与社团的性质并不一样，战队存在着需要在比赛中获得优异成绩的压力，其工作量自然是不可言喻的。就过往的经验而言，在高负荷的工作量下，如果个人对赛事的兴趣不高，很少有人能在低兴致地情况下坚持完成高负荷的工作。</p>
+              <p>再者，战队在备赛过程中花费大量资源去培养队员，自然是希望能够有一批可观的有生力量持续支撑战队的前进与传承。但对于本身对赛事不感兴趣的同学来说，在享受了战队带来的红利之后并不会选择反哺给战队，这对于战队来说是极大地损失——战队是不愿看到耗费了大量资源培养出来的队员没办法成为有生力量，这对于队伍的传承来说是毁灭性的灾难。</p>
+              <p>对于刚开始接触RM赛事的同学，我们希望其能怀着对机器人的热爱，一点一点地走进千里战队和RM这项赛事，在成长地过程中培养出对RM赛事的激情和对战队的归属感。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="mechanical">
+            <summary><span>机械结构组</span><strong>我是一名数理专业的学生，专业不是很对口，但是我对 RoboMaster 机械组的工作很感兴趣，我可以来吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>可以。在专业不对口的前提下，我们依旧提供加入战队进行机械方向技能培养的机会，但是需要你能够分出战队所要求的精力去做好技术任务，在此同时也能良好兼顾自己的课业学习，做到两不误。</p>
+              <p>部分专业可能本身课程量较大且课程难度高，这对很多同学来说是一个比较大的挑战。维持在战队的工作强度依旧有一个最重要的前提条件——充足的兴趣和热爱。在战队机械组的历史上，依旧有一些非机械专业的同学能够将机器人的结构设计做得非常出色，也留下了非常重要的贡献。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="mechanical">
+            <summary><span>机械结构组</span><strong>我的动手能力不是很强，可以只做设计不做装配吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>不可以。装配工作是培养工程能力不可或缺的一环。装配工作不是什么不需要动脑的低等体力活，如何灵活利用工装甚至是自己制造工装来给装配带来便利都是值得深入考虑的问题。</p>
+              <p>同时，历史经验表明，每个队员在刚开始做复杂装配体设计的时候，对于装配顺序和装配难易度的考量都是较为欠缺的，如果没有亲手装配的实际经历，会导致缺乏对复杂装配体设计的反思，从而影响设计水平，甚至在设计过程中犯下制造潜在装配干涉的低级错误。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="mechanical">
+            <summary><span>机械结构组</span><strong>我已经快大二了，准备报名暑期统招，但是我还是零基础怎么办？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>即便你已经即将步入大二，零基础也并不关键。通常来说我们会对大二的同学在前期培训上提出更高的自主性要求，在整个比赛周期上提出更高的成长速率要求，但是你们的优势是已经初步适应了大学的生活，所以一切都不算晚。</p>
+              <p>不过就机械组而言，我们更加期望的是你依然能够对自己的比赛生涯拥有两年的预期，给自己留有充分的成长与做贡献的时间和机会，同时也是在帮助战队与机械组的延续和传承。如果能力发展尚可，可以在大三转为顾问。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="mechanical">
+            <summary><span>机械结构组</span><strong>我对比赛过程还不太了解，但是入队很正式，我可以先进来再感受吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>当你投递报名的时候，你要清楚地意识到这并不是一个普通的社团或者活动，而是一个需要你深思熟虑选择的本科生涯当中的重要历程。因此，我希望你们花更多的时间去做入队前的了解，如群聊问问题、浏览网站、找时间来参观实验室并咨询现任队员。</p>
+              <p>入队不会签任何限制你人身自由的协议，退队流程也几乎没有成本，但是目前战队的状况不足以支持让众多感兴趣的同学进来体验。只要你进来，我们就会对你的成长负责，但是同样这份责任也会绑定在你身上。</p>
+              <p>当然，你可以抱着体验的心态来参加面试，我们在面试过程中也会跟你进行进一步的深入交流。如果我们看重你身上的闪光点，你一定可以拿到美妙体验的入场券。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="mechanical">
+            <summary><span>机械结构组</span><strong>面试会问哪些问题？如果不过还有机会补面吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>机械组面试会涉及到包括但不限于：对报名表当中问题的解释、对比赛的了解以及对机械组工作的了解、一部分关于基础技术概念和思维范式的问题（可参考<a href="museum/training/mechanical.html">资料站先导课内容</a>）、对自己的认识（能力、精力、态度和规划）。</p>
+              <p>通常来说没有补面机会，但是暑期招新的升大二同学可以考虑在秋季批再次投递；秋季统招的大一同学可以考虑在此年升入大二前的暑期批再次投递。</p>
+            </div>
+          </details>
+          <details class="qa-item" data-qa-category="control">
+            <summary><span>电气控制组</span><strong>电控入门必须先学完 STM32 所有外设吗？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer"><p>不需要先把所有外设学完。更合适的路径是沿着一台机器人完整的数据流去理解：遥控和传感器数据如何进入程序，控制算法如何生成目标，电机和执行机构如何收到命令并反馈状态。</p><p>第一课会帮助你先建立系统图，再逐步补 CAN、USART、PID、任务调度、多板通信等模块。先知道自己为什么学，再去学具体怎么做。</p></div>
+          </details>
+          <details class="qa-item" data-qa-category="vision">
+            <summary><span>视觉算法组</span><strong>视觉组是不是只做 AI 或深度学习？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer"><p>不是。视觉组会接触目标检测和模型部署，但这只是其中一部分。赛场视觉还包括相机标定、图像处理、PNP 位姿解算、运动预测、ROS2 通信、工程自动作业、雷达全局感知等。</p><p>如果你只会调用模型但不了解数据从哪里来、结果要交给谁，算法很难稳定上车。入门时请同时重视 C++、Linux、OpenCV、Git 和基础工程习惯。</p></div>
+          </details>
+          <details class="qa-item" data-qa-category="hardware">
+            <summary><span>硬件开发组</span><strong>硬件组和电控组有什么区别？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer"><p>电控更偏控制软件、通信链路和整车状态；硬件更偏电路、电气连接、供电保护、传感器接入和可靠性验证。两者强相关，但关注层级不同。</p><p>硬件组需要关心板卡和线缆在真实机器人上的安全、稳定和可维护性。入门可以从基础电路、焊接规范、原理图阅读和常见故障排查开始。</p></div>
+          </details>
+          <details class="qa-item" data-qa-category="operations">
+            <summary><span>宣传运营组</span><strong>宣运组是不是只负责发推文和拍照？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer"><p>不只是。宣运组负责让团队被看见、被理解，也负责活动组织、资料整理、品牌视觉、对外沟通和部分团队运营支持。它连接的是技术成果、队伍文化和外部公众。</p><p>如果你擅长写作、摄影、设计、视频、活动统筹或资料管理，都可以找到入口。关键是能把复杂的工程故事准确、稳定地表达出来。</p></div>
+          </details>
+          <details class="qa-item" data-qa-category="management">
+            <summary><span>管理与协作</span><strong>面试或考核时最看重什么？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer"><p>我们会看基础能力，也会看你对问题的理解、表达、记录和复盘。比起说“我很感兴趣”，更有说服力的是你已经做了哪些尝试、卡在哪里、如何排查、下一步准备怎么推进。</p><p>请尽量带着作品、记录或具体问题来交流。哪怕成果很小，只要过程真实、思路清楚，也能让大家判断你的成长潜力。</p></div>
+          </details>
+        </div>
+        <p class="qa-empty" data-qa-empty hidden>这个分类下的问题正在整理。</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 重庆大学千里战队</p>
+      <p>网站建设：重庆大学千里战队 × Codex</p>
+      <p>域名规划：team.cquqianli.cn</p>
+    </footer>
+    <script src="assets/js/core/site.js?v=20260821-2"></script>
+    <script src="assets/js/pages/qa.js?v=20260821-1"></script>
+  </body>
+</html>

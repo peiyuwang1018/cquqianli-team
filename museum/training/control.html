@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <base href="../../" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <title>电气控制组第一课 | 重庆大学千里战队</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          document.documentElement.dataset.theme = savedTheme || "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-4" />
+    <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
+  </head>
+  <body data-page="archive" data-training-key="control">
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="index.html" aria-label="返回首页">
+          <span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span>
+          <span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links">
+          <span class="nav-menu">
+            <a href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/history.html"><span class="nav-item-label">发展历程</span><i class="mdi mdi-timeline-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/resources.html"><span class="nav-item-label">团队资源</span><i class="mdi mdi-toolbox-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/culture.html"><span class="nav-item-label">精神和文化</span><i class="mdi mdi-fire nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理和协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--organization">
+            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <span class="nav-dropdown nav-dropdown--organization">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--mechanical" href="groups/mechanical.html"><span class="nav-item-label">机械结构组</span><span class="nav-item-logo nav-item-logo--mechanical" aria-hidden="true"><img src="assets/images/brand/vector-icons/mechanical.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--control" href="groups/control.html"><span class="nav-item-label">电气控制组</span><span class="nav-item-logo nav-item-logo--control" aria-hidden="true"><img src="assets/images/brand/vector-icons/control.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--vision" href="groups/vision.html"><span class="nav-item-label">视觉算法组</span><span class="nav-item-logo nav-item-logo--vision" aria-hidden="true"><img src="assets/images/brand/vector-icons/vision.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--hardware" href="groups/hardware.html"><span class="nav-item-label">硬件开发组</span><span class="nav-item-logo nav-item-logo--hardware" aria-hidden="true"><img src="assets/images/brand/vector-icons/hardware.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--operations" href="groups/operations.html"><span class="nav-item-label">宣传运营组</span><span class="nav-item-logo nav-item-logo--operations" aria-hidden="true"><img src="assets/images/brand/vector-icons/operations.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-clipboard-account-outline" aria-hidden="true"></i><strong>责任组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-robot" aria-hidden="true"></i><strong>兵种组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-heavy.html"><span class="nav-item-label">重装组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/hero.svg" alt="" /><img src="assets/images/brand/vector-icons/engineer.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-sentry.html"><span class="nav-item-label">步哨组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-aerial-dart.html"><span class="nav-item-label">空中飞镖组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><strong>定位组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-advisors.html"><span class="nav-item-label">顾问层</span><i class="mdi mdi-account-tie-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">RM一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <span class="nav-dropdown nav-dropdown--museum">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/records.html"><span class="nav-item-label">档案馆</span><i class="mdi mdi-archive-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/hall-of-fame.html"><span class="nav-item-label">名人堂</span><i class="mdi mdi-account-star-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-party-popper" aria-hidden="true"></i><strong>轻松一刻</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/memes.html"><span class="nav-item-label">梗指南</span><i class="mdi mdi-lightbulb-on-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/shop.html"><span class="nav-item-label">周边小店</span><i class="mdi mdi-shopping-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--contact">
+            <a href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
+            <span class="nav-dropdown nav-dropdown--contact">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/sponsorship.html"><span class="nav-item-label">赞助合作</span><i class="mdi mdi-domain nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/outreach.html"><span class="nav-item-label">科创教育活动</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+        </div>
+        <div class="nav-utilities">
+          <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
+        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+        </button>
+        </div>
+      </nav>
+    </header>
+    <div class="page-back-nav">
+      <a class="page-back-link" href="museum/resources.html" aria-label="返回资料站" title="返回资料站">
+        <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
+      </a>
+    </div>
+<main class="training-reader-page">
+  <section class="page-hero training-reader-hero">
+    <div><p class="page-label">CONTROL LESSON 01</p><h1>电气控制组第一课</h1></div>
+    <p>沿整车数据流认识嵌入式控制、通信、执行机构与软件协作。</p>
+  </section>
+  <section class="training-document-shell">
+    <header class="training-document-meta">
+      <div><span>作者</span><strong>杨杨文琦</strong></div>
+      <div><span>阅读方式</span><strong>站内文档</strong></div>
+    </header>
+    <article class="training-markdown">
+<h2>引言</h2>
+<table>
+<thead><tr><th><em>版本号</em></th><th><em>修订时间</em></th><th><em>修订内容</em></th></tr></thead>
+<tbody><tr><td><em>V1.0</em></td><td><em>2026.7.17</em></td><td><em>进行了本文的第一版撰写</em></td></tr></tbody>
+</table>
+<h2>如何控制属于你的一台RoboMaster机器人</h2>
+<h3>开启嵌入式学习的正确姿势</h3>
+<p>无论你是大一刚入学“Freshman”，抑或是度过了一年大学生活，即将成为所谓“Sophomore”的同学，只要你喜欢嵌入式，准备参加RoboMaster这一赛事，或者是参加一些科创项目，亲手做出属于自己的一些东西，我们的第一选择可能便是上网搜索相关的教程内容或者是询问AI得到一些引导。</p>
+<p>不得不说，时至今日，网络上已经存在了大量的优秀STM32教程，只要投入足够的时间，大多数人最终都能完成点灯、按键、串口等基础控制；同时，得益于AI的迅速发展，嵌入式软硬件的知识也能很快转化为可以产出的实物内容。</p>
+<p>但是我认为对于一个没有接触过一点这个领域的学生，想要真正的走上一条正确的学习路径，往往需要足够强大的自驱力与财力；而对于更多的同学，可能往往就是三天打鱼两天晒网，<del>买来的江科协的STM32F103C8T6套件放进柜子里吃灰，一整个大学生涯可能就再也没有碰过</del>。那么我们不禁需要问一下自己，阻碍我们学习嵌入式的难题究竟是什么。</p>
+<p>结合我的自身学习经验以及在重庆大学千里战队担任电控组组长进行培训的经验看来，<strong>真正困难的往往不是某一行代码，也不是某一个软件究竟应该点击哪里，而是没有人告诉我们：</strong></p>
+<ol>
+<li>嵌入式学习并不是一门简单的学科，而是包含了软硬件开发的一套大杂烩体系。</li>
+<li>那么我们又为什么需要学习这些内容，以及我们想要做出理想中的目标，又需要学习哪些内容。</li>
+<li>我们在与他人交流时听到的<em>GPIO，CAN，USART，FreeRTOS</em>这些专有名词，他们到底代表什么意思，之间又有什么关系。</li>
+<li>STM32CubeMX这种专业工程软件在生成框架代码的时候，到底做了什么样的设计，有什么值得一个大学生学习借鉴的地方。</li>
+<li>HAL库是一个什么样子的库，它实现硬件资源操作的方式是怎么样的，我们呢为什么要使用它。</li>
+<li>为什么网络上看到的教程能够很好的实现并且得出结果，但是我们换一个工程文件内又失效了。</li>
+<li>重庆大学千里战队提供的框架为什么要进行一些比较别出心裁的设计</li>
+<li>当现有的框架出现问题时，应该从哪里开始检查，怎么检查并且解决问题</li>
+<li>AI的使用到底要基于什么方式才不会影响我们深入地掌握嵌入式开发。</li>
+</ol>
+<p>如果这些问题始终得不到解答，那么我们学习嵌入式很容易就变成一个不断重复的恶性循环：</p>
+<blockquote>
+<p>搜索教程/询问AI/使用Agent，复制配置，粘贴代码，成功运行，然后在下一次更换芯片、开发板或外设时重新开始。</p>
+</blockquote>
+<p>如果你是一个对于工程设计有着卓越追求，对着技术有着独到审美，希望成为一个嵌入式领域的<strong>完美主义者</strong>，那么你一定不会选择走这一条路；同样的，我们也不希望这套教程最终培养出的，只是按照教程截图或者拷打AI来完成任务的人。</p>
+<p>我们希望所有完成本教程的同学，能够以一种<strong>“自顶向下”</strong>的设计思维去理解如何控制一台RoboMaster机器人，自发地去理解数据是如何在一条条链路中<strong>产生、传输、处理</strong>，并且通过各种<strong>协议，算法，硬件设计</strong>去达成最终的整车控制；能够在没有任何教程的情况下，独立地去拓展新的外设，以满足我们对于机甲大师的想象力；也能够在程序出现故障时，沿着设计思维去迅速定位问题的所在。</p>
+<p><strong>这，正是这套教程存在的原因。</strong></p>
+<h3>本教程从来不是一套百科全书</h3>
+<p>我们从来不试图在这份教程内向大家解释完所有STM32有关外设的工作方式（<del>那也太多了吧</del>），同样的也不是针对某个已经成熟的框架而编写的函数使用手册。</p>
+<p>在本教程中，我们将围绕一个明确的目标展开：</p>
+<blockquote>
+<p>使用STM32系列芯片作为主控，让大家从零开始自主构建一套能够完成RoboMaster基础底盘+云台控制的嵌入式工程。</p>
+</blockquote>
+<p>为了实现这个目标，我们先来梳理一下流程，<strong>以“自顶向下”设计思路展开</strong>：</p>
+<ol>
+<li>想要控制一台车，必然要有对应的遥控数据输入。</li>
+<li><strong>有输入就必然有接收</strong>，谁来接收？那必然是我们的嵌入式开发板。</li>
+<li>接收到了控制数据，一般来说控制信号符合人的固有思维逻辑，是“我想让这个车按照我的思路去运动”，直观来看也就是空间上的 $x,y,z$或者 $yaw,pitch,raw $。那么车需要怎么去理解这个 $x,y,z$或 $yaw,pitch,raw $呢？</li>
+<li>于是我们会进行<strong>运动学建模与解算</strong>，将空间上的 $x,y,z$或 $yaw,pitch,raw $运动转化为真正承载机器人运动的电机所需要理解的命令。</li>
+<li>那么我们<strong>究竟如何转动一个电机</strong>，需要<strong>发送什么样的命令</strong>来让电机转动？这就需要查阅电机对应的手册来进行研究。</li>
+<li>此外，我们还会注意到<strong>电机也会给我们反馈信息</strong>，那么我们可以把这些信息组织起来，与第一点形成首尾衔接，这样就真正地<strong>实现遥控操作上的闭环</strong>。</li>
+</ol>
+<p>沿着这个思路，我们会学习什么呢？那么这又是<strong>一个“自底向上”的学习过程</strong>：</p>
+<ol>
+<li>建立开发、编译、烧录与调试环境；</li>
+<li>通过信号总线驱动电机；</li>
+<li>接收并解析电机反馈；</li>
+<li>建立最基础的闭环控制；</li>
+<li>编写并完善闭环控制器；</li>
+<li>接收并解析遥控器数据；</li>
+<li>完成底盘+云台的运动解算；</li>
+<li>组织不同周期和职责的程序任务；</li>
+<li>建立多开发板/多系统之间的通信；</li>
+<li>将前面完成的模块整合为一套完整工程。</li>
+</ol>
+<p>后续学习到的CAN、PID、中断、串口、DMA、任务调度和通信协议，都会在这一套学习路径中被逐渐补充。每完成一章，由大家独自构建的这套系统都会获得一种新的能力。</p>
+<h3>有些轮子是注定需要重新造的</h3>
+<p><del>有些鸟儿是注定不会被关在牢笼里的（bushi</del></p>
+<p><strong>重复造轮子</strong>，在工作中常常指那些明明可以高度复用的模块却又被老老实实地重新从0开始构建了一遍，这诚然是一个非常不好的习惯，因为这会极大浪费我们的时间，又经常被以“深究原理”的花名来标榜其所作的工作。</p>
+<p>因此在正式学习之前，我们需要明确一个问题：</p>
+<blockquote>
+<p>既然战队已经拥有能够实际上场的成熟框架，为什么还要让新生重新编写这些模块？这是否也是一种“重复造轮子”呢？</p>
+</blockquote>
+<p>从本段标题也可以看到，答案当然是否定的，因为<strong>“能够使用框架”</strong>和<strong>“理解一个嵌入式工程”</strong>是两件本质不同的事情。</p>
+<p>一个成熟框架通常已经替使用者完成了大量工作：</p>
+<ul>
+<li>它封装了底层硬件；</li>
+<li>它管理了设备对象；</li>
+<li>它处理了通信分发；</li>
+<li>它组织了任务调度；</li>
+<li>它提供了统一的初始化和运行接口；</li>
+<li>它隐藏了许多重复、繁琐但十分重要的实现细节。</li>
+</ul>
+<p>这些设计可以显著提高正式备赛阶段的开发效率，却不一定适合作为一个大学生第一次接触嵌入式时的起点。如果一开始就直接使用完整框架，大家或许能够很快让一个电机转起来，进而控制底盘运动，与此同时，新的问题也随之产生：</p>
+<ul>
+<li>不知道控制指令最终从哪个外设发出；</li>
+<li>不知道电机反馈在哪里被接收；</li>
+<li>不知道中断和回调函数之间的关系；</li>
+<li>不知道一个对象的初始化背后完成了哪些操作；</li>
+<li>不知道框架为什么要划分这些层次；</li>
+<li>离开框架后，不知道如何重新建立最小工程。</li>
+</ul>
+<p>因此，本教程采用一条不同的学习路线：</p>
+<blockquote>
+<p>先从完整系统出发认识问题，再从最小模块开始亲手实现，最后回到完整框架中理解工程设计。</p>
+</blockquote>
+<p>具体来说，这条路线分为三个阶段：</p>
+<h4>第一阶段：看见完整系统</h4>
+<p>在编写代码之前，我们会先说明当前模块在整辆机器人中的位置。</p>
+<p>你不需要一开始就理解所有细节，但需要知道本章解决了什么问题、数据从哪里来、将要送到哪里，以及它与后续模块有什么关系。</p>
+<p>这是<strong>自顶向下认识系统</strong>的过程。</p>
+<h4>第二阶段：亲手构建模块</h4>
+<p>我们将从最直观、最容易观察的实现开始，逐步完成 CAN、USART、遥控器、电机、PID、底盘解算和任务调度等模块。</p>
+<p>早期实现可能并不完美，甚至会故意保留一些随着工程扩大必然出现的问题。随后，我们会分析这些问题，并对代码进行拆分、封装和重构。</p>
+<p>这是<strong>自底向上建立系统</strong>的过程。</p>
+<h4>第三阶段：进入正式框架</h4>
+<p>当你亲手完成一次完整的数据闭环后，我们会提供一套<strong>更加集成、更加通用，也更适合正式比赛</strong>的战队框架。</p>
+<p>框架中的名称、模块职责、数据流向和基本接口，会尽量与教程阶段保持一致。你此前编写的代码不会突然失去意义，而会在框架中找到对应的位置：</p>
+<ul>
+<li>曾经写过的CAN发送函数，会成为通信层的一部分；</li>
+<li>曾经写过的电机结构体，会发展为可配置的设备对象；</li>
+<li>曾经写过的PID函数，会成为独立的控制器模块；</li>
+<li>曾经写在<code>main</code>中的流程，会被拆分到不同任务和应用模块；</li>
+<li>曾经由人工判断的错误，会被框架统一记录和处理。</li>
+</ul>
+<p>我们希望你在接触正式框架时产生的感觉不是“重新学习了一套代码”，而是：</p>
+<blockquote>
+<p>原来我之前亲手完成的那些功能，在一个更成熟的工程中应该这样组织。</p>
+</blockquote>
+<h3>那么我们应该怎么进行学习</h3>
+<p>这套教程会尽可能降低入门阶段不必要的阻碍，但“容易理解”并不意味着只需要复制代码。</p>
+<p>在学习过程中，我们建议你始终遵守以下顺序：</p>
+<ol>
+<li>先阅读本章目标，明确最终需要观察到什么现象；</li>
+<li>看懂本章的数据流，知道输入和输出分别是什么；</li>
+<li>按照教程完成最小实现；</li>
+<li>编译并验证当前步骤，不要一次修改大量内容；</li>
+<li>主动制造或记录错误，学习判断问题出现在哪一层；</li>
+<li>完成本章验收任务；</li>
+<li>尝试在不照抄原文的情况下重新实现关键部分；</li>
+<li>思考该模块在正式框架中应该处于什么位置。</li>
+</ol>
+<p>在每一章中，我们都会尽量区分三类内容：</p>
+<ul>
+<li><strong>必须完成</strong>：继续下一章之前应当掌握的内容；</li>
+<li><strong>进一步理解</strong>：帮助你建立底层机制和工程思维；</li>
+<li><strong>进阶内容</strong>：暂时跳过不会影响主线，后续会再次使用。</li>
+</ul>
+<p>你不需要在第一次接触某个概念时就掌握它的全部细节。</p>
+<p>第一次遇到中断时，你可以先理解硬件事件如何通知程序；第一次使用HAL库时，可以先理解函数的输入、输出和作用；第一次使用FreeRTOS时，可以先理解任务为什么需要按照不同周期执行。</p>
+<p>随着同一个概念在不同模块中反复出现，我们再逐步进入寄存器、内存、并发、时序和软件架构等更深入的内容。</p>
+<h3>让我们达成一些约定并确认边界</h3>
+<h4>有一些共识是大家必须要认识到的</h4>
+<p>为了减少不必要的环境差异，教程将尽可能统一以下内容：</p>
+<ul>
+<li>主要入门平台采用STM32F407；</li>
+<li>主要工程语言采用C++，必要时保留C接口；</li>
+<li>使用STM32CubeMX完成芯片和外设的基础配置；</li>
+<li>使用HAL库作为初期硬件访问方式；</li>
+<li>使用CLion与CMake组织、编译和调试工程；</li>
+<li>使用Git管理代码版本；</li>
+<li>代码尽量按照模块职责拆分，而不是长期堆积在<code>main</code>函数中。</li>
+</ul>
+<p>需要强调的是，工具只是帮助我们构建工程的手段，而不是学习目标本身。</p>
+<p>教程不会要求你一开始阅读完整的数据手册，也不会要求你从寄存器开始编写所有驱动。但当我们遇到HAL库无法解释的问题、需要确认外设行为，或者需要进行性能优化时，会带着明确的问题查阅芯片参考手册、数据手册和外设文档。</p>
+<p>换句话说，我们<strong>不是拒绝阅读手册</strong>，而是不要求你在还不知道自己要寻找什么时，先从数千页文档中独自寻找答案。同样的，如果你愿意<del>硬啃生涩的datasheet</del>，我们也很乐意看到这样的人才。</p>
+<h4>教程总得有个边界</h4>
+<p>这套教程能够提供一条相对清晰的学习路线，却不能替代实际调试，也不能保证所有人遇到完全相同的问题。</p>
+<p>而不同的开发板版本、软件版本、接线方式、电脑环境和代码改动，都可能产生新的现象。因此，我们会尽可能提供：</p>
+<ul>
+<li>每一步的预期结果；</li>
+<li>常见错误及排查顺序；</li>
+<li>涉及电机控制时的安全要求；</li>
+<li>模块的输入、输出和依赖关系；</li>
+<li>可供独立完成的课后任务；</li>
+<li>从教学工程迁移到正式框架的方法。</li>
+</ul>
+<p>如果你在学习过程中遇到问题，希望你不要只发一句“为什么不能运行”，而是尽量提供：</p>
+<ul>
+<li>当前使用的硬件和软件版本；</li>
+<li>进行到了哪一步；</li>
+<li>预期看到什么；</li>
+<li>实际发生了什么；</li>
+<li>完整报错信息；</li>
+<li>已经检查过哪些内容。</li>
+</ul>
+<p><strong>提出一个信息完整的问题，本身就是工程能力的一部分。</strong></p>
+<h2>结语</h2>
+<p>作为一个刚刚进入嵌入式领域的大学生，几周内掌握嵌入式开发的全部知识，从来不是我们希望看到的。作为该篇引言的撰写者，我个人比较反感一切“填鸭式”教育，无论是学校提供的主流ppt式讲解课程，还是与AI智能体对话得到的所谓“浓缩精华”，都必然不会让你成为一个融会贯通的嵌入式专家。<del>毕竟考试周速通的效果之差大部分同学也有目共睹</del></p>
+<p>我们更希望你完成这套教程后，能够获得一张相对清晰的地图：</p>
+<ul>
+<li>知道一个嵌入式工程由哪些部分组成；</li>
+<li>知道数据如何从传感器和通信接口进入程序；</li>
+<li>知道控制算法如何将目标转化为输出；</li>
+<li>知道不同模块为什么要通过接口连接；</li>
+<li>知道成熟框架解决了哪些重复问题；</li>
+<li>知道程序出现异常时应该从哪里开始排查；</li>
+<li>知道自己接下来还缺少什么知识。</li>
+</ul>
+<p>当你能够独立完成一个模块、解释它在系统中的位置，并把它可靠地交给下一位队员使用时，你才真正从“跟着教程完成操作”，走向了“参与构建一套工程”。</p>
+<p>从“F407开发板系列教程”开始，我们将首先搭建统一的开发环境，并完成第一个可以编译、烧录和调试的STM32工程。</p>
+    </article>
+  </section>
+</main>
+    <footer class="site-footer">
+      <p>© 2026 重庆大学千里战队</p>
+      <p>网站建设：重庆大学千里战队 × Codex</p>
+      <p>域名规划：team.cquqianli.cn</p>
+    </footer>
+    <script src="assets/js/core/site.js?v=20260821-2"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -35,6 +35,7 @@ function getBackTarget(relative) {
   if (relative.startsWith("groups/")) return { href: "about/organization.html", label: "返回组织架构" };
   if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
   if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回 RM 一线" };
+  if (relative.startsWith("museum/training/")) return { href: "museum/resources.html", label: "返回资料站" };
   if (relative.startsWith("museum/")) return { href: "museum/index.html", label: "返回千里博物馆" };
   if (relative.startsWith("join/") || relative.startsWith("contact/")) {
     return { href: "contact/index.html", label: "返回联系我们" };
@@ -131,7 +132,7 @@ function buildNavigation(active) {
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>

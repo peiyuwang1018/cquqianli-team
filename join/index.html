@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-22" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-4" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="join">
@@ -104,7 +104,7 @@
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#qa"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-handshake-outline" aria-hidden="true"></i><strong>合作招商</strong></span>
@@ -131,23 +131,29 @@
 <main>
   <section class="page-hero"><div><p class="page-label">JOIN US</p><h1>加入我们</h1></div><p>加入千里意味着进入真实的长期工程项目，在协作中学习、承担和成长。</p></section>
   <section class="section-block split-section" id="recruit"><div><h2>招新信息</h2><p>这里放置当季统招时间、报名方式、QQ群、推文链接和各组面向对象。当前先保留结构，等待你补充正式信息。</p></div><figure class="media-frame"><img src="assets/images/brand/成为我们的下一个未来.png" alt="加入千里" /></figure></section>
-  <section class="section-block" id="groups"><div class="section-heading"><h2>各组方向</h2><p>从技术组别中选择适合自己的成长路径。</p></div><div class="group-grid"><a class="entry-card" href="groups/mechanical.html">
+  <section class="section-block" id="groups"><div class="section-heading"><h2>各组方向</h2><p>从技术组别中选择适合自己的成长路径。</p></div><div class="group-grid"><a class="entry-card" href="groups/mechanical.html" data-training-group="mechanical">
     <figure><img src="assets/images/brand/vector-icons/mechanical.svg" alt="机械结构组" loading="lazy" /></figure>
     <span>Mechanical<br />Structure</span><strong>机械结构组</strong><small>简称机械组，围绕竞技机器人机械系统，覆盖自顶向下 CAD、整机布局、轻量化优化、多体动力学仿真、底层传动模组、样机制造装配与测试迭代。</small>
-  </a><a class="entry-card" href="groups/control.html">
+  </a><a class="entry-card" href="groups/control.html" data-training-group="control">
     <figure><img src="assets/images/brand/vector-icons/control.svg" alt="电气控制组" loading="lazy" /></figure>
     <span>Electrical<br />Control</span><strong>电气控制组</strong><small>负责机器人控制软件、运动控制、通信链路、整车状态机与赛季联调。</small>
-  </a><a class="entry-card" href="groups/vision.html">
+  </a><a class="entry-card" href="groups/vision.html" data-training-group="vision">
     <figure><img src="assets/images/brand/vector-icons/vision.svg" alt="视觉算法组" loading="lazy" /></figure>
     <span>Vision<br />Algorithm</span><strong>视觉算法组</strong><small>负责赛场感知、目标识别、定位解算、预测与算法部署，连接传感器和机器人决策。</small>
-  </a><a class="entry-card" href="groups/hardware.html">
+  </a><a class="entry-card" href="groups/hardware.html" data-training-group="hardware">
     <figure><img src="assets/images/brand/vector-icons/hardware.svg" alt="硬件开发组" loading="lazy" /></figure>
     <span>Hardware<br />Development</span><strong>硬件开发组</strong><small>负责电路、电气连接、供电保护、传感器接入和全兵种硬件可靠性支持。</small>
-  </a><a class="entry-card" href="groups/operations.html">
+  </a><a class="entry-card" href="groups/operations.html" data-training-group="operations">
     <figure><img src="assets/images/brand/vector-icons/operations.svg" alt="宣传运营组" loading="lazy" /></figure>
     <span>Operations</span><strong>宣传运营组</strong><small>负责团队传播、品牌视觉、活动组织、资料整理、财务事务与对外沟通。</small>
   </a></div></section>
-  <section class="section-block" id="qa"><div class="section-heading"><h2>Q&amp;A</h2><p>放置报名、训练、时间投入、跨专业加入和组别选择等常见问题。</p></div></section>
+    <section class="section-block" id="qa">
+    <div class="section-heading"><h2>加入前先看看</h2><p>先判断自己适不适合，再把报名、训练、时间投入、跨专业加入和组别选择等常见问题看清楚。</p></div>
+    <div class="contact-entry-grid contact-entry-grid--two">
+      <a class="contact-entry" href="join/persona.html"><i class="mdi mdi-account-search-outline" aria-hidden="true"></i><strong>人才画像</strong><span>对照战队期待的能力、态度与协作方式，判断自己适合怎样的成长路径。</span></a>
+      <a class="contact-entry" href="join/qa.html"><i class="mdi mdi-help-circle-outline" aria-hidden="true"></i><strong>Q&amp;A</strong><span>集中查看成绩、加分、时间投入、跨专业加入、面试和各组方向等常见问题。</span></a>
+    </div>
+  </section>
 </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
@@ -155,6 +161,8 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260821-2"></script>
+    <script src="assets/js/data/training-data.js?v=20260821-1"></script>
+    <script src="assets/js/pages/training.js?v=20260821-1"></script>
   </body>
 </html>
 
