@@ -67,6 +67,7 @@
     const button = document.createElement("button");
     button.type = "button";
     button.className = `meme-barrage-word meme-barrage-word--${entry.tone}`;
+    button.classList.toggle("is-long-term", entry.term.length >= 9);
     button.dataset.memeId = entry.id;
     button.style.setProperty("--meme-weight", entry.weight || 3);
     button.innerHTML = `<strong>${entry.term}</strong><span>${entry.hotYears.join(" / ")}</span>`;
