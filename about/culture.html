@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-18" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-19" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="about">
@@ -173,7 +173,7 @@
       </article>
 
       <article class="culture-pillar culture-pillar--engineering">
-        <div class="culture-pillar-head"><span>03</span><i class="mdi mdi-ruler-square-compass" aria-hidden="true"></i><p>ENGINEERING RIGOR</p><h3>工程求真与精进</h3></div>
+        <div class="culture-pillar-head"><span>03</span><i class="mdi mdi-ruler-square-compass" aria-hidden="true"></i><p>ENGINEERING RIGOR</p><h3>求真与精进</h3></div>
         <div class="culture-pillar-copy">
           <p class="culture-pillar-lead">我们追求的不是脱离约束的完美主义，而是在赛期、成本、安全、可制造与可维护等真实条件下，持续逼近更优解。</p>
           <div class="culture-pillar-points">
@@ -203,15 +203,117 @@
 
   <section class="section-block culture-closing">
     <p>我们希望千里既是一支追求赛场结果的战队，也是一片让人被公平对待、学会承担责任，并把工程真正做成的共同空间。</p>
-    <small>传承机制部分整理自《2026 赛季规划报告 · 文化传承》</small>
+    <div class="culture-report-source">
+      <small>传承机制部分整理自《2026 赛季规划报告 · 文化传承》</small>
+      <button class="culture-report-open" type="button" data-culture-report-open><i class="mdi mdi-file-document-outline" aria-hidden="true"></i><span>查看报告</span></button>
+    </div>
   </section>
 </main>
+    <dialog class="culture-report-dialog" data-culture-report-dialog aria-labelledby="culture-report-title">
+      <div class="culture-report-shell">
+        <header class="culture-report-header">
+          <div>
+            <p class="culture-report-label">INTERNAL SEASON REPORT</p>
+            <h2 id="culture-report-title">《2026 赛季规划报告 · 文化传承》</h2>
+            <p>从成员留下、成长与回归的真实原因出发，讨论战队如何把个人经验转化为可持续的组织能力。</p>
+          </div>
+          <button class="culture-report-close" type="button" data-culture-report-close aria-label="关闭报告"><i class="mdi mdi-close" aria-hidden="true"></i></button>
+        </header>
+
+        <div class="culture-report-body">
+          <article class="culture-report-content" data-culture-report-content>
+            <section id="report-intro" data-culture-report-section>
+              <p class="culture-report-section-label">01 · WHY PEOPLE STAY</p>
+              <h3>为什么有人愿意一直留下</h3>
+              <p class="culture-report-lead">成员长期留在 RoboMaster 战队，通常不是由单一因素决定，而是赛事热爱、团队关系、成长体验与价值认同共同作用的结果。</p>
+              <div class="culture-report-cards">
+                <div><strong>赛事热爱</strong><p>机器人设计、制造、调试与赛场对抗本身具有持续吸引力；真实工程问题带来的挑战和成就感，是长期投入的重要动力。</p></div>
+                <div><strong>团队与同伴</strong><p>一起熬夜、修车、比赛和复盘形成的共同经历，会沉淀为超越普通社团关系的信任与归属感。</p></div>
+                <div><strong>目标与使命</strong><p>让机器人稳定上场、让队伍走得更远、让后来者少走弯路，这些清晰目标使个人工作获得更长远的意义。</p></div>
+                <div><strong>解决问题</strong><p>复杂问题被拆解、定位并最终闭环的过程，会给工程实践者带来强烈而具体的价值反馈。</p></div>
+                <div><strong>经验与能力</strong><p>完整赛季让成员获得跨学科协作、项目推进、系统判断与压力应对能力，这些能力也会延伸到科研和职业发展。</p></div>
+                <div><strong>认可与被需要</strong><p>当成员的贡献被看见、建议被认真对待，并能真实影响团队时，留下便不再只是坚持，而成为主动选择。</p></div>
+              </div>
+            </section>
+
+            <section id="report-traits" data-culture-report-section>
+              <p class="culture-report-section-label">02 · WHO GROWS HERE</p>
+              <h3>留下来的成员具有怎样的特征</h3>
+              <p>长期成员往往不是一开始就最强的人，但通常具有较强的抗压与韧性，能在重复调试、阶段失利和方案推倒重来时继续推进；他们愿意保持耐心，也愿意接受真实反馈。</p>
+              <p>在组织层面，他们逐渐表现出非权力性的领导能力：不依赖职位推动协作，愿意培养新人、补位薄弱环节，并在团队需要时主动承担责任。他们既重视实战能力，也保留成长型思维，能够把一次失败转化为下一轮可复用的判断。</p>
+              <blockquote>真正稳定的骨干，不只是能把自己的事情做完，还愿意让别人更容易把事情做成。</blockquote>
+            </section>
+
+            <section id="report-return" data-culture-report-section>
+              <p class="culture-report-section-label">03 · WHY ALUMNI RETURN</p>
+              <h3>老队员为什么还会回来</h3>
+              <p>老队员的回归可能表现为技术评审、赛场支援、战术建议、资源连接或精神陪伴。它不应成为对现役成员的替代，而应是一种跨赛季的经验接口。</p>
+              <ul class="culture-report-list">
+                <li><strong>情感联结：</strong>共同经历形成了对队伍和实验室的长期归属。</li>
+                <li><strong>责任延续：</strong>希望自己曾经维护的系统、方法与标准能够继续发挥作用。</li>
+                <li><strong>感恩与回馈：</strong>把曾经得到的帮助，以评审、培养和支援的方式交给后来者。</li>
+                <li><strong>继续创造价值：</strong>通过真实问题保持专业判断，也在新的协作中获得个人成长。</li>
+              </ul>
+            </section>
+
+            <section id="report-fit" data-culture-report-section>
+              <p class="culture-report-section-label">04 · WHO IS LIKELY TO STAY</p>
+              <h3>什么样的新人更容易留下</h3>
+              <div class="culture-report-compare">
+                <div>
+                  <span>更容易形成长期投入</span>
+                  <ul>
+                    <li>对机器人和工程问题有真实的内在兴趣</li>
+                    <li>愿意主动沟通、承担并追踪自己的任务</li>
+                    <li>能保持谦逊，在反馈中修正判断</li>
+                    <li>关心协作结果，而不只关心个人展示</li>
+                  </ul>
+                </div>
+                <div>
+                  <span>更容易在中途流失</span>
+                  <ul>
+                    <li>主要依赖证书、加分或短期新鲜感驱动</li>
+                    <li>等待别人安排，遇到阻力便停止推进</li>
+                    <li>急于获得成果，却缺乏对重复工作的耐心</li>
+                    <li>只计算个人得失，忽视接口、承诺与团队成本</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="culture-report-note">这些特征用于改进培养机制，不是给个人贴标签。基础可以训练，路径可以调整，但长期投入最终仍取决于成员自己的选择。</p>
+            </section>
+
+            <section id="report-mechanism" data-culture-report-section>
+              <p class="culture-report-section-label">05 · FROM PORTRAIT TO SYSTEM</p>
+              <h3>从成员画像走向组织机制</h3>
+              <p>文化不能只依靠口号维持。它需要被写进新人如何进入项目、经验如何留下、责任如何交接，以及前辈如何继续参与的具体机制里。</p>
+              <div class="culture-report-mechanisms">
+                <div><i class="mdi mdi-door-open" aria-hidden="true"></i><strong>让新人进入真实项目</strong><p>建立清晰的成长路径和及时反馈，让能力通过实际任务形成。</p></div>
+                <div><i class="mdi mdi-bookshelf" aria-hidden="true"></i><strong>让知识沉淀下来</strong><p>记录方案、测试、故障与判断依据，使下一代不必从零开始。</p></div>
+                <div><i class="mdi mdi-account-switch-outline" aria-hidden="true"></i><strong>让责任继续流动</strong><p>得到培养的人继续培养后来者，职位越高越先承担、越少索取特权。</p></div>
+                <div><i class="mdi mdi-account-heart-outline" aria-hidden="true"></i><strong>让校友持续连接</strong><p>通过评审、支援和经验分享，形成不干预现役决策的长期支持网络。</p></div>
+              </div>
+              <blockquote>一个战队最伟大的作品，可能不是一座奖杯，而是一群无论身在何处，都心系于此、愿意为之付出的人。</blockquote>
+            </section>
+          </article>
+
+          <nav class="culture-report-toc" aria-label="报告目录">
+            <p>报告目录</p>
+            <button class="is-active" type="button" data-report-target="report-intro"><span>01</span>留下的原因</button>
+            <button type="button" data-report-target="report-traits"><span>02</span>长期成员特征</button>
+            <button type="button" data-report-target="report-return"><span>03</span>老队员回归</button>
+            <button type="button" data-report-target="report-fit"><span>04</span>新人留存画像</button>
+            <button type="button" data-report-target="report-mechanism"><span>05</span>组织机制</button>
+          </nav>
+        </div>
+      </div>
+    </dialog>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260821-2"></script>
+    <script src="assets/js/pages/culture.js?v=20260821-1"></script>
   </body>
 </html>
 
