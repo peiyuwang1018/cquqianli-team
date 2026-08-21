@@ -1468,10 +1468,8 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   font-size: clamp(24px, 2.05vw, 32px);
   font-weight: 500;
   line-height: 1.38;
-}
-
-.culture-manifesto h2 span {
-  display: block;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .culture-manifesto > p:not(.culture-kicker) {
