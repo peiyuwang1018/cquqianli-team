@@ -1621,6 +1621,161 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   font-size: 20px;
 }
 
+.culture-pillar-list {
+  border-top: 1px solid var(--line);
+}
+
+.culture-pillar {
+  --pillar-tone: var(--accent);
+  display: grid;
+  grid-template-columns: minmax(230px, 0.42fr) minmax(0, 1.58fr);
+  gap: clamp(38px, 6vw, 96px);
+  padding: 38px 0 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.culture-pillar--equal {
+  --pillar-tone: #5ce092;
+}
+
+.culture-pillar--inheritance {
+  --pillar-tone: #68a9ed;
+}
+
+.culture-pillar--engineering {
+  --pillar-tone: #e9a85f;
+}
+
+.culture-pillar-head {
+  position: relative;
+  align-self: start;
+  min-height: 150px;
+  padding: 12px 20px 16px 0;
+  border-right: 2px solid var(--pillar-tone);
+}
+
+.culture-pillar-head > span {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--pillar-tone);
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.culture-pillar-head > i {
+  position: absolute;
+  top: 6px;
+  right: 18px;
+  color: var(--pillar-tone);
+  font-size: 31px;
+  line-height: 1;
+  opacity: 0.82;
+}
+
+.culture-pillar-head > p {
+  margin: 0 0 8px;
+  color: var(--pillar-tone);
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.culture-pillar-head h3 {
+  margin: 0;
+  font-size: clamp(28px, 2.7vw, 40px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.culture-pillar-copy {
+  min-width: 0;
+}
+
+.culture-pillar-lead {
+  max-width: 980px;
+  margin: 0 0 28px;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.culture-pillar-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.culture-pillar-points > div {
+  min-height: 150px;
+  padding: 22px 22px 8px 0;
+}
+
+.culture-pillar-points > div + div {
+  padding-left: 22px;
+  border-left: 1px solid var(--line);
+}
+
+.culture-pillar-points strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.culture-pillar-points p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.culture-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.culture-practice-grid article {
+  position: relative;
+  min-height: 210px;
+  padding: 28px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.culture-practice-grid i {
+  position: absolute;
+  top: 25px;
+  right: 26px;
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 1;
+  opacity: 0.78;
+}
+
+.culture-practice-grid span {
+  color: var(--accent);
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.culture-practice-grid h3 {
+  margin: 34px 0 10px;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.culture-practice-grid p {
+  max-width: 420px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
 .culture-closing {
   max-width: 980px;
   text-align: center;
@@ -1678,6 +1833,13 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   --trait-tone: var(--trait-work);
 }
 
+.trait-group-heading {
+  display: grid;
+  grid-template-columns: max-content minmax(280px, 1fr);
+  gap: clamp(34px, 6vw, 96px);
+  align-items: end;
+}
+
 .trait-heading {
   display: inline-flex;
   align-items: center;
@@ -1697,8 +1859,11 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .trait-intro {
-  max-width: 860px;
-  margin: -7px 0 0;
+  width: min(100%, 820px);
+  margin: 0;
+  justify-self: end;
+  padding-bottom: 2px;
+  text-align: right;
 }
 
 .trait-grid {
@@ -1810,8 +1975,38 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   }
 
   .culture-motive-grid,
-  .culture-contract-list {
+  .culture-contract-list,
+  .culture-practice-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .culture-pillar {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .culture-pillar-head {
+    min-height: 0;
+    padding-right: 0;
+    padding-bottom: 22px;
+    border-right: 0;
+    border-bottom: 2px solid var(--pillar-tone);
+  }
+
+  .culture-pillar-head > i {
+    right: 2px;
+  }
+
+  .trait-group-heading {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .trait-intro {
+    width: 100%;
+    justify-self: start;
+    text-align: left;
   }
 
   .culture-motive-grid article:nth-child(2) {
@@ -1838,8 +2033,25 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 
   .culture-motive-grid,
   .culture-contract-list,
+  .culture-practice-grid,
+  .culture-pillar-points,
   .trait-grid {
     grid-template-columns: 1fr;
+  }
+
+  .culture-pillar-points > div {
+    min-height: 0;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .culture-pillar-points > div + div {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .culture-pillar-points > div:last-child {
+    border-bottom: 0;
   }
 
   .culture-motive-grid article {
@@ -4285,15 +4497,15 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   top: clamp(170px, 19vh, 210px);
   left: max(12px, calc((100vw - var(--max-width)) / 2 - 74px));
   z-index: 19;
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   transform: translateY(-50%);
 }
 
 .page-back-link {
   display: grid;
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   align-items: center;
   justify-items: center;
   padding: 0;
@@ -4301,13 +4513,13 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   border-radius: 50%;
   background: var(--card-bg);
   color: var(--accent);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.1);
   line-height: 1;
   transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease, transform 180ms ease;
 }
 
 .page-back-link .mdi {
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1;
 }
 
@@ -4333,13 +4545,17 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   .page-back-nav {
     top: 142px;
     left: 12px;
-    width: 48px;
-    height: 48px;
+    width: 41px;
+    height: 41px;
   }
 
   .page-back-link {
-    width: 48px;
-    height: 48px;
+    width: 41px;
+    height: 41px;
+  }
+
+  .page-back-link .mdi {
+    font-size: 20px;
   }
 
   body:has(.page-back-nav) .page-hero {
