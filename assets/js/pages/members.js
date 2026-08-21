@@ -5,13 +5,35 @@
   if (!archive || !currentRoot || !pastRoot) return;
 
   const imageRoot = ["assets", "images", "content", "members", "current", ""].join("/");
+  const departmentOrder = ["management", "mechanical", "control", "hardware", "vision", "operations"];
+  const departments = [...archive.current].sort(
+    (left, right) => departmentOrder.indexOf(left.key) - departmentOrder.indexOf(right.key)
+  );
 
   function currentCard([name, role, photo]) {
     const card = document.createElement("article");
     card.className = "current-member-card";
-    card.innerHTML = `
-      <figure><img src="${imageRoot}${photo}" alt="${name}" loading="lazy" decoding="async" /></figure>
-      <div><h4>${name}</h4><p>${role}</p></div>`;
+    const figure = document.createElement("figure");
+    const setPlaceholder = () => {
+      figure.classList.add("is-placeholder");
+      figure.innerHTML = `<i class="mdi mdi-account-outline" aria-hidden="true"></i><span>照片待补</span>`;
+    };
+
+    if (photo) {
+      const image = document.createElement("img");
+      image.src = `${imageRoot}${photo}`;
+      image.alt = name;
+      image.loading = "lazy";
+      image.decoding = "async";
+      image.addEventListener("error", setPlaceholder, { once: true });
+      figure.appendChild(image);
+    } else {
+      setPlaceholder();
+    }
+
+    const caption = document.createElement("div");
+    caption.innerHTML = `<h4>${name}</h4><p>${role}</p>`;
+    card.append(figure, caption);
     return card;
   }
 
@@ -25,7 +47,7 @@
   const departmentButtons = new Map();
   const departmentPanels = new Map();
 
-  archive.current.forEach((department, index) => {
+  departments.forEach((department, index) => {
     const button = document.createElement("button");
     const panelId = `member-department-${department.key}`;
     button.type = "button";
@@ -72,11 +94,11 @@
       if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
       event.preventDefault();
       let targetIndex = index;
-      if (event.key === "ArrowLeft") targetIndex = (index - 1 + archive.current.length) % archive.current.length;
-      if (event.key === "ArrowRight") targetIndex = (index + 1) % archive.current.length;
+      if (event.key === "ArrowLeft") targetIndex = (index - 1 + departments.length) % departments.length;
+      if (event.key === "ArrowRight") targetIndex = (index + 1) % departments.length;
       if (event.key === "Home") targetIndex = 0;
-      if (event.key === "End") targetIndex = archive.current.length - 1;
-      activateDepartment(archive.current[targetIndex].key, true);
+      if (event.key === "End") targetIndex = departments.length - 1;
+      activateDepartment(departments[targetIndex].key, true);
     });
   });
 
@@ -94,7 +116,7 @@
   }
 
   currentRoot.append(tabList, stage);
-  activateDepartment(archive.current[1]?.key || archive.current[0]?.key);
+  activateDepartment(departments.find((department) => department.key === "mechanical")?.key || departments[0]?.key);
 
   archive.seasons.forEach((season) => {
     const article = document.createElement("article");

@@ -6091,6 +6091,25 @@ a.contact-channel-card--direct:focus-visible {
   background: var(--surface);
 }
 
+.current-member-card figure.is-placeholder {
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  border: 1px dashed color-mix(in srgb, var(--accent) 36%, var(--line));
+  background: color-mix(in srgb, var(--surface) 92%, var(--accent) 8%);
+  color: color-mix(in srgb, var(--muted) 78%, var(--accent) 22%);
+}
+
+.current-member-card figure.is-placeholder i {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.current-member-card figure.is-placeholder span {
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+}
+
 .current-member-card img {
   width: 100%;
   height: 100%;
