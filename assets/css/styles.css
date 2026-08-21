@@ -1739,7 +1739,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .meme-dialog {
-  width: min(1380px, calc(100vw - 48px));
+  width: min(1220px, calc(100vw - 48px));
   max-width: none;
   height: min(760px, calc(100vh - 48px));
   max-height: none;
@@ -1760,7 +1760,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 .meme-dialog-shell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(320px, .72fr) minmax(560px, 1.28fr);
+  grid-template-columns: 497px minmax(560px, 1fr);
   height: 100%;
 }
 
