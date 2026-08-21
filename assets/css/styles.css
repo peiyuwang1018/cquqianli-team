@@ -1758,29 +1758,38 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .meme-dialog-shell {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(320px, .72fr) minmax(560px, 1.28fr);
   height: 100%;
 }
 
-.meme-dialog-close {
+.meme-dialog-controls {
   position: absolute;
   top: 16px;
   right: 16px;
   z-index: 5;
+  display: grid;
+  gap: 10px;
+}
+
+.meme-dialog-controls button {
   display: grid;
   width: 42px;
   height: 42px;
   padding: 0;
   place-items: center;
   border: 1px solid var(--line);
-  border-radius: 50%;
   background: var(--card-bg);
   color: var(--text);
   cursor: pointer;
 }
 
-.meme-dialog-close:hover {
+.meme-dialog-controls .meme-dialog-close {
+  border-radius: 50%;
+}
+
+.meme-dialog-controls button:hover {
   border-color: var(--meme-color);
   color: var(--meme-color);
 }
@@ -1912,11 +1921,9 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .meme-dialog-copy > header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 20px;
+  display: block;
   padding-bottom: 28px;
+  padding-right: 58px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1934,44 +1941,28 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 .meme-dialog-copy h2 {
+  width: max-content;
+  max-width: 100%;
   margin: 4px 0 0;
   font-size: clamp(42px, 5vw, 64px);
   font-weight: 500;
   line-height: 1.05;
+  white-space: nowrap;
 }
 
 .meme-dialog.is-long-term .meme-dialog-copy h2 {
-  max-width: 420px;
-  font-size: clamp(30px, 3.7vw, 48px);
-  line-height: 1.16;
+  font-size: clamp(34px, 3.25vw, 46px);
+  line-height: 1.08;
+}
+
+.meme-dialog.is-extra-long-term .meme-dialog-copy h2 {
+  font-size: clamp(31px, 2.9vw, 42px);
 }
 
 .meme-dialog-summary {
   margin-top: 14px;
   color: var(--text);
   font-size: 17px;
-}
-
-.meme-entry-switcher {
-  display: grid;
-  gap: 7px;
-}
-
-.meme-entry-switcher button {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  place-items: center;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--text);
-  cursor: pointer;
-}
-
-.meme-entry-switcher button:hover {
-  border-color: var(--meme-color);
-  color: var(--meme-color);
 }
 
 .meme-definition-list {
@@ -2124,9 +2115,13 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
     grid-template-rows: minmax(230px, 36%) minmax(0, 64%);
   }
 
-  .meme-dialog-close {
+  .meme-dialog-controls {
     top: 10px;
     right: 10px;
+    gap: 7px;
+  }
+
+  .meme-dialog-controls button {
     width: 38px;
     height: 38px;
   }
@@ -2136,11 +2131,17 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   }
 
   .meme-dialog-copy h2 {
+    width: auto;
     font-size: 40px;
+    white-space: normal;
   }
 
   .meme-dialog.is-long-term .meme-dialog-copy h2 {
     font-size: 30px;
+  }
+
+  .meme-dialog.is-extra-long-term .meme-dialog-copy h2 {
+    font-size: 27px;
   }
 
   .meme-definition-list > div {

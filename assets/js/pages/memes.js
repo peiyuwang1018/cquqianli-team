@@ -21,7 +21,11 @@
   dialog.setAttribute("aria-labelledby", "meme-dialog-title");
   dialog.innerHTML = `
     <div class="meme-dialog-shell">
-      <button class="meme-dialog-close" type="button" aria-label="关闭词条档案"><i class="mdi mdi-close" aria-hidden="true"></i></button>
+      <div class="meme-dialog-controls" aria-label="词条控制">
+        <button class="meme-dialog-close" type="button" aria-label="关闭词条档案"><i class="mdi mdi-close" aria-hidden="true"></i></button>
+        <button type="button" data-meme-entry-previous aria-label="上一个词条"><i class="mdi mdi-arrow-up" aria-hidden="true"></i></button>
+        <button type="button" data-meme-entry-next aria-label="下一个词条"><i class="mdi mdi-arrow-down" aria-hidden="true"></i></button>
+      </div>
       <section class="meme-dialog-media" aria-label="词条图片">
         <div class="meme-dialog-image" data-meme-image></div>
         <button class="meme-image-arrow meme-image-arrow--previous" type="button" data-meme-image-previous aria-label="上一张图片"><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
@@ -31,10 +35,6 @@
       <article class="meme-dialog-copy">
         <header>
           <div><p class="page-label">QIANLI FIELD NOTE</p><p class="meme-dialog-season" data-meme-season></p><h2 id="meme-dialog-title" data-meme-term></h2><p class="meme-dialog-summary" data-meme-short></p></div>
-          <div class="meme-entry-switcher" aria-label="切换词条">
-            <button type="button" data-meme-entry-previous aria-label="上一个词条"><i class="mdi mdi-arrow-up" aria-hidden="true"></i></button>
-            <button type="button" data-meme-entry-next aria-label="下一个词条"><i class="mdi mdi-arrow-down" aria-hidden="true"></i></button>
-          </div>
         </header>
         <dl class="meme-definition-list">
           <div><dt>火热年份</dt><dd data-meme-years></dd></div>
@@ -276,6 +276,7 @@
     activeImage = 0;
     dialog.dataset.tone = entry.tone;
     dialog.classList.toggle("is-long-term", entry.term.length > 6);
+    dialog.classList.toggle("is-extra-long-term", entry.term.length > 10);
     dialog.querySelector("[data-meme-season]").textContent = entry.season;
     dialog.querySelector("[data-meme-term]").textContent = entry.term;
     dialog.querySelector("[data-meme-short]").textContent = entry.summary;
