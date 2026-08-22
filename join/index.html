@@ -11,16 +11,26 @@
         try {
           const savedTheme = localStorage.getItem("theme");
           document.documentElement.dataset.theme = savedTheme || "dark";
+          document.documentElement.classList.add("join-entry-open");
         } catch {
           document.documentElement.dataset.theme = "dark";
+          document.documentElement.classList.add("join-entry-open");
         }
       })();
     </script>
+    <link rel="preload" as="image" href="assets/images/brand/成为我们的下一个未来.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-18" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-23" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="join">
+    <section class="join-entry-screen" data-join-entry aria-label="加入我们页面开场">
+      <img src="assets/images/brand/成为我们的下一个未来.png" alt="" />
+      <button class="join-entry-reveal" type="button" data-join-entry-reveal>
+        <span>查看详情</span><i class="mdi mdi-arrow-down" aria-hidden="true"></i>
+      </button>
+      <span class="join-entry-credit">© 李嘉昊（设计）</span>
+    </section>
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -35,7 +45,7 @@
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/history.html"><span class="nav-item-label">发展历程</span><i class="mdi mdi-timeline-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/resources.html"><span class="nav-item-label">团队资源</span><i class="mdi mdi-toolbox-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/culture.html"><span class="nav-item-label">精神和文化</span><i class="mdi mdi-fire nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理和协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理与协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu nav-menu--organization">
@@ -102,8 +112,8 @@
             <span class="nav-dropdown nav-dropdown--contact">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
-                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#recruit"><span class="nav-item-label">招新信息</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">各组方向</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-bullhorn-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--join" href="join/index.html#groups"><span class="nav-item-label">岗位信息</span><i class="mdi mdi-source-branch nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
@@ -151,9 +161,12 @@
         <p>加入我们的 <a href="contact/index.html">QQ 招新群</a>，参考群内引导投递报名表，并按照招新要求参加对应组别的面试或笔试；通过后即可参加进一步培训。</p>
       </section>
     </div>
-    <figure class="media-frame"><img src="assets/images/brand/成为我们的下一个未来.png" alt="加入千里" /></figure>
+    <figure class="media-frame recruit-main-poster poster-with-credit">
+      <img src="assets/images/content/join/join-us-poster.png" alt="加入千里战队招新设计海报" />
+      <figcaption>© 鄢政（排版设计）· 陈俊丞（人物线稿）</figcaption>
+    </figure>
   </section>
-  <section class="section-block" id="groups"><div class="section-heading"><h2>各组方向</h2><p>从技术组别中选择适合自己的成长路径。</p></div><div class="group-grid"><a class="entry-card" href="groups/mechanical.html" data-training-group="mechanical">
+  <section class="section-block" id="groups"><div class="section-heading"><h2>岗位信息</h2><p>从技术组别中选择适合自己的成长路径。</p></div><div class="group-grid"><a class="entry-card" href="groups/mechanical.html" data-training-group="mechanical">
     <figure><img src="assets/images/brand/vector-icons/mechanical.svg" alt="机械结构组" loading="lazy" /></figure>
     <span>Mechanical<br />Structure</span><strong>机械结构组</strong><small>简称机械组，围绕竞技机器人机械系统，覆盖自顶向下 CAD、整机布局、轻量化优化、多体动力学仿真、底层传动模组、样机制造装配与测试迭代。</small>
   </a><a class="entry-card" href="groups/control.html" data-training-group="control">
@@ -173,7 +186,7 @@
     <div class="section-heading"><h2>加入前先看看</h2><p>先判断自己适不适合，再把报名、训练、时间投入、跨专业加入和组别选择等常见问题看清楚。</p></div>
     <div class="contact-entry-grid contact-entry-grid--two">
       <a class="contact-entry" href="join/persona.html"><i class="mdi mdi-account-search-outline" aria-hidden="true"></i><strong>人才画像</strong><span>对照战队期待的能力、态度与协作方式，判断自己适合怎样的成长路径。</span></a>
-      <a class="contact-entry" href="join/qa.html"><i class="mdi mdi-help-circle-outline" aria-hidden="true"></i><strong>Q&amp;A</strong><span>集中查看成绩、加分、时间投入、跨专业加入、面试和各组方向等常见问题。</span></a>
+      <a class="contact-entry" href="join/qa.html"><i class="mdi mdi-help-circle-outline" aria-hidden="true"></i><strong>Q&amp;A</strong><span>集中查看成绩、加分、时间投入、跨专业加入、面试和岗位信息等常见问题。</span></a>
     </div>
   </section>
 </main>
@@ -185,6 +198,31 @@
     <script src="assets/js/core/site.js?v=20260822-4"></script>
     <script src="assets/js/data/training-data.js?v=20260821-1"></script>
     <script src="assets/js/pages/training.js?v=20260821-1"></script>
+    <script>
+      (() => {
+        const entry = document.querySelector("[data-join-entry]");
+        const reveal = document.querySelector("[data-join-entry-reveal]");
+        if (!entry || !reveal) {
+          document.documentElement.classList.remove("join-entry-open");
+          return;
+        }
+
+        let finished = false;
+        const finish = () => {
+          if (finished) return;
+          finished = true;
+          entry.hidden = true;
+          document.documentElement.classList.remove("join-entry-open");
+        };
+
+        reveal.addEventListener("click", () => {
+          reveal.disabled = true;
+          entry.classList.add("is-leaving");
+          entry.addEventListener("transitionend", finish, { once: true });
+          window.setTimeout(finish, 1300);
+        });
+      })();
+    </script>
   </body>
 </html>
 
