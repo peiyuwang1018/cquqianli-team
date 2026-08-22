@@ -64,6 +64,14 @@ window.QIANLI_GALLERY = {
   collections: {
     portraits: [
       {
+        title: "2022 赛季 MechaX 队伍合照",
+        meta: "2022 · 实验室",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2022-mechax-team.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】MechaX 战队 2022 赛季成员合照。【服役周期】2022 年"
+      },
+      {
         title: "RMUC 2024 南部分区赛",
         meta: "2024 · 长沙贺龙体育馆",
         preview: "assets/images/content/archive/gallery/team-photos/previews/2024-south-division-he-long.jpg",

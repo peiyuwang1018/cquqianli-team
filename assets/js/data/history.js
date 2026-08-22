@@ -129,7 +129,11 @@ window.QIANLI_HISTORY = {
       era: "RESTART & MECHAX",
       title: "重启、组织转接与 MechaX",
       summary: "队伍从近乎重新建队开始恢复研发，转入学生交叉创新中心，并以 MechaX 名称进入过渡赛季。",
-      cover: { placeholder: true, label: "MechaX 时期代表合照待归档" },
+      cover: {
+        src: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg",
+        alt: "2022 赛季 MechaX 队伍合照",
+        caption: "2022 赛季 · MechaX 队伍合照",
+      },
       facts: [
         ["重启", "2021 年重新构建面向超级对抗赛的队伍"],
         ["联盟赛", "黑龙江站三等奖"],
@@ -142,7 +146,7 @@ window.QIANLI_HISTORY = {
       gallery: [
         { placeholder: true, label: "2021 · 断代重启影像待归档" },
         { placeholder: true, label: "2021 · 联盟赛黑龙江站影像待归档" },
-        { placeholder: true, label: "2022 · MechaX 与交叉创新中心建设影像待归档" },
+        { src: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg", alt: "2022 赛季 MechaX 队伍合照", caption: "2022 赛季 · MechaX 队伍合照" },
       ],
     },
     {

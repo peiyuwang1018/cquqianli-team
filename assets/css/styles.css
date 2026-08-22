@@ -2461,6 +2461,17 @@ html.has-culture-report {
   font-size: clamp(42px, 5vw, 70px);
 }
 
+@media (min-width: 861px) {
+  .meme-page-hero {
+    grid-template-columns: max-content minmax(620px, 1fr);
+  }
+
+  .meme-hero-copy {
+    max-width: none;
+    white-space: nowrap;
+  }
+}
+
 .meme-stage {
   margin-top: 34px;
 }
