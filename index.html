@@ -16,7 +16,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-18" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260823-10" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="home">
@@ -51,7 +51,7 @@
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-clipboard-account-outline" aria-hidden="true"></i><strong>责任组别</strong></span>
                 <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
-                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--robomaster" aria-hidden="true"><img src="assets/images/brand/group-icons/robomaster.svg" alt="" /></span></a>
                 <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a>
               </span>
               <span class="nav-dropdown-column">
@@ -123,15 +123,52 @@
         </div>
       </nav>
     </header>
-    <main>
+    <nav class="home-section-nav" aria-label="首页章节导航" data-home-section-nav>
+      <button class="is-active" type="button" aria-label="前往首页导览" title="首页导览" data-home-section-target="home-overview"><span></span></button>
+      <button type="button" aria-label="前往常用入口" title="常用入口" data-home-section-target="home-discover"><span></span></button>
+      <button type="button" aria-label="前往组织鸣谢" title="组织鸣谢" data-home-section-target="home-thanks"><span></span></button>
+    </nav>
+    <main class="home-main">
+  <div class="home-snap-section home-snap-section--overview" id="home-overview" data-home-snap-section>
   <section class="home-hero">
     <div class="home-hero-copy">
       <p class="page-label home-wordmark">CQU QIANLI</p>
+      <img class="home-cqu-seal" src="assets/images/brand/cqu-logo.svg" alt="" aria-hidden="true" />
       <h1><span>重庆大学</span><span>千里战队</span></h1>
       <p>面向 RoboMaster 赛场的学生机器人团队。我们以技术研发为骨架，以赛季项目为牵引，在机械、电控、视觉、硬件、运营与专项职责中共同推进队伍建设。</p>
-      <div class="hero-actions"><a class="text-link" href="about/organization.html">查看组织架构</a><a class="text-link" href="museum/index.html">进入千里博物馆</a></div>
+      <nav class="home-group-links" aria-label="技术组别快捷入口">
+        <a class="home-group-link home-group-link--mechanical" href="groups/mechanical.html" aria-label="前往机械结构组主页" title="机械结构组"><img src="assets/images/brand/group-icons/mechanical.png" alt="" aria-hidden="true" /></a>
+        <a class="home-group-link home-group-link--control" href="groups/control.html" aria-label="前往电气控制组主页" title="电气控制组"><img src="assets/images/brand/group-icons/control.png" alt="" aria-hidden="true" /></a>
+        <a class="home-group-link home-group-link--vision" href="groups/vision.html" aria-label="前往视觉算法组主页" title="视觉算法组"><img src="assets/images/brand/group-icons/vision.png" alt="" aria-hidden="true" /></a>
+        <a class="home-group-link home-group-link--hardware" href="groups/hardware.html" aria-label="前往硬件开发组主页" title="硬件开发组"><img src="assets/images/brand/group-icons/hardware.png" alt="" aria-hidden="true" /></a>
+        <a class="home-group-link home-group-link--operations" href="groups/operations.html" aria-label="前往宣传运营组主页" title="宣传运营组"><img src="assets/images/brand/group-icons/operations.png" alt="" aria-hidden="true" /></a>
+      </nav>
     </div>
-    <figure class="hero-media brand-poster"><img src="assets/images/brand/成为我们的下一个未来.png" alt="成为我们的下一个未来" /></figure>
+    <div class="home-carousel" data-home-carousel aria-label="千里战队首页导览">
+      <div class="home-carousel-viewport">
+        <figure class="home-carousel-slide is-active" id="home-carousel-slide-1" data-home-slide aria-hidden="false">
+          <img class="home-carousel-image--contain" src="assets/images/brand/成为我们的下一个未来.png" alt="成为我们的下一个未来" />
+        </figure>
+        <figure class="home-carousel-slide" id="home-carousel-slide-2" data-home-slide aria-hidden="true">
+          <img src="assets/images/content/archive/gallery/team-photos/originals/2024-south-division-he-long.jpg" alt="千里战队 2024 赛季南部分区赛合照" />
+        </figure>
+        <figure class="home-carousel-slide" id="home-carousel-slide-3" data-home-slide aria-hidden="true">
+          <img src="assets/images/content/home/carousel/2024-south-division-match.png" alt="千里战队 2024 赛季南部分区赛比赛现场" />
+        </figure>
+        <figure class="home-carousel-slide" id="home-carousel-slide-4" data-home-slide aria-hidden="true">
+          <img class="home-carousel-image--resources" src="assets/images/content/home/carousel/team-resources.webp" alt="千里战队成员与机器人在实验室合影" />
+        </figure>
+      </div>
+      <div class="home-carousel-footer">
+        <a class="home-carousel-action" href="join/index.html" data-home-carousel-action><span data-home-carousel-action-label>加入我们</span><i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+        <div class="home-carousel-dots" role="tablist" aria-label="选择轮播图片">
+          <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="home-carousel-slide-1" aria-label="查看加入我们海报" title="加入我们" data-home-carousel-dot="0"></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="home-carousel-slide-2" aria-label="查看 2024 赛季南部分区赛合照" title="战队成员" data-home-carousel-dot="1"></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="home-carousel-slide-3" aria-label="查看 2024 赛季南部分区赛比赛现场" title="档案馆" data-home-carousel-dot="2"></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="home-carousel-slide-4" aria-label="查看千里战队实验室" title="团队资源" data-home-carousel-dot="3"></button>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="home-quote" aria-label="箴言">
     <div class="quote-stage" data-quote-stage>
@@ -142,21 +179,24 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.1A6 6 0 1 1 12 6c1.3 0 2.5.42 3.47 1.13L13 9.6h7V2.6l-2.35 3.75Z" /></svg>
     </button>
   </section>
-  <section class="section-block intro-grid">
-    <article><h2>专业能力组织</h2><p>机械、电气控制、视觉算法、硬件开发与宣传运营共同构成队伍的技术能力网络。</p><a class="inline-link" href="about/organization.html?view=technical">浏览技术组别</a></article>
-    <article><h2>赛季协作组织</h2><p>责任组别与兵种组别承接跨组协调、比赛准备、专项研发和长期基础设施建设。</p><a class="inline-link" href="about/organization.html">查看组织架构</a></article>
+  </div>
+  <section class="home-snap-section home-discover" id="home-discover" data-home-snap-section>
+    <img class="home-discover-watermark" src="assets/images/brand/qianli-legacy-badge.png" alt="" aria-hidden="true" />
+    <div class="home-discover-inner">
+      <div class="home-section-heading home-access-heading">
+        <div><p class="page-label">QUICK ACCESS</p><h2>常用入口</h2></div>
+      </div>
+      <div class="home-access-grid">
+        <a href="season/calendar.html"><i class="mdi mdi-calendar-clock-outline" aria-hidden="true"></i><strong>备赛日历</strong><span>查看赛季节点与近期安排</span></a>
+        <a href="museum/resources.html"><i class="mdi mdi-bookshelf" aria-hidden="true"></i><strong>资料站</strong><span>进入课程、文档与团队资料</span></a>
+        <a href="museum/projects.html"><i class="mdi mdi-archive-outline" aria-hidden="true"></i><strong>档案馆</strong><span>浏览团队项目与历史记录</span></a>
+        <a href="museum/gallery.html"><i class="mdi mdi-image-multiple-outline" aria-hidden="true"></i><strong>照片墙</strong><span>回看赛场、日常与团队合照</span></a>
+        <a href="museum/hall-of-fame.html"><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><strong>名人堂</strong><span>记录传承功勋与人才去向</span></a>
+        <a href="museum/memes.html"><i class="mdi mdi-emoticon-outline" aria-hidden="true"></i><strong>梗指南</strong><span>读懂千里语境中的共同记忆</span></a>
+      </div>
+    </div>
   </section>
-  <section class="section-block"><div class="entry-grid"><a class="entry-card" href="about/index.html">
-    
-    <span></span><strong>关于千里</strong><small>战队简介、发展历程、团队资源、精神文化与管理协作。</small>
-  </a><a class="entry-card" href="museum/index.html">
-    
-    <span></span><strong>千里档案</strong><small>资料站、照片墙、档案馆、名人堂、故事会与留言板。</small>
-  </a><a class="entry-card" href="join/index.html">
-    
-    <span></span><strong>加入我们</strong><small>报名安排、岗位信息、人才画像与常见问题。</small>
-  </a></div></section>
-  <section class="section-block acknowledgements">
+  <section class="section-block acknowledgements home-snap-section home-snap-section--thanks" id="home-thanks" data-home-snap-section>
     <div class="section-heading">
       <h2>组织鸣谢</h2>
       <p>感谢以下组织与平台为团队建设、实验空间、工程实践与赛事体系提供支持。</p>
@@ -181,11 +221,11 @@
     </div>
     <div class="thanks-grid sponsor-grid">
       <article class="thanks-card sponsor-card">
-        <span class="thanks-logo-frame"><img src="assets/images/partners/sponsors/hachangwei-carbon.png" alt="哈长伟碳纤维" /></span>
+        <span class="thanks-logo-frame"><img class="partner-logo-light" src="assets/images/partners/sponsors/hachangwei-carbon-light.png" alt="哈长伟碳纤维" /><img class="partner-logo-dark" src="assets/images/partners/sponsors/hachangwei-carbon.png" alt="" /></span>
         <strong>哈长伟碳纤维</strong>
       </article>
       <article class="thanks-card sponsor-card sponsor-card--flashforge">
-        <span class="thanks-logo-frame"><img src="assets/images/partners/sponsors/flashforge.png" alt="闪铸科技" /></span>
+        <span class="thanks-logo-frame"><img class="partner-logo-light" src="assets/images/partners/sponsors/flashforge.png" alt="闪铸科技" /><img class="partner-logo-dark" src="assets/images/partners/sponsors/flashforge-dark.png" alt="" /></span>
         <strong>闪铸科技</strong>
       </article>
       <article class="thanks-card sponsor-card sponsor-card--cubemars">
@@ -202,6 +242,7 @@
     </footer>
     <script src="assets/js/data/quotes.js?v=20260819-3"></script>
     <script src="assets/js/core/site.js?v=20260822-4"></script>
+    <script src="assets/js/pages/home.js?v=20260822-2"></script>
   </body>
 </html>
 

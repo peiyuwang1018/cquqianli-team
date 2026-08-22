@@ -65,7 +65,7 @@
           layout: "two",
           cards: [
             { title: "基建效率组", meta: "设施、测试与工具", description: "研发服务机器人的场地设施、测试体系和效率工具。", tags: ["场地设施", "测试框架", "网站工具"], tone: "blue", href: "groups/responsibility-infrastructure.html", logo: "assets/images/brand/group-icons/infrastructure.png" },
-            { title: "竞技战术组", meta: "比赛准备与执行", description: "负责战术分析、赛场信息整理与操作手训练。", tags: ["战术分析", "操作手"], tone: "amber", href: "groups/responsibility-tactics.html", logo: "assets/images/brand/group-icons/horse.png" },
+            { title: "竞技战术组", meta: "比赛准备与执行", description: "负责战术分析、赛场信息整理与操作手训练。", tags: ["战术分析", "操作手"], tone: "amber", href: "groups/responsibility-tactics.html", logo: "assets/images/brand/group-icons/robomaster.svg" },
           ],
         },
         {
