@@ -123,6 +123,7 @@
   archive.seasons.forEach((season) => {
     const article = document.createElement("article");
     article.className = "past-member-season";
+    article.dataset.season = season.season;
     article.innerHTML = `
       <header><div><span>RMUC ${season.season}</span><h3>${season.season} 赛季</h3></div><p>${season.event}</p></header>
       <div class="past-member-groups"></div>`;

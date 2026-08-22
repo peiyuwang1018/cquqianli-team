@@ -6410,6 +6410,10 @@ a.contact-channel-card--direct:focus-visible {
   --member-tone: #57d68d;
 }
 
+.past-member-season[data-season="2026"] .past-member-group[data-member-kind="teacher"] {
+  --member-tone: #ef4444;
+}
+
 .member-section-rail {
   position: fixed;
   z-index: 18;
