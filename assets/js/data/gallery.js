@@ -64,6 +64,50 @@ window.QIANLI_GALLERY = {
   collections: {
     portraits: [
       {
+        title: "RM 2026 高校联盟赛重庆站合影",
+        meta: "2026 · 高校联盟赛重庆站",
+        preview: "assets/images/content/about/history/recent/2026-rmul-team-a.jpg",
+        photo: "assets/images/content/about/history/recent/2026-rmul-team-a.jpg",
+        photos: [
+          { src: "assets/images/content/about/history/recent/2026-rmul-team-a.jpg", alt: "RM 2026 高校联盟赛重庆站队伍合影", meta: "队伍合影" },
+          { src: "assets/images/content/about/history/recent/2026-rmul-team-b.jpg", alt: "RM 2026 高校联盟赛重庆站参赛成员与机器人合影", meta: "参赛成员与机器人" }
+        ],
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RM 2026 高校联盟赛重庆站期间，在同一场地拍摄的两组队伍与机器人合影。【服役周期】2026 年 · 高校联盟赛重庆站"
+      },
+      {
+        title: "RMUC 2025 中部分区赛",
+        meta: "2025 · 长沙贺龙体育馆",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2025-central-division-he-long.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2025-central-division-he-long.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RMUC 2025 超级对抗赛中部分区赛期间的队伍合照。【服役周期】2025 年 · 长沙贺龙体育馆"
+      },
+      {
+        title: "RMUC 2024 复活赛",
+        meta: "2024 · 深圳春茧体育馆",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2024-revival-shenzhen-spring-cocoon.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2024-revival-shenzhen-spring-cocoon.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RMUC 2024 全国总决赛阶段复活赛期间的队伍合照。【服役周期】2024 年 · 深圳春茧体育馆"
+      },
+      {
+        title: "RMUC 2024 南部分区赛",
+        meta: "2024 · 长沙贺龙体育馆",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2024-south-division-he-long.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2024-south-division-he-long.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学千里战队参加 RMUC 2024 超级对抗赛南部分区赛期间的队伍合照。【服役周期】2024 年 · 长沙贺龙体育馆"
+      },
+      {
+        title: "2022 赛季 MechaX 队伍合照",
+        meta: "2022 · 实验室",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2022-mechax-team.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】MechaX 战队 2022 赛季成员合照。【服役周期】2022 年"
+      },
+      {
         title: "2021 赛季南部邀请赛",
         meta: "2021 · 南部邀请赛",
         preview: "assets/images/content/archive/gallery/team-photos/previews/2021-south-invitational-team.jpg",
@@ -80,36 +124,24 @@ window.QIANLI_GALLERY = {
         record: "【简介】重庆大学 Allspark 战队在 2021 赛季联盟赛阶段拍摄的队伍合照。【服役周期】2021 年 · 联盟赛阶段"
       },
       {
-        title: "2022 赛季 MechaX 队伍合照",
-        meta: "2022 · 实验室",
-        preview: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg",
-        photo: "assets/images/content/archive/gallery/team-photos/originals/2022-mechax-team.jpg",
+        title: "2018 赛季队伍合照",
+        meta: "2018 · 重庆大学",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2018-season-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2018-season-team.jpg",
         serviceLabel: "拍摄时间",
-        record: "【简介】MechaX 战队 2022 赛季成员合照。【服役周期】2022 年"
+        record: "【简介】重庆大学 Allspark 战队 2018 赛季成员合照。【服役周期】2018 年"
       },
       {
-        title: "RMUC 2024 南部分区赛",
-        meta: "2024 · 长沙贺龙体育馆",
-        preview: "assets/images/content/archive/gallery/team-photos/previews/2024-south-division-he-long.jpg",
-        photo: "assets/images/content/archive/gallery/team-photos/originals/2024-south-division-he-long.jpg",
+        title: "RM 2017 西部赛区合照",
+        meta: "2017 · 西部赛区",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2017-west-division-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2017-west-division-team.jpg",
+        photos: [
+          { src: "assets/images/content/archive/gallery/team-photos/originals/2017-west-division-team.jpg", alt: "重庆大学 Allspark 战队 RM 2017 西部赛区合照", meta: "Allspark 战队合照" },
+          { src: "assets/images/content/about/history/allspark/2017-awards.jpg", alt: "RM 2017 西部赛区与西安交通大学笃行战队获奖合影", meta: "与西安交通大学笃行战队" }
+        ],
         serviceLabel: "拍摄时间",
-        record: "【简介】重庆大学千里战队参加 RMUC 2024 超级对抗赛南部分区赛期间的队伍合照。【服役周期】2024 年 · 长沙贺龙体育馆"
-      },
-      {
-        title: "RMUC 2024 复活赛",
-        meta: "2024 · 深圳春茧体育馆",
-        preview: "assets/images/content/archive/gallery/team-photos/previews/2024-revival-shenzhen-spring-cocoon.jpg",
-        photo: "assets/images/content/archive/gallery/team-photos/originals/2024-revival-shenzhen-spring-cocoon.jpg",
-        serviceLabel: "拍摄时间",
-        record: "【简介】重庆大学千里战队参加 RMUC 2024 全国总决赛阶段复活赛期间的队伍合照。【服役周期】2024 年 · 深圳春茧体育馆"
-      },
-      {
-        title: "RMUC 2025 中部分区赛",
-        meta: "2025 · 长沙贺龙体育馆",
-        preview: "assets/images/content/archive/gallery/team-photos/previews/2025-central-division-he-long.jpg",
-        photo: "assets/images/content/archive/gallery/team-photos/originals/2025-central-division-he-long.jpg",
-        serviceLabel: "拍摄时间",
-        record: "【简介】重庆大学千里战队参加 RMUC 2025 超级对抗赛中部分区赛期间的队伍合照。【服役周期】2025 年 · 长沙贺龙体育馆"
+        record: "【简介】重庆大学 Allspark 战队在 RM 2017 西部赛区同一场地拍摄的两组照片，其中一张为战队合照，另一张为与西安交通大学笃行战队的获奖队伍合影。【服役周期】2017 年 · 西部赛区"
       }
     ]
   }

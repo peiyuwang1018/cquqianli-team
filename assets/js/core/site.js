@@ -212,12 +212,14 @@ const galleryNext = document.querySelector("[data-gallery-next]");
 const gallerySeasonSwitch = document.querySelector("[data-gallery-season-switch]");
 const gallerySeasonDescription = document.querySelector("[data-gallery-season-description]");
 const galleryLightboxServiceLabel = document.querySelector("[data-gallery-lightbox-service-label]");
+const galleryLightboxCounter = document.querySelector("[data-gallery-lightbox-counter]");
 const galleryContributorsSection = document.querySelector("[data-gallery-lightbox-contributors-section]");
 const teamPhotoGallery = document.querySelector("[data-team-photo-gallery]");
 const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
 const galleryCollections = window.QIANLI_GALLERY?.collections || {};
 let galleryRobots = [];
 let galleryRobotIndex = 0;
+let galleryPhotoIndex = 0;
 
 function parseRobotRecord(record = "") {
   const sections = [...record.matchAll(/【([^】]+)】([\s\S]*?)(?=【|$)/g)].map((match) => ({
@@ -229,6 +231,13 @@ function parseRobotRecord(record = "") {
     service: sections.find((section) => section.label === "服役周期")?.value || "未记录",
     contributors: sections.filter((section) => !["简介", "服役周期"].includes(section.label) && section.value),
   };
+}
+
+function getGalleryItemPhotos(item) {
+  const photos = Array.isArray(item?.photos) && item.photos.length ? item.photos : [item?.photo];
+  return photos
+    .map((photo) => (typeof photo === "string" ? { src: photo } : photo))
+    .filter((photo) => photo?.src);
 }
 
 function activateGalleryTab(name, moveFocus = false) {
@@ -249,16 +258,21 @@ function activateGalleryTab(name, moveFocus = false) {
   if (moveFocus) activeTab.focus();
 }
 
-function renderGalleryLightbox(index) {
-  if (!galleryLightbox || !galleryLightboxImage || !galleryRobots[index]?.photo) return;
+function renderGalleryLightbox(index, photoIndex = 0) {
+  if (!galleryLightbox || !galleryLightboxImage) return;
 
   const robot = galleryRobots[index];
+  const photos = getGalleryItemPhotos(robot);
+  if (!robot || !photos.length) return;
+  const activePhotoIndex = (photoIndex + photos.length) % photos.length;
+  const activePhoto = photos[activePhotoIndex];
   const details = parseRobotRecord(robot.record);
   galleryRobotIndex = index;
-  galleryLightboxImage.src = robot.photo;
-  galleryLightboxImage.alt = `${robot.title}图片`;
+  galleryPhotoIndex = activePhotoIndex;
+  galleryLightboxImage.src = activePhoto.src;
+  galleryLightboxImage.alt = activePhoto.alt || `${robot.title}图片`;
   if (galleryLightboxTitle) galleryLightboxTitle.textContent = robot.title;
-  if (galleryLightboxMeta) galleryLightboxMeta.textContent = robot.meta;
+  if (galleryLightboxMeta) galleryLightboxMeta.textContent = [robot.meta, activePhoto.meta].filter(Boolean).join(" · ");
   if (galleryLightboxSummary) galleryLightboxSummary.textContent = details.summary;
   if (galleryLightboxLegacy) {
     galleryLightboxLegacy.textContent = robot.legacy;
@@ -280,6 +294,17 @@ function renderGalleryLightbox(index) {
     if (galleryContributorsSection) galleryContributorsSection.hidden = !contributorRows.length;
   }
 
+  const hasLocalGallery = photos.length > 1;
+  const hasCollectionGallery = galleryRobots.filter((item) => getGalleryItemPhotos(item).length).length > 1;
+  const hasNavigation = hasLocalGallery || hasCollectionGallery;
+  galleryLightbox.classList.toggle("has-navigation", hasNavigation);
+  galleryPrev?.toggleAttribute("hidden", !hasNavigation);
+  galleryNext?.toggleAttribute("hidden", !hasNavigation);
+  if (galleryLightboxCounter) {
+    galleryLightboxCounter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
+    galleryLightboxCounter.hidden = !hasLocalGallery;
+  }
+
   if (!galleryLightbox.open) {
     galleryLightbox.showModal();
     document.documentElement.classList.add("has-gallery-lightbox");
@@ -287,15 +312,21 @@ function renderGalleryLightbox(index) {
 }
 
 function changeGalleryRobot(offset) {
+  const currentPhotos = getGalleryItemPhotos(galleryRobots[galleryRobotIndex]);
+  if (currentPhotos.length > 1) {
+    renderGalleryLightbox(galleryRobotIndex, galleryPhotoIndex + offset);
+    return;
+  }
+
   const photoIndexes = galleryRobots.reduce((indexes, robot, index) => {
-    if (robot.photo) indexes.push(index);
+    if (getGalleryItemPhotos(robot).length) indexes.push(index);
     return indexes;
   }, []);
   if (!photoIndexes.length) return;
 
   const currentPhotoIndex = photoIndexes.indexOf(galleryRobotIndex);
   const nextPhotoIndex = (currentPhotoIndex + offset + photoIndexes.length) % photoIndexes.length;
-  renderGalleryLightbox(photoIndexes[nextPhotoIndex]);
+  renderGalleryLightbox(photoIndexes[nextPhotoIndex], 0);
 }
 
 function renderRobotGallery(seasonId) {
@@ -341,7 +372,10 @@ function renderRobotGallery(seasonId) {
     caption.append(title, meta);
 
     item.append(visual, caption);
-    item.addEventListener("click", () => renderGalleryLightbox(index));
+    item.addEventListener("click", () => {
+      galleryRobots = season.robots;
+      renderGalleryLightbox(index, 0);
+    });
     return item;
   });
 
@@ -352,10 +386,11 @@ function renderTeamPhotoGallery() {
   if (!teamPhotoGallery) return;
   const photos = Array.isArray(galleryCollections.portraits) ? galleryCollections.portraits : [];
   const photoButtons = photos.map((photo, index) => {
+    const photoCount = getGalleryItemPhotos(photo).length;
     const item = document.createElement("button");
     item.className = "team-photo-item";
     item.type = "button";
-    item.setAttribute("aria-label", `查看${photo.title}原图与拍摄信息`);
+    item.setAttribute("aria-label", `查看${photo.title}${photoCount > 1 ? `的 ${photoCount} 张照片` : "原图"}与拍摄信息`);
 
     const image = document.createElement("img");
     image.src = photo.preview || photo.photo;
@@ -371,10 +406,17 @@ function renderTeamPhotoGallery() {
     title.textContent = photo.title;
     caption.append(meta, title);
 
-    item.append(image, caption);
+    item.append(image);
+    if (photoCount > 1) {
+      const count = document.createElement("span");
+      count.className = "team-photo-count";
+      count.innerHTML = `<i class="mdi mdi-image-multiple-outline" aria-hidden="true"></i>${photoCount} 张`;
+      item.append(count);
+    }
+    item.append(caption);
     item.addEventListener("click", () => {
-      galleryRobots = photos;
-      renderGalleryLightbox(index);
+      galleryRobots = [photo];
+      renderGalleryLightbox(0, 0);
     });
     return item;
   });
