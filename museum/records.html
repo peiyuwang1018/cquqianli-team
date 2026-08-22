@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260821-28" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260822-10" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -75,6 +75,7 @@
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu">
@@ -129,7 +130,15 @@
       </a>
     </div>
 <main class="records-page">
-      <section class="page-hero"><div><p class="page-label">TEAM ARCHIVE</p><h1>档案馆</h1></div><p>记录每个赛季的机器人阵容、比赛战绩与关键节点。</p></section>
+      <section class="page-hero archive-page-hero">
+        <div><p class="page-label">TEAM ARCHIVE</p><h1>档案馆</h1></div>
+        <p>归档战队的比赛历程、建设项目与集体荣誉。</p>
+        <nav class="archive-tabs" aria-label="档案馆分类">
+          <a href="museum/projects.html"><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i>团队项目</a>
+          <a class="is-active" aria-current="page" href="museum/records.html"><i class="mdi mdi-trophy-variant-outline" aria-hidden="true"></i>历史比赛</a>
+          <a href="museum/honors.html"><i class="mdi mdi-medal-outline" aria-hidden="true"></i>荣誉墙</a>
+        </nav>
+      </section>
       <section class="section-block match-archive" data-match-archive>
         <header class="match-archive-heading">
           <div><p class="page-label">HISTORICAL MATCHES</p><h2>历史比赛</h2></div>

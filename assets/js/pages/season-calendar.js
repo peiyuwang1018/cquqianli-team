@@ -204,6 +204,20 @@
     container.appendChild(title);
     container.appendChild(range);
     container.appendChild(description);
+    if (event.subevents && event.subevents.length) {
+      var subevents = createElement("div", "season-detail-subevents");
+      subevents.appendChild(createElement("p", "", "子活动"));
+      event.subevents.forEach(function (subevent) {
+        var item = createElement("div", "season-detail-subevent");
+        var name = createElement("span", "");
+        name.appendChild(createElement("strong", "", subevent.title));
+        name.appendChild(createElement("em", "", subevent.english));
+        item.appendChild(name);
+        item.appendChild(createElement("small", "", subevent.dateLabel || "日期待定"));
+        subevents.appendChild(item);
+      });
+      container.appendChild(subevents);
+    }
     container.appendChild(source);
 
     if (relatedEvents && relatedEvents.length > 1) {

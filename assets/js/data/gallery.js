@@ -64,6 +64,22 @@ window.QIANLI_GALLERY = {
   collections: {
     portraits: [
       {
+        title: "2021 赛季南部邀请赛",
+        meta: "2021 · 南部邀请赛",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2021-south-invitational-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2021-south-invitational-team.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学 Allspark 战队参加 2021 赛季南部邀请赛期间的队伍合照。【服役周期】2021 年 · 南部邀请赛"
+      },
+      {
+        title: "2021 赛季联盟赛阶段合照",
+        meta: "2021 · 联盟赛阶段",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2021-alliance-stage-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2021-alliance-stage-team.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学 Allspark 战队在 2021 赛季联盟赛阶段拍摄的队伍合照。【服役周期】2021 年 · 联盟赛阶段"
+      },
+      {
         title: "2022 赛季 MechaX 队伍合照",
         meta: "2022 · 实验室",
         preview: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg",

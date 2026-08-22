@@ -16,6 +16,7 @@
       training: { label: "集训演练", color: "#61bdc8", icon: "mdi-robot-industrial-outline" },
       academic: { label: "校历约束", color: "#9ba7b6", icon: "mdi-school-outline" },
       festival: { label: "节日活动", color: "#b98bd5", icon: "mdi-party-popper" },
+      other: { label: "其他活动", color: "#8da3d8", icon: "mdi-shape-outline" },
       memorial: { label: "纪念节点", color: "#dc739d", icon: "mdi-star-outline" }
     },
     lanes: [
@@ -136,7 +137,23 @@
         end: "2026-09-30",
         status: "confirmed",
         description: "面向 2027 赛季的新成员招募、宣讲、考核与组别匹配。",
-        source: "队内规划"
+        source: "队内规划",
+        subevents: [
+          { title: "实验室开放日", english: "OPEN DAY", dateLabel: "日期待定" },
+          { title: "招新宣讲会", english: "RECRUITMENT INFO SESSION", dateLabel: "日期待定" }
+        ]
+      },
+      {
+        id: "crtc-campus-competition",
+        title: "CRTC 重庆大学机器人训练大赛",
+        shortTitle: "CRTC 校赛",
+        category: "other",
+        lane: "activity",
+        start: "2026-09-10",
+        end: "2026-10-31",
+        status: "confirmed",
+        description: "9 月 10 日开始报名，活动周期覆盖培训、备赛和参赛，并于 10 月底结束。",
+        source: "队内活动安排"
       },
       {
         id: "pre-research-2",

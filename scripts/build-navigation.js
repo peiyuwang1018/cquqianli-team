@@ -36,6 +36,9 @@ function getBackTarget(relative) {
   if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
   if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回 RM 一线" };
   if (relative.startsWith("museum/training/")) return { href: "museum/resources.html", label: "返回资料站" };
+  if (["museum/projects.html", "museum/honors.html"].includes(relative)) {
+    return { href: "museum/records.html", label: "返回档案馆" };
+  }
   if (relative.startsWith("museum/")) return { href: "museum/index.html", label: "返回千里博物馆" };
   if (relative.startsWith("join/") || relative.startsWith("contact/")) {
     return { href: "contact/index.html", label: "返回联系我们" };
@@ -103,6 +106,7 @@ function buildNavigation(active) {
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu">
@@ -178,7 +182,7 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260821-22");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260822-10");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260821-2");
   fs.writeFileSync(file, html);
 }

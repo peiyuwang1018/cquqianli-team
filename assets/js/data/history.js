@@ -144,8 +144,8 @@ window.QIANLI_HISTORY = {
         "随后，队伍上属由自动化学院转入重庆大学学生交叉创新中心。2022 赛季，Allspark 更名为 MechaX；交叉创新中心仍处于建设阶段，叠加特殊时期影响，队伍未参加正式比赛，但围绕组织重建、兵种研发与新空间建设继续积累。",
       ],
       gallery: [
-        { placeholder: true, label: "2021 · 断代重启影像待归档" },
-        { placeholder: true, label: "2021 · 联盟赛黑龙江站影像待归档" },
+        { src: "assets/images/content/archive/gallery/team-photos/previews/2021-south-invitational-team.jpg", alt: "2021 赛季南部邀请赛队伍合照", caption: "2021 赛季 · 南部邀请赛" },
+        { src: "assets/images/content/archive/gallery/team-photos/previews/2021-alliance-stage-team.jpg", alt: "2021 赛季联盟赛阶段队伍合照", caption: "2021 赛季 · 联盟赛阶段" },
         { src: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg", alt: "2022 赛季 MechaX 队伍合照", caption: "2022 赛季 · MechaX 队伍合照" },
       ],
     },
