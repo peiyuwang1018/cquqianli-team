@@ -227,14 +227,21 @@ const galleryLightboxContributors = document.querySelector("[data-gallery-lightb
 const galleryClose = document.querySelector("[data-gallery-close]");
 const galleryPrev = document.querySelector("[data-gallery-prev]");
 const galleryNext = document.querySelector("[data-gallery-next]");
-const gallerySeasonSwitch = document.querySelector("[data-gallery-season-switch]");
-const gallerySeasonDescription = document.querySelector("[data-gallery-season-description]");
+const gallerySeasonSelect = document.querySelector("[data-gallery-season-select]");
+const galleryRobotCount = document.querySelector("[data-gallery-robot-count]");
 const galleryLightboxServiceLabel = document.querySelector("[data-gallery-lightbox-service-label]");
 const galleryLightboxCounter = document.querySelector("[data-gallery-lightbox-counter]");
 const galleryLightboxCredit = document.querySelector("[data-gallery-lightbox-credit]");
 const galleryContributorsSection = document.querySelector("[data-gallery-lightbox-contributors-section]");
 const teamPhotoGallery = document.querySelector("[data-team-photo-gallery]");
+const dailyPhotoGallery = document.querySelector("[data-daily-photo-gallery]");
+const dailySeasonSelect = document.querySelector("[data-daily-season]");
+const dailyCount = document.querySelector("[data-daily-count]");
+const dailyEmpty = document.querySelector("[data-daily-empty]");
 const exchangePhotoGallery = document.querySelector("[data-exchange-photo-gallery]");
+const exchangeSeasonSelect = document.querySelector("[data-exchange-season]");
+const exchangeCount = document.querySelector("[data-exchange-count]");
+const exchangeEmpty = document.querySelector("[data-exchange-empty]");
 const designPhotoGallery = document.querySelector("[data-design-photo-gallery]");
 const designFilter = document.querySelector("[data-design-filter]");
 const designFilterButtons = [...document.querySelectorAll("[data-design-category]")];
@@ -397,13 +404,8 @@ function renderRobotGallery(seasonId) {
   if (!season) return;
 
   galleryRobots = Array.isArray(season.robots) ? season.robots : [];
-  if (gallerySeasonDescription) gallerySeasonDescription.textContent = season.description;
-
-  gallerySeasonSwitch?.querySelectorAll("button").forEach((button) => {
-    const active = button.dataset.gallerySeason === season.id;
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
+  if (gallerySeasonSelect) gallerySeasonSelect.value = season.id;
+  if (galleryRobotCount) galleryRobotCount.textContent = `${galleryRobots.length} 台`;
 
   const robotButtons = galleryRobots.map((robot, index) => {
     const item = document.createElement("button");
@@ -443,10 +445,13 @@ function renderRobotGallery(seasonId) {
   robotGallery.replaceChildren(...robotButtons);
 }
 
-function renderPhotoCollection(target, collectionName, category = "all") {
+function renderPhotoCollection(target, collectionName, category = "all", season = "all") {
   if (!target) return;
   const collection = Array.isArray(galleryCollections[collectionName]) ? galleryCollections[collectionName] : [];
-  const photos = category === "all" ? collection : collection.filter((photo) => photo.category === category);
+  const photos = collection.filter((photo) => (
+    (category === "all" || photo.category === category)
+    && (season === "all" || photo.season === season)
+  ));
   const photoButtons = photos.map((photo, index) => {
     const photoCount = getGalleryItemPhotos(photo).length;
     const item = document.createElement("button");
@@ -489,6 +494,30 @@ function renderPhotoCollection(target, collectionName, category = "all") {
     return item;
   });
   target.replaceChildren(...photoButtons);
+  return photos;
+}
+
+function initCollectionSeasonFilter({ select, target, collectionName, count, empty }) {
+  if (!select || !target) return;
+  const collection = Array.isArray(galleryCollections[collectionName]) ? galleryCollections[collectionName] : [];
+  const seasons = [...new Set(collection.map((photo) => photo.season).filter(Boolean))]
+    .sort((a, b) => Number(b) - Number(a));
+  seasons.forEach((season) => {
+    const option = document.createElement("option");
+    option.value = season;
+    option.textContent = `${season} 赛季`;
+    select.append(option);
+  });
+
+  const render = () => {
+    const photos = renderPhotoCollection(target, collectionName, "all", select.value || "all") || [];
+    const photoCount = photos.reduce((total, photo) => total + getGalleryItemPhotos(photo).length, 0);
+    if (count) count.textContent = `${photoCount} 张`;
+    if (empty) empty.hidden = Boolean(photos.length);
+  };
+
+  select.addEventListener("change", render);
+  render();
 }
 
 function renderCompetitionGallery() {
@@ -568,23 +597,33 @@ competitionLoadMore?.addEventListener("click", () => {
 
 renderCompetitionGallery();
 
-if (gallerySeasonSwitch && gallerySeasons.length) {
-  const seasonButtons = gallerySeasons.map((season, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.dataset.gallerySeason = season.id;
-    button.className = index === 0 ? "is-active" : "";
-    button.setAttribute("aria-pressed", String(index === 0));
-    button.textContent = season.id;
-    button.addEventListener("click", () => renderRobotGallery(season.id));
-    return button;
+if (gallerySeasonSelect && gallerySeasons.length) {
+  const seasonOptions = gallerySeasons.map((season) => {
+    const option = document.createElement("option");
+    option.value = season.id;
+    option.textContent = `${season.id} 赛季`;
+    return option;
   });
-  gallerySeasonSwitch.replaceChildren(...seasonButtons);
+  gallerySeasonSelect.replaceChildren(...seasonOptions);
+  gallerySeasonSelect.addEventListener("change", () => renderRobotGallery(gallerySeasonSelect.value));
   renderRobotGallery(gallerySeasons[0].id);
 }
 
 renderPhotoCollection(teamPhotoGallery, "portraits");
-renderPhotoCollection(exchangePhotoGallery, "exchange");
+initCollectionSeasonFilter({
+  select: dailySeasonSelect,
+  target: dailyPhotoGallery,
+  collectionName: "daily",
+  count: dailyCount,
+  empty: dailyEmpty,
+});
+initCollectionSeasonFilter({
+  select: exchangeSeasonSelect,
+  target: exchangePhotoGallery,
+  collectionName: "exchange",
+  count: exchangeCount,
+  empty: exchangeEmpty,
+});
 renderPhotoCollection(designPhotoGallery, "designs");
 
 designFilterButtons.forEach((button) => {

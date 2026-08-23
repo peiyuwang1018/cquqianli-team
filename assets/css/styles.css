@@ -1660,6 +1660,95 @@
   }
 }
 
+/* About introduction: a concise recruitment narrative paired with a real team scene. */
+.about-page-hero {
+  grid-template-columns: 1fr;
+}
+
+.about-page-title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.18em;
+  white-space: nowrap;
+}
+
+.about-page-title span {
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 500;
+}
+
+.about-introduction {
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.94fr);
+  column-gap: clamp(28px, 4vw, 54px);
+  row-gap: 16px;
+  align-items: start;
+}
+
+.about-introduction-copy p {
+  margin-top: 0;
+  line-height: 1.86;
+}
+
+.about-introduction-copy p + p {
+  margin-top: 16px;
+}
+
+.about-introduction-figure {
+  margin: 0;
+}
+
+.about-introduction-figure img {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.about-introduction strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-introduction-highlight {
+  padding: 0 0.16em;
+  background: linear-gradient(transparent 58%, var(--accent-soft) 58%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.about-introduction > .about-introduction-conclusion {
+  grid-column: 1 / -1;
+  margin: 0;
+  line-height: 1.86;
+}
+
+@media (max-width: 860px) {
+  .about-page-title {
+    display: block;
+    white-space: normal;
+  }
+
+  .about-page-title span {
+    display: block;
+    margin-top: 6px;
+    font-size: clamp(17px, 4.7vw, 22px);
+    white-space: nowrap;
+  }
+
+  .about-introduction {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-introduction-figure img {
+    height: auto;
+  }
+
+  .about-introduction > .about-introduction-conclusion {
+    grid-column: auto;
+  }
+}
+
 /* Mobile primary navigation owns vertical gestures while open. */
 @media (max-width: 860px) {
   html.nav-open,
@@ -2197,6 +2286,25 @@
   font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif;
   font-size: 12px;
   white-space: nowrap;
+}
+
+.gallery-single-filter-bar {
+  width: min(100%, 340px);
+  grid-template-columns: minmax(180px, 1fr) auto;
+  align-items: end;
+  padding-bottom: 0;
+}
+
+.gallery-single-filter-bar output {
+  min-width: 58px;
+}
+
+.gallery-filter-empty {
+  margin-top: 30px;
+}
+
+.gallery-filter-empty[hidden] {
+  display: none;
 }
 
 .competition-photo-grid {
@@ -9048,10 +9156,6 @@ a.contact-channel-card--direct:focus-visible {
   align-items: flex-start;
   gap: 12px;
   padding-bottom: 5px;
-}
-
-.gallery-season-info > p {
-  font-size: 16px;
 }
 
 .gallery-season-switch {

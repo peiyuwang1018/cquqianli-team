@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260823-4" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260823-11" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -147,8 +147,10 @@
           <header class="gallery-section-heading">
             <div><p class="page-label">TEAM ROBOTS</p><h2>队伍机器人</h2></div>
             <div class="gallery-season-info">
-              <div class="gallery-season-switch" role="group" aria-label="选择机器人赛季" data-gallery-season-switch></div>
-              <p data-gallery-season-description>2025 赛季机器人阵容。选择任一机器人查看图片与队史档案。</p>
+              <div class="competition-filter-bar gallery-single-filter-bar">
+                <label><span>赛季</span><select data-gallery-season-select aria-label="选择机器人赛季"></select></label>
+                <output data-gallery-robot-count>0 台</output>
+              </div>
             </div>
           </header>
           <div class="robot-gallery-grid" data-robot-gallery aria-live="polite"></div>
@@ -162,7 +164,17 @@
           <div class="team-photo-grid" data-team-photo-gallery aria-live="polite"></div>
         </section>
         <section class="gallery-panel" id="gallery-daily" role="tabpanel" aria-labelledby="gallery-tab-daily" data-gallery-panel="daily" hidden>
-          <div class="gallery-empty"><i class="mdi mdi-camera-outline" aria-hidden="true"></i><h2>日常风采</h2><p>实验室、加工、联调、团建和日常记录将整理在这里。</p></div>
+          <header class="gallery-section-heading team-photo-heading">
+            <div><p class="page-label">TEAM DAILY</p><h2>日常风采</h2></div>
+            <div class="gallery-season-info">
+              <div class="competition-filter-bar gallery-single-filter-bar">
+                <label><span>赛季</span><select data-daily-season aria-label="筛选日常风采赛季"><option value="all">全部赛季</option></select></label>
+                <output data-daily-count>0 张</output>
+              </div>
+            </div>
+          </header>
+          <div class="team-photo-grid" data-daily-photo-gallery aria-live="polite"></div>
+          <div class="gallery-empty gallery-filter-empty" data-daily-empty><i class="mdi mdi-camera-outline" aria-hidden="true"></i><h2>暂无匹配照片</h2><p>当前赛季的日常记录仍待整理归档。</p></div>
         </section>
         <section class="gallery-panel" id="gallery-competition" role="tabpanel" aria-labelledby="gallery-tab-competition" data-gallery-panel="competition" hidden>
           <header class="gallery-section-heading competition-gallery-heading">
@@ -185,9 +197,15 @@
         <section class="gallery-panel" id="gallery-exchange" role="tabpanel" aria-labelledby="gallery-tab-exchange" data-gallery-panel="exchange" hidden>
           <header class="gallery-section-heading team-photo-heading">
             <div><p class="page-label">TEAM EXCHANGE</p><h2>活动交流</h2></div>
-            <p>收录 2026 赛季招新、校园活动、科普展示与校际交流影像；选择活动查看完整组图。</p>
+            <div class="gallery-season-info">
+              <div class="competition-filter-bar gallery-single-filter-bar">
+                <label><span>赛季</span><select data-exchange-season aria-label="筛选活动交流赛季"><option value="all">全部赛季</option></select></label>
+                <output data-exchange-count>0 张</output>
+              </div>
+            </div>
           </header>
           <div class="team-photo-grid" data-exchange-photo-gallery aria-live="polite"></div>
+          <div class="gallery-empty gallery-filter-empty" data-exchange-empty hidden><i class="mdi mdi-image-off-outline" aria-hidden="true"></i><h2>暂无匹配照片</h2><p>当前赛季还没有已归档的活动交流影像。</p></div>
         </section>
         <section class="gallery-panel" id="gallery-design" role="tabpanel" aria-labelledby="gallery-tab-design" data-gallery-panel="design" hidden>
           <header class="gallery-section-heading team-photo-heading">
@@ -238,7 +256,7 @@
     <script src="assets/js/data/gallery-records.js?v=20260817-1"></script>
     <script src="assets/js/data/gallery.js?v=20260823-8"></script>
 <script src="assets/js/data/competition-gallery.js?v=20260823-3"></script>
-    <script src="assets/js/core/site.js?v=20260823-7"></script>
+    <script src="assets/js/core/site.js?v=20260823-9"></script>
   </body>
 </html>
 
