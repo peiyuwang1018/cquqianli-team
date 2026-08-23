@@ -15453,19 +15453,42 @@ body[data-page="home"] .site-footer {
   }
 
   .quote-robomaster-link {
-    left: 2px;
-    width: 38px;
-    height: 38px;
+    left: 4px;
+    width: 30px;
+    height: 30px;
   }
 
-  .quote-robomaster-link .home-link-mark,
-  .quote-robomaster-link .home-link-logo {
-    width: 34px;
-    height: 32px;
+  .home-quote .quote-robomaster-link .home-link-mark,
+  .home-quote .quote-robomaster-link .home-link-logo {
+    width: 28px;
+    height: 27px;
+  }
+
+  .home-snap-section--overview .home-quote {
+    min-height: 88px;
+    margin-top: 24px;
+    gap: 8px;
+    padding-block: 8px;
   }
 
   .home-snap-section--overview .quote-stage {
-    padding-left: 44px;
+    min-height: 64px;
+    padding-left: 38px;
+  }
+
+  .home-snap-section--overview .quote-stage p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .home-snap-section--overview .quote-stage span {
+    margin-top: 3px;
+    font-size: 12px;
+  }
+
+  .home-snap-section--overview .quote-random-button {
+    width: 32px;
+    height: 32px;
   }
 
   .home-related-links {
