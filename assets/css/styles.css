@@ -1651,12 +1651,133 @@
   }
 
   .about-entry-grid .entry-card {
-    min-height: 250px;
-    padding: 20px;
+    min-height: 0;
+    aspect-ratio: auto;
   }
 
   .about-entry-grid .entry-card strong {
     font-size: 22px;
+  }
+}
+
+.about-entry-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 72px;
+  isolation: isolate;
+}
+
+.about-entry-card figure {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  background: var(--surface);
+}
+
+.about-entry-card figure img,
+:root[data-theme="dark"] .about-entry-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none !important;
+  transition: transform 320ms ease;
+}
+
+.about-entry-card:hover figure img,
+.about-entry-card:focus-visible figure img {
+  transform: scale(1.035);
+}
+
+.about-entry-card-title {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.about-entry-card-title i {
+  color: var(--accent);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.about-entry-card-title strong {
+  margin: 0;
+}
+
+.about-entry-card-body {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  min-height: 164px;
+  padding: 20px;
+  background: var(--card-bg);
+  transform: translateY(calc(100% - 72px));
+  transition: transform 300ms ease, background-color 220ms ease;
+}
+
+.about-entry-card-body small {
+  display: block;
+  margin: 14px 0 0 42px;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 180ms ease, transform 260ms ease;
+}
+
+@media (hover: hover) and (min-width: 861px) {
+  .about-entry-card:hover .about-entry-card-body,
+  .about-entry-card:focus-visible .about-entry-card-body {
+    background: color-mix(in srgb, var(--card-bg) 80%, transparent);
+    transform: translateY(0);
+    backdrop-filter: blur(8px);
+  }
+
+  .about-entry-card:hover .about-entry-card-body small,
+  .about-entry-card:focus-visible .about-entry-card-body small {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 80ms;
+  }
+}
+
+@media (max-width: 860px) {
+  .about-entry-card {
+    min-height: auto;
+    aspect-ratio: auto;
+    padding-bottom: 0;
+  }
+
+  .about-entry-card figure {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-entry-card-body {
+    position: relative;
+    min-height: 0;
+    transform: none;
+  }
+
+  .about-entry-card-body small {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-entry-card figure img,
+  .about-entry-card-body,
+  .about-entry-card-body small {
+    transition: none;
   }
 }
 
@@ -1683,6 +1804,30 @@
   column-gap: clamp(28px, 4vw, 54px);
   row-gap: 16px;
   align-items: start;
+}
+
+.about-introduction-copy {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-introduction-copy::before {
+  content: "";
+  position: absolute;
+  inset: 4% 0;
+  z-index: 0;
+  background: url("../images/brand/千里马头logo.PNG") center 60% / 60% auto no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] .about-introduction-copy::before {
+  filter: invert(1) grayscale(1);
+}
+
+.about-introduction-copy > * {
+  position: relative;
+  z-index: 1;
 }
 
 .about-introduction-copy p {

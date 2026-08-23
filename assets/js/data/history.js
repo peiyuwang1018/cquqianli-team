@@ -269,7 +269,11 @@ window.QIANLI_HISTORY = {
       era: "TO BE CONTINUED",
       title: "下一段路，正在书写",
       summary: "延续研发、重建传承、重新冲击超级对抗赛；新的赛季尚未写下结论。",
-      cover: { placeholder: true, label: "2027 赛季代表合照将在关键节点后归档" },
+      cover: {
+        src: "assets/images/content/about/history/recent/2027-writing.webp",
+        alt: "千里战队机器人机械臂在赛场抓取 RoboMaster 方块",
+        caption: "RM 2027 · 下一段路，正在书写",
+      },
       facts: [
         ["当前状态", "RM 2027 赛季进行中"],
         ["工作主线", "延续研发、组织建设与梯队培养"],
@@ -280,7 +284,7 @@ window.QIANLI_HISTORY = {
         "队史并不是只由奖项构成。那些尚未完成的机器人、被重新设计的方案、一次次联调与复盘，以及愿意把经验继续传下去的人，同样决定了队伍会走向哪里。这个节点暂不写下结论，等待新的赛季由正在参与其中的人共同完成。",
       ],
       gallery: [
-        { placeholder: true, label: "RM 2027 · 赛季影像将在关键节点后归档" },
+        { src: "assets/images/content/about/history/recent/2027-writing.webp", alt: "千里战队机器人机械臂在赛场抓取 RoboMaster 方块", caption: "RM 2027 · 下一段路，正在书写" },
         { placeholder: true, label: "RM 2027 · 新机器人影像待发布" },
         { placeholder: true, label: "RM 2027 · 赛场记录待续" },
       ],
