@@ -34,7 +34,7 @@ function getBackTarget(relative) {
   if (primaryPages.has(relative)) return { href: "index.html", label: "返回主页" };
   if (relative.startsWith("groups/")) return { href: "about/organization.html", label: "返回组织架构" };
   if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
-  if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回 RM 一线" };
+  if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回赛季一线" };
   if (relative.startsWith("museum/training/")) return { href: "museum/resources.html", label: "返回资料站" };
   if (["museum/records.html", "museum/honors.html"].includes(relative)) {
     return { href: "museum/projects.html", label: "返回档案馆" };
@@ -101,9 +101,9 @@ function buildNavigation(active) {
             </span>
           </span>
           <span class="nav-menu">
-            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">RM一线</span></a>
+            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里时刻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
@@ -121,10 +121,10 @@ function buildNavigation(active) {
               </span>
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-party-popper" aria-hidden="true"></i><strong>轻松一刻</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/shop.html"><span class="nav-item-label">周边橱窗</span><i class="mdi mdi-shopping-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/memes.html"><span class="nav-item-label">梗指南</span><i class="mdi mdi-lightbulb-on-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/memes.html"><span class="nav-item-label">梗指南</span><i class="mdi mdi-lightbulb-on-outline nav-item-mdi" aria-hidden="true"></i></a>
-                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/shop.html"><span class="nav-item-label">周边橱窗</span><i class="mdi mdi-shopping-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
             </span>
           </span>
@@ -182,7 +182,7 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260822-18");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260823-1");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260822-4");
   fs.writeFileSync(file, html);
 }
