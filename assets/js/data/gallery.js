@@ -23,6 +23,14 @@ function designPhotoSet(prefix, photos, altPrefix) {
   }));
 }
 
+function activityPhotoSeries(collection, prefix, photos, altPrefix) {
+  return photos.map((photo, index) => ({
+    src: `assets/images/content/archive/gallery/${collection}/2026/${prefix}-${String(index + 1).padStart(2, "0")}.webp`,
+    alt: `${altPrefix}：${photo.meta}`,
+    meta: `${photo.code} · ${photo.meta}`
+  }));
+}
+
 window.QIANLI_GALLERY = {
   seasons: [
     {
@@ -160,6 +168,113 @@ window.QIANLI_GALLERY = {
         ],
         serviceLabel: "拍摄时间",
         record: "【简介】重庆大学 Allspark 战队在 RM 2017 西部赛区同一场地拍摄的两组照片，其中一张为战队合照，另一张为与西安交通大学笃行战队的获奖队伍合影。【服役周期】2017 年 · 西部赛区"
+      }
+    ],
+    exchange: [
+      {
+        season: "2026",
+        title: "百团纳新",
+        meta: "2026 · 校园招新",
+        preview: "assets/images/content/archive/gallery/exchange/2026/recruitment-fair-01-preview.webp",
+        photo: "assets/images/content/archive/gallery/exchange/2026/recruitment-fair-01.webp",
+        photos: activityPhotoSeries(
+          "exchange",
+          "recruitment-fair",
+          [{ code: "26_C001", meta: "招新展位与机器人展示" }],
+          "2026 百团纳新"
+        ),
+        serviceLabel: "活动赛季",
+        record: "【简介】千里战队参加百团纳新的现场记录，展示招新展位与机器人。【服役周期】2026 赛季"
+      },
+      {
+        season: "2026",
+        title: "运动会",
+        meta: "2026 · 线下活动",
+        preview: "assets/images/content/archive/gallery/exchange/2026/sports-day-01-preview.webp",
+        photo: "assets/images/content/archive/gallery/exchange/2026/sports-day-01.webp",
+        photos: activityPhotoSeries(
+          "exchange",
+          "sports-day",
+          [
+            { code: "26_C002", meta: "队伍合影" },
+            { code: "26_C003", meta: "运动会入场展示" },
+            { code: "26_C004", meta: "机器人外场记录" }
+          ],
+          "2026 运动会"
+        ),
+        serviceLabel: "活动赛季",
+        record: "【简介】千里战队参加运动会的集体合影、入场展示与机器人外场记录。【服役周期】2026 赛季"
+      },
+      {
+        season: "2026",
+        title: "创新教育与科学教育活动",
+        meta: "2026 · 两江新区",
+        preview: "assets/images/content/archive/gallery/exchange/2026/liangjiang-science-education-01-preview.webp",
+        photo: "assets/images/content/archive/gallery/exchange/2026/liangjiang-science-education-01.webp",
+        photos: activityPhotoSeries(
+          "exchange",
+          "liangjiang-science-education",
+          [
+            { code: "26_C005", meta: "机器人户外展示" },
+            { code: "26_C006", meta: "科学教育互动现场" },
+            { code: "26_C007", meta: "学生体验与交流" },
+            { code: "26_C008", meta: "活动展台全景" }
+          ],
+          "2026 创新教育与科学教育活动"
+        ),
+        serviceLabel: "活动赛季",
+        record: "【简介】2026 年重庆市创新教育教研工作会、两江新区科学教育大会暨南开两江中学第五届科技节现场记录。【服役周期】2026 赛季"
+      },
+      {
+        season: "2026",
+        title: "南渝中学第六届科技节",
+        meta: "2026 · 沙坪坝区科技活动周",
+        preview: "assets/images/content/archive/gallery/exchange/2026/nanyu-science-festival-01-preview.webp",
+        photo: "assets/images/content/archive/gallery/exchange/2026/nanyu-science-festival-01.webp",
+        photos: activityPhotoSeries(
+          "exchange",
+          "nanyu-science-festival",
+          [
+            { code: "26_C009", meta: "科技节机器人展台" },
+            { code: "26_C010", meta: "参展机器人展示" }
+          ],
+          "2026 南渝中学第六届科技节"
+        ),
+        serviceLabel: "活动赛季",
+        record: "【简介】南渝中学第六届科技节暨沙坪坝区科技活动周的机器人展示记录。【服役周期】2026 赛季"
+      },
+      {
+        season: "2026",
+        title: "大连民族大学 CONE 战队聂启翔同学到访",
+        meta: "2026 · 校际交流",
+        preview: "assets/images/content/archive/gallery/exchange/2026/cone-visit-01-preview.webp",
+        photo: "assets/images/content/archive/gallery/exchange/2026/cone-visit-01.webp",
+        photos: activityPhotoSeries(
+          "exchange",
+          "cone-visit",
+          [{ code: "26_C011", meta: "聂启翔同学到访合影" }],
+          "大连民族大学 CONE 战队聂启翔同学到访"
+        ),
+        serviceLabel: "活动赛季",
+        record: "【简介】大连民族大学 CONE 战队聂启翔同学到访千里战队的交流合影。【服役周期】2026 赛季"
+      },
+      {
+        season: "2026",
+        title: "上海交通大学交龙战队蓝敏源老师到访",
+        meta: "2026 · 校际交流",
+        preview: "assets/images/content/archive/gallery/exchange/2026/jiaolong-visit-01-preview.webp",
+        photo: "assets/images/content/archive/gallery/exchange/2026/jiaolong-visit-01.webp",
+        photos: activityPhotoSeries(
+          "exchange",
+          "jiaolong-visit",
+          [
+            { code: "26_C012", meta: "蓝敏源老师与队员交流" },
+            { code: "26_C013", meta: "实验室参观交流" }
+          ],
+          "上海交通大学交龙战队蓝敏源老师到访"
+        ),
+        serviceLabel: "活动赛季",
+        record: "【简介】上海交通大学交龙战队蓝敏源老师到访千里战队，开展队员交流与实验室参观。【服役周期】2026 赛季"
       }
     ],
     designs: [

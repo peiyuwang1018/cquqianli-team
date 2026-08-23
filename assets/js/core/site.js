@@ -13,18 +13,36 @@ function applyTheme(theme) {
 
 applyTheme(savedTheme || "dark");
 
-navToggle?.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("is-open");
+function setMobileNavigationOpen(open) {
+  if (!navLinks || !navToggle) return;
+  navLinks.classList.toggle("is-open", open);
   navToggle.setAttribute("aria-expanded", String(open));
+  root.classList.toggle("nav-open", open);
+}
+
+navToggle?.addEventListener("click", () => {
+  setMobileNavigationOpen(!navLinks.classList.contains("is-open"));
 });
 
 themeToggle?.addEventListener("click", () => applyTheme(root.dataset.theme === "dark" ? "light" : "dark"));
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("is-open");
-    navToggle?.setAttribute("aria-expanded", "false");
+    setMobileNavigationOpen(false);
   });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navLinks?.classList.contains("is-open")) {
+    setMobileNavigationOpen(false);
+    navToggle?.focus({ preventScroll: true });
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 860 && navLinks?.classList.contains("is-open")) {
+    setMobileNavigationOpen(false);
+  }
 });
 
 const qrPreviewButtons = [...document.querySelectorAll("[data-qr-preview]")];
@@ -216,6 +234,7 @@ const galleryLightboxCounter = document.querySelector("[data-gallery-lightbox-co
 const galleryLightboxCredit = document.querySelector("[data-gallery-lightbox-credit]");
 const galleryContributorsSection = document.querySelector("[data-gallery-lightbox-contributors-section]");
 const teamPhotoGallery = document.querySelector("[data-team-photo-gallery]");
+const exchangePhotoGallery = document.querySelector("[data-exchange-photo-gallery]");
 const designPhotoGallery = document.querySelector("[data-design-photo-gallery]");
 const designFilter = document.querySelector("[data-design-filter]");
 const designFilterButtons = [...document.querySelectorAll("[data-design-category]")];
@@ -565,6 +584,7 @@ if (gallerySeasonSwitch && gallerySeasons.length) {
 }
 
 renderPhotoCollection(teamPhotoGallery, "portraits");
+renderPhotoCollection(exchangePhotoGallery, "exchange");
 renderPhotoCollection(designPhotoGallery, "designs");
 
 designFilterButtons.forEach((button) => {
