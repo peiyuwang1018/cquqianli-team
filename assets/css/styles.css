@@ -404,7 +404,7 @@
 }
 
 .management-page-hero {
-  align-items: center;
+  align-items: end;
 }
 
 .management-page .management-page-hero h1 {
@@ -412,7 +412,7 @@
 }
 
 .management-page-hero > p {
-  max-width: 580px;
+  max-width: 560px;
 }
 
 .management-kicker {
@@ -1532,7 +1532,9 @@
 }
 
 .recruit-section {
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 328px);
+  gap: clamp(30px, 4vw, 52px);
+  align-items: stretch;
 }
 
 .poster-with-credit {
@@ -1555,14 +1557,18 @@
 }
 
 .recruit-main-poster img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .recruit-main-poster {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
 }
 
 #groups {
@@ -1576,15 +1582,20 @@
 }
 
 .recruit-info-block {
-  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 142px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--line);
 }
 
 .recruit-info-block h3 {
-  margin: 0 0 12px;
-  font-size: 20px;
+  margin: 0;
+  font-size: 18px;
   font-weight: 500;
+  line-height: 1.55;
 }
 
 .recruit-info-block p {
@@ -1637,9 +1648,20 @@
     font-size: 9px;
   }
 
+  .recruit-info-block {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
   .recruit-schedule > div {
     grid-template-columns: 1fr;
     gap: 2px;
+  }
+}
+
+@media (max-width: 860px) {
+  .recruit-main-poster {
+    aspect-ratio: 975 / 1280;
   }
 }
 
