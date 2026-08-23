@@ -5,6 +5,24 @@ function robotRecord(season, archiveTitle, robot) {
   return { ...robot, archiveTitle, record: record.record || "", legacy: record.legacy || "" };
 }
 
+function designPhotoSeries(prefix, labels, credit, altPrefix) {
+  return labels.map((meta, index) => ({
+    src: `assets/images/content/archive/gallery/designs/${prefix}-${String(index + 1).padStart(2, "0")}.webp`,
+    alt: `${altPrefix}：${meta}`,
+    meta,
+    credit
+  }));
+}
+
+function designPhotoSet(prefix, photos, altPrefix) {
+  return photos.map((photo, index) => ({
+    src: `assets/images/content/archive/gallery/designs/${prefix}-${String(photo.file || index + 1).padStart(2, "0")}.webp`,
+    alt: `${altPrefix}：${photo.meta}`,
+    meta: photo.meta,
+    credit: photo.credit
+  }));
+}
+
 window.QIANLI_GALLERY = {
   seasons: [
     {
@@ -142,6 +160,262 @@ window.QIANLI_GALLERY = {
         ],
         serviceLabel: "拍摄时间",
         record: "【简介】重庆大学 Allspark 战队在 RM 2017 西部赛区同一场地拍摄的两组照片，其中一张为战队合照，另一张为与西安交通大学笃行战队的获奖队伍合影。【服役周期】2017 年 · 西部赛区"
+      }
+    ],
+    designs: [
+      {
+        category: "characters",
+        title: "千里 IP 设定细化",
+        meta: "2026–至今 · 角色设定与衍生",
+        preview: "assets/images/content/archive/gallery/designs/ip-2026-08.png",
+        photo: "assets/images/content/archive/gallery/designs/ip-2026-08.png",
+        photos: [
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-08.png", alt: "千里 IP 完整角色设定", meta: "角色完成稿", credit: "陈俊丞" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-01.png", alt: "千里 IP 角色探索稿", meta: "角色探索", credit: "陈俊丞" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-02.png", alt: "千里 IP 角色设定长图", meta: "设定整理", credit: "陈俊丞" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-03.png", alt: "千里 IP 服装方案", meta: "服装方案", credit: "陈俊丞" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-04.png", alt: "千里 IP 机械细节设定", meta: "机械细节", credit: "陈俊丞" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-06.png", alt: "千里 IP 绘制过程", meta: "绘制过程", credit: "陈俊丞" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-07.png", alt: "千里 IP 场景绘制过程", meta: "场景探索", credit: "陈俊丞" }
+        ],
+        credit: "陈俊丞",
+        serviceLabel: "设计周期",
+        record: "【简介】在初始视觉方向上继续完成角色结构、服装、机械细节与衍生场景的系统化设定，形成当前千里 IP 的主要视觉面貌。【服役周期】2026 年 5 月 27 日至今【角色设定与绘制】陈俊丞"
+      },
+      {
+        category: "characters",
+        title: "千里 IP 初始设定",
+        meta: "2025 · 初始视觉提案",
+        preview: "assets/images/content/archive/gallery/designs/ip-2025-initial.png",
+        photo: "assets/images/content/archive/gallery/designs/ip-2025-initial.png",
+        credit: "光锥视觉",
+        serviceLabel: "设计周期",
+        record: "【简介】围绕千里战队的机器人文化与青年工程师形象完成的初始角色视觉提案，为后续角色细化与衍生创作建立方向。【服役周期】2025 年【角色设计】光锥视觉"
+      },
+      {
+        category: "logos",
+        title: "千里文创图标档案",
+        meta: "历届 · 字形与图标",
+        preview: "assets/images/content/archive/gallery/designs/creative-icons-01.webp",
+        photo: "assets/images/content/archive/gallery/designs/creative-icons-01.webp",
+        photos: designPhotoSet(
+          "creative-icons",
+          [
+            { meta: "千里文字图标", credit: "侯钊凯" },
+            { meta: "千里文字标识", credit: "千里战队视觉档案" },
+            { meta: "队伍旧口号字形", credit: "千里战队视觉档案" }
+          ],
+          "千里文创图标档案"
+        ),
+        credit: "侯钊凯 · 队史资料",
+        serviceLabel: "归档范围",
+        record: "【简介】收录千里战队历届文字标识、口号字形与文创图标，保存队伍视觉语言演变中的基础素材。【服役周期】历届视觉档案【图标设计】侯钊凯及历届视觉资料"
+      },
+      {
+        category: "posters",
+        title: "招新与动员海报",
+        meta: "2025–2026 · 招新与赛季动员",
+        preview: "assets/images/content/archive/gallery/designs/campaign-visuals-04.webp",
+        photo: "assets/images/content/archive/gallery/designs/campaign-visuals-04.webp",
+        photos: designPhotoSet(
+          "campaign-visuals",
+          [
+            { file: 1, meta: "2025 招新海报", credit: "邓涵尹" },
+            { file: 3, meta: "2026 年 1 月动员大会海报", credit: "鄢政" },
+            { file: 4, meta: "2026 年 8 月宣传海报", credit: "鄢政 · 陈俊丞" },
+            { file: 8, meta: "招新海报", credit: "李嘉昊" }
+          ],
+          "千里招新与动员海报"
+        ),
+        credit: "鄢政 · 陈俊丞 · 邓涵尹 · 李嘉昊",
+        serviceLabel: "归档范围",
+        record: "【简介】收录不同阶段的招新、动员与赛季宣传海报，呈现千里战队面向新成员和校内外受众的视觉表达。【服役周期】2025 至 2026 年【视觉设计】鄢政、邓涵尹、李嘉昊【人物线稿】陈俊丞"
+      },
+      {
+        category: "posters",
+        title: "宣传册与展陈物料",
+        meta: "2025–2026 · 宣传册与易拉宝",
+        preview: "assets/images/content/archive/gallery/designs/campaign-visuals-05.webp",
+        photo: "assets/images/content/archive/gallery/designs/campaign-visuals-05.webp",
+        photos: designPhotoSet(
+          "campaign-visuals",
+          [
+            { file: 2, meta: "2025 易拉宝", credit: "邓涵尹" },
+            { file: 5, meta: "2026 宣传册正面", credit: "鄢政" },
+            { file: 6, meta: "2026 宣传册背面", credit: "鄢政" },
+            { file: 7, meta: "2026 易拉宝", credit: "徐锦苑" }
+          ],
+          "千里宣传册与展陈物料"
+        ),
+        credit: "鄢政 · 徐锦苑 · 邓涵尹",
+        serviceLabel: "归档范围",
+        record: "【简介】收录用于校内展示、招新咨询和赛事传播的宣传册与易拉宝，将长篇信息组织为便于现场阅读的展陈物料。【服役周期】2025 至 2026 年【视觉设计】鄢政、徐锦苑、邓涵尹"
+      },
+      {
+        category: "posters",
+        title: "技术组介绍海报",
+        meta: "2026 · 五个技术方向",
+        preview: "assets/images/content/archive/gallery/designs/campaign-visuals-10.webp",
+        photo: "assets/images/content/archive/gallery/designs/campaign-visuals-10.webp",
+        photos: designPhotoSet(
+          "campaign-visuals",
+          [
+            { file: 10, meta: "宣传运营组介绍海报", credit: "鄢政" },
+            { file: 11, meta: "机械结构组介绍海报", credit: "鄢政" },
+            { file: 12, meta: "电气控制组介绍海报", credit: "鄢政" },
+            { file: 13, meta: "硬件开发组介绍海报", credit: "鄢政" },
+            { file: 14, meta: "视觉算法组介绍海报", credit: "鄢政" }
+          ],
+          "千里技术组介绍海报"
+        ),
+        credit: "鄢政",
+        serviceLabel: "归档范围",
+        record: "【简介】以统一版式介绍宣传运营、机械结构、电气控制、硬件开发和视觉算法五个技术方向，便于招新沟通和岗位认识。【服役周期】2026 年【视觉设计】鄢政"
+      },
+      {
+        category: "posters",
+        title: "运营模板与证书",
+        meta: "2025–2026 · 日常传播模板",
+        preview: "assets/images/content/archive/gallery/designs/campaign-visuals-09.webp",
+        photo: "assets/images/content/archive/gallery/designs/campaign-visuals-09.webp",
+        photos: designPhotoSet(
+          "campaign-visuals",
+          [
+            { file: 9, meta: "日历播报模板", credit: "邓涵尹" },
+            { file: 15, meta: "队伍证书模板", credit: "侯钊凯" },
+            { file: 16, meta: "赛事预告模板", credit: "邓涵尹" }
+          ],
+          "千里运营模板与证书"
+        ),
+        credit: "邓涵尹 · 侯钊凯",
+        serviceLabel: "归档范围",
+        record: "【简介】收录日历播报、赛事预告和队伍证书等可复用模板，为日常运营建立统一且高效的视觉工具。【服役周期】2025 至 2026 年【视觉设计】邓涵尹、侯钊凯"
+      },
+      {
+        category: "logos",
+        title: "千里战队视觉语言",
+        meta: "品牌系统 · 组别识别",
+        preview: "assets/images/content/archive/gallery/designs/visual-language-01.webp",
+        photo: "assets/images/content/archive/gallery/designs/visual-language-01.webp",
+        photos: designPhotoSet(
+          "visual-language",
+          [
+            { meta: "千里元素设计语言", credit: "李嘉昊" },
+            { meta: "千里头像", credit: "李嘉昊" },
+            { meta: "宣传运营组标识", credit: "李嘉昊" },
+            { meta: "机械结构组标识", credit: "李嘉昊" },
+            { meta: "渐变背景", credit: "李嘉昊" },
+            { meta: "电气控制组标识", credit: "李嘉昊" },
+            { meta: "硬件开发组标识", credit: "李嘉昊" },
+            { meta: "暗色背景", credit: "李嘉昊" },
+            { meta: "亮色背景", credit: "李嘉昊" },
+            { meta: "视觉算法组标识", credit: "李嘉昊" }
+          ],
+          "千里战队视觉语言"
+        ),
+        credit: "李嘉昊",
+        serviceLabel: "归档范围",
+        record: "【简介】由队伍基础图形、组别标识、头像与明暗背景构成的视觉系统，为网站、宣传物料与赛季设计提供统一语言。【服役周期】队伍现行视觉体系【视觉设计】李嘉昊"
+      },
+      {
+        category: "uniforms",
+        title: "27 赛季开季文化衫",
+        meta: "2026 年 9 月 · 开季文化衫",
+        preview: "assets/images/content/archive/gallery/designs/uniform-2027-opening-01.webp",
+        photo: "assets/images/content/archive/gallery/designs/uniform-2027-opening-01.webp",
+        credit: "鄢政",
+        serviceLabel: "发布批次",
+        record: "【简介】千里战队 27 赛季开季文化衫，以黑色短袖承载队伍标识、机器人结构与赛季视觉语言。【服役周期】2026 年 9 月【排版与服装视觉】鄢政"
+      },
+      {
+        category: "uniforms",
+        title: "26 赛季联盟赛马甲",
+        meta: "2026 年 3 月 · 联盟赛队服",
+        preview: "assets/images/content/archive/gallery/designs/vest-2026-league-01.webp",
+        photo: "assets/images/content/archive/gallery/designs/vest-2026-league-01.webp",
+        credit: "慈之珩",
+        serviceLabel: "发布批次",
+        record: "【简介】为 26 赛季高校联盟赛阶段制作的队员马甲，将队伍识别与赛场工作需求结合。【服役周期】2026 年 3 月【服装视觉】慈之珩"
+      },
+      {
+        category: "uniforms",
+        title: "千里 × 创一联动卫衣",
+        meta: "2026 年 1 月 · 联动队服",
+        preview: "assets/images/content/archive/gallery/designs/hoodie-2026-collab-full-03.webp",
+        photo: "assets/images/content/archive/gallery/designs/hoodie-2026-collab-full-03.webp",
+        photos: designPhotoSeries(
+          "hoodie-2026-collab-full",
+          ["上身效果一", "上身效果二", "版式总览"],
+          "鄢政 · 侯钊凯 · SallyPan",
+          "千里与创一联动卫衣"
+        ),
+        credit: "鄢政 · 侯钊凯 · SallyPan",
+        serviceLabel: "发布批次",
+        record: "【简介】重庆大学千里战队与大连民族大学创一战队共同完成的联动卫衣，将两支队伍的角色 IP 与视觉符号整合进同一套服装语言。【服役周期】2026 年 1 月【主体设计】鄢政【千里 IP】侯钊凯【创一 IP】SallyPan"
+      },
+      {
+        category: "uniforms",
+        title: "2025 联盟赛队服",
+        meta: "2025 · 分组识别队服",
+        preview: "assets/images/content/archive/gallery/designs/uniform-2025-league-05.webp",
+        photo: "assets/images/content/archive/gallery/designs/uniform-2025-league-05.webp",
+        photos: designPhotoSeries(
+          "uniform-2025-league",
+          ["宣传运营组", "机械组", "电控组", "硬件组", "队服方案一", "队服方案二", "队服方案三", "视觉组", "设计元素总览"],
+          "丁瑞晨",
+          "2025 联盟赛队服"
+        ),
+        credit: "丁瑞晨",
+        serviceLabel: "发布批次",
+        record: "【简介】2025 联盟赛阶段使用的分组识别队服，通过机械、电控、视觉、硬件与宣运的差异化图形建立清晰的队伍内部识别。【服役周期】2025 年联盟赛阶段【服装视觉】丁瑞晨"
+      },
+      {
+        category: "uniforms",
+        title: "2025 赛季队服",
+        meta: "2025 年 5 月 · 短袖队服",
+        preview: "assets/images/content/archive/gallery/designs/uniform-2025-may-01.webp",
+        photo: "assets/images/content/archive/gallery/designs/uniform-2025-may-01.webp",
+        photos: designPhotoSeries(
+          "uniform-2025-may",
+          ["正反面总览", "版式细节一", "版式细节二", "版式细节三", "版式细节四", "版式细节五", "版式细节六"],
+          "李嘉昊",
+          "2025 年 5 月赛季队服"
+        ),
+        credit: "李嘉昊",
+        serviceLabel: "发布批次",
+        record: "【简介】2025 赛季短袖队服设计，以高对比色彩与机器人图形构成当季队伍视觉识别。【服役周期】2025 年 5 月【服装视觉】李嘉昊"
+      },
+      {
+        category: "uniforms",
+        title: "2025 赛季兵种马甲",
+        meta: "2025 年 5 月 · 兵种识别",
+        preview: "assets/images/content/archive/gallery/designs/vest-2025-may-13.webp",
+        photo: "assets/images/content/archive/gallery/designs/vest-2025-may-13.webp",
+        photos: designPhotoSeries(
+          "vest-2025-may",
+          ["串联腿步兵成衣方案", "串联腿步兵原图", "哨兵成衣方案", "哨兵原图", "工程成衣方案", "工程原图", "无人机成衣方案", "无人机原图", "平衡步兵原图", "平衡步兵成衣方案", "舵轮步兵成衣方案", "舵轮步兵原图", "英雄成衣方案", "英雄原图", "飞镖成衣方案", "飞镖原图"],
+          "鄢政",
+          "2025 年 5 月兵种马甲"
+        ),
+        credit: "鄢政",
+        serviceLabel: "发布批次",
+        record: "【简介】按英雄、工程、步兵、哨兵、无人机与飞镖等兵种建立的赛场马甲视觉系统，完整保留成衣方案与图形原稿。【服役周期】2025 年 5 月【服装视觉】鄢政"
+      },
+      {
+        category: "uniforms",
+        title: "2024 复活赛队服",
+        meta: "2024 · 复活赛",
+        preview: "assets/images/content/archive/gallery/designs/uniform-2024-playoff-02.webp",
+        photo: "assets/images/content/archive/gallery/designs/uniform-2024-playoff-02.webp",
+        photos: designPhotoSeries(
+          "uniform-2024-playoff",
+          ["实物记录", "背部设计稿"],
+          "丁瑞晨",
+          "2024 复活赛队服"
+        ),
+        credit: "丁瑞晨",
+        serviceLabel: "发布批次",
+        record: "【简介】2024 复活赛阶段使用的队服，以机器人线稿、书法字形和千里绿色构成背部主视觉，并保留实物照片作为档案。【服役周期】2024 年复活赛阶段【服装视觉】丁瑞晨"
       }
     ]
   }

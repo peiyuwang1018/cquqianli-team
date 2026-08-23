@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260823-1" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260823-4" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -129,13 +129,9 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main class="gallery-page">
+<main class="gallery-page" data-gallery>
       <section class="page-hero">
         <div><p class="page-label">PHOTO WALL</p><h1>照片墙</h1></div>
-        <p>队伍机器人、成员、日常、赛场、活动交流与视觉设计的影像档案。</p>
-      </section>
-
-      <section class="gallery-shell" data-gallery>
         <div class="gallery-tabs" role="tablist" aria-label="照片主题">
           <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="gallery-robots" id="gallery-tab-robots" data-gallery-tab="robots"><i class="mdi mdi-robot-outline" aria-hidden="true"></i><span>队伍机器人</span></button>
           <button type="button" role="tab" aria-selected="false" aria-controls="gallery-portraits" id="gallery-tab-portraits" data-gallery-tab="portraits" tabindex="-1"><i class="mdi mdi-account-group-outline" aria-hidden="true"></i><span>合照与定妆</span></button>
@@ -144,7 +140,9 @@
           <button type="button" role="tab" aria-selected="false" aria-controls="gallery-exchange" id="gallery-tab-exchange" data-gallery-tab="exchange" tabindex="-1"><i class="mdi mdi-forum-outline" aria-hidden="true"></i><span>活动交流</span></button>
           <button type="button" role="tab" aria-selected="false" aria-controls="gallery-design" id="gallery-tab-design" data-gallery-tab="design" tabindex="-1"><i class="mdi mdi-palette-outline" aria-hidden="true"></i><span>队服与设计 IP</span></button>
         </div>
+      </section>
 
+      <section class="gallery-shell">
         <section class="gallery-panel" id="gallery-robots" role="tabpanel" aria-labelledby="gallery-tab-robots" data-gallery-panel="robots">
           <header class="gallery-section-heading">
             <div><p class="page-label">TEAM ROBOTS</p><h2>队伍机器人</h2></div>
@@ -173,7 +171,17 @@
           <div class="gallery-empty"><i class="mdi mdi-forum-outline" aria-hidden="true"></i><h2>活动交流</h2><p>开放日、宣讲、校际交流、赛事分享与团队活动影像将整理在这里。</p></div>
         </section>
         <section class="gallery-panel" id="gallery-design" role="tabpanel" aria-labelledby="gallery-tab-design" data-gallery-panel="design" hidden>
-          <div class="gallery-empty"><i class="mdi mdi-palette-outline" aria-hidden="true"></i><h2>队服与设计 IP</h2><p>队服、Logo、周边、视觉系统和设计草稿将整理在这里。</p></div>
+          <header class="gallery-section-heading team-photo-heading">
+            <div><p class="page-label">VISUAL ARCHIVE</p><h2>队服与设计 IP</h2></div>
+            <div class="design-filter" role="group" aria-label="筛选队服与设计档案" data-design-filter>
+              <button class="is-active" type="button" data-design-category="all" aria-pressed="true">全部</button>
+              <button type="button" data-design-category="uniforms" aria-pressed="false">服装与队服</button>
+              <button type="button" data-design-category="logos" aria-pressed="false">标识与 Logo</button>
+              <button type="button" data-design-category="posters" aria-pressed="false">海报物料</button>
+              <button type="button" data-design-category="characters" aria-pressed="false">角色设计</button>
+            </div>
+          </header>
+          <div class="team-photo-grid design-photo-grid" data-design-photo-gallery aria-live="polite"></div>
         </section>
       </section>
 
@@ -181,7 +189,11 @@
         <button class="gallery-lightbox-close" type="button" aria-label="关闭照片" data-gallery-close><i class="mdi mdi-close" aria-hidden="true"></i></button>
         <button class="gallery-lightbox-nav gallery-lightbox-prev" type="button" aria-label="上一张照片" data-gallery-prev><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
         <div class="gallery-lightbox-content">
-          <figure><img alt="" data-gallery-lightbox-image /><span class="gallery-lightbox-counter" data-gallery-lightbox-counter hidden></span></figure>
+          <figure>
+            <img alt="" data-gallery-lightbox-image />
+            <span class="gallery-lightbox-counter" data-gallery-lightbox-counter hidden></span>
+            <span class="gallery-lightbox-credit" data-gallery-lightbox-credit hidden></span>
+          </figure>
           <aside class="gallery-robot-record">
             <div class="gallery-record-heading">
               <span data-gallery-lightbox-meta></span>
@@ -205,8 +217,8 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/data/gallery-records.js?v=20260817-1"></script>
-    <script src="assets/js/data/gallery.js?v=20260822-8"></script>
-    <script src="assets/js/core/site.js?v=20260822-4"></script>
+    <script src="assets/js/data/gallery.js?v=20260823-5"></script>
+    <script src="assets/js/core/site.js?v=20260823-4"></script>
   </body>
 </html>
 

@@ -213,8 +213,12 @@ const gallerySeasonSwitch = document.querySelector("[data-gallery-season-switch]
 const gallerySeasonDescription = document.querySelector("[data-gallery-season-description]");
 const galleryLightboxServiceLabel = document.querySelector("[data-gallery-lightbox-service-label]");
 const galleryLightboxCounter = document.querySelector("[data-gallery-lightbox-counter]");
+const galleryLightboxCredit = document.querySelector("[data-gallery-lightbox-credit]");
 const galleryContributorsSection = document.querySelector("[data-gallery-lightbox-contributors-section]");
 const teamPhotoGallery = document.querySelector("[data-team-photo-gallery]");
+const designPhotoGallery = document.querySelector("[data-design-photo-gallery]");
+const designFilter = document.querySelector("[data-design-filter]");
+const designFilterButtons = [...document.querySelectorAll("[data-design-category]")];
 const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
 const galleryCollections = window.QIANLI_GALLERY?.collections || {};
 let galleryRobots = [];
@@ -304,6 +308,11 @@ function renderGalleryLightbox(index, photoIndex = 0) {
     galleryLightboxCounter.textContent = `${activePhotoIndex + 1} / ${photos.length}`;
     galleryLightboxCounter.hidden = !hasLocalGallery;
   }
+  if (galleryLightboxCredit) {
+    const credit = activePhoto.credit || robot.credit || "";
+    galleryLightboxCredit.textContent = credit ? `© ${credit}` : "";
+    galleryLightboxCredit.hidden = !credit;
+  }
 
   if (!galleryLightbox.open) {
     galleryLightbox.showModal();
@@ -382,9 +391,10 @@ function renderRobotGallery(seasonId) {
   robotGallery.replaceChildren(...robotButtons);
 }
 
-function renderTeamPhotoGallery() {
-  if (!teamPhotoGallery) return;
-  const photos = Array.isArray(galleryCollections.portraits) ? galleryCollections.portraits : [];
+function renderPhotoCollection(target, collectionName, category = "all") {
+  if (!target) return;
+  const collection = Array.isArray(galleryCollections[collectionName]) ? galleryCollections[collectionName] : [];
+  const photos = category === "all" ? collection : collection.filter((photo) => photo.category === category);
   const photoButtons = photos.map((photo, index) => {
     const photoCount = getGalleryItemPhotos(photo).length;
     const item = document.createElement("button");
@@ -407,6 +417,12 @@ function renderTeamPhotoGallery() {
     caption.append(meta, title);
 
     item.append(image);
+    if (photo.credit) {
+      const credit = document.createElement("span");
+      credit.className = "team-photo-credit";
+      credit.textContent = `© ${photo.credit}`;
+      item.append(credit);
+    }
     if (photoCount > 1) {
       const count = document.createElement("span");
       count.className = "team-photo-count";
@@ -420,7 +436,7 @@ function renderTeamPhotoGallery() {
     });
     return item;
   });
-  teamPhotoGallery.replaceChildren(...photoButtons);
+  target.replaceChildren(...photoButtons);
 }
 
 if (gallerySeasonSwitch && gallerySeasons.length) {
@@ -438,7 +454,34 @@ if (gallerySeasonSwitch && gallerySeasons.length) {
   renderRobotGallery(gallerySeasons[0].id);
 }
 
-renderTeamPhotoGallery();
+renderPhotoCollection(teamPhotoGallery, "portraits");
+renderPhotoCollection(designPhotoGallery, "designs");
+
+designFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.designCategory || "all";
+    designFilterButtons.forEach((candidate) => {
+      const isActive = candidate === button;
+      candidate.classList.toggle("is-active", isActive);
+      candidate.setAttribute("aria-pressed", String(isActive));
+    });
+    renderPhotoCollection(designPhotoGallery, "designs", category);
+  });
+});
+
+designFilter?.addEventListener("keydown", (event) => {
+  const currentIndex = designFilterButtons.indexOf(document.activeElement);
+  if (currentIndex < 0) return;
+  let nextIndex = null;
+  if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % designFilterButtons.length;
+  if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + designFilterButtons.length) % designFilterButtons.length;
+  if (event.key === "Home") nextIndex = 0;
+  if (event.key === "End") nextIndex = designFilterButtons.length - 1;
+  if (nextIndex === null) return;
+  event.preventDefault();
+  designFilterButtons[nextIndex].focus();
+  designFilterButtons[nextIndex].click();
+});
 
 galleryTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab));
@@ -474,6 +517,25 @@ document.addEventListener("keydown", (event) => {
   if (!galleryLightbox?.open) return;
   if (event.key === "ArrowLeft") changeGalleryRobot(-1);
   if (event.key === "ArrowRight") changeGalleryRobot(1);
+});
+
+document.querySelectorAll("[data-shop-carousel]").forEach((carousel) => {
+  const slides = [...carousel.querySelectorAll("[data-shop-slide]")];
+  const counter = carousel.querySelector("[data-shop-counter]");
+  let activeIndex = 0;
+
+  function showShopSlide(nextIndex) {
+    if (!slides.length) return;
+    activeIndex = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => {
+      slide.classList.toggle("is-active", index === activeIndex);
+    });
+    if (counter) counter.textContent = `${activeIndex + 1} / ${slides.length}`;
+  }
+
+  carousel.querySelector("[data-shop-prev]")?.addEventListener("click", () => showShopSlide(activeIndex - 1));
+  carousel.querySelector("[data-shop-next]")?.addEventListener("click", () => showShopSlide(activeIndex + 1));
+  showShopSlide(0);
 });
 
 function initRecruitLetter() {

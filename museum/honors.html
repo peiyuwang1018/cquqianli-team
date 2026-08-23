@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260823-1" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260823-2" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -139,15 +139,16 @@
           <a class="is-active" aria-current="page" href="museum/honors.html"><i class="mdi mdi-medal-outline" aria-hidden="true"></i>荣誉墙</a>
         </nav>
       </section>
-      <section class="section-block honor-archive" aria-labelledby="honor-wall-title">
+      <section class="section-block honor-archive" aria-labelledby="honor-wall-title" data-honor-archive>
         <header class="match-archive-heading">
           <div><p class="page-label">HONOR WALL</p><h2 id="honor-wall-title">荣誉墙</h2></div>
-          <p>按赛季与赛事归档战队获得的集体荣誉。</p>
+          <p>按赛季、赛事阶段与机器人专项归档战队获得的集体荣誉。点击证书可查看原件。</p>
         </header>
-        <div class="archive-empty-state">
-          <i class="mdi mdi-medal-outline" aria-hidden="true"></i>
-          <p><strong>荣誉资料整理中</strong><span>获奖年份、赛事名称与奖项信息将在核验后录入。</span></p>
+        <div class="honor-overview" aria-label="荣誉墙统计与年份筛选">
+          <p><strong data-honor-total>38</strong><span>份获奖证书</span><small>2021—2026</small></p>
+          <div class="honor-filters" data-honor-filters aria-label="按年份筛选"></div>
         </div>
+        <div class="honor-groups" data-honor-groups></div>
       </section>
     </main>
     <footer class="site-footer">
@@ -155,6 +156,8 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
+    <script src="assets/js/data/honors.js?v=20260823-1"></script>
+    <script src="assets/js/pages/honors.js?v=20260823-1"></script>
     <script src="assets/js/core/site.js?v=20260822-4"></script>
   </body>
 </html>
