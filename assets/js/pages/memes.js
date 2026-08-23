@@ -15,6 +15,8 @@
   let returnFocus = null;
   let streamGeneration = 0;
   let activeStream = null;
+  let renderedStreamWidth = 0;
+  let renderedLaneCount = 0;
 
   const dialog = document.createElement("dialog");
   dialog.className = "meme-dialog";
@@ -191,6 +193,8 @@
     clearStream();
     const pool = visibleEntries();
     const laneCount = streams.clientHeight < 440 ? 5 : 7;
+    renderedStreamWidth = streams.clientWidth;
+    renderedLaneCount = laneCount;
     const state = {
       generation: streamGeneration,
       pool,
@@ -356,10 +360,20 @@
   });
 
   let resizeTimer = 0;
-  window.addEventListener("resize", () => {
+  const scheduleResponsiveRender = () => {
+    const nextWidth = streams.clientWidth;
+    const nextLaneCount = streams.clientHeight < 440 ? 5 : 7;
+    if (Math.abs(nextWidth - renderedStreamWidth) < 24 && nextLaneCount === renderedLaneCount) return;
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(renderStreams, 180);
-  });
+  };
+
+  if ("ResizeObserver" in window) {
+    const streamResizeObserver = new ResizeObserver(scheduleResponsiveRender);
+    streamResizeObserver.observe(streams);
+  } else {
+    window.addEventListener("resize", scheduleResponsiveRender);
+  }
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       if (activeStream?.maintenanceTimer) window.clearInterval(activeStream.maintenanceTimer);

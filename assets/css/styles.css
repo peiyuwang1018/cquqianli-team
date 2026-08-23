@@ -1623,9 +1623,8 @@
 }
 
 @media (max-width: 560px) {
-  .join-entry-screen > img,
   .join-entry-screen > video {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     transform: none;
   }
