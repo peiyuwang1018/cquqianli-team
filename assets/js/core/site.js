@@ -219,11 +219,27 @@ const teamPhotoGallery = document.querySelector("[data-team-photo-gallery]");
 const designPhotoGallery = document.querySelector("[data-design-photo-gallery]");
 const designFilter = document.querySelector("[data-design-filter]");
 const designFilterButtons = [...document.querySelectorAll("[data-design-category]")];
+const competitionGallery = document.querySelector("[data-competition-gallery]");
+const competitionSeasonSelect = document.querySelector("[data-competition-season]");
+const competitionStageSelect = document.querySelector("[data-competition-stage]");
+const competitionSourceSelect = document.querySelector("[data-competition-source]");
+const competitionSceneSelect = document.querySelector("[data-competition-scene]");
+const competitionCount = document.querySelector("[data-competition-count]");
+const competitionProgress = document.querySelector("[data-competition-progress]");
+const competitionLoadMore = document.querySelector("[data-competition-load-more]");
+const competitionFooter = document.querySelector("[data-competition-footer]");
+const competitionEmpty = document.querySelector("[data-competition-empty]");
 const gallerySeasons = Array.isArray(window.QIANLI_GALLERY?.seasons) ? window.QIANLI_GALLERY.seasons : [];
 const galleryCollections = window.QIANLI_GALLERY?.collections || {};
+const competitionPhotos = Array.isArray(window.QIANLI_COMPETITION_GALLERY?.photos)
+  ? window.QIANLI_COMPETITION_GALLERY.photos
+  : [];
 let galleryRobots = [];
 let galleryRobotIndex = 0;
 let galleryPhotoIndex = 0;
+let filteredCompetitionPhotos = [];
+let visibleCompetitionPhotos = 24;
+const competitionPageSize = 24;
 
 function parseRobotRecord(record = "") {
   const sections = [...record.matchAll(/【([^】]+)】([\s\S]*?)(?=【|$)/g)].map((match) => ({
@@ -238,7 +254,17 @@ function parseRobotRecord(record = "") {
 }
 
 function getGalleryItemPhotos(item) {
-  const photos = Array.isArray(item?.photos) && item.photos.length ? item.photos : [item?.photo];
+  const fallbackPhoto = item?.photo
+    ? [{
+        src: item.photo,
+        full: item.full,
+        thumbnail: item.thumbnail,
+        alt: item.alt,
+        meta: item.photoMeta,
+        credit: item.credit,
+      }]
+    : [];
+  const photos = Array.isArray(item?.photos) && item.photos.length ? item.photos : fallbackPhoto;
   return photos
     .map((photo) => (typeof photo === "string" ? { src: photo } : photo))
     .filter((photo) => photo?.src);
@@ -275,6 +301,13 @@ function renderGalleryLightbox(index, photoIndex = 0) {
   galleryPhotoIndex = activePhotoIndex;
   galleryLightboxImage.src = activePhoto.src;
   galleryLightboxImage.alt = activePhoto.alt || `${robot.title}图片`;
+  if (activePhoto.full) {
+    galleryLightboxImage.srcset = `${activePhoto.src} 1600w, ${activePhoto.full} 2560w`;
+    galleryLightboxImage.sizes = "(max-width: 860px) calc(100vw - 48px), min(70vw, 760px)";
+  } else {
+    galleryLightboxImage.removeAttribute("srcset");
+    galleryLightboxImage.removeAttribute("sizes");
+  }
   if (galleryLightboxTitle) galleryLightboxTitle.textContent = robot.title;
   if (galleryLightboxMeta) galleryLightboxMeta.textContent = [robot.meta, activePhoto.meta].filter(Boolean).join(" · ");
   if (galleryLightboxSummary) galleryLightboxSummary.textContent = details.summary;
@@ -439,6 +472,83 @@ function renderPhotoCollection(target, collectionName, category = "all") {
   target.replaceChildren(...photoButtons);
 }
 
+function renderCompetitionGallery() {
+  if (!competitionGallery) return;
+
+  const season = competitionSeasonSelect?.value || "all";
+  const stage = competitionStageSelect?.value || "all";
+  const source = competitionSourceSelect?.value || "all";
+  const scene = competitionSceneSelect?.value || "all";
+  filteredCompetitionPhotos = competitionPhotos.filter((photo) => (
+    (season === "all" || photo.season === season)
+    && (stage === "all" || photo.stage === stage)
+    && (source === "all" || photo.source === source)
+    && (scene === "all" || photo.scene === scene)
+  ));
+
+  const visiblePhotos = filteredCompetitionPhotos.slice(0, visibleCompetitionPhotos);
+  const photoButtons = visiblePhotos.map((photo, index) => {
+    const item = document.createElement("button");
+    item.className = "competition-photo-item";
+    item.type = "button";
+    item.setAttribute("aria-label", `查看${photo.title}：${photo.sceneLabel}`);
+
+    const image = document.createElement("img");
+    image.src = photo.thumbnail;
+    image.alt = photo.alt;
+    image.loading = index < 8 ? "eager" : "lazy";
+    image.decoding = "async";
+
+    const caption = document.createElement("span");
+    caption.className = "competition-photo-caption";
+    const context = document.createElement("small");
+    context.textContent = `${photo.season} · ${photo.stageLabel}`;
+    const title = document.createElement("strong");
+    title.textContent = photo.title;
+    const sourceLabel = document.createElement("span");
+    sourceLabel.textContent = photo.sourceLabel;
+    caption.append(context, title, sourceLabel);
+
+    item.append(image, caption);
+    item.addEventListener("click", () => {
+      galleryRobots = filteredCompetitionPhotos;
+      renderGalleryLightbox(index, 0);
+    });
+    return item;
+  });
+
+  competitionGallery.replaceChildren(...photoButtons);
+  if (competitionCount) competitionCount.textContent = `${filteredCompetitionPhotos.length} 张`;
+  if (competitionProgress) competitionProgress.textContent = `已显示 ${visiblePhotos.length} / ${filteredCompetitionPhotos.length}`;
+  if (competitionLoadMore) competitionLoadMore.hidden = visiblePhotos.length >= filteredCompetitionPhotos.length;
+  if (competitionFooter) competitionFooter.hidden = !filteredCompetitionPhotos.length;
+  if (competitionEmpty) competitionEmpty.hidden = Boolean(filteredCompetitionPhotos.length);
+}
+
+if (competitionSeasonSelect && competitionPhotos.length) {
+  const seasons = [...new Set(competitionPhotos.map((photo) => photo.season))].sort((a, b) => Number(b) - Number(a));
+  seasons.forEach((season) => {
+    const option = document.createElement("option");
+    option.value = season;
+    option.textContent = `${season} 赛季`;
+    competitionSeasonSelect.append(option);
+  });
+}
+
+[competitionSeasonSelect, competitionStageSelect, competitionSourceSelect, competitionSceneSelect].forEach((select) => {
+  select?.addEventListener("change", () => {
+    visibleCompetitionPhotos = competitionPageSize;
+    renderCompetitionGallery();
+  });
+});
+
+competitionLoadMore?.addEventListener("click", () => {
+  visibleCompetitionPhotos += competitionPageSize;
+  renderCompetitionGallery();
+});
+
+renderCompetitionGallery();
+
 if (gallerySeasonSwitch && gallerySeasons.length) {
   const seasonButtons = gallerySeasons.map((season, index) => {
     const button = document.createElement("button");
@@ -509,6 +619,8 @@ galleryLightbox?.addEventListener("close", () => {
   document.documentElement.classList.remove("has-gallery-lightbox");
   if (galleryLightboxImage) {
     galleryLightboxImage.removeAttribute("src");
+    galleryLightboxImage.removeAttribute("srcset");
+    galleryLightboxImage.removeAttribute("sizes");
     galleryLightboxImage.alt = "";
   }
 });

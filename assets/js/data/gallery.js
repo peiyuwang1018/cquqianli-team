@@ -170,17 +170,17 @@ window.QIANLI_GALLERY = {
         preview: "assets/images/content/archive/gallery/designs/ip-2026-08.png",
         photo: "assets/images/content/archive/gallery/designs/ip-2026-08.png",
         photos: [
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-08.png", alt: "千里 IP 完整角色设定", meta: "角色完成稿", credit: "陈俊丞" },
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-01.png", alt: "千里 IP 角色探索稿", meta: "角色探索", credit: "陈俊丞" },
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-02.png", alt: "千里 IP 角色设定长图", meta: "设定整理", credit: "陈俊丞" },
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-03.png", alt: "千里 IP 服装方案", meta: "服装方案", credit: "陈俊丞" },
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-04.png", alt: "千里 IP 机械细节设定", meta: "机械细节", credit: "陈俊丞" },
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-06.png", alt: "千里 IP 绘制过程", meta: "绘制过程", credit: "陈俊丞" },
-          { src: "assets/images/content/archive/gallery/designs/ip-2026-07.png", alt: "千里 IP 场景绘制过程", meta: "场景探索", credit: "陈俊丞" }
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-08.png", alt: "千里 IP 完整角色设定", meta: "角色完成稿", credit: "OnlyPupPet" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-01.png", alt: "千里 IP 角色探索稿", meta: "角色探索", credit: "OnlyPupPet" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-02.png", alt: "千里 IP 角色设定长图", meta: "设定整理", credit: "OnlyPupPet" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-03.png", alt: "千里 IP 服装方案", meta: "服装方案", credit: "OnlyPupPet" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-04.png", alt: "千里 IP 机械细节设定", meta: "机械细节", credit: "OnlyPupPet" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-06.png", alt: "千里 IP 绘制过程", meta: "绘制过程", credit: "OnlyPupPet" },
+          { src: "assets/images/content/archive/gallery/designs/ip-2026-07.png", alt: "千里 IP 场景绘制过程", meta: "场景探索", credit: "OnlyPupPet" }
         ],
-        credit: "陈俊丞",
+        credit: "OnlyPupPet",
         serviceLabel: "设计周期",
-        record: "【简介】在初始视觉方向上继续完成角色结构、服装、机械细节与衍生场景的系统化设定，形成当前千里 IP 的主要视觉面貌。【服役周期】2026 年 5 月 27 日至今【角色设定与绘制】陈俊丞"
+        record: "【简介】在初始视觉方向上继续完成角色结构、服装、机械细节与衍生场景的系统化设定，形成当前千里 IP 的主要视觉面貌。【服役周期】2026 年 5 月 27 日至今【角色设定与绘制】OnlyPupPet"
       },
       {
         category: "characters",
@@ -222,14 +222,14 @@ window.QIANLI_GALLERY = {
           [
             { file: 1, meta: "2025 招新海报", credit: "邓涵尹" },
             { file: 3, meta: "2026 年 1 月动员大会海报", credit: "鄢政" },
-            { file: 4, meta: "2026 年 8 月宣传海报", credit: "鄢政 · 陈俊丞" },
+            { file: 4, meta: "2026 年 8 月宣传海报", credit: "鄢政 · OnlyPupPet" },
             { file: 8, meta: "招新海报", credit: "李嘉昊" }
           ],
           "千里招新与动员海报"
         ),
-        credit: "鄢政 · 陈俊丞 · 邓涵尹 · 李嘉昊",
+        credit: "鄢政 · OnlyPupPet · 邓涵尹 · 李嘉昊",
         serviceLabel: "归档范围",
-        record: "【简介】收录不同阶段的招新、动员与赛季宣传海报，呈现千里战队面向新成员和校内外受众的视觉表达。【服役周期】2025 至 2026 年【视觉设计】鄢政、邓涵尹、李嘉昊【人物线稿】陈俊丞"
+        record: "【简介】收录不同阶段的招新、动员与赛季宣传海报，呈现千里战队面向新成员和校内外受众的视觉表达。【服役周期】2025 至 2026 年【视觉设计】鄢政、邓涵尹、李嘉昊【人物线稿】OnlyPupPet"
       },
       {
         category: "posters",
