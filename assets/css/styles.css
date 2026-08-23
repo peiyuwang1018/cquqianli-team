@@ -1688,6 +1688,7 @@
 .about-introduction-copy p {
   margin-top: 0;
   line-height: 1.86;
+  text-indent: 2em;
 }
 
 .about-introduction-copy p + p {
@@ -1720,6 +1721,7 @@
   grid-column: 1 / -1;
   margin: 0;
   line-height: 1.86;
+  text-indent: 2em;
 }
 
 @media (max-width: 860px) {
