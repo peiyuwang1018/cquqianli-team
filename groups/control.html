@@ -4,7 +4,7 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <meta name="description" content="重庆大学千里战队电气控制组，展示嵌入式控制、底盘与云台、机械臂、飞镖和整车联调项目。" />
     <title>电气控制组 | 重庆大学千里战队</title>
     <script>
       (() => {
@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-51" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-67" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -129,13 +129,80 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-    <section class="page-hero"><div><p class="page-label">Electrical Control</p><h1>电气控制组</h1></div><p>负责机器人控制软件、运动控制、通信链路、整车状态机与赛季联调。</p></section>
-    <section class="section-block group-detail">
-      <figure class="group-symbol"><img src="assets/images/brand/电气控制组.png" alt="电气控制组" /></figure>
-      <div class="detail-panel"><h2>技术栈 / 工具栈</h2><div class="tag-cloud"><span>C / C++</span><span>嵌入式开发</span><span>控制算法</span><span>通信协议</span><span>调试与数据记录</span></div></div>
+<main class="engineering-group-page control-page">
+    <section class="engineering-group-hero" aria-labelledby="control-page-title">
+      <div class="engineering-group-hero-copy">
+        <p class="page-label">EMBEDDED CONTROL</p>
+        <div class="engineering-title-lockup"><h1 id="control-page-title">电气控制组</h1><img src="assets/images/brand/vector-icons/control.svg" alt="" aria-hidden="true" /></div>
+        <p>让机械结构真正动起来，让硬件板卡发挥作用，让视觉结果进入机器人动作：电控组负责从底盘、云台、发射机构和机械臂控制，到裁判系统通信、测试装置支持、整车状态与赛场联调的完整控制闭环。</p>
+      </div>
+      <figure class="engineering-group-hero-visual">
+        <img src="assets/images/groups/control/integration.webp" alt="电控队员围绕机器人进行整车联调" />
+        <figcaption><span>INTEGRATION ON SITE</span><strong>把代码带到真实整车与联调现场</strong><small>控制 · 通信 · 排障 · 交付</small></figcaption>
+      </figure>
     </section>
-    <section class="section-block process-grid"><article><span>01</span><h2>底盘、云台、发射等核心控制</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>02</span><h2>整车状态机和模块接口</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>03</span><h2>跨机械、视觉、硬件的联调</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>04</span><h2>赛场稳定性和异常处理</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article></section>
+
+    <section class="engineering-section engineering-pipeline" aria-labelledby="control-pipeline-title">
+      <header class="engineering-section-heading"><div><p class="page-label">CONTROL LOOP</p><h2 id="control-pipeline-title">从传感输入到可验证动作</h2></div><p>电控交付的不是孤立代码，而是一条能够实时运行、与整车接口匹配，并在赛场压力下保持稳定的控制链路；日常研发与调试通常以兵种为基本责任单元。</p></header>
+      <div class="engineering-pipeline-grid">
+        <article><span>01</span><i class="mdi mdi-access-point" aria-hidden="true"></i><strong>感知与输入</strong><p>接入编码器、IMU、裁判系统与视觉目标数据，建立可信的机器人状态输入。</p></article>
+        <article><span>02</span><i class="mdi mdi-function-variant" aria-hidden="true"></i><strong>估计与解算</strong><p>完成运动学解算、姿态估计、滤波与坐标转换，把原始数据变成控制量。</p></article>
+        <article><span>03</span><i class="mdi mdi-tune-variant" aria-hidden="true"></i><strong>闭环控制</strong><p>使用 PID、LQR 等方法调节底盘、云台、发射与机械臂执行机构。</p></article>
+        <article><span>04</span><i class="mdi mdi-lan-connect" aria-hidden="true"></i><strong>通信与状态</strong><p>通过 CAN、串口及模块接口组织整车通信、状态机与异常处理。</p></article>
+        <article><span>05</span><i class="mdi mdi-chart-timeline-variant" aria-hidden="true"></i><strong>联调与验证</strong><p>用实时监视、示波器、日志和赛场测试定位问题，完成回归与交付。</p></article>
+      </div>
+    </section>
+
+    <section class="engineering-section engineering-projects" aria-labelledby="control-projects-title">
+      <header class="engineering-section-heading"><div><p class="page-label">PROJECT CASES</p><h2 id="control-projects-title">四条核心控制项目线</h2></div><p>选择项目查看控制系统如何进入不同机器人。案例保留仿真、整车和现场画面，用闭环结果说明每项工作解决什么问题。</p></header>
+      <div class="engineering-project-browser">
+        <div class="engineering-project-directory" role="tablist" aria-label="电控组项目案例" aria-orientation="vertical">
+          <button type="button" role="tab" id="control-tab-chassis" aria-controls="control-project-chassis" aria-selected="true" data-group-project-tab="control-project-chassis"><span>01</span><i class="mdi mdi-car-shift-pattern" aria-hidden="true"></i><strong>底盘控制</strong><small>运动学 · 闭环 · 调参</small></button>
+          <button type="button" role="tab" id="control-tab-gimbal" aria-controls="control-project-gimbal" aria-selected="false" tabindex="-1" data-group-project-tab="control-project-gimbal"><span>02</span><i class="mdi mdi-target" aria-hidden="true"></i><strong>云台发射</strong><small>姿态 · 跟随 · 时序</small></button>
+          <button type="button" role="tab" id="control-tab-arm" aria-controls="control-project-arm" aria-selected="false" tabindex="-1" data-group-project-tab="control-project-arm"><span>03</span><i class="mdi mdi-robot-industrial-outline" aria-hidden="true"></i><strong>机械臂</strong><small>解算 · 轨迹 · 力矩</small></button>
+          <button type="button" role="tab" id="control-tab-dart" aria-controls="control-project-dart" aria-selected="false" tabindex="-1" data-group-project-tab="control-project-dart"><span>04</span><i class="mdi mdi-rocket-launch-outline" aria-hidden="true"></i><strong>飞镖系统</strong><small>自瞄 · 发射 · 制导</small></button>
+        </div>
+        <div class="engineering-project-stage">
+          <section id="control-project-chassis" class="engineering-project-panel" role="tabpanel" aria-labelledby="control-tab-chassis" data-group-project-panel>
+            <header><p class="page-label">CHASSIS CONTROL</p><h3>让不同构型的底盘稳定、敏捷地运动</h3><p>覆盖麦克纳姆轮、全向轮、舵轮与串联轮腿等构型。项目需要完成运动学解算，结合 PID、LQR 或强化学习等控制方法，并在真实负载和碰撞扰动下兼顾机动性与鲁棒性。</p><ul><li>运动学模型</li><li>PID / LQR / RL</li><li>轮腿与多构型</li><li>实时调参</li></ul></header>
+            <div class="engineering-project-media-grid engineering-project-media-grid--chassis"><figure class="engineering-project-media"><img src="assets/images/groups/control/chassis-simulation.webp" alt="串联轮腿底盘控制仿真画面" /><figcaption>串联轮腿底盘控制仿真</figcaption></figure><figure class="engineering-project-media"><img src="assets/images/groups/control/chassis-robot.webp" alt="具备复杂运动机构的步兵机器人" /><figcaption>真实机器人底盘与执行机构</figcaption></figure></div>
+          </section>
+          <section id="control-project-gimbal" class="engineering-project-panel" role="tabpanel" aria-labelledby="control-tab-gimbal" data-group-project-panel hidden>
+            <header><p class="page-label">GIMBAL CONTROL</p><h3>把姿态反馈、自瞄结果与发射时序连成闭环</h3><p>以 IMU 姿态反馈完成 Pitch 与 Yaw 两轴闭环，使云台快速响应并稳定跟随，为自瞄锁定、弹道解算和发射时序提供可执行基础。</p><ul><li>姿态反馈</li><li>两轴闭环</li><li>自瞄接口</li><li>发射时序</li></ul></header>
+            <figure class="engineering-project-media engineering-project-media--single"><img src="assets/images/groups/control/gimbal-match.webp" alt="机器人在比赛中使用云台与发射机构交战" /><figcaption>比赛中的云台跟随与发射控制</figcaption></figure>
+          </section>
+          <section id="control-project-arm" class="engineering-project-panel" role="tabpanel" aria-labelledby="control-tab-arm" data-group-project-panel hidden>
+            <header><p class="page-label">ARM &amp; CONTROLLER</p><h3>让多关节机械臂可解算、可规划、可操控</h3><p>围绕能量核心抓取与装配任务，以多关节运动学、轨迹规划和力矩闭环实现末端精准定位，并适应碰撞与负载变化；自定义控制器同步位姿，以同构操作和重力补偿改善操控体验。</p><ul><li>多关节解算</li><li>轨迹规划</li><li>力矩闭环</li><li>远程同步</li></ul></header>
+            <figure class="engineering-project-media engineering-project-media--single"><img src="assets/images/groups/control/arm-controller.webp" alt="队员使用同构自定义控制器操作机器人机械臂" /><figcaption>机械臂与同构自定义控制器联调</figcaption></figure>
+          </section>
+          <section id="control-project-dart" class="engineering-project-panel" role="tabpanel" aria-labelledby="control-tab-dart" data-group-project-panel hidden>
+            <header><p class="page-label">DART SYSTEM</p><h3>让镖架发射与镖体制导共同完成命中</h3><p>镖架侧统一调度舵机与电机，组织装配、自瞄和发射时序；镖体侧结合目标引导信息实时解算并修正弹道，让两套控制系统协同交付。</p><ul><li>时序控制</li><li>传感反馈</li><li>目标引导</li><li>弹道修正</li></ul></header>
+            <div class="engineering-project-media-grid"><figure class="engineering-project-media"><img src="assets/images/groups/control/dart-rack.webp" alt="千里战队飞镖发射架" /><figcaption>镖架装配、自瞄与发射机构</figcaption></figure><figure class="engineering-project-media"><img src="assets/images/groups/control/dart-system.webp" alt="带有控制与制导组件的飞镖系统" /><figcaption>镖体与制导相关组件</figcaption></figure></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="engineering-section control-integration" aria-labelledby="control-integration-title">
+      <header class="engineering-section-heading"><div><p class="page-label">SYSTEM INTEGRATION</p><h2 id="control-integration-title">电控是整车系统的中枢神经</h2></div><p>只有结构、板卡、算法和控制接口一起工作，机器人才能从“各模块可用”走向“整车可靠运行”。</p></header>
+      <div class="control-integration-grid">
+        <article><i class="mdi mdi-tools" aria-hidden="true"></i><span>MECHANICAL</span><h3>与机械组匹配执行器与结构</h3><p>共同处理电机选型、减速比、负载、安装空间和线缆走线，让控制指令能够准确转化为机械动作。</p></article>
+        <article><i class="mdi mdi-eye-outline" aria-hidden="true"></i><span>VISION</span><h3>与视觉组打通实时数据链路</h3><p>通过 USB 对接目标坐标、识别和预测结果，处理坐标转换、时间戳同步、传输延迟与控制补偿。</p></article>
+        <article><i class="mdi mdi-chip" aria-hidden="true"></i><span>HARDWARE</span><h3>与硬件组保证供电和信号可靠</h3><p>围绕电源分配、PCB 接口、信号完整性与 EMC 抗干扰排查问题，使主控和传感器在复杂电磁环境下稳定工作。</p></article>
+      </div>
+    </section>
+
+    <section class="engineering-section engineering-capabilities" aria-labelledby="control-capabilities-title">
+      <header class="engineering-section-heading"><div><p class="page-label">WHAT YOU BUILD</p><h2 id="control-capabilities-title">在电控组形成怎样的工程能力</h2></div><p>学习对象不只是一组算法或外设，而是从底层驱动到整车协作、从实现功能到证明可靠的完整嵌入式工程过程。</p></header>
+      <div class="engineering-capability-grid">
+        <article><i class="mdi mdi-memory" aria-hidden="true"></i><h3>嵌入式技术栈</h3><p>STM32 外设、DMA、FreeRTOS、CAN 与串口通信，以及面向实时系统的代码组织。</p></article>
+        <article><i class="mdi mdi-sine-wave" aria-hidden="true"></i><h3>控制理论落地</h3><p>把 PID、LQR、运动学与卡尔曼滤波放入真实机器人，用动态响应而不是公式截图验证效果。</p></article>
+        <article><i class="mdi mdi-bug-check-outline" aria-hidden="true"></i><h3>系统调试与排障</h3><p>结合断点、实时监视、万用表、示波器和日志定位软硬件边界上的问题。</p></article>
+        <article><i class="mdi mdi-source-branch" aria-hidden="true"></i><h3>项目交付与版本意识</h3><p>经历方案、实现、联合调试、赛场维护和复盘，保留代码版本、接口与测试记录。</p></article>
+        <article><i class="mdi mdi-account-switch-outline" aria-hidden="true"></i><h3>跨专业系统视野</h3><p>学会把机械约束、视觉输出、硬件能力和战术需求放进同一套整车判断中。</p></article>
+      </div>
+      <div class="engineering-stack"><span>语言与平台</span><p>C / C++ · STM32 · FreeRTOS · CubeMX · CLion / GCC 工具链</p><span>通信与控制</span><p>CAN · UART · SPI · I²C · PWM · PID · LQR · 运动学 · 状态估计</p><span>验证与协作</span><p>Git · 调试器 · 实时监视 · 万用表 / 示波器 · 接口文档 · 联调记录</p></div>
+    </section>
   </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
@@ -143,6 +210,7 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260823-9"></script>
+    <script src="assets/js/pages/group-projects.js?v=20260824-1"></script>
   </body>
 </html>
 

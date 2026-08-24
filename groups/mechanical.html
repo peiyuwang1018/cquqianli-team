@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-51" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-67" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -130,29 +130,35 @@
       </a>
     </div>
 <main class="mechanical-page">
-      <section class="page-hero mechanical-page-hero">
-        <div>
+      <section class="mechanical-page-hero" aria-labelledby="mechanical-page-title">
+        <div class="mechanical-hero-copy">
           <p class="page-label">MECHANICAL STRUCTURE</p>
           <div class="mechanical-title-lockup">
-            <h1>机械结构组</h1>
+            <h1 id="mechanical-page-title">机械结构组</h1>
             <img src="assets/images/brand/vector-icons/mechanical.svg" alt="" aria-hidden="true" />
           </div>
+          <p>从任务定义到赛场维护，把结构设计、分析验证、加工装配与测试迭代连成一条完整工程链路。机械组不只负责“画图”，更要让机器人被制造出来、可靠运行并持续迭代。</p>
         </div>
-        <p>从任务定义到赛场维护，把结构设计、分析验证、加工装配与测试迭代连成一条完整工程链路。机械组不只负责“画图”，更要让机器人被制造出来、可靠运行并持续迭代。</p>
+        <figure class="mechanical-hero-visual">
+          <img src="assets/images/groups/mechanical/hero-assembly.webp" alt="机械结构组正在装配的机器人底盘与执行机构" />
+          <figcaption><span>ASSEMBLY IN PROGRESS</span><strong>从零件、模块到可联调的整机</strong><small>结构 · 传动 · 装配 · 验证</small></figcaption>
+        </figure>
       </section>
 
-      <div class="mechanical-section-nav" role="tablist" aria-label="机械结构组页面板块" data-mechanical-tabset="section">
+      <div class="mechanical-page-shell">
+      <div class="mechanical-section-nav" role="tablist" aria-label="机械结构组页面板块" aria-orientation="vertical" data-mechanical-tabset="section">
         <button id="mechanical-section-work-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-work" data-mechanical-tab="mechanical-work"><i class="mdi mdi-robot-industrial-outline" aria-hidden="true"></i><span>01</span>工作内容</button>
         <button id="mechanical-section-stack-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-stack" data-mechanical-tab="mechanical-stack" tabindex="-1"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><span>02</span>技术栈</button>
         <button id="mechanical-section-practice-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-practice" data-mechanical-tab="mechanical-practice" tabindex="-1"><i class="mdi mdi-clipboard-text-outline" aria-hidden="true"></i><span>03</span>习惯与要求</button>
         <button id="mechanical-section-growth-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-growth" data-mechanical-tab="mechanical-growth" tabindex="-1"><i class="mdi mdi-school-outline" aria-hidden="true"></i><span>04</span>培养与成长</button>
         <button id="mechanical-section-career-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-career" data-mechanical-tab="mechanical-career" tabindex="-1"><i class="mdi mdi-briefcase-outline" aria-hidden="true"></i><span>05</span>职业发展</button>
       </div>
+      <div class="mechanical-panel-stage">
 
       <section class="section-block mechanical-work" id="mechanical-work" role="tabpanel" aria-labelledby="mechanical-section-work-tab" data-mechanical-panel="section">
         <figure class="mechanical-work-visual">
-          <img src="assets/images/content/about/projects/robot/26赛季工程.jpg" alt="千里战队 2026 赛季工程机器人机械系统" />
-          <figcaption>从整机任务出发，完成机构、传动、装配和维护设计。</figcaption>
+          <img src="assets/images/groups/mechanical/assembly-detail.webp" alt="机械组队员为机器人机构拧紧螺丝并检查装配" />
+          <figcaption>装配不是设计之后的附属环节，而是检验结构、接口与维护路径是否合理的现场。</figcaption>
         </figure>
         <div class="mechanical-work-copy">
           <header class="mechanical-section-heading">
@@ -234,6 +240,7 @@
           <figure><img src="assets/images/content/about/projects/robot/SCARA工程.jpg" alt="工程机器人 SCARA 机械臂" loading="lazy" /><figcaption>执行机构</figcaption></figure>
           <figure><img src="assets/images/content/about/projects/robot/并联腿.jpg" alt="并联腿步兵机器人" loading="lazy" /><figcaption>运动与传动</figcaption></figure>
           <figure><img src="assets/images/content/about/projects/robot/四摩擦英雄.jpg" alt="四摩擦轮英雄机器人" loading="lazy" /><figcaption>整机集成</figcaption></figure>
+          <figure><img src="assets/images/groups/mechanical/machining.webp" alt="机械组队员在加工设备前完成零件加工" loading="lazy" /><figcaption>加工制造</figcaption></figure>
         </div>
       </section>
 
@@ -255,8 +262,8 @@
       <section class="section-block mechanical-growth" id="mechanical-growth" role="tabpanel" aria-labelledby="mechanical-section-growth-tab" data-mechanical-panel="section" hidden>
         <header class="mechanical-section-heading mechanical-section-heading--wide">
           <p class="page-label">GROWTH PATH</p>
-          <h2>大一课程与实训体系</h2>
-          <p>第一学年分为秋季学习期、寒假集训期、春季实训期和赛季结业四个阶段。课程只负责建立方法，真正的成长还来自作业、分享、项目实践与持续贡献。</p>
+          <h2>机械组培养与成长体系</h2>
+          <p>培养从入组预科与通识开始，以第一学年的课程、作业和真实项目实训建立工程基础，并继续延伸到正式队员阶段的系统研发、技术传承与团队责任。</p>
         </header>
 
         <div class="mechanical-training-version">
@@ -264,6 +271,51 @@
           <strong>QLMECH202707v1</strong>
           <small>当前页面依据该版本整理，课程顺序和考核细则后续可能更新。</small>
         </div>
+
+        <section class="mechanical-training-framework" aria-labelledby="mechanical-training-framework-title">
+          <header>
+            <div><p class="page-label">TRAINING FRAMEWORK</p><h3 id="mechanical-training-framework-title">培养框架不只是一组课程</h3></div>
+            <p>预科负责降低入门门槛，通识与活动建立队伍认知，专业必修形成工程主线，进阶专题和交叉选修则为后续发展保留空间。</p>
+          </header>
+          <div class="mechanical-training-principles" aria-label="机械组培养逻辑">
+            <article><span>01</span><strong>从工具到范式</strong><p>会用软件只是起点，最终要形成可靠的设计判断与工程方法。</p></article>
+            <article><span>02</span><strong>从任务到项目</strong><p>训练尽量连接真实赛季需求，在约束、交付和反馈中建立闭环。</p></article>
+            <article><span>03</span><strong>从被教到教人</strong><p>能够记录、复盘并把经验讲清楚，才算真正完成了传承。</p></article>
+          </div>
+          <div class="mechanical-training-framework-grid">
+            <article>
+              <div><i class="mdi mdi-flag-outline" aria-hidden="true"></i><span>01</span><h4>校赛 / 预科</h4></div>
+              <p>面向入组前或入组初期，先建立足以开始动手的工具与构型认知。</p>
+              <ul><li>Fusion 建模方法</li><li>FDM 3D 打印</li><li>机架、轴系与传动入门</li></ul>
+            </article>
+            <article>
+              <div><i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i><span>02</span><h4>队伍通识</h4></div>
+              <p>理解自己加入的是怎样的队伍、赛事和跨专业工程协作体系。</p>
+              <ul><li>队史与传承</li><li>RoboMaster 赛制</li><li>队内工作流与协作基础</li></ul>
+            </article>
+            <article>
+              <div><i class="mdi mdi-account-group-outline" aria-hidden="true"></i><span>03</span><h4>交流与活动</h4></div>
+              <p>用公开表达、前辈交流和共同活动补足课堂之外的团队连接。</p>
+              <ul><li>开源分享与专栏</li><li>老队员、校友交流</li><li>组内及团队建设活动</li></ul>
+            </article>
+            <article>
+              <div><i class="mdi mdi-tools" aria-hidden="true"></i><span>04</span><h4>专业必修 · 基础</h4></div>
+              <p>以当前七节基础课为主线，把工作原则、设计基础与制造验证连起来。</p>
+              <ul><li>CAD、结构、轴系与传动</li><li>材料、加工、需求与失效分析</li><li>博物馆拆装维护与金工实践</li></ul>
+            </article>
+            <article>
+              <div><i class="mdi mdi-chart-timeline-variant-shimmer" aria-hidden="true"></i><span>05</span><h4>专业必修 · 进阶</h4></div>
+              <p>在具备项目经验后进入更具体的专题研讨，与基础课程分层推进。</p>
+              <ul><li>齿轮与行星减速器设计</li><li>CAE 仿真与轻量化</li><li>产品设计和系统工程案例</li></ul>
+            </article>
+            <article>
+              <div><i class="mdi mdi-swap-horizontal" aria-hidden="true"></i><span>06</span><h4>交叉选修 · 规划</h4></div>
+              <p>为有余力的队员提供跨方向探索入口，具体开课内容以当赛季通知为准。</p>
+              <ul><li>机械方向：仿生与人形机器人专题</li><li>跨组课程与联合实践</li><li>不替代本组基础培养主线</li></ul>
+            </article>
+          </div>
+          <aside><i class="mdi mdi-information-outline" aria-hidden="true"></i><p>基础必修已有明确课程目录；进阶专题、交叉选修与实践活动会根据赛季项目、师资和设备条件调整，尚未确定的内容不作为固定开课承诺。</p></aside>
+        </section>
 
         <section class="mechanical-first-year-position" aria-labelledby="mechanical-first-year-title">
           <div>
@@ -362,6 +414,39 @@
               </div>
               <aside class="mechanical-future-opportunity"><i class="mdi mdi-source-branch" aria-hidden="true"></i><div><strong>提前晋升后的下一步</strong><p>优秀队员可在下赛季开学前承担培训组或预研工作，并参与下赛季兵种负责人、技术组长等岗位的候选评估；这不是自动承诺，仍取决于持续贡献与岗位需要。</p></div></aside>
             </section>
+          </div>
+        </section>
+
+        <section class="mechanical-long-term-growth" aria-labelledby="mechanical-long-term-growth-title">
+          <header>
+            <div><p class="page-label">LONG-TERM GROWTH</p><h3 id="mechanical-long-term-growth-title">第一学年之后，成长仍在继续</h3></div>
+            <p>完成梯队结业只是进入下一阶段。机械组以技术能力、系统思维和团队协作三条线，观察队员能否逐步从跟随训练走向独立交付与带领传承。</p>
+          </header>
+          <div class="mechanical-long-term-growth-grid">
+            <article>
+              <header><span>01</span><div><small>入组—寒假集训结束</small><h4>梯队队员 · 培训期</h4></div></header>
+              <p><strong>技术</strong>熟悉 CAD、3D 打印和基础加工，能够阅读开源资料并复刻简单模块。</p>
+              <p><strong>系统</strong>理解基础设计范式和整机模块拆分。</p>
+              <p><strong>协作</strong>能清楚提出问题，完成组会表达与日常同步。</p>
+            </article>
+            <article>
+              <header><span>02</span><div><small>春季学期—暑假</small><h4>梯队队员 · 实习期</h4></div></header>
+              <p><strong>技术</strong>跟进真实模块的迭代测试，定位问题并完成局部改进。</p>
+              <p><strong>系统</strong>开始预判风险，理解任务对整车与赛季节奏的影响。</p>
+              <p><strong>协作</strong>主动同步接口、变更和相邻工作的影响。</p>
+            </article>
+            <article>
+              <header><span>03</span><div><small>第二赛季秋季—寒假</small><h4>正式队员 · 成长期</h4></div></header>
+              <p><strong>技术</strong>独立负责模块或整车子系统，分析并吸收更先进的方案。</p>
+              <p><strong>系统</strong>拆分项目、组织多人协作并承担全局风险判断。</p>
+              <p><strong>协作</strong>参与新人培训、项目规划与非技术事务。</p>
+            </article>
+            <article>
+              <header><span>04</span><div><small>第二赛季春季以后</small><h4>正式队员 · 成熟期</h4></div></header>
+              <p><strong>技术</strong>面向整机完成高效设计、验证与交付，并主动连接行业前沿。</p>
+              <p><strong>系统</strong>建立跨机电系统视角，能够表达复杂判断与技术路线。</p>
+              <p><strong>协作</strong>成为核心承担者，指导方向并把经验留给后来者。</p>
+            </article>
           </div>
         </section>
 
@@ -523,6 +608,8 @@
           </aside>
         </div>
       </section>
+      </div>
+      </div>
     </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>

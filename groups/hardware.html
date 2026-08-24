@@ -4,7 +4,7 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <meta name="description" content="重庆大学千里战队硬件开发组，展示超级电容、无线充电、自研板卡、飞镖、大符与赛场硬件项目。" />
     <title>硬件开发组 | 重庆大学千里战队</title>
     <script>
       (() => {
@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-51" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-67" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -129,13 +129,91 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-    <section class="page-hero"><div><p class="page-label">Hardware Development</p><h1>硬件开发组</h1></div><p>负责电路、电气连接、供电保护、传感器接入和全兵种硬件可靠性支持。</p></section>
-    <section class="section-block group-detail">
-      <figure class="group-symbol"><img src="assets/images/brand/硬件开发组.png" alt="硬件开发组" /></figure>
-      <div class="detail-panel"><h2>技术栈 / 工具栈</h2><div class="tag-cloud"><span>PCB 设计</span><span>电源与保护</span><span>传感器接口</span><span>线束规范</span><span>硬件测试</span></div></div>
+<main class="engineering-group-page hardware-page">
+    <section class="engineering-group-hero" aria-labelledby="hardware-page-title">
+      <div class="engineering-group-hero-copy">
+        <p class="page-label">HARDWARE DEVELOPMENT</p>
+        <div class="engineering-title-lockup"><h1 id="hardware-page-title">硬件开发组</h1><img src="assets/images/brand/vector-icons/hardware.svg" alt="" aria-hidden="true" /></div>
+        <p>把赛场规则和机器人需求变成真正可用的电路：硬件组负责能源系统、自研板卡、接口与传感器、测试装置，以及整车供电、通信和电气可靠性支持。</p>
+      </div>
+      <figure class="engineering-group-hero-visual engineering-group-hero-visual--contain">
+        <img src="assets/images/groups/hardware/supercap-close.webp" alt="千里战队自研超级电容控制板" />
+        <figcaption><span>BOARD TO SYSTEM</span><strong>从一块板卡进入整车能源系统</strong><small>原理 · PCB · 焊接 · 测试</small></figcaption>
+      </figure>
     </section>
-    <section class="section-block process-grid"><article><span>01</span><h2>自研板卡与接口规范</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>02</span><h2>供电、通信和电气安全</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>03</span><h2>整车硬件排故与维护</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>04</span><h2>跨兵种硬件支持</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article></section>
+
+    <section class="engineering-section engineering-pipeline" aria-labelledby="hardware-pipeline-title">
+      <header class="engineering-section-heading"><div><p class="page-label">HARDWARE WORKFLOW</p><h2 id="hardware-pipeline-title">从规则需求到可靠上车</h2></div><p>硬件工作不止是画板和焊接。真正的交付要经历功率、接口和环境约束分析，并通过台架测试和整车联调证明板卡可靠。</p></header>
+      <div class="engineering-pipeline-grid">
+        <article><span>01</span><i class="mdi mdi-file-document-check-outline" aria-hidden="true"></i><strong>规则与需求</strong><p>从比赛规则、整车任务和上下游接口中拆出电气指标、边界与风险。</p></article>
+        <article><span>02</span><i class="mdi mdi-sitemap-outline" aria-hidden="true"></i><strong>电路与器件</strong><p>完成电源、信号、保护与传感链路设计，选择满足工况的器件和方案。</p></article>
+        <article><span>03</span><i class="mdi mdi-chip" aria-hidden="true"></i><strong>PCB 与样机</strong><p>进行原理图、布局布线、焊接和样机制作，把方案变成可接入的实体板卡。</p></article>
+        <article><span>04</span><i class="mdi mdi-oscilloscope" aria-hidden="true"></i><strong>台架与验证</strong><p>使用电源、负载和示波器检查效率、波形、温升、保护与异常边界。</p></article>
+        <article><span>05</span><i class="mdi mdi-car-connected" aria-hidden="true"></i><strong>整车与维护</strong><p>完成供电、通信和机械接口接入，并在联调与赛场维护中闭环故障。</p></article>
+      </div>
+    </section>
+
+    <section class="engineering-section engineering-projects" aria-labelledby="hardware-projects-title">
+      <header class="engineering-section-heading"><div><p class="page-label">PROJECT CASES</p><h2 id="hardware-projects-title">七类赛场硬件项目</h2></div><p>选择项目查看板卡、台架与接口如何进入机器人。长期核心项目与现场支持任务都按同一条工程链路接受验证。</p></header>
+      <div class="engineering-project-browser engineering-project-browser--hardware">
+        <div class="engineering-project-directory" role="tablist" aria-label="硬件组项目案例" aria-orientation="vertical">
+          <button type="button" role="tab" id="hardware-tab-supercap" aria-controls="hardware-project-supercap" aria-selected="true" data-group-project-tab="hardware-project-supercap"><span>01</span><i class="mdi mdi-battery-charging-high" aria-hidden="true"></i><strong>超级电容</strong><small>功率 · 储能 · 保护</small></button>
+          <button type="button" role="tab" id="hardware-tab-wireless" aria-controls="hardware-project-wireless" aria-selected="false" tabindex="-1" data-group-project-tab="hardware-project-wireless"><span>02</span><i class="mdi mdi-access-point" aria-hidden="true"></i><strong>无线充电</strong><small>磁耦合 · 效率 · 测试</small></button>
+          <button type="button" role="tab" id="hardware-tab-dart" aria-controls="hardware-project-dart" aria-selected="false" tabindex="-1" data-group-project-tab="hardware-project-dart"><span>03</span><i class="mdi mdi-rocket-launch-outline" aria-hidden="true"></i><strong>飞镖硬件</strong><small>小型化 · 接口 · 感知</small></button>
+          <button type="button" role="tab" id="hardware-tab-rune" aria-controls="hardware-project-rune" aria-selected="false" tabindex="-1" data-group-project-tab="hardware-project-rune"><span>04</span><i class="mdi mdi-weather-sunny" aria-hidden="true"></i><strong>大符装置</strong><small>灯效 · 复现 · 联调</small></button>
+          <button type="button" role="tab" id="hardware-tab-aerial" aria-controls="hardware-project-aerial" aria-selected="false" tabindex="-1" data-group-project-tab="hardware-project-aerial"><span>05</span><i class="mdi mdi-quadcopter" aria-hidden="true"></i><strong>无人机</strong><small>动力 · 飞控 · 轻量化</small></button>
+          <button type="button" role="tab" id="hardware-tab-radar" aria-controls="hardware-project-radar" aria-selected="false" tabindex="-1" data-group-project-tab="hardware-project-radar"><span>06</span><i class="mdi mdi-radar" aria-hidden="true"></i><strong>雷达解波</strong><small>射频 · 解析 · 接口</small></button>
+          <button type="button" role="tab" id="hardware-tab-support" aria-controls="hardware-project-support" aria-selected="false" tabindex="-1" data-group-project-tab="hardware-project-support"><span>07</span><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i><strong>通用支持</strong><small>编码 · 分电 · 测试</small></button>
+        </div>
+        <div class="engineering-project-stage">
+          <section id="hardware-project-supercap" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-supercap" data-group-project-panel>
+            <header><p class="page-label">SUPERCAPACITOR</p><h3>在功率限制与瞬态机动之间管理能量</h3><p>系统在功率富余时储能，在机器人加速等瞬态工况下释放能量，以“削峰填谷”支持底盘机动。项目同时涉及功率变换、能量管理、保护和整车通信。</p><ul><li>功率变换</li><li>能量管理</li><li>大电流保护</li><li>多版本迭代</li></ul></header>
+            <div class="engineering-project-media-grid"><figure class="engineering-project-media engineering-project-media--contain"><img src="assets/images/groups/hardware/supercap-boards.webp" alt="多块超级电容控制板样机" /><figcaption>多版板卡样机</figcaption></figure><figure class="engineering-project-media engineering-project-media--contain"><img src="assets/images/groups/hardware/supercap-close.webp" alt="超级电容控制板功率器件与控制电路" /><figcaption>功率与控制电路</figcaption></figure></div>
+          </section>
+          <section id="hardware-project-wireless" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-wireless" data-group-project-panel hidden>
+            <header><p class="page-label">WIRELESS CHARGING</p><h3>用效率、容差与战术时间共同判断方案价值</h3><p>围绕赛场补充缓冲能量的需求，完成发射与接收侧功率电路、线圈接口、控制和验证，并权衡充电效率、对位容差、驻留时间和整车战术。</p><ul><li>磁耦合</li><li>功率电路</li><li>效率与波形</li><li>战术权衡</li></ul></header>
+            <div class="engineering-project-media-grid"><figure class="engineering-project-media engineering-project-media--contain"><img src="assets/images/groups/hardware/wireless-layout.webp" alt="无线充电板 PCB 布局布线" /><figcaption>PCB 布局与功率线圈接口</figcaption></figure><figure class="engineering-project-media"><img src="assets/images/groups/hardware/wireless-test.webp" alt="无线充电系统进行波形和功率测试" /><figcaption>波形与功率台架测试</figcaption></figure></div>
+          </section>
+          <section id="hardware-project-dart" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-dart" data-group-project-panel hidden>
+            <header><p class="page-label">DART HARDWARE</p><h3>在有限体积与重量中完成供电和控制接口</h3><p>镖体板卡接入供电、裁判系统与控制链路，并为姿态感知与制导功能预留硬件基础。</p><ul><li>小型化</li><li>供电接口</li><li>姿态传感</li></ul></header>
+            <figure class="engineering-project-media engineering-project-media--single engineering-project-media--contain"><img src="assets/images/groups/hardware/dart-board.webp" alt="飞镖内部使用的小型自研控制板" /><figcaption>镖体控制与接口板</figcaption></figure>
+          </section>
+          <section id="hardware-project-rune" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-rune" data-group-project-panel hidden>
+            <header><p class="page-label">RUNE TEST DEVICE</p><h3>为视觉与电控提供可重复的目标环境</h3><p>自制能量机关复现目标与灯效，为视觉识别、自瞄和快速击打训练提供稳定测试条件。</p><ul><li>灯效控制</li><li>测试复现</li><li>跨组支持</li></ul></header>
+            <figure class="engineering-project-media engineering-project-media--single"><img src="assets/images/groups/hardware/rune.webp" alt="千里战队自制能量机关测试装置" /><figcaption>自制能量机关测试装置</figcaption></figure>
+          </section>
+          <section id="hardware-project-aerial" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-aerial" data-group-project-panel hidden>
+            <header><p class="page-label">AERIAL SYSTEM</p><h3>围绕新赛季约束重新平衡动力、重量与安全</h3><p>硬件成员参与电机、电调、飞控和近场感知相关选型与调试。面对小型化、桨保护和集群飞行等约束，项目需要同时考虑续航、安全与感知能力。</p><ul><li>动力选型</li><li>飞控调试</li><li>轻量化约束</li><li>近场感知</li></ul></header>
+            <div class="engineering-project-context"><i class="mdi mdi-quadcopter" aria-hidden="true"></i><p>该方向仍在随赛季规则与整机方案持续定义，页面仅呈现当前硬件任务边界。</p></div>
+          </section>
+          <section id="hardware-project-radar" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-radar" data-group-project-panel hidden>
+            <header><p class="page-label">RADAR DEMODULATION</p><h3>把无线电信号解析成可供战术系统使用的数据</h3><p>通过雷达搭载的硬件模块处理并解析官方设备输出的无线电信号，将对手机器人信息接入战术决策。该方向自 2026 赛季开始建设，仍处于技术积累期。</p><ul><li>射频信号</li><li>滤波解析</li><li>数据接口</li><li>方向建设中</li></ul></header>
+            <div class="engineering-project-context"><i class="mdi mdi-radar" aria-hidden="true"></i><p>这里明确保留“建设中”的状态，避免用尚未形成稳定成果的内容填充案例图。</p></div>
+          </section>
+          <section id="hardware-project-support" class="engineering-project-panel" role="tabpanel" aria-labelledby="hardware-tab-support" data-group-project-panel hidden>
+            <header><p class="page-label">HARDWARE SUPPORT</p><h3>用小型板卡和接口件保障整车开发继续推进</h3><p>磁编码器、手持装甲板、分电板、线材与测试转接板不一定属于某一辆机器人，却直接决定开发和联调能否继续推进。</p><ul><li>编码与传感</li><li>分电与线束</li><li>测试转接</li><li>现场维护</li></ul></header>
+            <figure class="engineering-project-media engineering-project-media--single engineering-project-media--contain"><img src="assets/images/groups/hardware/interface-boards.webp" alt="磁编码器、接口板与调试板卡" /><figcaption>编码器、接口与调试板卡</figcaption></figure>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="engineering-section engineering-capabilities" aria-labelledby="hardware-capabilities-title">
+      <header class="engineering-section-heading"><div><p class="page-label">WHAT YOU BUILD</p><h2 id="hardware-capabilities-title">从板卡设计到硬件可靠性</h2></div><p>硬件项目的价值不只在于板卡点亮，而在于能够理解能量和信号如何流动、证明设计边界，并让它在整车环境中长期工作。</p></header>
+      <div class="engineering-capability-grid">
+        <article><i class="mdi mdi-current-dc" aria-hidden="true"></i><h3>电源与功率电子</h3><p>理解供电、功率变换、储能、保护和高电流路径，处理效率与温升问题。</p></article>
+        <article><i class="mdi mdi-chip" aria-hidden="true"></i><h3>原理图与 PCB</h3><p>从器件选型和原理图进入布局布线、封装、制板、焊接与版本迭代。</p></article>
+        <article><i class="mdi mdi-oscilloscope" aria-hidden="true"></i><h3>测试与故障定位</h3><p>通过电源、电子负载、示波器和分段验证判断波形、噪声与异常根因。</p></article>
+        <article><i class="mdi mdi-connection" aria-hidden="true"></i><h3>接口与系统集成</h3><p>处理供电、通信、传感器、机械安装与电控接口，让板卡真正进入机器人。</p></article>
+        <article><i class="mdi mdi-shield-check-outline" aria-hidden="true"></i><h3>可靠性与维护</h3><p>关注保护、抗干扰、连接可靠、可测试和可维修，并在联调中闭环问题。</p></article>
+      </div>
+      <div class="hardware-growth-route">
+        <article><span>01</span><div><small>BENCH BASICS</small><h3>先看懂、焊好、测准</h3><p>从电路基础、常用器件、焊接和仪器使用开始，建立安全与规范意识。</p></div></article>
+        <article><span>02</span><div><small>BOARD PROJECT</small><h3>完成一块可验证板卡</h3><p>在指导下经历需求、原理图、PCB、样机与测试，理解每次修改的证据。</p></div></article>
+        <article><span>03</span><div><small>SYSTEM DELIVERY</small><h3>进入整车与赛场闭环</h3><p>承担接口、联调和维护责任，把单板性能放进真实负载和系统环境验证。</p></div></article>
+      </div>
+      <p class="engineering-note"><i class="mdi mdi-information-outline" aria-hidden="true"></i>以上为根据现有项目整理的能力路径，不替代后续发布的正式培训计划与考核安排。</p>
+    </section>
   </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
@@ -143,6 +221,7 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260823-9"></script>
+    <script src="assets/js/pages/group-projects.js?v=20260824-1"></script>
   </body>
 </html>
 

@@ -1,5 +1,132 @@
 const homeCarousel = document.querySelector("[data-home-carousel]");
 
+const goldenRainButton = document.querySelector("[data-golden-rain-toggle]");
+
+if (goldenRainButton) {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d", { alpha: true });
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const colors = ["#b88932", "#cfa451", "#e4bd70", "#f1d58d"];
+  let particles = [];
+  let frameId = 0;
+  let autoStopTimer = 0;
+  let lastFrameTime = 0;
+  let isActive = false;
+  let viewportWidth = window.innerWidth;
+  let viewportHeight = window.innerHeight;
+
+  canvas.className = "golden-rain-canvas";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.append(canvas);
+
+  const makeParticle = (fillViewport = true) => ({
+    x: Math.random() * viewportWidth,
+    y: fillViewport ? Math.random() * viewportHeight : -18 - Math.random() * 80,
+    width: (1 + Math.random() * 2.2) * 1.2,
+    length: (5 + Math.random() * 9) * 1.2,
+    speed: 70 + Math.random() * 120,
+    drift: -12 + Math.random() * 24,
+    angle: -0.28 + Math.random() * 0.56,
+    spin: -0.7 + Math.random() * 1.4,
+    alpha: 0.46 + Math.random() * 0.48,
+    color: colors[Math.floor(Math.random() * colors.length)],
+  });
+
+  const resizeCanvas = () => {
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    viewportWidth = window.innerWidth;
+    viewportHeight = window.innerHeight;
+    canvas.width = Math.round(viewportWidth * pixelRatio);
+    canvas.height = Math.round(viewportHeight * pixelRatio);
+    canvas.style.width = `${viewportWidth}px`;
+    canvas.style.height = `${viewportHeight}px`;
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    const particleCount = viewportWidth < 760 ? 144 : 240;
+    particles = Array.from({ length: particleCount }, () => makeParticle(true));
+  };
+
+  const drawParticle = (particle) => {
+    context.save();
+    context.globalAlpha = particle.alpha;
+    context.fillStyle = particle.color;
+    context.translate(particle.x, particle.y);
+    context.rotate(particle.angle);
+    context.fillRect(-particle.width / 2, -particle.length / 2, particle.width, particle.length);
+    context.restore();
+  };
+
+  const drawFrame = (time) => {
+    if (!isActive) return;
+    const delta = Math.min((time - lastFrameTime) / 1000 || 0, 0.05);
+    lastFrameTime = time;
+    context.clearRect(0, 0, viewportWidth, viewportHeight);
+
+    particles.forEach((particle) => {
+      particle.y += particle.speed * delta;
+      particle.x += particle.drift * delta;
+      particle.angle += particle.spin * delta;
+
+      if (particle.y > viewportHeight + particle.length || particle.x < -20 || particle.x > viewportWidth + 20) {
+        Object.assign(particle, makeParticle(false));
+      }
+      drawParticle(particle);
+    });
+
+    frameId = window.requestAnimationFrame(drawFrame);
+  };
+
+  const startRain = () => {
+    if (!context || isActive) return;
+    isActive = true;
+    resizeCanvas();
+    goldenRainButton.classList.add("is-active");
+    goldenRainButton.setAttribute("aria-pressed", "true");
+    goldenRainButton.setAttribute("aria-label", "关闭金色雨");
+    canvas.classList.add("is-active");
+    lastFrameTime = performance.now();
+    window.clearTimeout(autoStopTimer);
+    autoStopTimer = window.setTimeout(stopRain, 5000);
+
+    if (reducedMotion.matches) {
+      context.clearRect(0, 0, viewportWidth, viewportHeight);
+      particles.slice(0, 70).forEach(drawParticle);
+      return;
+    }
+    frameId = window.requestAnimationFrame(drawFrame);
+  };
+
+  const stopRain = () => {
+    isActive = false;
+    window.cancelAnimationFrame(frameId);
+    window.clearTimeout(autoStopTimer);
+    goldenRainButton.classList.remove("is-active");
+    goldenRainButton.setAttribute("aria-pressed", "false");
+    goldenRainButton.setAttribute("aria-label", "开启金色雨");
+    canvas.classList.remove("is-active");
+    window.setTimeout(() => {
+      if (!isActive) context.clearRect(0, 0, viewportWidth, viewportHeight);
+    }, 280);
+  };
+
+  goldenRainButton.addEventListener("click", () => {
+    if (isActive) stopRain();
+    else startRain();
+  });
+
+  window.addEventListener("resize", () => {
+    if (isActive) resizeCanvas();
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (!isActive || reducedMotion.matches) return;
+    window.cancelAnimationFrame(frameId);
+    if (!document.hidden) {
+      lastFrameTime = performance.now();
+      frameId = window.requestAnimationFrame(drawFrame);
+    }
+  });
+}
+
 if (homeCarousel) {
   const slides = [...homeCarousel.querySelectorAll("[data-home-slide]")];
   const dots = [...homeCarousel.querySelectorAll("[data-home-carousel-dot]")];

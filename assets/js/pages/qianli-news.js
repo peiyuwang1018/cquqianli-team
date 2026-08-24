@@ -2,13 +2,28 @@
   const archive = window.QIANLI_NEWS;
   if (!archive?.items?.length) return;
 
-  const items = [...archive.items].sort((left, right) => right.sortKey.localeCompare(left.sortKey));
+  const sortValue = (item) => item.type === "news" ? item.date : item.sortKey;
+  const items = [...archive.items].sort((left, right) => sortValue(right).localeCompare(sortValue(left)));
   const itemMap = new Map(items.map((item) => [item.id, item]));
   const feeds = [...document.querySelectorAll("[data-news-feed]")];
   const filterStates = new Map();
   let activeEntry = null;
   let activePool = [];
   let returnFocus = null;
+
+  function formatEntryDate(value) {
+    const [year, month, day] = String(value || "").split("-");
+    return year && month && day ? `${year}.${month}.${day}` : "日期待核验";
+  }
+
+  function fillEntryMeta(container, entry, includeSource = false) {
+    const time = document.createElement("time");
+    if (entry.date) time.dateTime = entry.date;
+    time.textContent = `${formatEntryDate(entry.date)} ${entry.type === "archive" ? "收录" : "发布"}`;
+    const details = [entry.dateLabel, entry.category];
+    if (includeSource) details.push(entry.sourceLabel);
+    container.replaceChildren(time, document.createTextNode(` · ${details.join(" · ")}`));
+  }
 
   const dialog = document.createElement("dialog");
   dialog.className = "news-entry-dialog";
@@ -61,7 +76,7 @@
     copy.className = "news-record-card-copy";
     const meta = document.createElement("span");
     meta.className = "news-record-card-meta";
-    meta.textContent = `${entry.dateLabel} · ${entry.category}`;
+    fillEntryMeta(meta, entry);
     const title = document.createElement("strong");
     title.textContent = entry.title;
     const summary = document.createElement("span");
@@ -126,7 +141,7 @@
     image.alt = entry.imageAlt || entry.title;
     dialog.querySelector("[data-news-dialog-caption]").textContent = entry.imageAlt || entry.title;
     dialog.querySelector("[data-news-dialog-kind]").textContent = entry.type === "news" ? "QIANLI NEWS" : "ARCHIVE RECORD";
-    dialog.querySelector("[data-news-dialog-meta]").textContent = `${entry.dateLabel} · ${entry.category} · ${entry.sourceLabel}`;
+    fillEntryMeta(dialog.querySelector("[data-news-dialog-meta]"), entry, true);
     dialog.querySelector("[data-news-dialog-title]").textContent = entry.title;
     dialog.querySelector("[data-news-dialog-summary]").textContent = entry.summary;
 
