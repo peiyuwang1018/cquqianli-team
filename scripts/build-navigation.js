@@ -32,7 +32,7 @@ function getBackTarget(relative) {
   ]);
 
   if (primaryPages.has(relative)) return { href: "index.html", label: "返回主页" };
-  if (relative.startsWith("groups/")) return { href: "about/organization.html", label: "返回组织架构" };
+  if (relative.startsWith("groups/")) return { href: "about/organization.html", label: "返回团队架构" };
   if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
   if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回赛季一线" };
   if (relative.startsWith("museum/training/")) return { href: "museum/resources.html", label: "返回资料站" };
@@ -69,8 +69,17 @@ function buildNavigation(active) {
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理与协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
+          <span class="nav-menu">
+            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
           <span class="nav-menu nav-menu--organization">
-            <a${activeAttributes(active, "organization")} href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a${activeAttributes(active, "organization")} href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">团队架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -98,15 +107,6 @@ function buildNavigation(active) {
                 <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
-            </span>
-          </span>
-          <span class="nav-menu">
-            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
-            <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu">
@@ -182,8 +182,8 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260823-1");
-  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260822-4");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260824-43");
+  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260823-9");
   fs.writeFileSync(file, html);
 }
 

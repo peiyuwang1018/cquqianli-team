@@ -384,6 +384,2967 @@
   gap: 12px;
 }
 
+/* Mechanical group case page: merged group-site content and recruitment pathway. */
+.mechanical-page {
+  --mechanical-tone: #c59a4b;
+}
+
+.mechanical-page-hero {
+  align-items: end;
+  grid-template-columns: minmax(320px, .78fr) minmax(560px, 1.22fr);
+  gap: 28px;
+}
+
+.mechanical-page-hero > p {
+  width: 100%;
+  max-width: none;
+}
+
+.mechanical-title-lockup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mechanical-title-lockup h1 {
+  flex: 0 1 auto;
+}
+
+.mechanical-title-lockup img {
+  flex: 0 0 auto;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: brightness(0);
+}
+
+:root[data-theme="dark"] .mechanical-title-lockup img {
+  filter: none;
+}
+
+.mechanical-section-nav {
+  position: sticky;
+  z-index: 12;
+  top: 82px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 24px auto 0;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--header-bg) 94%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.mechanical-section-nav button {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 10px 16px;
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.mechanical-section-nav button:first-child {
+  border-left: 0;
+}
+
+.mechanical-section-nav button span {
+  margin-right: 8px;
+  color: var(--mechanical-tone);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.mechanical-section-nav button > i {
+  margin-right: 9px;
+  color: var(--muted);
+  font-size: 19px;
+  line-height: 1;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.mechanical-section-nav button:hover,
+.mechanical-section-nav button:focus-visible,
+.mechanical-section-nav button[aria-selected="true"] {
+  background: color-mix(in srgb, var(--mechanical-tone) 9%, var(--surface));
+  color: var(--mechanical-tone);
+  outline: 0;
+}
+
+.mechanical-section-nav button[aria-selected="true"] {
+  box-shadow: inset 0 -3px 0 var(--mechanical-tone);
+}
+
+.mechanical-section-nav button:hover > i,
+.mechanical-section-nav button:focus-visible > i,
+.mechanical-section-nav button[aria-selected="true"] > i {
+  color: var(--mechanical-tone);
+  transform: translateY(-1px);
+}
+
+.mechanical-page > [data-mechanical-panel="section"][hidden] {
+  display: none !important;
+}
+
+.mechanical-page > [data-mechanical-panel="section"] {
+  min-height: 560px;
+  margin-top: 34px;
+  margin-bottom: 64px;
+}
+
+.mechanical-page > .mechanical-stack[data-mechanical-panel="section"],
+.mechanical-page > .mechanical-practice[data-mechanical-panel="section"],
+.mechanical-page > .mechanical-growth[data-mechanical-panel="section"],
+.mechanical-page > .mechanical-career[data-mechanical-panel="section"] {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.mechanical-section-heading h2 {
+  margin: 5px 0 14px;
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.mechanical-section-heading > p:last-child {
+  max-width: 700px;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.mechanical-section-heading--wide {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(320px, .7fr);
+  gap: 12px 64px;
+  align-items: end;
+}
+
+.mechanical-section-heading--wide .page-label {
+  grid-column: 1 / -1;
+}
+
+.mechanical-section-heading--wide h2 {
+  margin-bottom: 0;
+}
+
+.mechanical-section-heading--wide > p:last-child {
+  padding-bottom: 4px;
+}
+
+.mechanical-work {
+  display: grid;
+  grid-template-columns: minmax(360px, .82fr) minmax(0, 1.18fr);
+  gap: 54px;
+  align-items: start;
+}
+
+.mechanical-work-visual {
+  position: sticky;
+  top: 158px;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mechanical-work-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.mechanical-work-visual figcaption,
+.mechanical-project-strip figcaption {
+  padding: 10px 13px;
+  border-top: 1px solid var(--line);
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.mechanical-number-list {
+  margin: 28px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.mechanical-number-list li {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-number-list li > span,
+.mechanical-practice-list article > span,
+.mechanical-growth-path li > span,
+.mechanical-stack-grid article > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.mechanical-number-list h3,
+.mechanical-practice-list h3,
+.mechanical-growth-path h3,
+.mechanical-stack-grid h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.mechanical-number-list p,
+.mechanical-practice-list p,
+.mechanical-growth-path p,
+.mechanical-stack-grid p {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mechanical-stack,
+.mechanical-growth {
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-delivery-chain {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 34px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mechanical-delivery-chain article {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 5px 14px;
+  min-height: 158px;
+  padding: 24px 22px;
+  border-left: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-delivery-chain article:first-child {
+  border-left: 0;
+}
+
+.mechanical-delivery-chain article > span {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  color: color-mix(in srgb, var(--mechanical-tone) 68%, var(--muted));
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-delivery-chain article > i {
+  grid-row: 1 / 3;
+  margin-top: 2px;
+  color: var(--mechanical-tone);
+  font-size: 27px;
+}
+
+.mechanical-delivery-chain h3 {
+  margin: 0 34px 0 0;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.mechanical-delivery-chain p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mechanical-capability-heading {
+  display: grid;
+  grid-template-columns: minmax(280px, .7fr) minmax(380px, 1.3fr);
+  gap: 44px;
+  align-items: end;
+  margin-top: 54px;
+}
+
+.mechanical-capability-heading h3,
+.mechanical-industry-capabilities > header h3,
+.mechanical-career-mapping > header h3,
+.mechanical-beyond-tools > header h3,
+.mechanical-career-actions > div > h3 {
+  margin: 5px 0 0;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.mechanical-capability-heading > p,
+.mechanical-industry-capabilities > header > p:last-child,
+.mechanical-career-mapping > header > p:last-child {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.mechanical-capability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.mechanical-capability-grid article {
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+  padding: 25px 26px 21px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-capability-grid article > header {
+  display: grid;
+  grid-template-columns: 34px 32px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+}
+
+.mechanical-capability-grid article > header > i {
+  color: var(--mechanical-tone);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.mechanical-capability-grid article > header > span {
+  padding-top: 4px;
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.mechanical-capability-grid h4 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.mechanical-capability-grid article > p {
+  margin: 20px 0 0 77px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.mechanical-capability-grid article > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 18px 0 0 77px;
+  padding: 0;
+  list-style: none;
+}
+
+.mechanical-capability-grid article > ul li,
+.mechanical-career-tags span {
+  padding: 5px 8px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 42%, var(--line));
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.mechanical-capability-grid article > footer {
+  margin: auto 0 0 77px;
+  padding-top: 18px;
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.mechanical-capability-grid article > footer i {
+  margin-right: 6px;
+  color: var(--mechanical-tone);
+  font-size: 15px;
+}
+
+.mechanical-capability-card--wide {
+  grid-column: 1 / -1;
+  min-height: 220px !important;
+}
+
+.mechanical-project-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.mechanical-project-strip figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mechanical-project-strip img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.mechanical-practice {
+  display: grid;
+  grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr);
+  gap: 36px 74px;
+  align-items: start;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-practice-list {
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-practice-list article {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-principle {
+  position: relative;
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 30px 42px 30px 96px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--mechanical-tone) 8%, var(--card-bg));
+}
+
+.mechanical-principle i {
+  position: absolute;
+  top: 21px;
+  left: 34px;
+  color: var(--mechanical-tone);
+  font-size: 40px;
+}
+
+.mechanical-principle p {
+  color: var(--text);
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.55;
+}
+
+.mechanical-growth-path {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 38px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+}
+
+.mechanical-growth-path li {
+  min-height: 276px;
+  padding: 24px;
+  border-left: 1px solid var(--line);
+}
+
+.mechanical-growth-path li:first-child {
+  border-left: 0;
+}
+
+.mechanical-growth-path li > span {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.mechanical-growth-path small {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.mechanical-growth-path h3 {
+  margin-top: 4px;
+  font-size: 21px;
+}
+
+.mechanical-growth-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.mechanical-training-version {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 12px 18px;
+  align-items: center;
+  margin-top: 30px;
+  padding: 14px 18px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 46%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 7%, var(--card-bg));
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+.mechanical-training-version > span {
+  color: var(--mechanical-tone);
+  font-size: 12px;
+}
+
+.mechanical-training-version > span i {
+  margin-right: 5px;
+}
+
+.mechanical-training-version strong {
+  color: var(--text);
+  font-size: 13px;
+  letter-spacing: .08em;
+}
+
+.mechanical-training-version small {
+  color: var(--subtle);
+  font-size: 11px;
+  text-align: right;
+}
+
+.mechanical-first-year-position {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+  gap: 54px;
+  align-items: start;
+  margin-top: 52px;
+}
+
+.mechanical-first-year-position h3,
+.mechanical-training-map > header h3 {
+  margin: 4px 0 16px;
+  font-size: clamp(27px, 3vw, 39px);
+  font-weight: 500;
+  line-height: 1.28;
+}
+
+.mechanical-first-year-position > div:first-child > p:not(.page-label) {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.mechanical-growth-lanes {
+  display: grid;
+  gap: 12px;
+}
+
+.mechanical-growth-lanes article {
+  position: relative;
+  min-height: 182px;
+  padding: 24px 26px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-growth-lanes article::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--mechanical-tone);
+}
+
+.mechanical-growth-lanes article > span,
+.mechanical-panel-intro > span,
+.mechanical-parallel-work > header > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.mechanical-growth-lanes h4 {
+  margin: 8px 0 9px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.mechanical-growth-lanes p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mechanical-growth-lane--accelerated {
+  background: color-mix(in srgb, var(--mechanical-tone) 7%, var(--card-bg)) !important;
+}
+
+.mechanical-training-map {
+  margin-top: 62px;
+  padding-top: 46px;
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-training-map > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, .75fr);
+  gap: 50px;
+  align-items: end;
+}
+
+.mechanical-training-map > header > p {
+  padding-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mechanical-phase-tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.mechanical-phase-tabs::before {
+  content: "";
+  position: absolute;
+  top: 31px;
+  right: 5%;
+  left: 5%;
+  z-index: 0;
+  height: 1px;
+  background: var(--line);
+}
+
+.mechanical-phase-tabs button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 2px 12px;
+  min-height: 126px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.mechanical-phase-tabs button:hover,
+.mechanical-phase-tabs button:focus-visible {
+  border-color: color-mix(in srgb, var(--mechanical-tone) 68%, var(--line));
+  transform: translateY(-2px);
+  outline: 0;
+}
+
+.mechanical-phase-tabs button[aria-selected="true"] {
+  border-color: var(--mechanical-tone);
+  background: color-mix(in srgb, var(--mechanical-tone) 9%, var(--card-bg));
+  box-shadow: inset 0 -3px 0 var(--mechanical-tone);
+}
+
+.mechanical-phase-tabs button > span {
+  grid-row: 1 / 4;
+  display: grid;
+  place-items: center;
+  align-self: start;
+  width: 34px;
+  height: 34px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 68%, var(--line));
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mechanical-phase-tabs button small,
+.mechanical-phase-tabs button em {
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.mechanical-phase-tabs button strong {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.mechanical-phase-panels {
+  margin-top: 14px;
+}
+
+.mechanical-phase-panel {
+  padding: 34px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-phase-panel[hidden],
+.mechanical-course-panels > [hidden] {
+  display: none;
+}
+
+.mechanical-panel-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .85fr);
+  gap: 8px 50px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-panel-intro > span {
+  grid-column: 1 / -1;
+}
+
+.mechanical-panel-intro h4,
+.mechanical-parallel-work h4 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.mechanical-panel-intro > p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mechanical-course-browser {
+  display: grid;
+  grid-template-columns: minmax(280px, .74fr) minmax(0, 1.26fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.mechanical-course-directory {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+
+.mechanical-course-directory button {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+.mechanical-course-directory button:hover,
+.mechanical-course-directory button:focus-visible {
+  border-color: color-mix(in srgb, var(--mechanical-tone) 68%, var(--line));
+  transform: translateX(3px);
+  outline: 0;
+}
+
+.mechanical-course-directory button[aria-selected="true"] {
+  border-color: var(--mechanical-tone);
+  background: color-mix(in srgb, var(--mechanical-tone) 10%, var(--card-bg));
+  box-shadow: inset 3px 0 0 var(--mechanical-tone);
+}
+
+.mechanical-course-directory button span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mechanical-course-directory button strong {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.mechanical-course-panels {
+  min-height: 442px;
+}
+
+.mechanical-course-panels > article {
+  position: relative;
+  height: 100%;
+  min-height: 442px;
+  padding: 38px 40px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 44%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 6%, var(--surface));
+}
+
+.mechanical-course-panels > article::after {
+  content: attr(id);
+  position: absolute;
+  right: -8px;
+  bottom: -34px;
+  color: color-mix(in srgb, var(--mechanical-tone) 9%, transparent);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.mechanical-course-panels article > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-course-panels h5 {
+  max-width: 600px;
+  margin: 18px 0 16px;
+  font-size: clamp(25px, 2.7vw, 36px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.mechanical-course-panels p {
+  max-width: 650px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.mechanical-course-panels ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mechanical-course-panels li {
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 42%, var(--line));
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.mechanical-parallel-work {
+  margin-top: 34px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-parallel-work > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, .75fr);
+  gap: 6px 48px;
+  align-items: end;
+}
+
+.mechanical-parallel-work > header > span {
+  grid-column: 1 / -1;
+}
+
+.mechanical-parallel-work > header > p {
+  font-size: 13px;
+}
+
+.mechanical-parallel-work > div,
+.mechanical-phase-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mechanical-parallel-work article,
+.mechanical-phase-card-grid article {
+  min-height: 205px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mechanical-parallel-work article > i {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--mechanical-tone);
+  font-size: 28px;
+}
+
+.mechanical-parallel-work article small,
+.mechanical-phase-card-grid article > span,
+.mechanical-spring-route article > span,
+.mechanical-evaluation-flow article small {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+.mechanical-parallel-work h5,
+.mechanical-phase-card-grid h5,
+.mechanical-spring-route h5,
+.mechanical-evaluation-flow h5 {
+  margin: 7px 0 9px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.mechanical-parallel-work article p,
+.mechanical-phase-card-grid article p,
+.mechanical-spring-route article p,
+.mechanical-evaluation-flow article p {
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.mechanical-phase-card-grid article > span {
+  display: block;
+  margin-bottom: 26px;
+}
+
+.mechanical-phase-note,
+.mechanical-future-opportunity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 18px;
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 44%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 7%, var(--card-bg));
+}
+
+.mechanical-phase-note strong,
+.mechanical-future-opportunity strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.mechanical-phase-note p,
+.mechanical-future-opportunity p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.mechanical-spring-route {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.mechanical-spring-route article {
+  min-height: 218px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mechanical-spring-route article:last-child {
+  border-color: color-mix(in srgb, var(--mechanical-tone) 58%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 7%, var(--surface));
+}
+
+.mechanical-lock-date {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 22px 26px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-lock-date > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.mechanical-lock-date strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.mechanical-lock-date p {
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.mechanical-evaluation-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.mechanical-evaluation-flow > i {
+  align-self: center;
+  color: var(--mechanical-tone);
+  font-size: 24px;
+}
+
+.mechanical-evaluation-flow article {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 14px;
+  min-height: 196px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.mechanical-evaluation-flow article > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.mechanical-evaluation-result {
+  border-color: var(--mechanical-tone) !important;
+  background: color-mix(in srgb, var(--mechanical-tone) 9%, var(--surface)) !important;
+}
+
+.mechanical-future-opportunity {
+  margin-top: 20px;
+}
+
+.mechanical-future-opportunity > i {
+  color: var(--mechanical-tone);
+  font-size: 26px;
+}
+
+.mechanical-career {
+  display: block;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-industry-signal {
+  display: grid;
+  grid-template-columns: minmax(280px, .78fr) minmax(0, 1.22fr);
+  gap: 18px 48px;
+  margin-top: 34px;
+  padding: 26px 28px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 44%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 7%, var(--card-bg));
+}
+
+.mechanical-industry-signal > div:first-child {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 3px 10px;
+  align-content: start;
+}
+
+.mechanical-industry-signal > div:first-child > i {
+  grid-row: 1 / 3;
+  color: var(--mechanical-tone);
+  font-size: 24px;
+}
+
+.mechanical-industry-signal > div:first-child > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-industry-signal > div:first-child > strong {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.mechanical-industry-signal > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.mechanical-recruitment-dialog {
+  width: min(1120px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 52%, var(--line));
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, .36);
+}
+
+.mechanical-recruitment-dialog:not([open]) {
+  display: none;
+}
+
+.mechanical-recruitment-dialog::backdrop {
+  background: rgba(0, 0, 0, .72);
+  backdrop-filter: blur(5px);
+}
+
+.mechanical-recruitment-dialog-close {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 20px;
+  place-items: center;
+  cursor: pointer;
+}
+
+.mechanical-recruitment-dialog-close:hover,
+.mechanical-recruitment-dialog-close:focus-visible {
+  border-color: var(--mechanical-tone);
+  color: var(--mechanical-tone);
+  outline: 0;
+}
+
+.mechanical-recruitment-board {
+  margin: 0;
+  padding: 30px;
+}
+
+.mechanical-recruitment-board > header {
+  display: flex;
+  gap: 36px;
+  align-items: end;
+  justify-content: space-between;
+  padding-right: 54px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-recruitment-board > header > div:first-child {
+  max-width: 760px;
+}
+
+.mechanical-recruitment-board > header h3 {
+  margin: 5px 0 0;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.mechanical-recruitment-board > header p:last-child {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mechanical-recruitment-controls {
+  display: grid;
+  grid-template-columns: 42px 72px 42px;
+  align-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+}
+
+.mechanical-recruitment-controls button {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  place-items: center;
+  cursor: pointer;
+}
+
+.mechanical-recruitment-controls button:hover,
+.mechanical-recruitment-controls button:focus-visible {
+  background: color-mix(in srgb, var(--mechanical-tone) 10%, var(--surface));
+  color: var(--mechanical-tone);
+  outline: 0;
+}
+
+.mechanical-recruitment-controls button:first-child {
+  border-right: 1px solid var(--line);
+}
+
+.mechanical-recruitment-controls button:last-child {
+  border-left: 1px solid var(--line);
+}
+
+.mechanical-recruitment-controls output {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .08em;
+}
+
+.mechanical-recruitment-viewport {
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-recruitment-case {
+  display: grid;
+  grid-template-columns: minmax(230px, .58fr) minmax(0, 1.42fr);
+  min-height: 458px;
+  animation: mechanical-case-enter 220ms ease both;
+}
+
+.mechanical-recruitment-case[hidden] {
+  display: none;
+}
+
+@keyframes mechanical-case-enter {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mechanical-recruitment-case {
+    animation: none;
+  }
+}
+
+.mechanical-recruitment-company {
+  padding: 32px 28px;
+  border-right: 1px solid var(--line);
+  background: color-mix(in srgb, var(--mechanical-tone) 8%, var(--surface));
+}
+
+.mechanical-recruitment-company > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.mechanical-recruitment-company h4 {
+  margin: 54px 0 0;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.mechanical-recruitment-company > p {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.mechanical-recruitment-company > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 30px;
+}
+
+.mechanical-recruitment-company em {
+  padding: 5px 7px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 38%, var(--line));
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-style: normal;
+}
+
+.mechanical-recruitment-requirements {
+  padding: 30px 34px 24px;
+}
+
+.mechanical-recruitment-requirements h5 {
+  margin: 0;
+  color: var(--mechanical-tone);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.mechanical-recruitment-requirements ol {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: recruitment-requirement;
+}
+
+.mechanical-recruitment-requirements li {
+  position: relative;
+  padding: 11px 0 11px 42px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  counter-increment: recruitment-requirement;
+}
+
+.mechanical-recruitment-requirements li::before {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  content: "0" counter(recruitment-requirement);
+}
+
+.mechanical-recruitment-case > aside {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 28px auto;
+  gap: 12px;
+  align-items: start;
+  padding: 18px 26px;
+  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--mechanical-tone) 5%, var(--card-bg));
+}
+
+.mechanical-recruitment-case > aside > i {
+  color: var(--mechanical-tone);
+  font-size: 22px;
+}
+
+.mechanical-recruitment-case > aside span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.mechanical-recruitment-case > aside p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mechanical-recruitment-board > footer {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.mechanical-recruitment-board > footer span {
+  color: var(--mechanical-tone);
+  font-weight: 700;
+}
+
+.mechanical-industry-capabilities,
+.mechanical-career-mapping,
+.mechanical-beyond-tools,
+.mechanical-career-actions {
+  margin-top: 56px;
+}
+
+.mechanical-industry-capabilities > header,
+.mechanical-career-mapping > header {
+  display: grid;
+  grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+  gap: 10px 54px;
+  align-items: end;
+}
+
+.mechanical-industry-capabilities > header .page-label,
+.mechanical-career-mapping > header .page-label {
+  grid-column: 1 / -1;
+}
+
+.mechanical-industry-capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.mechanical-industry-capabilities article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px 14px;
+  align-content: start;
+  align-items: center;
+  min-height: 164px;
+  padding: 19px 20px;
+  background: var(--card-bg);
+}
+
+.mechanical-industry-capabilities article > i {
+  color: var(--mechanical-tone);
+  font-size: 24px;
+}
+
+.mechanical-industry-capabilities article h4 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.mechanical-industry-capabilities article p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mechanical-industry-case-entry {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--mechanical-tone) 6%, var(--card-bg));
+}
+
+.mechanical-industry-case-entry > div {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 2px 10px;
+  align-items: center;
+}
+
+.mechanical-industry-case-entry > div > i {
+  grid-row: 1 / 3;
+  color: var(--mechanical-tone);
+  font-size: 23px;
+}
+
+.mechanical-industry-case-entry > div > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-industry-case-entry > div > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mechanical-industry-case-entry > button {
+  display: inline-flex;
+  gap: 18px;
+  align-items: center;
+  flex: 0 0 auto;
+  min-height: 42px;
+  padding: 9px 15px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 52%, var(--line));
+  background: transparent;
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mechanical-industry-case-entry > button:hover,
+.mechanical-industry-case-entry > button:focus-visible {
+  background: var(--mechanical-tone);
+  color: var(--bg);
+  outline: 0;
+}
+
+.mechanical-career-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.mechanical-career-flip-card {
+  position: relative;
+  min-height: 182px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.mechanical-career-flip-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.22, .61, .36, 1);
+}
+
+.mechanical-career-flip-card.is-flipped .mechanical-career-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.mechanical-career-flip-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  backface-visibility: hidden;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+.mechanical-career-flip-card:hover .mechanical-career-flip-face,
+.mechanical-career-flip-card:focus-visible .mechanical-career-flip-face {
+  border-color: color-mix(in srgb, var(--mechanical-tone) 66%, var(--line));
+}
+
+.mechanical-career-flip-card:focus-visible {
+  outline: 2px solid var(--mechanical-tone);
+  outline-offset: 3px;
+}
+
+.mechanical-career-flip-front > i {
+  margin: 0;
+  color: var(--mechanical-tone);
+  font-size: 24px;
+}
+
+.mechanical-career-flip-front {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  gap: 10px 11px;
+  align-items: center;
+}
+
+.mechanical-career-flip-front > strong {
+  margin: 0;
+}
+
+.mechanical-career-flip-front > span:not(.mechanical-career-flip-index) {
+  grid-column: 1 / -1;
+  align-self: start;
+}
+
+.mechanical-career-flip-index,
+.mechanical-career-flip-back > span:first-child {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.mechanical-career-flip-face strong {
+  display: block;
+  margin-bottom: 11px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.mechanical-career-flip-face > span:not(.mechanical-career-flip-index):not(:first-child) {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.mechanical-career-flip-face small {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.mechanical-career-flip-front > small {
+  grid-column: 1 / -1;
+  justify-self: end;
+  padding-top: 0;
+}
+
+.mechanical-career-flip-back {
+  justify-content: flex-start;
+  border-color: color-mix(in srgb, var(--mechanical-tone) 58%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 10%, var(--card-bg));
+  transform: rotateY(180deg);
+}
+
+.mechanical-career-flip-back > strong {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.mechanical-alumni-bridge {
+  display: grid;
+  grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+  gap: 34px;
+  margin-top: 18px;
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 48%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 7%, var(--card-bg));
+}
+
+.mechanical-alumni-bridge > div:first-child {
+  position: relative;
+  padding-left: 52px;
+}
+
+.mechanical-alumni-bridge > div:first-child > i {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: var(--mechanical-tone);
+  font-size: 34px;
+}
+
+.mechanical-alumni-bridge h3 {
+  margin: 8px 0 12px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.mechanical-alumni-bridge > div:first-child > p:last-child,
+.mechanical-alumni-support-list article p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.mechanical-alumni-support-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.mechanical-alumni-support-list article {
+  padding: 20px;
+  background: var(--card-bg);
+}
+
+.mechanical-alumni-support-list article > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-alumni-support-list article strong {
+  display: block;
+  margin: 15px 0 9px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mechanical-career-flip-inner {
+    transition: none;
+  }
+}
+
+.mechanical-beyond-tools > header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-beyond-tools > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.mechanical-beyond-tools article {
+  position: relative;
+  padding: 26px 28px 26px 78px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-beyond-tools article > i {
+  position: absolute;
+  top: 26px;
+  left: 27px;
+  color: var(--mechanical-tone);
+  font-size: 31px;
+}
+
+.mechanical-beyond-tools article > span {
+  color: var(--mechanical-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-beyond-tools article h4 {
+  margin: 5px 0 14px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mechanical-beyond-tools article ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mechanical-beyond-tools article li {
+  position: relative;
+  padding-left: 13px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mechanical-beyond-tools article li::before {
+  position: absolute;
+  top: .68em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: var(--mechanical-tone);
+  content: "";
+}
+
+.mechanical-career-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.mechanical-career-actions > div {
+  padding: 32px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.mechanical-career-actions > div > p:not(.page-label) {
+  max-width: 700px;
+  margin: 14px 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.mechanical-recruit-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 34px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 46%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 9%, var(--card-bg));
+}
+
+.mechanical-recruit-panel > p:not(.page-label) {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.mechanical-recruit-panel h2 {
+  margin: 8px 0 16px;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.38;
+}
+
+.mechanical-recruit-panel > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--mechanical-tone) 48%, var(--line));
+  color: var(--mechanical-tone);
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .mechanical-page-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-section-heading--wide {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-first-year-position,
+  .mechanical-training-map > header,
+  .mechanical-panel-intro,
+  .mechanical-parallel-work > header {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-panel-intro > span,
+  .mechanical-parallel-work > header > span {
+    grid-column: auto;
+  }
+
+  .mechanical-phase-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanical-evaluation-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-evaluation-flow > i {
+    display: none;
+  }
+
+  .mechanical-delivery-chain,
+  .mechanical-growth-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanical-delivery-chain article:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .mechanical-delivery-chain article:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+
+  .mechanical-industry-capability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanical-career-flip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanical-alumni-bridge {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-growth-path li:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .mechanical-growth-path li:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 860px) {
+  .mechanical-title-lockup {
+    gap: 16px;
+  }
+
+  .mechanical-title-lockup img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .mechanical-section-nav {
+    top: 72px;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    width: calc(100% - 28px);
+  }
+
+  .mechanical-section-nav button {
+    min-width: 142px;
+  }
+
+  .mechanical-page > [data-mechanical-panel="section"] {
+    min-height: 0;
+    margin-top: 28px;
+    margin-bottom: 48px;
+  }
+
+  .mechanical-work,
+  .mechanical-practice,
+  .mechanical-career,
+  .mechanical-first-year-position {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .mechanical-work-visual {
+    position: static;
+  }
+
+  .mechanical-principle {
+    grid-column: auto;
+  }
+
+  .mechanical-phase-panel {
+    padding: 24px;
+  }
+
+  .mechanical-course-browser {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-course-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanical-course-directory button:hover,
+  .mechanical-course-directory button:focus-visible {
+    transform: translateY(-2px);
+  }
+
+  .mechanical-parallel-work > div,
+  .mechanical-phase-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-parallel-work article,
+  .mechanical-phase-card-grid article {
+    min-height: 0;
+  }
+
+  .mechanical-capability-heading,
+  .mechanical-industry-signal,
+  .mechanical-industry-capabilities > header,
+  .mechanical-career-mapping > header,
+  .mechanical-career-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-recruitment-case {
+    grid-template-columns: minmax(200px, .55fr) minmax(0, 1.45fr);
+  }
+
+  .mechanical-beyond-tools > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .mechanical-recruitment-dialog {
+    width: calc(100% - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .mechanical-recruitment-dialog-close {
+    top: 10px;
+    right: 10px;
+  }
+
+  .mechanical-recruitment-board {
+    padding: 18px;
+  }
+
+  .mechanical-recruitment-board > header {
+    padding-top: 44px;
+    padding-right: 0;
+  }
+
+  .mechanical-title-lockup {
+    align-items: flex-end;
+  }
+
+  .mechanical-title-lockup img {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 2px;
+  }
+
+  .mechanical-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .mechanical-delivery-chain,
+  .mechanical-capability-grid,
+  .mechanical-project-strip,
+  .mechanical-growth-path {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-delivery-chain article,
+  .mechanical-delivery-chain article:nth-child(2),
+  .mechanical-delivery-chain article:nth-child(3),
+  .mechanical-delivery-chain article:nth-child(4) {
+    min-height: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .mechanical-delivery-chain article:first-child {
+    border-top: 0;
+  }
+
+  .mechanical-capability-card--wide {
+    grid-column: auto;
+  }
+
+  .mechanical-capability-grid article,
+  .mechanical-capability-card--wide {
+    min-height: 0 !important;
+    padding: 22px 20px 18px;
+  }
+
+  .mechanical-capability-grid article > p,
+  .mechanical-capability-grid article > ul,
+  .mechanical-capability-grid article > footer {
+    margin-left: 0;
+  }
+
+  .mechanical-industry-capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-career-flip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-career-flip-card {
+    min-height: 218px;
+  }
+
+  .mechanical-industry-case-entry {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .mechanical-industry-case-entry > button {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .mechanical-recruitment-board > header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .mechanical-recruitment-controls {
+    align-self: flex-end;
+  }
+
+  .mechanical-recruitment-case {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .mechanical-recruitment-company {
+    padding: 24px 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mechanical-recruitment-company h4 {
+    margin-top: 24px;
+  }
+
+  .mechanical-recruitment-requirements {
+    padding: 25px 22px 18px;
+  }
+
+  .mechanical-recruitment-case > aside {
+    grid-column: auto;
+    padding: 17px 20px;
+  }
+
+  .mechanical-recruitment-board > footer {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .mechanical-alumni-bridge {
+    padding: 22px;
+  }
+
+  .mechanical-alumni-bridge > div:first-child {
+    padding-top: 48px;
+    padding-left: 0;
+  }
+
+  .mechanical-alumni-support-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-industry-capabilities article {
+    min-height: 0;
+  }
+
+  .mechanical-beyond-tools article {
+    padding: 70px 22px 22px;
+  }
+
+  .mechanical-beyond-tools article > i {
+    top: 21px;
+    left: 22px;
+  }
+
+  .mechanical-beyond-tools article ul {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-training-version {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-training-version small {
+    text-align: left;
+  }
+
+  .mechanical-phase-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mechanical-phase-tabs::before {
+    display: none;
+  }
+
+  .mechanical-phase-tabs button {
+    grid-template-columns: 28px minmax(0, 1fr);
+    min-height: 118px;
+    padding: 14px;
+  }
+
+  .mechanical-phase-tabs button > span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mechanical-phase-tabs button strong {
+    font-size: 15px;
+  }
+
+  .mechanical-course-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-course-panels,
+  .mechanical-course-panels > article {
+    min-height: 0;
+  }
+
+  .mechanical-course-panels > article {
+    padding: 28px 24px;
+  }
+
+  .mechanical-spring-route {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-lock-date {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .mechanical-evaluation-flow article {
+    grid-template-columns: 52px minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .mechanical-growth-path li,
+  .mechanical-growth-path li:nth-child(2),
+  .mechanical-growth-path li:nth-child(3),
+  .mechanical-growth-path li:nth-child(4) {
+    min-height: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .mechanical-growth-path li:first-child {
+    border-top: 0;
+  }
+
+  .mechanical-principle {
+    padding: 68px 24px 26px;
+  }
+
+  .mechanical-principle i {
+    top: 18px;
+    left: 22px;
+  }
+
+  .mechanical-recruit-panel {
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 430px) {
+  .mechanical-phase-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Vision algorithm: project-led perception, planning and decision systems. */
+.vision-page {
+  --vision-tone: #8976b2;
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.vision-page-hero {
+  display: grid;
+  grid-template-columns: minmax(360px, .9fr) minmax(480px, 1.1fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 38px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.vision-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 27px 0;
+}
+
+.vision-title-lockup {
+  display: flex;
+  gap: 22px;
+  align-items: flex-end;
+}
+
+.vision-title-lockup h1 {
+  margin: 0;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.vision-title-lockup img {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 5px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(55%) sepia(17%) saturate(1122%) hue-rotate(216deg) brightness(90%) contrast(83%);
+}
+
+.vision-hero-copy > p:last-child {
+  width: calc(100% + 46px);
+  max-width: none;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.vision-hero-visual {
+  position: relative;
+  width: 95%;
+  min-height: 332px;
+  margin: 0;
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #090a0e;
+}
+
+.vision-hero-visual > img {
+  width: 100%;
+  height: 100%;
+  min-height: 332px;
+  object-fit: cover;
+}
+
+.vision-hero-visual::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, .82));
+  pointer-events: none;
+}
+
+.vision-hero-visual figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  bottom: 20px;
+  left: 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 5px 22px;
+  color: #fff;
+}
+
+.vision-hero-visual figcaption > span,
+.vision-hero-visual figcaption > small {
+  color: #c8bddf;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.vision-hero-visual figcaption > strong {
+  grid-row: 2;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.vision-hero-visual figcaption > small {
+  grid-row: 2;
+  align-self: end;
+}
+
+.vision-section {
+  margin: 52px 0 0;
+}
+
+.vision-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr);
+  gap: 22px 38px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.vision-section-heading h2,
+.vision-stack h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 500;
+  line-height: 1.18;
+}
+
+.vision-section-heading > p,
+.vision-stack > div:first-child > p:last-child {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.vision-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.vision-pipeline-grid article {
+  position: relative;
+  min-height: 164px;
+  padding: 19px;
+  background: var(--card-bg);
+}
+
+.vision-pipeline-grid article > span {
+  color: var(--vision-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.vision-pipeline-grid article > i {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  color: var(--vision-tone);
+  font-size: 24px;
+}
+
+.vision-pipeline-grid article > strong {
+  display: block;
+  margin: 22px 0 7px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.vision-pipeline-grid article > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.68;
+}
+
+.vision-project-browser {
+  display: grid;
+  grid-template-columns: 244px minmax(0, 1fr);
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.vision-project-directory {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.vision-project-directory button {
+  display: grid;
+  grid-template-columns: 28px 28px minmax(0, 1fr);
+  gap: 4px 9px;
+  align-items: center;
+  min-height: 74px;
+  padding: 12px 14px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .18s ease, color .18s ease;
+}
+
+.vision-project-directory button:last-child {
+  border-bottom: 0;
+}
+
+.vision-project-directory button:hover,
+.vision-project-directory button:focus-visible,
+.vision-project-directory button[aria-selected="true"] {
+  background: color-mix(in srgb, var(--vision-tone) 13%, var(--card-bg));
+  outline: 0;
+}
+
+.vision-project-directory button[aria-selected="true"] {
+  box-shadow: inset 3px 0 var(--vision-tone);
+}
+
+.vision-project-directory button > span {
+  color: var(--vision-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.vision-project-directory button > i {
+  color: var(--vision-tone);
+  font-size: 22px;
+}
+
+.vision-project-directory button > strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.vision-project-directory button > small {
+  grid-column: 3;
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.vision-project-stage {
+  min-width: 0;
+}
+
+.vision-project-panel[hidden] {
+  display: none;
+}
+
+.vision-project-panel {
+  padding: 24px;
+}
+
+.vision-project-panel > header {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 8px 30px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.vision-project-panel > header > .page-label {
+  grid-column: 1 / -1;
+}
+
+.vision-project-panel h3 {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.vision-project-panel > header > p:not(.page-label) {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.vision-project-panel > header > ul {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-self: center;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vision-project-panel > header > ul li {
+  padding: 4px 7px;
+  border: 1px solid color-mix(in srgb, var(--vision-tone) 48%, var(--line));
+  color: var(--text);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+}
+
+.vision-project-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.vision-project-media-grid--balanced img,
+.vision-project-media-grid--balanced video {
+  height: auto;
+}
+
+.vision-project-media-grid--engineering {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.33fr);
+}
+
+.vision-project-media-grid--navigation {
+  grid-template-columns: minmax(0, 1.34fr) minmax(0, 1fr);
+}
+
+.vision-project-media-grid--radar {
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 1fr);
+}
+
+.vision-project-media {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #090a0e;
+}
+
+.vision-project-media img,
+.vision-project-media video {
+  width: 100%;
+  height: clamp(220px, 24vw, 360px);
+  object-fit: contain;
+  background: #090a0e;
+}
+
+.vision-project-media-grid--balanced {
+  align-items: start;
+}
+
+.vision-project-media-grid--balanced .vision-project-media img,
+.vision-project-media-grid--balanced .vision-project-media video {
+  height: auto;
+}
+
+.vision-project-media--single img {
+  height: clamp(280px, 32vw, 460px);
+}
+
+.vision-project-media figcaption {
+  padding: 10px 13px;
+  border-top: 1px solid var(--line);
+  color: #c9c9cf;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.vision-project-media-grid--contain img {
+  image-rendering: auto;
+}
+
+.vision-project-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.vision-project-matrix-grid article {
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.vision-project-matrix-grid article > header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.vision-project-matrix-grid article > header i {
+  color: var(--vision-tone);
+  font-size: 24px;
+}
+
+.vision-project-matrix-grid article > header strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.vision-project-matrix-grid article > header span {
+  color: var(--vision-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+.vision-project-matrix-grid article > ul {
+  display: grid;
+  gap: 5px;
+  margin: 13px 0 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  list-style: none;
+}
+
+.vision-project-matrix-grid article > ul li::before {
+  margin-right: 8px;
+  color: var(--vision-tone);
+  content: "·";
+}
+
+.vision-project-matrix-card--wide {
+  grid-column: span 2;
+}
+
+.vision-project-matrix-card--wide > ul {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.vision-project-matrix-note {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 13px;
+  color: var(--subtle);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+}
+
+.vision-project-matrix-note i {
+  color: var(--vision-tone);
+  font-size: 17px;
+}
+
+.vision-stack {
+  display: grid;
+  grid-template-columns: minmax(340px, .82fr) minmax(0, 1.18fr);
+  gap: 38px;
+  align-items: start;
+  margin-bottom: 84px;
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--vision-tone) 46%, var(--line));
+  background: color-mix(in srgb, var(--vision-tone) 7%, var(--card-bg));
+}
+
+.vision-stack > div:first-child > p:last-child {
+  margin-top: 16px;
+}
+
+.vision-stack h2 > span {
+  display: block;
+}
+
+.vision-stack-groups {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.vision-stack-groups article {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 18px;
+  padding: 17px 19px;
+  background: var(--card-bg);
+}
+
+.vision-stack-groups article > span {
+  color: var(--vision-tone);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vision-stack-groups article > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .vision-page-hero,
+  .vision-section-heading,
+  .vision-project-panel > header,
+  .vision-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-page-hero {
+    gap: 24px;
+  }
+
+  .vision-hero-copy {
+    padding-bottom: 0;
+  }
+
+  .vision-pipeline-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .vision-project-matrix-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .vision-project-panel > header > p:not(.page-label),
+  .vision-project-panel > header > ul {
+    grid-column: 1;
+  }
+
+  .vision-project-panel > header > ul {
+    grid-row: 3;
+    justify-content: flex-start;
+  }
+
+  .vision-project-panel > header > p:not(.page-label) {
+    grid-row: 4;
+  }
+}
+
+@media (max-width: 860px) {
+  .vision-page {
+    width: calc(100% - 28px);
+  }
+
+  .vision-page-hero {
+    margin-top: 34px;
+  }
+
+  .vision-hero-copy > p:last-child,
+  .vision-hero-visual {
+    width: 100%;
+  }
+
+  .vision-title-lockup img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .vision-hero-visual,
+  .vision-hero-visual > img {
+    min-height: 330px;
+  }
+
+  .vision-section {
+    margin-top: 48px;
+  }
+
+  .vision-project-browser {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-project-panel > header {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-project-panel h3 {
+    grid-column: 1;
+    white-space: normal;
+  }
+
+  .vision-project-panel > header > ul {
+    grid-column: 1;
+    grid-row: 4;
+    justify-content: flex-start;
+  }
+
+  .vision-project-directory {
+    grid-auto-columns: minmax(168px, 1fr);
+    grid-auto-flow: column;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    scrollbar-width: thin;
+  }
+
+  .vision-project-directory button {
+    min-width: 168px;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .vision-project-directory button[aria-selected="true"] {
+    box-shadow: inset 0 -3px var(--vision-tone);
+  }
+
+  .vision-project-media-grid,
+  .vision-project-matrix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vision-project-media-grid--engineering,
+  .vision-project-media-grid--navigation,
+  .vision-project-media-grid--radar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .vision-title-lockup {
+    gap: 15px;
+    align-items: center;
+  }
+
+  .vision-title-lockup h1 {
+    font-size: 42px;
+  }
+
+  .vision-title-lockup img {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0;
+  }
+
+  .vision-hero-copy > p:last-child {
+    font-size: 15px;
+  }
+
+  .vision-hero-visual,
+  .vision-hero-visual > img {
+    min-height: 250px;
+  }
+
+  .vision-hero-visual figcaption {
+    right: 16px;
+    bottom: 14px;
+    left: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .vision-hero-visual figcaption > small {
+    display: none;
+  }
+
+  .vision-section-heading h2,
+  .vision-stack h2 {
+    font-size: 32px;
+  }
+
+  .vision-pipeline-grid,
+  .vision-project-media-grid,
+  .vision-project-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-pipeline-grid article {
+    min-height: 0;
+  }
+
+  .vision-project-panel {
+    padding: 22px 18px;
+  }
+
+  .vision-project-panel h3 {
+    font-size: 23px;
+  }
+
+  .vision-project-media img,
+  .vision-project-media video,
+  .vision-project-media--single img {
+    height: 250px;
+  }
+
+  .vision-project-matrix-card--wide {
+    grid-column: auto;
+  }
+
+  .vision-project-matrix-card--wide > ul {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-stack {
+    gap: 28px;
+    padding: 24px 20px;
+  }
+
+  .vision-stack-groups article {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
+
 /* Management and collaboration: team-scale operations system. */
 .management-page {
   --management-cyan: #37b8d5;
@@ -4045,9 +7006,30 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   align-items: center;
   gap: 24px;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
   padding: 16px 108px 16px 128px;
   text-align: initial;
+}
+
+.home-quote::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 999px;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    #ff3f4c 0%,
+    rgba(255, 63, 76, .86) 20%,
+    rgba(255, 63, 76, 0) 48%,
+    rgba(47, 101, 255, 0) 52%,
+    rgba(47, 101, 255, .86) 80%,
+    #2f65ff 100%
+  );
+  filter: drop-shadow(-10px 0 7px rgba(255, 63, 76, .18)) drop-shadow(10px 0 7px rgba(47, 101, 255, .18));
+  pointer-events: none;
 }
 
 .quote-stage {
@@ -4222,6 +7204,25 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   width: 19px;
   height: 19px;
   fill: currentColor;
+}
+
+@media (min-width: 861px) {
+  .home-quote {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: 128px;
+  }
+
+  .quote-random-button {
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+  }
+
+  .quote-random-button:hover,
+  .quote-random-button:focus-visible {
+    transform: translateY(-50%) rotate(18deg);
+  }
 }
 
 .acknowledgements {

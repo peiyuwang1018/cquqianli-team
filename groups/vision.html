@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-21" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-43" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -38,8 +38,17 @@
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理与协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
+          <span class="nav-menu">
+            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
           <span class="nav-menu nav-menu--organization">
-            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">团队架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -67,15 +76,6 @@
                 <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
-            </span>
-          </span>
-          <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
-            <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu">
@@ -125,17 +125,92 @@
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="about/organization.html" aria-label="返回组织架构" title="返回组织架构">
+      <a class="page-back-link" href="about/organization.html" aria-label="返回团队架构" title="返回团队架构">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-    <section class="page-hero"><div><p class="page-label">Vision Algorithm</p><h1>视觉算法组</h1></div><p>负责赛场感知、目标识别、定位解算、预测与算法部署，连接传感器和机器人决策。</p></section>
-    <section class="section-block group-detail">
-      <figure class="group-symbol"><img src="assets/images/brand/视觉算法组.png" alt="视觉算法组" /></figure>
-      <div class="detail-panel"><h2>技术栈 / 工具栈</h2><div class="tag-cloud"><span>Python / C++</span><span>OpenCV</span><span>深度学习</span><span>PnP / 轨迹预测</span><span>模型部署</span></div></div>
+<main class="vision-page">
+    <section class="vision-page-hero" aria-labelledby="vision-page-title">
+      <div class="vision-hero-copy">
+        <p class="page-label">VISION ALGORITHM</p>
+        <div class="vision-title-lockup"><h1 id="vision-page-title">视觉算法组</h1><img src="assets/images/brand/vector-icons/vision.svg" alt="" aria-hidden="true" /></div>
+        <p>让机器人看见赛场、理解目标并作出行动：从目标识别、位姿估计和运动预测，到定位建图、路径规划、决策与客户端交互，把传感器数据接入真实比赛闭环。</p>
+      </div>
+      <figure class="vision-hero-visual">
+        <img src="assets/images/groups/vision/auto-aim-demo.png" alt="自瞄系统在暗光环境中识别机器人装甲板" />
+        <figcaption><span>REAL PROJECT OUTPUT</span><strong>暗光目标识别与瞄准解算</strong><small>识别 · 预测 · 解算 · 部署</small></figcaption>
+      </figure>
     </section>
-    <section class="section-block process-grid"><article><span>01</span><h2>自瞄识别和预测链路</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>02</span><h2>数据集采集、标注和训练</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>03</span><h2>视觉与电控通信接口</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article><article><span>04</span><h2>赛场感知能力沉淀</h2><p>后续可补充代表项目、案例图片、负责人和加入建议。</p></article></section>
+
+    <section class="vision-section vision-pipeline" aria-labelledby="vision-pipeline-title">
+      <header class="vision-section-heading"><div><p class="page-label">FROM SENSOR TO ACTION</p><h2 id="vision-pipeline-title">从传感器输入到机器人动作</h2></div><p>视觉组并不只训练一个模型。真正上场的系统需要把感知结果变成稳定、实时、可与整车协同的决策输出。</p></header>
+      <div class="vision-pipeline-grid">
+        <article><span>01</span><i class="mdi mdi-camera-outline" aria-hidden="true"></i><strong>感知识别</strong><p>从相机、LiDAR 和赛场数据中识别机器人、目标物与环境结构。</p></article>
+        <article><span>02</span><i class="mdi mdi-axis-arrow" aria-hidden="true"></i><strong>位姿与跟踪</strong><p>估计目标的准确位置与姿态，持续跟踪运动状态并处理噪声和遮挡。</p></article>
+        <article><span>03</span><i class="mdi mdi-map-marker-path" aria-hidden="true"></i><strong>规划与预测</strong><p>预测目标运动，或在地图与约束中生成机器人、机械臂的可执行路径。</p></article>
+        <article><span>04</span><i class="mdi mdi-state-machine" aria-hidden="true"></i><strong>决策与协同</strong><p>根据场上信息确定目标和行动，并与电控、机械及操作手界面完成接口闭环。</p></article>
+        <article><span>05</span><i class="mdi mdi-chip" aria-hidden="true"></i><strong>部署与验证</strong><p>把算法放进真实算力与通信环境，通过延迟、稳定性和赛场结果验证系统。</p></article>
+      </div>
+    </section>
+
+    <section class="vision-section vision-projects" aria-labelledby="vision-projects-title">
+      <header class="vision-section-heading"><div><p class="page-label">PROJECT CASES</p><h2 id="vision-projects-title">五条项目链路：感知、规划与决策</h2></div><p>选择项目查看视觉组提供的真实案例。页面保留原始运行画面和演示视频，用系统结果解释每项工作解决什么问题。</p></header>
+      <div class="vision-project-browser">
+        <div class="vision-project-directory" role="tablist" aria-label="视觉组项目案例" aria-orientation="vertical">
+          <button type="button" role="tab" id="vision-project-tab-autoaim" aria-controls="vision-project-autoaim" aria-selected="true" data-vision-project-tab="vision-project-autoaim"><span>01</span><i class="mdi mdi-target" aria-hidden="true"></i><strong>自瞄</strong><small>识别 · 预测 · 弹道解算</small></button>
+          <button type="button" role="tab" id="vision-project-tab-engineering" aria-controls="vision-project-engineering" aria-selected="false" tabindex="-1" data-vision-project-tab="vision-project-engineering"><span>02</span><i class="mdi mdi-robot-industrial-outline" aria-hidden="true"></i><strong>工程视觉</strong><small>位姿估计 · 抓取规划</small></button>
+          <button type="button" role="tab" id="vision-project-tab-navigation" aria-controls="vision-project-navigation" aria-selected="false" tabindex="-1" data-vision-project-tab="vision-project-navigation"><span>03</span><i class="mdi mdi-navigation-variant-outline" aria-hidden="true"></i><strong>导航决策</strong><small>定位 · 导航 · 决策</small></button>
+          <button type="button" role="tab" id="vision-project-tab-radar" aria-controls="vision-project-radar" aria-selected="false" tabindex="-1" data-vision-project-tab="vision-project-radar"><span>04</span><i class="mdi mdi-radar" aria-hidden="true"></i><strong>雷达识别</strong><small>融合感知 · 全场跟踪</small></button>
+          <button type="button" role="tab" id="vision-project-tab-ui" aria-controls="vision-project-ui" aria-selected="false" tabindex="-1" data-vision-project-tab="vision-project-ui"><span>05</span><i class="mdi mdi-monitor-dashboard" aria-hidden="true"></i><strong>自定义 UI</strong><small>态势展示 · 人机交互</small></button>
+        </div>
+
+        <div class="vision-project-stage">
+          <section id="vision-project-autoaim" class="vision-project-panel" role="tabpanel" aria-labelledby="vision-project-tab-autoaim" data-vision-project-panel>
+            <header><p class="page-label">AUTO AIM</p><h3>让机器人自主发现、预测并命中目标</h3><p>系统通过摄像头找到敌方机器人，估计其运动状态，预测下一时刻的位置，再结合弹道完成瞄准与发射解算，形成无需操作手持续干预的自动攻击链路。</p><ul><li>目标识别</li><li>运动预测</li><li>弹道解算</li><li>实时部署</li></ul></header>
+            <figure class="vision-project-media vision-project-media--single"><img src="assets/images/groups/vision/auto-aim-demo.png" alt="自瞄算法同时显示两个检测方案的装甲板识别结果" /><figcaption>暗光环境下的装甲板识别与瞄准状态输出</figcaption></figure>
+          </section>
+
+          <section id="vision-project-engineering" class="vision-project-panel" role="tabpanel" aria-labelledby="vision-project-tab-engineering" data-vision-project-panel hidden>
+            <header><p class="page-label">ENGINEERING VISION</p><h3>给机械臂准确目标位姿与可执行抓取路径</h3><p>工程视觉由感知和规划两部分组成：先获得目标物体的准确位置与姿态，再根据识别结果完成避障和抓取路径规划，让机械臂能够可靠接近并操作目标。</p><ul><li>目标分割</li><li>六维位姿估计</li><li>持续跟踪</li><li>避障抓取</li></ul></header>
+            <div class="vision-project-media-grid vision-project-media-grid--balanced vision-project-media-grid--engineering"><figure class="vision-project-media"><img src="assets/images/groups/vision/engineering-vision-perception.png" alt="工程视觉感知模块的识别、分割、位姿估计与跟踪画面" /><figcaption>感知：识别、分割、位姿估计与持续跟踪</figcaption></figure><figure class="vision-project-media"><video controls muted playsinline preload="metadata" aria-label="机械臂避障抓取规划演示"><source src="assets/images/groups/vision/engineering-vision-planning.webm" type="video/webm" /></video><figcaption>规划：根据目标位姿生成机械臂避障抓取轨迹</figcaption></figure></div>
+          </section>
+
+          <section id="vision-project-navigation" class="vision-project-panel" role="tabpanel" aria-labelledby="vision-project-tab-navigation" data-vision-project-panel hidden>
+            <header><p class="page-label">NAVIGATION &amp; DECISION</p><h3>让自动哨兵知道自己在哪、该去哪、为什么去</h3><p>导航决策面向自动哨兵，依次解决感知定位、路径生成和目标决策：感知建立环境与自身位置，导航给出通往目标点的路线，决策依据赛场状态选择目标。</p><ul><li>定位建图</li><li>代价地图</li><li>路径规划</li><li>战术目标</li></ul></header>
+            <div class="vision-project-media-grid vision-project-media-grid--balanced vision-project-media-grid--navigation"><figure class="vision-project-media"><img src="assets/images/groups/vision/navigation-map.png" alt="导航系统在赛场地图上生成局部轨迹" /><figcaption>建图与局部导航轨迹</figcaption></figure><figure class="vision-project-media"><img src="assets/images/groups/vision/navigation-path.png" alt="导航系统在完整赛场地图上规划长距离路径" /><figcaption>跨区域路径规划与动态更新</figcaption></figure></div>
+          </section>
+
+          <section id="vision-project-radar" class="vision-project-panel" role="tabpanel" aria-labelledby="vision-project-tab-radar" data-vision-project-panel hidden>
+            <header><p class="page-label">RADAR PERCEPTION</p><h3>用相机和 LiDAR 构建队伍的全场之眼</h3><p>摄像头负责识别敌我机器人，LiDAR 测量距离和三维位置；融合后的系统持续跟踪场上机器人并把目标显示在小地图上，为操作手和自动哨兵提供实时敌方位置。</p><ul><li>点云建图</li><li>目标识别</li><li>多传感器融合</li><li>全场跟踪</li></ul></header>
+            <div class="vision-project-media-grid vision-project-media-grid--balanced vision-project-media-grid--radar"><figure class="vision-project-media"><img src="assets/images/groups/vision/radar-point-cloud.png" alt="雷达系统构建的赛场三维点云与目标轨迹" /><figcaption>赛场三维点云、目标位置与运动轨迹</figcaption></figure><figure class="vision-project-media"><img src="assets/images/groups/vision/radar-dashboard.png" alt="雷达系统同时显示相机画面和三维点云检测结果" /><figcaption>相机画面、点云与识别结果联合调试</figcaption></figure></div>
+          </section>
+
+          <section id="vision-project-ui" class="vision-project-panel" role="tabpanel" aria-labelledby="vision-project-tab-ui" data-vision-project-panel hidden>
+            <header><p class="page-label">CUSTOM CLIENT</p><h3>把全场信息、机器人状态与操作入口集中到一个界面</h3><p>自定义 UI 面向操作手，把小地图、敌方位置、官方画面、吊射落点、血量、弹量、经济、能量机关和事件提醒集中展示，并与工程机器人的自定义控制器协同。</p><ul><li>全场态势</li><li>状态汇总</li><li>多路画面</li><li>交互控制</li></ul></header>
+            <div class="vision-project-media-grid vision-project-media-grid--contain"><figure class="vision-project-media"><img src="assets/images/groups/vision/custom-ui-01.jpg" alt="自定义客户端同时显示机器人状态、比赛画面与吊射落点" /><figcaption>多路画面与比赛状态同屏展示</figcaption></figure><figure class="vision-project-media"><img src="assets/images/groups/vision/custom-ui-02.jpg" alt="自定义客户端的操作手比赛界面" /><figcaption>面向操作手的实时态势与控制界面</figcaption></figure></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="vision-section vision-project-matrix" aria-labelledby="vision-project-matrix-title">
+      <header class="vision-section-heading"><div><p class="page-label">PROJECT MATRIX</p><h2 id="vision-project-matrix-title">一套视觉能力，服务不同兵种</h2></div><p>视觉组的项目不是彼此孤立的算法练习，而是围绕重装、步兵、哨兵、飞镖、无人机、雷达和全兵种客户端形成的赛季项目矩阵。</p></header>
+      <div class="vision-project-matrix-grid">
+        <article><header><i class="mdi mdi-shield-crown-outline" aria-hidden="true"></i><strong>重装</strong><span>3 条链路</span></header><ul><li>工程视觉</li><li>自瞄</li><li>辅助瞄准与定位解算</li></ul></article>
+        <article><header><i class="mdi mdi-robot-outline" aria-hidden="true"></i><strong>步兵</strong><span>2 条链路</span></header><ul><li>能量机关自瞄</li><li>装甲板自瞄</li></ul></article>
+        <article><header><i class="mdi mdi-robot-dead-outline" aria-hidden="true"></i><strong>哨兵</strong><span>2 条链路</span></header><ul><li>导航决策</li><li>自主瞄准</li></ul></article>
+        <article><header><i class="mdi mdi-rocket-launch-outline" aria-hidden="true"></i><strong>飞镖</strong><span>1 条链路</span></header><ul><li>镖架自主瞄准</li></ul></article>
+        <article><header><i class="mdi mdi-quadcopter" aria-hidden="true"></i><strong>无人机</strong><span>2 条链路</span></header><ul><li>目标识别</li><li>导航决策</li></ul></article>
+        <article><header><i class="mdi mdi-radar" aria-hidden="true"></i><strong>雷达</strong><span>1 条链路</span></header><ul><li>全场目标识别与跟踪</li></ul></article>
+        <article class="vision-project-matrix-card--wide"><header><i class="mdi mdi-monitor-dashboard" aria-hidden="true"></i><strong>全兵种平台</strong><span>公共能力</span></header><ul><li>自定义客户端</li><li>比赛态势与状态汇总</li><li>跨兵种操作入口</li></ul></article>
+      </div>
+      <p class="vision-project-matrix-note"><i class="mdi mdi-information-outline" aria-hidden="true"></i>项目分工会随赛季任务动态调整；这里依据现有材料呈现项目谱系，不公开内部负责人信息。</p>
+    </section>
+
+    <section class="vision-section vision-stack" aria-labelledby="vision-stack-title">
+      <div><p class="page-label">TECHNOLOGY IN CONTEXT</p><h2 id="vision-stack-title"><span>工具只是起点，</span><span>系统闭环才是交付</span></h2><p>视觉组会接触算法、机器人系统和工程部署。真正的目标，是让模型输出能够进入通信接口、控制逻辑和赛场决策，并经受真实光照、遮挡、延迟与算力约束。</p></div>
+      <div class="vision-stack-groups"><article><span>感知与估计</span><p>OpenCV · 深度学习 · 目标检测与分割 · PnP / 位姿估计 · 多目标跟踪</p></article><article><span>定位与规划</span><p>点云 / LiDAR · 定位建图 · 路径规划 · 运动预测 · 决策逻辑</p></article><article><span>工程与部署</span><p>Python / C++ · 模型部署 · 机器人通信 · 数据采集与调试 · 自定义客户端</p></article></div>
+    </section>
   </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
@@ -143,6 +218,7 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260823-9"></script>
+    <script src="assets/js/pages/vision.js?v=20260824-1"></script>
   </body>
 </html>
 

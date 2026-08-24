@@ -4,7 +4,7 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <meta name="description" content="了解重庆大学千里战队机械结构组的工作内容、技术栈、工程习惯、培养路线与职业发展方向。" />
     <title>机械结构组 | 重庆大学千里战队</title>
     <script>
       (() => {
@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-21" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260824-43" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -38,8 +38,17 @@
               <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理与协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
+          <span class="nav-menu">
+            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
           <span class="nav-menu nav-menu--organization">
-            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">组织架构</span></a>
+            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">团队架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -67,15 +76,6 @@
                 <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
                 <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
               </span>
-            </span>
-          </span>
-          <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
-            <span class="nav-dropdown">
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
             </span>
           </span>
           <span class="nav-menu">
@@ -125,24 +125,412 @@
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="about/organization.html" aria-label="返回组织架构" title="返回组织架构">
+      <a class="page-back-link" href="about/organization.html" aria-label="返回团队架构" title="返回团队架构">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-    <section class="page-hero"><div><p class="page-label">Mechanical Structure</p><h1>机械结构组</h1></div><p>简称机械组，围绕竞技机器人机械系统，覆盖自顶向下 CAD、整机布局、轻量化优化、多体动力学仿真、底层传动模组、样机制造装配与测试迭代。</p></section>
-    <section class="section-block group-detail">
-      <figure class="group-symbol"><img src="assets/images/brand/机械结构组.png" alt="机械结构组" /></figure>
-      <div class="detail-panel"><h2>技术方向</h2><div class="tag-cloud"><span>自顶向下 CAD</span><span>模块化整机布局</span><span>轻量化与拓扑优化</span><span>多体动力学仿真</span><span>关节模组与减速器</span><span>样机制造装配</span><span>测试与产品迭代</span></div><a class="text-link" href="https://mech.cquqianli.cn/" target="_blank" rel="noopener noreferrer">进入机械结构组子站</a></div>
-    </section>
-    <section class="section-block method-list"><article><span>01</span><div><h2>自顶向下的 CAD 建模设计方法</h2><p>从整车需求、空间约束和接口关系出发建立主控骨架，先确定关键基准、装配关系和运动边界，再向下拆解零件与模块。</p></div><figure class="method-media"><span>图片待补充</span></figure></article><article><span>02</span><div><h2>多功能模块化竞技机器人 / 机电系统的整机布局与构建方法</h2><p>围绕兵种任务、重量分配、维护路径和跨组接口，完成底盘、云台、发射、取放、飞行平台等系统的整体布置。</p></div><figure class="method-media"><span>图片待补充</span></figure></article><article><span>03</span><div><h2>轻量化设计、拓扑优化与衍生式设计方法</h2><p>在强度、刚度、加工可行性和赛季迭代成本之间做权衡，使用拓扑优化、结构减重和衍生式方案探索提升性能密度。</p></div><figure class="method-media"><span>图片待补充</span></figure></article><article><span>04</span><div><h2>基于多体动力学仿真的元件选型验证和校核</h2><p>通过运动学和动力学仿真校核电机、减速器、轴承、传动件和关键结构载荷，让选型和设计决策有可追溯依据。</p></div><figure class="method-media"><span>图片待补充</span></figure></article><article><span>05</span><div><h2>底层模块，如渐开线齿轮关节模组、减速器的设计方法</h2><p>面向关节、传动和执行机构，理解齿轮、轴系、支撑、润滑、装配公差和失效模式，沉淀可复用的底层模块能力。</p></div><figure class="method-media"><span>图片待补充</span></figure></article><article><span>06</span><div><h2>样机制造加工设备的使用和装配维护</h2><p>掌握 3D 打印、切割、车削、常用手工加工、装配检查和维护规范，让设计方案真正落地为可运行样机。</p></div><figure class="method-media"><span>图片待补充</span></figure></article><article><span>07</span><div><h2>测试方法和产品迭代</h2><p>建立测试记录、故障复盘、版本管理和赛季迭代方法，将问题从“经验判断”转化为可验证、可传承的工程改进。</p></div><figure class="method-media"><span>图片待补充</span></figure></article></section>
-  </main>
+<main class="mechanical-page">
+      <section class="page-hero mechanical-page-hero">
+        <div>
+          <p class="page-label">MECHANICAL STRUCTURE</p>
+          <div class="mechanical-title-lockup">
+            <h1>机械结构组</h1>
+            <img src="assets/images/brand/vector-icons/mechanical.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+        <p>从任务定义到赛场维护，把结构设计、分析验证、加工装配与测试迭代连成一条完整工程链路。机械组不只负责“画图”，更要让机器人被制造出来、可靠运行并持续迭代。</p>
+      </section>
+
+      <div class="mechanical-section-nav" role="tablist" aria-label="机械结构组页面板块" data-mechanical-tabset="section">
+        <button id="mechanical-section-work-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-work" data-mechanical-tab="mechanical-work"><i class="mdi mdi-robot-industrial-outline" aria-hidden="true"></i><span>01</span>工作内容</button>
+        <button id="mechanical-section-stack-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-stack" data-mechanical-tab="mechanical-stack" tabindex="-1"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><span>02</span>技术栈</button>
+        <button id="mechanical-section-practice-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-practice" data-mechanical-tab="mechanical-practice" tabindex="-1"><i class="mdi mdi-clipboard-text-outline" aria-hidden="true"></i><span>03</span>习惯与要求</button>
+        <button id="mechanical-section-growth-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-growth" data-mechanical-tab="mechanical-growth" tabindex="-1"><i class="mdi mdi-school-outline" aria-hidden="true"></i><span>04</span>培养与成长</button>
+        <button id="mechanical-section-career-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-career" data-mechanical-tab="mechanical-career" tabindex="-1"><i class="mdi mdi-briefcase-outline" aria-hidden="true"></i><span>05</span>职业发展</button>
+      </div>
+
+      <section class="section-block mechanical-work" id="mechanical-work" role="tabpanel" aria-labelledby="mechanical-section-work-tab" data-mechanical-panel="section">
+        <figure class="mechanical-work-visual">
+          <img src="assets/images/content/about/projects/robot/26赛季工程.jpg" alt="千里战队 2026 赛季工程机器人机械系统" />
+          <figcaption>从整机任务出发，完成机构、传动、装配和维护设计。</figcaption>
+        </figure>
+        <div class="mechanical-work-copy">
+          <header class="mechanical-section-heading">
+            <p class="page-label">WHAT WE BUILD</p>
+            <h2>我们负责什么</h2>
+            <p>机械结构组承担竞技机器人本体从方案到实物的主要工程工作，并与电控、视觉、硬件和兵种负责人共同完成整机交付。</p>
+          </header>
+          <ol class="mechanical-number-list">
+            <li><span>01</span><div><h3>需求与整机方案</h3><p>把规则、战术任务、重量与空间约束转化为结构指标，完成布局、模块边界和跨组接口定义。</p></div></li>
+            <li><span>02</span><div><h3>机构与结构设计</h3><p>负责底盘、云台、发射、取放、传动与执行机构的建模、选型、校核和方案评审。</p></div></li>
+            <li><span>03</span><div><h3>制造、装配与集成</h3><p>输出工程图与加工信息，参与材料和工艺选择，把零件组装为能够进入整车联调的真实系统。</p></div></li>
+            <li><span>04</span><div><h3>测试、维护与迭代</h3><p>通过测试记录、故障定位、版本管理和赛场维护，持续提升性能、可靠性与可维护性。</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section-block mechanical-stack" id="mechanical-stack" role="tabpanel" aria-labelledby="mechanical-section-stack-tab" data-mechanical-panel="section" hidden>
+        <header class="mechanical-section-heading mechanical-section-heading--wide">
+          <p class="page-label">ENGINEERING STACK</p>
+          <h2>从工程链路，进入七条研发能力主线</h2>
+          <p>软件只是工具层。机械组真正要建立的是从需求、设计、验证到制造和迭代的完整方法，并把每项能力落实到可以评审、制造和测试的项目输出。</p>
+        </header>
+        <div class="mechanical-delivery-chain" aria-label="机械系统工程交付链">
+          <article><span>01</span><i class="mdi mdi-text-box-search-outline" aria-hidden="true"></i><div><h3>需求与设计</h3><p>任务拆解、整机布局、模块边界与接口定义</p></div></article>
+          <article><span>02</span><i class="mdi mdi-chart-bell-curve-cumulative" aria-hidden="true"></i><div><h3>分析与验证</h3><p>载荷判断、选型校核、仿真与风险评审</p></div></article>
+          <article><span>03</span><i class="mdi mdi-tools" aria-hidden="true"></i><div><h3>制造与集成</h3><p>工程图、加工工艺、装配检查与跨组联调</p></div></article>
+          <article><span>04</span><i class="mdi mdi-clipboard-check-outline" aria-hidden="true"></i><div><h3>测试与迭代</h3><p>测试记录、失效复盘、版本管理与赛场维护</p></div></article>
+        </div>
+
+        <div class="mechanical-capability-heading">
+          <div><p class="page-label">SEVEN CAPABILITY LINES</p><h3>七条机械研发能力主线</h3></div>
+          <p>以下内容恢复自机械组原有技术体系。每条能力都预留项目案例位置，后续可逐步补充机器人、模块、图纸、测试记录与复盘材料。</p>
+        </div>
+        <div class="mechanical-capability-grid">
+          <article>
+            <header><i class="mdi mdi-vector-square" aria-hidden="true"></i><span>01</span><h4>自顶向下的 CAD 建模设计方法</h4></header>
+            <p>从整车需求、空间约束和接口关系出发建立主控骨架，先确定关键基准、装配关系与运动边界，再向下拆解零件和模块。</p>
+            <ul><li>参数化建模</li><li>装配基准</li><li>接口管理</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+          <article>
+            <header><i class="mdi mdi-view-dashboard-variant-outline" aria-hidden="true"></i><span>02</span><h4>多功能竞技机器人的整机布局与构建</h4></header>
+            <p>围绕兵种任务、重量分配、维护路径与跨组接口，完成底盘、云台、发射、取放和飞行平台等系统的整体布置。</p>
+            <ul><li>系统布局</li><li>模块划分</li><li>机电协同</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+          <article>
+            <header><i class="mdi mdi-feather" aria-hidden="true"></i><span>03</span><h4>轻量化、拓扑优化与衍生式设计</h4></header>
+            <p>在强度、刚度、加工可行性与赛季迭代成本之间进行权衡，通过结构减重、拓扑优化与方案探索提升性能密度。</p>
+            <ul><li>性能权衡</li><li>结构优化</li><li>可制造性</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+          <article>
+            <header><i class="mdi mdi-axis-arrow" aria-hidden="true"></i><span>04</span><h4>多体动力学仿真与元件选型校核</h4></header>
+            <p>利用运动学和动力学分析校核电机、减速器、轴承、传动件及关键结构载荷，让选型和设计决策具备可追溯依据。</p>
+            <ul><li>运动学</li><li>动力学</li><li>选型校核</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+          <article>
+            <header><i class="mdi mdi-cog-transfer-outline" aria-hidden="true"></i><span>05</span><h4>关节、齿轮与减速器等底层模块</h4></header>
+            <p>面向关节、传动与执行机构，理解齿轮、轴系、支撑、润滑、装配公差和失效模式，沉淀可复用的底层模块能力。</p>
+            <ul><li>传动设计</li><li>轴系支撑</li><li>公差配合</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+          <article>
+            <header><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i><span>06</span><h4>样机制造、装配与维护</h4></header>
+            <p>掌握增材制造、常用机械加工、手工加工、装配检查和维护规范，使设计方案真正落地为可运行、可维修的样机。</p>
+            <ul><li>加工设备</li><li>装配检查</li><li>维护规范</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+          <article class="mechanical-capability-card--wide">
+            <header><i class="mdi mdi-clipboard-pulse-outline" aria-hidden="true"></i><span>07</span><h4>测试方法与产品迭代</h4></header>
+            <p>建立测试记录、故障复盘、版本管理与赛季迭代方法，将问题从“经验判断”转化为可验证、可复用、可传承的工程改进。</p>
+            <ul><li>验证计划</li><li>问题闭环</li><li>版本沉淀</li></ul>
+            <footer><i class="mdi mdi-folder-plus-outline" aria-hidden="true"></i>项目案例接口 · 待补充</footer>
+          </article>
+        </div>
+        <div class="mechanical-project-strip" aria-label="机械结构组项目示例">
+          <figure><img src="assets/images/content/about/projects/robot/SCARA工程.jpg" alt="工程机器人 SCARA 机械臂" loading="lazy" /><figcaption>执行机构</figcaption></figure>
+          <figure><img src="assets/images/content/about/projects/robot/并联腿.jpg" alt="并联腿步兵机器人" loading="lazy" /><figcaption>运动与传动</figcaption></figure>
+          <figure><img src="assets/images/content/about/projects/robot/四摩擦英雄.jpg" alt="四摩擦轮英雄机器人" loading="lazy" /><figcaption>整机集成</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="section-block mechanical-practice" id="mechanical-practice" role="tabpanel" aria-labelledby="mechanical-section-practice-tab" data-mechanical-panel="section" hidden>
+        <header class="mechanical-section-heading">
+          <p class="page-label">HOW WE WORK</p>
+          <h2>组内习惯与要求</h2>
+          <p>这里先呈现机械组希望长期坚持的工作方式；后续可以继续补充真实 SOP、评审模板和赛季传统。</p>
+        </header>
+        <div class="mechanical-practice-list">
+          <article><span>01</span><div><h3>先说清需求与接口</h3><p>开始建模前明确任务、边界、输入输出和验收条件，避免把跨组问题留到整车联调阶段。</p></div></article>
+          <article><span>02</span><div><h3>让方案经得起评审</h3><p>重要结构需要说明依据、风险和备选方案；设计决策应能够被复核，而不是只依赖个人经验。</p></div></article>
+          <article><span>03</span><div><h3>对制造与维护负责</h3><p>设计时同步考虑加工、装配、走线、拆装和赛场抢修，模型完成不等于工程交付完成。</p></div></article>
+          <article><span>04</span><div><h3>用记录完成传承</h3><p>保留版本、测试结果、故障原因和改进结论，让下一位负责人能从已有成果继续向前。</p></div></article>
+        </div>
+        <aside class="mechanical-principle"><i class="mdi mdi-format-quote-open" aria-hidden="true"></i><p>一套机械系统的完成，不以模型画完为终点，而以它能够制造、装配、联调、维护并可靠上场为标准。</p></aside>
+      </section>
+
+      <section class="section-block mechanical-growth" id="mechanical-growth" role="tabpanel" aria-labelledby="mechanical-section-growth-tab" data-mechanical-panel="section" hidden>
+        <header class="mechanical-section-heading mechanical-section-heading--wide">
+          <p class="page-label">GROWTH PATH</p>
+          <h2>大一课程与实训体系</h2>
+          <p>第一学年分为秋季学习期、寒假集训期、春季实训期和赛季结业四个阶段。课程只负责建立方法，真正的成长还来自作业、分享、项目实践与持续贡献。</p>
+        </header>
+
+        <div class="mechanical-training-version">
+          <span><i class="mdi mdi-file-document-outline" aria-hidden="true"></i> 培养方案</span>
+          <strong>QLMECH202707v1</strong>
+          <small>当前页面依据该版本整理，课程顺序和考核细则后续可能更新。</small>
+        </div>
+
+        <section class="mechanical-first-year-position" aria-labelledby="mechanical-first-year-title">
+          <div>
+            <p class="page-label">FIRST-YEAR POSITIONING</p>
+            <h3 id="mechanical-first-year-title">先适应大学，再逐步接近真实备赛</h3>
+            <p>第一学期以学习、练习和建立工程习惯为主，队内强度保持克制，为适应大学课程、生活与个人探索保留弹性。第二学期进入实训后会更接近真实备赛节奏，但压力与责任仍低于正式队员。</p>
+            <p>机械组更重视长期稳定、可持续和务实的发展。大一入队通常希望拥有至少两年以上的队伍生涯，在充实成长的同时协调好学业、备赛与个人生活，而不是依赖短期突击或间歇性高强度投入。</p>
+          </div>
+          <div class="mechanical-growth-lanes">
+            <article>
+              <span>DEFAULT PATH</span>
+              <h4>循序渐进路径</h4>
+              <p>跟随梯队完成学习期与实习期，赛季末完成结业并晋升正式队员，为第二年承担主力研发做好准备。</p>
+            </article>
+            <article class="mechanical-growth-lane--accelerated">
+              <span>OPTIONAL PATH</span>
+              <h4>加速发展路径</h4>
+              <p>少数能力、热情与投入意愿突出的队员，可在本人自愿的前提下获得更多项目机会，同时承担更多责任、工作量与压力。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="mechanical-training-map" aria-labelledby="mechanical-training-map-title">
+          <header>
+            <div><p class="page-label">INTERACTIVE CURRICULUM</p><h3 id="mechanical-training-map-title">点击阶段，查看课程、任务与晋升节点</h3></div>
+            <p>默认路径覆盖完整第一学年；加速路径不是单独课程，而是在完成基础培养后按个人发展情况增加真实项目责任。</p>
+          </header>
+
+          <div class="mechanical-phase-tabs" role="tablist" aria-label="大一培养阶段" data-mechanical-tabset="phase">
+            <button id="mechanical-phase-autumn-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-phase-autumn" data-mechanical-tab="mechanical-phase-autumn"><span>01</span><small>入队—寒假前</small><strong>秋季学习期</strong><em>课程 + 作业 + 分享</em></button>
+            <button id="mechanical-phase-winter-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-winter" data-mechanical-tab="mechanical-phase-winter" tabindex="-1"><span>02</span><small>寒假阶段</small><strong>寒假集训期</strong><em>验收 + 项目导入</em></button>
+            <button id="mechanical-phase-spring-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-spring" data-mechanical-tab="mechanical-phase-spring" tabindex="-1"><span>03</span><small>第二学期</small><strong>春季实训期</strong><em>真实项目贡献</em></button>
+            <button id="mechanical-phase-finish-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-finish" data-mechanical-tab="mechanical-phase-finish" tabindex="-1"><span>04</span><small>赛季末</small><strong>结业与晋升</strong><em>综合评价 + 定岗</em></button>
+          </div>
+
+          <div class="mechanical-phase-panels">
+            <section id="mechanical-phase-autumn" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-autumn-tab" data-mechanical-panel="phase">
+              <div class="mechanical-panel-intro"><span>BASIC TRAINING</span><h4>寒假集训前完整走完 7 节基础课程</h4><p>课程按机械工程交付顺序重新排列，从工作原则与建模规范进入材料、结构、轴系和传动，最后用完整流程案例把知识串起来。</p></div>
+              <div class="mechanical-course-browser">
+                <div class="mechanical-course-directory" role="tablist" aria-label="基础课程目录" aria-orientation="vertical" data-mechanical-tabset="course">
+                  <button id="mechanical-course-01-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-course-01" data-mechanical-tab="mechanical-course-01"><span>CH 01</span><strong>工作流、工作原则与 SOP 导入</strong></button>
+                  <button id="mechanical-course-02-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-02" data-mechanical-tab="mechanical-course-02" tabindex="-1"><span>CH 02</span><strong>Fusion 的画图逻辑和规范</strong></button>
+                  <button id="mechanical-course-03-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-03" data-mechanical-tab="mechanical-course-03" tabindex="-1"><span>CH 03</span><strong>材料和加工工艺</strong></button>
+                  <button id="mechanical-course-04-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-04" data-mechanical-tab="mechanical-course-04" tabindex="-1"><span>CH 04</span><strong>机架设计和基础部件</strong></button>
+                  <button id="mechanical-course-05-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-05" data-mechanical-tab="mechanical-course-05" tabindex="-1"><span>CH 05</span><strong>轴系设计及案例</strong></button>
+                  <button id="mechanical-course-06-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-06" data-mechanical-tab="mechanical-course-06" tabindex="-1"><span>CH 06</span><strong>传动设计及案例</strong></button>
+                  <button id="mechanical-course-07-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-07" data-mechanical-tab="mechanical-course-07" tabindex="-1"><span>CH 07</span><strong>流程案例分析</strong></button>
+                </div>
+                <div class="mechanical-course-panels">
+                  <article id="mechanical-course-01" role="tabpanel" aria-labelledby="mechanical-course-01-tab" data-mechanical-panel="course"><span>CHAPTER 01 · PRINCIPLES</span><h5>先建立一套能够协作和交付的工作方式</h5><p>认识机械组从接收任务、定义需求、方案讨论、设计评审到制造、装配、测试和归档的完整工作流，并导入现行 SOP 与基本工作原则。</p><ul><li>工作流与责任边界</li><li>需求、评审和验收意识</li><li>SOP 与工程记录</li></ul></article>
+                  <article id="mechanical-course-02" role="tabpanel" aria-labelledby="mechanical-course-02-tab" data-mechanical-panel="course" hidden><span>CHAPTER 02 · CAD</span><h5>理解 Fusion 的建模逻辑，而不只是记住命令</h5><p>建立草图、约束、参数、组件和装配关系的基本认知，按照组内规范组织模型，为后续复刻作业和模块设计打好工具基础。</p><ul><li>参数化建模逻辑</li><li>组件与装配关系</li><li>文件与建模规范</li></ul></article>
+                  <article id="mechanical-course-03" role="tabpanel" aria-labelledby="mechanical-course-03-tab" data-mechanical-panel="course" hidden><span>CHAPTER 03 · MANUFACTURING</span><h5>让设计从一开始就考虑材料与制造约束</h5><p>认识常见材料、加工方法、精度、成本和周期，理解不同工艺如何反过来影响结构形式、零件细节与方案选择。</p><ul><li>材料特性</li><li>加工方法与约束</li><li>成本、精度和周期</li></ul></article>
+                  <article id="mechanical-course-04" role="tabpanel" aria-labelledby="mechanical-course-04-tab" data-mechanical-panel="course" hidden><span>CHAPTER 04 · FRAME</span><h5>从机架和基础部件进入结构设计</h5><p>围绕机器人机架、连接与支撑关系，认识常用基础部件及其使用边界，开始把载荷路径、装配与维护纳入设计判断。</p><ul><li>机架与连接</li><li>基础部件认知</li><li>载荷与装配关系</li></ul></article>
+                  <article id="mechanical-course-05" role="tabpanel" aria-labelledby="mechanical-course-05-tab" data-mechanical-panel="course" hidden><span>CHAPTER 05 · SHAFT SYSTEM</span><h5>通过案例理解轴系的支撑、定位与装配</h5><p>学习轴、轴承、联接和定位等基本关系，结合案例判断受力、约束、装配顺序与常见失效风险。</p><ul><li>轴与轴承</li><li>支撑和定位</li><li>装配与失效风险</li></ul></article>
+                  <article id="mechanical-course-06" role="tabpanel" aria-labelledby="mechanical-course-06-tab" data-mechanical-panel="course" hidden><span>CHAPTER 06 · TRANSMISSION</span><h5>根据任务选择并构建传动方案</h5><p>认识常见传动形式、传动比、布置与效率问题，通过案例理解电机、传动元件、执行机构和结构之间的系统关系。</p><ul><li>传动形式与选型</li><li>传动比和布置</li><li>系统匹配</li></ul></article>
+                  <article id="mechanical-course-07" role="tabpanel" aria-labelledby="mechanical-course-07-tab" data-mechanical-panel="course" hidden><span>CHAPTER 07 · PROCESS CASE</span><h5>用案例走通需求、测试与失效闭环</h5><p>通过完整案例分析需求如何定义、测试如何设计、失效如何定位，并把验证结果重新反馈到下一轮方案和结构设计中。</p><ul><li>需求定义</li><li>测试方法</li><li>失效分析与反馈</li></ul></article>
+                </div>
+              </div>
+              <div class="mechanical-parallel-work">
+                <header><span>PARALLEL EXERCISES</span><h4>课程之外，还要完成这些任务</h4><p>当前仅列出已经确认的上半季项目；其他考核项后续再补充。</p></header>
+                <div>
+                  <article><i class="mdi mdi-cube-scan" aria-hidden="true"></i><small>寒假验收</small><h5>CAD 大作业：Fusion 模块复刻</h5><p>通过完整模块复刻检查建模逻辑、规范执行和独立解决工具问题的能力。</p></article>
+                  <article><i class="mdi mdi-presentation-play" aria-hidden="true"></i><small>三次节点</small><h5>开源汇报分享会</h5><p>分别安排在 10 月底、约 11 月 20 日和 12 月中旬，计入上半季梯队成绩。</p></article>
+                  <article><i class="mdi mdi-file-chart-outline" aria-hidden="true"></i><small>学期档案</small><h5>上半季学习表现记录</h5><p>结合课程、作业、分享、兴趣热情与可持续投入形成档案，并作为寒假起承担重要项目、竞争当赛季正式名额的参考。</p></article>
+                </div>
+              </div>
+            </section>
+
+            <section id="mechanical-phase-winter" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-winter-tab" data-mechanical-panel="phase" hidden>
+              <div class="mechanical-panel-intro"><span>WINTER CAMP</span><h4>从课程练习转向可验收的工程输出</h4><p>寒假阶段完成 Fusion 模块复刻验收，并通过集中训练把基础知识放入拆装、加工、装配、测试和小型项目环境中。</p></div>
+              <div class="mechanical-phase-card-grid">
+                <article><span>01</span><h5>完成基础验收</h5><p>检查基础课程与 CAD 大作业的完成质量，确认是否具备继续进入项目实践的基本条件。</p></article>
+                <article><span>02</span><h5>进入项目导入</h5><p>通过已有模块维护、局部测试或小型设计任务，第一次面对真实接口、进度和结果要求。</p></article>
+                <article><span>03</span><h5>识别发展方向</h5><p>结合个人兴趣、能力、精力与前半学期档案，安排适合的实训任务和成长节奏。</p></article>
+              </div>
+              <aside class="mechanical-phase-note"><strong>项目机会不是奖励。</strong><p>能够更早承担重要事务，意味着更多责任、工作量和一定压力；所有加速安排都需要结合实际表现并尊重个人意愿。</p></aside>
+            </section>
+
+            <section id="mechanical-phase-spring" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-spring-tab" data-mechanical-panel="phase" hidden>
+              <div class="mechanical-panel-intro"><span>PROJECT PRACTICE</span><h4>所有梯队队员进入真实项目实训</h4><p>第二学期更接近赛季备赛节奏，但梯队队员的压力和责任仍低于正式队员。项目参与贡献度将作为该学期的主要评价依据。</p></div>
+              <div class="mechanical-spring-route">
+                <article><span>常规路径</span><h5>在指导下完成真实贡献</h5><p>参与模块设计、改进、加工装配、测试维护或项目支持，持续记录任务、结果与贡献，为赛季末结业准备。</p></article>
+                <article><span>加速路径</span><h5>竞争当赛季正式名额</h5><p>表现突出且愿意承担更高责任的梯队队员，可在 4 月底前接受综合评估；若贡献达到要求，可提前晋升正式队员并随队出征分区赛。</p></article>
+              </div>
+              <div class="mechanical-lock-date"><span>APR 30</span><div><strong>提前晋升评估窗口</strong><p>5 月初进入分区赛贡献度结算和名额锁定阶段，因此提前晋升需要在 4 月底前完成评估。</p></div></div>
+            </section>
+
+            <section id="mechanical-phase-finish" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-finish-tab" data-mechanical-panel="phase" hidden>
+              <div class="mechanical-panel-intro"><span>GRADUATION &amp; PROMOTION</span><h4>上下半学期综合表现决定结业晋升</h4><p>第一学期保留课程、作业与分享形成的学习档案；第二学期记录真实项目贡献。两部分共同组成梯队结业与正式队员晋升依据。</p></div>
+              <div class="mechanical-evaluation-flow">
+                <article><span>TERM 1</span><div><small>第一学期</small><h5>学习与基础训练档案</h5><p>课程、CAD 大作业、三次开源汇报，以及兴趣、热情和可持续投入表现。</p></div></article>
+                <i class="mdi mdi-plus" aria-hidden="true"></i>
+                <article><span>TERM 2</span><div><small>第二学期</small><h5>实训项目贡献记录</h5><p>项目参与、任务完成、协作与实际贡献度；两学期权重和具体计分细则后续补充。</p></div></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article class="mechanical-evaluation-result"><span>PASS</span><div><small>赛季末</small><h5>梯队结业并晋升</h5><p>正常成长、完成培养并做出一定贡献即可，标准并非刻意筛掉大多数人。</p></div></article>
+              </div>
+              <aside class="mechanical-future-opportunity"><i class="mdi mdi-source-branch" aria-hidden="true"></i><div><strong>提前晋升后的下一步</strong><p>优秀队员可在下赛季开学前承担培训组或预研工作，并参与下赛季兵种负责人、技术组长等岗位的候选评估；这不是自动承诺，仍取决于持续贡献与岗位需要。</p></div></aside>
+            </section>
+          </div>
+        </section>
+
+        <div class="mechanical-growth-actions">
+          <a class="inline-link" href="museum/training/mechanical.html">阅读机械组先导课</a>
+          <a class="inline-link" href="museum/projects.html">查看团队项目档案</a>
+        </div>
+      </section>
+
+      <section class="section-block mechanical-career" id="mechanical-career" role="tabpanel" aria-labelledby="mechanical-section-career-tab" data-mechanical-panel="section" hidden>
+        <header class="mechanical-section-heading mechanical-section-heading--wide">
+          <p class="page-label">ENGINEER BEYOND THE ARENA</p>
+          <h2>面向职业工程师的发展道路</h2>
+          <p>职业竞争力不等于会用几款软件，而是能够在复杂约束下持续完成可靠交付。我们把招聘要求拆回工程能力，再说明这些能力如何在 RoboMaster 项目中被训练和证明。</p>
+        </header>
+
+        <aside class="mechanical-industry-signal">
+          <div><i class="mdi mdi-radar" aria-hidden="true"></i><span>岗位样本观察</span><strong>竞赛经历被关注，但真实贡献才是证据</strong></div>
+          <p>从多家机器人企业公开的招聘要求中可以看到，RoboMaster、机器人竞赛经历和可验证的工程作品，常被列为优先或加分项；RoboMaster 也已形成面向参赛者的专属招聘通道。但真正产生职业价值的并不是竞赛名称本身，而是你在项目中承担的责任、完成的交付，以及对设计判断、结果与复盘的清晰表达。</p>
+        </aside>
+
+        <dialog class="mechanical-recruitment-dialog" aria-labelledby="mechanical-recruitment-board-title" data-recruitment-dialog>
+          <button class="mechanical-recruitment-dialog-close" type="button" data-recruitment-close aria-label="关闭招聘案例看板"><i class="mdi mdi-close" aria-hidden="true"></i></button>
+          <div class="mechanical-recruitment-board" data-recruitment-board>
+          <header>
+            <div><p class="page-label">INDUSTRY CASE BOARD</p><h3 id="mechanical-recruitment-board-title">头部机器人企业招聘需求案例</h3><p>从公开机械与机器人结构岗位中提取职责、能力要求和竞赛信号，左右翻页查看不同企业如何定义“能够交付的工程师”。</p></div>
+            <div class="mechanical-recruitment-controls">
+              <button type="button" data-recruitment-prev aria-label="查看上一个招聘案例"><i class="mdi mdi-arrow-left" aria-hidden="true"></i></button>
+              <output data-recruitment-progress aria-live="polite">01 / 06</output>
+              <button type="button" data-recruitment-next aria-label="查看下一个招聘案例"><i class="mdi mdi-arrow-right" aria-hidden="true"></i></button>
+            </div>
+          </header>
+
+          <div class="mechanical-recruitment-viewport" aria-live="polite">
+            <article class="mechanical-recruitment-case" data-recruitment-case>
+              <div class="mechanical-recruitment-company"><span>CASE 01</span><h4>舞肌 WUJI</h4><p>机械结构工程师</p><div><em>项目交付</em><em>DFM / DFA</em><em>版本管理</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>以项目和版本为单位，按样机、试产与交付节点完成结构模块交付。</li><li>处理零件堆叠、接口定义、公差链和装配路径，解决跨模块集成问题。</li><li>推进 DFM/DFA、模具、工装、试产和装配问题闭环。</li><li>维护三维模型、工程图、BOM、装配资料和工程变更记录。</li><li>识别磨损、变形、振动、异响等风险，并与上下游共同推动结论落地。</li></ol></div>
+              <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RM、RC、工程训练大赛经历列为加分项，创始人或队长经历进一步优先。</p></div></aside>
+            </article>
+
+            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
+              <div class="mechanical-recruitment-company"><span>CASE 02</span><h4>宇树科技</h4><p>机械工程师</p><div><em>机器人结构</em><em>工艺落地</em><em>生产优化</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>开展机器人机械结构设计与新工艺尝试，让方案进入真实产品。</li><li>负责机器人零部件的结构优化、减速器设计及生产问题处理。</li><li>持续提升产品标准化程度、可服务性、交付效率与稳定性。</li><li>具备三维建模、力学分析、材料和机械制造工艺基础。</li><li>重视动手执行、沟通协作、主动学习和对新知识的热情。</li></ol></div>
+              <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>公开岗位将参加机械相关竞赛的经历列为优先条件。</p></div></aside>
+            </article>
+
+            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
+              <div class="mechanical-recruitment-company"><span>CASE 03</span><h4>拓竹科技</h4><p>机械结构工程师</p><div><em>模块开发</em><em>DFX 评审</em><em>供应链协同</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>从需求拆解到设计落地，承担运动机构、功能机构和外壳等模块的完整开发。</li><li>输出三维、工程图和 BOM，并对成本、质量与交付进度负责。</li><li>开展技术评审与 DFX，识别可制造性、可靠性和结构失效风险。</li><li>制定测试方案，跟进样机验证与生产问题，形成问题闭环。</li><li>与硬件、工艺和供应链紧密协作，推动模块按节奏进入量产。</li></ol></div>
+              <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RoboMaster、RMRC 等机器人竞赛经历和真实动手作品列为加分项。</p></div></aside>
+            </article>
+
+            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
+              <div class="mechanical-recruitment-company"><span>CASE 04</span><h4>极壳科技</h4><p>机器人结构工程师</p><div><em>结构仿真</em><em>装调测试</em><em>技术文档</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>完成机器人结构设计与仿真分析，保障强度、刚度和稳定性。</li><li>与电子、软件和控制团队协同，确保结构与整机系统兼容。</li><li>输出结构零件制造与装配指导资料，参与组装、调试与测试。</li><li>针对测试结果持续优化结构，提高产品性能和生产效率。</li><li>编写设计方案、测试报告和操作手册等完整技术文档。</li></ol></div>
+              <aside><i class="mdi mdi-target-variant" aria-hidden="true"></i><div><span>岗位信号</span><p>该岗位没有把竞赛单列为必要条件，更集中考察仿真、装调、测试、文档与跨团队协作的完整性。</p></div></aside>
+            </article>
+
+            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
+              <div class="mechanical-recruitment-company"><span>CASE 05</span><h4>智元机器人</h4><p>人形机器人关节模组工程师</p><div><em>关节模组</em><em>多物理验证</em><em>量产工艺</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>完成电机、减速器、编码器、传感器、驱动器和轴承等核心器件的选型与集成。</li><li>负责三维建模、零件细化、公差匹配和完整工程资料输出。</li><li>开展静力、动力、疲劳、散热与振动分析，验证关节性能。</li><li>参与样机加工、装配、调试和测试，闭环干涉、卡顿、过热、异响与精度问题。</li><li>衔接整机控制和供应链生产，并跟踪人形关节前沿技术。</li></ol></div>
+              <aside><i class="mdi mdi-target-variant" aria-hidden="true"></i><div><span>岗位信号</span><p>岗位把要求推进到专业机器人底层模块，强调跨器件集成、多物理验证和从样机到量产的完整能力。</p></div></aside>
+            </article>
+
+            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
+              <div class="mechanical-recruitment-company"><span>CASE 06</span><h4>DJI 大疆</h4><p>机械结构工程师</p><div><em>系统分析</em><em>产品交付</em><em>技术研究</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>根据产品功能和需求开展系统分析，将目标转化为合理、创新的结构方案。</li><li>完成产品详细设计，并对设计成本、质量和项目计划负责。</li><li>参与基础性技术研究、专题研究和工程难题攻关。</li><li>具备工程力学、机械结构、材料与常见制造工艺基础。</li><li>重视沟通、闭环思维、动手能力、学习能力以及面对挑战的主动性。</li></ol></div>
+              <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RoboMaster、ROBOCON、航模或方程式大赛等赛事经验列为优先条件。</p></div></aside>
+            </article>
+          </div>
+
+            <footer><span>资料说明</span><p>案例依据当前页面所示公开招聘信息提炼，用于观察能力趋势；岗位名称与具体要求会随企业、团队和招聘批次变化。</p></footer>
+          </div>
+        </dialog>
+
+        <section class="mechanical-industry-capabilities" aria-labelledby="mechanical-industry-capabilities-title">
+          <header><p class="page-label">WHAT INDUSTRY EXPECTS</p><h3 id="mechanical-industry-capabilities-title">行业在寻找怎样的机械工程师</h3><p>不同岗位的机器人形态和业务阶段各不相同，但反复出现的是同一组可迁移的工程能力。</p></header>
+          <div class="mechanical-industry-capability-grid">
+            <article><i class="mdi mdi-sitemap-outline" aria-hidden="true"></i><h4>需求拆解与系统思维</h4><p>把产品功能和系统指标转化为结构方案，理解模块边界、整机布局和上下游约束。</p></article>
+            <article><i class="mdi mdi-vector-combine" aria-hidden="true"></i><h4>结构、机构与接口设计</h4><p>完成运动机构、传动、接口、公差和装配路径设计，并为成本、质量和进度负责。</p></article>
+            <article><i class="mdi mdi-chart-bell-curve-cumulative" aria-hidden="true"></i><h4>分析验证与可靠性</h4><p>用力学、仿真和失效分析判断强度、刚度、疲劳、热、振动与寿命风险。</p></article>
+            <article><i class="mdi mdi-factory" aria-hidden="true"></i><h4>制造、DFM/DFA 与量产意识</h4><p>理解材料、工艺、工程图、BOM、工装和供应链，让设计跨过样机并具备稳定制造条件。</p></article>
+            <article><i class="mdi mdi-bug-check-outline" aria-hidden="true"></i><h4>测试、问题闭环与版本交付</h4><p>制定测试方案，定位异响、磨损、干涉、过热等问题，维护版本资料并完成回归验证。</p></article>
+            <article><i class="mdi mdi-account-switch-outline" aria-hidden="true"></i><h4>跨团队协作与结果责任</h4><p>和电控、算法、工艺、测试与供应链协同，以明确责任、截止时间和退出标准保障项目节奏。</p></article>
+          </div>
+          <div class="mechanical-industry-case-entry">
+            <div><i class="mdi mdi-domain" aria-hidden="true"></i><span>INDUSTRY CASE BOARD</span><p>想知道这些能力如何出现在真实岗位中？查看六家头部机器人企业的公开招聘需求案例。</p></div>
+            <button type="button" data-recruitment-open>查看招聘需求案例 <i class="mdi mdi-arrow-top-right" aria-hidden="true"></i></button>
+          </div>
+        </section>
+
+        <section class="mechanical-career-mapping" aria-labelledby="mechanical-career-mapping-title">
+          <header><p class="page-label">FROM RM TO INDUSTRY</p><h3 id="mechanical-career-mapping-title">千里机械组能够提供什么。</h3><p>不是把比赛包装成“工作经验”，而是在真实长赛季中积累可被展示、追问和验证的工程证据。</p></header>
+          <div class="mechanical-career-flip-grid" aria-label="点击卡片查看赛季经历对应的工程能力">
+            <button class="mechanical-career-flip-card" type="button" data-career-flip aria-pressed="false">
+              <span class="mechanical-career-flip-inner">
+                <span class="mechanical-career-flip-face mechanical-career-flip-front"><span class="mechanical-career-flip-index">01</span><i class="mdi mdi-calendar-sync-outline" aria-hidden="true"></i><strong>跟完一项长期研发</strong><span>在完整赛季中推动一个模块从需求、原型走向上场，并持续保留里程碑、测试与版本记录。</span><small>点击翻面 <i class="mdi mdi-rotate-3d-variant" aria-hidden="true"></i></small></span>
+                <span class="mechanical-career-flip-face mechanical-career-flip-back"><span>ENGINEERING CAPABILITY</span><strong>对长期项目和连续交付负责</strong><span>你会逐步学会管理进度与方案变化，在不断迭代中仍然维持项目目标、版本和交付的连续性。</span><small>点击返回 <i class="mdi mdi-undo-variant" aria-hidden="true"></i></small></span>
+              </span>
+            </button>
+            <button class="mechanical-career-flip-card" type="button" data-career-flip aria-pressed="false">
+              <span class="mechanical-career-flip-inner">
+                <span class="mechanical-career-flip-face mechanical-career-flip-front"><span class="mechanical-career-flip-index">02</span><i class="mdi mdi-ruler-square-compass" aria-hidden="true"></i><strong>把比赛任务变成整机方案</strong><span>从规则和战术需求出发，完成指标拆解、布局权衡、接口定义与设计评审。</span><small>点击翻面 <i class="mdi mdi-rotate-3d-variant" aria-hidden="true"></i></small></span>
+                <span class="mechanical-career-flip-face mechanical-career-flip-back"><span>ENGINEERING CAPABILITY</span><strong>建立系统思维与方案判断</strong><span>你会逐步学会在性能、重量、空间、维护和赛程等约束之间作出有依据、可解释的取舍。</span><small>点击返回 <i class="mdi mdi-undo-variant" aria-hidden="true"></i></small></span>
+              </span>
+            </button>
+            <button class="mechanical-career-flip-card" type="button" data-career-flip aria-pressed="false">
+              <span class="mechanical-career-flip-inner">
+                <span class="mechanical-career-flip-face mechanical-career-flip-front"><span class="mechanical-career-flip-index">03</span><i class="mdi mdi-tools" aria-hidden="true"></i><strong>让设计真正被制造和集成</strong><span>亲自面对工程图、加工沟通、装配检查与跨组联调中的真实问题。</span><small>点击翻面 <i class="mdi mdi-rotate-3d-variant" aria-hidden="true"></i></small></span>
+                <span class="mechanical-career-flip-face mechanical-career-flip-back"><span>ENGINEERING CAPABILITY</span><strong>理解可制造、可装配与系统集成</strong><span>你会把制造和维护条件带回设计过程，不再把“模型画完”误认为工程已经完成。</span><small>点击返回 <i class="mdi mdi-undo-variant" aria-hidden="true"></i></small></span>
+              </span>
+            </button>
+            <button class="mechanical-career-flip-card" type="button" data-career-flip aria-pressed="false">
+              <span class="mechanical-career-flip-inner">
+                <span class="mechanical-career-flip-face mechanical-career-flip-front"><span class="mechanical-career-flip-index">04</span><i class="mdi mdi-alert-decagram-outline" aria-hidden="true"></i><strong>在故障和抢修中完成闭环</strong><span>使用测试数据定位失效，提出改进方案，并通过回归测试确认问题是否真正解决。</span><small>点击翻面 <i class="mdi mdi-rotate-3d-variant" aria-hidden="true"></i></small></span>
+                <span class="mechanical-career-flip-face mechanical-career-flip-back"><span>ENGINEERING CAPABILITY</span><strong>基于证据解决问题</strong><span>你会形成识别可靠性风险、验证判断并把故障闭环到底的工作习惯，而不是依赖模糊经验。</span><small>点击返回 <i class="mdi mdi-undo-variant" aria-hidden="true"></i></small></span>
+              </span>
+            </button>
+            <button class="mechanical-career-flip-card" type="button" data-career-flip aria-pressed="false">
+              <span class="mechanical-career-flip-inner">
+                <span class="mechanical-career-flip-face mechanical-career-flip-front"><span class="mechanical-career-flip-index">05</span><i class="mdi mdi-account-network-outline" aria-hidden="true"></i><strong>和不同专业共同交付</strong><span>在机械、电控、视觉和兵种之间明确接口、同步结论，并共同承担整机结果。</span><small>点击翻面 <i class="mdi mdi-rotate-3d-variant" aria-hidden="true"></i></small></span>
+                <span class="mechanical-career-flip-face mechanical-career-flip-back"><span>ENGINEERING CAPABILITY</span><strong>清晰沟通并推动跨团队协作</strong><span>你会学会把专业判断说清楚、把责任边界对齐，并让跨团队问题继续向前，而不是停在等待和误解中。</span><small>点击返回 <i class="mdi mdi-undo-variant" aria-hidden="true"></i></small></span>
+              </span>
+            </button>
+            <button class="mechanical-career-flip-card" type="button" data-career-flip aria-pressed="false">
+              <span class="mechanical-career-flip-inner">
+                <span class="mechanical-career-flip-face mechanical-career-flip-front"><span class="mechanical-career-flip-index">06</span><i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i><strong>把经验留给后来者</strong><span>整理课程、SOP、设计文档与测试报告，并在项目中指导下一届队员。</span><small>点击翻面 <i class="mdi mdi-rotate-3d-variant" aria-hidden="true"></i></small></span>
+                <span class="mechanical-career-flip-face mechanical-career-flip-back"><span>ENGINEERING CAPABILITY</span><strong>把个人经验转化为团队知识</strong><span>你会训练技术表达、复盘和带人成长的能力，让自己的成果能够被复用、验证和继续迭代。</span><small>点击返回 <i class="mdi mdi-undo-variant" aria-hidden="true"></i></small></span>
+              </span>
+            </button>
+          </div>
+
+          <aside class="mechanical-alumni-bridge">
+            <div><i class="mdi mdi-account-tie-voice-outline" aria-hidden="true"></i><p class="page-label">ALUMNI &amp; INDUSTRY GUIDANCE</p><h3>来自行业一线前辈的经验与机会连接</h3><p>已经进入机器人及相关行业的战队前辈和校友，可以帮助新队员理解真实岗位、行业方向与成长路径，并围绕作品集、简历、面试和职业选择提供经验指导。</p></div>
+            <div class="mechanical-alumni-support-list"><article><span>01</span><strong>行业经验指导</strong><p>了解企业研发流程、岗位分工、能力要求与不同技术方向的长期发展。</p></article><article><span>02</span><strong>求职准备反馈</strong><p>围绕项目表达、作品集、简历和面试复盘，获得更贴近行业现场的建议。</p></article><article><span>03</span><strong>实习与校招连接</strong><p>在岗位匹配、实际机会和校友意愿允许时，获得实习或校园招聘内推支持；内推不等同于录用。</p></article></div>
+          </aside>
+        </section>
+
+        <section class="mechanical-beyond-tools" aria-labelledby="mechanical-beyond-tools-title">
+          <header><p class="page-label">BEYOND SOFTWARE</p><h3 id="mechanical-beyond-tools-title">比软件操作更难替代的能力</h3></header>
+          <div>
+            <article><i class="mdi mdi-head-cog-outline" aria-hidden="true"></i><span>METHODS</span><h4>工程方法</h4><ul><li>需求拆解与约束权衡</li><li>接口、风险和验证管理</li><li>失效分析与问题闭环</li><li>版本、文档和知识传承</li></ul></article>
+            <article><i class="mdi mdi-account-hard-hat-outline" aria-hidden="true"></i><span>BEHAVIOURS</span><h4>职业行为</h4><ul><li>对结果负责并持续投入</li><li>接受评审并清晰沟通</li><li>主动动手、复盘和学习</li><li>在压力下保持协作与节奏</li></ul></article>
+          </div>
+        </section>
+
+        <div class="mechanical-career-actions">
+          <div>
+            <p class="page-label">ALUMNI &amp; INDUSTRY NETWORK</p>
+            <h3>把项目经历继续连接到升学、实习与行业选择</h3>
+            <p>队伍现有的校友、顾问与现役成员网络可以提供方向信息和经验交流；具体企业合作、岗位推荐与对接方式只在事实核实后公开。</p>
+            <a class="inline-link" href="museum/hall-of-fame.html#alumni">查看人才去向与发展网络</a>
+          </div>
+          <aside class="mechanical-recruit-panel">
+            <p class="page-label">JOIN THE TEAM</p>
+            <h2>从一项真实交付开始，建立自己的工程证据。</h2>
+            <p>查看机械组岗位、培养方式与先导课，判断这条长期工程道路是否适合你。</p>
+            <a href="join/index.html#groups">查看岗位信息 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+          </aside>
+        </div>
+      </section>
+    </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260823-9"></script>
+    <script src="assets/js/pages/mechanical.js?v=20260824-5"></script>
   </body>
 </html>
 
