@@ -919,6 +919,58 @@ function initRecruitLetter() {
   document.body.append(trigger, dialog);
 }
 
+function initSiteStats() {
+  if (document.querySelector("script[data-busuanzi-script]")) return;
+
+  if (document.body.dataset.page === "home") {
+    const panel = document.createElement("details");
+    panel.className = "site-stats-panel";
+    panel.dataset.siteStats = "";
+    panel.setAttribute("aria-label", "当前域名访问数据");
+    panel.innerHTML = `
+      <summary>
+        <span class="site-stats-summary-icon" aria-hidden="true">
+          <i class="mdi mdi-chart-timeline-variant-shimmer"></i>
+        </span>
+        <span class="site-stats-summary-copy">
+          <strong>站点数据</strong>
+          <small data-site-stats-host></small>
+        </span>
+        <i class="mdi mdi-chevron-up site-stats-chevron" aria-hidden="true"></i>
+      </summary>
+      <div class="site-stats-grid" aria-live="polite">
+        <span><strong id="busuanzi_today_pv">--</strong><small>今日浏览</small></span>
+        <span><strong id="busuanzi_site_uv">--</strong><small>总访客</small></span>
+        <span><strong id="busuanzi_site_pv">--</strong><small>总浏览</small></span>
+      </div>
+      <a class="site-stats-source" href="https://www.busuanzi.cc/" target="_blank" rel="noopener noreferrer">
+        当前域名统计 · BUSUANZI
+      </a>
+    `;
+
+    const hostLabel = panel.querySelector("[data-site-stats-host]");
+    if (hostLabel) hostLabel.textContent = window.location.hostname || "本地预览";
+    document.body.append(panel);
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js";
+  script.async = true;
+  script.dataset.busuanziScript = "";
+  script.addEventListener("error", () => {
+    const panel = document.querySelector("[data-site-stats]");
+    if (!panel) return;
+    panel.classList.add("is-unavailable");
+    panel.querySelectorAll(".site-stats-grid strong").forEach((value) => {
+      value.textContent = "--";
+    });
+    const source = panel.querySelector(".site-stats-source");
+    if (source) source.textContent = "统计服务暂不可用";
+  });
+  document.head.append(script);
+}
+
+initSiteStats();
 initRecruitLetter();
 
 

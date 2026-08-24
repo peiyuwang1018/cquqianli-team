@@ -182,8 +182,8 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260824-69");
-  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260823-9");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260824-76");
+  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260824-11");
   fs.writeFileSync(file, html);
 }
 
