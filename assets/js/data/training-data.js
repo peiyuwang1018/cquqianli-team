@@ -5,6 +5,14 @@ const lessons = {
     english: "MECHANICAL STRUCTURE",
     detailHref: "groups/mechanical.html",
     icon: "assets/images/brand/vector-icons/mechanical.svg",
+    poster: "assets/images/content/join/group-posters/mechanical.webp",
+    work: [
+      "从整车任务、重量与空间约束出发，完成布局、机构方案及跨组接口设计。",
+      "负责传动、关节、底盘、云台、发射或取放等模块的建模、选型与验证。",
+      "参与加工、装配、整车联调、维护和测试复盘，让方案持续迭代并可靠上场。",
+    ],
+    trainingPlan:
+      "从整机认识、制图与 CAD 基础开始，进入模块设计、加工装配和测试记录，逐步承担真实机器人机构或系统交付。",
     recruitment:
       "从整机任务和真实约束出发，把结构、机构、加工装配与测试迭代连成一条完整工程链路。这里不仅需要画出零件，更需要让机器人可靠地制造出来、装起来并在赛场上持续工作。",
     directions: ["自顶向下 CAD", "整机布局", "轻量化与仿真", "加工装配", "测试迭代"],
@@ -28,6 +36,14 @@ const lessons = {
     english: "ELECTRICAL CONTROL",
     detailHref: "groups/control.html",
     icon: "assets/images/brand/vector-icons/control.svg",
+    poster: "assets/images/content/join/group-posters/control.webp",
+    work: [
+      "实现底盘、云台、发射机构等机器人模块的运动控制与执行器协同。",
+      "构建整车状态机和通信链路，为裁判系统、视觉算法与传感器提供稳定接口。",
+      "参与跨模块联调、数据记录、异常处理与测试装置功能实现。",
+    ],
+    trainingPlan:
+      "沿一台机器人的完整数据流认识系统，从 C / C++、STM32 和通信基础进入关键模块，最终参与整车控制框架与赛季联调。",
     recruitment:
       "围绕机器人的控制软件与整车数据流工作：让遥控输入、传感器反馈、运动解算、通信链路和执行器在同一套可靠的软件架构中协同起来。",
     directions: ["嵌入式开发", "运动控制", "通信链路", "整车状态机", "赛季联调"],
@@ -62,6 +78,14 @@ const lessons = {
     english: "VISION ALGORITHM",
     detailHref: "groups/vision.html",
     icon: "assets/images/brand/vector-icons/vision.svg",
+    poster: "assets/images/content/join/group-posters/vision.webp",
+    work: [
+      "开发自动瞄准、导航、决策等智能算法，让机器人理解并响应赛场。",
+      "完成数据采集、目标识别、状态估计、轨迹规划、视觉跟踪与定位解算。",
+      "把算法稳定部署到机器人，并与电控、传感器及测试系统完成联调。",
+    ],
+    trainingPlan:
+      "从 C++ / Python、Linux 和 Git 入门，逐步学习 OpenCV、位姿解算、目标检测与 ROS2，并通过视觉小项目进入真实赛场任务。",
     recruitment:
       "让机器人获得赛场上的眼睛与大脑：从图像、传感器和场地信息中识别目标、估计位置、预测运动，并把算法稳定部署到真实机器人上。",
     directions: ["计算机视觉", "目标识别", "定位解算", "运动预测", "算法部署"],
@@ -102,6 +126,14 @@ const lessons = {
     english: "HARDWARE DEVELOPMENT",
     detailHref: "groups/hardware.html",
     icon: "assets/images/brand/vector-icons/hardware.svg",
+    poster: "assets/images/content/join/group-posters/hardware.webp",
+    work: [
+      "设计机器人板卡、电源与保护电路，并完成传感器和通信接口接入。",
+      "规划和维护整车电气系统、供电链路与线束，支撑各兵种稳定运行。",
+      "参与焊接、板级调试、故障排查和可靠性测试，把硬件问题闭环到设计端。",
+    ],
+    trainingPlan:
+      "从电路基础、焊接与测试工具开始，进入 EDA、PCB 设计和板级调试，逐步承担真实硬件模块与整车电气可靠性任务。",
     recruitment:
       "负责机器人电路、电气连接、供电保护、传感器接入与硬件可靠性支持，让每一块板卡和每一束线缆都能经受真实赛场的振动、冲击与维护压力。",
     directions: ["电路设计", "电气系统", "供电保护", "传感器接入", "可靠性验证"],
@@ -112,6 +144,14 @@ const lessons = {
     english: "OPERATIONS",
     detailHref: "groups/operations.html",
     icon: "assets/images/brand/vector-icons/operations.svg",
+    poster: "assets/images/content/join/group-posters/operations.webp",
+    work: [
+      "制作海报、文创、影像和平台内容，维护战队品牌与对外形象。",
+      "组织团队活动、赞助沟通、财务物资和差旅后勤，支撑赛季稳定运转。",
+      "记录团队成长、整理档案资料，并推动组间信息与项目协作。",
+    ],
+    trainingPlan:
+      "从内容制作、品牌规范和基础运营开始，在真实传播与活动任务中积累作品，逐步承担项目统筹、对外沟通和团队运营责任。",
     recruitment:
       "把赛事、工程与团队故事准确地传递出去，同时支撑活动、品牌、资料、财务和对外沟通，让一支工程队伍能够被看见、被理解并持续运转。",
     directions: ["品牌视觉", "内容传播", "活动组织", "资料与财务", "对外沟通"],

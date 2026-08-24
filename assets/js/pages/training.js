@@ -65,6 +65,9 @@
   const renderList = (items, className) =>
     `<ul class="${className}">${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
 
+  const renderWork = (items = []) =>
+    `<ol class="group-letter-work-list">${items.map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><p>${item}</p></li>`).join("")}</ol>`;
+
   const renderLesson = (lesson) => {
     if (!lesson) {
       return `
@@ -103,20 +106,35 @@
     const group = lessons[key];
     if (!group) return;
     content.innerHTML = `
-      <header class="group-letter-header">
-        <div>
-          <p class="page-label">${group.english}</p>
-          <h2 id="group-letter-title">${group.name}</h2>
+      <div class="group-letter-layout">
+        <figure class="group-letter-poster">
+          <a href="${group.poster}" target="_blank" rel="noopener noreferrer" aria-label="查看${group.name}完整介绍海报"><img src="${group.poster}" alt="${group.name}介绍海报" /></a>
+          <figcaption>© 鄢政 · 组别介绍海报</figcaption>
+        </figure>
+        <div class="group-letter-profile">
+          <header class="group-letter-header">
+            <div>
+              <p class="page-label">${group.english}</p>
+              <h2 id="group-letter-title">${group.name}</h2>
+            </div>
+            <img src="${group.icon}" alt="" aria-hidden="true" />
+          </header>
+          <p class="group-letter-profile-lead">${group.recruitment}</p>
+          <section class="group-letter-work" aria-labelledby="group-letter-work-title">
+            <p class="group-letter-kicker">WHAT YOU WILL BUILD</p>
+            <h3 id="group-letter-work-title">主要工作</h3>
+            ${renderWork(group.work)}
+          </section>
+          <section class="group-letter-training-plan" aria-labelledby="group-letter-training-title">
+            <p class="group-letter-kicker">TRAINING PATH</p>
+            <h3 id="group-letter-training-title">培养计划</h3>
+            <p>${group.trainingPlan}</p>
+            ${renderList(group.directions, "group-letter-direction-list")}
+            <a class="group-letter-detail" href="${group.detailHref}">查看组别详情 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+          </section>
+          ${renderLesson(group.lesson)}
         </div>
-        <img src="${group.icon}" alt="" aria-hidden="true" />
-      </header>
-      <section class="group-letter-recruitment">
-        <p class="group-letter-kicker">RECRUITMENT BRIEF</p>
-        <p>${group.recruitment}</p>
-        ${renderList(group.directions, "group-letter-direction-list")}
-        <a class="group-letter-detail" href="${group.detailHref}">进入组别详情 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
-      </section>
-      ${renderLesson(group.lesson)}`;
+      </div>`;
 
     dialog.hidden = false;
     document.documentElement.classList.add("has-group-letter");
