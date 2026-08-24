@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>重庆大学千里战队官方网站上线预告</title>
+  <style>
+    @font-face {
+      font-family: "DIN Qianli";
+      src: url("./assets/DIN1451-36breit.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "DIN Display";
+      src: url("./assets/DINishExpanded-Black.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #080a0c;
+      --panel: #111417;
+      --panel-2: #15191d;
+      --ink: #f4f2eb;
+      --muted: #a9adb0;
+      --line: #30353a;
+      --green: #43f58b;
+      --pink: #ef2d7c;
+      --mechanical: #c59a4b;
+      --control: #6e9dca;
+      --vision: #8976b2;
+      --hardware: #62a66f;
+      --operations: #bd6f84;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 1200px;
+      height: 1600px;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      color: var(--ink);
+      font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      text-rendering: geometricPrecision;
+    }
+
+    .poster {
+      position: relative;
+      isolation: isolate;
+      width: 1200px;
+      height: 1600px;
+      padding: 54px 64px 46px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      z-index: -1;
+      border: 1px solid #444a50;
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: "";
+      position: absolute;
+      right: -104px;
+      bottom: 222px;
+      z-index: -2;
+      width: 640px;
+      height: 640px;
+      opacity: .061;
+      background: url("./assets/qianli-mark.svg") center / contain no-repeat;
+      transform: rotate(-8deg);
+    }
+
+    .homepage-echo {
+      position: absolute;
+      left: 264px;
+      right: 264px;
+      bottom: 56px;
+      z-index: 0;
+      height: 264px;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .homepage-echo::before,
+    .homepage-echo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    .homepage-echo::before {
+      background: url("./assets/homepage-echo.png") center 56% / cover no-repeat;
+      opacity: .12;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+    }
+
+    .homepage-echo::after {
+      background:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+
+    .topbar,
+    .hero,
+    .groups {
+      position: relative;
+      z-index: 2;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      min-height: 102px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cqu-lockup {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-width: 560px;
+      padding-bottom: 22px;
+    }
+
+    .cqu-plate {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 70px;
+      height: 70px;
+      padding: 0;
+      background: transparent;
+    }
+
+    .cqu-plate img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .92;
+    }
+
+    .team-horse {
+      display: block;
+      flex: 0 0 auto;
+      width: 54px;
+      height: 58px;
+      margin-left: 2px;
+      object-fit: contain;
+    }
+
+    .team-id {
+      display: grid;
+      align-content: center;
+      gap: 5px;
+      line-height: 1;
+    }
+
+    .team-id b {
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 20px;
+      letter-spacing: .14em;
+      color: var(--green);
+    }
+
+    .team-id span {
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      font-size: 25px;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+
+    .rm-lockup {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 8px 22px 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .rm-lockup span {
+      max-width: 145px;
+      font-family: "DIN Display", "Arial Narrow", sans-serif;
+      font-size: 13px;
+      line-height: 1.35;
+      letter-spacing: .12em;
+      text-align: right;
+      color: #b8bdc1;
+    }
+
+    .rm-lockup img {
+      width: 74px;
+      height: 74px;
+      object-fit: contain;
+      filter: invert(1);
+    }
+
+    .hero {
+      position: relative;
+      padding: 76px 28px 42px;
+    }
+
+    .hero::before {
+      content: "QL2027";
+      position: absolute;
+      top: 60px;
+      right: 4px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 82px;
+      letter-spacing: .03em;
+      color: rgba(255,255,255,.039);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 36px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 20px;
+      letter-spacing: .15em;
+      color: var(--green);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 32px;
+      background: var(--pink);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      font-weight: 500;
+      letter-spacing: .015em;
+    }
+
+    .hero h1 .team {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 66px;
+      line-height: 1.12;
+      color: #ced2d3;
+    }
+
+    .hero h1 .launch {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: end;
+      gap: 28px;
+      font-size: 116px;
+      line-height: .95;
+    }
+
+    .hero h1 .launch strong {
+      position: relative;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .hero h1 .launch strong::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      right: -64px;
+      bottom: -23px;
+      height: 7px;
+      background: var(--pink);
+    }
+
+    .season-row {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 30px;
+      margin-top: 76px;
+    }
+
+    .season-message,
+    .time-card {
+      min-height: 302px;
+      border: 1px solid var(--line);
+      background: rgba(17,20,23,.93);
+    }
+
+    .season-message {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 38px 42px 34px;
+      overflow: hidden;
+    }
+
+    .season-message::before {
+      content: "RECRUITMENT";
+      position: absolute;
+      right: -78px;
+      top: 14px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 76px;
+      letter-spacing: .02em;
+      color: rgba(255,255,255,.036);
+      transform: rotate(90deg);
+    }
+
+    .season-message .season {
+      margin-bottom: 17px;
+      font-family: "DIN Display", "Microsoft YaHei", sans-serif;
+      font-size: 36px;
+      letter-spacing: .08em;
+      color: var(--green);
+    }
+
+    .season-message h2 {
+      margin: 0;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      font-size: 54px;
+      font-weight: 500;
+      line-height: 1.22;
+      letter-spacing: .035em;
+      white-space: nowrap;
+    }
+
+    .season-message p {
+      margin: 23px 0 0;
+      font-size: 18px;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    .time-card {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+    }
+
+    .date-block,
+    .clock-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .date-block {
+      border-right: 1px solid var(--line);
+    }
+
+    .time-card small {
+      margin-bottom: 20px;
+      font-family: "DIN Display", "Arial Narrow", sans-serif;
+      font-size: 13px;
+      letter-spacing: .16em;
+      color: var(--muted);
+    }
+
+    .date-block strong,
+    .clock-block strong {
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-weight: 900;
+      line-height: .85;
+      letter-spacing: -.02em;
+    }
+
+    .date-block strong {
+      font-size: 72px;
+      color: var(--pink);
+    }
+
+    .date-block span {
+      margin-top: 18px;
+      font-size: 19px;
+      letter-spacing: .18em;
+      color: #d7d9d9;
+    }
+
+    .clock-block strong {
+      font-size: 83px;
+      color: var(--green);
+    }
+
+    .clock-block span {
+      margin-top: 19px;
+      font-size: 19px;
+      letter-spacing: .18em;
+      color: #d7d9d9;
+    }
+
+    .groups {
+      position: relative;
+      margin: 44px 28px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .groups::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -4px;
+      height: 4px;
+      background:
+        linear-gradient(90deg, #ff4655 0%, #ff4655 18%, transparent 100%) left center / 48% 4px no-repeat,
+        linear-gradient(270deg, #416ff4 0%, #416ff4 18%, transparent 100%) right center / 48% 4px no-repeat;
+      pointer-events: none;
+    }
+
+    .groups-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+    }
+
+    .groups-header b {
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 17px;
+      letter-spacing: .15em;
+      color: var(--green);
+    }
+
+    .groups-header span {
+      font-size: 15px;
+      letter-spacing: .14em;
+      color: #8f9599;
+    }
+
+    .group-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .group {
+      --tone: #fff;
+      position: relative;
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      align-items: center;
+      gap: 14px;
+      min-height: 160px;
+      padding: 20px 17px;
+      border-right: 1px solid var(--line);
+      background: rgba(15,18,21,.85);
+    }
+
+    .group:last-child { border-right: 0; }
+
+    .group::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 5px;
+      background: var(--tone);
+    }
+
+    .group-mark {
+      display: block;
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .group b {
+      display: block;
+      margin-bottom: 9px;
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      font-size: 22px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .group span {
+      display: block;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 10px;
+      line-height: 1.35;
+      letter-spacing: .08em;
+      color: #92979b;
+    }
+
+    .group--mechanical { --tone: var(--mechanical); }
+    .group--control { --tone: var(--control); }
+    .group--vision { --tone: var(--vision); }
+    .group--hardware { --tone: var(--hardware); }
+    .group--operations { --tone: var(--operations); }
+
+    .footer {
+      position: absolute;
+      left: 92px;
+      right: 92px;
+      bottom: 82px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 46px;
+      margin: 0;
+      z-index: 3;
+    }
+
+    .qianli-signature {
+      display: flex;
+      align-items: flex-end;
+      min-height: 112px;
+    }
+
+    .qianli-signature img {
+      display: block;
+      width: 196px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .status {
+      display: grid;
+      grid-template-columns: 16px auto;
+      align-items: start;
+      gap: 15px;
+      padding-bottom: 4px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      color: #a5aaad;
+    }
+
+    .status i {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(67,245,139,.09);
+      margin-top: 5px;
+    }
+
+    .status-copy {
+      display: grid;
+      justify-items: end;
+      gap: 9px;
+      text-align: right;
+    }
+
+    .status-copy strong {
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .12em;
+      color: var(--ink);
+    }
+
+    .status-copy span {
+      font-size: 16px;
+      letter-spacing: .14em;
+      color: #a5aaad;
+    }
+
+    .spectrum {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      height: 6px;
+      z-index: 3;
+    }
+
+    .spectrum i:nth-child(1) { background: var(--mechanical); }
+    .spectrum i:nth-child(2) { background: var(--control); }
+    .spectrum i:nth-child(3) { background: var(--vision); }
+    .spectrum i:nth-child(4) { background: var(--hardware); }
+    .spectrum i:nth-child(5) { background: var(--operations); }
+
+  </style>
+</head>
+<body>
+  <main class="poster" role="img" aria-label="重庆大学千里战队官方网站上线预告海报">
+    <div class="homepage-echo" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="cqu-lockup">
+        <div class="cqu-plate"><img src="./assets/cqu-logo.svg" alt="重庆大学校徽" /></div>
+        <img class="team-horse" src="./assets/qianli-mark.svg" alt="千里战队马头标志" />
+        <div class="team-id">
+          <b>CQU QIANLI</b>
+          <span>重庆大学千里战队</span>
+        </div>
+      </div>
+      <div class="rm-lockup">
+        <span>ROBOMASTER<br />UNIVERSITY SERIES</span>
+        <img src="./assets/robomaster.svg" alt="RoboMaster 标志" />
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">OFFICIAL WEBSITE · LAUNCH NOTICE</p>
+      <h1>
+        <span class="team">重庆大学千里战队</span>
+        <span class="launch"><span>官方网站</span><strong>上线预告</strong></span>
+      </h1>
+
+      <div class="season-row">
+        <article class="season-message">
+          <span class="season">2027 赛季</span>
+          <h2>招新即将开幕</h2>
+          <p>以工程为共同语言 · 向真实赛场进发</p>
+        </article>
+        <article class="time-card">
+          <div class="date-block">
+            <small>LAUNCH DATE</small>
+            <strong>09.01</strong>
+            <span>北京时间</span>
+          </div>
+          <div class="clock-block">
+            <small>ONLINE AT</small>
+            <strong>12:00</strong>
+            <span>准时上线</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="groups">
+      <header class="groups-header">
+        <b>FIVE TECHNICAL GROUPS</b>
+        <span>五组协作 · 一支千里</span>
+      </header>
+      <div class="group-grid">
+        <article class="group group--mechanical">
+          <img class="group-mark" src="./assets/mechanical.svg?v=2" alt="" />
+          <div><b>机械组</b><span>MECHANICAL</span></div>
+        </article>
+        <article class="group group--control">
+          <img class="group-mark" src="./assets/control.svg?v=2" alt="" />
+          <div><b>电控组</b><span>CONTROL</span></div>
+        </article>
+        <article class="group group--vision">
+          <img class="group-mark" src="./assets/vision.svg?v=2" alt="" />
+          <div><b>视觉组</b><span>VISION</span></div>
+        </article>
+        <article class="group group--hardware">
+          <img class="group-mark" src="./assets/hardware.svg?v=2" alt="" />
+          <div><b>硬件组</b><span>HARDWARE</span></div>
+        </article>
+        <article class="group group--operations">
+          <img class="group-mark" src="./assets/operations.svg?v=2" alt="" />
+          <div><b>宣运组</b><span>OPERATIONS</span></div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="qianli-signature">
+        <img src="./assets/qianli-text-logo.png" alt="千里战队标志" />
+      </div>
+      <div class="status">
+        <i></i>
+        <div class="status-copy">
+          <strong>运筹帷幄，决胜千里</strong>
+          <span>2026.09.01 / READY</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="spectrum" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  </main>
+</body>
+</html>
