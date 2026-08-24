@@ -41,7 +41,7 @@ if (goldenRainButton) {
     canvas.style.width = `${viewportWidth}px`;
     canvas.style.height = `${viewportHeight}px`;
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    const particleCount = viewportWidth < 760 ? 144 : 240;
+    const particleCount = viewportWidth < 760 ? 240 : 400;
     particles = Array.from({ length: particleCount }, () => makeParticle(true));
   };
 

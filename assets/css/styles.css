@@ -7594,9 +7594,27 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
   }
 }
 
-@media (max-width: 860px), (hover: none) {
+@media (hover: none) {
   .quote-golden-rain-button {
-    display: none;
+    border-color: color-mix(in srgb, #d1a556 42%, var(--line));
+    background: color-mix(in srgb, #d1a556 6%, var(--card-bg));
+    opacity: 0.48;
+  }
+}
+
+@media (max-width: 860px) {
+  .quote-golden-rain-button {
+    right: 40px;
+    width: 32px;
+    height: 32px;
+    border-color: color-mix(in srgb, #d1a556 42%, var(--line));
+    background: color-mix(in srgb, #d1a556 6%, var(--card-bg));
+    opacity: 0.48;
+    z-index: 2;
+  }
+
+  .quote-golden-rain-button i {
+    font-size: 18px;
   }
 }
 
@@ -10291,7 +10309,7 @@ html.has-culture-report {
 @media (max-width: 860px) {
   .home-quote {
     min-height: 82px;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) 74px;
     gap: 14px;
     padding: 14px 0;
   }
@@ -10309,6 +10327,7 @@ html.has-culture-report {
     transform: none;
     width: 34px;
     height: 34px;
+    justify-self: end;
   }
 
   .quote-random-button:hover,
