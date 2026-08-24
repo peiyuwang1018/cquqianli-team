@@ -4,8 +4,8 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队人才画像：我们看重的不是入队前掌握多少技术，而是一个人如何面对自己、团队与工作。" />
-    <title>人才画像 | 重庆大学千里战队</title>
+    <meta name="description" content="重庆大学千里战队新闻列表，记录比赛、研发、活动和队伍建设的最新进展。" />
+    <title>新闻 | 千里要闻 | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=20260824-51" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="join">
+  <body data-page="frontline">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -39,7 +39,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a class="is-active" aria-current="page" href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -98,7 +98,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--contact">
-            <a class="is-active" aria-current="page" href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
+            <a href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-email-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">联系我们</span></a>
             <span class="nav-dropdown nav-dropdown--contact">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-account-plus-outline" aria-hidden="true"></i><strong>纳新通道</strong></span>
@@ -117,71 +117,37 @@
         </div>
         <div class="nav-utilities">
           <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
-          <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
-            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
-            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
-          </button>
+        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+        </button>
         </div>
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="contact/index.html" aria-label="返回联系我们" title="返回联系我们">
+      <a class="page-back-link" href="season/index.html" aria-label="返回赛季一线" title="返回赛季一线">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main class="persona-page">
-      <section class="page-hero persona-page-hero">
-        <div><p class="page-label">TALENT PORTRAIT</p><h1>人才画像</h1></div>
-        <p>比起入队前掌握多少技术，我们更关心一个人如何面对自己、团队与工作。</p>
+<main>
+      <section class="page-hero qianli-news-hero qianli-news-list-hero">
+        <div><p class="page-label">QIANLI NEWS</p><h1>新闻</h1></div>
+        <p>正在发生的赛季进展。站内保留经过核验的摘要，并连接至完整记录或官方原文。</p>
       </section>
 
-      <section class="section-block join-persona" aria-labelledby="persona-intro">
-        <p class="join-lead" id="persona-intro">在新人身上，我们看重的根本不是技术能力，而是人性。RoboMaster 是一场长跑，我们看重的是你有没有潜力成为团队的中坚力量，而不是只懂技术的匆匆过客。我们相信，只有先成为好的人，才能成为好的工程师。这里列出的，不是技能要求，而是我们认为一个人走得长远的底色。</p>
-
-        <section class="trait-group trait-group--self" id="persona-self" data-persona-section="self" aria-labelledby="self-traits">
-          <div class="trait-group-heading">
-            <h2 id="self-traits" class="trait-heading"><i class="mdi mdi-account-search-outline trait-heading-icon" aria-hidden="true"></i><span>你和自己的关系</span></h2>
-            <p class="trait-intro">正确的自我认知是内驱力的起点，也是个人成长的地基。</p>
+      <section class="section-block news-index-shell" aria-label="新闻列表">
+        <header class="news-index-toolbar">
+          <div class="news-filter-list" aria-label="按内容类别筛选新闻">
+            <button class="is-active" type="button" data-news-filter="全部" data-news-filter-type="news" aria-pressed="true">全部</button>
+            <button type="button" data-news-filter="赛季" data-news-filter-type="news" aria-pressed="false">赛季</button>
+            <button type="button" data-news-filter="队伍" data-news-filter-type="news" aria-pressed="false">队伍</button>
+            <button type="button" data-news-filter="研发" data-news-filter-type="news" aria-pressed="false">研发</button>
+            <button type="button" data-news-filter="活动" data-news-filter-type="news" aria-pressed="false">活动</button>
+            <button type="button" data-news-filter="招新" data-news-filter-type="news" aria-pressed="false">招新</button>
           </div>
-          <div class="trait-grid">
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-sprout trait-card-icon" aria-hidden="true"></i><h3>谦逊踏实</h3><p class="trait-summary">不好高骛远，一步一个脚印，保持谦卑姿态</p><p class="trait-detail">不因小成就自满，也不因远大目标而眼高手低。保持持续学习的心态，不轻易对人产生偏见或优越感。真正厉害的人往往最清楚自己还差多少，也最清楚下一步该踩在哪里。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-crosshairs-gps trait-card-icon" aria-hidden="true"></i><h3>校准</h3><p class="trait-summary">永远找参照，知道自己几斤几两</p><p class="trait-detail">看头部队伍在做什么，看团队当下的需求是什么，再回来判断自己的水平在哪、差距在哪、要投入多少。不靠感觉，靠基准。把好的国赛队伍和自己比较，才知道路有多远。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-head-lightbulb-outline trait-card-icon" aria-hidden="true"></i><h3>持续思考</h3><p class="trait-summary">脑子里一直挂着问题</p><p class="trait-detail">不只在工位上才动脑。真正投入一个问题时，脑子里会持续挂着它；离开现场后偶尔再琢磨一层，常常能发现新的线索。持续思考不等于透支自己，而是愿意让问题在头脑里慢慢发酵。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-fire trait-card-icon" aria-hidden="true"></i><h3>韧性与耐心</h3><p class="trait-summary">不怕废案，不怕重开，打不死</p><p class="trait-detail">技术能力的积淀不是一朝一夕，持之以恒的态度永远比一时的聪明更重要。不怕废案，不怕重开，失败了 A 才让我们明白 B 的价值。要给自己一些耐心，等到花开需要长时间的浇灌。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-source-branch trait-card-icon" aria-hidden="true"></i><h3>前向思考</h3><p class="trait-summary">把隐患消灭在草稿阶段</p><p class="trait-detail">不是出了问题再来补救，而是在想法、图纸、代码或接口还处于草稿时，就把风险和影响纳入判断。做方案的时候就在想：这里如果出问题会影响谁？这个接口下游能不能接受？</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-telescope trait-card-icon" aria-hidden="true"></i><h3>远见</h3><p class="trait-summary">看长远，不被眼前得失困住</p><p class="trait-detail">不只看眼前的任务和得失，能把目光放长远，追求可持续的成长。队伍不是刷履历的地方，我们想要的是愿意真正扎下来的人。</p></article>
-          </div>
-        </section>
-
-        <section class="trait-group trait-group--team" id="persona-team" data-persona-section="team" aria-labelledby="team-traits">
-          <div class="trait-group-heading">
-            <h2 id="team-traits" class="trait-heading"><i class="mdi mdi-account-group-outline trait-heading-icon" aria-hidden="true"></i><span>你和团队的关系</span></h2>
-            <p class="trait-intro">利他是最好的利己。只有先创造一个更好的集体，才能更高效地进步。我们不欢迎精致的利己主义者。</p>
-          </div>
-          <div class="trait-grid">
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-account-star-outline trait-card-icon" aria-hidden="true"></i><h3>主人公意识</h3><p class="trait-summary">主动参与，不等任务派发</p><p class="trait-detail">不被动等任务，能从全局视角理解目标和进展，主动认领工作，清楚自己在团队里处于什么位置。当一天和尚撞一天钟的人，既帮不了队伍，也帮不了自己。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-shield-account-outline trait-card-icon" aria-hidden="true"></i><h3>责任心</h3><p class="trait-summary">答应的事做到底，不烂尾不甩锅</p><p class="trait-detail">答应的事做到底，做不到就提前说，不让问题悄悄烂在自己手里。你的输出质量会直接影响下游队友的工作，这不是个人的事。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-handshake-outline trait-card-icon" aria-hidden="true"></i><h3>协作与沟通</h3><p class="trait-summary">遇到问题先开口，不单打独斗</p><p class="trait-detail">遇到问题乐于讨论而不是单打独斗，看到队友有困难主动出手。沟通是解决问题最快的工具，不是软弱的表现。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-eye-outline trait-card-icon" aria-hidden="true"></i><h3>公开透明</h3><p class="trait-summary">公事走群聊，不搞小团体</p><p class="trait-detail">公事走群聊，不搞小团体，用信息流动带动整体。不透明的团队，内耗会把所有人拖垮。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-hand-heart-outline trait-card-icon" aria-hidden="true"></i><h3>尊重</h3><p class="trait-summary">尊重前辈，尊重团队走过的历史</p><p class="trait-detail">尊重团队走过的历史和前辈付出的积累。每一个现在看起来理所当然的东西，背后都有人筚路蓝缕。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-home-heart trait-card-icon" aria-hidden="true"></i><h3>热爱与归属</h3><p class="trait-summary">把队伍当家，不只是来做事的</p><p class="trait-detail">这个团队靠每一个人用热爱和汗水去浇筑，和队友有真实的情感联结，而不只是一台完成任务就离开的机器。</p></article>
-          </div>
-        </section>
-
-        <section class="trait-group trait-group--work" id="persona-work" data-persona-section="work" aria-labelledby="work-traits">
-          <div class="trait-group-heading">
-            <h2 id="work-traits" class="trait-heading"><i class="mdi mdi-tools trait-heading-icon" aria-hidden="true"></i><span>你和工作的关系</span></h2>
-            <p class="trait-intro">工作就是折射自我的镜子。你如何对待它，它就如何定义你。</p>
-          </div>
-          <div class="trait-grid">
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-rocket-launch-outline trait-card-icon" aria-hidden="true"></i><h3>执行力</h3><p class="trait-summary">想清楚了就动手，边做边校准</p><p class="trait-detail">想清楚了就动手，不过度犹豫，也不因怕出错而迟迟不前。合理的停顿，是为了补足信息、校准方向或等待必要协作；停下来之后，也要明确下一步怎样重新推进。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-hammer-wrench trait-card-icon" aria-hidden="true"></i><h3>吃苦耐劳</h3><p class="trait-summary">愿意拧螺丝、焊线，也经得起反复搬车调试</p><p class="trait-detail">工程落地难免要拧螺丝、焊线和反复搬车调试。多摸实物、多见问题，才能建立真正的工程直觉。不是只有显眼的设计、代码或宣传作品才算工作，那些重复而必要的环节同样决定机器人能否上场。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-clipboard-check-outline trait-card-icon" aria-hidden="true"></i><h3>实事求是 + 反思</h3><p class="trait-summary">用记录说话，不靠印象扯皮</p><p class="trait-detail">做了就是做了，没做就是没做。周期复盘、赛后复盘、验收复盘是基本工作流，背后是敢于正视问题、不掩盖不回避的态度。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-message-text-outline trait-card-icon" aria-hidden="true"></i><h3>表达清晰</h3><p class="trait-summary">把话说清楚，工作中必须开口</p><p class="trait-detail">不要求口才好，但必须把话说清楚。不管性格内外向，工作中必须开口，主动交流，不含糊带过。说不清楚的事情，往往是没想清楚。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-file-document-edit-outline trait-card-icon" aria-hidden="true"></i><h3>工作留痕</h3><p class="trait-summary">过程要记录，节点要沉淀</p><p class="trait-detail">留痕不只是流程要求，也是对自己和队友负责——记录下来的东西才是团队真正的资产，也是防止扯皮的最好方式。</p></article>
-            <article class="trait-card" tabindex="0"><i class="mdi mdi-flag-checkered trait-card-icon" aria-hidden="true"></i><h3>追求结果</h3><p class="trait-summary">愿景被推进到落地，才真正成为作品</p><p class="trait-detail">脑子里希望做成、过程里认真尝试，都只有在持续推进、完成验证并交付结果时才真正有意义。我们不把“参与过”当作成绩，也不以忙碌自我感动；成功要形成可用的产出，失败也要沉淀可复用的结论。</p></article>
-          </div>
-        </section>
+          <span data-news-count="news"></span>
+        </header>
+        <div class="news-record-grid" data-news-feed data-news-type="news"></div>
       </section>
     </main>
     <footer class="site-footer">
@@ -189,7 +155,8 @@
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
+    <script src="assets/js/data/qianli-news.js?v=20260824-1"></script>
+    <script src="assets/js/pages/qianli-news.js?v=20260824-2"></script>
     <script src="assets/js/core/site.js?v=20260823-9"></script>
-    <script src="assets/js/pages/persona.js?v=20260821-1"></script>
   </body>
 </html>
