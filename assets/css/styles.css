@@ -19498,6 +19498,84 @@ body[data-page="home"] .site-footer a:focus-visible {
   --home-group-filter: brightness(0) saturate(100%) invert(58%) sepia(21%) saturate(926%) hue-rotate(292deg) brightness(91%) contrast(84%);
 }
 
+.nav-item-with-icon--mechanical {
+  --nav-group-tone: #c59a4b;
+  --nav-group-filter: brightness(0) saturate(100%) invert(64%) sepia(46%) saturate(703%) hue-rotate(359deg) brightness(92%) contrast(86%);
+}
+
+.nav-item-with-icon--control {
+  --nav-group-tone: #6e9dca;
+  --nav-group-filter: brightness(0) saturate(100%) invert(63%) sepia(22%) saturate(858%) hue-rotate(168deg) brightness(92%) contrast(87%);
+}
+
+.nav-item-with-icon--vision {
+  --nav-group-tone: #8976b2;
+  --nav-group-filter: brightness(0) saturate(100%) invert(55%) sepia(17%) saturate(1122%) hue-rotate(216deg) brightness(90%) contrast(83%);
+}
+
+.nav-item-with-icon--hardware {
+  --nav-group-tone: #62a66f;
+  --nav-group-filter: brightness(0) saturate(100%) invert(61%) sepia(25%) saturate(748%) hue-rotate(78deg) brightness(89%) contrast(84%);
+}
+
+.nav-item-with-icon--operations {
+  --nav-group-tone: #bd6f84;
+  --nav-group-filter: brightness(0) saturate(100%) invert(58%) sepia(21%) saturate(926%) hue-rotate(292deg) brightness(91%) contrast(84%);
+}
+
+.nav-dropdown--organization a.nav-item-with-icon:is(
+  .nav-item-with-icon--mechanical,
+  .nav-item-with-icon--control,
+  .nav-item-with-icon--vision,
+  .nav-item-with-icon--hardware,
+  .nav-item-with-icon--operations
+)::before {
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.nav-dropdown--organization a.nav-item-with-icon:is(
+  .nav-item-with-icon--mechanical,
+  .nav-item-with-icon--control,
+  .nav-item-with-icon--vision,
+  .nav-item-with-icon--hardware,
+  .nav-item-with-icon--operations
+):is(:hover, :focus-visible) {
+  color: var(--nav-group-tone);
+  background: color-mix(in srgb, var(--nav-group-tone) 10%, var(--card-bg));
+}
+
+.nav-dropdown--organization a.nav-item-with-icon:is(
+  .nav-item-with-icon--mechanical,
+  .nav-item-with-icon--control,
+  .nav-item-with-icon--vision,
+  .nav-item-with-icon--hardware,
+  .nav-item-with-icon--operations
+):is(:hover, :focus-visible)::before {
+  background: var(--nav-group-tone);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--nav-group-tone) 44%, transparent);
+}
+
+.nav-dropdown--organization a.nav-item-with-icon:is(
+  .nav-item-with-icon--mechanical,
+  .nav-item-with-icon--control,
+  .nav-item-with-icon--vision,
+  .nav-item-with-icon--hardware,
+  .nav-item-with-icon--operations
+) .nav-item-logo img {
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.nav-dropdown--organization a.nav-item-with-icon:is(
+  .nav-item-with-icon--mechanical,
+  .nav-item-with-icon--control,
+  .nav-item-with-icon--vision,
+  .nav-item-with-icon--hardware,
+  .nav-item-with-icon--operations
+):is(:hover, :focus-visible) .nav-item-logo img {
+  filter: var(--nav-group-filter) !important;
+  transform: scale(1.06);
+}
+
 .nav-item-logo--robomaster img {
   width: 21px;
   height: 21px;

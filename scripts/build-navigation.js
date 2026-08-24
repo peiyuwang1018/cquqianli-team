@@ -90,16 +90,16 @@ function buildNavigation(active) {
                 <a class="nav-item-with-icon nav-item-with-icon--operations" href="groups/operations.html"><span class="nav-item-label">宣运组</span><span class="nav-item-logo nav-item-logo--operations" aria-hidden="true"><img src="assets/images/brand/vector-icons/operations.svg" alt="" /></span></a>
               </span>
               <span class="nav-dropdown-column">
-                <span class="nav-dropdown-column-title"><i class="mdi mdi-clipboard-account-outline" aria-hidden="true"></i><strong>责任组别</strong></span>
-                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
-                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--robomaster" aria-hidden="true"><img src="assets/images/brand/group-icons/robomaster.svg" alt="" /></span></a>
-                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a>
-              </span>
-              <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-robot" aria-hidden="true"></i><strong>兵种组别</strong></span>
                 <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-heavy.html"><span class="nav-item-label">重装组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/hero.svg" alt="" /><img src="assets/images/brand/vector-icons/engineer.svg" alt="" /></span></a>
                 <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-sentry.html"><span class="nav-item-label">步哨组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></span></a>
                 <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-aerial-dart.html"><span class="nav-item-label">空中飞镖组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-clipboard-account-outline" aria-hidden="true"></i><strong>责任组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--robomaster" aria-hidden="true"><img src="assets/images/brand/group-icons/robomaster.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a>
               </span>
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><strong>定位组别</strong></span>
@@ -182,7 +182,7 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260824-68");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260824-69");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260823-9");
   fs.writeFileSync(file, html);
 }
