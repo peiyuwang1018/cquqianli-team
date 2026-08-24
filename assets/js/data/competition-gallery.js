@@ -3539,6 +3539,46 @@ window.QIANLI_COMPETITION_GALLERY = {
     "credit": "RoboMaster 官方摄影",
     "serviceLabel": "赛事阶段",
     "record": "【简介】RoboMaster 官方摄影记录的集体与赛场。【服役周期】南部分区赛"
+  },
+  {
+    "code": "24_A100",
+    "name": "",
+    "season": "2024",
+    "stage": "regional",
+    "stageLabel": "南部分区赛",
+    "source": "individual",
+    "sourceLabel": "个人拍摄",
+    "scene": "team",
+    "sceneLabel": "集体与赛场",
+    "title": "24_A100",
+    "meta": "2024 · 南部分区赛 · 集体与赛场 · 个人拍摄",
+    "thumbnail": "https://img.cquqianli.cn/gallery/competition/individual/2024/regional/team/2024-05-30-south-regional-arena-wangpeiyu.png?x-oss-process=style/thumb",
+    "photo": "https://img.cquqianli.cn/gallery/competition/individual/2024/regional/team/2024-05-30-south-regional-arena-wangpeiyu.png?x-oss-process=style/preview",
+    "full": "https://img.cquqianli.cn/gallery/competition/individual/2024/regional/team/2024-05-30-south-regional-arena-wangpeiyu.png?x-oss-process=style/full",
+    "alt": "24_A100 · 集体与赛场 · RMUC 2024 南部分区赛",
+    "credit": "汪沛宇",
+    "serviceLabel": "赛事阶段",
+    "record": "【简介】个人拍摄记录的南部赛区小组赛赛场全景。【拍摄者】汪沛宇【服役周期】南部分区赛"
+  },
+  {
+    "code": "24_A101",
+    "name": "",
+    "season": "2024",
+    "stage": "regional",
+    "stageLabel": "南部分区赛",
+    "source": "individual",
+    "sourceLabel": "个人拍摄",
+    "scene": "team",
+    "sceneLabel": "集体与赛场",
+    "title": "24_A101",
+    "meta": "2024 · 南部分区赛 · 集体与赛场 · 个人拍摄",
+    "thumbnail": "https://img.cquqianli.cn/gallery/competition/individual/2024/regional/team/2024-05-30-south-regional-pit-wangpeiyu.jpg?x-oss-process=style/thumb",
+    "photo": "https://img.cquqianli.cn/gallery/competition/individual/2024/regional/team/2024-05-30-south-regional-pit-wangpeiyu.jpg?x-oss-process=style/preview",
+    "full": "https://img.cquqianli.cn/gallery/competition/individual/2024/regional/team/2024-05-30-south-regional-pit-wangpeiyu.jpg?x-oss-process=style/full",
+    "alt": "24_A101 · 集体与赛场 · RMUC 2024 南部分区赛",
+    "credit": "汪沛宇",
+    "serviceLabel": "赛事阶段",
+    "record": "【简介】个人拍摄记录的千里战队备赛区现场。【拍摄者】汪沛宇【服役周期】南部分区赛"
   }
 ]
 };

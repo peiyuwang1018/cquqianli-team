@@ -9,11 +9,30 @@
   const filterStates = new Map();
   let activeEntry = null;
   let activePool = [];
+  let activeImageIndex = 0;
   let returnFocus = null;
 
   function formatEntryDate(value) {
     const [year, month, day] = String(value || "").split("-");
     return year && month && day ? `${year}.${month}.${day}` : "日期待核验";
+  }
+
+  function daysSinceBeijingDate(value) {
+    const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) return null;
+
+    const beijingParts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Shanghai",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(new Date()).reduce((parts, part) => {
+      if (part.type !== "literal") parts[part.type] = Number(part.value);
+      return parts;
+    }, {});
+    const eventDay = Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+    const beijingToday = Date.UTC(beijingParts.year, beijingParts.month - 1, beijingParts.day);
+    return Math.max(0, Math.floor((beijingToday - eventDay) / 86400000));
   }
 
   function fillEntryMeta(container, entry, includeSource = false) {
@@ -22,7 +41,18 @@
     time.textContent = `${formatEntryDate(entry.date)} ${entry.type === "archive" ? "收录" : "发布"}`;
     const details = [entry.dateLabel, entry.category];
     if (includeSource) details.push(entry.sourceLabel);
-    container.replaceChildren(time, document.createTextNode(` · ${details.join(" · ")}`));
+    const nodes = [time, document.createTextNode(` · ${details.join(" · ")}`)];
+    if (entry.type === "archive") {
+      const elapsedDays = daysSinceBeijingDate(entry.date);
+      if (elapsedDays !== null) {
+        const elapsed = document.createElement("span");
+        elapsed.className = "news-entry-relative-days";
+        elapsed.textContent = `距今 ${elapsedDays} 天`;
+        elapsed.title = "按北京时间自然日计算";
+        nodes.push(elapsed);
+      }
+    }
+    container.replaceChildren(...nodes);
   }
 
   const dialog = document.createElement("dialog");
@@ -37,6 +67,9 @@
       </div>
       <figure class="news-entry-dialog-media">
         <img data-news-dialog-image alt="" />
+        <button class="news-entry-dialog-media-nav news-entry-dialog-media-nav--previous" type="button" data-news-image-previous aria-label="上一张图片"><i class="mdi mdi-chevron-left" aria-hidden="true"></i></button>
+        <button class="news-entry-dialog-media-nav news-entry-dialog-media-nav--next" type="button" data-news-image-next aria-label="下一张图片"><i class="mdi mdi-chevron-right" aria-hidden="true"></i></button>
+        <div class="news-entry-dialog-media-dots" data-news-image-dots aria-label="图片分页"></div>
         <figcaption data-news-dialog-caption></figcaption>
       </figure>
       <article class="news-entry-dialog-copy">
@@ -66,7 +99,7 @@
     const media = document.createElement("span");
     media.className = "news-record-card-media";
     const image = document.createElement("img");
-    image.src = entry.image;
+    image.src = entry.thumbnail || entry.image;
     image.alt = entry.imageAlt || "";
     image.loading = "lazy";
     image.decoding = "async";
@@ -133,13 +166,47 @@
     return link;
   }
 
+  function entryImages(entry) {
+    if (Array.isArray(entry.images) && entry.images.length) return entry.images;
+    return [{
+      src: entry.image,
+      alt: entry.imageAlt || entry.title,
+      caption: entry.imageAlt || entry.title,
+      fit: entry.imageFit,
+      position: entry.imagePosition,
+    }];
+  }
+
+  function renderEntryImage(entry, index = 0) {
+    const pool = entryImages(entry);
+    activeImageIndex = (index + pool.length) % pool.length;
+    const current = pool[activeImageIndex];
+    const image = dialog.querySelector("[data-news-dialog-image]");
+    image.src = current.src;
+    image.alt = current.alt || entry.imageAlt || entry.title;
+    image.style.objectFit = current.fit || entry.imageFit || "";
+    image.style.objectPosition = current.position || entry.imagePosition || "";
+    dialog.querySelector("[data-news-dialog-caption]").textContent = current.caption || current.alt || entry.imageAlt || entry.title;
+
+    const multiple = pool.length > 1;
+    dialog.querySelector("[data-news-image-previous]").hidden = !multiple;
+    dialog.querySelector("[data-news-image-next]").hidden = !multiple;
+    const dots = dialog.querySelector("[data-news-image-dots]");
+    dots.hidden = !multiple;
+    dots.replaceChildren(...pool.map((_, dotIndex) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `查看第 ${dotIndex + 1} 张图片`);
+      dot.setAttribute("aria-current", String(dotIndex === activeImageIndex));
+      dot.addEventListener("click", () => renderEntryImage(entry, dotIndex));
+      return dot;
+    }));
+  }
+
   function renderDialog(entry) {
     activeEntry = entry;
     dialog.dataset.newsType = entry.type;
-    const image = dialog.querySelector("[data-news-dialog-image]");
-    image.src = entry.image;
-    image.alt = entry.imageAlt || entry.title;
-    dialog.querySelector("[data-news-dialog-caption]").textContent = entry.imageAlt || entry.title;
+    renderEntryImage(entry);
     dialog.querySelector("[data-news-dialog-kind]").textContent = entry.type === "news" ? "QIANLI NEWS" : "ARCHIVE RECORD";
     fillEntryMeta(dialog.querySelector("[data-news-dialog-meta]"), entry, true);
     dialog.querySelector("[data-news-dialog-title]").textContent = entry.title;
@@ -186,6 +253,11 @@
     window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${activeEntry.id}`);
   }
 
+  function moveEntryImage(direction) {
+    if (!activeEntry) return;
+    renderEntryImage(activeEntry, activeImageIndex + direction);
+  }
+
   document.addEventListener("click", (event) => {
     const filter = event.target.closest("[data-news-filter]");
     if (filter) {
@@ -209,12 +281,16 @@
   dialog.querySelector("[data-news-close]").addEventListener("click", () => dialog.close());
   dialog.querySelector("[data-news-previous]").addEventListener("click", () => moveEntry(-1));
   dialog.querySelector("[data-news-next]").addEventListener("click", () => moveEntry(1));
+  dialog.querySelector("[data-news-image-previous]").addEventListener("click", () => moveEntryImage(-1));
+  dialog.querySelector("[data-news-image-next]").addEventListener("click", () => moveEntryImage(1));
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) dialog.close();
   });
   dialog.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp") moveEntry(-1);
     if (event.key === "ArrowDown") moveEntry(1);
+    if (event.key === "ArrowLeft") moveEntryImage(-1);
+    if (event.key === "ArrowRight") moveEntryImage(1);
   });
   dialog.addEventListener("close", () => {
     document.documentElement.classList.remove("has-news-dialog");

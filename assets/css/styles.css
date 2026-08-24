@@ -14384,6 +14384,20 @@ a.contact-channel-card--direct:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
+.news-entry-relative-days {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.62rem;
+  padding: 0.18rem 0.46rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 0.72em;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .news-record-card-copy > strong {
   display: block;
   margin-bottom: 9px;
@@ -14604,8 +14618,73 @@ a.contact-channel-card--direct:focus-visible {
   filter: saturate(0.82) contrast(1.02);
 }
 
+.news-entry-dialog-media-nav {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.64);
+  font-size: 22px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.news-entry-dialog-media-nav:hover,
+.news-entry-dialog-media-nav:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: 0;
+}
+
+.news-entry-dialog-media-nav--previous {
+  left: 14px;
+}
+
+.news-entry-dialog-media-nav--next {
+  right: 14px;
+}
+
+.news-entry-dialog-media-nav[hidden],
+.news-entry-dialog-media-dots[hidden] {
+  display: none;
+}
+
+.news-entry-dialog-media-dots {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: 50%;
+  display: flex;
+  gap: 7px;
+  padding: 7px 9px;
+  background: rgba(0, 0, 0, 0.58);
+  transform: translateX(-50%);
+}
+
+.news-entry-dialog-media-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.news-entry-dialog-media-dots button[aria-current="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
 .news-entry-dialog-media figcaption {
   position: absolute;
+  z-index: 2;
   right: 14px;
   bottom: 14px;
   max-width: calc(100% - 28px);
