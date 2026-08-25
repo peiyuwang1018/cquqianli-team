@@ -15,12 +15,15 @@ function designPhotoSeries(prefix, labels, credit, altPrefix) {
 }
 
 function designPhotoSet(prefix, photos, altPrefix) {
-  return photos.map((photo, index) => ({
-    src: `assets/images/content/archive/gallery/designs/${prefix}-${String(photo.file || index + 1).padStart(2, "0")}.webp`,
-    alt: `${altPrefix}：${photo.meta}`,
-    meta: photo.meta,
-    credit: photo.credit
-  }));
+  return photos.map((photo, index) => {
+    const version = photo.version ? `?v=${photo.version}` : "";
+    return {
+      src: `assets/images/content/archive/gallery/designs/${prefix}-${String(photo.file || index + 1).padStart(2, "0")}.webp${version}`,
+      alt: `${altPrefix}：${photo.meta}`,
+      meta: photo.meta,
+      credit: photo.credit
+    };
+  });
 }
 
 function activityPhotoSeries(collection, prefix, photos, altPrefix) {
@@ -330,14 +333,14 @@ window.QIANLI_GALLERY = {
         category: "posters",
         title: "招新与动员海报",
         meta: "2025–2026 · 招新与赛季动员",
-        preview: "assets/images/content/archive/gallery/designs/campaign-visuals-04.webp",
-        photo: "assets/images/content/archive/gallery/designs/campaign-visuals-04.webp",
+        preview: "assets/images/content/archive/gallery/designs/campaign-visuals-04.webp?v=20260825-1",
+        photo: "assets/images/content/archive/gallery/designs/campaign-visuals-04.webp?v=20260825-1",
         photos: designPhotoSet(
           "campaign-visuals",
           [
             { file: 1, meta: "2025 招新海报", credit: "邓涵尹" },
             { file: 3, meta: "2026 年 1 月动员大会海报", credit: "鄢政" },
-            { file: 4, meta: "2026 年 8 月宣传海报", credit: "鄢政 · OnlyPupPet" },
+            { file: 4, version: "20260825-1", meta: "2026 年 8 月宣传海报", credit: "鄢政 · OnlyPupPet" },
             { file: 8, meta: "招新海报", credit: "李嘉昊" }
           ],
           "千里招新与动员海报"
