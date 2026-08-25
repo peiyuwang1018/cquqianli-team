@@ -19312,7 +19312,7 @@ body[data-page="home"] .site-footer a:focus-visible {
 .home-snap-section--overview .home-hero {
   margin-top: 0;
   align-items: start;
-  transform: translateY(5px);
+  transform: translateY(15px);
 }
 
 .home-snap-section--overview .home-wordmark {
@@ -19337,7 +19337,7 @@ body[data-page="home"] .site-footer a:focus-visible {
   }
 
   .home-snap-section--overview .home-hero {
-    transform: translateY(-10px);
+    transform: translateY(0);
   }
 
   .home-snap-section--overview .home-quote {
