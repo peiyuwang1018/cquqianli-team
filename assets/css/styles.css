@@ -22502,3 +22502,65 @@ figure.engineering-media--contain img {
   }
 }
 
+/* Homepage idle easter egg. */
+html.is-home-idle-resting {
+  overflow: hidden;
+}
+
+.home-idle-rest-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: clamp(22px, 4vh, 46px) 24px;
+  overflow: hidden;
+  background: #020304;
+  color: #f4f4f4;
+  opacity: 0;
+  pointer-events: auto;
+  transition: opacity 1s ease;
+}
+
+.home-idle-rest-overlay[hidden] {
+  display: none;
+}
+
+.home-idle-rest-overlay.is-visible {
+  opacity: 1;
+}
+
+.home-idle-rest-card {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  width: min(520px, calc(100vw - 48px));
+  max-height: calc(100dvh - 44px);
+  margin: 0;
+}
+
+.home-idle-rest-card img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 118px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  object-fit: contain;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.48);
+}
+
+.home-idle-rest-card figcaption {
+  color: #f4f4f4;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-idle-rest-overlay {
+    transition: none;
+  }
+}
+

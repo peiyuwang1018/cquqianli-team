@@ -263,3 +263,72 @@ if (homeSectionNav && homeSections.length) {
   homeSections.forEach((section) => sectionObserver.observe(section));
   setActiveSection(homeSections[0].id);
 }
+
+const homeIdleRestPointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+if (homeIdleRestPointer.matches) {
+  const idleDelay = 20000;
+  const idleRestOverlay = document.createElement("aside");
+  let idleTimer = 0;
+  let isIdleResting = false;
+
+  idleRestOverlay.className = "home-idle-rest-overlay";
+  idleRestOverlay.hidden = true;
+  idleRestOverlay.setAttribute("role", "status");
+  idleRestOverlay.setAttribute("aria-live", "polite");
+  idleRestOverlay.innerHTML = `
+    <figure class="home-idle-rest-card">
+      <img src="assets/images/content/home/idle-rest-easter-egg.jpg" alt="千里战队实验室中正在休息的队员" />
+      <figcaption>累了吗？该休息了。</figcaption>
+    </figure>
+  `;
+  document.body.append(idleRestOverlay);
+
+  const stopIdleTimer = () => {
+    window.clearTimeout(idleTimer);
+    idleTimer = 0;
+  };
+
+  const showIdleRest = () => {
+    if (document.hidden || isIdleResting) return;
+    isIdleResting = true;
+    idleRestOverlay.hidden = false;
+    idleRestOverlay.getBoundingClientRect();
+    idleRestOverlay.classList.add("is-visible");
+    document.documentElement.classList.add("is-home-idle-resting");
+  };
+
+  const startIdleTimer = () => {
+    stopIdleTimer();
+    if (document.hidden) return;
+    idleTimer = window.setTimeout(showIdleRest, idleDelay);
+  };
+
+  const hideIdleRestImmediately = () => {
+    if (!isIdleResting) return;
+    isIdleResting = false;
+    idleRestOverlay.hidden = true;
+    idleRestOverlay.classList.remove("is-visible");
+    document.documentElement.classList.remove("is-home-idle-resting");
+  };
+
+  window.addEventListener(
+    "mousemove",
+    () => {
+      hideIdleRestImmediately();
+      startIdleTimer();
+    },
+    { passive: true },
+  );
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopIdleTimer();
+      hideIdleRestImmediately();
+      return;
+    }
+    startIdleTimer();
+  });
+
+  startIdleTimer();
+}
