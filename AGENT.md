@@ -108,7 +108,7 @@
 
 - `contact/index.html`
 - `contact/outreach.html`
-- `contact/social.html`
+- `contact/social.html`：旧网址兼容跳转页，统一转到 `contact/index.html#channels`，不再维护重复内容。
 - `contact/sponsorship.html`
 
 合作方 Logo 必须尊重原始商标，不得用生成式工具重绘或改变几何结构。亮色与暗色模式需要使用合适的原始版本或可验证的反色方案。
