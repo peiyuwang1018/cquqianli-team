@@ -1160,14 +1160,14 @@
 .mechanical-long-term-growth-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 18px;
+  margin-top: 30px;
   border: 1px solid var(--line);
   background: var(--line);
   gap: 1px;
 }
 
 .mechanical-long-term-growth-grid > article {
-  min-height: 260px;
+  min-height: 220px;
   padding: 26px;
   background: var(--card-bg);
 }
