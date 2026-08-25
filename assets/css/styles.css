@@ -12183,6 +12183,10 @@ a.contact-channel-card--direct:focus-visible {
 }
 
 /* Museum landing: eight entrances in one compact 4 x 2 index. */
+.page-hero + .video-feature {
+  margin-top: 28px;
+}
+
 .museum-entry-section {
   margin-top: 54px;
 }
@@ -12205,6 +12209,12 @@ a.contact-channel-card--direct:focus-visible {
   margin-top: 7px;
   font-size: 13px;
   line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .page-hero + .video-feature {
+    margin-top: 24px;
+  }
 }
 
 /* Team member archive. */
