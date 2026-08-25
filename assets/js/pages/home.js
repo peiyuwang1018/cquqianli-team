@@ -1,4 +1,12 @@
 const homeCarousel = document.querySelector("[data-home-carousel]");
+const recruitmentNotice = document.querySelector("[data-recruitment-notice]");
+
+if (recruitmentNotice) {
+  const closeButton = recruitmentNotice.querySelector("[data-recruitment-notice-close]");
+  closeButton?.addEventListener("click", () => {
+    recruitmentNotice.hidden = true;
+  });
+}
 
 const goldenRainButton = document.querySelector("[data-golden-rain-toggle]");
 

@@ -21047,6 +21047,23 @@ figure.engineering-media--contain img {
   filter: brightness(0) saturate(100%) invert(69%) sepia(37%) saturate(1049%) hue-rotate(174deg) brightness(95%) contrast(91%);
 }
 
+.operations-page {
+  --engineering-tone: #bd6f84;
+}
+
+.operations-page .engineering-group-hero-copy {
+  padding-left: 46px;
+}
+
+.operations-page .engineering-title-lockup img,
+:root[data-theme="dark"] .operations-page .engineering-title-lockup img {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(21%) saturate(926%) hue-rotate(292deg) brightness(91%) contrast(84%);
+}
+
+.operations-hero-visual > img {
+  object-position: center 38%;
+}
+
 .hardware-page .engineering-title-lockup img,
 :root[data-theme="dark"] .hardware-page .engineering-title-lockup img {
   filter: brightness(0) saturate(100%) invert(61%) sepia(25%) saturate(748%) hue-rotate(78deg) brightness(89%) contrast(84%);
@@ -21332,6 +21349,10 @@ figure.engineering-media--contain img {
   height: clamp(240px, 27vw, 340px);
 }
 
+.operations-page .engineering-project-media--cover img {
+  object-fit: cover;
+}
+
 .engineering-project-panel .engineering-project-media--contain img {
   padding: 12px;
   object-fit: contain;
@@ -21369,6 +21390,102 @@ figure.engineering-media--contain img {
 .engineering-capability-grid article {
   min-height: 150px;
   padding: 18px;
+}
+
+.operations-integration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.operations-integration-grid article {
+  min-width: 0;
+  min-height: 150px;
+  padding: 18px;
+  border-left: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.operations-integration-grid article:first-child {
+  border-left: 0;
+}
+
+.operations-integration-grid i {
+  color: var(--engineering-tone);
+  font-size: 24px;
+}
+
+.operations-integration-grid span {
+  display: block;
+  margin-top: 10px;
+  color: var(--engineering-tone);
+  font: 600 9px/1 sans-serif;
+  letter-spacing: .12em;
+}
+
+.operations-integration-grid h3 {
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.operations-integration-grid p {
+  margin-top: 7px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.operations-growth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+}
+
+.operations-growth-grid article {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: 18px;
+  min-width: 0;
+  padding: 28px;
+  border-left: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.operations-growth-grid article:first-child {
+  border-left: 0;
+}
+
+.operations-growth-grid article > span,
+.operations-growth-grid article > i,
+.operations-growth-grid small {
+  color: var(--engineering-tone);
+}
+
+.operations-growth-grid article > span {
+  font: 700 10px/1 Arial, sans-serif;
+}
+
+.operations-growth-grid article > i {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.operations-growth-grid small {
+  font: 700 9px/1.4 Arial, sans-serif;
+  letter-spacing: .12em;
+}
+
+.operations-growth-grid h3 {
+  margin-top: 7px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.operations-growth-grid p {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
 .control-integration-grid i,
@@ -21486,6 +21603,22 @@ figure.engineering-media--contain img {
   .engineering-project-directory button[aria-selected="true"] {
     box-shadow: inset 0 -3px var(--engineering-tone);
   }
+
+  .operations-integration-grid,
+  .operations-growth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .operations-integration-grid article,
+  .operations-growth-grid article {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .operations-integration-grid article:first-child,
+  .operations-growth-grid article:first-child {
+    border-top: 0;
+  }
 }
 
 @media (max-width: 620px) {
@@ -21539,6 +21672,122 @@ figure.engineering-media--contain img {
   .engineering-project-panel .engineering-project-media img,
   .engineering-project-panel .engineering-project-media--single img {
     height: 230px;
+  }
+
+  .operations-growth-grid article {
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 22px 18px;
+  }
+
+  .operations-growth-grid article > div {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Homepage recruitment notice: deliberately warm and readable in both themes. */
+.home-recruitment-notice {
+  position: sticky;
+  top: 82px;
+  z-index: 19;
+  border-bottom: 1px solid #dccb72;
+  background: #fff1ad;
+  color: #161616;
+}
+
+.home-recruitment-notice[hidden] {
+  display: none;
+}
+
+.home-recruitment-notice__inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: min(var(--max-width), calc(100% - 40px));
+  min-height: 46px;
+  margin: 0 auto;
+  padding: 7px 0;
+}
+
+.home-recruitment-notice__inner > i {
+  font-size: 19px;
+}
+
+.home-recruitment-notice p {
+  margin: 0;
+  color: #161616;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.home-recruitment-notice strong {
+  font-weight: 700;
+}
+
+.home-recruitment-notice a {
+  margin-left: .2em;
+  color: #161616;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.home-recruitment-notice a:hover,
+.home-recruitment-notice a:focus-visible {
+  text-decoration-thickness: 2px;
+}
+
+.home-recruitment-notice button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #161616;
+  cursor: pointer;
+}
+
+.home-recruitment-notice button:hover,
+.home-recruitment-notice button:focus-visible {
+  background: rgba(0, 0, 0, .08);
+  outline: 1px solid rgba(0, 0, 0, .35);
+}
+
+.home-recruitment-notice button i {
+  font-size: 19px;
+}
+
+@media (max-width: 700px) {
+  .home-recruitment-notice__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: calc(100% - 28px);
+    gap: 8px;
+    padding: 9px 0;
+  }
+
+  .home-recruitment-notice__inner > i {
+    display: none;
+  }
+
+  .home-recruitment-notice p {
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: left;
+  }
+}
+
+@media (max-width: 860px) {
+  .home-recruitment-notice {
+    top: 72px;
+  }
+
+  .operations-page .engineering-group-hero-copy {
+    padding-left: 48px;
   }
 }
 
