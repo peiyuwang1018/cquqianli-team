@@ -1,15 +1,25 @@
+param(
+    [string]$SourceAssetsRoot = ''
+)
+
 $ErrorActionPreference = 'Stop'
 
 $siteRoot = Split-Path -Parent $PSScriptRoot
 $projectRoot = Split-Path -Parent $siteRoot
-$sourceRoot = Join-Path $projectRoot 'source-assets\官方照片'
+if ([string]::IsNullOrWhiteSpace($SourceAssetsRoot)) {
+    $SourceAssetsRoot = Join-Path $projectRoot 'source-assets'
+}
+$officialSourceRoot = Join-Path $SourceAssetsRoot '官方照片'
+$team2025SourceRoot = Join-Path $SourceAssetsRoot '网站图片归纳\25赛季'
 $outputPath = Join-Path $siteRoot 'assets\js\data\competition-gallery.js'
 $idMapPath = Join-Path $siteRoot 'assets\js\data\competition-gallery-ids.json'
 $domain = 'https://img.cquqianli.cn'
-$prefix = 'gallery/competition/official'
+$officialPrefix = 'gallery/competition/official'
+$teamPrefix = 'gallery/competition/team'
 
-$photos = foreach ($file in Get-ChildItem -LiteralPath $sourceRoot -File -Recurse | Sort-Object FullName) {
-    $relative = $file.FullName.Substring($sourceRoot.Length).TrimStart('\')
+$photos = @(
+foreach ($file in Get-ChildItem -LiteralPath $officialSourceRoot -File -Recurse | Sort-Object FullName) {
+    $relative = $file.FullName.Substring($officialSourceRoot.Length).TrimStart('\')
     $parts = $relative -split '\\'
     $top = $parts[0]
     $season = if ($top -match '(20\d{2})') { $Matches[1] } else { 'unknown' }
@@ -38,7 +48,7 @@ $photos = foreach ($file in Get-ChildItem -LiteralPath $sourceRoot -File -Recurs
     }
 
     $encodedName = [System.Uri]::EscapeDataString($file.Name)
-    $objectPath = "$prefix/$season/$stage/$scene/$encodedName"
+    $objectPath = "$officialPrefix/$season/$stage/$scene/$encodedName"
     $baseUrl = "$domain/$objectPath"
 
     [ordered]@{
@@ -61,6 +71,57 @@ $photos = foreach ($file in Get-ChildItem -LiteralPath $sourceRoot -File -Recurs
         record = "【简介】RoboMaster 官方摄影记录的$sceneLabel。【服役周期】$stageLabel"
     }
 }
+
+if (Test-Path -LiteralPath $team2025SourceRoot) {
+    $folderMappings = [ordered]@{
+        '备赛场景_宣运组摄' = [ordered]@{ objectFolder = 'preparation'; scene = 'team'; sceneLabel = '备赛场景' }
+        '个人风采_宣运组摄' = [ordered]@{ objectFolder = 'people'; scene = 'people'; sceneLabel = '个人风采' }
+        '赛场与机器人_宣运组摄' = [ordered]@{ objectFolder = 'robots'; scene = 'robots'; sceneLabel = '机器人与赛场' }
+        '赛场与团队_宣运组摄' = [ordered]@{ objectFolder = 'team'; scene = 'team'; sceneLabel = '集体与赛场' }
+    }
+    $supportedExtensions = @('.jpg', '.jpeg', '.png', '.webp', '.heic', '.nef')
+
+    foreach ($folderName in $folderMappings.Keys) {
+        $folderPath = Join-Path $team2025SourceRoot $folderName
+        if (-not (Test-Path -LiteralPath $folderPath)) {
+            continue
+        }
+
+        $mapping = $folderMappings[$folderName]
+        foreach ($file in Get-ChildItem -LiteralPath $folderPath -File | Where-Object { $supportedExtensions -contains $_.Extension.ToLowerInvariant() } | Sort-Object Name) {
+            $relative = "网站图片归纳/25赛季/$folderName/$($file.Name)"
+            $webFileName = if ($file.Extension -in @('.NEF', '.HEIC')) {
+                "$($file.BaseName).jpg"
+            } else {
+                $file.Name
+            }
+            $encodedName = [System.Uri]::EscapeDataString($webFileName)
+            $objectPath = "$teamPrefix/2025/regional/$($mapping.objectFolder)/$encodedName"
+            $baseUrl = "$domain/$objectPath"
+
+            [ordered]@{
+                sourcePath = $relative
+                fileName = $webFileName
+                season = '2025'
+                stage = 'regional'
+                stageLabel = '区域赛'
+                source = 'team'
+                sourceLabel = '队伍宣运拍摄'
+                scene = $mapping.scene
+                sceneLabel = $mapping.sceneLabel
+                meta = "2025 · 区域赛 · 队伍宣运拍摄"
+                thumbnail = "${baseUrl}?x-oss-process=style/thumb"
+                photo = "${baseUrl}?x-oss-process=style/preview"
+                full = "${baseUrl}?x-oss-process=style/full"
+                alt = "RMUC 2025 区域赛$($mapping.sceneLabel)"
+                credit = '重庆大学千里战队宣运组'
+                serviceLabel = '赛事阶段'
+                record = "【简介】千里战队宣运组记录的$($mapping.sceneLabel)。【服役周期】区域赛"
+            }
+        }
+    }
+}
+)
 
 $orderedPhotos = $photos | Sort-Object `
     @{ Expression = { [int]$_.season }; Descending = $true }, `
