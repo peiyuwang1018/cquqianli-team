@@ -21657,6 +21657,10 @@ figure.engineering-media--contain img {
     font-size: 32px;
   }
 
+  .operations-page .engineering-projects .engineering-section-heading h2 {
+    font-size: clamp(24px, 7.5vw, 30px);
+  }
+
   .engineering-project-panel {
     padding: 22px 18px;
   }
