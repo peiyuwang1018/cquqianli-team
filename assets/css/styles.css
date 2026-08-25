@@ -21689,6 +21689,8 @@ figure.engineering-media--contain img {
   position: sticky;
   top: 82px;
   z-index: 19;
+  height: 50px;
+  overflow: hidden;
   border-bottom: 1px solid #dccb72;
   background: #fff1ad;
   color: #161616;
@@ -21704,9 +21706,9 @@ figure.engineering-media--contain img {
   align-items: center;
   gap: 12px;
   width: min(var(--max-width), calc(100% - 40px));
-  min-height: 46px;
+  height: 50px;
   margin: 0 auto;
-  padding: 7px 0;
+  padding: 4px 0;
 }
 
 .home-recruitment-notice__inner > i {
@@ -21717,8 +21719,8 @@ figure.engineering-media--contain img {
   margin: 0;
   color: #161616;
   font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 13px;
-  line-height: 1.65;
+  font-size: 12px;
+  line-height: 1.45;
   text-align: center;
 }
 
@@ -21767,7 +21769,8 @@ figure.engineering-media--contain img {
     grid-template-columns: minmax(0, 1fr) auto;
     width: calc(100% - 28px);
     gap: 8px;
-    padding: 9px 0;
+    height: 50px;
+    padding: 2px 0;
   }
 
   .home-recruitment-notice__inner > i {
@@ -21775,8 +21778,8 @@ figure.engineering-media--contain img {
   }
 
   .home-recruitment-notice p {
-    font-size: 12px;
-    line-height: 1.55;
+    font-size: 10.5px;
+    line-height: 1.35;
     text-align: left;
   }
 }
