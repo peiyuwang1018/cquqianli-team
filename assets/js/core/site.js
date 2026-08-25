@@ -4,6 +4,7 @@ const themeToggle = document.querySelector(".theme-toggle");
 const root = document.documentElement;
 const savedTheme = localStorage.getItem("theme");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let lightThemeConfirmationTimer = 0;
 
 function applyTheme(theme) {
   root.dataset.theme = theme;
@@ -24,7 +25,47 @@ navToggle?.addEventListener("click", () => {
   setMobileNavigationOpen(!navLinks.classList.contains("is-open"));
 });
 
-themeToggle?.addEventListener("click", () => applyTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+function clearLightThemeConfirmation() {
+  if (!themeToggle) return;
+  window.clearTimeout(lightThemeConfirmationTimer);
+  lightThemeConfirmationTimer = 0;
+  themeToggle.classList.remove("is-light-theme-confirming");
+  themeToggle.removeAttribute("aria-describedby");
+}
+
+function showLightThemeConfirmation() {
+  if (!themeToggle) return;
+  let bubble = themeToggle.querySelector(".theme-easter-egg-bubble");
+  if (!bubble) {
+    bubble = document.createElement("span");
+    bubble.id = "theme-easter-egg-message";
+    bubble.className = "theme-easter-egg-bubble";
+    bubble.setAttribute("role", "status");
+    bubble.setAttribute("aria-live", "polite");
+    themeToggle.appendChild(bubble);
+  }
+  bubble.textContent = "白天模式太丑了。";
+  themeToggle.classList.add("is-light-theme-confirming");
+  themeToggle.setAttribute("aria-describedby", bubble.id);
+  window.clearTimeout(lightThemeConfirmationTimer);
+  lightThemeConfirmationTimer = window.setTimeout(clearLightThemeConfirmation, 2000);
+}
+
+themeToggle?.addEventListener("click", () => {
+  if (root.dataset.theme !== "dark") {
+    clearLightThemeConfirmation();
+    applyTheme("dark");
+    return;
+  }
+
+  if (themeToggle.classList.contains("is-light-theme-confirming")) {
+    clearLightThemeConfirmation();
+    applyTheme("light");
+    return;
+  }
+
+  showLightThemeConfirmation();
+});
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
