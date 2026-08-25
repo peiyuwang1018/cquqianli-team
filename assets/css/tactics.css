@@ -34,10 +34,15 @@
 
 .tactics-hero h1 {
   margin: 0;
-  font-size: clamp(42px, 4.8vw, 64px);
+  font-size: clamp(36px, 3.5vw, 48px);
   font-weight: 500;
   line-height: 1.06;
   letter-spacing: -.02em;
+}
+
+.tactics-hero h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .tactics-hero-copy > p:last-of-type {
@@ -66,9 +71,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 22px;
+  gap: 12px;
 }
 
+.tactics-hero-link,
 .tactics-primary-link {
   min-height: 44px;
   padding: 8px 16px;
@@ -82,12 +88,19 @@
   transition: background .18s, color .18s, transform .18s;
 }
 
+.tactics-hero-link:hover,
+.tactics-hero-link:focus-visible,
 .tactics-primary-link:hover,
 .tactics-primary-link:focus-visible {
   background: var(--tactics-tone);
   color: #111;
   transform: translateY(-2px);
 }
+
+.tactics-hero-link i { color: var(--tactics-tone); }
+
+.tactics-hero-link:hover i,
+.tactics-hero-link:focus-visible i { color: #111; }
 
 .tactics-hero-media {
   position: relative;
@@ -542,7 +555,7 @@
   .tactics-page-shell { width: calc(100% - 28px); }
   .tactics-hero { min-height: 0; margin-top: 24px; }
   .tactics-hero-copy { padding: 34px 24px 38px; }
-  .tactics-hero h1 { font-size: clamp(44px, 13vw, 66px); }
+  .tactics-hero h1 { font-size: clamp(34px, 10vw, 44px); }
   .tactics-hero-copy > p:last-of-type { font-size: 16px; }
   .tactics-hero-media { min-height: 410px; }
   .tactics-hero-media figcaption { left: 20px; right: 20px; bottom: 18px; }
