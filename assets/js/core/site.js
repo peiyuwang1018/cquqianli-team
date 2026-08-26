@@ -337,7 +337,7 @@ function getGalleryItemPhotos(item) {
     .filter((photo) => photo?.src);
 }
 
-function activateGalleryTab(name, moveFocus = false) {
+function activateGalleryTab(name, moveFocus = false, historyMode = "none") {
   const activeTab = galleryTabs.find((tab) => tab.dataset.galleryTab === name);
   if (!activeTab) return;
 
@@ -351,6 +351,12 @@ function activateGalleryTab(name, moveFocus = false) {
   galleryPanels.forEach((panel) => {
     panel.hidden = panel.dataset.galleryPanel !== name;
   });
+
+  const nextHash = `#${encodeURIComponent(name)}`;
+  if (historyMode !== "none" && location.hash !== nextHash) {
+    const method = historyMode === "replace" ? "replaceState" : "pushState";
+    history[method](null, "", nextHash);
+  }
 
   if (moveFocus) activeTab.focus();
 }
@@ -693,8 +699,24 @@ designFilter?.addEventListener("keydown", (event) => {
   designFilterButtons[nextIndex].click();
 });
 
+const galleryDefaultTab = galleryTabs[0]?.dataset.galleryTab || "";
+const syncGalleryTabFromHash = (historyMode = "none") => {
+  if (!galleryTabs.length) return;
+  const requestedTab = location.hash.slice(1);
+  const activeTab = galleryTabs.some((tab) => tab.dataset.galleryTab === requestedTab)
+    ? requestedTab
+    : galleryDefaultTab;
+  activateGalleryTab(activeTab, false, historyMode);
+};
+
+if (galleryTabs.length) {
+  syncGalleryTabFromHash("replace");
+  window.addEventListener("hashchange", () => syncGalleryTabFromHash());
+  window.addEventListener("popstate", () => syncGalleryTabFromHash());
+}
+
 galleryTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab));
+  tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab, false, "push"));
   tab.addEventListener("keydown", (event) => {
     let nextIndex = null;
     if (event.key === "ArrowRight") nextIndex = (index + 1) % galleryTabs.length;
@@ -703,7 +725,7 @@ galleryTabs.forEach((tab, index) => {
     if (event.key === "End") nextIndex = galleryTabs.length - 1;
     if (nextIndex === null) return;
     event.preventDefault();
-    activateGalleryTab(galleryTabs[nextIndex].dataset.galleryTab, true);
+    activateGalleryTab(galleryTabs[nextIndex].dataset.galleryTab, true, "push");
   });
 });
 
