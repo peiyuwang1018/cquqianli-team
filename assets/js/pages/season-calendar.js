@@ -17,6 +17,8 @@
   var memoContainer = root.querySelector("[data-season-memo]");
   var tooltip = root.querySelector("[data-season-tooltip]");
   var progressWindowIndex = 0;
+  var viewHashes = { progress: "progress", month: "month", node: "overview", memo: "memo" };
+  var hashViews = { progress: "progress", month: "month", overview: "node", memo: "memo" };
 
   function parseDate(value) {
     var parts = value.split("-").map(Number);
@@ -552,16 +554,17 @@
     var memoStatusLabels = { confirmed: "已确认", tentative: "暂定", pending: "待公布" };
     data.officialMemo.forEach(function (item, index) {
       var row = createElement("article", "season-memo-item season-memo-item--" + item.status);
-      var number = createElement("span", "season-memo-number");
+      var number = createElement("span", "season-memo-number", String(index + 1).padStart(2, "0"));
+      var iconSlot = createElement("span", "season-memo-icon");
       var icon = createElement("i", "mdi " + (item.icon || "mdi-calendar-check-outline"));
       icon.setAttribute("aria-hidden", "true");
-      number.appendChild(icon);
-      number.appendChild(createElement("small", "", String(index + 1).padStart(2, "0")));
+      iconSlot.appendChild(icon);
       var title = createElement("h4", "season-memo-title", item.title);
       var date = createElement("p", "season-memo-date", item.dateLabel);
       var status = createElement("span", "season-memo-status", memoStatusLabels[item.status] || item.status);
       var note = createElement("p", "season-memo-note", item.note);
       row.appendChild(number);
+      row.appendChild(iconSlot);
       row.appendChild(title);
       row.appendChild(date);
       row.appendChild(status);
@@ -584,12 +587,19 @@
     });
   }
 
-  function activateView(view) {
+  function updateViewHash(view) {
+    var hash = viewHashes[view];
+    if (hash && location.hash !== "#" + hash) history.replaceState(null, "", "#" + hash);
+  }
+
+  function activateView(view, options) {
+    options = options || {};
     root.classList.toggle("is-memo-view", view === "memo");
     document.querySelectorAll("[data-season-view]").forEach(function (item) {
       var active = item.dataset.seasonView === view;
       item.classList.toggle("is-active", active);
       item.setAttribute("aria-selected", String(active));
+      item.tabIndex = active ? 0 : -1;
     });
     root.querySelectorAll("[data-season-panel]").forEach(function (panel) {
       var active = panel.dataset.seasonPanel === view;
@@ -600,12 +610,13 @@
     if (view === "month") renderMonth();
     if (view === "node") renderOverview();
     if (view === "memo") renderMemo();
+    if (options.updateHash) updateViewHash(view);
   }
 
   function jumpToMonth(key) {
     monthCursor = parseDate(key + "-01");
     selectedEvent = null;
-    activateView("month");
+    activateView("month", { updateHash: true });
     root.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
@@ -635,8 +646,13 @@
 
   document.querySelectorAll("[data-season-view]").forEach(function (button) {
     button.addEventListener("click", function () {
-      activateView(button.dataset.seasonView);
+      activateView(button.dataset.seasonView, { updateHash: true });
     });
+  });
+
+  window.addEventListener("hashchange", function () {
+    var view = hashViews[location.hash.slice(1)];
+    if (view) activateView(view);
   });
 
   renderFilters();
@@ -644,4 +660,7 @@
   renderProgress();
   renderOverview();
   renderMemo();
+  var initialView = hashViews[location.hash.slice(1)] || "progress";
+  activateView(initialView);
+  updateViewHash(initialView);
 }());
