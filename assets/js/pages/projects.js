@@ -16,7 +16,7 @@
     operations: "宣运组",
   };
 
-  const applyFilter = (filter) => {
+  const applyFilter = (filter, updateHash = false) => {
     cards.forEach((card) => {
       const groups = card.dataset.projectGroups.split(/\s+/);
       card.hidden = filter !== "all" && !groups.includes(filter);
@@ -48,11 +48,20 @@
       button.setAttribute("aria-pressed", String(isActive));
     });
 
+    const nextHash = `#${encodeURIComponent(filter)}`;
+    if (updateHash && location.hash !== nextHash) {
+      try {
+        location.hash = nextHash;
+      } catch {
+        // Filtering must remain available when a local browser blocks URL updates.
+      }
+    }
+
     requestAnimationFrame(() => carouselUpdaters.forEach((update) => update()));
   };
 
   filters.forEach((button) => {
-    button.addEventListener("click", () => applyFilter(button.dataset.projectFilter));
+    button.addEventListener("click", () => applyFilter(button.dataset.projectFilter, true));
   });
 
   accordions.forEach((accordion) => {
@@ -103,5 +112,12 @@
     requestAnimationFrame(updateButtons);
   });
 
-  applyFilter("all");
+  const syncFilterFromHash = () => {
+    const requested = location.hash.slice(1);
+    const filter = filters.some((button) => button.dataset.projectFilter === requested) ? requested : "all";
+    applyFilter(filter);
+  };
+
+  window.addEventListener("hashchange", syncFilterFromHash);
+  syncFilterFromHash();
 })();
