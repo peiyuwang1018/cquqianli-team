@@ -16464,6 +16464,11 @@ a.contact-channel-card--direct:focus-visible {
   background: var(--card-bg);
 }
 
+.page-hero > .resource-tabs {
+  width: 100%;
+  margin: 0;
+}
+
 .resource-construction > i {
   margin-bottom: 20px;
   color: var(--accent);
