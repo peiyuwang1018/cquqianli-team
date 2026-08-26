@@ -11878,6 +11878,16 @@ a.contact-channel-card--direct:focus-visible {
   background: #fff;
 }
 
+.thanks-marquee .partner-marquee-item--xnlm img {
+  width: 68px;
+  height: 68px;
+  padding: 4px;
+}
+
+:root[data-theme="dark"] .thanks-marquee .partner-marquee-item--cqu img {
+  filter: brightness(0) invert(1);
+}
+
 :root[data-theme="dark"] .thanks-marquee .partner-marquee-item--sxic img,
 :root[data-theme="dark"] .thanks-marquee .partner-marquee-item--pivot img {
   filter: invert(1) brightness(1.08);
