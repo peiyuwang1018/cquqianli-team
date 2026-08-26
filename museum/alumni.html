@@ -4,8 +4,8 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
-    <title>管理层 | 重庆大学千里战队</title>
+    <meta name="description" content="重庆大学千里战队历届超级对抗赛报名成员档案。" />
+    <title>历届成员 | 档案馆 | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
@@ -17,12 +17,10 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260826-85" />
-    <link rel="stylesheet" href="assets/css/tactics.css?v=20260825-4" />
-    <link rel="stylesheet" href="assets/css/management.css?v=20260826-1" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260826-86" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
+  <body data-page="archive">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -50,7 +48,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--organization">
-            <a class="is-active" aria-current="page" href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">团队架构</span></a>
+            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">团队架构</span></a>
             <span class="nav-dropdown nav-dropdown--organization">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
@@ -81,7 +79,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <a class="is-active" aria-current="page" href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
             <span class="nav-dropdown nav-dropdown--museum">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
@@ -127,231 +125,37 @@
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="about/organization.html" aria-label="返回团队架构" title="返回团队架构">
+      <a class="page-back-link" href="museum/index.html" aria-label="返回千里博物馆" title="返回千里博物馆">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main class="management-page tactics-page">
-  <section class="management-hero tactics-hero" aria-labelledby="management-page-title">
-    <div class="tactics-hero-copy">
-      <p class="page-label">MANAGEMENT LAYER</p>
-      <h1 id="management-page-title"><span>组织共同方向</span><span>保障赛季交付</span></h1>
-      <div class="tactics-internal-badge"><i class="mdi mdi-account-tie-outline" aria-hidden="true"></i><span>管理层 · 队伍方向、资源与交付责任</span></div>
-      <p>管理层把技术路线、项目节奏、队伍资源与赛场流程组织成可执行、可检查、可传承的共同计划，并为关键决策、交付质量和安全底线负责。</p>
-      <div class="tactics-hero-actions">
-        <a class="tactics-hero-link" href="#management-roles">查看岗位分工 <i class="mdi mdi-arrow-down" aria-hidden="true"></i></a>
-        <a class="tactics-hero-link" href="#management-collaboration">了解协作机制 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
-        <a class="tactics-hero-link" href="season/members.html#management">查看组别成员 <i class="mdi mdi-account-group-outline" aria-hidden="true"></i></a>
-      </div>
-    </div>
-    <figure class="tactics-hero-media management-hero-media">
-      <img src="assets/images/content/groups/management/management-hero.webp" alt="25_A051 · 千里战队队员参加 RMUC 2025 中部分区赛" />
-      <figcaption><span>RMUC 2025 · 25_A051</span><strong>让方向、资源、研发与赛场形成同一条责任链</strong></figcaption>
-    </figure>
-  </section>
+<main class="records-page">
+      <section class="page-hero archive-page-hero">
+        <div><p class="page-label">TEAM ARCHIVE</p><h1>档案馆</h1></div>
+        <p>归档战队的比赛历程、建设项目、历届成员与集体荣誉。</p>
+        <nav class="archive-tabs" aria-label="档案馆分类">
+          <a href="museum/projects.html"><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i>团队项目</a>
+          <a class="is-active" aria-current="page" href="museum/alumni.html"><i class="mdi mdi-account-clock-outline" aria-hidden="true"></i>历届成员</a>
+          <a href="museum/records.html"><i class="mdi mdi-trophy-variant-outline" aria-hidden="true"></i>历史比赛</a>
+          <a href="museum/honors.html"><i class="mdi mdi-medal-outline" aria-hidden="true"></i>荣誉墙</a>
+        </nav>
+      </section>
 
-  <div class="management-page-shell tactics-page-shell">
-  <div class="management-section-nav tactics-section-nav" role="tablist" aria-label="管理层页面板块" aria-orientation="vertical" data-management-tabset="section">
-    <button id="management-overview-tab" type="button" role="tab" aria-selected="true" aria-controls="management-overview" data-management-tab="management-overview"><i class="mdi mdi-compass-outline" aria-hidden="true"></i><span>01</span>职责原则</button>
-    <button id="management-roles-tab" type="button" role="tab" aria-selected="false" aria-controls="management-roles" data-management-tab="management-roles" tabindex="-1"><i class="mdi mdi-account-details-outline" aria-hidden="true"></i><span>02</span>岗位分工</button>
-    <button id="management-collaboration-tab" type="button" role="tab" aria-selected="false" aria-controls="management-collaboration" data-management-tab="management-collaboration" tabindex="-1"><i class="mdi mdi-source-branch" aria-hidden="true"></i><span>03</span>协作机制</button>
-    <button id="management-safety-tab" type="button" role="tab" aria-selected="false" aria-controls="management-safety" data-management-tab="management-safety" tabindex="-1"><i class="mdi mdi-shield-check-outline" aria-hidden="true"></i><span>04</span>安全底线</button>
-  </div>
-  <div class="management-panel-stage tactics-panel-stage">
-
-  <section id="management-overview" class="management-section management-overview tactics-section" role="tabpanel" aria-labelledby="management-overview-tab" data-management-panel="section">
-    <div class="management-section-heading">
-      <div>
-        <p class="page-label">01 · RESPONSIBILITY</p>
-        <h2 id="management-overview-title">让复杂协作有清晰答案</h2>
-      </div>
-      <p>管理层跨越技术组、兵种组和赛季任务：明确方向，组织资源，持续识别风险，并为关键决策、交付质量和队伍传承负责。</p>
-    </div>
-    <div class="management-principles">
-      <article>
-        <span>方向</span>
-        <h3>做正确的事</h3>
-        <p>把赛季目标拆解为技术路线、阶段目标和可验证的成功标准。</p>
-      </article>
-      <article>
-        <span>交付</span>
-        <h3>把事情做成</h3>
-        <p>让需求、计划、资源、成本、质量与风险进入同一套推进节奏。</p>
-      </article>
-      <article>
-        <span>传承</span>
-        <h3>让经验留下</h3>
-        <p>通过制度、文档、复盘和人才培养，把单届经验变成战队能力。</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="management-roles" class="management-section tactics-section" role="tabpanel" aria-labelledby="management-roles-tab" data-management-panel="section" hidden>
-    <div class="management-section-heading">
-      <div>
-        <p class="page-label">02 · ROLE MAP</p>
-        <h2 id="management-role-title">岗位职责与协作边界</h2>
-      </div>
-      <p>以下依据 2026 赛季参赛手册重新整理。具体任命、兼任关系与内部接口，以千里战队当赛季制度为准。</p>
-    </div>
-
-    <div class="management-role-grid">
-      <article class="management-role-card">
-        <header><span>01</span><div><p>GUIDANCE</p><h3>指导老师</h3></div></header>
-        <p class="management-role-summary">队伍建设与重大事项的指导者，也是校园资源与安全责任的重要保障。</p>
-        <ul>
-          <li>指导组织建设、日常管理、重大决策与机器人研发。</li>
-          <li>帮助队伍建立正向文化，关注成员成长与长期传承。</li>
-          <li>协调校内资源，并监督训练、加工、测试与参赛安全。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键关注：</strong>健康发展 · 人才培养 · 安全底线</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>02</span><div><p>TEAM LIAISON</p><h3>领队老师与战队指导</h3></div></header>
-        <p class="management-role-summary">在校内协调、组委会联络和专业支持之间搭桥。</p>
-        <ul>
-          <li>领队老师对接组委会、协调学校资源并保障参赛期间的人身与财产安全。</li>
-          <li>战队指导从技术、战术、管理或团队建设方向提供专业支持。</li>
-          <li>推动关键经验形成可复用的方法、文档和培养机制。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键关注：</strong>外部接口 · 专业指导 · 传承支持</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>03</span><div><p>CAPTAIN</p><h3>队长</h3></div></header>
-        <p class="management-role-summary">技术、战术与文化建设的总负责人，对重大选择和比赛现场关键流程负责。</p>
-        <ul>
-          <li>组建队伍，组织选拔、培养、分工与日常管理。</li>
-          <li>统筹技术和战术方案评审，识别风险并完成重大决策。</li>
-          <li>建设流程与文化；比赛期间管理秩序、领队会议、成绩确认和申诉。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键交付：</strong>赛季目标 · 重大决策 · 队伍文化</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>04</span><div><p>PROJECT MANAGEMENT</p><h3>项目管理</h3></div></header>
-        <p class="management-role-summary">把目标变成计划，把分散推进变成可追踪的项目闭环。</p>
-        <ul>
-          <li>制定阶段目标，持续跟踪进度、成本、需求与风险。</li>
-          <li>协调技术组与兵种组，解决资源冲突和交付阻塞。</li>
-          <li>建设并迭代项目管理流程、方法、工具与复盘机制。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键交付：</strong>里程碑 · 风险清单 · 版本与闭环</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>05</span><div><p>OPERATIONS</p><h3>运营经理</h3></div></header>
-        <p class="management-role-summary">让队伍的研发故事被看见，也让财务、商务和后勤支持研发持续运转。</p>
-        <ul>
-          <li>统筹宣传、文化、招新、团建与技术交流活动。</li>
-          <li>连接学校、校友、企业和合作伙伴，推进商务与赞助。</li>
-          <li>组织财务、研发成本、差旅与比赛后勤，沉淀运营经验。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键交付：</strong>传播体系 · 资源拓展 · 后勤保障</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>06</span><div><p>QUALITY MANAGEMENT</p><h3>质量管理</h3></div></header>
-        <p class="management-role-summary">把“能运行”推进到“在高压赛场中仍然稳定、可验证”。</p>
-        <ul>
-          <li>设计测试流程、测试用例、验收标准和问题闭环方法。</li>
-          <li>覆盖功能、稳定性、寿命与整机联调等关键测试。</li>
-          <li>持续改善测试工具和效率，让质量结论有证据可追溯。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键交付：</strong>测试计划 · 缺陷闭环 · 放行依据</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>07</span><div><p>TECHNICAL LEAD</p><h3>技术组长</h3></div></header>
-        <p class="management-role-summary">负责单一技术方向的能力建设与资源组织。</p>
-        <ul>
-          <li>技术组长负责本技术方向的人力、资源、培训与能力建设。</li>
-          <li>根据各兵种研发任务，协调本专业成员的投入与优先级。</li>
-          <li>沉淀专业规范、培训内容与可复用技术方案。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键交付：</strong>能力供给 · 人员配置 · 技术传承</p>
-      </article>
-
-      <article class="management-role-card">
-        <header><span>08</span><div><p>ROBOT LEAD</p><h3>兵种负责人</h3></div></header>
-        <p class="management-role-summary">对单一兵种的整机方案、研发协同与最终结果负责。</p>
-        <ul>
-          <li>组织对应机器人的底层架构设计和关键技术决策。</li>
-          <li>从整机目标出发调用机械、电控、视觉、硬件等专业资源。</li>
-          <li>统筹跨专业接口、版本节奏、联调验证与比赛交付。</li>
-        </ul>
-        <p class="management-role-output"><strong>关键交付：</strong>整机方案 · 接口对齐 · 兵种交付</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="management-collaboration" class="management-section tactics-section" role="tabpanel" aria-labelledby="management-collaboration-tab" data-management-panel="section" hidden>
-    <div class="management-section-heading">
-      <div>
-        <p class="page-label">03 · DELIVERY CHAIN</p>
-        <h2 id="management-chain-title">五条协作链，避免责任停在“大家一起负责”</h2>
-      </div>
-      <p>每个问题都需要明确的决策人、推进人、专业接口和验收依据；跨组问题进入共同节奏，减少临场催促。</p>
-    </div>
-    <div class="management-chain-grid">
-      <article><span>01</span><h3>方向与决策</h3><p>指导老师、队长明确目标、边界与重大取舍。</p></article>
-      <article><span>02</span><h3>计划与风险</h3><p>项目管理组织里程碑、需求、成本和风险闭环。</p></article>
-      <article><span>03</span><h3>专业与整机</h3><p>技术组长与兵种负责人对齐资源、接口和交付标准。</p></article>
-      <article><span>04</span><h3>质量与安全</h3><p>质量管理建立验证证据，全体管理成员守住安全底线。</p></article>
-      <article><span>05</span><h3>传播与保障</h3><p>运营经理连接内容、资金、商务、差旅与现场支持。</p></article>
-    </div>
-    <div class="management-cycle-block">
-    <div class="management-section-heading">
-      <div>
-        <p class="page-label">04 · SEASON CYCLE</p>
-        <h2 id="management-cycle-title">管理工作的成果，要在每个阶段都能被验证</h2>
-      </div>
-      <p>从赛季目标到赛后复盘，管理层持续维护同一条信息链，确保决定有依据、执行有跟踪、结果有归档。</p>
-    </div>
-    <div class="management-cycle">
-      <article><span>PRE-SEASON</span><h3>赛季启动</h3><p>确认组织与角色，完成目标、技术路线、预算、资源和阶段计划评审。</p></article>
-      <article><span>DEVELOPMENT</span><h3>研发推进</h3><p>跟踪版本与里程碑，协调资源，管理变更、风险、测试和交付质量。</p></article>
-      <article><span>COMPETITION</span><h3>比赛与复盘</h3><p>组织现场秩序、赛务确认和应急响应；赛后完成技术、管理与运营复盘。</p></article>
-    </div>
-    </div>
-  </section>
-
-  <section id="management-safety" class="management-section tactics-section" role="tabpanel" aria-labelledby="management-safety-tab" data-management-panel="section" hidden>
-    <div class="management-safety-panel">
-      <div>
-        <p class="page-label">SAFETY BASELINE</p>
-        <h2 id="management-safety-title">安全是所有管理责任的前置条件</h2>
-      </div>
-      <p>指导老师承担安全监督，管理层负责把结构、电气、机械加工、通电调试和比赛现场的风险纳入计划。训练与测试应有明确负责人、检查项、急停与应急处置，不以进度换取安全。</p>
-    </div>
-    <nav class="management-actions" aria-label="管理层相关页面">
-      <a href="about/management.html">查看管理与协作 <span aria-hidden="true">→</span></a>
-      <a href="about/organization.html">返回组织架构 <span aria-hidden="true">→</span></a>
-    </nav>
-  </section>
-  </div>
-  </div>
-</main>
+      <section class="section-block team-member-section" id="past-members" data-member-section="past">
+        <header class="team-member-section-head">
+          <div><p class="page-label">TEAM ARCHIVE</p><h2>历届队伍成员</h2></div>
+          <p>信息无法涵盖所有参与队员，人员与身份以当赛季 RoboMaster 超级对抗赛报名系统呈现为准。</p>
+        </header>
+        <div class="past-member-archive" data-past-members></div>
+      </section>
+    </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
+    <script src="assets/js/data/members.js?v=20260823-13"></script>
+    <script src="assets/js/pages/members.js?v=20260826-1"></script>
     <script src="assets/js/core/site.js?v=20260825-81"></script>
-    <script src="assets/js/pages/management.js?v=20260826-1"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

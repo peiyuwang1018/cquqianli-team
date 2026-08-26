@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260825-82" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260826-88" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -132,9 +132,10 @@
 <main class="records-page">
       <section class="page-hero archive-page-hero">
         <div><p class="page-label">TEAM ARCHIVE</p><h1>档案馆</h1></div>
-        <p>归档战队的比赛历程、建设项目与集体荣誉。</p>
+        <p>归档战队的比赛历程、建设项目、历届成员与集体荣誉。</p>
         <nav class="archive-tabs" aria-label="档案馆分类">
           <a href="museum/projects.html"><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i>团队项目</a>
+          <a href="museum/alumni.html"><i class="mdi mdi-account-clock-outline" aria-hidden="true"></i>历届成员</a>
           <a class="is-active" aria-current="page" href="museum/records.html"><i class="mdi mdi-trophy-variant-outline" aria-hidden="true"></i>历史比赛</a>
           <a href="museum/honors.html"><i class="mdi mdi-medal-outline" aria-hidden="true"></i>荣誉墙</a>
         </nav>
@@ -143,8 +144,8 @@
         <header class="match-archive-heading">
           <div><p class="page-label">HISTORICAL MATCHES</p><h2>历史比赛</h2></div>
           <p data-match-scope>本页仅统计 RMUC 超级对抗赛；联盟赛记录尚未纳入。</p>
+          <div class="match-season-tabs" role="tablist" aria-label="选择比赛赛季" data-match-season-tabs></div>
         </header>
-        <div class="match-season-tabs" role="tablist" aria-label="选择比赛赛季" data-match-season-tabs></div>
         <section class="match-season-summary" aria-live="polite" data-match-season-summary></section>
         <div class="match-list" data-match-list></div>
       </section>
