@@ -10,7 +10,7 @@
     }
   };
 
-    const resourceTabs = [...document.querySelectorAll("[data-resource-tab]")];
+  const resourceTabs = [...document.querySelectorAll("[data-resource-tab]")];
   const resourcePanels = [...document.querySelectorAll("[data-resource-panel]")];
 
   const activateResourceTab = (key, updateHash = true) => {
@@ -39,7 +39,7 @@
 
   if (resourceTabs.length && resourcePanels.length) {
     const initial = location.hash.replace("#", "");
-    activateResourceTab(resourceTabs.some((tab) => tab.dataset.resourceTab === initial) ? initial : "lessons", false);
+    activateResourceTab(resourceTabs.some((tab) => tab.dataset.resourceTab === initial) ? initial : "training", false);
   }
 
   const lessons = readLessons();

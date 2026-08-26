@@ -4,7 +4,7 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
+    <meta name="description" content="重庆大学千里战队公开资料站，提供培训体系、培训视频入口、RoboMaster 官方资料与公开表单。" />
     <title>资料站 | 重庆大学千里战队</title>
     <script>
       (() => {
@@ -17,7 +17,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260825-82" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260826-85" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="archive">
@@ -132,90 +132,81 @@
 <main>
   <section class="page-hero">
     <div><p class="page-label">TRAINING ARCHIVE</p><h1>资料站</h1></div>
-    <p>从先导课开始认识各组工作，再进入完整培训文档与技术资料。</p>
+    <p>面向公众整理培训课程、赛事指南与公开文件，帮助新成员理解比赛并建立学习路径。</p>
   </section>
   <div class="resource-tabs" role="tablist" aria-label="资料站栏目">
-    <button class="is-active" type="button" role="tab" aria-selected="true" data-resource-tab="lessons"><i class="mdi mdi-compass-outline" aria-hidden="true"></i>各组先导课</button>
-    <button type="button" role="tab" aria-selected="false" data-resource-tab="technical"><i class="mdi mdi-cog-outline" aria-hidden="true"></i>技术组资料</button>
-    <button type="button" role="tab" aria-selected="false" data-resource-tab="files"><i class="mdi mdi-file-document-outline" aria-hidden="true"></i>其他资料</button>
+    <button class="is-active" type="button" role="tab" aria-selected="true" data-resource-tab="training"><i class="mdi mdi-school-outline" aria-hidden="true"></i>培训体系</button>
+    <button type="button" role="tab" aria-selected="false" data-resource-tab="videos"><i class="mdi mdi-video-outline" aria-hidden="true"></i>培训视频</button>
+    <button type="button" role="tab" aria-selected="false" data-resource-tab="files"><i class="mdi mdi-file-document-multiple-outline" aria-hidden="true"></i>赛事与公共资料</button>
   </div>
-  <section class="section-block training-library resource-panel" role="tabpanel" data-resource-panel="lessons">
+  <section class="section-block training-library resource-panel" role="tabpanel" data-resource-panel="training">
     <div class="section-heading training-library-heading">
-      <div><p class="page-label">START HERE</p><h2>各组先导课</h2></div>
-      <p>点击卡片打开先导课预览；已整理的完整内容可在阅读页继续查看。</p>
+      <div><p class="page-label">TRAINING SYSTEM</p><h2>培训体系</h2></div>
+      <p>从公开先导课进入各组的培养路径。机械组后续将继续上线以 PPT 为主体的基础培训教程。</p>
     </div>
     <div class="training-library-grid">
-      <a class="training-card is-ready" href="groups/mechanical.html" data-training-group="mechanical">
+      <a class="training-card is-ready" href="museum/training/mechanical.html">
         <img src="assets/images/brand/vector-icons/mechanical.svg" alt="" aria-hidden="true" />
-        <span class="training-card-state">先导课已开放</span><small>MECHANICAL STRUCTURE</small><h3>机械结构组</h3>
-        <p>从整机需求、结构设计到加工装配与测试迭代。</p>
+        <span class="training-card-state">先导课已开放</span><small>MECHANICAL TRAINING</small><h3>机械组培训体系</h3>
+        <p>从整机认识进入结构设计、加工装配和工程测试，后续持续补充基础培训课件。</p>
       </a>
-      <a class="training-card is-ready" href="groups/control.html" data-training-group="control">
+      <a class="training-card is-ready" href="museum/training/control.html">
         <img src="assets/images/brand/vector-icons/control.svg" alt="" aria-hidden="true" />
-        <span class="training-card-state">先导课已开放</span><small>ELECTRICAL CONTROL</small><h3>电气控制组</h3>
+        <span class="training-card-state">先导课已开放</span><small>CONTROL TRAINING</small><h3>电控组培训体系</h3>
         <p>沿整车数据流理解嵌入式控制、通信与执行器协同。</p>
       </a>
-      <a class="training-card is-ready" href="groups/vision.html" data-training-group="vision">
+      <a class="training-card is-ready" href="museum/training/vision.html">
         <img src="assets/images/brand/vector-icons/vision.svg" alt="" aria-hidden="true" />
-        <span class="training-card-state">先导课已开放</span><small>VISION ALGORITHM</small><h3>视觉算法组</h3>
+        <span class="training-card-state">先导课已开放</span><small>VISION TRAINING</small><h3>视觉组培训体系</h3>
         <p>认识赛场上的眼睛与大脑，以及后续完整学习路线。</p>
       </a>
-      <a class="training-card is-pending" href="groups/hardware.html" data-training-group="hardware">
+      <a class="training-card is-pending" href="groups/hardware.html">
         <img src="assets/images/brand/vector-icons/hardware.svg" alt="" aria-hidden="true" />
-        <span class="training-card-state">整理中</span><small>HARDWARE DEVELOPMENT</small><h3>硬件开发组</h3>
+        <span class="training-card-state">筹备中</span><small>HARDWARE TRAINING</small><h3>硬件组培训体系</h3>
         <p>从电路与电气系统出发，理解机器人硬件可靠性。</p>
-      </a>
-      <a class="training-card is-pending" href="groups/operations.html" data-training-group="operations">
-        <img src="assets/images/brand/vector-icons/operations.svg" alt="" aria-hidden="true" />
-        <span class="training-card-state">整理中</span><small>OPERATIONS</small><h3>宣传运营组</h3>
-        <p>认识内容、品牌、活动与团队运营的协同工作。</p>
       </a>
     </div>
   </section>
-  <section class="section-block training-library resource-panel" role="tabpanel" data-resource-panel="technical" hidden>
-    <div class="section-heading training-library-heading">
-      <div><p class="page-label">TECH GROUPS</p><h2>技术组资料</h2></div>
-      <p>按技术组别进入资料集合；后续培训文档、工具链和项目记录会逐步补充。</p>
-    </div>
-    <div class="training-library-grid resource-group-grid">
-      <a class="training-card" href="groups/mechanical.html">
-        <img src="assets/images/brand/vector-icons/mechanical.svg" alt="" aria-hidden="true" />
-        <small>MECHANICAL STRUCTURE</small><h3>机械结构组</h3>
-        <p>结构设计、加工装配、测试维护与整机工程资料。</p>
-      </a>
-      <a class="training-card" href="groups/control.html">
-        <img src="assets/images/brand/vector-icons/control.svg" alt="" aria-hidden="true" />
-        <small>ELECTRICAL CONTROL</small><h3>电气控制组</h3>
-        <p>嵌入式开发、运动控制、通信链路与整车联调资料。</p>
-      </a>
-      <a class="training-card" href="groups/vision.html">
-        <img src="assets/images/brand/vector-icons/vision.svg" alt="" aria-hidden="true" />
-        <small>VISION ALGORITHM</small><h3>视觉算法组</h3>
-        <p>图像处理、识别定位、ROS2 与算法部署资料。</p>
-      </a>
-      <a class="training-card" href="groups/hardware.html">
-        <img src="assets/images/brand/vector-icons/hardware.svg" alt="" aria-hidden="true" />
-        <small>HARDWARE DEVELOPMENT</small><h3>硬件开发组</h3>
-        <p>电路设计、电气系统、供电保护与可靠性资料。</p>
-      </a>
-      <a class="training-card" href="groups/operations.html">
-        <img src="assets/images/brand/vector-icons/operations.svg" alt="" aria-hidden="true" />
-        <small>OPERATIONS</small><h3>宣传运营组</h3>
-        <p>内容传播、品牌视觉、活动组织与团队运营资料。</p>
-      </a>
+  <section class="section-block resource-panel" role="tabpanel" data-resource-panel="videos" hidden>
+    <div class="resource-construction" role="status">
+      <i class="mdi mdi-crane" aria-hidden="true"></i>
+      <p class="page-label">TRAINING VIDEOS</p>
+      <h2>此页面正在运筹帷幄中...</h2>
+      <p>未来将汇集千里战队公开发布的培训视频，并跳转至 B 站观看。</p>
     </div>
   </section>
   <section class="section-block resource-panel" role="tabpanel" data-resource-panel="files" hidden>
     <div class="section-heading training-library-heading">
-      <div><p class="page-label">FILES</p><h2>其他资料</h2></div>
-      <p>与招新、报名、资料归档相关的通用文件会集中放在这里。</p>
+      <div><p class="page-label">PUBLIC DOCUMENTS</p><h2>赛事与公共资料</h2></div>
+      <p>集中提供 RoboMaster 官方公开文件、报名表和其他面向公众的资料，不收录队内技术文档。</p>
     </div>
-    <div class="resource-file-list">
-      <a class="resource-file-card" href="assets/documents/forms/qianli-mechanical-application.docx" download>
-        <i class="mdi mdi-file-word-outline" aria-hidden="true"></i>
-        <span><small>DOCX · 报名表 · V1.0</small><strong>千里战队机械组报名表 V1.0</strong></span>
-        <em>下载</em>
-      </a>
+    <div class="resource-file-sections">
+      <section class="resource-file-group" aria-labelledby="resource-rm-files-title">
+        <div class="resource-file-group-heading">
+          <div><p class="page-label">ROBOMASTER OFFICIAL</p><h3 id="resource-rm-files-title">RoboMaster 官方资料</h3></div>
+          <p>帮助初次接触比赛的读者了解参赛角色、流程与基本要求；比赛规则等文件将在核验版本后继续补充。</p>
+        </div>
+        <div class="resource-file-list">
+          <a class="resource-file-card" href="assets/documents/official/robomaster-2026-competition-handbook-v1.1.0.pdf" download>
+            <i class="mdi mdi-file-pdf-box" aria-hidden="true"></i>
+            <span><small>PDF · RoboMaster 官方 · V1.1.0</small><strong>RoboMaster 2026 机甲大师超级对抗赛参赛手册</strong></span>
+            <em>下载</em>
+          </a>
+        </div>
+      </section>
+      <section class="resource-file-group" aria-labelledby="resource-public-forms-title">
+        <div class="resource-file-group-heading">
+          <div><p class="page-label">PUBLIC FORMS</p><h3 id="resource-public-forms-title">公开表单</h3></div>
+          <p>用于公开报名与信息收集的可下载文件。</p>
+        </div>
+        <div class="resource-file-list">
+          <a class="resource-file-card" href="assets/documents/forms/qianli-mechanical-application.docx" download>
+            <i class="mdi mdi-file-word-outline" aria-hidden="true"></i>
+            <span><small>DOCX · 报名表 · V1.0</small><strong>千里战队机械组报名表 V1.0</strong></span>
+            <em>下载</em>
+          </a>
+        </div>
+      </section>
     </div>
   </section>
 </main>
@@ -225,7 +216,6 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260825-81"></script>
-    <script src="assets/js/data/training-data.js?v=20260824-1"></script>
     <script src="assets/js/pages/training.js?v=20260824-1"></script>
   </body>
 </html>
