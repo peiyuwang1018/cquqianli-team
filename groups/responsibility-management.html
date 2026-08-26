@@ -18,6 +18,8 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css?v=20260826-84" />
+    <link rel="stylesheet" href="assets/css/tactics.css?v=20260825-4" />
+    <link rel="stylesheet" href="assets/css/management.css?v=20260826-1" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -129,16 +131,34 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main class="management-page">
-  <section class="page-hero management-hero">
-    <div>
+<main class="management-page tactics-page">
+  <section class="management-hero tactics-hero" aria-labelledby="management-page-title">
+    <div class="tactics-hero-copy">
       <p class="page-label">MANAGEMENT LAYER</p>
-      <h1>管理层</h1>
+      <h1 id="management-page-title"><span>组织共同方向</span><span>保障赛季交付</span></h1>
+      <div class="tactics-internal-badge"><i class="mdi mdi-account-tie-outline" aria-hidden="true"></i><span>管理层 · 队伍方向、资源与交付责任</span></div>
+      <p>管理层把技术路线、项目节奏、队伍资源与赛场流程组织成可执行、可检查、可传承的共同计划，并为关键决策、交付质量和安全底线负责。</p>
+      <div class="tactics-hero-actions">
+        <a class="tactics-hero-link" href="#management-roles">查看岗位分工 <i class="mdi mdi-arrow-down" aria-hidden="true"></i></a>
+        <a class="tactics-hero-link" href="#management-collaboration">了解协作机制 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+      </div>
     </div>
-    <p>把技术路线、项目节奏、队伍资源与赛场流程组织成一套能被执行、检查和传承的共同计划。</p>
+    <figure class="tactics-hero-media management-hero-media">
+      <img src="assets/images/content/groups/management/management-hero.webp" alt="25_A051 · 千里战队队员参加 RMUC 2025 中部分区赛" />
+      <figcaption><span>RMUC 2025 · 25_A051</span><strong>让方向、资源、研发与赛场形成同一条责任链</strong></figcaption>
+    </figure>
   </section>
 
-  <section class="management-section management-overview" aria-labelledby="management-overview-title">
+  <div class="management-page-shell tactics-page-shell">
+  <div class="management-section-nav tactics-section-nav" role="tablist" aria-label="管理层页面板块" aria-orientation="vertical" data-management-tabset="section">
+    <button id="management-overview-tab" type="button" role="tab" aria-selected="true" aria-controls="management-overview" data-management-tab="management-overview"><i class="mdi mdi-compass-outline" aria-hidden="true"></i><span>01</span>职责原则</button>
+    <button id="management-roles-tab" type="button" role="tab" aria-selected="false" aria-controls="management-roles" data-management-tab="management-roles" tabindex="-1"><i class="mdi mdi-account-details-outline" aria-hidden="true"></i><span>02</span>岗位分工</button>
+    <button id="management-collaboration-tab" type="button" role="tab" aria-selected="false" aria-controls="management-collaboration" data-management-tab="management-collaboration" tabindex="-1"><i class="mdi mdi-source-branch" aria-hidden="true"></i><span>03</span>协作机制</button>
+    <button id="management-safety-tab" type="button" role="tab" aria-selected="false" aria-controls="management-safety" data-management-tab="management-safety" tabindex="-1"><i class="mdi mdi-shield-check-outline" aria-hidden="true"></i><span>04</span>安全底线</button>
+  </div>
+  <div class="management-panel-stage tactics-panel-stage">
+
+  <section id="management-overview" class="management-section management-overview tactics-section" role="tabpanel" aria-labelledby="management-overview-tab" data-management-panel="section">
     <div class="management-section-heading">
       <div>
         <p class="page-label">01 · RESPONSIBILITY</p>
@@ -165,7 +185,7 @@
     </div>
   </section>
 
-  <section class="management-section" aria-labelledby="management-role-title">
+  <section id="management-roles" class="management-section tactics-section" role="tabpanel" aria-labelledby="management-roles-tab" data-management-panel="section" hidden>
     <div class="management-section-heading">
       <div>
         <p class="page-label">02 · ROLE MAP</p>
@@ -175,7 +195,7 @@
     </div>
 
     <div class="management-role-grid">
-      <article class="management-role-card management-role-card--lead">
+      <article class="management-role-card">
         <header><span>01</span><div><p>GUIDANCE</p><h3>指导老师</h3></div></header>
         <p class="management-role-summary">队伍建设与重大事项的指导者，也是校园资源与安全责任的重要保障。</p>
         <ul>
@@ -197,7 +217,7 @@
         <p class="management-role-output"><strong>关键关注：</strong>外部接口 · 专业指导 · 传承支持</p>
       </article>
 
-      <article class="management-role-card management-role-card--lead">
+      <article class="management-role-card">
         <header><span>03</span><div><p>CAPTAIN</p><h3>队长</h3></div></header>
         <p class="management-role-summary">技术、战术与文化建设的总负责人，对重大选择和比赛现场关键流程负责。</p>
         <ul>
@@ -219,7 +239,7 @@
         <p class="management-role-output"><strong>关键交付：</strong>里程碑 · 风险清单 · 版本与闭环</p>
       </article>
 
-      <article class="management-role-card management-role-card--lead">
+      <article class="management-role-card">
         <header><span>05</span><div><p>OPERATIONS</p><h3>运营经理</h3></div></header>
         <p class="management-role-summary">让队伍的研发故事被看见，也让财务、商务和后勤支持研发持续运转。</p>
         <ul>
@@ -241,7 +261,7 @@
         <p class="management-role-output"><strong>关键交付：</strong>测试计划 · 缺陷闭环 · 放行依据</p>
       </article>
 
-      <article class="management-role-card management-role-card--lead">
+      <article class="management-role-card">
         <header><span>07</span><div><p>TECHNICAL LEAD</p><h3>技术组长</h3></div></header>
         <p class="management-role-summary">负责单一技术方向的能力建设与资源组织。</p>
         <ul>
@@ -265,7 +285,7 @@
     </div>
   </section>
 
-  <section class="management-section" aria-labelledby="management-chain-title">
+  <section id="management-collaboration" class="management-section tactics-section" role="tabpanel" aria-labelledby="management-collaboration-tab" data-management-panel="section" hidden>
     <div class="management-section-heading">
       <div>
         <p class="page-label">03 · DELIVERY CHAIN</p>
@@ -280,9 +300,7 @@
       <article><span>04</span><h3>质量与安全</h3><p>质量管理建立验证证据，全体管理成员守住安全底线。</p></article>
       <article><span>05</span><h3>传播与保障</h3><p>运营经理连接内容、资金、商务、差旅与现场支持。</p></article>
     </div>
-  </section>
-
-  <section class="management-section" aria-labelledby="management-cycle-title">
+    <div class="management-cycle-block">
     <div class="management-section-heading">
       <div>
         <p class="page-label">04 · SEASON CYCLE</p>
@@ -295,20 +313,24 @@
       <article><span>DEVELOPMENT</span><h3>研发推进</h3><p>跟踪版本与里程碑，协调资源，管理变更、风险、测试和交付质量。</p></article>
       <article><span>COMPETITION</span><h3>比赛与复盘</h3><p>组织现场秩序、赛务确认和应急响应；赛后完成技术、管理与运营复盘。</p></article>
     </div>
-  </section>
-
-  <section class="management-section management-safety" aria-labelledby="management-safety-title">
-    <div>
-      <p class="page-label">SAFETY BASELINE</p>
-      <h2 id="management-safety-title">安全是所有管理责任的前置条件</h2>
     </div>
-    <p>指导老师承担安全监督，管理层负责把结构、电气、机械加工、通电调试和比赛现场的风险纳入计划。训练与测试应有明确负责人、检查项、急停与应急处置，不以进度换取安全。</p>
   </section>
 
-  <nav class="management-actions" aria-label="管理层相关页面">
-    <a href="about/management.html">查看管理与协作 <span aria-hidden="true">→</span></a>
-    <a href="about/organization.html">返回组织架构 <span aria-hidden="true">→</span></a>
-  </nav>
+  <section id="management-safety" class="management-section tactics-section" role="tabpanel" aria-labelledby="management-safety-tab" data-management-panel="section" hidden>
+    <div class="management-safety-panel">
+      <div>
+        <p class="page-label">SAFETY BASELINE</p>
+        <h2 id="management-safety-title">安全是所有管理责任的前置条件</h2>
+      </div>
+      <p>指导老师承担安全监督，管理层负责把结构、电气、机械加工、通电调试和比赛现场的风险纳入计划。训练与测试应有明确负责人、检查项、急停与应急处置，不以进度换取安全。</p>
+    </div>
+    <nav class="management-actions" aria-label="管理层相关页面">
+      <a href="about/management.html">查看管理与协作 <span aria-hidden="true">→</span></a>
+      <a href="about/organization.html">返回组织架构 <span aria-hidden="true">→</span></a>
+    </nav>
+  </section>
+  </div>
+  </div>
 </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
@@ -316,6 +338,7 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260825-81"></script>
+    <script src="assets/js/pages/management.js?v=20260826-1"></script>
   </body>
 </html>
 

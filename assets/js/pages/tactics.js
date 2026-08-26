@@ -32,7 +32,7 @@
       item.hidden = item !== panel;
     });
 
-    if (updateUrl) history.replaceState(null, "", `#${targetId}`);
+    if (updateUrl) history.replaceState(null, "", `${location.pathname}${location.search}#${targetId}`);
     if (focus) tab.focus();
     if (scroll) requestAnimationFrame(() => scrollToPanel(panel, behavior));
   };

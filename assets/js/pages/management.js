@@ -1,9 +1,9 @@
 (() => {
-  const tabset = document.querySelector('[data-infrastructure-tabset="section"]');
+  const tabset = document.querySelector('[data-management-tabset="section"]');
   if (!tabset) return;
 
-  const tabs = Array.from(tabset.querySelectorAll(":scope > [data-infrastructure-tab]"));
-  const panels = Array.from(document.querySelectorAll('[data-infrastructure-panel="section"]'));
+  const tabs = Array.from(tabset.querySelectorAll(":scope > [data-management-tab]"));
+  const panels = Array.from(document.querySelectorAll('[data-management-panel="section"]'));
   const compactLayout = window.matchMedia("(max-width: 1380px)");
 
   const syncOrientation = () => {
@@ -18,7 +18,7 @@
 
   const activateTab = (tab, options = {}) => {
     const { focus = false, updateUrl = false, scroll = false, behavior = "smooth" } = options;
-    const targetId = tab.dataset.infrastructureTab;
+    const targetId = tab.dataset.managementTab;
     const panel = document.getElementById(targetId);
     if (!panel) return;
 
@@ -39,7 +39,7 @@
 
   const activateFromHash = (options = {}) => {
     const requestedId = location.hash.slice(1);
-    const requestedTab = tabs.find((tab) => tab.dataset.infrastructureTab === requestedId);
+    const requestedTab = tabs.find((tab) => tab.dataset.managementTab === requestedId);
     if (!requestedTab) return false;
     activateTab(requestedTab, options);
     return true;
