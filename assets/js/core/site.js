@@ -354,8 +354,12 @@ function activateGalleryTab(name, moveFocus = false, historyMode = "none") {
 
   const nextHash = `#${encodeURIComponent(name)}`;
   if (historyMode !== "none" && location.hash !== nextHash) {
-    const method = historyMode === "replace" ? "replaceState" : "pushState";
-    history[method](null, "", nextHash);
+    try {
+      if (historyMode === "replace") location.replace(nextHash);
+      else location.hash = nextHash;
+    } catch {
+      // Keep the tab usable even when a local file browser blocks URL updates.
+    }
   }
 
   if (moveFocus) activeTab.focus();
@@ -709,12 +713,6 @@ const syncGalleryTabFromHash = (historyMode = "none") => {
   activateGalleryTab(activeTab, false, historyMode);
 };
 
-if (galleryTabs.length) {
-  syncGalleryTabFromHash("replace");
-  window.addEventListener("hashchange", () => syncGalleryTabFromHash());
-  window.addEventListener("popstate", () => syncGalleryTabFromHash());
-}
-
 galleryTabs.forEach((tab, index) => {
   tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab, false, "push"));
   tab.addEventListener("keydown", (event) => {
@@ -728,6 +726,11 @@ galleryTabs.forEach((tab, index) => {
     activateGalleryTab(galleryTabs[nextIndex].dataset.galleryTab, true, "push");
   });
 });
+
+if (galleryTabs.length) {
+  window.addEventListener("hashchange", () => syncGalleryTabFromHash());
+  syncGalleryTabFromHash("replace");
+}
 
 galleryClose?.addEventListener("click", () => galleryLightbox?.close());
 galleryPrev?.addEventListener("click", () => changeGalleryRobot(-1));
