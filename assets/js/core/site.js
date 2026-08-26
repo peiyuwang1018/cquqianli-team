@@ -337,7 +337,7 @@ function getGalleryItemPhotos(item) {
     .filter((photo) => photo?.src);
 }
 
-function activateGalleryTab(name, moveFocus = false, historyMode = "none") {
+function activateGalleryTab(name, moveFocus = false, updateHash = false) {
   const activeTab = galleryTabs.find((tab) => tab.dataset.galleryTab === name);
   if (!activeTab) return;
 
@@ -353,10 +353,9 @@ function activateGalleryTab(name, moveFocus = false, historyMode = "none") {
   });
 
   const nextHash = `#${encodeURIComponent(name)}`;
-  if (historyMode !== "none" && location.hash !== nextHash) {
+  if (updateHash && location.hash !== nextHash) {
     try {
-      if (historyMode === "replace") location.replace(nextHash);
-      else location.hash = nextHash;
+      location.hash = nextHash;
     } catch {
       // Keep the tab usable even when a local file browser blocks URL updates.
     }
@@ -704,17 +703,17 @@ designFilter?.addEventListener("keydown", (event) => {
 });
 
 const galleryDefaultTab = galleryTabs[0]?.dataset.galleryTab || "";
-const syncGalleryTabFromHash = (historyMode = "none") => {
+const syncGalleryTabFromHash = () => {
   if (!galleryTabs.length) return;
   const requestedTab = location.hash.slice(1);
   const activeTab = galleryTabs.some((tab) => tab.dataset.galleryTab === requestedTab)
     ? requestedTab
     : galleryDefaultTab;
-  activateGalleryTab(activeTab, false, historyMode);
+  activateGalleryTab(activeTab);
 };
 
 galleryTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab, false, "push"));
+  tab.addEventListener("click", () => activateGalleryTab(tab.dataset.galleryTab, false, true));
   tab.addEventListener("keydown", (event) => {
     let nextIndex = null;
     if (event.key === "ArrowRight") nextIndex = (index + 1) % galleryTabs.length;
@@ -723,13 +722,13 @@ galleryTabs.forEach((tab, index) => {
     if (event.key === "End") nextIndex = galleryTabs.length - 1;
     if (nextIndex === null) return;
     event.preventDefault();
-    activateGalleryTab(galleryTabs[nextIndex].dataset.galleryTab, true, "push");
+    activateGalleryTab(galleryTabs[nextIndex].dataset.galleryTab, true, true);
   });
 });
 
 if (galleryTabs.length) {
   window.addEventListener("hashchange", () => syncGalleryTabFromHash());
-  syncGalleryTabFromHash("replace");
+  syncGalleryTabFromHash();
 }
 
 galleryClose?.addEventListener("click", () => galleryLightbox?.close());
