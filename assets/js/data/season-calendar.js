@@ -83,7 +83,8 @@
       { id: "memo-rmuc-pilot-finals", icon: "mdi-gamepad-variant", title: "RMUC 飞手考核（复活赛 / 全国赛）", dateLabel: "2027 年 6 月中下旬（参考 22 日前后）", status: "tentative", note: "参考往届复活赛与全国赛考核于 6 月 22 日 15:00 截止，晋级后再校准任务。" },
       { id: "memo-rmuc-regional-summary", icon: "mdi-file-chart-outline", title: "RMUC 区域赛赛季总结", dateLabel: "2027 年 6 月下旬（参考 25 日 - 29 日）", status: "tentative", note: "适用于未晋级复活赛或全国赛的情况；按往届提交节奏预留。" },
       { id: "memo-rmuc-national-summary", icon: "mdi-trophy-outline", title: "RMUC 全国赛赛季总结", dateLabel: "2027 年 8 月下旬（参考 28 日前后）", status: "tentative", note: "面向完成全国赛阶段的队伍预留；正式截止时间等待赛季末官方通知。" },
-      { id: "memo-rmul-form", icon: "mdi-robot-outline", title: "RMUL 完整形态考核", dateLabel: "日期待官方公布", status: "pending", note: "仅保留官方要求节点，联盟赛比赛日程另在月份视角维护。" }
+      { id: "memo-rmul-referee", icon: "mdi-gavel", title: "RMUL 裁判系统基础测评", dateLabel: "2026 年 12 月中旬（参考窗口）", status: "tentative", note: "当前按 12 月中旬预留准备时间，正式测评日期与要求等待官方通知校准。" },
+      { id: "memo-rmul-form", icon: "mdi-robot-outline", title: "RMUL 完整形态考核", dateLabel: "2027 年 1 月中旬（参考窗口）", status: "tentative", note: "当前按 1 月中旬预留提交与检查时间，正式考核窗口以官方通知为准。" }
     ],
     events: [
       {
@@ -245,6 +246,30 @@
         status: "tentative",
         description: "按往届 12 月下旬测评节奏预留，具体开放方式、题目范围与截止时间待官方通知。",
         source: "往届 RMUC 节点参考；待 2027 赛季官方通知校准"
+      },
+      {
+        id: "rmul-referee-basic-window",
+        title: "RMUL 裁判系统基础测评参考窗口",
+        shortTitle: "RMUL 裁判测评",
+        category: "official",
+        lane: "official",
+        start: "2026-12-12",
+        end: "2026-12-18",
+        status: "tentative",
+        description: "按 12 月中旬预留测评准备窗口，正式日期、测评范围与完成要求以官方通知为准。",
+        source: "RMUL 2027 赛季参考节点；待官方通知校准"
+      },
+      {
+        id: "rmul-final-assessment-window",
+        title: "RMUL 完整形态考核参考窗口",
+        shortTitle: "RMUL 完整形态",
+        category: "official",
+        lane: "official",
+        start: "2027-01-12",
+        end: "2027-01-18",
+        status: "tentative",
+        description: "按 1 月中旬预留完整形态检查与材料提交窗口，正式考核安排以官方通知为准。",
+        source: "RMUL 2027 赛季参考节点；待官方通知校准"
       },
       {
         id: "rmuc-mid-progress-window",
