@@ -15862,8 +15862,8 @@ a.contact-channel-card--direct:focus-visible {
   font-size: 13px;
 }
 
-.season-calendar {
-  margin-top: 22px;
+.season-calendar-hero + .season-calendar {
+  margin-top: 12px;
 }
 
 .season-view-switch {
@@ -16319,6 +16319,10 @@ a.contact-channel-card--direct:focus-visible {
 }
 
 @media (max-width: 620px) {
+  .season-calendar-hero + .season-calendar {
+    margin-top: 10px;
+  }
+
   .season-calendar-hero h1 {
     font-size: clamp(28px, 8.5vw, 34px);
   }
