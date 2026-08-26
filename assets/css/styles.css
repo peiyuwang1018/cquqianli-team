@@ -16213,9 +16213,22 @@ a.contact-channel-card--direct:focus-visible {
 }
 
 .season-memo-number {
+  display: grid;
+  gap: 5px;
+  justify-items: start;
   color: var(--accent);
   font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 12px;
+}
+
+.season-memo-number i {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.season-memo-number small {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .season-memo-main h4 {

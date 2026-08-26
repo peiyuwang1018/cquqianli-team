@@ -504,9 +504,12 @@
       var row = createElement("div", "season-overview-row");
       var label = createElement("div", "season-overview-label", lane.label);
       var track = createElement("div", "season-overview-track");
+      var laneSlots = [];
       data.events.filter(function (event) {
         return eventVisible(event) && event.lane === lane.id;
-      }).forEach(function (event, index) {
+      }).sort(function (a, b) {
+        return parseDate(a.start) - parseDate(b.start) || parseDate(a.end) - parseDate(b.end);
+      }).forEach(function (event) {
         var eventStart = parseDate(event.start);
         var eventEnd = parseDate(event.end);
         var isMilestone = event.start === event.end || daysBetween(eventStart, eventEnd) <= 1;
@@ -519,11 +522,19 @@
         if (isMilestone) {
           item.innerHTML = '<i class="mdi mdi-diamond-outline" aria-hidden="true"></i>';
         } else {
+          var slotIndex = laneSlots.findIndex(function (slotEnd) { return slotEnd < eventStart; });
+          if (slotIndex === -1) slotIndex = laneSlots.length;
+          laneSlots[slotIndex] = eventEnd;
           item.style.width = Math.max(0.8, (daysBetween(eventStart, eventEnd) + 1) / seasonDays * 100) + "%";
-          item.style.top = (12 + (index % 2) * 27) + "px";
+          item.style.top = (8 + slotIndex * 24) + "px";
         }
         track.appendChild(item);
       });
+      if (laneSlots.length > 2) {
+        var laneHeight = Math.max(76, 12 + laneSlots.length * 24);
+        row.style.minHeight = laneHeight + "px";
+        track.style.minHeight = laneHeight + "px";
+      }
       row.appendChild(label);
       row.appendChild(track);
       container.appendChild(row);
@@ -541,7 +552,11 @@
     var memoStatusLabels = { confirmed: "已确认", tentative: "暂定", pending: "待公布" };
     data.officialMemo.forEach(function (item, index) {
       var row = createElement("article", "season-memo-item season-memo-item--" + item.status);
-      var number = createElement("span", "season-memo-number", String(index + 1).padStart(2, "0"));
+      var number = createElement("span", "season-memo-number");
+      var icon = createElement("i", "mdi " + (item.icon || "mdi-calendar-check-outline"));
+      icon.setAttribute("aria-hidden", "true");
+      number.appendChild(icon);
+      number.appendChild(createElement("small", "", String(index + 1).padStart(2, "0")));
       var main = createElement("div", "season-memo-main");
       main.appendChild(createElement("h4", "", item.title));
       main.appendChild(createElement("p", "season-memo-date", item.dateLabel));
