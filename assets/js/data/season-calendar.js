@@ -74,16 +74,16 @@
     ],
     officialMemo: [
       { id: "memo-rules", icon: "mdi-book-open-page-variant", title: "规则发布周", dateLabel: "2026 年 10 月中下旬（参考窗口）", status: "tentative", note: "当前按 10 月中下旬预留，等待当赛季官方通知校准。" },
-      { id: "memo-rmuc-season-plan", icon: "mdi-calendar-check", title: "RMUC 赛季规划", dateLabel: "2026 年 11 月下旬（参考窗口）", status: "tentative", note: "按往届 11 月 26 日 - 27 日提交节奏预留；等待 2027 赛季官方窗口校准。" },
+      { id: "memo-rmuc-season-plan", icon: "mdi-file-document-edit-outline", title: "RMUC 赛季规划", dateLabel: "2026 年 11 月下旬（参考窗口）", status: "tentative", note: "按往届 11 月 26 日 - 27 日提交节奏预留；等待 2027 赛季官方窗口校准。" },
       { id: "memo-rmuc-rule-exam", icon: "mdi-clipboard-check-outline", title: "RMUC 规则测评", dateLabel: "2026 年 12 月下旬（参考 24 日 - 25 日）", status: "tentative", note: "往届与平安夜规则测评活动同期完成；具体开放方式和截止时间待官方通知。" },
       { id: "memo-rmuc-mid", icon: "mdi-file-document-edit-outline", title: "RMUC 中期进度文档", dateLabel: "2027 年 1 月下旬（参考 28 日前后）", status: "tentative", note: "按往届 1 月 28 日截止节奏预留，用于提前组织阶段成果、进度与风险材料。" },
       { id: "memo-rmuc-form", icon: "mdi-robot-industrial", title: "RMUC 完整形态考核", dateLabel: "2027 年 3 月中旬（参考 16 日 - 19 日）", status: "tentative", note: "按往届提交周期预留；考核内容、材料格式和正式入口以官方通知为准。" },
       { id: "memo-rmuc-pilot-regional", icon: "mdi-gamepad-variant-outline", title: "RMUC 飞手考核（区域赛）", dateLabel: "2027 年 3 月下旬（参考 26 日前后）", status: "tentative", note: "参考往届区域赛考核于 3 月 26 日 15:00 截止，当前仅作为准备窗口。" },
-      { id: "memo-rmuc-referee", icon: "mdi-gavel", title: "RMUC 裁判系统考核", dateLabel: "2027 年 4 月上旬（参考窗口）", status: "tentative", note: "本赛季先按 4 月上旬安排准备；正式提交周期和考核要求待官方公布。" },
+      { id: "memo-rmuc-referee", icon: "mdi-clipboard-check-outline", title: "RMUC 裁判系统考核", dateLabel: "2027 年 4 月上旬（参考窗口）", status: "tentative", note: "本赛季先按 4 月上旬安排准备；正式提交周期和考核要求待官方公布。" },
       { id: "memo-rmuc-pilot-finals", icon: "mdi-gamepad-variant", title: "RMUC 飞手考核（复活赛 / 全国赛）", dateLabel: "2027 年 6 月中下旬（参考 22 日前后）", status: "tentative", note: "参考往届复活赛与全国赛考核于 6 月 22 日 15:00 截止，晋级后再校准任务。" },
       { id: "memo-rmuc-regional-summary", icon: "mdi-file-chart-outline", title: "RMUC 区域赛赛季总结", dateLabel: "2027 年 6 月下旬（参考 25 日 - 29 日）", status: "tentative", note: "适用于未晋级复活赛或全国赛的情况；按往届提交节奏预留。" },
       { id: "memo-rmuc-national-summary", icon: "mdi-trophy-outline", title: "RMUC 全国赛赛季总结", dateLabel: "2027 年 8 月下旬（参考 28 日前后）", status: "tentative", note: "面向完成全国赛阶段的队伍预留；正式截止时间等待赛季末官方通知。" },
-      { id: "memo-rmul-referee", icon: "mdi-gavel", title: "RMUL 裁判系统基础测评", dateLabel: "2026 年 12 月中旬（参考窗口）", status: "tentative", note: "当前按 12 月中旬预留准备时间，正式测评日期与要求等待官方通知校准。" },
+      { id: "memo-rmul-referee", icon: "mdi-clipboard-check-outline", title: "RMUL 裁判系统基础测评", dateLabel: "2026 年 12 月中旬（参考窗口）", status: "tentative", note: "当前按 12 月中旬预留准备时间，正式测评日期与要求等待官方通知校准。" },
       { id: "memo-rmul-form", icon: "mdi-robot-outline", title: "RMUL 完整形态考核", dateLabel: "2027 年 1 月中旬（参考窗口）", status: "tentative", note: "当前按 1 月中旬预留提交与检查时间，正式考核窗口以官方通知为准。" }
     ],
     events: [

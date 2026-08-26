@@ -557,13 +557,13 @@
       icon.setAttribute("aria-hidden", "true");
       number.appendChild(icon);
       number.appendChild(createElement("small", "", String(index + 1).padStart(2, "0")));
-      var main = createElement("div", "season-memo-main");
-      main.appendChild(createElement("h4", "", item.title));
-      main.appendChild(createElement("p", "season-memo-date", item.dateLabel));
+      var title = createElement("h4", "season-memo-title", item.title);
+      var date = createElement("p", "season-memo-date", item.dateLabel);
       var status = createElement("span", "season-memo-status", memoStatusLabels[item.status] || item.status);
       var note = createElement("p", "season-memo-note", item.note);
       row.appendChild(number);
-      row.appendChild(main);
+      row.appendChild(title);
+      row.appendChild(date);
       row.appendChild(status);
       row.appendChild(note);
       memoContainer.appendChild(row);
