@@ -18,6 +18,7 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css?v=20260826-6" />
+    <link rel="stylesheet" href="assets/css/infrastructure.css?v=20260826-1" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -147,14 +148,16 @@
     </figure>
   </section>
 
-  <nav class="infrastructure-section-nav" aria-label="基建效率组页面板块">
-    <a href="#infrastructure-scope"><span>01</span><i class="mdi mdi-view-grid-outline" aria-hidden="true"></i>工作范围</a>
-    <a href="#infrastructure-projects"><span>02</span><i class="mdi mdi-stadium-variant" aria-hidden="true"></i>实物项目</a>
-    <a href="#infrastructure-space"><span>03</span><i class="mdi mdi-warehouse" aria-hidden="true"></i>空间与物资</a>
-    <a href="#infrastructure-workflow"><span>04</span><i class="mdi mdi-source-branch" aria-hidden="true"></i>工作流与成长</a>
-  </nav>
+  <div class="infrastructure-page-shell">
+  <div class="infrastructure-section-nav" role="tablist" aria-label="基建效率组页面板块" aria-orientation="vertical" data-infrastructure-tabset="section">
+    <button id="infrastructure-scope-tab" type="button" role="tab" aria-selected="true" aria-controls="infrastructure-scope" data-infrastructure-tab="infrastructure-scope"><i class="mdi mdi-view-grid-outline" aria-hidden="true"></i><span>01</span>工作范围</button>
+    <button id="infrastructure-projects-tab" type="button" role="tab" aria-selected="false" aria-controls="infrastructure-projects" data-infrastructure-tab="infrastructure-projects" tabindex="-1"><i class="mdi mdi-stadium-variant" aria-hidden="true"></i><span>02</span>实物项目</button>
+    <button id="infrastructure-space-tab" type="button" role="tab" aria-selected="false" aria-controls="infrastructure-space" data-infrastructure-tab="infrastructure-space" tabindex="-1"><i class="mdi mdi-warehouse" aria-hidden="true"></i><span>03</span>空间与物资</button>
+    <button id="infrastructure-workflow-tab" type="button" role="tab" aria-selected="false" aria-controls="infrastructure-workflow" data-infrastructure-tab="infrastructure-workflow" tabindex="-1"><i class="mdi mdi-source-branch" aria-hidden="true"></i><span>04</span>工作流与成长</button>
+  </div>
+  <div class="infrastructure-panel-stage">
 
-  <section id="infrastructure-scope" class="infrastructure-section" aria-labelledby="infrastructure-scope-title">
+  <section id="infrastructure-scope" class="infrastructure-section" role="tabpanel" aria-labelledby="infrastructure-scope-tab" data-infrastructure-panel="section">
     <header class="infrastructure-section-heading">
       <div><p class="page-label">TEAM INFRASTRUCTURE</p><h2 id="infrastructure-scope-title">支撑一支队伍长期运转的六类工作</h2></div>
       <p>基建项目由全队的真实需求产生，从场地和工具，到库存、设备与信息系统，最终目标都是减少等待、重复劳动和不可控风险。</p>
@@ -169,7 +172,7 @@
     </div>
   </section>
 
-  <section id="infrastructure-projects" class="infrastructure-section" aria-labelledby="infrastructure-projects-title">
+  <section id="infrastructure-projects" class="infrastructure-section" role="tabpanel" aria-labelledby="infrastructure-projects-tab" data-infrastructure-panel="section" hidden>
     <header class="infrastructure-section-heading">
       <div><p class="page-label">PHYSICAL OUTPUTS</p><h2 id="infrastructure-projects-title">为测评、调试与日常训练提供实物支持</h2></div>
       <p>场地设施需要跟随规则和机器人方案持续更新。项目交付后仍需经历使用反馈、维护和下一轮改造。</p>
@@ -189,7 +192,7 @@
     </div>
   </section>
 
-  <section id="infrastructure-space" class="infrastructure-section" aria-labelledby="infrastructure-space-title">
+  <section id="infrastructure-space" class="infrastructure-section" role="tabpanel" aria-labelledby="infrastructure-space-tab" data-infrastructure-panel="section" hidden>
     <header class="infrastructure-section-heading">
       <div><p class="page-label">SPACE &amp; MATERIALS</p><h2 id="infrastructure-space-title">让空间、工具和物资顺着工作流排列</h2></div>
       <p>空间管理关注的不只是整洁。基建组持续观察队员如何装配、开会、取用耗材和进入场地，再据此调整区域与动线。</p>
@@ -211,7 +214,7 @@
     </div>
   </section>
 
-  <section id="infrastructure-workflow" class="infrastructure-section" aria-labelledby="infrastructure-workflow-title">
+  <section id="infrastructure-workflow" class="infrastructure-section" role="tabpanel" aria-labelledby="infrastructure-workflow-tab" data-infrastructure-panel="section" hidden>
     <header class="infrastructure-section-heading">
       <div><p class="page-label">FROM REQUEST TO SERVICE</p><h2 id="infrastructure-workflow-title">需求进入工单，项目回到全队使用</h2></div>
       <p>基建工作在规则发布、技术评审和比赛前进入高峰。日常节奏则由各组调用频率决定，需要长期跟进需求变化与设施状态。</p>
@@ -230,6 +233,8 @@
     </div>
     <div class="infrastructure-cta"><div><p class="page-label">TECHNICAL GROUPS FIRST</p><h2>先加入技术组，再参与全队基础设施建设</h2><p>如果你尚未加入千里战队，请先了解技术组岗位。入队后可以结合兴趣和赛季需求参与基建项目。</p></div><a href="join/index.html#groups">查看技术组岗位 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a></div>
   </section>
+  </div>
+  </div>
 </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队</p>
@@ -237,6 +242,7 @@
       <p>域名规划：team.cquqianli.cn</p>
     </footer>
     <script src="assets/js/core/site.js?v=20260825-81"></script>
+    <script src="assets/js/pages/infrastructure.js?v=20260826-1"></script>
   </body>
 </html>
 
