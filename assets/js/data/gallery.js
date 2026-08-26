@@ -330,6 +330,30 @@ window.QIANLI_GALLERY = {
         record: "【简介】收录千里战队历届文字标识、口号字形与文创图标，保存队伍视觉语言演变中的基础素材。【服役周期】历届视觉档案【图标设计】侯钊凯及历届视觉资料"
       },
       {
+        category: "digital",
+        title: "千里战队官方网站与上线海报",
+        meta: "2026 · 网站视觉与上线传播",
+        preview: "assets/images/content/archive/gallery/designs/official-website-2026.webp?v=20260826-1",
+        photo: "assets/images/content/archive/gallery/designs/official-website-2026.webp?v=20260826-1",
+        photos: [
+          {
+            src: "assets/images/content/archive/gallery/designs/official-website-2026.webp?v=20260826-1",
+            alt: "重庆大学千里战队官方网站首页",
+            meta: "千里战队官方网站",
+            credit: "汪沛宇"
+          },
+          {
+            src: "assets/images/content/news/official-site-launch-2026.webp?v=20260826-final",
+            alt: "重庆大学千里战队官方网站上线预告海报",
+            meta: "官方网站上线预告海报",
+            credit: "汪沛宇"
+          }
+        ],
+        credit: "汪沛宇",
+        serviceLabel: "发布批次",
+        record: "【简介】收录重庆大学千里战队官方网站及其上线预告海报，形成从数字界面到上线传播物料的完整设计档案。【服役周期】2026 年 9 月起【网站与海报设计】汪沛宇"
+      },
+      {
         category: "posters",
         title: "招新与动员海报",
         meta: "2025–2026 · 招新与赛季动员",

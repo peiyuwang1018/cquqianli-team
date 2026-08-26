@@ -13030,7 +13030,7 @@ a.contact-channel-card--direct:focus-visible {
 
 .design-filter {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   min-width: 0;
   border: 1px solid var(--line);
   background: var(--surface);
