@@ -16418,6 +16418,10 @@ a.contact-channel-card--direct:focus-visible {
   display: none;
 }
 
+.page-hero ~ .resource-panel {
+  margin-top: 54px;
+}
+
 .resource-file-list {
   display: grid;
   gap: 12px;
@@ -17631,6 +17635,10 @@ html.has-group-letter {
 }
 
 @media (max-width: 820px) {
+  .page-hero ~ .resource-panel {
+    margin-top: 40px;
+  }
+
   .training-library-heading,
   .resource-file-group-heading,
   .hall-panel-heading,
