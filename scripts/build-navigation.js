@@ -199,7 +199,7 @@ for (const file of htmlFiles) {
 
   html = normalizeFooter(html, relative);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260827-94");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260827-95");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260825-81");
   fs.writeFileSync(file, html);
 }

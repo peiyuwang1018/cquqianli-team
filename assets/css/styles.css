@@ -19528,7 +19528,24 @@ body[data-page="home"] .site-footer {
   margin-top: 0;
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
-  padding-block: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 0;
+  padding: 9px 20px 10px;
+  background: var(--bg);
+}
+
+body[data-page="home"] .site-footer p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+body[data-page="home"] .site-footer p + p::before {
+  content: "·";
+  margin: 0 10px;
+  color: var(--line);
 }
 
 body[data-page="home"] .site-footer a {
