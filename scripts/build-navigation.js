@@ -5,10 +5,11 @@ const root = path.resolve(__dirname, "..");
 
 function collectHtmlFiles(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    if (entry.name === ".git") return [];
+    if (entry.name === ".git" || entry.name === "poster-official-launch") return [];
     const target = path.join(directory, entry.name);
     if (entry.isDirectory()) return collectHtmlFiles(target);
-    return entry.isFile() && entry.name.endsWith(".html") ? [target] : [];
+    const relative = path.relative(root, target).replaceAll(path.sep, "/");
+    return entry.isFile() && entry.name.endsWith(".html") && relative !== "contact/social.html" ? [target] : [];
   });
 }
 
@@ -148,6 +149,25 @@ function buildNavigation(active) {
         </div>`;
 }
 
+function normalizeFooter(html, relative) {
+  const footerPattern = /<footer class="site-footer">[\s\S]*?<\/footer>/;
+  if (!footerPattern.test(html)) throw new Error(`Footer block not found in ${relative}`);
+
+  return html.replace(footerPattern, (footer) => {
+    let normalized = footer.replace(
+      /<p>© 2026 重庆大学千里战队(?:\. <span lang="en">All Rights Reserved\.<\/span>)?<\/p>/,
+      '<p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>',
+    );
+    if (!normalized.includes('class="site-footer-icp"')) {
+      normalized = normalized.replace(
+        "</footer>",
+        '  <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>\n    </footer>',
+      );
+    }
+    return normalized;
+  });
+}
+
 const htmlFiles = collectHtmlFiles(root);
 
 for (const file of htmlFiles) {
@@ -182,8 +202,10 @@ for (const file of htmlFiles) {
     html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
   }
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260824-76");
-  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260824-11");
+  html = normalizeFooter(html, relative);
+
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260827-94");
+  html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260825-81");
   fs.writeFileSync(file, html);
 }
 
