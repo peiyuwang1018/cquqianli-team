@@ -3,11 +3,30 @@
   const root = document.querySelector("[data-match-archive]");
   if (!archive?.seasons?.length || !root) return;
 
-  const tabs = root.querySelector("[data-match-season-tabs]");
+  const yearSelect = root.querySelector("[data-match-year]");
+  const stageSelect = root.querySelector("[data-match-stage]");
+  const count = root.querySelector("[data-match-count]");
   const summary = root.querySelector("[data-match-season-summary]");
   const list = root.querySelector("[data-match-list]");
   const scope = root.querySelector("[data-match-scope]");
   const resultLabels = { win: "胜", loss: "负", draw: "平" };
+  const stageFilters = [
+    { value: "rmul", label: "RMUL" },
+    { value: "rmuc", label: "RMUC" },
+    { value: "rmuc-regional", label: "RMUC区域赛" },
+    { value: "rmuc-national", label: "RMUC国赛阶段" },
+  ];
+  const allMatches = archive.seasons.flatMap((season) => season.matches.map((match) => {
+    const competition = match.competition || "RMUC";
+    const stage = match.stage || match.series || "其他赛段";
+    return {
+      ...match,
+      season: match.season || season.id,
+      competition,
+      stage,
+      stageId: match.stageId || `${competition}-${stage}`,
+    };
+  }));
   let lightboxItems = [];
   let lightboxIndex = 0;
 
@@ -102,7 +121,10 @@
 
     const facts = document.createElement("div");
     facts.className = "match-summary-facts";
+    const winRate = season.stats.matches ? (season.stats.wins / season.stats.matches) * 100 : 0;
+    const winRateText = `${Number.isInteger(winRate) ? winRate.toFixed(0) : winRate.toFixed(1)}%`;
     const values = [
+      ["胜率", winRateText, "is-win-rate"],
       ["比赛", season.stats.matches, "is-matches"],
       ["胜场", season.stats.wins, "is-wins"],
       ["负场", season.stats.losses, "is-losses"],
@@ -174,7 +196,7 @@
     const context = document.createElement("div");
     context.className = "match-record-context";
     const series = document.createElement("span");
-    series.textContent = match.series;
+    series.textContent = `${match.competition} · ${match.stage}`;
     const round = document.createElement("strong");
     round.textContent = match.round;
     context.append(series, round);
@@ -230,49 +252,67 @@
     return article;
   }
 
-  function renderSeason(seasonId) {
-    const season = archive.seasons.find((item) => item.id === seasonId) || archive.seasons[0];
-    tabs.querySelectorAll("button").forEach((button) => {
-      const selected = button.dataset.matchSeason === season.id;
-      button.classList.toggle("is-active", selected);
-      button.setAttribute("aria-selected", String(selected));
-      button.tabIndex = selected ? 0 : -1;
-    });
-    renderSummary(season);
-    if (season.matches.length) {
-      list.replaceChildren(...season.matches.map(createMatch));
+  function fillSelect(select, values, allLabel) {
+    const options = [new Option(allLabel, "all")];
+    values.forEach(({ value, label }) => options.push(new Option(label, value)));
+    select.replaceChildren(...options);
+  }
+
+  function matchesStageFilter(match, filter) {
+    if (filter === "all") return true;
+    if (filter === "rmul") return match.competition === "RMUL";
+    if (filter === "rmuc") return match.competition === "RMUC";
+    if (filter === "rmuc-regional") return match.competition === "RMUC" && /赛区/.test(match.stage);
+    if (filter === "rmuc-national") return match.competition === "RMUC" && !/赛区/.test(match.stage);
+    return true;
+  }
+
+  function buildSummary(matches) {
+    const selectedYear = yearSelect.value;
+    const selectedStage = stageSelect.value;
+    const stageLabel = stageSelect.options[stageSelect.selectedIndex]?.textContent || "全部比赛";
+    const stats = matches.reduce((totals, match) => {
+      totals.matches += 1;
+      if (match.result === "win") totals.wins += 1;
+      if (match.result === "loss") totals.losses += 1;
+      if (match.result === "draw") totals.draws += 1;
+      return totals;
+    }, { matches: 0, wins: 0, losses: 0, draws: 0 });
+    const labels = [];
+    labels.push(selectedYear === "all" ? "全部年份" : `${selectedYear} 赛季`);
+    labels.push(stageLabel);
+    const reviews = [...new Set(matches.map((match) => match.seasonReview).filter(Boolean))];
+    return {
+      label: labels.join(" · "),
+      review: reviews.length === 1
+        ? reviews[0]
+        : `共收录 ${stats.matches} 场公开比赛记录，可继续按年份与赛段缩小范围。`,
+      stats,
+    };
+  }
+
+  function renderArchive() {
+    const selectedYear = yearSelect.value;
+    const selectedStage = stageSelect.value;
+    const matches = allMatches.filter((match) => (
+      (selectedYear === "all" || match.season === selectedYear)
+      && matchesStageFilter(match, selectedStage)
+    ));
+    renderSummary(buildSummary(matches));
+    count.textContent = `${matches.length} 场`;
+    if (matches.length) {
+      list.replaceChildren(...matches.map(createMatch));
     } else {
       const empty = document.createElement("p");
       empty.className = "match-list-empty";
-      empty.textContent = "本赛季暂无 RMUC 超级对抗赛比赛记录。";
+      empty.textContent = "当前筛选条件下暂无比赛记录。";
       list.replaceChildren(empty);
     }
   }
 
-  archive.seasons.forEach((season, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.role = "tab";
-    button.dataset.matchSeason = season.id;
-    button.textContent = season.id;
-    button.className = index === 0 ? "is-active" : "";
-    button.addEventListener("click", () => renderSeason(season.id));
-    tabs.appendChild(button);
-  });
-
-  tabs.addEventListener("keydown", (event) => {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-    event.preventDefault();
-    const buttons = [...tabs.querySelectorAll("button")];
-    const current = buttons.findIndex((button) => button.classList.contains("is-active"));
-    let next = current;
-    if (event.key === "ArrowLeft") next = (current - 1 + buttons.length) % buttons.length;
-    if (event.key === "ArrowRight") next = (current + 1) % buttons.length;
-    if (event.key === "Home") next = 0;
-    if (event.key === "End") next = buttons.length - 1;
-    buttons[next].focus();
-    renderSeason(buttons[next].dataset.matchSeason);
-  });
-
-  renderSeason(archive.seasons[0].id);
+  fillSelect(yearSelect, archive.seasons.map((season) => ({ value: season.id, label: `${season.id} 赛季` })), "全部年份");
+  fillSelect(stageSelect, stageFilters, "全部比赛");
+  yearSelect.addEventListener("change", renderArchive);
+  stageSelect.addEventListener("change", renderArchive);
+  renderArchive();
 })();

@@ -1,27 +1,94 @@
 window.QIANLI_MATCH_ARCHIVE = {
-  "scope": "本页仅统计 RMUC 超级对抗赛；联盟赛记录尚未纳入。",
+  "scope": "已收录 RMUC 超级对抗赛与 RMUL 高校联盟赛公开比赛记录。",
   "seasons": [
     {
       "id": "2026",
       "label": "RMUC 2026",
-      "review": "此赛季因为未通过完整形态考核，无缘RMUC超级对抗赛。",
+      "review": "RMUC：未通过完整形态考核\nRMUL：2胜1负 · 西南站十六强",
       "stats": {
-        "matches": 0,
-        "wins": 0,
-        "losses": 0,
+        "matches": 3,
+        "wins": 2,
+        "losses": 1,
         "draws": 0
       },
-      "matches": []
+      "matches": [
+        {
+          "number": "L14",
+          "season": "2026",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第1轮",
+          "roundSource": "2026赛季·RMUL 西南站\n小组赛第1轮",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "重庆第二师范学院 扶光战队",
+          "score": "2:0",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "2胜1负\n西南站十六强",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l14-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1KmXKBFEYm"
+        },
+        {
+          "number": "L15",
+          "season": "2026",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第3轮",
+          "roundSource": "2026赛季·RMUL 西南站\n小组赛第3轮",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "南华大学 MA战队",
+          "score": "2:0",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l15-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1tjX5BpECu"
+        },
+        {
+          "number": "L16",
+          "season": "2026",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "16进8淘汰赛",
+          "roundSource": "2026赛季·RMUL 西南站\n16进8淘汰赛",
+          "redTeam": "火箭军工程大学 东风战队",
+          "blueTeam": "重庆大学 千里战队",
+          "score": "2:0",
+          "result": "loss",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l16-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV19xXmBsEQY"
+        }
+      ]
     },
     {
       "id": "2025",
       "label": "RMUC 2025",
-      "review": "1胜3负\n分区赛三十二强",
+      "review": "RMUC：1胜3负 · 分区赛三十二强\nRMUL：1胜1负1平 · 小组赛未出线",
       "stats": {
-        "matches": 4,
-        "wins": 1,
-        "losses": 3,
-        "draws": 0
+        "matches": 7,
+        "wins": 2,
+        "losses": 4,
+        "draws": 1
       },
       "matches": [
         {
@@ -109,16 +176,82 @@ window.QIANLI_MATCH_ARCHIVE = {
           ],
           "mvpImages": [],
           "videoUrl": "https://www.bilibili.com/video/BV1FHjpzxExy/"
+        },
+        {
+          "number": "L11",
+          "season": "2025",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第1轮",
+          "roundSource": "2025赛季·RMUL 西南站\n小组赛第1轮",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "贵阳人文科技学院 BIU战队",
+          "score": "2:0",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "1胜1负1平\n小组赛未出线",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l11-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV18eoXYSEqJ"
+        },
+        {
+          "number": "L12",
+          "season": "2025",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第2轮",
+          "roundSource": "2025赛季·RMUL 西南站\n小组赛第2轮",
+          "redTeam": "四川大学 火锅战队",
+          "blueTeam": "重庆大学 千里战队",
+          "score": "2:0",
+          "result": "loss",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l12-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1pWZcYbEkA"
+        },
+        {
+          "number": "L13",
+          "season": "2025",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第3轮",
+          "roundSource": "2025赛季·RMUL 西南站\n小组赛第3轮",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "湘潭大学 逐曦战队",
+          "score": "1:1",
+          "result": "draw",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l13-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV15xZPYREZa"
         }
       ]
     },
     {
       "id": "2024",
       "label": "RMUC 2024",
-      "review": "2胜5负\n分区赛十六强",
+      "review": "RMUC：2胜5负 · 分区赛十六强\nRMUL：7胜0负 · 西南站冠军",
       "stats": {
-        "matches": 7,
-        "wins": 2,
+        "matches": 14,
+        "wins": 9,
         "losses": 5,
         "draws": 0
       },
@@ -268,17 +401,167 @@ window.QIANLI_MATCH_ARCHIVE = {
           ],
           "mvpImages": [],
           "videoUrl": "https://www.bilibili.com/video/BV1er421M7Lf/"
+        },
+        {
+          "number": "L04",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第1轮",
+          "roundSource": "2024赛季·RMUL 西南站\n小组赛第1轮",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "重庆三峡学院 LionHeart战队",
+          "score": "2:0",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "7胜0负\n西南站冠军",
+          "dataPanels": [],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1m1421Q7gc"
+        },
+        {
+          "number": "L05",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第2轮",
+          "roundSource": "2024赛季·RMUL 西南站\n小组赛第2轮",
+          "redTeam": "湘潭大学 逐曦",
+          "blueTeam": "重庆大学 千里战队",
+          "score": "0:2",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l05-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1wD421L7zn"
+        },
+        {
+          "number": "L06",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第3轮",
+          "roundSource": "2024赛季·RMUL 西南站\n小组赛第3轮",
+          "redTeam": "北京交通大学 BNGU",
+          "blueTeam": "重庆大学 千里战队",
+          "score": "0:2",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l06-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1f2421A7sq"
+        },
+        {
+          "number": "L07",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第4轮",
+          "roundSource": "2024赛季·RMUL 西南站\n小组赛第4轮",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "四川大学 火锅",
+          "score": "2:0",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l07-data-1.jpeg"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1Zx421r7fW"
+        },
+        {
+          "number": "L08",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "8进4淘汰赛",
+          "roundSource": "2024赛季·RMUL 西南站\n8进4淘汰赛",
+          "redTeam": "重庆第二师范学院 扶光",
+          "blueTeam": "重庆大学 千里战队",
+          "score": "0:2",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1h2421P7Fj"
+        },
+        {
+          "number": "L09",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "半决赛 / 4进2",
+          "roundSource": "2024赛季·RMUL 西南站\n半决赛 / 4进2",
+          "redTeam": "成都工业学院 涉科赛思",
+          "blueTeam": "重庆大学 千里战队",
+          "score": "1:2",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l09-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1Pt421V7vW"
+        },
+        {
+          "number": "L10",
+          "season": "2024",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "冠军争夺战",
+          "roundSource": "2024赛季·RMUL 西南站\n冠军争夺战",
+          "redTeam": "重庆大学 千里战队",
+          "blueTeam": "西南交通大学 Helios",
+          "score": "2:1",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l10-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1Mp421m7Eo"
         }
       ]
     },
     {
       "id": "2023",
       "label": "RMUC 2023",
-      "review": "0胜3负\n分区赛三十二强",
+      "review": "RMUC：0胜3负 · 分区赛三十二强\nRMUL：1胜2负 · 小组赛未出线",
       "stats": {
-        "matches": 3,
-        "wins": 0,
-        "losses": 3,
+        "matches": 6,
+        "wins": 1,
+        "losses": 5,
         "draws": 0
       },
       "matches": [
@@ -341,6 +624,72 @@ window.QIANLI_MATCH_ARCHIVE = {
           ],
           "mvpImages": [],
           "videoUrl": "https://www.bilibili.com/video/BV1jh411c7oM/"
+        },
+        {
+          "number": "L01",
+          "season": "2023",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第1轮",
+          "roundSource": "2023赛季·RMUL 西南站\n小组赛第1轮",
+          "redTeam": "武汉科技大学 崇实战队",
+          "blueTeam": "重庆大学 MechaX战队",
+          "score": "2:0",
+          "result": "loss",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "1胜2负\n小组赛未出线",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l01-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1Lz4y1Y77y"
+        },
+        {
+          "number": "L02",
+          "season": "2023",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第2轮",
+          "roundSource": "2023赛季·RMUL 西南站\n小组赛第2轮",
+          "redTeam": "重庆大学 MechaX战队",
+          "blueTeam": "成都大学 Ultra战队",
+          "score": "0:2",
+          "result": "loss",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l02-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1th41177ir"
+        },
+        {
+          "number": "L03",
+          "season": "2023",
+          "competition": "RMUL",
+          "series": "高校联盟赛",
+          "stage": "西南站",
+          "stageId": "rmul-southwest",
+          "round": "小组赛第3轮",
+          "roundSource": "2023赛季·RMUL 西南站\n小组赛第3轮",
+          "redTeam": "重庆理工大学 星渝士继",
+          "blueTeam": "重庆大学 MechaX战队",
+          "score": "0:2",
+          "result": "win",
+          "comment": "",
+          "mvp": "",
+          "seasonReview": "",
+          "dataPanels": [
+            "assets/images/content/archive/matches/rmul/rmul-l03-data-1.png"
+          ],
+          "mvpImages": [],
+          "videoUrl": "https://www.bilibili.com/video/BV1jz4y1Y7YD"
         }
       ]
     }

@@ -8,6 +8,14 @@
     description: "2025 赛季元旦发布，主要记录和回望重庆大学千里战队 2024 赛季的训练、协作与赛场记忆。"
   },
   {
+    title: "高校联盟赛首冠",
+    subtitle: "2024 赛季联盟赛冠军纪念",
+    type: "CHAMPIONSHIP MEMORY",
+    bvid: "BV1vx421k72u",
+    page: 1,
+    description: "由 RoboMaster 机甲大师发布，记录重庆大学千里战队夺得 2024 机甲大师高校联盟赛首冠的冠军时刻。"
+  },
+  {
     title: "我们，为赛场而生",
     subtitle: "RMUC2025 出征预热",
     type: "PROMO FILM",

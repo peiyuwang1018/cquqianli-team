@@ -10464,7 +10464,7 @@ html.has-culture-report {
 
 .video-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
   margin-top: 26px;
 }
@@ -10518,6 +10518,10 @@ html.has-culture-report {
 @media (max-width: 1120px) {
   .video-carousel {
     grid-template-columns: 1fr;
+  }
+
+  .video-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .video-copy {
     min-height: 300px;
@@ -13475,6 +13479,7 @@ a.contact-channel-card--direct:focus-visible {
   --match-red: #d95353;
   --match-blue: #438fc7;
   --match-gold: #a97a3c;
+  --match-win-rate: #8f62b5;
   --match-loss: #66666c;
   padding-top: 44px;
 }
@@ -13488,12 +13493,13 @@ a.contact-channel-card--direct:focus-visible {
   --match-red: #ef6a6a;
   --match-blue: #65aee1;
   --match-gold: #bf9251;
+  --match-win-rate: #bc8be0;
   --match-loss: #73737a;
 }
 
 .match-archive-heading {
   display: grid;
-  grid-template-columns: max-content minmax(300px, 1fr) max-content;
+  grid-template-columns: max-content minmax(240px, 1fr) minmax(430px, 0.95fr);
   align-items: end;
   gap: 32px;
   padding-bottom: 24px;
@@ -13511,6 +13517,25 @@ a.contact-channel-card--direct:focus-visible {
   padding-bottom: 5px;
   color: var(--muted);
   font-size: 16px;
+}
+
+.match-filter-bar {
+  grid-template-columns: repeat(2, minmax(180px, 1fr)) auto;
+  justify-self: end;
+  width: 100%;
+  padding: 0;
+}
+
+@media (max-width: 1180px) {
+  .match-archive-heading {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  .match-filter-bar {
+    grid-column: 1 / -1;
+    justify-self: start;
+    max-width: 620px;
+  }
 }
 
 .match-season-tabs {
@@ -13630,6 +13655,10 @@ a.contact-channel-card--direct:focus-visible {
 
 .match-summary-facts .is-matches strong {
   color: var(--match-gold);
+}
+
+.match-summary-facts .is-win-rate strong {
+  color: var(--match-win-rate);
 }
 
 .match-list {
@@ -13995,6 +14024,10 @@ a.contact-channel-card--direct:focus-visible {
     justify-content: flex-start;
   }
 
+  .match-filter-bar {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  }
+
   .match-record {
     grid-template-columns: 36px minmax(0, 1fr);
     align-items: start;
@@ -14119,6 +14152,14 @@ a.contact-channel-card--direct:focus-visible {
 }
 
 @media (max-width: 520px) {
+  .match-filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .match-filter-bar output {
+    padding: 0;
+  }
+
   .match-season-tabs {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
