@@ -4,17 +4,33 @@
 }
 
 .management-hero {
-  height: 460px;
-  min-height: 0;
+  height: auto;
+  min-height: 460px;
 }
 
 .management-hero-media {
-  height: 100%;
-  min-height: 0;
+  height: auto;
+  min-height: 460px;
 }
 
 .management-hero-media img {
   object-position: center 44%;
+}
+
+.management-hero .tactics-hero-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 10px;
+}
+
+.management-hero .tactics-hero-link {
+  width: 100%;
+  min-width: 0;
+  padding-inline: 10px;
+  gap: 8px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 .management-panel-stage > [data-management-panel="section"][hidden] {
@@ -202,6 +218,10 @@
 }
 
 @media (max-width: 760px) {
+  .management-hero .tactics-hero-actions {
+    grid-template-columns: 1fr;
+  }
+
   .management-role-grid,
   .management-principles,
   .management-cycle,
