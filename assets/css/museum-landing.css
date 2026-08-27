@@ -1,0 +1,144 @@
+.video-feature .video-list button {
+  min-height: 73px;
+  padding: 10px 18px;
+}
+
+.video-feature .video-list span {
+  margin-bottom: 4px;
+}
+
+.museum-entry-grid .entry-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.museum-entry-grid .entry-card--image {
+  isolation: isolate;
+  background: var(--card-bg);
+}
+
+.museum-entry-grid .museum-entry-icon {
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  right: 18px;
+  color: var(--accent);
+  font-size: 46px;
+  line-height: 1;
+  opacity: .74;
+  transform: translateY(0) scale(1);
+  transition: opacity 220ms ease, transform 320ms ease;
+}
+
+.museum-entry-grid .entry-card--image::before,
+.museum-entry-grid .entry-card--image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.museum-entry-grid .entry-card--image::before {
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: .06;
+  filter: saturate(.78) contrast(1.04);
+  transform: scale(1.035);
+  transition: opacity 320ms ease, transform 520ms ease, filter 320ms ease;
+}
+
+.museum-entry-grid .entry-card--photo-wall::before {
+  background-image: url("../images/museum/landing/photo-wall.jpg");
+  background-position: 50% 52%;
+}
+
+.museum-entry-grid .entry-card--resources::before {
+  background-image: url("../images/museum/landing/resources.png");
+  background-position: 50% 48%;
+}
+
+.museum-entry-grid .entry-card--guestbook::before {
+  background-image: url("../images/museum/landing/guestbook.jpg");
+  background-position: 50% 46%;
+}
+
+.museum-entry-grid .entry-card--stories::before {
+  background-image: url("../images/museum/landing/stories-cat.png");
+  background-position: 50% 46%;
+}
+
+.museum-entry-grid .entry-card--hall-of-fame::before {
+  background-image: url("../images/museum/landing/stories.jpg");
+  background-position: 50% 34%;
+}
+
+.museum-entry-grid .entry-card--archive::before {
+  background-image: url("../images/museum/landing/hall-of-fame.png");
+  background-position: 50% 48%;
+}
+
+.museum-entry-grid .entry-card--memes::before {
+  background-image: url("../images/museum/landing/memes.png");
+  background-position: 50% 48%;
+}
+
+.museum-entry-grid .entry-card--shop::before {
+  background-image: url("../images/museum/landing/shop.jpg");
+  background-position: 50% 50%;
+}
+
+.museum-entry-grid .entry-card--image::after {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(7, 9, 13, .7) 0%, rgba(7, 9, 13, .4) 56%, rgba(7, 9, 13, .08) 100%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+
+.museum-entry-grid .entry-card--image > :not(.museum-entry-icon) {
+  position: relative;
+  z-index: 2;
+}
+
+.museum-entry-grid .entry-card--image:is(:hover, :focus-visible)::before {
+  opacity: .94;
+  filter: saturate(.96) contrast(1.04) brightness(1.04);
+  transform: scale(1.085);
+}
+
+.museum-entry-grid .entry-card--image:is(:hover, :focus-visible)::after {
+  opacity: 1;
+}
+
+.museum-entry-grid .entry-card--image:is(:hover, :focus-visible) strong {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .42);
+}
+
+.museum-entry-grid .entry-card--image:is(:hover, :focus-visible) small {
+  color: rgba(255, 255, 255, .82);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .5);
+}
+
+.museum-entry-grid .entry-card--image:is(:hover, :focus-visible) .museum-entry-icon {
+  opacity: 0;
+  transform: translateY(-6px) scale(.88);
+}
+
+@media (hover: none) {
+  .museum-entry-grid .entry-card--image::before {
+    opacity: .18;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .museum-entry-grid .entry-card--image::before,
+  .museum-entry-grid .entry-card--image::after,
+  .museum-entry-grid .museum-entry-icon {
+    transition: none;
+  }
+
+  .museum-entry-grid .entry-card--image:is(:hover, :focus-visible)::before {
+    transform: scale(1.035);
+  }
+}
