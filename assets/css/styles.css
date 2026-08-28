@@ -23224,7 +23224,10 @@ html.is-home-idle-resting {
 }
 
 .home-mascot-button {
+  --mascot-heat: 0;
+  --mascot-heat-scale: .82;
   position: relative;
+  isolation: isolate;
   display: block;
   width: 95%;
   margin-left: auto;
@@ -23237,6 +23240,20 @@ html.is-home-idle-resting {
   transform-origin: 50% 100%;
 }
 
+.home-mascot-button::before {
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 45, 66, .86) 0%, rgba(221, 20, 47, .48) 38%, rgba(157, 0, 24, 0) 72%);
+  content: "";
+  filter: blur(7px);
+  opacity: var(--mascot-heat);
+  pointer-events: none;
+  transform: scale(var(--mascot-heat-scale));
+  transition: opacity .12s linear, transform .12s linear;
+}
+
 .home-mascot-button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
@@ -23244,6 +23261,8 @@ html.is-home-idle-resting {
 }
 
 .home-mascot-figure {
+  position: relative;
+  z-index: 1;
   display: block;
   animation: home-mascot-idle 4.8s ease-in-out infinite;
   filter: drop-shadow(0 14px 18px rgba(0, 0, 0, .28));
@@ -23271,21 +23290,29 @@ html.is-home-idle-resting {
   position: absolute;
   top: 10%;
   right: 0;
-  display: grid;
-  place-items: center;
-  min-width: 34px;
-  height: 24px;
-  padding: 0 8px 5px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 30px;
+  height: 22px;
+  padding: 0;
   border: 1px solid color-mix(in srgb, var(--accent) 56%, var(--line));
   border-radius: 999px;
   background: var(--card-bg);
   color: var(--accent);
   box-shadow: 0 8px 22px rgba(0, 0, 0, .16);
-  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
-  line-height: 1;
-  letter-spacing: 2px;
   transition: opacity .18s, transform .18s;
+}
+
+.home-mascot-prompt > span {
+  display: block;
+  flex: 0 0 auto;
+  width: 4px;
+  height: 4px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
 }
 
 .home-mascot-button[aria-expanded="true"] .home-mascot-prompt {
@@ -23295,13 +23322,13 @@ html.is-home-idle-resting {
 
 .home-mascot-bubble {
   position: absolute;
-  right: 42%;
+  right: 24%;
   bottom: calc(100% - 10px);
-  width: min(310px, calc(100vw - 34px));
-  padding: 18px 42px 18px 18px;
+  width: min(279px, calc(100vw - 34px));
+  padding: 8px 9px;
   border: 1px solid color-mix(in srgb, var(--accent) 52%, var(--line));
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--card-bg) 96%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card-bg) 65%, transparent);
   box-shadow: 0 18px 48px rgba(0, 0, 0, .25);
   color: var(--text);
   opacity: 0;
@@ -23310,7 +23337,8 @@ html.is-home-idle-resting {
   transform-origin: 88% 100%;
   visibility: hidden;
   transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(22px) saturate(145%);
 }
 
 .home-mascot-bubble[hidden] {
@@ -23332,35 +23360,15 @@ html.is-home-idle-resting {
   border-right: 1px solid color-mix(in srgb, var(--accent) 52%, var(--line));
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 52%, var(--line));
   content: "";
-  background: var(--card-bg);
+  background: color-mix(in srgb, var(--card-bg) 65%, transparent);
   transform: rotate(45deg);
 }
 
 .home-mascot-message {
   color: var(--text);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.65;
-}
-
-.home-mascot-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.home-mascot-close:hover,
-.home-mascot-close:focus-visible {
-  color: var(--accent);
 }
 
 .home-mascot-link {
@@ -23397,9 +23405,9 @@ html.is-home-idle-resting {
 
   .home-mascot-bubble {
     position: fixed;
-    right: 12px;
+    right: 8px;
     bottom: 112px;
-    width: min(300px, calc(100vw - 24px));
+    width: min(270px, calc(100vw - 24px));
     transform-origin: 88% 100%;
   }
 

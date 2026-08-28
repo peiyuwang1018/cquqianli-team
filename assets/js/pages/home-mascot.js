@@ -1,31 +1,72 @@
 (() => {
-  const widget = document.querySelector("[data-home-mascot]");
+  const config = window.QIANLI_MASCOT_CONFIG;
+  if (!config) return;
+
+  const createWidget = () => {
+    const existingWidget = document.querySelector("[data-home-mascot]");
+    if (existingWidget) {
+      existingWidget.querySelector("[data-home-mascot-close]")?.remove();
+      return existingWidget;
+    }
+
+    const widget = document.createElement("aside");
+    widget.className = "home-mascot-widget";
+    widget.dataset.homeMascot = "";
+    widget.innerHTML = `
+      <div class="home-mascot-bubble" id="home-mascot-bubble" role="status" aria-live="polite" hidden data-home-mascot-bubble>
+        <p class="home-mascot-message" data-home-mascot-message></p>
+        <a class="home-mascot-link" href="index.html" hidden data-home-mascot-link><span data-home-mascot-link-label></span><i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <button class="home-mascot-button" type="button" aria-label="听听千骊想说什么" aria-expanded="false" aria-controls="home-mascot-bubble" data-home-mascot-trigger>
+        <span class="home-mascot-figure"><img src="assets/images/content/home/mascot/qianli-mascot-transparent.png" alt="" /></span>
+        <span class="home-mascot-prompt" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>`;
+    document.body.append(widget);
+    return widget;
+  };
+
+  const normalizePath = () => decodeURIComponent(window.location.pathname).replaceAll("\\", "/").toLowerCase();
+  const currentPath = normalizePath();
+  const isHome = document.body.dataset.page === "home";
+
+  const pageEntry = Object.entries(config.pages || {}).find(([path]) => currentPath.endsWith(`/${path.toLowerCase()}`));
+  const sectionEntry = (config.sections || []).find((section) => currentPath.includes(section.match.toLowerCase()));
+  const context = isHome
+    ? config.home
+    : pageEntry?.[1] || sectionEntry || config.fallback;
+
+  const widget = createWidget();
   const trigger = widget?.querySelector("[data-home-mascot-trigger]");
   const bubble = widget?.querySelector("[data-home-mascot-bubble]");
-  const closeButton = widget?.querySelector("[data-home-mascot-close]");
   const messageNode = widget?.querySelector("[data-home-mascot-message]");
   const link = widget?.querySelector("[data-home-mascot-link]");
   const linkLabel = widget?.querySelector("[data-home-mascot-link-label]");
 
-  if (!widget || !trigger || !bubble || !closeButton || !messageNode || !link || !linkLabel) return;
+  if (!widget || !trigger || !bubble || !messageNode || !link || !linkLabel || !context) return;
 
-  const messages = [
-    { text: "第一次来？首页第三屏的常用入口，能带你快速认识这个网站。", href: "#home-discover", label: "去常用入口" },
-    { text: "面试不用背标准答案。讲清楚你怎么想、怎么学，比硬猜可靠。", href: "join/guide.html#interview-notes-title", label: "查看面试须知" },
-    { text: "作品不一定要完整，过程记录、失败复盘和学习笔记也能说明很多问题。", href: "join/guide.html#self-check-title", label: "完成投递自检" },
-    { text: "提前测试设备，别让麦克风比你先参加面试。", href: "join/guide.html#interview-notes-title", label: "阅读面试准备" },
-    { text: "不知道选哪个组？先读组别介绍，再带着具体问题来问。", href: "join/index.html#groups", label: "查看技术组岗位" },
-    { text: "想找以前的队员和故事？他们被好好收在千里博物馆里。", href: "museum/alumni.html", label: "查看历届成员" },
-    { text: "右上角的白天模式，需要一点勇气。" },
-    { text: "停着二十秒不动，首页会认真提醒你休息一下。" },
-    { text: "我只是坐在这里，监督你有没有认真看网页。" },
-    { text: "运筹帷幄之前，先把文件名和版本号写清楚。" },
-    { text: "今天也要记得保存文件。机器人不会自己长好，网页也不会。" },
-    { text: "做工程时，不知道就直说；知道一点，也要说明边界。" },
-  ];
+  const messages = Array.isArray(context.messages) ? context.messages : [];
+  const firstMessage = isHome ? context.first : messages[0];
+  const heatConfig = {
+    perClick: 22,
+    threshold: 100,
+    coolingPerSecond: 22,
+    overheatMessage: "累死我了，不理你了。",
+    ...(config.heat || {}),
+  };
 
   let currentIndex = -1;
+  let hasShownFirstMessage = false;
   let hideTimer = 0;
+  let autoCloseTimer = 0;
+  let heat = 0;
+  let heatFrame = 0;
+  let lastHeatTime = 0;
+  let isOverheated = false;
+
+  const scheduleAutoClose = () => {
+    window.clearTimeout(autoCloseTimer);
+    autoCloseTimer = window.setTimeout(() => closeBubble(), 3000);
+  };
 
   const pickNextIndex = () => {
     if (messages.length < 2) return 0;
@@ -34,9 +75,8 @@
     return nextIndex;
   };
 
-  const renderMessage = () => {
-    currentIndex = pickNextIndex();
-    const item = messages[currentIndex];
+  const renderItem = (item) => {
+    if (!item) return;
     messageNode.textContent = item.text;
     if (item.href && item.label) {
       link.href = item.href;
@@ -49,16 +89,80 @@
     }
   };
 
+  const renderMessage = () => {
+    let item;
+    if (!hasShownFirstMessage && firstMessage) {
+      item = firstMessage;
+      hasShownFirstMessage = true;
+      currentIndex = !isHome && messages.length ? 0 : -1;
+    } else {
+      currentIndex = pickNextIndex();
+      item = messages[currentIndex] || firstMessage;
+    }
+    renderItem(item);
+  };
+
+  const updateHeatVisual = () => {
+    const ratio = Math.min(1, heat / heatConfig.threshold);
+    trigger.style.setProperty("--mascot-heat", ratio.toFixed(3));
+    trigger.style.setProperty("--mascot-heat-scale", (0.82 + ratio * 0.24).toFixed(3));
+  };
+
+  const coolHeat = (now) => {
+    heatFrame = 0;
+    const elapsed = Math.min(0.25, (now - lastHeatTime) / 1000);
+    lastHeatTime = now;
+    heat = Math.max(0, heat - heatConfig.coolingPerSecond * elapsed);
+
+    if (heat === 0 && isOverheated) {
+      isOverheated = false;
+      widget.classList.remove("is-overheated");
+      trigger.removeAttribute("aria-disabled");
+    }
+
+    updateHeatVisual();
+    if (heat > 0) heatFrame = requestAnimationFrame(coolHeat);
+  };
+
+  const beginCooling = () => {
+    if (heatFrame) return;
+    lastHeatTime = performance.now();
+    heatFrame = requestAnimationFrame(coolHeat);
+  };
+
+  const addHeat = () => {
+    heat = Math.min(heatConfig.threshold, heat + heatConfig.perClick);
+    if (heat >= heatConfig.threshold) {
+      isOverheated = true;
+      widget.classList.add("is-overheated");
+      trigger.setAttribute("aria-disabled", "true");
+    }
+    updateHeatVisual();
+    beginCooling();
+    return isOverheated;
+  };
+
   const openBubble = () => {
     window.clearTimeout(hideTimer);
     renderMessage();
     bubble.hidden = false;
     trigger.setAttribute("aria-expanded", "true");
     requestAnimationFrame(() => bubble.classList.add("is-visible"));
+    scheduleAutoClose();
+  };
+
+  const showOverheatMessage = () => {
+    window.clearTimeout(hideTimer);
+    renderItem({ text: heatConfig.overheatMessage });
+    bubble.hidden = false;
+    trigger.setAttribute("aria-expanded", "true");
+    requestAnimationFrame(() => bubble.classList.add("is-visible"));
+    scheduleAutoClose();
   };
 
   const closeBubble = ({ returnFocus = false } = {}) => {
     window.clearTimeout(hideTimer);
+    window.clearTimeout(autoCloseTimer);
     bubble.classList.remove("is-visible");
     trigger.setAttribute("aria-expanded", "false");
     hideTimer = window.setTimeout(() => {
@@ -74,13 +178,29 @@
   };
 
   trigger.addEventListener("click", () => {
+    if (isOverheated) return;
     hop();
-    if (trigger.getAttribute("aria-expanded") === "true") renderMessage();
-    else openBubble();
+
+    if (addHeat()) {
+      showOverheatMessage();
+      return;
+    }
+
+    if (trigger.getAttribute("aria-expanded") === "true") {
+      renderMessage();
+      scheduleAutoClose();
+    } else {
+      openBubble();
+    }
   });
 
   trigger.addEventListener("animationend", () => trigger.classList.remove("is-hopping"));
-  closeButton.addEventListener("click", () => closeBubble({ returnFocus: true }));
+
+  document.addEventListener("pointerdown", (event) => {
+    if (trigger.getAttribute("aria-expanded") === "true" && !widget.contains(event.target)) {
+      closeBubble();
+    }
+  });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && trigger.getAttribute("aria-expanded") === "true") {

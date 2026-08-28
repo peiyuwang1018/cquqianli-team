@@ -158,6 +158,19 @@ function normalizeFooter(html, relative) {
   return html.replace(footerPattern, footer);
 }
 
+function normalizeMascotScripts(html) {
+  html = html.replace(/\s*<script src="assets\/js\/data\/mascot-config\.js\?v=[^"]+"><\/script>/g, "");
+  html = html.replace(/\s*<script src="assets\/js\/pages\/home-mascot\.js\?v=[^"]+"><\/script>/g, "");
+
+  const bodyClosePattern = /(\r?\n\s*)<\/body>/;
+  if (!bodyClosePattern.test(html)) throw new Error("Closing body tag not found while adding mascot scripts");
+
+  return html.replace(
+    bodyClosePattern,
+    `$1<script src="assets/js/data/mascot-config.js?v=20260828-2"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260828-4"></script>$1</body>`,
+  );
+}
+
 const htmlFiles = collectHtmlFiles(root);
 
 for (const file of htmlFiles) {
@@ -193,8 +206,9 @@ for (const file of htmlFiles) {
   }
 
   html = normalizeFooter(html, relative);
+  html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260828-101");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260828-107");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260825-81");
   fs.writeFileSync(file, html);
 }
