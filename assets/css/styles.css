@@ -23224,8 +23224,6 @@ html.is-home-idle-resting {
 }
 
 .home-mascot-button {
-  --mascot-heat: 0;
-  --mascot-heat-scale: .82;
   position: relative;
   isolation: isolate;
   display: block;
@@ -23238,20 +23236,6 @@ html.is-home-idle-resting {
   cursor: pointer;
   pointer-events: auto;
   transform-origin: 50% 100%;
-}
-
-.home-mascot-button::before {
-  position: absolute;
-  inset: -8%;
-  z-index: 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 45, 66, .86) 0%, rgba(221, 20, 47, .48) 38%, rgba(157, 0, 24, 0) 72%);
-  content: "";
-  filter: blur(7px);
-  opacity: var(--mascot-heat);
-  pointer-events: none;
-  transform: scale(var(--mascot-heat-scale));
-  transition: opacity .12s linear, transform .12s linear;
 }
 
 .home-mascot-button:focus-visible {
@@ -23270,10 +23254,26 @@ html.is-home-idle-resting {
 }
 
 .home-mascot-figure img {
+  display: block;
   width: 100%;
   height: auto;
   pointer-events: none;
   user-select: none;
+}
+
+.home-mascot-base {
+  position: relative;
+  z-index: 1;
+}
+
+.home-mascot-heat-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-.3%) scale(1.108);
+  transform-origin: 50% 50%;
+  transition: opacity .12s linear;
 }
 
 .home-mascot-button:hover .home-mascot-figure,

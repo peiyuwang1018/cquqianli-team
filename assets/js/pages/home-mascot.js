@@ -2,10 +2,36 @@
   const config = window.QIANLI_MASCOT_CONFIG;
   if (!config) return;
 
+  const scriptUrl = new URL(document.currentScript?.src || "assets/js/pages/home-mascot.js", document.baseURI);
+  const mascotImageUrl = new URL("../../images/content/home/mascot/qianli-mascot-transparent.png", scriptUrl).href;
+  const overheatedImageUrl = new URL("../../images/content/home/mascot/qianli-mascot-overheated.png", scriptUrl).href;
+
+  const ensureFigureLayers = (widget) => {
+    const figure = widget.querySelector(".home-mascot-figure");
+    if (!figure) return;
+
+    const baseImage = figure.querySelector(".home-mascot-base") || figure.querySelector("img");
+    if (baseImage) {
+      baseImage.classList.add("home-mascot-base");
+      baseImage.src = mascotImageUrl;
+    }
+
+    let heatLayer = figure.querySelector(".home-mascot-heat-layer");
+    if (!heatLayer) {
+      heatLayer = document.createElement("img");
+      heatLayer.className = "home-mascot-heat-layer";
+      heatLayer.alt = "";
+      heatLayer.setAttribute("aria-hidden", "true");
+      figure.append(heatLayer);
+    }
+    heatLayer.src = overheatedImageUrl;
+  };
+
   const createWidget = () => {
     const existingWidget = document.querySelector("[data-home-mascot]");
     if (existingWidget) {
       existingWidget.querySelector("[data-home-mascot-close]")?.remove();
+      ensureFigureLayers(existingWidget);
       return existingWidget;
     }
 
@@ -18,7 +44,10 @@
         <a class="home-mascot-link" href="index.html" hidden data-home-mascot-link><span data-home-mascot-link-label></span><i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <button class="home-mascot-button" type="button" aria-label="听听千骊想说什么" aria-expanded="false" aria-controls="home-mascot-bubble" data-home-mascot-trigger>
-        <span class="home-mascot-figure"><img src="assets/images/content/home/mascot/qianli-mascot-transparent.png" alt="" /></span>
+        <span class="home-mascot-figure">
+          <img class="home-mascot-base" src="${mascotImageUrl}" alt="" />
+          <img class="home-mascot-heat-layer" src="${overheatedImageUrl}" alt="" aria-hidden="true" />
+        </span>
         <span class="home-mascot-prompt" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>`;
     document.body.append(widget);
@@ -37,12 +66,13 @@
 
   const widget = createWidget();
   const trigger = widget?.querySelector("[data-home-mascot-trigger]");
+  const heatLayer = widget?.querySelector(".home-mascot-heat-layer");
   const bubble = widget?.querySelector("[data-home-mascot-bubble]");
   const messageNode = widget?.querySelector("[data-home-mascot-message]");
   const link = widget?.querySelector("[data-home-mascot-link]");
   const linkLabel = widget?.querySelector("[data-home-mascot-link-label]");
 
-  if (!widget || !trigger || !bubble || !messageNode || !link || !linkLabel || !context) return;
+  if (!widget || !trigger || !heatLayer || !bubble || !messageNode || !link || !linkLabel || !context) return;
 
   const messages = Array.isArray(context.messages) ? context.messages : [];
   const firstMessage = isHome ? context.first : messages[0];
@@ -104,8 +134,7 @@
 
   const updateHeatVisual = () => {
     const ratio = Math.min(1, heat / heatConfig.threshold);
-    trigger.style.setProperty("--mascot-heat", ratio.toFixed(3));
-    trigger.style.setProperty("--mascot-heat-scale", (0.82 + ratio * 0.24).toFixed(3));
+    heatLayer.style.opacity = ratio.toFixed(3);
   };
 
   const coolHeat = (now) => {

@@ -167,7 +167,7 @@ function normalizeMascotScripts(html) {
 
   return html.replace(
     bodyClosePattern,
-    `$1<script src="assets/js/data/mascot-config.js?v=20260828-2"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260828-4"></script>$1</body>`,
+    `$1<script src="assets/js/data/mascot-config.js?v=20260828-2"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260828-8"></script>$1</body>`,
   );
 }
 
@@ -208,7 +208,7 @@ for (const file of htmlFiles) {
   html = normalizeFooter(html, relative);
   html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260828-107");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260828-112");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260825-81");
   fs.writeFileSync(file, html);
 }
