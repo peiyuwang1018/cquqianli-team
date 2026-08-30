@@ -16,7 +16,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260830-2" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260830-3" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="home">
@@ -128,6 +128,17 @@
         <button type="button" aria-label="关闭招新通知" title="关闭招新通知" data-recruitment-notice-close><i class="mdi mdi-close" aria-hidden="true"></i></button>
       </div>
     </aside>
+    <div class="home-mobile-advisory" hidden data-home-mobile-advisory>
+      <section class="home-mobile-advisory__card" role="dialog" aria-modal="true" aria-labelledby="home-mobile-advisory-title" aria-describedby="home-mobile-advisory-message">
+        <i class="mdi mdi-monitor-cellphone" aria-hidden="true"></i>
+        <div>
+          <p class="page-label">VIEWING NOTICE</p>
+          <h2 id="home-mobile-advisory-title">移动端浏览提示</h2>
+          <p id="home-mobile-advisory-message">网站目前移动端兼容性有待完善，如有条件电脑浏览器查看体验更佳！</p>
+        </div>
+        <button type="button" data-home-mobile-advisory-close>知道了</button>
+      </section>
+    </div>
     <nav class="home-section-nav" aria-label="首页章节导航" data-home-section-nav>
       <button class="is-active" type="button" aria-label="前往首页导览" title="首页导览" data-home-section-target="home-overview"><span></span></button>
       <button type="button" aria-label="前往常用入口" title="常用入口" data-home-section-target="home-discover"><span></span></button>
@@ -290,7 +301,7 @@
 </main>
     <script src="assets/js/data/quotes.js?v=20260819-3"></script>
     <script src="assets/js/core/site.js?v=20260825-81"></script>
-    <script src="assets/js/pages/home.js?v=20260825-2"></script>
+    <script src="assets/js/pages/home.js?v=20260825-3"></script>
   <script src="assets/js/data/mascot-config.js?v=20260828-2"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260828-8"></script>
   </body>

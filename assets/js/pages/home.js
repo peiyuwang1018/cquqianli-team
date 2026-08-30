@@ -1,5 +1,23 @@
 const homeCarousel = document.querySelector("[data-home-carousel]");
 const recruitmentNotice = document.querySelector("[data-recruitment-notice]");
+const mobileAdvisory = document.querySelector("[data-home-mobile-advisory]");
+
+if (mobileAdvisory && window.matchMedia("(max-width: 860px)").matches) {
+  const closeButton = mobileAdvisory.querySelector("[data-home-mobile-advisory-close]");
+  const closeAdvisory = () => {
+    mobileAdvisory.hidden = true;
+  };
+
+  mobileAdvisory.hidden = false;
+  requestAnimationFrame(() => closeButton?.focus({ preventScroll: true }));
+  closeButton?.addEventListener("click", closeAdvisory);
+  mobileAdvisory.addEventListener("click", (event) => {
+    if (event.target === mobileAdvisory) closeAdvisory();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !mobileAdvisory.hidden) closeAdvisory();
+  });
+}
 
 if (recruitmentNotice) {
   const closeButton = recruitmentNotice.querySelector("[data-recruitment-notice-close]");
