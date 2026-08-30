@@ -12213,24 +12213,27 @@ html.has-culture-report {
 .nav-menu--join > a::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: -11px;
+  bottom: 0;
+  left: -11px;
   z-index: 0;
   background:
     linear-gradient(
       to top,
       transparent 0%,
-      rgba(0, 31, 18, 0.05) 38%,
-      rgba(2, 55, 31, 0.76) 45%,
-      rgba(26, 111, 67, 0.88) 48%,
-      rgba(128, 255, 185, 0.78) 50%,
-      rgba(16, 91, 53, 0.88) 52%,
-      rgba(1, 45, 25, 0.68) 57%,
-      transparent 65%
+      rgba(1, 27, 17, 0.04) 34%,
+      rgba(5, 44, 28, 0.28) 42%,
+      rgba(14, 70, 46, 0.46) 47%,
+      rgba(62, 126, 89, 0.42) 50%,
+      rgba(12, 65, 42, 0.44) 54%,
+      rgba(3, 37, 24, 0.22) 62%,
+      transparent 70%
     );
   background-repeat: no-repeat;
   background-position: center 100%;
   background-size: 100% 300%;
-  box-shadow: inset 0 0 10px rgba(32, 160, 92, 0.08);
+  box-shadow: inset 0 0 12px rgba(9, 72, 45, 0.08);
   opacity: 0;
   pointer-events: none;
   animation: nav-recruit-metal-sweep 3s linear infinite;
@@ -12250,12 +12253,12 @@ html.has-culture-report {
   }
 
   64% {
-    opacity: 0.9;
+    opacity: 0.72;
   }
 
   88% {
     background-position: center 0%;
-    opacity: 0.9;
+    opacity: 0.72;
   }
 
   94%,
