@@ -12223,25 +12223,42 @@ html.has-culture-report {
       to top,
       transparent 0%,
       rgba(1, 27, 17, 0.04) 34%,
-      rgba(5, 44, 28, 0.28) 42%,
-      rgba(14, 70, 46, 0.46) 47%,
-      rgba(62, 126, 89, 0.42) 50%,
-      rgba(12, 65, 42, 0.44) 54%,
-      rgba(3, 37, 24, 0.22) 62%,
+      rgba(7, 58, 36, 0.42) 42%,
+      rgba(22, 101, 64, 0.68) 47%,
+      rgba(119, 218, 157, 0.68) 50%,
+      rgba(19, 91, 58, 0.62) 54%,
+      rgba(4, 50, 31, 0.34) 62%,
       transparent 70%
     );
   background-repeat: no-repeat;
   background-position: center 100%;
   background-size: 100% 300%;
-  box-shadow: inset 0 0 12px rgba(9, 72, 45, 0.08);
+  box-shadow: inset 0 0 12px rgba(32, 128, 79, 0.16);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.22) 8%,
+    #000 24%,
+    #000 76%,
+    rgba(0, 0, 0, 0.22) 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.22) 8%,
+    #000 24%,
+    #000 76%,
+    rgba(0, 0, 0, 0.22) 92%,
+    transparent 100%
+  );
   opacity: 0;
   pointer-events: none;
   animation: nav-recruit-metal-sweep 3s linear infinite;
 }
 
-.nav-menu--join:hover > a::before,
-.nav-menu--join:focus-within > a::before {
-  animation-play-state: paused;
+.nav-menu--join.is-sweep-held > a::before {
+  animation: none;
   opacity: 0;
 }
 
@@ -12253,12 +12270,12 @@ html.has-culture-report {
   }
 
   64% {
-    opacity: 0.72;
+    opacity: 0.9;
   }
 
   88% {
     background-position: center 0%;
-    opacity: 0.72;
+    opacity: 0.9;
   }
 
   94%,
@@ -24692,10 +24709,23 @@ html.is-home-idle-resting {
   z-index: 1;
 }
 
-.home-mascot-heat-layer {
+.home-mascot-blink-layer {
   position: absolute;
   inset: 0;
   z-index: 2;
+  opacity: 0;
+  transform: translateY(-.3%) scale(1.105);
+  transform-origin: 50% 50%;
+  clip-path: ellipse(15% 17% at 62% 52%);
+  -webkit-mask-image: radial-gradient(ellipse 15% 17% at 62% 52%, #000 58%, transparent 78%);
+  mask-image: radial-gradient(ellipse 15% 17% at 62% 52%, #000 58%, transparent 78%);
+  animation: home-mascot-blink 4s linear 3s infinite;
+}
+
+.home-mascot-heat-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
   opacity: 0;
   transform: translateY(-.3%) scale(1.108);
   transform-origin: 50% 50%;
@@ -24823,6 +24853,11 @@ html.is-home-idle-resting {
   68% { transform: translateY(2px) scale(.98, 1.02); }
 }
 
+@keyframes home-mascot-blink {
+  0%, 3%, 74%, 77% { opacity: 1; }
+  4%, 73%, 78%, 100% { opacity: 0; }
+}
+
 @media (max-width: 720px) {
   .home-mascot-widget {
     right: max(8px, env(safe-area-inset-right));
@@ -24846,6 +24881,11 @@ html.is-home-idle-resting {
   .home-mascot-figure,
   .home-mascot-button.is-hopping {
     animation: none;
+  }
+
+  .home-mascot-blink-layer {
+    animation: none;
+    opacity: 0;
   }
 
   .home-mascot-bubble,

@@ -4,6 +4,7 @@
 
   const scriptUrl = new URL(document.currentScript?.src || "assets/js/pages/home-mascot.js", document.baseURI);
   const mascotImageUrl = new URL("../../images/content/home/mascot/qianli-mascot-transparent.png", scriptUrl).href;
+  const blinkImageUrl = new URL("../../images/content/home/mascot/qianli-mascot-blink.png", scriptUrl).href;
   const overheatedImageUrl = new URL("../../images/content/home/mascot/qianli-mascot-overheated.png", scriptUrl).href;
 
   const ensureFigureLayers = (widget) => {
@@ -15,6 +16,16 @@
       baseImage.classList.add("home-mascot-base");
       baseImage.src = mascotImageUrl;
     }
+
+    let blinkLayer = figure.querySelector(".home-mascot-blink-layer");
+    if (!blinkLayer) {
+      blinkLayer = document.createElement("img");
+      blinkLayer.className = "home-mascot-blink-layer";
+      blinkLayer.alt = "";
+      blinkLayer.setAttribute("aria-hidden", "true");
+      baseImage?.after(blinkLayer);
+    }
+    blinkLayer.src = blinkImageUrl;
 
     let heatLayer = figure.querySelector(".home-mascot-heat-layer");
     if (!heatLayer) {
@@ -46,6 +57,7 @@
       <button class="home-mascot-button" type="button" aria-label="听听千骊想说什么" aria-expanded="false" aria-controls="home-mascot-bubble" data-home-mascot-trigger>
         <span class="home-mascot-figure">
           <img class="home-mascot-base" src="${mascotImageUrl}" alt="" />
+          <img class="home-mascot-blink-layer" src="${blinkImageUrl}" alt="" aria-hidden="true" />
           <img class="home-mascot-heat-layer" src="${overheatedImageUrl}" alt="" aria-hidden="true" />
         </span>
         <span class="home-mascot-prompt" aria-hidden="true"><span></span><span></span><span></span></span>

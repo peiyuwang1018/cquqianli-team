@@ -86,6 +86,62 @@ window.addEventListener("resize", () => {
   }
 });
 
+function initRecruitmentSweepHover() {
+  const menu = document.querySelector(".nav-menu--join");
+  const link = menu?.querySelector(":scope > a");
+  if (!menu || !link) return;
+
+  let finishTimer = 0;
+  let finishHandler = null;
+
+  const isEngaged = () => menu.matches(":hover") || menu.contains(document.activeElement);
+
+  const cancelPendingFinish = () => {
+    window.clearTimeout(finishTimer);
+    finishTimer = 0;
+    if (finishHandler) {
+      link.removeEventListener("animationiteration", finishHandler);
+      finishHandler = null;
+    }
+  };
+
+  const holdSweep = () => {
+    cancelPendingFinish();
+    if (isEngaged()) menu.classList.add("is-sweep-held");
+  };
+
+  const requestHold = () => {
+    cancelPendingFinish();
+    if (!isEngaged()) return;
+
+    const sweepOpacity = Number.parseFloat(getComputedStyle(link, "::before").opacity) || 0;
+    if (sweepOpacity <= 0.02) {
+      holdSweep();
+      return;
+    }
+
+    finishHandler = (event) => {
+      if (event.animationName !== "nav-recruit-metal-sweep") return;
+      holdSweep();
+    };
+    link.addEventListener("animationiteration", finishHandler);
+    finishTimer = window.setTimeout(holdSweep, 1400);
+  };
+
+  const releaseHold = () => {
+    if (isEngaged()) return;
+    cancelPendingFinish();
+    menu.classList.remove("is-sweep-held");
+  };
+
+  menu.addEventListener("pointerenter", requestHold);
+  menu.addEventListener("pointerleave", releaseHold);
+  menu.addEventListener("focusin", requestHold);
+  menu.addEventListener("focusout", () => window.setTimeout(releaseHold, 0));
+}
+
+initRecruitmentSweepHover();
+
 const qrPreviewButtons = [...document.querySelectorAll("[data-qr-preview]")];
 const qrLightbox = document.querySelector("[data-qr-lightbox]");
 const qrLightboxImage = qrLightbox?.querySelector("[data-qr-lightbox-image]");
