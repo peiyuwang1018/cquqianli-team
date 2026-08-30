@@ -64,7 +64,7 @@
 }
 
 .management-principles article {
-  min-height: 150px;
+  min-height: 388px;
   padding: 22px;
   background: var(--card-bg);
 }
@@ -81,6 +81,189 @@
 .management-cycle p {
   font-size: 13px;
   line-height: 1.65;
+}
+
+.management-principles article > p + p {
+  margin-top: 10px;
+}
+
+.management-principles article > strong {
+  display: block;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.management-identity-note {
+  display: grid;
+  grid-template-columns: 40px minmax(270px, .8fr) minmax(0, 1.2fr);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 22px 24px;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.management-identity-note > i {
+  color: var(--accent);
+  font-size: 31px;
+}
+
+.management-identity-note div > p {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.management-identity-note strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.management-identity-note > span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.management-philosophy-opening {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.management-philosophy-opening p {
+  padding: 18px 22px;
+  background: var(--card-bg);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.76;
+}
+
+.management-growth {
+  margin-top: 34px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.management-growth-heading {
+  display: grid;
+  grid-template-columns: minmax(330px, .9fr) minmax(0, 1.1fr);
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.management-growth-heading h3 {
+  margin: 0;
+  font-size: clamp(25px, 2.6vw, 35px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.02em;
+}
+
+.management-growth-intro {
+  display: grid;
+  gap: 8px;
+}
+
+.management-growth-intro p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.management-growth-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.management-growth-grid article {
+  position: relative;
+  min-height: 186px;
+  padding: 22px;
+  background: var(--card-bg);
+}
+
+.management-growth-grid i {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.management-growth-grid span {
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.management-growth-grid h4 {
+  margin: 28px 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.management-growth-grid p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.68;
+}
+
+.management-final-note {
+  display: grid;
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 1.28fr);
+  gap: 34px;
+  margin-top: 18px;
+  padding: 26px 28px;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.management-final-note h4 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.management-final-note > div:last-child {
+  display: grid;
+  gap: 10px;
+}
+
+.management-final-note p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.76;
+}
+
+.management-final-note strong {
+  margin-top: 4px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.72;
 }
 
 .management-role-grid {
@@ -171,6 +354,106 @@
   line-height: 1.75;
 }
 
+.management-care-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+  gap: 34px;
+  align-items: end;
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.management-care-heading h2 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+}
+
+.management-care-heading > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.management-care-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.management-care-grid article {
+  padding: 24px 26px 22px;
+  background: var(--card-bg);
+}
+
+.management-care-grid header {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 13px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.management-care-grid header > i {
+  color: var(--accent);
+  font-size: 29px;
+  line-height: 1;
+}
+
+.management-care-grid header span {
+  color: var(--accent);
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.management-care-grid h3 {
+  margin: 3px 0 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.management-care-grid article > p,
+.management-care-grid ul {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.68;
+}
+
+.management-care-grid ul {
+  display: grid;
+  gap: 5px;
+  margin: 12px 0 0;
+  padding-left: 1.2em;
+}
+
+.management-care-grid li::marker {
+  color: var(--accent);
+}
+
+.management-care-note {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface));
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.management-care-note strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
 .management-actions {
   width: 100%;
   margin-top: 14px;
@@ -194,9 +477,28 @@
   }
 
   .management-section-heading,
-  .management-safety-panel {
+  .management-safety-panel,
+  .management-care-heading,
+  .management-growth-heading,
+  .management-final-note {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .management-identity-note {
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .management-identity-note > span {
+    grid-column: 2;
+  }
+
+  .management-growth-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .management-principles article {
+    min-height: 0;
   }
 }
 
@@ -225,8 +527,29 @@
   .management-role-grid,
   .management-principles,
   .management-cycle,
-  .management-chain-grid {
+  .management-chain-grid,
+  .management-growth-grid,
+  .management-care-grid {
     grid-template-columns: 1fr;
+  }
+
+  .management-identity-note {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .management-identity-note > span {
+    grid-column: 1;
+  }
+
+  .management-philosophy-opening {
+    grid-template-columns: 1fr;
+  }
+
+  .management-growth-grid article,
+  .management-principles article {
+    min-height: 0;
   }
 
   .management-role-card {
