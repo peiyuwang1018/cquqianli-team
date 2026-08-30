@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLC8RQ7C9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      if (['team.cquqianli.cn', 'team.cquqian.li'].includes(window.location.hostname)) {
+        gtag('config', 'G-4RLC8RQ7C9');
+      }
+    </script>
+    <!-- /Google Analytics (GA4) -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="重庆大学千里战队队伍主页，展示战队介绍、技术组别、责任组别、队史档案、招新信息与联系方式。" />
@@ -16,7 +27,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260830-3" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260831-7" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="home">
@@ -99,6 +110,8 @@
           <span class="nav-menu nav-menu--join">
             <a href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">纳新通道</span></a>
             <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -187,7 +200,7 @@
     </div>
   </section>
   <section class="home-quote" aria-label="箴言">
-    <a class="quote-robomaster-link" href="https://www.robomaster.com/zh-CN" target="_blank" rel="noopener noreferrer" aria-label="前往 RoboMaster 官网" title="RoboMaster 官网">
+    <a class="quote-robomaster-link" href="join/learn-rm.html" aria-label="前往了解 RoboMaster 页面" title="了解 RoboMaster">
       <svg class="home-link-logo home-link-logo--robomaster" viewBox="0 0 42 40" aria-hidden="true"><path d="M40.6027 10.7354C40.6027 4.8075 35.7953 0 29.8675 0H2.85622L7.93661 7.66347L12.7115 12.8906H23.6382L18.8796 7.66347H29.8675C31.5623 7.66347 32.9393 9.04054 32.9393 10.7354C32.9393 12.4302 31.5623 13.8073 29.8675 13.8073H7.93661V13.8195L2.60362 33.1676L0.823242 33.9988H12.19L15.6407 21.4708H29.8634C35.7912 21.4708 40.5986 16.6633 40.5986 10.7354H40.6027Z"/><path d="M41.1734 32.1614L32.0841 22.1715C31.367 22.3101 30.6256 22.3834 29.8678 22.3834H21.3855L27.8552 29.4683H18.8311L40.1752 40L32.9274 32.1614H41.1775H41.1734Z"/></svg>
     </a>
     <div class="quote-stage" data-quote-stage>

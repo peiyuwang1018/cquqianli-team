@@ -15,13 +15,12 @@
 <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队历届超级对抗赛报名成员档案。" />
-    <title>历届成员 | 档案馆 | 重庆大学千里战队</title>
+    <meta name="description" content="通过比赛机制、机器人、参赛队伍、赛事文化、工程技术与职业发展视频了解 RoboMaster。" />
+    <title>了解 RM | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
-          const savedTheme = localStorage.getItem("theme");
-          document.documentElement.dataset.theme = savedTheme || "dark";
+          document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
         } catch {
           document.documentElement.dataset.theme = "dark";
         }
@@ -31,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=20260831-7" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="archive">
+  <body data-page="join" class="learn-rm-body">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -90,7 +89,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a class="is-active" aria-current="page" href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
             <span class="nav-dropdown nav-dropdown--museum">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
@@ -109,7 +108,7 @@
             </span>
           </span>
           <span class="nav-menu nav-menu--join">
-            <a href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">纳新通道</span></a>
+            <a class="is-active" aria-current="page" href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">纳新通道</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
@@ -128,47 +127,114 @@
         </div>
         <div class="nav-utilities">
           <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
-        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
-        </button>
+          <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+          </button>
         </div>
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="museum/index.html" aria-label="返回千里博物馆" title="返回千里博物馆">
+      <a class="page-back-link" href="join/index.html" aria-label="返回纳新通道" title="返回纳新通道">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main class="records-page">
-      <section class="page-hero archive-page-hero">
-        <div><p class="page-label">TEAM ARCHIVE</p><h1>档案馆</h1></div>
-        <p>归档战队的比赛历程、建设项目、历届成员与集体荣誉。</p>
-        <nav class="archive-tabs" aria-label="档案馆分类">
-          <a href="museum/projects.html"><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i>团队项目</a>
-          <a class="is-active" aria-current="page" href="museum/alumni.html"><i class="mdi mdi-account-clock-outline" aria-hidden="true"></i>历届成员</a>
-          <a href="museum/records.html"><i class="mdi mdi-trophy-variant-outline" aria-hidden="true"></i>历史比赛</a>
-          <a href="museum/honors.html"><i class="mdi mdi-medal-outline" aria-hidden="true"></i>荣誉墙</a>
-        </nav>
+<main class="learn-rm-page">
+      <section class="page-hero learn-rm-hero">
+        <div><p class="page-label">DISCOVER ROBOMASTER</p><h1>了解 RoboMaster</h1></div>
+        <p>先看懂比赛、机器人与工程工作，再决定自己是否愿意进入一段真实而漫长的赛季。</p>
       </section>
 
-      <section class="section-block team-member-section" id="past-members" data-member-section="past">
-        <header class="team-member-section-head">
-          <div><p class="page-label">TEAM ARCHIVE</p><h2>历届队伍成员</h2></div>
-          <p>信息无法涵盖所有参与队员，人员与身份以当赛季 RoboMaster 超级对抗赛报名系统呈现为准。</p>
-        </header>
-        <div class="past-member-archive" data-past-members></div>
+      <section class="section-block join-video-guide" data-join-video-guide aria-label="RoboMaster 推荐视频">
+        <div class="join-video-tabs" data-join-video-tabs role="tablist" aria-label="RoboMaster 了解维度"></div>
+        <div class="join-video-stage">
+          <div class="join-video-frame" data-join-video-frame>
+            <div class="join-video-placeholder"><i class="mdi mdi-video-outline" aria-hidden="true"></i><strong>正在准备推荐视频</strong></div>
+          </div>
+          <aside class="join-video-copy" aria-live="polite">
+            <p class="page-label" data-join-video-eyebrow>ROBOMASTER GUIDE</p>
+            <h3 data-join-video-category-title>赛事文化</h3>
+            <p class="join-video-category-summary" data-join-video-category-summary></p>
+            <div class="join-video-now-playing">
+              <span data-join-video-tag>推荐观看</span>
+              <strong data-join-video-title></strong>
+              <p data-join-video-description></p>
+              <a data-join-video-watch href="#" target="_blank" rel="noopener noreferrer">前往哔哩哔哩观看 <i class="mdi mdi-open-in-new" aria-hidden="true"></i></a>
+            </div>
+            <div class="join-video-actions">
+              <button type="button" data-join-video-prev aria-label="上一条推荐视频"><i class="mdi mdi-arrow-left" aria-hidden="true"></i></button>
+              <button type="button" data-join-video-next aria-label="下一条推荐视频"><i class="mdi mdi-arrow-right" aria-hidden="true"></i></button>
+            </div>
+          </aside>
+        </div>
+        <div class="join-video-episodes" data-join-video-episodes aria-label="当前主题推荐剧集"></div>
+      </section>
+
+      <section class="section-block learn-rm-more" aria-labelledby="learn-rm-more-title">
+        <div class="learn-rm-section-heading">
+          <div>
+            <p class="page-label">KEEP EXPLORING</p>
+            <h2 id="learn-rm-more-title">了解更多：推荐栏目</h2>
+          </div>
+          <p>从完整纪录片、工程分享、机器人档案与比赛回放中，继续认识赛场背后更长的故事。</p>
+        </div>
+        <a class="learn-rm-documentary" href="https://www.bilibili.com/bangumi/media/md22998409" target="_blank" rel="noopener noreferrer">
+          <span class="learn-rm-documentary-posters" aria-hidden="true">
+            <img src="assets/images/join/rm-documentary-s1.png" alt="" loading="lazy" />
+            <img src="assets/images/join/rm-documentary-s2.png" alt="" loading="lazy" />
+            <img src="assets/images/join/rm-documentary-s3.png" alt="" loading="lazy" />
+            <img src="assets/images/join/rm-documentary-s4.png" alt="" loading="lazy" />
+            <img src="assets/images/join/rm-documentary-s5.png" alt="" loading="lazy" />
+          </span>
+          <span class="learn-rm-documentary-copy">
+            <small>01 · 官方纪录片</small>
+            <strong>《机甲大师》第一至第五季</strong>
+            <span>用五个赛季的镜头，走进青年工程师的研发、比赛、成长与传承。</span>
+            <em>前往哔哩哔哩观看 <i class="mdi mdi-open-in-new" aria-hidden="true"></i></em>
+          </span>
+        </a>
+        <div class="learn-rm-resource-grid">
+          <a href="https://space.bilibili.com/1672842853" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-presentation-play" aria-hidden="true"></i><small>02 · 工程交流</small><strong>青年工程师大会</strong><span>关注 RoboMaster 赛务君，继续观看工程经验与技术分享。</span></a>
+          <a href="https://space.bilibili.com/20554233/lists/1939428?type=season" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-robot-outline" aria-hidden="true"></i><small>03 · 机器人档案</small><strong>机器人图鉴栏目</strong><span>按兵种认识赛场机器人，看懂结构、任务与技术特点。</span></a>
+          <a href="https://space.bilibili.com/20554233/lists/4223477?type=season" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-school-outline" aria-hidden="true"></i><small>04 · 高校队伍</small><strong>RM 高校游记</strong><span>走进不同高校战队，观察他们的研发空间、组织方式与队伍文化。</span></a>
+          <a href="https://space.bilibili.com/20554233" target="_blank" rel="noopener noreferrer"><i class="mdi mdi-video-vintage" aria-hidden="true"></i><small>05 · 赛事现场</small><strong>官方比赛回放</strong><span>关注 RoboMaster 机甲大师，完整回看重要对局与赛季进程。</span></a>
+        </div>
+      </section>
+
+      <section class="home-related-links learn-rm-related-links" aria-labelledby="home-related-title">
+        <div class="home-section-heading home-related-heading">
+          <div><p class="page-label">RELATED LINKS</p><h2 id="home-related-title">相关链接</h2></div>
+        </div>
+        <div class="home-access-grid home-related-grid">
+          <a href="https://www.robomaster.com/zh-CN" target="_blank" rel="noopener noreferrer"><svg class="home-link-logo home-link-logo--robomaster" viewBox="0 0 42 40" aria-hidden="true"><path d="M40.6027 10.7354C40.6027 4.8075 35.7953 0 29.8675 0H2.85622L7.93661 7.66347L12.7115 12.8906H23.6382L18.8796 7.66347H29.8675C31.5623 7.66347 32.9393 9.04054 32.9393 10.7354C32.9393 12.4302 31.5623 13.8073 29.8675 13.8073H7.93661V13.8195L2.60362 33.1676L0.823242 33.9988H12.19L15.6407 21.4708H29.8634C35.7912 21.4708 40.5986 16.6633 40.5986 10.7354H40.6027Z"/><path d="M41.1734 32.1614L32.0841 22.1715C31.367 22.3101 30.6256 22.3834 29.8678 22.3834H21.3855L27.8552 29.4683H18.8311L40.1752 40L32.9274 32.1614H41.1775H41.1734Z"/></svg><strong>RoboMaster 官网</strong><span>赛事规则与官方资讯</span></a>
+          <a href="https://bbs.robomaster.com/" target="_blank" rel="noopener noreferrer"><svg class="home-link-logo home-link-logo--robomaster" viewBox="0 0 42 40" aria-hidden="true"><path d="M40.6027 10.7354C40.6027 4.8075 35.7953 0 29.8675 0H2.85622L7.93661 7.66347L12.7115 12.8906H23.6382L18.8796 7.66347H29.8675C31.5623 7.66347 32.9393 9.04054 32.9393 10.7354C32.9393 12.4302 31.5623 13.8073 29.8675 13.8073H7.93661V13.8195L2.60362 33.1676L0.823242 33.9988H12.19L15.6407 21.4708H29.8634C35.7912 21.4708 40.5986 16.6633 40.5986 10.7354H40.6027Z"/><path d="M41.1734 32.1614L32.0841 22.1715C31.367 22.3101 30.6256 22.3834 29.8678 22.3834H21.3855L27.8552 29.4683H18.8311L40.1752 40L32.9274 32.1614H41.1775H41.1734Z"/></svg><strong>RM 论坛</strong><span>技术交流与开源分享</span></a>
+          <a href="https://schedule.scutbot.cn/" target="_blank" rel="noopener noreferrer"><img class="home-link-logo home-link-logo--image home-link-logo--schedule" src="assets/images/brand/external/rm-schedule.png" alt="" aria-hidden="true" /><strong>RM 赛程分析</strong><span>比赛日程与赛果查询</span></a>
+          <a href="https://www.micdz.cn/RM_LADDER/index.html" target="_blank" rel="noopener noreferrer"><img class="home-link-logo home-link-logo--image home-link-logo--ladder" src="assets/images/brand/external/rm-ladder-logo.svg" alt="" aria-hidden="true" /><strong>RM 天梯数据榜</strong><span>战队与兵种数据排行</span></a>
+        </div>
+      </section>
+
+      <section class="section-block learn-rm-next" aria-label="继续了解纳新信息">
+        <div>
+          <p class="page-label">READY FOR THE NEXT STEP</p>
+          <h2>了解之后，再认真决定是否投递</h2>
+          <p>如果你开始对比赛、工程研发和队伍协作产生兴趣，可以继续阅读投递准备与面试须知。</p>
+        </div>
+        <div class="join-guide-actions">
+          <a href="join/guide.html">前往加入我们 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+          <a href="join/index.html">查看纳新通道 <i class="mdi mdi-account-plus-outline" aria-hidden="true"></i></a>
+        </div>
       </section>
     </main>
+
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
       <p>网站建设：重庆大学千里战队 × Codex</p>
       <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
-    <script src="assets/js/data/members.js?v=20260823-14"></script>
-    <script src="assets/js/pages/members.js?v=20260830-1"></script>
     <script src="assets/js/core/site.js?v=20260825-81"></script>
+    <script src="assets/js/data/join-videos.js?v=20260830-4"></script>
+    <script src="assets/js/pages/join-guide.js?v=20260830-3"></script>
   <script src="assets/js/data/mascot-config.js?v=20260828-2"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260828-8"></script>
   </body>

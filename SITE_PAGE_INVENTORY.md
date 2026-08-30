@@ -77,6 +77,8 @@
 
 - **纳新通道**
   - **纳新通道**（`join/index.html`）
+  - **了解 RM**（`join/learn-rm.html`）
+  - **找到千里**（`join/find-qianli.html`）
   - **加入我们**（`join/guide.html`）
   - **人才画像**（`join/persona.html`）
   - **Q&A**（`join/qa.html`）

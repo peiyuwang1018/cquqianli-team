@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <base href="../" />
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLC8RQ7C9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      if (['team.cquqianli.cn', 'team.cquqian.li'].includes(window.location.hostname)) {
+        gtag('config', 'G-4RLC8RQ7C9');
+      }
+    </script>
+    <!-- /Google Analytics (GA4) -->
+<base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="重庆大学千里战队步哨组，统筹步兵机器人与哨兵机器人的赛季项目和跨技术协作。" />
@@ -17,7 +28,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260830-1" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-7" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -100,6 +111,8 @@
           <span class="nav-menu nav-menu--join">
             <a href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">纳新通道</span></a>
             <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>

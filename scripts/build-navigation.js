@@ -2,6 +2,18 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
+const googleAnalyticsTag = `    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLC8RQ7C9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      if (['team.cquqianli.cn', 'team.cquqian.li'].includes(window.location.hostname)) {
+        gtag('config', 'G-4RLC8RQ7C9');
+      }
+    </script>
+    <!-- /Google Analytics (GA4) -->
+`;
 
 function collectHtmlFiles(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -15,6 +27,20 @@ function collectHtmlFiles(directory) {
 
 function activeAttributes(active, key) {
   return active === key ? ' class="is-active" aria-current="page"' : "";
+}
+
+function normalizeGoogleAnalytics(html, relative) {
+  html = html.replace(
+    /    <!-- Google Analytics \(GA4\) -->[\s\S]*?    <!-- \/Google Analytics \(GA4\) -->\r?\n/g,
+    "",
+  );
+  const headPattern = /(<head>\r?\n)/;
+  if (!headPattern.test(html)) throw new Error(`Head block not found in ${relative}`);
+  html = html.replace(headPattern, `$1${googleAnalyticsTag}`);
+  return html.replace(
+    /(<!-- \/Google Analytics \(GA4\) -->\r?\n)[ \t]*<meta charset=/,
+    '$1    <meta charset=',
+  );
 }
 
 function getBackTarget(relative) {
@@ -128,6 +154,8 @@ function buildNavigation(active) {
           <span class="nav-menu nav-menu--join">
             <a${activeAttributes(active, "join")} href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">纳新通道</span></a>
             <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -175,13 +203,14 @@ const htmlFiles = collectHtmlFiles(root);
 for (const file of htmlFiles) {
   const relative = path.relative(root, file).replaceAll(path.sep, "/");
   let html = fs.readFileSync(file, "utf8");
+  html = normalizeGoogleAnalytics(html, relative);
   const organizationPage = relative === "about/organization.html" || relative.startsWith("groups/");
 
   if (organizationPage) {
     html = html.replace(/<body data-page="[^"]+">/, '<body data-page="organization">');
   }
 
-  const page = html.match(/<body data-page="([^"]+)">/)?.[1] || "";
+  const page = html.match(/<body\b[^>]*\bdata-page="([^"]+)"/)?.[1] || "";
   const navPattern = /        <div class="nav-links" id="nav-links">[\s\S]*?<\/div>\r?\n(?=        (?:<div class="nav-utilities">|<button class="theme-toggle"))/;
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
@@ -207,7 +236,7 @@ for (const file of htmlFiles) {
   html = normalizeFooter(html, relative);
   html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260830-1");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260831-7");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260825-81");
   fs.writeFileSync(file, html);
 }
