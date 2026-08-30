@@ -27,7 +27,6 @@ function getBackTarget(relative) {
     "museum/index.html",
     "join/index.html",
     "contact/index.html",
-    "contact/sponsorship.html",
   ]);
 
   if (primaryPages.has(relative)) return { href: "index.html", label: "返回主页" };
@@ -40,7 +39,7 @@ function getBackTarget(relative) {
   }
   if (relative.startsWith("museum/")) return { href: "museum/index.html", label: "返回千里博物馆" };
   if (relative.startsWith("join/")) return { href: "join/index.html", label: "返回纳新通道" };
-  if (relative.startsWith("contact/")) return { href: "contact/sponsorship.html", label: "返回合作招商" };
+  if (relative.startsWith("contact/")) return { href: "contact/index.html", label: "返回合作招商" };
 
   return { href: "index.html", label: "返回主页" };
 }
@@ -135,7 +134,7 @@ function buildNavigation(active) {
             </span>
           </span>
           <span class="nav-menu nav-menu--contact">
-            <a${activeAttributes(active, "contact")} href="contact/sponsorship.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-handshake-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">合作招商</span></a>
+            <a${activeAttributes(active, "contact")} href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-handshake-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">合作招商</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/sponsorship.html"><span class="nav-item-label">赞助合作</span><i class="mdi mdi-domain nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/outreach.html"><span class="nav-item-label">科创教育活动</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
