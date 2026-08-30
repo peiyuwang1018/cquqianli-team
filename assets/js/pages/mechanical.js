@@ -19,7 +19,7 @@
     });
 
     if (group === "section" && updateUrl) {
-      history.replaceState(null, "", `#${targetId}`);
+      history.replaceState(null, "", `${location.pathname}${location.search}#${targetId}`);
     }
 
     if (focus) tab.focus();

@@ -29,7 +29,12 @@ const htmlFiles = files.filter((file) => file.endsWith(".html"));
 for (const file of htmlFiles) {
   const content = fs.readFileSync(file, "utf8");
   const baseMatch = content.match(/<base\s+href=["']([^"']+)["']/i);
-  const baseDir = baseMatch ? path.resolve(path.dirname(file), baseMatch[1]) : path.dirname(file);
+  const baseHref = baseMatch?.[1] || "";
+  const baseDir = baseMatch
+    ? baseHref.startsWith("/")
+      ? path.resolve(root, baseHref.replace(/^[/\\]+/, ""))
+      : path.resolve(path.dirname(file), baseHref)
+    : path.dirname(file);
   const contentWithoutBase = content.replace(/<base\s+href=["'][^"']+["']\s*\/?>/i, "");
   for (const match of contentWithoutBase.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
     checkReference(file, match[1], baseDir);

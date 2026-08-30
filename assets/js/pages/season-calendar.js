@@ -589,7 +589,9 @@
 
   function updateViewHash(view) {
     var hash = viewHashes[view];
-    if (hash && location.hash !== "#" + hash) history.replaceState(null, "", "#" + hash);
+    if (hash && location.hash !== "#" + hash) {
+      history.replaceState(null, "", location.pathname + location.search + "#" + hash);
+    }
   }
 
   function activateView(view, options) {

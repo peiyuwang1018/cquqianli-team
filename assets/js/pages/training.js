@@ -23,7 +23,7 @@
     resourcePanels.forEach((panel) => {
       panel.hidden = panel.dataset.resourcePanel !== key;
     });
-    if (updateHash) history.replaceState(null, "", `#${key}`);
+    if (updateHash) history.replaceState(null, "", `${location.pathname}${location.search}#${key}`);
   };
 
   resourceTabs.forEach((tab, index) => {

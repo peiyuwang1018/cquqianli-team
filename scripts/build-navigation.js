@@ -208,7 +208,7 @@ for (const file of htmlFiles) {
   html = normalizeFooter(html, relative);
   html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260828-112");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260830-1");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260825-81");
   fs.writeFileSync(file, html);
 }

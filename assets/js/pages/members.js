@@ -60,7 +60,7 @@
         panel.hidden = departmentKey !== key;
       });
       if (updateHash && window.location.hash !== `#${key}`) {
-        window.history.replaceState(null, "", `#${key}`);
+        window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}#${key}`);
       }
     };
 
