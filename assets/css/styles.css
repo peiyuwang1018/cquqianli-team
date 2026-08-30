@@ -20175,6 +20175,28 @@ body[data-page="home"] .site-footer a:focus-visible {
   transform: scale(1.04);
 }
 
+.home-group-link > span {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  min-width: 3em;
+  color: var(--home-group-tone);
+  font: 500 11px/1.2 "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: .08em;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 5px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.home-group-link:hover > span,
+.home-group-link:focus-visible > span {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 .home-group-link--mechanical {
   --home-group-tone: #c59a4b;
   --home-group-filter: brightness(0) saturate(100%) invert(64%) sepia(46%) saturate(703%) hue-rotate(359deg) brightness(92%) contrast(86%);
