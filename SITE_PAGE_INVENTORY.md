@@ -71,9 +71,10 @@
   - **梗指南**（`museum/memes.html`）
   - **周边橱窗**（`museum/shop.html`）
   - **资料站**（`museum/resources.html`）
-    - **机械结构组第一课**（`museum/training/mechanical.html`）
-    - **电气控制组第一课**（`museum/training/control.html`）
-    - **视觉算法组第一课**（`museum/training/vision.html`）
+    - **机械结构组先导课**（`museum/training/mechanical.html`）
+    - **电气控制组先导课**（`museum/training/control.html`）
+    - **视觉算法组先导课**（`museum/training/vision.html`）
+    - **硬件开发组先导课**（`museum/training/hardware.html`）
 
 - **纳新通道**
   - **纳新通道**（`join/index.html`）

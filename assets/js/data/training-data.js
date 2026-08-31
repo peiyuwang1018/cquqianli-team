@@ -137,7 +137,19 @@ const lessons = {
     recruitment:
       "负责机器人电路、电气连接、供电保护、传感器接入与硬件可靠性支持，让每一块板卡和每一束线缆都能经受真实赛场的振动、冲击与维护压力。",
     directions: ["电路设计", "电气系统", "供电保护", "传感器接入", "可靠性验证"],
-    lesson: null,
+    lesson: {
+      eyebrow: "HARDWARE LEAD-IN",
+      title: "从可靠连接走向独立板卡",
+      summary:
+        "从焊接、测量和故障排查起步，沿着“抄、懂、造”的路径进入原理图、PCB 与板级联调，建立能够被整车验证的硬件交付能力。",
+      outcome:
+        "你将理解电源、控制、通信与传感链路如何连接，掌握基础调试顺序，并知道如何从复现一块板卡继续走向独立设计。",
+      topics: ["焊接与线束", "电源树与板级排障", "嵌入式验证基础", "原理图与 PCB", "最小系统板任务"],
+      stages: ["先焊好、测准", "再理解设计依据", "最后独立设计与交付"],
+      tools: ["嘉立创 EDA 专业版", "万用表 / 示波器", "STM32CubeMX", "CLion / CMake", "ST-Link"],
+      author: "王义辰",
+      pageHref: "museum/training/hardware.html",
+    },
   },
   operations: {
     name: "宣传运营组",

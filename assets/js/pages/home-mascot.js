@@ -54,7 +54,7 @@
         <p class="home-mascot-message" data-home-mascot-message></p>
         <a class="home-mascot-link" href="index.html" hidden data-home-mascot-link><span data-home-mascot-link-label></span><i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
       </div>
-      <button class="home-mascot-button" type="button" aria-label="听听千骊想说什么" aria-expanded="false" aria-controls="home-mascot-bubble" data-home-mascot-trigger>
+      <button class="home-mascot-button" type="button" aria-label="听听千璃想说什么" aria-expanded="false" aria-controls="home-mascot-bubble" data-home-mascot-trigger>
         <span class="home-mascot-figure">
           <img class="home-mascot-base" src="${mascotImageUrl}" alt="" />
           <img class="home-mascot-blink-layer" src="${blinkImageUrl}" alt="" aria-hidden="true" />

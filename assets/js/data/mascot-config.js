@@ -1,5 +1,5 @@
 /*
- * 千骊小助手文案配置。
+ * 千璃小助手文案配置。
  * 后续调整小人说的话时，优先只修改本文件，不改组件逻辑。
  *
  * 规则：
@@ -17,7 +17,7 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
   },
 
   home: {
-    first: { text: "你好，我是千骊，你的小助手。" },
+    first: { text: "你好，我是千璃，你的小助手。" },
     messages: [
       { text: "首页第三屏的常用入口，能带你快速认识这个网站。", href: "#home-discover", label: "去常用入口" },
       { text: "面试不用背标准答案。讲清楚你怎么想、怎么学，比硬猜可靠。", href: "join/guide.html#interview-notes-title", label: "查看面试须知" },
