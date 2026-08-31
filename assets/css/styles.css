@@ -6239,6 +6239,11 @@
     width: auto;
     min-height: 34px;
     border-right: 1px solid var(--line);
+    transform: none;
+  }
+
+  .join-awareness-path > i::before {
+    display: inline-block;
     transform: rotate(90deg);
   }
 
@@ -27138,5 +27143,337 @@ html.is-home-idle-resting {
   .recruit-hero-qr img {
     width: 76px;
     height: 76px;
+  }
+}
+
+/* Join guide: compact, readable mobile layout. */
+@media (max-width: 620px) {
+  body:has(.join-guide-page) {
+    overflow-x: clip;
+  }
+
+  body:has(.join-guide-page) .site-header .nav {
+    width: calc(100% - 20px);
+    min-height: 64px;
+    gap: 8px;
+  }
+
+  body:has(.join-guide-page) .site-header .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  body:has(.join-guide-page) .site-header .brand-logos img {
+    width: 32px;
+    height: 32px;
+  }
+
+  body:has(.join-guide-page) .site-header .brand-text {
+    min-width: 0;
+    gap: 7px;
+  }
+
+  body:has(.join-guide-page) .site-header .brand-text strong {
+    gap: 7px;
+    font-size: clamp(14px, 4.1vw, 16px);
+    white-space: nowrap;
+  }
+
+  body:has(.join-guide-page) .site-header .brand-text strong::after {
+    width: 2px;
+    height: 15px;
+  }
+
+  body:has(.join-guide-page) .site-header .nav-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  body:has(.join-guide-page) .site-header .theme-toggle {
+    width: 44px;
+    height: 38px;
+  }
+
+  body:has(.join-guide-page) .site-header .nav-links {
+    top: 64px;
+  }
+
+  body:has(.join-guide-page) .page-back-nav {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: calc(100% - 28px);
+    height: 38px;
+    margin: 14px auto 0;
+    transform: none;
+  }
+
+  body:has(.join-guide-page) .page-back-link {
+    width: 38px;
+    height: 38px;
+  }
+
+  body:has(.join-guide-page) .join-guide-page {
+    overflow: hidden;
+  }
+
+  body:has(.join-guide-page) .join-guide-page .page-hero {
+    width: calc(100% - 28px);
+    margin: 16px auto 0;
+    gap: 14px;
+    padding-bottom: 22px;
+  }
+
+  .join-guide-page .page-hero h1 {
+    font-size: clamp(38px, 12vw, 48px);
+  }
+
+  .join-guide-page .page-hero > p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .join-guide-page .section-block {
+    width: calc(100% - 28px);
+    margin-top: 38px;
+    margin-bottom: 38px;
+  }
+
+  .join-guide-overview--awareness {
+    margin-top: 20px;
+  }
+
+  .join-guide-overview--awareness .join-guide-intro {
+    padding: 4px 0 24px;
+  }
+
+  .join-guide-intro h2,
+  .join-guide-section h2 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .join-guide-overview--awareness .join-guide-intro > p:not(.page-label) {
+    margin-top: 13px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .join-awareness-path {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-top: 20px;
+    border: 0;
+  }
+
+  .join-awareness-path > span {
+    min-height: 0;
+    padding: 14px 15px;
+    border: 1px solid var(--line);
+  }
+
+  .join-awareness-path > i {
+    width: 100%;
+    min-height: 28px;
+    border: 0;
+    background: transparent;
+    transform: none;
+  }
+
+  .join-awareness-path > i::before {
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+
+  .join-awareness-path strong {
+    font-size: 17px;
+  }
+
+  .join-awareness-path small {
+    font-size: 12px;
+  }
+
+  .join-awareness-heading,
+  .join-awareness-list,
+  .join-checklist,
+  .join-guide-section--checklist .join-guide-section-heading {
+    width: 100%;
+  }
+
+  .join-awareness-heading,
+  .join-guide-section--checklist .join-guide-section-heading {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 17px 15px 14px;
+  }
+
+  .join-awareness-heading h3 {
+    font-size: 27px;
+  }
+
+  .join-check-progress {
+    min-width: 98px;
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .join-awareness-list {
+    margin-bottom: 34px;
+  }
+
+  .join-awareness-item,
+  .join-check-item {
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 0;
+    padding: 14px 12px;
+  }
+
+  .join-awareness-item::before,
+  .join-check-item::before {
+    padding-top: 5px;
+    font-size: 11px;
+  }
+
+  .join-awareness-item label,
+  .join-check-item label {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .join-awareness-item input,
+  .join-check-item input {
+    width: 17px;
+    height: 17px;
+  }
+
+  .join-awareness-item strong,
+  .join-check-item strong {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .join-awareness-item strong::before,
+  .join-check-item strong::before {
+    margin-right: 6px;
+  }
+
+  .join-awareness-item small,
+  .join-check-item small {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .join-awareness-item > div,
+  .join-check-item > div {
+    grid-column: 2;
+    max-width: 100%;
+    margin-left: 29px;
+    gap: 6px;
+    justify-content: flex-start;
+  }
+
+  .join-awareness-item > div a,
+  .join-check-item > div a {
+    min-height: 28px;
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .join-guide-section--checklist .join-guide-section-heading {
+    margin: 0;
+  }
+
+  .join-guide-section-heading {
+    gap: 13px;
+    margin-bottom: 18px;
+  }
+
+  .join-interview-card {
+    padding: 20px 18px;
+  }
+
+  .join-interview-card > i {
+    margin-bottom: 10px;
+    font-size: 27px;
+  }
+
+  .join-interview-card h3 {
+    margin-bottom: 9px;
+    font-size: 19px;
+  }
+
+  .join-interview-card ul {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .join-interview-followup {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  body:has(.join-guide-page) .recruit-letter-trigger {
+    top: auto;
+    right: 8px;
+    bottom: max(92px, calc(env(safe-area-inset-bottom) + 92px));
+    width: 42px;
+    height: 42px;
+    transform: none;
+  }
+
+  body:has(.join-guide-page) .home-mascot-widget {
+    right: max(4px, env(safe-area-inset-right));
+    bottom: max(5px, env(safe-area-inset-bottom));
+    width: 76px;
+  }
+
+  body:has(.join-guide-page) .home-mascot-prompt {
+    width: 25px;
+    height: 18px;
+    gap: 3px;
+  }
+
+  body:has(.join-guide-page) .home-mascot-prompt > span {
+    width: 3px;
+    height: 3px;
+  }
+
+  body:has(.join-guide-page) .site-footer {
+    padding-bottom: 96px;
+  }
+}
+
+@media (max-width: 390px) {
+  body:has(.join-guide-page) .site-header .brand-text strong {
+    font-size: 14px;
+  }
+
+  body:has(.join-guide-page) .site-header .brand-logos img {
+    width: 30px;
+    height: 30px;
+  }
+
+  body:has(.join-guide-page) .site-header .nav-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  body:has(.join-guide-page) .site-header .theme-toggle {
+    width: 40px;
+    height: 36px;
+  }
+
+  .join-awareness-heading,
+  .join-guide-section--checklist .join-guide-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
