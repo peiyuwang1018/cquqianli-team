@@ -29464,7 +29464,7 @@ html.has-heavy-couplet .heavy-couplet--right {
 
 .dart-spec-grid > article {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 142px minmax(0, 1fr);
   border: 1px solid var(--line);
   background: var(--card-bg);
 }
@@ -29489,8 +29489,8 @@ html.has-heavy-couplet .heavy-couplet--right {
 .dart-spec-grid dl > div {
   padding: 14px 18px;
   display: grid;
-  grid-template-columns: minmax(82px, 0.72fr) minmax(0, 1.28fr);
-  gap: 14px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 12px;
   align-items: baseline;
   border-bottom: 1px solid var(--soft-line);
 }
@@ -29501,22 +29501,32 @@ html.has-heavy-couplet .heavy-couplet--right {
 
 .dart-spec-grid dt {
   color: var(--subtle);
-  font-size: 11px;
+  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .dart-spec-grid dd {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
   margin: 0;
   color: var(--text);
   font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
-  font-size: 20px;
-  letter-spacing: 0.04em;
+  font-size: clamp(17px, 1.25vw, 20px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.25;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
 }
 
 .dart-spec-grid dd small {
+  flex: 0 0 auto;
   color: var(--dart-orange);
-  font-family: inherit;
-  font-size: 9px;
-  letter-spacing: 0.06em;
+  font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
 .dart-mechanical {
@@ -29838,6 +29848,10 @@ html.has-heavy-couplet .heavy-couplet--right {
 }
 
 @media (max-width: 1260px) {
+  .dart-spec-grid {
+    grid-template-columns: 1fr;
+  }
+
   .air-dart-rail {
     position: sticky;
     top: 82px;
