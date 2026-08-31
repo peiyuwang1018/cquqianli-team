@@ -1091,8 +1091,49 @@ function initSiteStats() {
   document.head.append(script);
 }
 
+function initHeavyCoupletEasterEgg() {
+  if (!document.body.classList.contains("unit-heavy-page")) return;
+  if (document.querySelector("[data-heavy-couplet-trigger]")) return;
+
+  const trigger = document.createElement("button");
+  trigger.type = "button";
+  trigger.className = "heavy-couplet-trigger";
+  trigger.dataset.heavyCoupletTrigger = "";
+  trigger.setAttribute("aria-label", "展开重装兵种彩蛋对联");
+  trigger.setAttribute("aria-expanded", "false");
+  trigger.setAttribute("title", "这里好像藏着什么");
+
+  const leftCouplet = document.createElement("p");
+  leftCouplet.className = "heavy-couplet heavy-couplet--left";
+  leftCouplet.textContent = "手眼协同自动对接稳如老狗";
+
+  const rightCouplet = document.createElement("p");
+  rightCouplet.className = "heavy-couplet heavy-couplet--right";
+  rightCouplet.textContent = "远距离重火力自瞄枪枪爆头";
+
+  const setOpen = (open) => {
+    document.documentElement.classList.toggle("has-heavy-couplet", open);
+    trigger.setAttribute("aria-expanded", String(open));
+    trigger.setAttribute("aria-label", open ? "收起重装兵种彩蛋对联" : "展开重装兵种彩蛋对联");
+  };
+
+  trigger.addEventListener("click", () => {
+    setOpen(trigger.getAttribute("aria-expanded") !== "true");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && trigger.getAttribute("aria-expanded") === "true") {
+      setOpen(false);
+      trigger.focus({ preventScroll: true });
+    }
+  });
+
+  document.body.append(trigger, leftCouplet, rightCouplet);
+}
+
 initSiteStats();
 initRecruitLetter();
+initHeavyCoupletEasterEgg();
 
 
 
