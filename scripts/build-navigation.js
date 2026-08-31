@@ -202,7 +202,7 @@ function normalizeMascotScripts(html) {
 
   return html.replace(
     bodyClosePattern,
-    `$1<script src="assets/js/data/mascot-config.js?v=20260831-2"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>$1</body>`,
+    `$1<script src="assets/js/data/mascot-config.js?v=20260901-3"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>$1</body>`,
   );
 }
 

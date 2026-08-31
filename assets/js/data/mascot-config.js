@@ -41,6 +41,12 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
         { text: "准备投递前，记得去加入我们页面完成一次自检。", href: "join/guide.html#self-check-title", label: "开始投递自检" },
       ],
     },
+    "join/learn-rm.html": {
+      messages: [
+        { text: "🥚 为什么对于 RM 比赛来说，传承如此重要？" },
+        { text: "第一次了解 RoboMaster，可以先从比赛规则、机器人分工和赛季节奏开始。" },
+      ],
+    },
     "join/guide.html": {
       messages: [
         { text: "这里的面试指南条目很有可能在面试过程中聊到！", href: "join/guide.html#self-check-title", label: "查看面试指南" },
@@ -63,14 +69,40 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
     },
     "about/management.html": {
       messages: [
+        { text: "🥚 如此大规模的团队，你认为为什么我们更加鼓励群聊、在公开渠道聊天，而非点对点私聊？" },
         { text: "制度的价值，是让协作更稳定，也让经验能够被下一届接住。", href: "https://sop.cquqianli.cn/", label: "打开千里 SOP" },
         { text: "明确责任、交付节点和复盘方式，复杂项目才不会只靠记忆运转。" },
       ],
     },
+    "about/culture.html": {
+      messages: [
+        { text: "🥚 为什么对于 RM 比赛来说，传承如此重要？" },
+        { text: "共同的记忆只有被记录、被讲述，才有机会成为下一届继续前进的起点。" },
+      ],
+    },
     "season/calendar.html": {
       messages: [
+        { text: "🥚 一个漫长的 RM 赛季有哪些比赛期？集训期要做什么事情？" },
         { text: "日历中的参考窗口会随官方通知校准，安排工作时记得预留缓冲。" },
         { text: "切换视角后，网址中的井号会保留你当前查看的位置。" },
+      ],
+    },
+    "groups/position-members.html": {
+      messages: [
+        { text: "🥚 在战队的工作事务中，有哪些“非技术性”的职责需要大家去承担？" },
+        { text: "正式队员的责任不只在技术交付，也包括协作、培养、记录与传承。" },
+      ],
+    },
+    "groups/responsibility-management.html": {
+      messages: [
+        { text: "🥚 一个队伍的管理协调能做好，仅仅是管理层的事吗？" },
+        { text: "管理层负责建立机制，但清晰沟通、及时反馈和可靠交付需要每个人参与。" },
+      ],
+    },
+    "groups/position-trainees.html": {
+      messages: [
+        { text: "🥚 除了少部分超额贡献或天赋异禀的人，相当比例的大一入队队员需要到第二年才能以正式队员身份上场。你如何看待这么久的沉淀和历练周期？" },
+        { text: "梯队阶段最重要的不是现在有多强，而是能否持续学习、交付和成长。" },
       ],
     },
     "museum/resources.html": {
