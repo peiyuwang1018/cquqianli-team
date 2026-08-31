@@ -69,10 +69,10 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-39" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-73" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
+  <body class="position-layer-page position-member-page" data-page="organization">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -181,9 +181,71 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-  <section class="page-hero"><div><p class="page-label">ACTIVE MEMBERS</p><h1>正式队员层</h1></div><p>本赛季研发和比赛执行的主体，由核心队员与正式队员共同构成。</p></section>
-  <section class="section-block split-block"><div class="text-stack"><p class="page-label">CORE MEMBERS</p><h2>核心队员</h2><p>承担关键研发、兵种统筹、技术决策或团队公共责任，并对重要项目结果负责。</p></div><div class="text-stack"><p class="page-label">TEAM MEMBERS</p><h2>正式队员</h2><p>承担明确的赛季职责，完成设计、研发、维护、联调与复盘工作，是战队稳定运行的主要力量。</p></div></section>
+<main class="position-layer-main">
+  <section class="position-layer-hero" aria-labelledby="member-title">
+    <div><p class="page-label">ACTIVE MEMBERS</p><h1 id="member-title">正式队员</h1></div>
+    <div class="position-layer-hero-copy"><strong>正式，意味着已经能够独当一面。</strong><p>你不仅对当前赛季的交付负责，也开始对队伍的建设、比赛阵容和技术传承负责。</p></div>
+    <figure class="position-layer-hero-media">
+      <img src="assets/images/content/groups/positions/member-hero.jpg" alt="正式队员在实验室装配和维护步兵机器人" />
+      <figcaption><span>INDEPENDENT DELIVERY</span><strong>把一项工作负责到底</strong></figcaption>
+    </figure>
+  </section>
+
+  <nav class="position-layer-nav" aria-label="正式队员页面索引">
+    <a href="groups/position-members.html#member-responsibility"><span>01</span><i class="mdi mdi-account-check-outline" aria-hidden="true"></i>正式职责</a>
+    <a href="groups/position-members.html#member-time"><span>02</span><i class="mdi mdi-clock-fast" aria-hidden="true"></i>工作时长</a>
+    <a href="groups/position-members.html#member-contribution"><span>03</span><i class="mdi mdi-chart-box-outline" aria-hidden="true"></i>贡献评估</a>
+    <a href="groups/position-members.html#member-quota"><span>04</span><i class="mdi mdi-account-multiple-outline" aria-hidden="true"></i>名额配额</a>
+  </nav>
+
+  <section class="position-layer-section" id="member-responsibility" aria-labelledby="member-responsibility-title">
+    <header class="position-layer-heading"><div><p class="page-label">RESPONSIBILITY</p><h2 id="member-responsibility-title">能交付，也要能传下去</h2></div><p>正式队员是当赛季研发、维护、比赛执行与团队建设的直接责任人。</p></header>
+    <div class="member-responsibility-grid">
+      <article><span>01</span><i class="mdi mdi-tools" aria-hidden="true"></i><h3>独立负责一个方向</h3><p>对所在技术组和兵种组有足够深入的理解，能够独立推进研发与维护，按时交付并对结果负责到底。</p></article>
+      <article><span>02</span><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><h3>形成当赛季贡献</h3><p>技术组需要形成真实的上场技术贡献；管理层和宣运层则需要形成可验证的团队建设贡献。</p></article>
+      <article><span>03</span><i class="mdi mdi-book-arrow-right-outline" aria-hidden="true"></i><h3>承担传承责任</h3><p>带新人、写文档，把踩过的坑和积累的经验留下来，让后续队员不必从零开始。</p></article>
+    </div>
+    <blockquote class="member-legacy-quote">你做的工作不只是完成这个赛季的任务，也是在为千里留下下一届还能继续使用的东西。</blockquote>
+  </section>
+
+  <section class="position-layer-section" id="member-time" aria-labelledby="member-time-title">
+    <header class="position-layer-heading"><div><p class="page-label">TIME COMMITMENT</p><h2 id="member-time-title">正式队员工作时长</h2></div><p>能够独立承担方向，也意味着需要为研发节奏和关键节点留出稳定时间。</p></header>
+    <div class="position-hours-grid position-hours-grid--member">
+      <article><span>REGULAR WEEK</span><strong>35–50<small>小时 / 周</small></strong><p>常规工作周建议投入时长。</p></article>
+      <article><span>PREPARATION WEEK</span><strong>50+<small>小时 / 周</small></strong><p>备赛周建议投入时长。</p></article>
+      <article class="position-hours-baseline"><span>BASELINE</span><strong>30<small>小时 / 周</small></strong><p>连续两周未经特殊情况请假低于该时长，将进入约谈程序。</p></article>
+    </div>
+    <aside class="position-definition-note"><i class="mdi mdi-calendar-alert" aria-hidden="true"></i><div><strong>工作周定义</strong><p>除开期中周，以及期末考试前一周与期末周。特殊情况应提前请假并完成必要说明。</p></div></aside>
+  </section>
+
+  <section class="position-layer-section" id="member-contribution" aria-labelledby="member-contribution-title">
+    <header class="position-layer-heading"><div><p class="page-label">CONTRIBUTION REVIEW</p><h2 id="member-contribution-title">贡献度记录与评估项</h2></div><p>本区域先保留评价框架，具体记录方式、权重和复核流程等待补充。</p></header>
+    <div class="member-contribution-placeholder">
+      <div><span>KNOWN FRAMEWORK</span><h3>当前已明确</h3><ul><li>技术组：关注能够进入赛场或支撑比赛的技术贡献</li><li>管理层与宣运层：关注团队建设贡献</li></ul></div>
+      <div class="member-pending-card"><i class="mdi mdi-progress-clock" aria-hidden="true"></i><strong>评估细则等待补充</strong><p>贡献记录周期、评价指标、审核人和权重暂不自行推定，后续按队内制度补齐。</p></div>
+    </div>
+  </section>
+
+  <section class="position-layer-section" id="member-quota" aria-labelledby="member-quota-title">
+    <header class="position-layer-heading"><div><p class="page-label">ROSTER BOUNDARY</p><h2 id="member-quota-title">系统名额与各组粗定配额</h2></div><p>粗定配额用于赛季招新和留存规划，实际名额会随人员能力与项目需求浮动。</p></header>
+    <div class="member-system-limit">
+      <article><span>OFFICIAL MEMBERS</span><strong>35<small>人上限</small></strong><p>包含队长、副队长、项管、宣传经理等全部正式名额。</p></article>
+      <article><span>TRAINEE MEMBERS</span><strong>20<small>人上限</small></strong><p>赛事报名系统中的梯队队员名额。</p></article>
+    </div>
+    <div class="member-quota-layout">
+      <div class="member-quota-table" role="table" aria-label="正式队员各组粗定配额">
+        <div role="row" class="member-quota-head"><span role="columnheader">组别</span><span role="columnheader">粗定配额</span></div>
+        <div role="row"><span role="cell"><i class="mdi mdi-axis-arrow" aria-hidden="true"></i>机械</span><strong role="cell">13–15</strong></div>
+        <div role="row"><span role="cell"><i class="mdi mdi-current-dc" aria-hidden="true"></i>电控</span><strong role="cell">6–8</strong></div>
+        <div role="row"><span role="cell"><i class="mdi mdi-eye-outline" aria-hidden="true"></i>视觉</span><strong role="cell">6–8</strong></div>
+        <div role="row"><span role="cell"><i class="mdi mdi-chip" aria-hidden="true"></i>硬件</span><strong role="cell">2–3</strong></div>
+        <div role="row"><span role="cell"><i class="mdi mdi-bullhorn-outline" aria-hidden="true"></i>宣运</span><strong role="cell">1–2</strong></div>
+      </div>
+      <aside class="member-quota-principle"><i class="mdi mdi-shield-check-outline" aria-hidden="true"></i><div><span>CORE PRINCIPLE</span><h3>能承担正式队员工作的人有多少，名额就给多少</h3><p>实际配额随赛季人员情况浮动，不会因为缺人就降低标准，把关键任务交给能力不足的人。</p></div></aside>
+    </div>
+  </section>
+
+  <section class="position-layer-closing"><p class="page-label">OWN THE WORK · LEAVE A LEGACY</p><h2>把当季任务做成，把长期能力留下</h2><p>独立交付、形成贡献、带人成长与文档传承，共同构成正式队员的责任边界。</p></section>
 </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>

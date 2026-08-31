@@ -3,7 +3,18 @@
   const sections = [...document.querySelectorAll("[data-ground-section]")];
   if (!links.length || !sections.length) return;
 
+  const header = document.querySelector(".site-header");
+  const rail = document.querySelector(".ground-rail");
   const sectionById = new Map(sections.map((section) => [section.dataset.groundSection, section]));
+  let navigationLock = "";
+  let navigationTimer = 0;
+
+  const getScrollOffset = () => {
+    const headerHeight = header?.getBoundingClientRect().height || 0;
+    const railIsSticky = rail && window.getComputedStyle(rail).position === "sticky";
+    const railHeight = railIsSticky ? rail.getBoundingClientRect().height : 0;
+    return headerHeight + railHeight + 18;
+  };
 
   const setActive = (requestedId) => {
     const id = sectionById.has(requestedId) ? requestedId : "infantry";
@@ -15,14 +26,31 @@
     });
   };
 
+  const scrollToSection = (section, behavior = "smooth") => {
+    const top = section.getBoundingClientRect().top + window.scrollY - getScrollOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior });
+  };
+
+  const releaseNavigationLock = () => {
+    if (!navigationLock) return;
+    navigationLock = "";
+    window.clearTimeout(navigationTimer);
+    syncActiveToScroll();
+  };
+
   links.forEach((link, index) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const id = link.dataset.groundNav;
       const section = sectionById.get(id);
+      if (!section) return;
+      navigationLock = id;
       setActive(id);
-      history.replaceState(null, "", link.hash);
-      section?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const nextUrl = `${window.location.pathname}${window.location.search}${link.hash}`;
+      history.replaceState(null, "", nextUrl);
+      scrollToSection(section);
+      window.clearTimeout(navigationTimer);
+      navigationTimer = window.setTimeout(releaseNavigationLock, 1200);
     });
 
     link.addEventListener("keydown", (event) => {
@@ -36,7 +64,11 @@
   });
 
   const syncActiveToScroll = () => {
-    const marker = window.scrollY + Math.min(window.innerHeight * 0.32, 340);
+    if (navigationLock) {
+      setActive(navigationLock);
+      return;
+    }
+    const marker = window.scrollY + getScrollOffset() + 32;
     let current = sections[0];
     sections.forEach((section) => {
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
@@ -54,6 +86,17 @@
     });
   }, { passive: true });
 
-  setActive(window.location.hash === "#unit-sentry" ? "sentry" : "infantry");
-  window.requestAnimationFrame(syncActiveToScroll);
+  if ("onscrollend" in window) {
+    window.addEventListener("scrollend", releaseNavigationLock, { passive: true });
+  }
+
+  window.addEventListener("resize", syncActiveToScroll, { passive: true });
+
+  const initialId = window.location.hash === "#unit-sentry" ? "sentry" : "infantry";
+  setActive(initialId);
+  window.requestAnimationFrame(() => {
+    const initialSection = window.location.hash ? sectionById.get(initialId) : null;
+    if (initialSection) scrollToSection(initialSection, "auto");
+    syncActiveToScroll();
+  });
 })();

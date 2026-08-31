@@ -69,10 +69,10 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-39" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-69" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
+  <body class="position-layer-page position-trainee-page" data-page="organization">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -181,9 +181,67 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-  <section class="page-hero"><div><p class="page-label">TRAINEE MEMBERS</p><h1>梯队队员层</h1></div><p>通过培训、基础训练和兵种实习，为未来赛季建立独立承担能力。</p></section>
-  <section class="section-block text-stack"><h2>成长路径</h2><p>梯队队员从技术组培训和基础项目开始，在具备必要能力后逐步进入真实机器人项目，参与设计、装配、调试、测试和复盘。梯队身份强调培养阶段，不代表固定等级，也会随着实际承担变化。</p></section>
+<main class="position-layer-main">
+  <section class="position-layer-hero" aria-labelledby="trainee-title">
+    <div><p class="page-label">TRAINEE MEMBERS</p><h1 id="trainee-title">梯队队员</h1></div>
+    <div class="position-layer-hero-copy"><strong>梯队不是“还没转正的人”，<br />梯队成员正在路上。</strong><p>这一阶段看重的不是你现在有多强，而是你是否在持续学习、持续交付，也持续理解整支队伍。</p></div>
+    <figure class="position-layer-hero-media">
+      <img src="assets/images/content/groups/positions/trainee-hero.jpg" alt="梯队成员在实验室调试哨兵机器人" />
+      <figcaption><span>PROJECT PRACTICE</span><strong>从跟随调试，到独立承担</strong></figcaption>
+    </figure>
+  </section>
+
+  <nav class="position-layer-nav" aria-label="梯队队员页面索引">
+    <a href="groups/position-trainees.html#trainee-expectation"><span>01</span><i class="mdi mdi-account-school-outline" aria-hidden="true"></i>梯队期待</a>
+    <a href="groups/position-trainees.html#trainee-time"><span>02</span><i class="mdi mdi-clock-outline" aria-hidden="true"></i>工作时长</a>
+    <a href="groups/position-trainees.html#trainee-standards"><span>03</span><i class="mdi mdi-clipboard-check-outline" aria-hidden="true"></i>项目验收</a>
+    <a href="groups/position-trainees.html#trainee-growth"><span>04</span><i class="mdi mdi-trending-up" aria-hidden="true"></i>成长建议</a>
+  </nav>
+
+  <section class="position-layer-section" id="trainee-expectation" aria-labelledby="trainee-expectation-title">
+    <header class="position-layer-heading"><div><p class="page-label">WHAT WE EXPECT</p><h2 id="trainee-expectation-title">主动学，认真做，敢问敢说</h2></div><p>跟上组内进度、完成每次验收，并逐步走向能够独立负责一个方向。</p></header>
+    <div class="position-expectation-layout">
+      <div class="position-expectation-copy"><p>不要只盯着自己手上的任务。多了解其他技术组和兵种组正在做什么，建立对整支队伍的初步认识；遇到不懂的及时提问，有想法就说出来，并主动与新老队员建立沟通。</p><p>梯队阶段最重要的不是起点，而是成长速度。只要持续努力并达到要求，赛季中的赛前复审同样有机会转为正式队员。</p></div>
+      <div class="position-expectation-grid">
+        <article><i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i><strong>主动学</strong><span>跟上学习节奏，主动了解项目上下游。</span></article>
+        <article><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i><strong>认真做</strong><span>按时完成任务，让每次项目验收有结果。</span></article>
+        <article><i class="mdi mdi-message-processing-outline" aria-hidden="true"></i><strong>敢问敢说</strong><span>及时暴露问题，在组会和联调中表达判断。</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-layer-section" id="trainee-time" aria-labelledby="trainee-time-title">
+    <header class="position-layer-heading"><div><p class="page-label">TIME COMMITMENT</p><h2 id="trainee-time-title">梯队层工作时长</h2></div><p>以下口径针对梯队层队员，不等同于赛事报名系统中的“梯队”概念。</p></header>
+    <div class="position-hours-grid">
+      <article><span>REGULAR WEEK</span><strong>20–40<small>小时 / 周</small></strong><p>常规工作周建议投入时长。</p></article>
+      <article><span>PREPARATION WEEK</span><strong>40–60<small>小时 / 周</small></strong><p>备赛周建议投入时长。</p></article>
+      <article class="position-hours-baseline"><span>BASELINE</span><strong>20<small>小时 / 周</small></strong><p>连续两周未经特殊情况请假低于该时长，将进入约谈程序。</p></article>
+    </div>
+    <aside class="position-definition-note"><i class="mdi mdi-calendar-alert" aria-hidden="true"></i><div><strong>工作周定义</strong><p>除开期中周，以及期末考试前一周与期末周。特殊情况应提前请假并完成必要说明。</p></div></aside>
+  </section>
+
+  <section class="position-layer-section" id="trainee-standards" aria-labelledby="trainee-standards-title">
+    <header class="position-layer-heading"><div><p class="page-label">PROJECT ACCEPTANCE</p><h2 id="trainee-standards-title">完成项目验收，是竞争正式名额的基础</h2></div><p>每个技术组按自己的工作形态设置转正考核，但最低标准不会因短期缺人而降低。</p></header>
+    <div class="position-standard-list">
+      <article data-tone="mechanical"><span>01</span><i class="mdi mdi-axis-arrow" aria-hidden="true"></i><div><h3>机械组</h3><p>结业基准是能够根据开源模块经验做风险判断，知道已有方案哪里做得不够好；仅把开源图纸作为参考，从零开始完成一个模块的完整改版设计。</p></div></article>
+      <article data-tone="control"><span>02</span><i class="mdi mdi-current-dc" aria-hidden="true"></i><div><h3>电控组</h3><p>根据每赛季后的笔试，以及赛季中实际调试项目——如最小系统板绘制、底盘任务、云台任务等——综合完成情况进行排名。</p></div></article>
+      <article data-tone="hardware"><span>03</span><i class="mdi mdi-chip" aria-hidden="true"></i><div><h3>硬件组</h3><p>参考电控组的笔试与实操思路，具体考核标准由组长根据当赛季项目情况确定。</p></div></article>
+      <article data-tone="vision"><span>04</span><i class="mdi mdi-eye-outline" aria-hidden="true"></i><div><h3>视觉组</h3><p>选择一个偏好方向——自瞄、导航、雷达或决策等——完成该方向最终任务，并能够独立完成和维护对应技术工作。</p></div></article>
+      <article data-tone="operations"><span>05</span><i class="mdi mdi-bullhorn-outline" aria-hidden="true"></i><div><h3>宣运组</h3><p>硬性条件包括设计与运营能力、自发贡献、贡献度和传承文档；软性条件包括参与度、有效时长、交流广度与队员关系，由组内综合评估。</p></div></article>
+    </div>
+    <aside class="position-standard-warning"><i class="mdi mdi-shield-alert-outline" aria-hidden="true"></i><strong>不满足最低标准，即使缺人也不会转正。</strong></aside>
+  </section>
+
+  <section class="position-layer-section" id="trainee-growth" aria-labelledby="trainee-growth-title">
+    <header class="position-layer-heading"><div><p class="page-label">HOW TO GROW</p><h2 id="trainee-growth-title">名额由整个赛季的表现挣来</h2></div><p>项目验收之外，主动性、协作方式和承担责任的能力也会进入转正判断。</p></header>
+    <ol class="position-advice-list">
+      <li><span>02</span><div><h3>主动跟进，不要等安排</h3><p>主动了解组内和其他兵种组正在做什么，不停留在“安排什么做什么”；敢于在组会上表达自己的想法。</p></div></li>
+      <li><span>03</span><div><h3>和新老队员建立沟通</h3><p>遇到问题及时问，不要憋着；有能力时主动帮助新人。评审看的不只是技术，也包括能否融入团队、承担责任。</p></div></li>
+      <li><span>04</span><div><h3>把握赛前复审机会</h3><p>持续努力并达到要求，赛季中的赛前复审同样有机会转为正式队员，甚至核心队员。名额并非在赛季初一次定死。</p></div></li>
+    </ol>
+  </section>
+
+  <section class="position-layer-closing"><p class="page-label">KEEP MOVING</p><h2>现在不必最强，但要一直变强</h2><p>把每一次学习、验收、提问和协作都变成下一步的基础，直到你能够独立承担一个方向。</p></section>
 </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
