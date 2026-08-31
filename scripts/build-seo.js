@@ -28,7 +28,7 @@ const descriptionOverrides = {
   "museum/stories.html": "重庆大学千里战队故事会，记录队员与校友亲历的研发、比赛、协作、成长和赛季记忆。",
   "museum/training/control.html": "重庆大学千里战队电气控制组公开课程，介绍嵌入式控制、开发工具、基础知识与学习路径。",
   "museum/training/hardware.html": "重庆大学千里战队硬件开发组公开先导课，介绍焊接调试、嵌入式基础、原理图、PCB 设计与板卡交付路径。",
-  "museum/training/mechanical.html": "重庆大学千里战队机械结构组公开课程，介绍机械设计、工程制图、加工装配与学习路径。",
+  "museum/training/mechanical.html": "重庆大学千里战队机械结构组培训体系，包含基础课程、操作实训、梯队考核、进阶培训、研发实习与梯队结业考试。",
   "museum/training/vision.html": "重庆大学千里战队视觉算法组公开课程，介绍计算机视觉、算法工具、基础知识与学习路径。",
 };
 

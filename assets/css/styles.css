@@ -6,6 +6,677 @@
   font-weight: 900;
   font-display: swap;
 }
+
+/* Mechanical training curriculum */
+.mechanical-curriculum-page {
+  --mechanical-accent: #c7a251;
+  --mechanical-accent-rgb: 199, 162, 81;
+}
+
+.mechanical-curriculum-main {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 18px 0 88px;
+}
+
+body.mechanical-curriculum-page .mechanical-curriculum-hero {
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-curriculum-hero .page-label {
+  color: var(--mechanical-accent);
+}
+
+body.mechanical-curriculum-page .mechanical-curriculum-hero h1 {
+  font-size: clamp(1.9rem, 2.25vw, 2.55rem);
+}
+
+body.mechanical-curriculum-page .mechanical-curriculum-hero > p {
+  max-width: 620px;
+  font-size: clamp(.9rem, 1vw, 1rem);
+  line-height: 1.65;
+}
+
+body.mechanical-curriculum-page .mechanical-curriculum-hero .page-label {
+  margin-bottom: 6px;
+}
+
+.mechanical-curriculum-version {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  border-left: 2px solid var(--mechanical-accent);
+  padding: 3px 0 3px 9px;
+  color: var(--muted);
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .08em;
+}
+
+.mechanical-curriculum-version strong {
+  color: var(--mechanical-accent);
+  font-weight: 700;
+}
+
+body.mechanical-curriculum-page > .page-back-nav {
+  position: fixed;
+  top: 128px;
+  left: max(18px, calc(50vw - 650px));
+  transform: none;
+}
+
+.mechanical-curriculum-shell {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.mechanical-course-catalog {
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 116px);
+  overflow: auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  scrollbar-width: thin;
+}
+
+.mechanical-catalog-heading {
+  display: grid;
+  gap: 5px;
+  padding: 23px 22px 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-catalog-heading > span,
+.mechanical-panel-header p {
+  color: var(--mechanical-accent);
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+
+.mechanical-catalog-heading strong {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.mechanical-catalog-heading small {
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.mechanical-course-tree {
+  padding: 10px;
+}
+
+.mechanical-nav-tone--lead {
+  --mechanical-nav-tone: #c7a251;
+}
+
+.mechanical-nav-tone--training {
+  --mechanical-nav-tone: #4f91bd;
+}
+
+.mechanical-nav-tone--progress {
+  --mechanical-nav-tone: #4ca46d;
+}
+
+.mechanical-nav-tone--elective {
+  --mechanical-nav-tone: #956fc5;
+}
+
+.mechanical-course-tree details + details {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 1px;
+}
+
+.mechanical-course-tree > details,
+.mechanical-course-tree > .mechanical-course-link--stage {
+  position: relative;
+  margin-top: 0;
+  padding-top: 1px;
+}
+
+.mechanical-course-tree > details::before,
+.mechanical-course-tree > .mechanical-course-link--stage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 4px;
+  left: 4px;
+  height: 1px;
+  background: var(--line);
+}
+
+.mechanical-course-tree summary,
+.mechanical-course-link {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 9px;
+  color: var(--text);
+  text-align: left;
+}
+
+.mechanical-course-tree summary {
+  min-height: 50px;
+  padding: 7px 10px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mechanical-course-tree summary::-webkit-details-marker {
+  display: none;
+}
+
+.mechanical-course-tree summary::after {
+  content: "\F0140";
+  margin-left: auto;
+  font-family: "Material Design Icons";
+  color: var(--mechanical-nav-tone, var(--muted));
+  transition: transform .2s ease;
+}
+
+.mechanical-course-tree details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.mechanical-course-tree details > summary:hover,
+.mechanical-course-tree details > summary:focus-visible,
+.mechanical-course-tree details[open] > summary {
+  color: var(--mechanical-nav-tone, var(--mechanical-accent));
+}
+
+.mechanical-course-tree details[open] > summary::after {
+  color: var(--mechanical-nav-tone, var(--mechanical-accent));
+}
+
+.mechanical-course-tree summary > span:last-child,
+.mechanical-course-link > span:not(.mechanical-course-index) {
+  display: grid;
+  gap: 3px;
+}
+
+.mechanical-course-tree summary strong,
+.mechanical-course-link strong {
+  font-size: .94rem;
+  font-weight: 600;
+}
+
+.mechanical-course-tree summary small,
+.mechanical-course-link small {
+  color: var(--muted);
+  font-size: .7rem;
+}
+
+.mechanical-course-index {
+  flex: 0 0 25px;
+  color: var(--mechanical-nav-tone, var(--mechanical-accent));
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+}
+
+.mechanical-course-nav-icon {
+  flex: 0 0 20px;
+  color: var(--mechanical-nav-tone, var(--mechanical-accent));
+  font-size: 1.05rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.mechanical-course-link {
+  min-height: 40px;
+  border: 0;
+  border-left: 2px solid transparent;
+  padding: 8px 12px;
+  background: transparent;
+  font: inherit;
+  font-size: .86rem;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
+}
+
+.mechanical-course-link:hover,
+.mechanical-course-link:focus-visible,
+.mechanical-course-link.is-active {
+  border-left-color: var(--mechanical-nav-tone, var(--mechanical-accent));
+  background: color-mix(in srgb, var(--mechanical-nav-tone, var(--mechanical-accent)) 12%, transparent);
+  color: var(--mechanical-nav-tone, var(--mechanical-accent));
+}
+
+.mechanical-course-branch {
+  margin-left: 24px;
+  padding: 0 0 8px 9px;
+  border-left: 1px solid var(--line);
+}
+
+.mechanical-course-branch--lessons .mechanical-course-link {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.mechanical-course-branch--lessons .mechanical-course-link > span {
+  gap: 2px;
+  line-height: 1.45;
+}
+
+.mechanical-course-branch--lessons .mechanical-course-link small {
+  display: block;
+  color: var(--mechanical-nav-tone, var(--mechanical-accent));
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  letter-spacing: .08em;
+}
+
+.mechanical-course-link--stage {
+  min-height: 50px;
+  margin-top: 0;
+}
+
+.mechanical-course-tree > .mechanical-course-link {
+  min-height: 50px;
+  padding: 7px 10px;
+}
+
+.mechanical-course-tree > .mechanical-course-link strong,
+.mechanical-course-tree > details > summary strong {
+  color: var(--mechanical-nav-tone, var(--text));
+  white-space: nowrap;
+}
+
+.mechanical-course-month {
+  margin: 11px 10px 4px;
+  color: var(--muted);
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  font-size: .65rem;
+  letter-spacing: .08em;
+}
+
+.mechanical-course-reader {
+  min-width: 0;
+}
+
+.mechanical-course-panel {
+  min-height: 620px;
+  border: 1px solid var(--line);
+  padding: clamp(24px, 2.4vw, 36px);
+  background: var(--surface);
+}
+
+.mechanical-course-panel[hidden] {
+  display: none;
+}
+
+.mechanical-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-panel-header > div {
+  display: grid;
+  max-width: 820px;
+  gap: 10px;
+}
+
+.mechanical-panel-header h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.8vw, 2.05rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.mechanical-panel-header div > span {
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.8;
+}
+
+.mechanical-course-badge {
+  flex: 0 0 auto;
+  border: 1px solid rgba(var(--mechanical-accent-rgb), .58);
+  padding: 7px 11px;
+  color: var(--mechanical-accent);
+  font-size: .72rem;
+  white-space: nowrap;
+}
+
+.mechanical-course-badge.is-ready {
+  background: rgba(var(--mechanical-accent-rgb), .13);
+}
+
+.mechanical-course-badge.is-draft {
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.mechanical-panel-meta {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 22px;
+  border: 1px solid var(--line);
+}
+
+.mechanical-panel-meta > span {
+  display: grid;
+  min-width: 150px;
+  gap: 4px;
+  padding: 14px 18px;
+  border-right: 1px solid var(--line);
+}
+
+.mechanical-panel-meta small {
+  color: var(--muted);
+  font-size: .68rem;
+}
+
+.mechanical-panel-meta strong {
+  font-size: .9rem;
+}
+
+.mechanical-panel-meta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  padding: 14px 20px;
+  color: var(--mechanical-accent);
+  font-size: .82rem;
+}
+
+.mechanical-course-pdf {
+  height: min(75vh, 900px);
+  min-height: 560px;
+}
+
+.mechanical-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.mechanical-timeline article {
+  min-height: 250px;
+  padding: 28px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-timeline article > span,
+.mechanical-outline-grid article > span,
+.mechanical-outline-stack article > span {
+  color: var(--mechanical-accent);
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.mechanical-timeline h3,
+.mechanical-outline-grid h3,
+.mechanical-outline-stack h3 {
+  margin: 18px 0 10px;
+  font-size: 1.12rem;
+  font-weight: 550;
+}
+
+.mechanical-timeline p,
+.mechanical-outline-grid p,
+.mechanical-outline-stack p,
+.mechanical-outline-grid li {
+  color: var(--muted);
+  font-size: .87rem;
+  line-height: 1.75;
+}
+
+.mechanical-outline-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.mechanical-outline-grid.compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mechanical-outline-grid article {
+  min-height: 190px;
+  padding: 25px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-outline-grid ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.mechanical-outline-grid li::marker {
+  color: var(--mechanical-accent);
+}
+
+.mechanical-outline-stack {
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-outline-stack article {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 18px;
+  padding: 21px 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-outline-stack h3 {
+  margin: 0 0 7px;
+}
+
+.mechanical-outline-stack p {
+  margin: 0;
+}
+
+.mechanical-outline-stack ul,
+.mechanical-markdown-outline ul {
+  display: grid;
+  gap: 5px;
+  margin: 8px 0 0;
+  padding-left: 1.15em;
+}
+
+.mechanical-outline-stack li,
+.mechanical-markdown-outline li {
+  color: var(--muted);
+  font-size: .87rem;
+  line-height: 1.7;
+}
+
+.mechanical-outline-stack li::marker,
+.mechanical-markdown-outline li::marker {
+  color: var(--mechanical-accent);
+}
+
+.mechanical-markdown-outline {
+  border-top: 1px solid var(--line);
+}
+
+.mechanical-markdown-outline > section {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 18px;
+  padding: 24px 6px 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mechanical-outline-number {
+  color: var(--mechanical-accent);
+  font-family: "DIN 1451 Fette Breitschrift 1936", sans-serif;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.mechanical-markdown-outline h3 {
+  margin: 0 0 18px;
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.mechanical-markdown-outline h4 {
+  margin: 20px 0 6px;
+  font-size: .94rem;
+  font-weight: 550;
+}
+
+.mechanical-course-note,
+.mechanical-empty-courseware {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 25px;
+  border: 1px solid var(--line);
+  padding: 20px 22px;
+  background: rgba(var(--mechanical-accent-rgb), .055);
+}
+
+.mechanical-course-note > i,
+.mechanical-empty-courseware > i {
+  color: var(--mechanical-accent);
+  font-size: 1.5rem;
+}
+
+.mechanical-course-note p,
+.mechanical-empty-courseware p {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.65;
+}
+
+.mechanical-course-note strong,
+.mechanical-empty-courseware strong {
+  color: var(--text);
+  font-size: .9rem;
+}
+
+@media (max-width: 1120px) {
+  .mechanical-curriculum-main {
+    width: min(100% - 48px, 1180px);
+  }
+
+  .mechanical-curriculum-shell {
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+
+  .mechanical-timeline,
+  .mechanical-outline-grid.compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .mechanical-curriculum-main {
+    width: min(100% - 28px, 1180px);
+    padding-top: 24px;
+  }
+
+  .mechanical-curriculum-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-course-catalog {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+
+  .mechanical-course-branch {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .mechanical-course-month {
+    grid-column: 1 / -1;
+  }
+
+  .mechanical-course-panel {
+    min-height: 0;
+  }
+
+  .mechanical-outline-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  body.mechanical-curriculum-page .mechanical-curriculum-hero h1 {
+    font-size: 2rem;
+  }
+
+  body.mechanical-curriculum-page > .page-back-nav {
+    top: 88px;
+    left: 10px;
+  }
+
+  .mechanical-course-tree > .mechanical-course-link strong,
+  .mechanical-course-tree > details > summary strong {
+    white-space: normal;
+  }
+
+  .mechanical-course-branch {
+    grid-template-columns: 1fr;
+  }
+
+  .mechanical-course-panel {
+    padding: 22px 18px;
+  }
+
+  .mechanical-panel-header {
+    display: grid;
+  }
+
+  .mechanical-course-badge {
+    justify-self: start;
+  }
+
+  .mechanical-panel-meta {
+    display: grid;
+  }
+
+  .mechanical-panel-meta > span {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mechanical-panel-meta a {
+    margin-left: 0;
+  }
+
+  .mechanical-course-pdf {
+    min-height: 430px;
+  }
+}
 @font-face {
   font-family: "Qianli Couplet";
   src: url("../fonts/qianli-couplet.ttf") format("truetype");
@@ -937,6 +1608,71 @@
   color: var(--subtle);
   font-size: 11px;
   text-align: right;
+}
+
+.mechanical-training-shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--mechanical-tone) 58%, var(--line));
+  background: color-mix(in srgb, var(--mechanical-tone) 8%, var(--card-bg));
+}
+
+.mechanical-training-shortcut > div,
+.mechanical-training-shortcut > div > span,
+.mechanical-training-shortcut a {
+  display: flex;
+  align-items: center;
+}
+
+.mechanical-training-shortcut > div {
+  gap: 12px;
+}
+
+.mechanical-training-shortcut > div > i {
+  color: var(--mechanical-tone);
+  font-size: 1.35rem;
+}
+
+.mechanical-training-shortcut > div > span {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mechanical-training-shortcut strong {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.mechanical-training-shortcut small {
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+.mechanical-training-shortcut a {
+  flex: 0 0 auto;
+  gap: 8px;
+  border: 1px solid var(--mechanical-tone);
+  padding: 9px 13px;
+  color: var(--mechanical-tone);
+  font-size: .8rem;
+}
+
+.mechanical-training-shortcut a:hover,
+.mechanical-training-shortcut a:focus-visible {
+  background: var(--mechanical-tone);
+  color: #111;
+}
+
+@media (max-width: 720px) {
+  .mechanical-training-shortcut {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .mechanical-training-framework,

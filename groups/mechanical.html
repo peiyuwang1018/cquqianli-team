@@ -69,7 +69,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-39" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-63" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -316,8 +316,13 @@
         <header class="mechanical-section-heading mechanical-section-heading--wide">
           <p class="page-label">GROWTH PATH</p>
           <h2>机械组培养与成长体系</h2>
-          <p>培养从入组预科与通识开始，以第一学年的课程、作业和真实项目实训建立工程基础，并继续延伸到正式队员阶段的系统研发、技术传承与团队责任。</p>
+          <p>培养从先导课、六节基础课程和基础操作实训开始，经上半学期梯队考核、寒假进阶培训、春季研发实习与梯队结业考试，逐步走向正式队员阶段的系统研发与技术传承。</p>
         </header>
+
+        <div class="mechanical-training-shortcut">
+          <div><i class="mdi mdi-map-marker-path" aria-hidden="true"></i><span><strong>完整培训体系已独立整理</strong><small>查看课程大纲、实训环节、考核分值与晋升规则</small></span></div>
+          <a href="museum/training/mechanical.html">打开培训体系目录 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+        </div>
 
         <div class="mechanical-training-version">
           <span><i class="mdi mdi-file-document-outline" aria-hidden="true"></i> 培养方案</span>
@@ -353,18 +358,18 @@
             </article>
             <article>
               <div><i class="mdi mdi-tools" aria-hidden="true"></i><span>04</span><h4>专业必修 · 基础</h4></div>
-              <p>以当前七节基础课为主线，把工作原则、设计基础与制造验证连起来。</p>
-              <ul><li>CAD、结构、轴系与传动</li><li>材料、加工、需求与失效分析</li><li>博物馆拆装维护与金工实践</li></ul>
+              <p>以六节基础课和四项操作实训为主线，把工作原则、设计基础与制造实践连起来。</p>
+              <ul><li>工作流、CAD、材料与加工</li><li>机架、轴系与传动</li><li>参观讲解、拆装工具、3D 打印与金属切削</li></ul>
             </article>
             <article>
               <div><i class="mdi mdi-chart-timeline-variant-shimmer" aria-hidden="true"></i><span>05</span><h4>专业必修 · 进阶</h4></div>
-              <p>在具备项目经验后进入更具体的专题研讨，与基础课程分层推进。</p>
-              <ul><li>齿轮与行星减速器设计</li><li>CAE 仿真与轻量化</li><li>产品设计和系统工程案例</li></ul>
+              <p>寒假集训期集中进入机械系统工程与设计范式课程。</p>
+              <ul><li>机械系统工程：需求、测试与失效</li><li>连接设计范式与弹性设计范式</li><li>非标设计案例研讨</li></ul>
             </article>
             <article>
               <div><i class="mdi mdi-swap-horizontal" aria-hidden="true"></i><span>06</span><h4>交叉选修 · 规划</h4></div>
-              <p>为有余力的队员提供跨方向探索入口，具体开课内容以当赛季通知为准。</p>
-              <ul><li>机械方向：仿生与人形机器人专题</li><li>跨组课程与联合实践</li><li>不替代本组基础培养主线</li></ul>
+              <p>为有余力的队员提供产品、机器人智能和专项机械设计入口。</p>
+              <ul><li>产品设计研讨</li><li>机器人智能通识</li><li>齿轮和减速箱设计（开课待定）</li></ul>
             </article>
           </div>
           <aside><i class="mdi mdi-information-outline" aria-hidden="true"></i><p>基础必修已有明确课程目录；进阶专题、交叉选修与实践活动会根据赛季项目、师资和设备条件调整，尚未确定的内容不作为固定开课承诺。</p></aside>
@@ -398,15 +403,15 @@
           </header>
 
           <div class="mechanical-phase-tabs" role="tablist" aria-label="大一培养阶段" data-mechanical-tabset="phase">
-            <button id="mechanical-phase-autumn-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-phase-autumn" data-mechanical-tab="mechanical-phase-autumn"><span>01</span><small>入队—寒假前</small><strong>秋季学习期</strong><em>课程 + 作业 + 分享</em></button>
-            <button id="mechanical-phase-winter-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-winter" data-mechanical-tab="mechanical-phase-winter" tabindex="-1"><span>02</span><small>寒假阶段</small><strong>寒假集训期</strong><em>验收 + 项目导入</em></button>
-            <button id="mechanical-phase-spring-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-spring" data-mechanical-tab="mechanical-phase-spring" tabindex="-1"><span>03</span><small>第二学期</small><strong>春季实训期</strong><em>真实项目贡献</em></button>
-            <button id="mechanical-phase-finish-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-finish" data-mechanical-tab="mechanical-phase-finish" tabindex="-1"><span>04</span><small>赛季末</small><strong>结业与晋升</strong><em>综合评价 + 定岗</em></button>
+            <button id="mechanical-phase-autumn-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-phase-autumn" data-mechanical-tab="mechanical-phase-autumn"><span>01</span><small>入队—寒假前</small><strong>秋季学习期</strong><em>基础课程 + 实训 + 考核</em></button>
+            <button id="mechanical-phase-winter-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-winter" data-mechanical-tab="mechanical-phase-winter" tabindex="-1"><span>02</span><small>寒假阶段</small><strong>寒假集训期</strong><em>进阶培训课程</em></button>
+            <button id="mechanical-phase-spring-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-spring" data-mechanical-tab="mechanical-phase-spring" tabindex="-1"><span>03</span><small>3 月开学后</small><strong>研发实习期</strong><em>真实项目贡献</em></button>
+            <button id="mechanical-phase-finish-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-finish" data-mechanical-tab="mechanical-phase-finish" tabindex="-1"><span>04</span><small>赛季末</small><strong>梯队结业考试</strong><em>贡献换算 + 考试</em></button>
           </div>
 
           <div class="mechanical-phase-panels">
             <section id="mechanical-phase-autumn" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-autumn-tab" data-mechanical-panel="phase">
-              <div class="mechanical-panel-intro"><span>BASIC TRAINING</span><h4>寒假集训前完整走完 7 节基础课程</h4><p>课程按机械工程交付顺序重新排列，从工作原则与建模规范进入材料、结构、轴系和传动，最后用完整流程案例把知识串起来。</p></div>
+              <div class="mechanical-panel-intro"><span>BASIC TRAINING</span><h4>寒假集训前完成 6 节基础课程与操作实训</h4><p>从工作流与建模基础进入材料、机架、轴系和传动，并同步完成参观讲解、模块拆装、3D 打印与金属切削设备实训。</p></div>
               <div class="mechanical-course-browser">
                 <div class="mechanical-course-directory" role="tablist" aria-label="基础课程目录" aria-orientation="vertical" data-mechanical-tabset="course">
                   <button id="mechanical-course-01-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-course-01" data-mechanical-tab="mechanical-course-01"><span>CH 01</span><strong>工作流、工作原则与 SOP 导入</strong></button>
@@ -415,7 +420,6 @@
                   <button id="mechanical-course-04-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-04" data-mechanical-tab="mechanical-course-04" tabindex="-1"><span>CH 04</span><strong>机架设计和基础部件</strong></button>
                   <button id="mechanical-course-05-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-05" data-mechanical-tab="mechanical-course-05" tabindex="-1"><span>CH 05</span><strong>轴系设计及案例</strong></button>
                   <button id="mechanical-course-06-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-06" data-mechanical-tab="mechanical-course-06" tabindex="-1"><span>CH 06</span><strong>传动设计及案例</strong></button>
-                  <button id="mechanical-course-07-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-course-07" data-mechanical-tab="mechanical-course-07" tabindex="-1"><span>CH 07</span><strong>流程案例分析</strong></button>
                 </div>
                 <div class="mechanical-course-panels">
                   <article id="mechanical-course-01" role="tabpanel" aria-labelledby="mechanical-course-01-tab" data-mechanical-panel="course"><span>CHAPTER 01 · PRINCIPLES</span><h5>先建立一套能够协作和交付的工作方式</h5><p>认识机械组从接收任务、定义需求、方案讨论、设计评审到制造、装配、测试和归档的完整工作流，并导入现行 SOP 与基本工作原则。</p><ul><li>工作流与责任边界</li><li>需求、评审和验收意识</li><li>SOP 与工程记录</li></ul></article>
@@ -424,25 +428,25 @@
                   <article id="mechanical-course-04" role="tabpanel" aria-labelledby="mechanical-course-04-tab" data-mechanical-panel="course" hidden><span>CHAPTER 04 · FRAME</span><h5>从机架和基础部件进入结构设计</h5><p>围绕机器人机架、连接与支撑关系，认识常用基础部件及其使用边界，开始把载荷路径、装配与维护纳入设计判断。</p><ul><li>机架与连接</li><li>基础部件认知</li><li>载荷与装配关系</li></ul></article>
                   <article id="mechanical-course-05" role="tabpanel" aria-labelledby="mechanical-course-05-tab" data-mechanical-panel="course" hidden><span>CHAPTER 05 · SHAFT SYSTEM</span><h5>通过案例理解轴系的支撑、定位与装配</h5><p>学习轴、轴承、联接和定位等基本关系，结合案例判断受力、约束、装配顺序与常见失效风险。</p><ul><li>轴与轴承</li><li>支撑和定位</li><li>装配与失效风险</li></ul></article>
                   <article id="mechanical-course-06" role="tabpanel" aria-labelledby="mechanical-course-06-tab" data-mechanical-panel="course" hidden><span>CHAPTER 06 · TRANSMISSION</span><h5>根据任务选择并构建传动方案</h5><p>认识常见传动形式、传动比、布置与效率问题，通过案例理解电机、传动元件、执行机构和结构之间的系统关系。</p><ul><li>传动形式与选型</li><li>传动比和布置</li><li>系统匹配</li></ul></article>
-                  <article id="mechanical-course-07" role="tabpanel" aria-labelledby="mechanical-course-07-tab" data-mechanical-panel="course" hidden><span>CHAPTER 07 · PROCESS CASE</span><h5>用案例走通需求、测试与失效闭环</h5><p>通过完整案例分析需求如何定义、测试如何设计、失效如何定位，并把验证结果重新反馈到下一轮方案和结构设计中。</p><ul><li>需求定义</li><li>测试方法</li><li>失效分析与反馈</li></ul></article>
                 </div>
               </div>
               <div class="mechanical-parallel-work">
-                <header><span>PARALLEL EXERCISES</span><h4>课程之外，还要完成这些任务</h4><p>当前仅列出已经确认的上半季项目；其他考核项后续再补充。</p></header>
+                <header><span>ECHELON ASSESSMENT</span><h4>上半学期梯队考核 · 满分 100 分</h4><p>考勤论坛、开源学习汇报和 CAD 设计大作业共同组成基础考评，研发参与贡献作为后续任务介入的重要依据。</p></header>
                 <div>
-                  <article><i class="mdi mdi-cube-scan" aria-hidden="true"></i><small>寒假验收</small><h5>CAD 大作业：Fusion 模块复刻</h5><p>通过完整模块复刻检查建模逻辑、规范执行和独立解决工具问题的能力。</p></article>
-                  <article><i class="mdi mdi-presentation-play" aria-hidden="true"></i><small>三次节点</small><h5>开源汇报分享会</h5><p>分别安排在 10 月底、约 11 月 20 日和 12 月中旬，计入上半季梯队成绩。</p></article>
-                  <article><i class="mdi mdi-file-chart-outline" aria-hidden="true"></i><small>学期档案</small><h5>上半季学习表现记录</h5><p>结合课程、作业、分享、兴趣热情与可持续投入形成档案，并作为寒假起承担重要项目、竞争当赛季正式名额的参考。</p></article>
+                  <article><i class="mdi mdi-calendar-check-outline" aria-hidden="true"></i><small>10 分</small><h5>日常考勤和论坛讨论</h5><p>记录日常参与和论坛讨论表现。</p></article>
+                  <article><i class="mdi mdi-presentation-play" aria-hidden="true"></i><small>40 分</small><h5>文明经典开源学习汇报</h5><p>初定四次、两周一次，每次提交文档总结并完成小组汇报。</p></article>
+                  <article><i class="mdi mdi-cube-scan" aria-hidden="true"></i><small>50 分</small><h5>CAD 设计大作业</h5><p>可选自主设计或复刻两个难度梯度，包括设计和最终答辩。</p></article>
                 </div>
               </div>
             </section>
 
             <section id="mechanical-phase-winter" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-winter-tab" data-mechanical-panel="phase" hidden>
-              <div class="mechanical-panel-intro"><span>WINTER CAMP</span><h4>从课程练习转向可验收的工程输出</h4><p>寒假阶段完成 Fusion 模块复刻验收，并通过集中训练把基础知识放入拆装、加工、装配、测试和小型项目环境中。</p></div>
+              <div class="mechanical-panel-intro"><span>WINTER CAMP</span><h4>寒假集训期完成 4 节进阶培训课程</h4><p>从机械系统工程进入连接、弹性与非标设计案例，建立更完整的工程判断方法。</p></div>
               <div class="mechanical-phase-card-grid">
-                <article><span>01</span><h5>完成基础验收</h5><p>检查基础课程与 CAD 大作业的完成质量，确认是否具备继续进入项目实践的基本条件。</p></article>
-                <article><span>02</span><h5>进入项目导入</h5><p>通过已有模块维护、局部测试或小型设计任务，第一次面对真实接口、进度和结果要求。</p></article>
-                <article><span>03</span><h5>识别发展方向</h5><p>结合个人兴趣、能力、精力与前半学期档案，安排适合的实训任务和成长节奏。</p></article>
+                <article><span>01</span><h5>机械系统工程</h5><p>需求定义、测试方法和失效形式。</p></article>
+                <article><span>02</span><h5>连接设计范式</h5><p>从紧固方式进入定位、结合与一体化判断。</p></article>
+                <article><span>03</span><h5>弹性设计范式</h5><p>弹性储能、柔顺、适应与误差吸收。</p></article>
+                <article><span>04</span><h5>非标设计案例研讨</h5><p>围绕无法由标准件与既有范式直接覆盖的问题开展研讨。</p></article>
               </div>
               <aside class="mechanical-phase-note"><strong>项目机会不是奖励。</strong><p>能够更早承担重要事务，意味着更多责任、工作量和一定压力；所有加速安排都需要结合实际表现并尊重个人意愿。</p></aside>
             </section>
@@ -457,15 +461,19 @@
             </section>
 
             <section id="mechanical-phase-finish" class="mechanical-phase-panel" role="tabpanel" aria-labelledby="mechanical-phase-finish-tab" data-mechanical-panel="phase" hidden>
-              <div class="mechanical-panel-intro"><span>GRADUATION &amp; PROMOTION</span><h4>上下半学期综合表现决定结业晋升</h4><p>第一学期保留课程、作业与分享形成的学习档案；第二学期记录真实项目贡献。两部分共同组成梯队结业与正式队员晋升依据。</p></div>
+              <div class="mechanical-panel-intro"><span>GRADUATION &amp; PROMOTION</span><h4>梯队结业考试决定次赛季正式队员晋升</h4><p>面向未能在当前赛季直接获得梯队名额的大部分梯队队员，考察技术栈要求理解、比赛通识和设计理解。</p></div>
               <div class="mechanical-evaluation-flow">
-                <article><span>TERM 1</span><div><small>第一学期</small><h5>学习与基础训练档案</h5><p>课程、CAD 大作业、三次开源汇报，以及兴趣、热情和可持续投入表现。</p></div></article>
+                <article><span>20</span><div><small>贡献换算</small><h5>下半赛季贡献度</h5><p>可换算为满分 20 分的成绩。</p></div></article>
                 <i class="mdi mdi-plus" aria-hidden="true"></i>
-                <article><span>TERM 2</span><div><small>第二学期</small><h5>实训项目贡献记录</h5><p>项目参与、任务完成、协作与实际贡献度；两学期权重和具体计分细则后续补充。</p></div></article>
+                <article><span>80</span><div><small>梯队结业考试</small><h5>考试成绩</h5><p>剩余考试部分满分 80 分。</p></div></article>
                 <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
-                <article class="mechanical-evaluation-result"><span>PASS</span><div><small>赛季末</small><h5>梯队结业并晋升</h5><p>正常成长、完成培养并做出一定贡献即可，标准并非刻意筛掉大多数人。</p></div></article>
+                <article class="mechanical-evaluation-result"><span>100</span><div><small>总分</small><h5>梯队结业成绩</h5><p>按照成绩门槛决定晋升结果。</p></div></article>
               </div>
-              <aside class="mechanical-future-opportunity"><i class="mdi mdi-source-branch" aria-hidden="true"></i><div><strong>提前晋升后的下一步</strong><p>优秀队员可在下赛季开学前承担培训组或预研工作，并参与下赛季兵种负责人、技术组长等岗位的候选评估；这不是自动承诺，仍取决于持续贡献与岗位需要。</p></div></aside>
+              <div class="mechanical-phase-card-grid">
+                <article><span>≥ 75</span><h5>直接晋升</h5><p>可直接晋升成为正式队员。</p></article>
+                <article><span>≥ 60</span><h5>条件晋升</h5><p>增加一轮结业面试，提交总结和未来赛季研发倾向规划；没有原则性问题可晋升。</p></article>
+                <article><span>&lt; 60</span><h5>无法晋升</h5><p>无法作为正式队员参加次赛季工作，执行大一入队梯队队员的非升即走原则。</p></article>
+              </div>
             </section>
           </div>
         </section>
@@ -504,7 +512,7 @@
         </section>
 
         <div class="mechanical-growth-actions">
-          <a class="inline-link" href="museum/training/mechanical.html">阅读机械组先导课</a>
+          <a class="inline-link" href="museum/training/mechanical.html">查看完整培训体系</a>
           <a class="inline-link" href="museum/projects.html">查看团队项目档案</a>
         </div>
       </section>
