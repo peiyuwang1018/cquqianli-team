@@ -33,6 +33,24 @@
     return `${formatDate(event.start)} - ${formatDate(event.end)}`;
   };
 
+  const compactDate = (value) => {
+    const date = parseDate(value);
+    return `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, "0")}.${String(date.getDate()).padStart(2, "0")}`;
+  };
+
+  const compactEndDate = (event) => {
+    const start = parseDate(event.start);
+    const end = parseDate(event.end);
+    if (start.getFullYear() !== end.getFullYear()) return compactDate(event.end);
+    return `${String(end.getMonth() + 1).padStart(2, "0")}.${String(end.getDate()).padStart(2, "0")}`;
+  };
+
+  const rangeMarkup = (event) => {
+    const start = `<time datetime="${escapeHtml(event.start)}">${escapeHtml(compactDate(event.start))}</time>`;
+    if (event.start === event.end) return start;
+    return `${start}<i aria-hidden="true">—</i><time datetime="${escapeHtml(event.end)}">${escapeHtml(compactEndDate(event))}</time>`;
+  };
+
   const escapeHtml = (value = "") => String(value)
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -58,10 +76,15 @@
               <small>${escapeHtml(subevent.dateLabel || "日期待定")}</small>
             </div>`).join("")}</div>`
         : "";
+      const previewMedia = event.previewImage
+        ? `<figure class="event-preview-media event-preview-media--${escapeHtml(event.previewVariant || "default")}">
+            <img src="${escapeHtml(event.previewImage)}" alt="${escapeHtml(event.previewAlt || event.title)}" loading="lazy" />
+          </figure>`
+        : "";
       article.className = "event-preview-card";
       article.style.setProperty("--event-tone", category.color || "var(--accent)");
       article.innerHTML = `
-        <div class="event-preview-date"><span>${escapeHtml(formatRange(event))}</span><em>${escapeHtml(statusLabels[event.status] || event.status)}</em></div>
+        <div class="event-preview-date${previewMedia ? " event-preview-date--with-media" : ""}"><span class="event-preview-range" aria-label="${escapeHtml(formatRange(event))}">${rangeMarkup(event)}</span>${previewMedia}<em>${escapeHtml(statusLabels[event.status] || event.status)}</em></div>
         <div class="event-preview-copy">
           <p class="page-label"><i class="mdi ${escapeHtml(category.icon || "mdi-calendar-outline")}" aria-hidden="true"></i>${escapeHtml(category.label || "队伍活动")}</p>
           <h2>${escapeHtml(event.title)}</h2>

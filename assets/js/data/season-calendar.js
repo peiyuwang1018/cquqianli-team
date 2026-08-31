@@ -146,6 +146,9 @@
         status: "confirmed",
         description: "面向 2027 赛季的新成员招募、宣讲、考核与组别匹配。",
         source: "队内规划",
+        previewImage: "assets/images/content/join/join-us-poster.png",
+        previewAlt: "重庆大学千里战队秋季招新海报",
+        previewVariant: "portrait",
         subevents: [
           { title: "实验室开放日", english: "OPEN DAY", dateLabel: "日期待定" },
           { title: "招新宣讲会", english: "RECRUITMENT INFO SESSION", dateLabel: "日期待定" }
@@ -161,7 +164,10 @@
         end: "2026-10-31",
         status: "confirmed",
         description: "9 月 10 日开始报名，活动周期覆盖培训、备赛和参赛，并于 10 月底结束。",
-        source: "队内活动安排"
+        source: "队内活动安排",
+        previewImage: "assets/images/content/season/crtc-logo.png",
+        previewAlt: "CRTC 重庆大学机器人训练大赛 Logo",
+        previewVariant: "logo"
       },
       {
         id: "pre-research-2",
