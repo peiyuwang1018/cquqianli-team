@@ -81,7 +81,15 @@ function buildBackNavigation(relative) {
     </div>`;
 }
 
-function buildNavigation(active) {
+function buildJoinAnswerNavigation(relative) {
+  if (relative !== "join/guide.html") return "";
+
+  return `    <nav class="join-answer-nav" data-join-answer-nav aria-label="投递准备清单页内导航">
+      <ol class="join-answer-nav-list"></ol>
+    </nav>`;
+}
+
+function buildNavigation(active, relative) {
   return `        <div class="nav-links" id="nav-links">
           <span class="nav-menu">
             <a${activeAttributes(active, "about")} href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
@@ -156,7 +164,7 @@ function buildNavigation(active) {
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join is-current"${relative === "join/guide.html" ? ' aria-current="page"' : ""} href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
@@ -194,7 +202,7 @@ function normalizeMascotScripts(html) {
 
   return html.replace(
     bodyClosePattern,
-    `$1<script src="assets/js/data/mascot-config.js?v=20260828-2"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260831-9"></script>$1</body>`,
+    `$1<script src="assets/js/data/mascot-config.js?v=20260831-1"></script>$1<script src="assets/js/pages/home-mascot.js?v=20260831-9"></script>$1</body>`,
   );
 }
 
@@ -214,7 +222,7 @@ for (const file of htmlFiles) {
   const navPattern = /        <div class="nav-links" id="nav-links">[\s\S]*?<\/div>\r?\n(?=        (?:<div class="nav-utilities">|<button class="theme-toggle"))/;
   if (!navPattern.test(html)) throw new Error(`Navigation block not found in ${relative}`);
 
-  html = html.replace(navPattern, `${buildNavigation(page)}\n`);
+  html = html.replace(navPattern, `${buildNavigation(page, relative)}\n`);
 
   if (!html.includes('class="nav-map-link"')) {
     const themeButtonPattern = /(        <button class="theme-toggle"[\s\S]*?<\/button>)/;
@@ -225,18 +233,21 @@ for (const file of htmlFiles) {
     );
   }
 
-  html = html.replace(/\s*<div class="page-back-nav">[\s\S]*?<\/div>\s*(?=<main\b)/, "\n");
+  html = html.replace(/\s*<div class="page-back-nav">[\s\S]*?<\/div>\s*/g, "\n");
+  html = html.replace(/\s*<nav class="join-answer-nav"[\s\S]*?<\/nav>\s*/g, "\n");
   const backNavigation = buildBackNavigation(relative);
-  if (backNavigation) {
+  const joinAnswerNavigation = buildJoinAnswerNavigation(relative);
+  if (backNavigation || joinAnswerNavigation) {
     const mainPattern = /(\r?\n\s*)<main\b/;
     if (!mainPattern.test(html)) throw new Error(`Main content not found in ${relative}`);
-    html = html.replace(mainPattern, `\n${backNavigation}$1<main`);
+    const pageNavigation = [backNavigation, joinAnswerNavigation].filter(Boolean).join("\n");
+    html = html.replace(mainPattern, `\n${pageNavigation}$1<main`);
   }
 
   html = normalizeFooter(html, relative);
   html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260831-11");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260831-27");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260831-82");
   fs.writeFileSync(file, html);
 }

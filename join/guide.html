@@ -27,7 +27,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-11" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-27" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="join">
@@ -112,7 +112,7 @@
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
-              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join is-current" aria-current="page" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
             </span>
@@ -139,51 +139,106 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
+    <nav class="join-answer-nav" data-join-answer-nav aria-label="投递准备清单页内导航">
+      <ol class="join-answer-nav-list"></ol>
+    </nav>
 <main class="join-guide-page">
       <section class="page-hero">
         <div><p class="page-label">BEFORE YOU APPLY</p><h1>加入我们</h1></div>
         <p>投递之前先把方向、时间和期待想清楚。准备充分不是为了给出标准答案，而是让彼此更快认识真实的你。</p>
       </section>
 
-      <section class="section-block join-guide-overview" aria-labelledby="join-guide-title">
+      <section class="section-block join-guide-overview join-guide-overview--awareness" aria-labelledby="join-guide-title">
         <div class="join-guide-intro">
           <p class="page-label">APPLICATION GUIDE</p>
-          <h2 id="join-guide-title">先了解，再投递</h2>
-          <p>千里不要求每位新生在入队前就掌握完整技术栈。我们更希望你认真了解过所选组别，能说明自己的兴趣、投入方式与学习计划，并愿意在真实工程协作中持续成长。</p>
+          <h2 id="join-guide-title">先了解，再思考，最后投递</h2>
+          <p>建议在投递前从赛事、队伍、岗位与招新流程等维度建立基本认知。这些准备不仅能帮助你更准确、具体地完成报名表中的动机阐述，也会为后续面试中的双向交流提供必要背景。面试不会要求背诵标准答案，但可能围绕这些内容了解你的投入判断、信息获取和思考过程。</p>
+          <div class="join-awareness-path" aria-label="加入千里的准备路径">
+            <span><b>01</b><strong>了解</strong><small>建立对赛事、队伍与岗位的基本认知</small></span>
+            <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+            <span><b>02</b><strong>思考</strong><small>判断自己的方向、动机与投入条件</small></span>
+            <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+            <span><b>03</b><strong>投递</strong><small>据实填写报名表并进入后续交流</small></span>
+          </div>
         </div>
-        <aside class="join-guide-ready">
-          <i class="mdi mdi-compass-outline" aria-hidden="true"></i>
-          <div><strong>不知道选哪个组，也可以先做功课</strong><p>先通过“了解 RM”认识比赛和工程工作，再阅读技术组介绍、人才画像与常见问题。</p><a class="join-guide-inline-link" href="join/learn-rm.html">先去了解 RM <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a></div>
-        </aside>
+        <div class="join-awareness-heading">
+          <div><p class="page-label">WHAT TO KNOW</p><h3>了解什么？</h3></div>
+          <output class="join-check-progress" data-join-check-progress aria-live="polite">0 / 8 项完成</output>
+        </div>
+        <div class="join-awareness-list" data-join-checklist>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我了解 RoboMaster 赛事的基本规则</strong><small>看过至少一场完整比赛，并了解比赛背后的故事与赛事文化。</small></span></label>
+            <div><a href="join/learn-rm.html">完整了解赛事 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我了解赛季的完整时间线与备赛节奏</strong><small>知道赛季不同阶段的工作重点，以及团队对时间和精力投入的基本要求。</small></span></label>
+            <div><a href="season/calendar.html">查看赛季日历</a><a href="join/qa.html">了解时间投入</a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我了解千里战队的发展与运行方式</strong><small>了解队伍的发展历程、团队资源、精神文化，以及日常管理和协作机制。</small></span></label>
+            <div><a href="about/history.html">发展历程</a><a href="about/resources.html">团队资源</a><a href="about/culture.html">精神文化</a><a href="groups/responsibility-management.html">管理协作</a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我了解队伍的组织架构与技术方向</strong><small>知道各技术组承担什么工作、使用怎样的技术栈，以及可能的发展方向。</small></span></label>
+            <div><a href="about/organization.html">组织架构</a><a href="groups/technical.html">技术组总览</a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我关注过千里公开发布的信息</strong><small>浏览过战队在 B 站、微信公众号、小红书等平台发布的内容。</small></span></label>
+            <div><a href="join/find-qianli.html">找到千里 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我了解本赛季招新的关键信息</strong><small>知道投递窗口开放时间、投递方式，并阅读过人才画像与招新 Q&amp;A。</small></span></label>
+            <div><a href="join/index.html">纳新通道</a><a href="join/persona.html">人才画像</a><a href="join/qa.html">Q&amp;A</a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我认真比较过组别定位与自身需求</strong><small>结合自己的兴趣、基础和发展目标选择方向；仍有细节疑问时，会前往群聊具体提问。</small></span></label>
+            <div><a href="groups/technical.html">比较技术方向</a><a href="join/find-qianli.html">找到咨询渠道</a></div>
+          </article>
+          <article class="join-awareness-item">
+            <label><input type="checkbox" /><span><strong>我查看过资料站与培训先导内容</strong><small>了解各组培训先导课的大纲，也知道比赛规则和各组报名表的下载位置。</small></span></label>
+            <div><a href="museum/resources.html">查看培训体系</a><a href="museum/resources.html#files">进入下载区</a></div>
+          </article>
+        </div>
       </section>
 
-      <section class="section-block join-guide-section" aria-labelledby="application-flow-title">
+      <section class="section-block join-guide-section join-guide-section--checklist" aria-labelledby="self-check-title">
         <div class="join-guide-section-heading">
-          <div><p class="page-label">APPLICATION FLOW</p><h2 id="application-flow-title">投递前的四步准备</h2></div>
-          <p>顺序不复杂：确认方向、了解工作、整理材料，再进入正式投递和面试。</p>
-        </div>
-        <div class="join-guide-flow">
-          <article><span>01 · DIRECTION</span><h3>选择方向</h3><p>浏览五个技术组页面，结合兴趣、基础和希望获得的工程能力，选择主要投递组别。</p></article>
-          <article><span>02 · CONTEXT</span><h3>了解工作</h3><p>了解组内实际职责、训练路径和赛季节奏，不只根据专业名称或软件工具做判断。</p></article>
-          <article><span>03 · MATERIALS</span><h3>整理材料</h3><p>如实填写报名表；有课程作业、个人项目、作品或学习记录，可整理为便于查看的链接。</p></article>
-          <article><span>04 · QUESTIONS</span><h3>准备问题</h3><p>记录仍不清楚的训练、时间与协作问题。面试是双向了解，你也应判断这里是否适合自己。</p></article>
-        </div>
-      </section>
-
-      <section class="section-block join-guide-section" aria-labelledby="self-check-title">
-        <div class="join-guide-section-heading">
-          <div><p class="page-label">SELF CHECK</p><h2 id="self-check-title">投递前自检清单</h2></div>
+          <div><p class="page-label">APPLICATION &amp; INTERVIEW GUIDE</p><h2 id="self-check-title">投递和面试指南</h2></div>
           <output class="join-check-progress" data-join-check-progress aria-live="polite">0 / 8 项完成</output>
         </div>
         <div class="join-checklist" data-join-checklist>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我读过目标组别的介绍</strong><small>知道这个组主要解决什么问题，而不只是记住了名称。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我能说明为什么选择它</strong><small>可以用自己的经历和兴趣解释选择，不照搬网络模板。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我评估过时间投入</strong><small>已考虑课程、考试与个人安排，能稳定参与训练和项目协作。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我了解赛季节奏</strong><small>知道备赛会有集中研发、联调、出差或临近比赛的高强度阶段。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我的报名信息真实完整</strong><small>不会夸大经历；不熟悉的内容会直接说明，并讲清学习过程。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我整理了可展示的材料</strong><small>项目、作业、作品或笔记都可以；没有成品也可准备学习记录。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我接受协作与工作留痕</strong><small>愿意主动沟通、按节点反馈，并使用文档、版本记录和复盘沉淀过程。</small></span></label>
-          <label class="join-check-item"><input type="checkbox" /><span><strong>我准备了想问的问题</strong><small>对训练、岗位、考核或时间仍有疑问，准备在面试中坦率沟通。</small></span></label>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我对自己的发展方向与定位更加清晰</strong><small>在了解各个组别及本赛季招新信息后，我能够结合自身情况判断希望前往的方向。</small></span></label>
+            <div><a href="groups/technical.html">比较技术方向</a><a href="join/persona.html">查看人才画像</a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我了解专业培养路径，也知道希望从 RM 获得什么</strong><small>我查看过本专业培养方案，知道未来可能有哪些发展选择；无论是否与 RM 技术强相关，我都思考过这段旅程对自己的意义。</small></span></label>
+            <div><a href="about/resources.html">了解团队资源</a><a href="groups/technical.html">查看发展方向</a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我了解自己的性格特质与成长空间</strong><small>我能够对照人才画像，坦诚说明自己已经具备哪些特质，以及还有哪些方面需要继续提高。</small></span></label>
+            <div><a href="join/persona.html">对照人才画像 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我认真评估过时间、精力与管理要求</strong><small>我理解选择 RM 会对学习和生活安排提出更高要求，并确认自己愿意迎接这样的挑战。</small></span></label>
+            <div><a href="join/qa.html">了解时间投入</a><a href="groups/responsibility-management.html">了解管理协作</a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我了解赛季节奏与不同队员阶段的投入要求</strong><small>我了解梯队队员和正式队员需要承担的训练与项目任务，能够初步预期入队后的定位和发展方向。</small></span></label>
+            <div><a href="season/calendar.html">赛季日历</a><a href="groups/position-trainees.html">梯队队员</a><a href="groups/position-members.html">正式队员</a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我理解加入战队也意味着情感连结与团队责任</strong><small>来到 RM 战队不只意味着体验和学习，也意味着与伙伴共同承担项目、比赛和队伍建设中的责任。</small></span></label>
+            <div><a href="about/culture.html">精神文化</a><a href="groups/responsibility.html">职责分工</a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我能用自己的语言说明选择这个技术组的原因</strong><small>我会把真实动机写进报名表。禁止使用 AI 生成报名内容；可以用 AI 做减少口语化等语言润色，但强烈建议保留自己的语言风格。</small></span></label>
+            <div><a href="groups/technical.html">确认目标组别</a><a href="museum/resources.html#files">下载报名表</a></div>
+          </article>
+          <article class="join-check-item">
+            <label><input type="checkbox" /><span><strong>我的报名信息真实、完整且坦诚</strong><small>报名表中不存在弄虚作假、夸大其词或刻意隐瞒；不熟悉的内容会如实说明。</small></span></label>
+            <div><a href="join/index.html">查看投递方式</a><a href="join/qa.html">阅读 Q&amp;A</a></div>
+          </article>
         </div>
       </section>
 
@@ -197,15 +252,9 @@
           <article class="join-interview-card"><i class="mdi mdi-account-voice" aria-hidden="true"></i><h3>面试过程中</h3><ul><li>不知道可以直说，重点讲清你会怎样分析和补足。</li><li>回答尽量基于真实经历，说明自己具体做了什么。</li><li>技术题之外，也会关注时间管理、沟通与责任感。</li></ul></article>
           <article class="join-interview-card"><i class="mdi mdi-message-check-outline" aria-hidden="true"></i><h3>面试之后</h3><ul><li>留意招新群或约定渠道的结果通知。</li><li>收到补充任务时确认截止时间和交付方式。</li><li>未通过不等于能力被否定，可根据反馈继续准备。</li></ul></article>
         </div>
+        <p class="join-interview-followup"><span>招新流程、面试以及后续通知消息，请密切关注招新 QQ 群！</span><a href="join/find-qianli.html">去找到千里 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a></p>
       </section>
 
-      <section class="section-block join-guide-cta" aria-label="继续了解纳新信息">
-        <div><h2>准备好之后，再选择你的方向</h2><p>岗位总览与报名方式仍集中在“纳新通道”，这里不重复堆放岗位信息。</p></div>
-        <div class="join-guide-actions">
-          <a href="join/index.html#groups">查看技术组岗位 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
-          <a href="join/qa.html">阅读招新 Q&amp;A <i class="mdi mdi-help-circle-outline" aria-hidden="true"></i></a>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -217,20 +266,22 @@
     <script src="assets/js/core/site.js?v=20260831-82"></script>
     <script>
       (() => {
-        const checklist = document.querySelector("[data-join-checklist]");
-        const progress = document.querySelector("[data-join-check-progress]");
-        if (!checklist || !progress) return;
-        const items = [...checklist.querySelectorAll('input[type="checkbox"]')];
-        const update = () => {
-          const completed = items.filter((item) => item.checked).length;
-          progress.textContent = `${completed} / ${items.length} 项完成`;
-          progress.classList.toggle("is-complete", completed === items.length);
-        };
-        checklist.addEventListener("change", update);
-        update();
+        document.querySelectorAll("[data-join-checklist]").forEach((checklist) => {
+          const progress = checklist.closest("section")?.querySelector("[data-join-check-progress]");
+          if (!progress) return;
+          const items = [...checklist.querySelectorAll('input[type="checkbox"]')];
+          const update = () => {
+            const completed = items.filter((item) => item.checked).length;
+            progress.textContent = `${completed} / ${items.length} 项完成`;
+            progress.classList.toggle("is-complete", completed === items.length);
+          };
+          checklist.addEventListener("change", update);
+          update();
+        });
       })();
     </script>
-  <script src="assets/js/data/mascot-config.js?v=20260828-2"></script>
+  <script src="assets/js/pages/join-application.js?v=20260831-1"></script>
+  <script src="assets/js/data/mascot-config.js?v=20260831-1"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-9"></script>
   </body>
 </html>

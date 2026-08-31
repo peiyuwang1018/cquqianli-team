@@ -43,6 +43,7 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
     },
     "join/guide.html": {
       messages: [
+        { text: "这里的面试指南条目很有可能在面试过程中聊到！", href: "join/guide.html#self-check-title", label: "查看面试指南" },
         { text: "自检清单不是门槛，它只是帮你确认自己是否准备好认真投入。", href: "join/guide.html#self-check-title", label: "查看自检清单" },
         { text: "面试时把事实、过程和自己的判断讲清楚，比漂亮话更重要。", href: "join/guide.html#interview-notes-title", label: "查看面试须知" },
       ],
