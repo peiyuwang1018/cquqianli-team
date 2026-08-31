@@ -28,10 +28,10 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-39" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-47" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
+  <body class="unit-aerial-dart-page" data-page="organization">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -140,14 +140,173 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-      <section class="page-hero"><div><p class="page-label">AERIAL &amp; DART UNIT</p><h1>空中飞镖组</h1></div><p>空中与飞镖是两个独立兵种，共用赛季组织和研发资源，并分别完成飞行平台与定点发射系统的能力建设。</p></section>
-      <section class="section-block unit-role-grid">
-        <article class="unit-role-card"><div><p class="page-label">AERIAL</p><h2>空中机器人</h2><p>面向空中机动与赛场任务，围绕飞行平台、载荷、通信、安全和快速维护开展研发。</p></div><figure class="unit-role-logo"><img src="assets/images/brand/vector-icons/aerial.svg" alt="空中机器人图标" /></figure></article>
-        <article class="unit-role-card"><div><p class="page-label">DART</p><h2>飞镖系统</h2><p>面向定点发射任务，统筹发射机构、瞄准控制、可靠性验证和比赛窗口协同。</p></div><figure class="unit-role-logo"><img src="assets/images/brand/vector-icons/dart.svg" alt="飞镖系统图标" /></figure></article>
+    <aside class="air-dart-rail" aria-label="空中飞镖组兵种切换" role="tablist">
+      <a class="is-active" id="air-dart-tab-aerial" href="#unit-aerial" role="tab" aria-controls="unit-aerial" aria-selected="true" data-air-dart-nav="aerial"><span>01</span><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><strong>空中</strong></a>
+      <a id="air-dart-tab-dart" href="#unit-dart" role="tab" aria-controls="unit-dart" aria-selected="false" tabindex="-1" data-air-dart-nav="dart"><span>02</span><img src="assets/images/brand/vector-icons/dart.svg" alt="" /><strong>飞镖</strong></a>
+    </aside>
+
+    <main class="air-dart-main">
+      <section class="air-dart-overview" aria-labelledby="air-dart-title">
+        <div>
+          <p class="page-label">AERIAL &amp; DART UNIT</p>
+          <h1 id="air-dart-title">空中飞镖组</h1>
+        </div>
+        <p>空中机器人与飞镖系统是两个独立兵种，共用赛季组织和研发资源，但保持各自的任务目标、技术路线与测试节奏。</p>
       </section>
-      <section class="section-block process-grid"><article><span>01</span><h2>专项系统构建</h2><p>分别形成飞行平台与飞镖发射系统的结构、控制、通信和安全方案。</p></article><article><span>02</span><h2>测试条件建设</h2><p>围绕飞行、发射、重复精度和可靠性建立可复现的测试与记录方法。</p></article><article><span>03</span><h2>赛程窗口协同</h2><p>根据比赛节奏组织设备检查、操作准备、任务执行和赛后复盘。</p></article></section>
-      <section class="section-block text-stack"><h2>组织关系</h2><p>空中飞镖组是合组管理的赛季项目组织，两个兵种保持独立目标并共享协作接口。</p><div class="unit-page-links"><a class="text-link" href="about/organization.html?view=unit#unit-aerial-dart">查看组织架构</a><a class="text-link" href="join/index.html#positions">查看技术组别</a></div></section>
+
+      <section class="air-dart-aerial" id="unit-aerial" role="tabpanel" aria-labelledby="air-dart-tab-aerial aerial-title" data-air-dart-section="aerial">
+        <div class="aerial-hero">
+          <div class="aerial-hero-copy">
+            <div class="air-dart-section-index"><span>01 / AERIAL</span><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /></div>
+            <p class="page-label">AERIAL ROBOT · BEFORE / AFTER 2027</p>
+            <h2 id="aerial-title">从高位火力平台，走向空中多面手</h2>
+            <p class="aerial-hero-lead">2027 赛季规则大改，让空中机器人从一套强调持续输出的成熟平台，转向更轻、更小、更自主的全新形态。任务边界被重新打开，机械、电控与算法也需要围绕新的飞行尺度重新协同。</p>
+            <div class="aerial-tag-row" aria-label="空中机器人能力方向"><span>关键目标打击</span><span>战场信息获取</span><span>飞镖末端拦截</span><span>空中对抗</span></div>
+          </div>
+          <figure class="aerial-rule-media">
+            <img src="assets/images/content/groups/unit-aerial-dart/aerial-2027-rule-preview.jpg" alt="RoboMaster 2027 新形态无人机规则预告，强调小型化、轻量化与全包围桨保" />
+            <figcaption><span>2027 RULE PREVIEW</span><strong>新形态更强调小型化与轻量化，最终参数以正式规则为准</strong></figcaption>
+          </figure>
+        </div>
+
+        <section class="aerial-evolution" aria-labelledby="aerial-evolution-title">
+          <div class="dart-section-heading"><div><p class="page-label">MISSION EVOLUTION</p><h2 id="aerial-evolution-title">规则改变，任务与技术栈一起重构</h2></div><p>旧方案证明了稳定火力与视觉闭环的价值；新规则则要求团队把这些经验压缩进更轻量的平台，并补上自主起降、导航与决策能力。</p></div>
+          <div class="aerial-era-grid">
+            <article class="aerial-era-card aerial-era-card--legacy">
+              <div class="aerial-era-copy"><span>BEFORE 2027</span><h3>老形态 · 稳定的高位火力支援</h3><p>旧版无人机承担定向压制与持续高位输出，在俯瞰战场的同时兼顾信息获取。它更像一座可移动的空中火力点：依靠稳定机架、云台与视觉闭环，将操作手的判断快速转化为有效打击。</p><ul><li>机架与全包围桨保设计</li><li>云台结构与姿态稳定</li><li>装甲板识别</li><li>自动瞄准与火力输出</li></ul></div>
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/aerial-legacy-frame.jpg" alt="2027 规则大改前的空中机器人线条框架图" /><figcaption>旧版无人机结构参考 · 大尺寸机架、桨保与中央任务载荷</figcaption></figure>
+            </article>
+            <article class="aerial-era-card aerial-era-card--future">
+              <div class="aerial-era-copy"><span>2027 &amp; BEYOND</span><h3>新形态 · 面向多任务的自主飞行节点</h3><p>新规则下，无人机不再只围绕稳定射击优化，而要在有限尺度与质量内完成关键目标打击、战场信息获取、飞镖末端拦截和空中对抗。平台需要在续航、机动、感知和任务切换之间建立新的系统平衡。</p><ul><li>机身轻量化与紧凑布局</li><li>机场设计与自主保障</li><li>无人机自动化决策</li><li>自主导航与空中对抗算法</li></ul></div>
+              <div class="aerial-rule-notes" aria-label="2027 规则预告重点">
+                <figure class="aerial-neo-reference"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/aerial-dji-neo-reference.png" alt="带有全包围桨保的 DJI NEO 产品无人机" /><figcaption>来源：DJI NEO 产品无人机</figcaption></figure>
+                <div><span>01</span><strong>小型化、轻量化</strong><p>预告中的尺寸与重量约束呈线性关系，平台设计从“大机架承载”转向“尺度、质量与任务能力协同”。</p></div><div><span>02</span><strong>安全边界重设</strong><p>全包围桨保成为明确方向，飞行安全不再是外挂组件，而是机体构型的一部分。</p></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="aerial-proof" aria-labelledby="aerial-proof-title">
+          <div class="aerial-proof-copy">
+            <p class="page-label">FIELD PROOF · 2025</p>
+            <h2 id="aerial-proof-title">老无人机的最后一舞</h2>
+            <p>这段 2025 赛季重庆大学无人机战场第一人称画面，记录了无人机依靠装甲板识别与自动瞄准摧毁前哨站的过程。稳定飞行、云台跟随、目标识别与火力控制并不是彼此独立的功能，而是一条连续的实时链路。</p>
+            <dl><div><dt>感知</dt><dd>从高位视角获取目标与战场信息</dd></div><div><dt>瞄准</dt><dd>识别装甲板并维持云台跟踪</dd></div><div><dt>打击</dt><dd>将稳定姿态与自瞄结果转化为有效输出</dd></div></dl>
+          </div>
+          <figure class="aerial-fpv-media">
+            <video controls playsinline preload="metadata" poster="assets/images/content/groups/unit-aerial-dart/aerial-2025-fpv-poster.jpg"><source src="assets/images/content/groups/unit-aerial-dart/aerial-2025-fpv.mp4" type="video/mp4" />当前浏览器不支持视频播放。</video>
+            <figcaption><span>2025 赛季 · 重庆大学无人机第一人称</span><strong>自瞄锁定并摧毁前哨站</strong></figcaption>
+          </figure>
+        </section>
+
+        <div class="aerial-transition-note"><span>WHAT CARRIES FORWARD</span><p>形态会改变，但旧体系积累的结构安全、姿态稳定、视觉识别与火力闭环经验仍然是新无人机的技术底座。下一阶段的重点，是让这些能力在更轻量的平台上与自主导航、自动决策和机场系统重新组合。</p></div>
+      </section>
+
+      <section class="air-dart-dart" id="unit-dart" role="tabpanel" aria-labelledby="air-dart-tab-dart dart-title" data-air-dart-section="dart" hidden>
+        <div class="dart-hero">
+          <div class="dart-hero-copy">
+            <div class="air-dart-section-index air-dart-section-index--dart"><span>02 / DART</span><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></div>
+            <p class="page-label">DART SYSTEM · 2027</p>
+            <h2 id="dart-title">飞镖系统</h2>
+            <p class="dart-hero-lead">飞镖通过发射系统打击对方前哨站和基地，能够造成巨量伤害与长时间致盲，直接改变战局。它的威慑力强、可用反制手段少，是一套以数秒飞行换取全局节奏优势的专项系统。</p>
+            <div class="dart-tag-row" aria-label="飞镖系统特征"><span>发射架 × 镖体</span><span>四发载弹</span><span>机械镖 / 制导镖</span><span>重测试、低容错</span></div>
+          </div>
+          <figure class="dart-hero-media">
+            <img src="assets/images/content/groups/unit-aerial-dart/dart-launcher-overview.jpg" alt="千里战队飞镖发射架俯视图" />
+            <figcaption><span>发射架系统</span><strong>供弹、储能、瞄准与击发</strong></figcaption>
+          </figure>
+        </div>
+
+        <section class="dart-mission" aria-labelledby="dart-mission-title">
+          <div class="dart-section-heading"><div><p class="page-label">TACTICAL ROLE</p><h2 id="dart-mission-title">一发命中，改变整局节奏</h2></div><p>飞镖不只是额外伤害，而是一套能够重写攻防条件、资源节奏与冲家窗口的战术能力。</p></div>
+          <div class="dart-mission-layout">
+            <figure class="dart-impact-media"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-tactical-impact.png" alt="飞镖命中后造成基地伤害、致盲和溅射效果的赛事画面" /><figcaption>赛事画面 · 飞镖命中后的基地伤害、致盲与溅射效果</figcaption></figure>
+            <div class="dart-mission-grid">
+              <article><span>01</span><h3>瞬间击毁前哨站</h3><p>27 赛季飞镖的伤害或许可以一发将前哨站带走，加速我方对局推进。</p></article>
+              <article><span>02</span><h3>造成高额基地伤害</h3><p>稳定的大额伤害可以支撑铁桶阵；高难度命中还可促使基地护甲展开，为地面力量冲家创造条件。</p></article>
+              <article><span>03</span><h3>制造长时间致盲</h3><p>在己方冲家或承受对方冲家时制造长时间致盲，还可能干扰重装资源兑换。</p></article>
+              <article><span>04</span><h3>对地面单位形成溅射</h3><p>飞镖命中基地后，可对敌方地面机器人造成一定百分比血量的溅射伤害。</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="dart-specs" aria-labelledby="dart-spec-title">
+          <div class="dart-section-heading"><div><p class="page-label">SYSTEM BOUNDARY</p><h2 id="dart-spec-title">两套装置，共同完成一次命中</h2></div><p>发射架负责稳定供弹、储能释放和精准瞄准；镖体负责飞行稳定、命中效果与抗损毁能力。</p></div>
+          <div class="dart-spec-grid">
+            <article><div><span>01 / LAUNCHER</span><h3>镖架</h3></div><dl><div><dt>伸展尺寸</dt><dd>≤ 1000 × 600 × 1000 <small>mm · L×W×H</small></dd></div><div><dt>整机重量</dt><dd>≤ 25 <small>kg</small></dd></div><div><dt>载弹量</dt><dd>4 <small>枚</small></dd></div></dl></article>
+            <article><div><span>02 / DART</span><h3>镖体</h3></div><dl><div><dt>伸展尺寸</dt><dd>≤ 250 × 250 × 150 <small>mm · L×W×H</small></dd></div><div><dt>镖体重量</dt><dd>≤ 0.35 <small>kg</small></dd></div><div><dt>推重比</dt><dd>&lt; 1</dd></div></dl></article>
+          </div>
+        </section>
+
+        <section class="dart-mechanical" aria-labelledby="dart-mechanical-title">
+          <div class="dart-section-heading"><div><p class="page-label">01 / MECHANICAL</p><h2 id="dart-mechanical-title">机械 · 发射构型与飞行载体</h2></div><p>飞镖系统由发射架和飞镖本体组成，技术路线不局限于单一方案，而是在发射构型、瞄准方式和镖体设计之间持续权衡。</p></div>
+
+          <div class="dart-route-layout">
+            <div class="dart-route-copy">
+              <h3>发射架：把能量稳定地交给每一枚飞镖</h3>
+              <p>常见方案包括摩擦轮式、气动式、拉簧式及复合弓式。不同构型本质上都在初速一致性、结构复杂度、维护成本和可靠性之间取舍。</p>
+              <div class="dart-route-list">
+                <article><span>摩擦轮式</span><p>依靠高速轮组加速，具备连续发射能力，但对轮速一致性和飞镖表面适配要求严格。</p></article>
+                <article><span>气动式</span><p>能量密度与响应速度较高，但受安全性和规则限制较多。</p></article>
+                <article><span>拉簧式</span><p>通过储能与可控释放实现发射，兼顾能量利用与稳定性。</p></article>
+                <article><span>复合弓式</span><p>利用复合弓储能和受控释放，发射稳定，机构与维护边界需要系统设计。</p></article>
+              </div>
+            </div>
+            <div class="dart-launcher-media">
+              <figure class="dart-media-card dart-media-card--wide"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-launcher-front.jpg" alt="千里战队飞镖发射架正面结构" /><figcaption>千里战队 · 飞镖发射架正面结构</figcaption></figure>
+              <figure class="dart-media-card"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-launcher-composite-bow.png" alt="复合弓式飞镖发射架参考" /><figcaption>复合弓式发射架参考</figcaption></figure>
+            </div>
+          </div>
+
+          <div class="dart-body-layout">
+            <div class="dart-body-copy">
+              <h3>镖体：简单可靠，还是主动制导</h3>
+              <article><span>MECHANICAL DART</span><h4>机械镖</h4><p>不具备主动控制能力，依靠合理的重心、气动中心、翼面布局和发射一致性保持稳定飞行。结构简单、成本较低，便于批量制作与快速维护。</p></article>
+              <article><span>GUIDED DART</span><h4>制导镖</h4><p>集成视觉、惯性测量、飞控、电源与执行机构，在飞行中感知目标并调整姿态或轨迹，更适合随机移动目标与末端移动目标；同时对空间、承力、抗冲击、重量分配与控制响应提出更高要求。</p></article>
+            </div>
+            <div class="dart-body-media">
+              <figure class="dart-media-card"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-projectiles.jpg" alt="千里战队飞镖镖体样件" /><figcaption>千里战队 · 镖体样件与批量测试</figcaption></figure>
+              <figure class="dart-media-card"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-guided-ducted-reference.jpg" alt="大连理工大学涵道制导镖体参考" /><figcaption>参考 · 大连理工大学涵道制导镖体</figcaption></figure>
+              <figure class="dart-media-card"><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-guided-reference.png" alt="深圳大学制导飞镖方案参考" /><figcaption>参考 · 深圳大学制导飞镖方案</figcaption></figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="dart-domain-list" aria-label="飞镖技术工作">
+          <article class="dart-domain-row" aria-labelledby="dart-control-title">
+            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-control-interface.png" alt="飞镖视觉制导控制界面" /></figure>
+            <div><p class="page-label">02 / CONTROL</p><h2 id="dart-control-title">电控 · 在数秒窗口内完成接管</h2><p>电控首先要保证镖架发射机构的可靠执行，完成上簧、定位与击发的严格时序，同时处理发射前的瞄准闭环与视觉模块目标确认。击发瞬间，系统需识别镖体制导模块的接管状态，让视觉与控制逻辑在正确时序下完成切换。</p><p>进入飞行阶段后，控制任务扩展到基于视觉误差的制导闭环与舵机姿态修正。全程不过数秒，每一次“检测—解算—修正”都必须在限定时间内完成；IMU 姿态反馈与视觉输出需要协同工作，发射前后的执行器、能源和通信状态也必须统一管理。</p></div>
+          </article>
+
+          <article class="dart-domain-row dart-domain-row--reverse" aria-labelledby="dart-hardware-title">
+            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-hardware-options.jpg" alt="OpenMV、FPGA 与微型计算平台等飞镖硬件方案" /></figure>
+            <div><p class="page-label">03 / HARDWARE</p><h2 id="dart-hardware-title">硬件 · 把四套系统装进 350 克</h2><p>镖体体积与重量预算极为有限，硬件需要在约束下完成主控、视觉、电源与通信四大子系统的选型和集成。官方对镖体硬件限制较少，赛场上出现了 OpenMV、AIoT、FPGA 等多种视觉路线，方案选择本身就是设计能力的体现。</p><p>所有电路都要在剧烈振动与快速机动中稳定运行。器件选型、PCB 布局与抗干扰设计共同决定可靠性；核心难点，是让一枚高速飞行的镖体内所有电路足够小、足够轻，又足够稳。</p></div>
+          </article>
+
+          <article class="dart-domain-row" aria-labelledby="dart-vision-title">
+            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-vision-test.png" alt="飞镖视觉识别与风洞测试装置" /></figure>
+            <div><p class="page-label">04 / VISION</p><h2 id="dart-vision-title">视觉 · 镖架瞄准与镖体锁定</h2><p>飞镖制导涉及两端视觉：镖体端需要在飞行中稳定锁定目标，镖架端则要完成目标自主瞄准。工作会覆盖传统图像处理、深度学习轻量化部署、相机底层调优等课题。</p><p>在算力受限的微型平台上，需要持续权衡精度与速度，并与电控模块协同完成闭环测试。每个检测决策都是一次取舍，钻研与耐心是必备品质。</p></div>
+          </article>
+        </section>
+
+        <aside class="dart-member-profile" aria-label="飞镖组成员特质">
+          <span>MULTI-DISCIPLINARY · PATIENT · TEST-DRIVEN</span>
+          <p>单拎飞镖兵种的某些板块，技术要求可能不算深。但它的特殊之处在于：技术栈与队内其他兵种差异大、可复用经验有限，且镖体上天后不可控、容错极低。因此飞镖组偏好多面手——愿意身兼数职，例如同时负责视觉识别与制导算法，或同时完成单片机开发与硬件选型。并不要求一开始就掌握所有方向，但需要持续学习新方向的意愿。飞镖研发重度依赖测试，大量时间会消耗在重复验证上，因此耐得住寂寞同样重要。</p>
+        </aside>
+
+        <section class="dart-testing" aria-labelledby="dart-testing-title">
+          <div class="dart-section-heading"><div><p class="page-label">DART × INFRASTRUCTURE</p><h2 id="dart-testing-title">飞镖 · 基建交叉</h2></div><p>飞镖机器人的设计周期较长，测试与迭代持续消耗时间和人力，是一个由测试周期决定工作节奏的长周期兵种。</p></div>
+          <div class="dart-testing-intro"><div><h3>实机测试与仿真测试并行</h3><p>千里战队自研主动式风洞，在静环境中提供稳定、持续的封闭测试条件，帮助镖体构型进行持续测算并反馈数据，优化调试周期与流程。飞镖兵种的测试需求项目由基建组提供项目支持。</p></div><figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-team-testing.jpg" alt="千里战队成员围绕飞镖发射架开展测试" /><figcaption>测试不是收尾，而是飞镖研发的主节奏</figcaption></figure></div>
+          <div class="dart-testing-media">
+            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-wind-tunnel-simulation.jpg" alt="千里战队主动式风洞流场仿真与数据分析" /><figcaption>仿真测试 · 风洞流场测算、边界层与压缩性分析</figcaption></figure>
+            <figure class="dart-test-video"><video controls muted loop playsinline preload="metadata" poster="assets/images/content/groups/unit-aerial-dart/dart-vision-test.png"><source src="assets/images/content/groups/unit-aerial-dart/dart-wind-tunnel-test.mp4" type="video/mp4" />当前浏览器不支持视频播放。</video><figcaption>实机测试 · 主动式风洞中的镖体测量</figcaption></figure>
+          </div>
+        </section>
+        <section class="air-dart-closing">
+          <div><p class="page-label">BUILD, LAUNCH, MEASURE, REPEAT</p><h2>让每一次发射都可复现</h2><p>从战术窗口到结构、控制、硬件、视觉和测试基建，飞镖的价值建立在完整系统与持续验证之上。</p></div>
+          <div><a class="text-link" href="about/organization.html?view=unit#unit-aerial-dart">查看组织架构</a><a class="text-link" href="join/index.html#positions">查看岗位信息</a></div>
+        </section>
+      </section>
     </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
@@ -155,7 +314,8 @@
       <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
-    <script src="assets/js/core/site.js?v=20260831-82"></script>
+    <script src="assets/js/core/site.js?v=20260831-84"></script>
+    <script src="assets/js/pages/unit-aerial-dart.js?v=20260831-2"></script>
   <script src="assets/js/data/mascot-config.js?v=20260831-1"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-9"></script>
   </body>
