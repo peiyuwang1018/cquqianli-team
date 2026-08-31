@@ -4330,18 +4330,6 @@ body.mechanical-curriculum-page > .page-back-nav {
   --management-magenta: #d26ca7;
 }
 
-.management-page-shell .recruit-letter-trigger {
-  top: auto;
-  right: clamp(18px, 2.4vw, 38px);
-  bottom: 24px;
-  transform: none;
-}
-
-.management-page-shell .recruit-letter-trigger:hover,
-.management-page-shell .recruit-letter-trigger:focus-visible {
-  transform: translateY(-4px);
-}
-
 .management-page-hero {
   align-items: end;
 }
@@ -7944,14 +7932,6 @@ body.mechanical-curriculum-page > .page-back-nav {
 
 .shop-archive-card--stickers .shop-archive-slides > img:nth-child(2) {
   object-position: center 64%;
-}
-
-.shop-archive-card--stickers .shop-archive-controls {
-  top: 10px;
-  right: 10px;
-  bottom: auto;
-  left: auto;
-  transform: none;
 }
 
 .shop-archive-card:hover img {
