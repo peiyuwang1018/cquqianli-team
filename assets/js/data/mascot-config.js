@@ -56,6 +56,7 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
     },
     "join/qa.html": {
       messages: [
+        { text: "问题很多时，按 Ctrl+F 可以直接搜索关键词。" },
         { text: "如果这里没有你的问题，带着具体背景来问，会更容易得到有效回答。" },
         { text: "涉及时间和批次的信息，请以纳新通道的最新公告为准。", href: "join/index.html", label: "返回纳新通道" },
       ],

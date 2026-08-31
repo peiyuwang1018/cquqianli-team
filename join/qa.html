@@ -28,7 +28,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-39" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-48" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="join">
@@ -146,33 +146,42 @@
         <p>把招新前最常见的担心先摊开说清楚：成绩、加分、沟通协作、赛事兴趣，以及每个方向真正需要准备什么。</p>
       </section>
 
-      <section class="section-block qa-section" aria-labelledby="qa-heading">
-        <div class="section-heading qa-heading">
-          <div><p class="page-label">QUESTION BANK</p><h2 id="qa-heading">常见问题</h2></div>
-        <div class="qa-chip-row" aria-label="问题分类快捷筛选">
-          <button class="is-active" type="button" data-qa-filter="all">全部</button>
-          <button type="button" data-qa-filter="general">通用</button>
-          <button type="button" data-qa-filter="mechanical">机械</button>
-          <button type="button" data-qa-filter="control">电控</button>
-          <button type="button" data-qa-filter="vision">视觉</button>
-          <button type="button" data-qa-filter="hardware">硬件</button>
-          <button type="button" data-qa-filter="operations">宣运</button>
-          <button type="button" data-qa-filter="management">管理</button>
-        </div>
-          <label class="qa-filter" for="qa-filter">
-            <i class="mdi mdi-filter-variant" aria-hidden="true"></i>
-            <select id="qa-filter" aria-label="筛选问题分类">
-              <option value="all">全部问题</option>
-              <option value="general">通用问题</option>
-              <option value="mechanical">机械结构组</option>
-              <option value="control">电气控制组</option>
-              <option value="vision">视觉算法组</option>
-              <option value="hardware">硬件开发组</option>
-              <option value="operations">宣传运营组</option>
-              <option value="management">管理与协作</option>
-            </select>
-            <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
-          </label>
+      <section class="section-block qa-section" aria-label="常见问题">
+        <div class="qa-heading">
+          <div class="qa-filter-grid" aria-label="问题筛选">
+            <div class="qa-filter-set">
+              <span class="qa-filter-name">对象</span>
+              <label class="qa-filter" for="qa-audience-filter">
+                <i class="mdi mdi-account-search-outline" aria-hidden="true"></i>
+                <select id="qa-audience-filter" aria-label="按提问对象筛选">
+                  <option value="all">全部对象</option>
+                  <option value="freshman">大一新生</option>
+                  <option value="nonfreshman">非新生本科生</option>
+                  <option value="graduate">研究生</option>
+                </select>
+                <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="qa-filter-set">
+              <span class="qa-filter-name">技术组</span>
+              <label class="qa-filter" for="qa-group-filter">
+                <i class="mdi mdi-cog-outline" aria-hidden="true"></i>
+                <select id="qa-group-filter" aria-label="按面向技术组筛选">
+                  <option value="all">全部内容</option>
+                  <option value="general">通用 / 不限组别</option>
+                  <option value="mechanical">机械结构组</option>
+                  <option value="control">电气控制组</option>
+                  <option value="vision">视觉算法组</option>
+                  <option value="hardware">硬件开发组</option>
+                </select>
+                <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
+              </label>
+            </div>
+            <div class="qa-filter-meta">
+              <small class="qa-search-hint"><kbd>Ctrl</kbd> + <kbd>F</kbd> 可以搜索关键词</small>
+              <output class="qa-filter-result" data-qa-count aria-live="polite"></output>
+            </div>
+          </div>
         </div>
         <div class="qa-list" data-qa-list>
           <details class="qa-item" data-qa-category="general">
@@ -275,8 +284,9 @@
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
     <script src="assets/js/core/site.js?v=20260831-82"></script>
-    <script src="assets/js/pages/qa.js?v=20260821-1"></script>
-  <script src="assets/js/data/mascot-config.js?v=20260831-1"></script>
+    <script src="assets/js/data/qa-data.js?v=20260831-2"></script>
+    <script src="assets/js/pages/qa.js?v=20260831-3"></script>
+  <script src="assets/js/data/mascot-config.js?v=20260831-2"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-9"></script>
   </body>
 </html>

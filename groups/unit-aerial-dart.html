@@ -28,7 +28,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-47" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-48" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body class="unit-aerial-dart-page" data-page="organization">
@@ -140,10 +140,10 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-    <aside class="air-dart-rail" aria-label="空中飞镖组兵种切换" role="tablist">
-      <a class="is-active" id="air-dart-tab-aerial" href="#unit-aerial" role="tab" aria-controls="unit-aerial" aria-selected="true" data-air-dart-nav="aerial"><span>01</span><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><strong>空中</strong></a>
-      <a id="air-dart-tab-dart" href="#unit-dart" role="tab" aria-controls="unit-dart" aria-selected="false" tabindex="-1" data-air-dart-nav="dart"><span>02</span><img src="assets/images/brand/vector-icons/dart.svg" alt="" /><strong>飞镖</strong></a>
-    </aside>
+    <nav class="air-dart-rail" aria-label="空中飞镖组页内导航">
+      <a class="is-active" id="air-dart-tab-aerial" href="#unit-aerial" aria-current="true" data-air-dart-nav="aerial"><span>01</span><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><strong>空中</strong></a>
+      <a id="air-dart-tab-dart" href="#unit-dart" data-air-dart-nav="dart"><span>02</span><img src="assets/images/brand/vector-icons/dart.svg" alt="" /><strong>飞镖</strong></a>
+    </nav>
 
     <main class="air-dart-main">
       <section class="air-dart-overview" aria-labelledby="air-dart-title">
@@ -154,7 +154,7 @@
         <p>空中机器人与飞镖系统是两个独立兵种，共用赛季组织和研发资源，但保持各自的任务目标、技术路线与测试节奏。</p>
       </section>
 
-      <section class="air-dart-aerial" id="unit-aerial" role="tabpanel" aria-labelledby="air-dart-tab-aerial aerial-title" data-air-dart-section="aerial">
+      <section class="air-dart-aerial" id="unit-aerial" aria-labelledby="aerial-title" data-air-dart-section="aerial">
         <div class="aerial-hero">
           <div class="aerial-hero-copy">
             <div class="air-dart-section-index"><span>01 / AERIAL</span><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /></div>
@@ -202,7 +202,7 @@
         <div class="aerial-transition-note"><span>WHAT CARRIES FORWARD</span><p>形态会改变，但旧体系积累的结构安全、姿态稳定、视觉识别与火力闭环经验仍然是新无人机的技术底座。下一阶段的重点，是让这些能力在更轻量的平台上与自主导航、自动决策和机场系统重新组合。</p></div>
       </section>
 
-      <section class="air-dart-dart" id="unit-dart" role="tabpanel" aria-labelledby="air-dart-tab-dart dart-title" data-air-dart-section="dart" hidden>
+      <section class="air-dart-dart" id="unit-dart" aria-labelledby="dart-title" data-air-dart-section="dart">
         <div class="dart-hero">
           <div class="dart-hero-copy">
             <div class="air-dart-section-index air-dart-section-index--dart"><span>02 / DART</span><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></div>
@@ -284,7 +284,7 @@
           </article>
 
           <article class="dart-domain-row" aria-labelledby="dart-vision-title">
-            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-vision-test.png" alt="飞镖视觉识别与风洞测试装置" /></figure>
+            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-vision-test.png" alt="飞镖视觉识别实机测试画面" /></figure>
             <div><p class="page-label">04 / VISION</p><h2 id="dart-vision-title">视觉 · 镖架瞄准与镖体锁定</h2><p>飞镖制导涉及两端视觉：镖体端需要在飞行中稳定锁定目标，镖架端则要完成目标自主瞄准。工作会覆盖传统图像处理、深度学习轻量化部署、相机底层调优等课题。</p><p>在算力受限的微型平台上，需要持续权衡精度与速度，并与电控模块协同完成闭环测试。每个检测决策都是一次取舍，钻研与耐心是必备品质。</p></div>
           </article>
         </section>
@@ -295,11 +295,11 @@
         </aside>
 
         <section class="dart-testing" aria-labelledby="dart-testing-title">
-          <div class="dart-section-heading"><div><p class="page-label">DART × INFRASTRUCTURE</p><h2 id="dart-testing-title">飞镖 · 基建交叉</h2></div><p>飞镖机器人的设计周期较长，测试与迭代持续消耗时间和人力，是一个由测试周期决定工作节奏的长周期兵种。</p></div>
-          <div class="dart-testing-intro"><div><h3>实机测试与仿真测试并行</h3><p>千里战队自研主动式风洞，在静环境中提供稳定、持续的封闭测试条件，帮助镖体构型进行持续测算并反馈数据，优化调试周期与流程。飞镖兵种的测试需求项目由基建组提供项目支持。</p></div><figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-team-testing.jpg" alt="千里战队成员围绕飞镖发射架开展测试" /><figcaption>测试不是收尾，而是飞镖研发的主节奏</figcaption></figure></div>
+          <div class="dart-section-heading"><div><p class="page-label">DART × INFRASTRUCTURE</p><h2 id="dart-testing-title">飞镖 · 测试与工具链</h2></div><p>常规实机测试承担日常验证；风洞则是 2027 赛季独立开发、仍在研发中的仿真到产品工具链。两者服务于不同环节，不应混作同一项测试。</p></div>
+          <div class="dart-testing-intro"><div><h3>常规验证，与研发中的风洞工具链</h3><p>实机测试是飞镖研发的常规手段，用于验证发射架、镖体、视觉识别和完整发射链路。另一条独立路线，是 2027 赛季启动的主动式风洞项目：目标是把流场仿真、风洞测量、数据回收与产品迭代连接成可复用的工具链。目前该项目仍在研发中，相关仿真素材用于说明研发方向，并不代表风洞工具链已经完成或等同于现有实机测试。</p></div><figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-team-testing.jpg" alt="千里战队成员围绕飞镖发射架开展常规实机测试" /><figcaption>常规实机测试 · 发射架、镖体与整链路验证</figcaption></figure></div>
           <div class="dart-testing-media">
-            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-wind-tunnel-simulation.jpg" alt="千里战队主动式风洞流场仿真与数据分析" /><figcaption>仿真测试 · 风洞流场测算、边界层与压缩性分析</figcaption></figure>
-            <figure class="dart-test-video"><video controls muted loop playsinline preload="metadata" poster="assets/images/content/groups/unit-aerial-dart/dart-vision-test.png"><source src="assets/images/content/groups/unit-aerial-dart/dart-wind-tunnel-test.mp4" type="video/mp4" />当前浏览器不支持视频播放。</video><figcaption>实机测试 · 主动式风洞中的镖体测量</figcaption></figure>
+            <figure><img loading="lazy" src="assets/images/content/groups/unit-aerial-dart/dart-wind-tunnel-simulation.jpg" alt="研发中的主动式风洞工具链流场仿真与数据分析" /><figcaption>2027 赛季研发中 · 风洞流场仿真到产品迭代工具链</figcaption></figure>
+            <figure class="dart-test-video"><video controls muted loop playsinline preload="metadata" poster="assets/images/content/groups/unit-aerial-dart/dart-vision-test.png"><source src="assets/images/content/groups/unit-aerial-dart/dart-wind-tunnel-test.mp4" type="video/mp4" />当前浏览器不支持视频播放。</video><figcaption>常规实机测试 · 镖体与发射链路验证</figcaption></figure>
           </div>
         </section>
         <section class="air-dart-closing">
@@ -315,7 +315,7 @@
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
     <script src="assets/js/core/site.js?v=20260831-84"></script>
-    <script src="assets/js/pages/unit-aerial-dart.js?v=20260831-2"></script>
+    <script src="assets/js/pages/unit-aerial-dart.js?v=20260831-3"></script>
   <script src="assets/js/data/mascot-config.js?v=20260831-1"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-9"></script>
   </body>
