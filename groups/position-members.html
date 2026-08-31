@@ -69,7 +69,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-73" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-79" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body class="position-layer-page position-member-page" data-page="organization">
@@ -192,10 +192,10 @@
   </section>
 
   <nav class="position-layer-nav" aria-label="正式队员页面索引">
-    <a href="groups/position-members.html#member-responsibility"><span>01</span><i class="mdi mdi-account-check-outline" aria-hidden="true"></i>正式职责</a>
-    <a href="groups/position-members.html#member-time"><span>02</span><i class="mdi mdi-clock-fast" aria-hidden="true"></i>工作时长</a>
-    <a href="groups/position-members.html#member-contribution"><span>03</span><i class="mdi mdi-chart-box-outline" aria-hidden="true"></i>贡献评估</a>
-    <a href="groups/position-members.html#member-quota"><span>04</span><i class="mdi mdi-account-multiple-outline" aria-hidden="true"></i>名额配额</a>
+    <a href="groups/position-members.html#member-responsibility"><i class="mdi mdi-account-check-outline" aria-hidden="true"></i><span>01</span>正式职责</a>
+    <a href="groups/position-members.html#member-time"><i class="mdi mdi-clock-fast" aria-hidden="true"></i><span>02</span>工作时长</a>
+    <a href="groups/position-members.html#member-contribution"><i class="mdi mdi-chart-box-outline" aria-hidden="true"></i><span>03</span>贡献评估</a>
+    <a href="groups/position-members.html#member-quota"><i class="mdi mdi-account-multiple-outline" aria-hidden="true"></i><span>04</span>名额配额</a>
   </nav>
 
   <section class="position-layer-section" id="member-responsibility" aria-labelledby="member-responsibility-title">
@@ -219,11 +219,72 @@
   </section>
 
   <section class="position-layer-section" id="member-contribution" aria-labelledby="member-contribution-title">
-    <header class="position-layer-heading"><div><p class="page-label">CONTRIBUTION REVIEW</p><h2 id="member-contribution-title">贡献度记录与评估项</h2></div><p>本区域先保留评价框架，具体记录方式、权重和复核流程等待补充。</p></header>
-    <div class="member-contribution-placeholder">
-      <div><span>KNOWN FRAMEWORK</span><h3>当前已明确</h3><ul><li>技术组：关注能够进入赛场或支撑比赛的技术贡献</li><li>管理层与宣运层：关注团队建设贡献</li></ul></div>
-      <div class="member-pending-card"><i class="mdi mdi-progress-clock" aria-hidden="true"></i><strong>评估细则等待补充</strong><p>贡献记录周期、评价指标、审核人和权重暂不自行推定，后续按队内制度补齐。</p></div>
+    <header class="position-layer-heading member-contribution-heading"><div><p class="page-label">CONTRIBUTION REVIEW</p><h2 id="member-contribution-title">贡献无法被简单换算，但必须被认真记录</h2></div><p>贡献评估不是把每一项工作压缩成一个分数，而是用完整证据理解过程、影响、责任与最终价值。</p></header>
+    <div class="member-contribution-framework">
+      <article class="member-contribution-chapter">
+        <div class="member-contribution-index"><span>01</span><i class="mdi mdi-chart-timeline-variant-shimmer" aria-hidden="true"></i><small>LIMITS OF NUMBERS</small></div>
+        <div class="member-contribution-body">
+          <h3>为什么贡献度难以量化？</h3>
+          <p class="member-contribution-lead">赛季研发不是一条只由成功节点组成的直线。单一结果、工时或上场次数，都不足以还原一个人的真实贡献。</p>
+          <ol class="member-contribution-points">
+            <li><span>01</span><div><h4>贡献具有间接性</h4><p>阶段性失败可能排除错误路线，为后续方案收敛提供燃料。只要过程得到验证并留下可复用的经验，失败也可能推动最终成功。</p></div></li>
+            <li><span>02</span><div><h4>贡献具有隐性</h4><p>陪伴队友、容错兜底、协调矛盾，以及管理、培养与传承等长期投入，往往无法直接转化为技术指标，却真实地维持着团队运转。</p></div></li>
+            <li><span>03</span><div><h4>价值可能延迟显现</h4><p>一个兵种或方案的战略价值，有时直到赛场才会被确认。赛季中的人员与方向判断，必须允许依据真实比赛需求进行后置校正。</p></div></li>
+            <li><span>04</span><div><h4>机会受到战术与资源约束</h4><p>成熟方案也可能因战术取舍、成本限制或资源转移被搁置。评估时既要看最终兑现，也要看工作质量、完成程度与可复用价值。</p></div></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="member-contribution-chapter">
+        <div class="member-contribution-index"><span>02</span><i class="mdi mdi-notebook-check-outline" aria-hidden="true"></i><small>WHY LOGS MATTER</small></div>
+        <div class="member-contribution-body">
+          <h3>难以量化，不代表不应做好日志记录</h3>
+          <p class="member-contribution-lead">日志不是流水账，也不只是名额申辩材料。它首先是队伍对每一个认真工作日的记忆。</p>
+          <ol class="member-contribution-points">
+            <li><span>01</span><div><h4>让付出被记住</h4><p>工作记录应进入项目与队伍历史，成为个人面对正式队员身份时无愧于心的荣誉勋章，也让后来者能够接续经验。</p></div></li>
+            <li><span>02</span><div><h4>让争议回到证据</h4><p>当名额或贡献判断出现分歧时，持续、真实、可核查的日志比临时回忆更可靠，也能最大限度减少纯主观判断。</p></div></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="member-contribution-chapter">
+        <div class="member-contribution-index"><span>03</span><i class="mdi mdi-scale-balance" aria-hidden="true"></i><small>QUALITATIVE REVIEW</small></div>
+        <div class="member-contribution-body">
+          <h3>我们如何分析相对贡献度？</h3>
+          <p class="member-contribution-lead">不追求一条看似精确却失真的公式，而是依据日志、验收、文档和实际影响形成可解释的定性判断。</p>
+          <ol class="member-contribution-points">
+            <li><span>01</span><div><h4>技术贡献依然是最重要的一环</h4><p>成功项目会构成可观贡献；过程失败的项目如果完成经验总结、帮助技术路线排除错误并向成功收敛，同样值得肯定。</p></div></li>
+            <li><span>02</span><div><h4>非技术贡献同样会被看到</h4><p>培训付出、管理协调、团队兜底与传承工作并非老队员理应承担的无偿义务，而是应被记录、认可并由全员共同分摊的贡献。</p></div></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="member-contribution-chapter member-contribution-chapter--belief">
+        <div class="member-contribution-index"><span>04</span><i class="mdi mdi-flag-checkered" aria-hidden="true"></i><small>WHAT A PLACE MEANS</small></div>
+        <div class="member-contribution-body">
+          <h3>名额对于真正热爱比赛的人意味着什么？</h3>
+          <blockquote class="member-contribution-quote">当你不再只盯着名额，而是开始享受 RoboMaster 的过程，沉浸在日复一日的研发与团队责任中，名额往往已经成为长期投入自然形成的结果。</blockquote>
+          <ol class="member-contribution-points">
+            <li><span>01</span><div><h4>名额不是及格线</h4><p>如果只求“能用就行”、不断让标准滑坡，或对团队责任视而不见，即使精于计算，也很难真正承担正式队员的工作。</p></div></li>
+            <li><span>02</span><div><h4>名额是梦想，也是使命</h4><p>它意味着走向赛场的机会，也意味着承担带领队伍重铸荣光的团队责任。得到名额与承担责任，从来不是两件分开的事。</p></div></li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="member-contribution-chapter">
+        <div class="member-contribution-index"><span>05</span><i class="mdi mdi-shield-check-outline" aria-hidden="true"></i><small>OPEN &amp; FAIR</small></div>
+        <div class="member-contribution-body">
+          <h3>队伍如何保障公开透明与相对公平？</h3>
+          <p class="member-contribution-lead">公开透明不是承诺一个绝对客观的数字，而是让记录、过程、标准和最终判断都能够被核查。</p>
+          <ol class="member-contribution-points member-contribution-points--process">
+            <li><span>01</span><div><h4>日志记录与定期核查</h4><p>建立统一记录要求并持续复核，及时纠正错记、漏记与夸大其词，保证贡献证据完整可信。</p></div></li>
+            <li><span>02</span><div><h4>阶段性验收与工作效益评估</h4><p>“做了”“做成功了”和“做得完善”应当有所区分，同时记录失败是否形成有效结论、文档或后续价值。</p></div></li>
+            <li><span>03</span><div><h4>自主申报、日志举证与全员公示</h4><p>名额敲定阶段，由队员填写主要贡献项并附归档日志作为证据，经核查后向全员公示，让资格与依据一目了然。</p></div></li>
+          </ol>
+        </div>
+      </article>
     </div>
+    <aside class="member-contribution-principle"><i class="mdi mdi-eye-check-outline" aria-hidden="true"></i><div><strong>评估原则</strong><p>不把失败简单等同于无贡献，也不把忙碌直接等同于有效贡献。最终判断应始终围绕证据、影响、责任与可复用价值展开。</p></div></aside>
   </section>
 
   <section class="position-layer-section" id="member-quota" aria-labelledby="member-quota-title">
