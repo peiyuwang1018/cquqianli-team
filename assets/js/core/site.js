@@ -1111,10 +1111,16 @@ function initHeavyCoupletEasterEgg() {
   rightCouplet.className = "heavy-couplet heavy-couplet--right";
   rightCouplet.textContent = "远距离重火力自瞄枪枪爆头";
 
+  let closeTimer = 0;
   const setOpen = (open) => {
+    window.clearTimeout(closeTimer);
+    closeTimer = 0;
     document.documentElement.classList.toggle("has-heavy-couplet", open);
     trigger.setAttribute("aria-expanded", String(open));
     trigger.setAttribute("aria-label", open ? "收起重装兵种彩蛋对联" : "展开重装兵种彩蛋对联");
+    if (open) {
+      closeTimer = window.setTimeout(() => setOpen(false), 3000);
+    }
   };
 
   trigger.addEventListener("click", () => {

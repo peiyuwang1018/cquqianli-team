@@ -28217,11 +28217,11 @@ figure.heavy-domain-media img,
 }
 
 .heavy-couplet--left {
-  left: max(86px, calc((100vw - 1080px) / 2 - 86px));
+  left: max(76px, calc((100vw - 1080px) / 2 - 116px));
 }
 
 .heavy-couplet--right {
-  right: max(86px, calc((100vw - 1080px) / 2 - 86px));
+  right: max(76px, calc((100vw - 1080px) / 2 - 116px));
 }
 
 html.has-heavy-couplet .heavy-couplet {
