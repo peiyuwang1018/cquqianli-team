@@ -30068,14 +30068,14 @@ html.has-heavy-couplet .heavy-couplet--right {
 .air-dart-rail {
   position: fixed;
   top: 50%;
-  left: 34px;
+  left: max(72px, calc(50% - 610px));
   z-index: 13;
   display: grid;
-  width: 64px;
+  width: 62px;
   border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--card-bg) 90%, transparent);
+  background: color-mix(in srgb, var(--card-bg) 91%, transparent);
   backdrop-filter: blur(12px);
-  transform: translateY(-50%);
+  transform: translate(-100%, -50%);
 }
 
 .air-dart-aerial,
@@ -30085,10 +30085,10 @@ html.has-heavy-couplet .heavy-couplet--right {
 
 .air-dart-rail a {
   position: relative;
-  min-height: 116px;
+  min-height: 112px;
   padding: 10px 7px;
   display: grid;
-  grid-template-rows: auto 32px 1fr;
+  grid-template-rows: auto 30px 1fr;
   place-items: center;
   gap: 5px;
   color: var(--subtle);
@@ -30131,7 +30131,7 @@ html.has-heavy-couplet .heavy-couplet--right {
 }
 
 .air-dart-rail a.is-active::before {
-  height: 58px;
+  height: 56px;
 }
 
 .air-dart-rail span {
@@ -30140,8 +30140,8 @@ html.has-heavy-couplet .heavy-couplet--right {
 }
 
 .air-dart-rail img {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   filter: brightness(0);
 }
@@ -30802,7 +30802,7 @@ html.has-heavy-couplet .heavy-couplet--right {
   border-left: 2px solid var(--dart-orange);
 }
 
-@media (max-width: 1260px) {
+@media (max-width: 1480px) {
   .dart-spec-grid {
     grid-template-columns: 1fr;
   }
@@ -30812,7 +30812,7 @@ html.has-heavy-couplet .heavy-couplet--right {
     top: 82px;
     left: auto;
     z-index: 12;
-    width: min(1080px, calc(100% - 48px));
+    width: min(var(--max-width), calc(100% - 40px));
     margin: 16px auto 0;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     transform: none;
@@ -30820,7 +30820,7 @@ html.has-heavy-couplet .heavy-couplet--right {
 
   .air-dart-rail a {
     min-height: 48px;
-    grid-template-columns: auto 26px auto;
+    grid-template-columns: auto 25px auto;
     grid-template-rows: 1fr;
     justify-content: center;
     border-right: 1px solid var(--line);
@@ -30846,8 +30846,8 @@ html.has-heavy-couplet .heavy-couplet--right {
   }
 
   .air-dart-rail img {
-    width: 26px;
-    height: 26px;
+    width: 25px;
+    height: 25px;
   }
 
   .air-dart-rail strong {
@@ -31014,5 +31014,923 @@ html.has-heavy-couplet .heavy-couplet--right {
   .dart-testing-media img,
   .dart-testing-media video {
     height: 230px;
+  }
+}
+
+/* Infantry & sentry unit page */
+.unit-sentry-page {
+  --infantry-accent: #177ca8;
+  --infantry-accent-rgb: 23, 124, 168;
+  --sentry-accent: #bd642f;
+  --sentry-accent-rgb: 189, 100, 47;
+  --ground-panel: #f5f6f6;
+}
+
+:root[data-theme="dark"] .unit-sentry-page {
+  --infantry-accent: #62cfff;
+  --infantry-accent-rgb: 98, 207, 255;
+  --sentry-accent: #ff9859;
+  --sentry-accent-rgb: 255, 152, 89;
+  --ground-panel: #151719;
+}
+
+.ground-main {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.ground-main .page-label {
+  color: var(--infantry-accent);
+}
+
+.ground-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.08fr);
+  gap: 64px;
+  align-items: end;
+  padding: 54px 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ground-overview h1 {
+  margin: 0;
+  font-size: clamp(46px, 5.2vw, 68px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.ground-overview-copy > p {
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.ground-overview-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.ground-overview-pairs span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.ground-overview-pairs span:first-child {
+  border-color: color-mix(in srgb, var(--infantry-accent) 48%, var(--line));
+}
+
+.ground-overview-pairs span:last-child {
+  border-color: color-mix(in srgb, var(--sentry-accent) 48%, var(--line));
+}
+
+.ground-overview-pairs img,
+.ground-unit-index img,
+.ground-rail img {
+  object-fit: contain;
+  filter: brightness(0);
+}
+
+:root[data-theme="dark"] .ground-overview-pairs img,
+:root[data-theme="dark"] .ground-unit-index img,
+:root[data-theme="dark"] .ground-rail img {
+  filter: none;
+}
+
+.ground-overview-pairs img {
+  width: 22px;
+  height: 22px;
+}
+
+.ground-rail {
+  position: fixed;
+  top: 50%;
+  left: max(72px, calc(50% - 610px));
+  z-index: 13;
+  display: grid;
+  width: 62px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--card-bg) 91%, transparent);
+  backdrop-filter: blur(12px);
+  transform: translate(-100%, -50%);
+}
+
+.ground-rail a {
+  position: relative;
+  display: grid;
+  min-height: 112px;
+  grid-template-rows: auto 30px 1fr;
+  place-items: center;
+  gap: 5px;
+  padding: 10px 7px;
+  border-bottom: 1px solid var(--line);
+  color: var(--subtle);
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.ground-rail a:last-child {
+  border-bottom: 0;
+}
+
+.ground-rail a::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  width: 3px;
+  height: 0;
+  background: var(--infantry-accent);
+  transition: height 180ms ease;
+}
+
+.ground-rail a[data-ground-nav="sentry"]::before {
+  background: var(--sentry-accent);
+}
+
+.ground-rail a.is-active,
+.ground-rail a:hover,
+.ground-rail a:focus-visible {
+  color: var(--text);
+  outline: 0;
+}
+
+.ground-rail a[data-ground-nav="infantry"].is-active {
+  background: color-mix(in srgb, var(--infantry-accent) 10%, var(--card-bg));
+}
+
+.ground-rail a[data-ground-nav="sentry"].is-active {
+  background: color-mix(in srgb, var(--sentry-accent) 10%, var(--card-bg));
+}
+
+.ground-rail a.is-active::before {
+  height: 56px;
+}
+
+.ground-rail span {
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.ground-rail img {
+  width: 28px;
+  height: 28px;
+}
+
+.ground-rail strong {
+  align-self: center;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  writing-mode: vertical-rl;
+}
+
+.ground-unit {
+  scroll-margin-top: 104px;
+  padding-top: 46px;
+}
+
+.ground-unit + .ground-unit {
+  margin-top: 68px;
+  padding-top: 64px;
+  border-top: 1px solid var(--line);
+}
+
+.ground-unit--sentry .page-label,
+.ground-unit--sentry .ground-unit-index,
+.ground-unit--sentry .ground-heading .page-label {
+  color: var(--sentry-accent);
+}
+
+.ground-unit-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(360px, 0.84fr);
+  gap: 38px;
+  align-items: center;
+  padding-bottom: 42px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ground-unit-hero--sentry {
+  grid-template-columns: minmax(0, 1.16fr) minmax(360px, 0.84fr);
+}
+
+.ground-unit-copy {
+  min-width: 0;
+}
+
+.ground-unit-index {
+  display: grid;
+  grid-template-columns: auto 36px;
+  width: fit-content;
+  gap: 11px;
+  align-items: center;
+  margin-bottom: 18px;
+  color: var(--infantry-accent);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.ground-unit-index img {
+  width: 36px;
+  height: 36px;
+}
+
+.ground-unit-copy h2 {
+  max-width: 660px;
+  margin: 0;
+  font-size: clamp(36px, 4.2vw, 54px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.ground-unit-lead {
+  max-width: 700px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.ground-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.ground-tag-row span {
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--infantry-accent) 50%, var(--line));
+  color: var(--infantry-accent);
+  font-size: 11px;
+}
+
+.ground-unit--sentry .ground-tag-row span {
+  border-color: color-mix(in srgb, var(--sentry-accent) 50%, var(--line));
+  color: var(--sentry-accent);
+}
+
+.ground-hero-media {
+  position: relative;
+  height: 330px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--ground-panel);
+}
+
+.ground-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 46% 0 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.76), transparent);
+  pointer-events: none;
+}
+
+.ground-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ground-unit--infantry .ground-hero-media img {
+  object-position: 50% 62%;
+}
+
+.ground-unit--sentry .ground-hero-media img {
+  object-position: 50% 54%;
+}
+
+.ground-hero-media figcaption {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  left: 22px;
+  z-index: 1;
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 12px;
+}
+
+.ground-hero-media figcaption span {
+  color: var(--infantry-accent);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.ground-unit--sentry .ground-hero-media figcaption span {
+  color: var(--sentry-accent);
+}
+
+.ground-hero-media figcaption strong {
+  font-weight: 400;
+  text-align: right;
+}
+
+.ground-armor-note {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: center;
+  width: fit-content;
+  margin: 18px 0 0;
+  padding: 7px 12px 7px 7px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.ground-armor-note img {
+  width: 72px;
+  height: 48px;
+  object-fit: cover;
+}
+
+.ground-armor-note figcaption {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.ground-mission,
+.ground-domains,
+.ground-growth {
+  padding-top: 54px;
+}
+
+.ground-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 24px;
+}
+
+.ground-heading h2,
+.ground-closing h2 {
+  margin: 0;
+  font-size: clamp(27px, 3.2vw, 39px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.ground-heading > p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ground-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.ground-mission-grid article {
+  position: relative;
+  min-height: 190px;
+  padding: 26px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.ground-mission-grid article > span,
+.ground-domain-card > div > span,
+.ground-tactic-grid article > div > span,
+.sentry-domain-list article > div:last-child > span {
+  color: var(--infantry-accent);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.ground-mission-grid i {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  color: var(--infantry-accent);
+  font-size: 29px;
+}
+
+.ground-mission-grid h3 {
+  margin: 32px 0 9px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.ground-mission-grid p,
+.ground-domain-card p,
+.ground-tactic-grid p,
+.sentry-domain-list p,
+.ground-growth-grid p {
+  font-size: 13px;
+  line-height: 1.78;
+}
+
+.ground-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ground-domain-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.76fr) minmax(0, 1.24fr);
+  min-height: 272px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.ground-domain-card figure {
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: var(--ground-panel);
+}
+
+.ground-domain-card figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.ground-domain-card:nth-child(1) figure img {
+  object-position: 52% 50%;
+}
+
+.ground-domain-card:nth-child(3) figure img {
+  object-position: 52% 50%;
+}
+
+.ground-domain-card:hover figure img,
+.ground-tactic-grid article:hover figure img,
+.sentry-domain-list article:hover figure img {
+  transform: scale(1.025);
+}
+
+.ground-domain-card > div {
+  padding: 24px 22px;
+}
+
+.ground-domain-card h3,
+.ground-tactic-grid h3,
+.sentry-domain-list h3,
+.ground-growth-grid h3 {
+  margin: 11px 0 9px;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.ground-domain-card ul,
+.sentry-domain-list ul {
+  display: grid;
+  gap: 5px;
+  margin: 14px 0 0;
+  padding: 13px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.ground-domain-card li,
+.sentry-domain-list li {
+  position: relative;
+  padding-left: 13px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.ground-domain-card li::before,
+.sentry-domain-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.64em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: var(--infantry-accent);
+}
+
+.ground-tactic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ground-tactic-grid article {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.95fr) minmax(0, 1.05fr);
+  min-height: 300px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.ground-tactic-grid figure {
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: var(--ground-panel);
+}
+
+.ground-tactic-grid figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.ground-tactic-grid article:first-child figure img {
+  object-position: 54% 50%;
+}
+
+.ground-tactic-grid article:last-child figure img {
+  object-position: 44% 50%;
+}
+
+.ground-tactic-grid article > div {
+  padding: 24px 22px;
+}
+
+.ground-tactic-grid article > div > span,
+.sentry-domain-list article > div:last-child > span {
+  color: var(--sentry-accent);
+}
+
+.ground-caption {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--subtle);
+  font-size: 10px !important;
+}
+
+.ground-tactic-grid .text-link {
+  margin-top: 13px;
+  font-size: 11px;
+}
+
+.sentry-domain-list {
+  display: grid;
+  gap: 14px;
+}
+
+.sentry-domain-list article {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.76fr) minmax(0, 1.24fr);
+  min-height: 250px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.sentry-domain-list figure,
+.sentry-domain-icon {
+  min-height: 250px;
+  margin: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--line);
+  background: color-mix(in srgb, var(--sentry-accent) 7%, var(--ground-panel));
+}
+
+.sentry-domain-list figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.sentry-domain-icon {
+  display: grid;
+  place-items: center;
+}
+
+.sentry-domain-icon i {
+  color: var(--sentry-accent);
+  font-size: 82px;
+}
+
+.sentry-domain-list article > div:last-child {
+  align-self: center;
+  padding: 28px 32px;
+}
+
+.sentry-domain-list li::before {
+  background: var(--sentry-accent);
+}
+
+.ground-growth-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.ground-growth-grid article {
+  position: relative;
+  min-height: 220px;
+  padding: 23px 20px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.ground-growth-grid article > span {
+  color: var(--sentry-accent);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ground-growth-grid article > i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--sentry-accent);
+  font-size: 27px;
+}
+
+.ground-growth-grid h3 {
+  margin-top: 43px;
+}
+
+.ground-closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 52px;
+  align-items: center;
+  margin: 72px 0 0;
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ground-closing > div:first-child > p:last-child {
+  max-width: 820px;
+  margin-top: 11px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ground-closing > div:last-child {
+  display: grid;
+  gap: 12px;
+  padding-left: 28px;
+  border-left: 2px solid var(--sentry-accent);
+}
+
+.ground-closing .text-link {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1480px) {
+  .ground-rail {
+    position: sticky;
+    top: 82px;
+    z-index: 12;
+    width: 100%;
+    margin-top: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    transform: none;
+  }
+
+  .ground-rail a {
+    min-height: 48px;
+    grid-template-columns: auto 25px auto;
+    grid-template-rows: none;
+    justify-content: center;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .ground-rail a:last-child {
+    border-right: 0;
+  }
+
+  .ground-rail a::before {
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    width: auto;
+    height: 3px;
+    transform: scaleX(0);
+  }
+
+  .ground-rail a.is-active::before {
+    height: 3px;
+    transform: scaleX(1);
+  }
+
+  .ground-rail img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .ground-rail strong {
+    writing-mode: initial;
+  }
+}
+
+@media (max-width: 1120px) {
+  .ground-overview,
+  .ground-unit-hero,
+  .ground-unit-hero--sentry,
+  .ground-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-overview {
+    gap: 18px;
+  }
+
+  .ground-unit-hero {
+    gap: 28px;
+  }
+
+  .ground-hero-media {
+    height: 380px;
+  }
+
+  .ground-domain-card,
+  .ground-tactic-grid article {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-domain-card figure,
+  .ground-tactic-grid figure {
+    min-height: 190px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ground-domain-card figure img,
+  .ground-tactic-grid figure img {
+    min-height: 190px;
+    height: 190px;
+  }
+
+  .ground-tactic-grid article {
+    min-height: 0;
+  }
+
+  .ground-growth-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .ground-main {
+    width: calc(100% - 28px);
+  }
+
+  .ground-overview {
+    padding-top: 34px;
+  }
+
+  .ground-overview h1 {
+    font-size: 44px;
+  }
+
+  .ground-rail {
+    top: 72px;
+  }
+
+  .ground-unit {
+    padding-top: 34px;
+  }
+
+  .ground-unit + .ground-unit {
+    margin-top: 46px;
+    padding-top: 42px;
+  }
+
+  .ground-unit-copy h2 {
+    font-size: 35px;
+  }
+
+  .ground-hero-media {
+    height: 310px;
+  }
+
+  .ground-hero-media figcaption {
+    display: grid;
+    gap: 2px;
+  }
+
+  .ground-hero-media figcaption strong {
+    text-align: left;
+  }
+
+  .ground-mission-grid,
+  .ground-domain-grid,
+  .ground-tactic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-mission,
+  .ground-domains,
+  .ground-growth {
+    padding-top: 42px;
+  }
+
+  .ground-heading {
+    gap: 10px;
+    padding-bottom: 18px;
+  }
+
+  .ground-heading h2,
+  .ground-closing h2 {
+    font-size: 29px;
+  }
+
+  .sentry-domain-list article {
+    grid-template-columns: 1fr;
+  }
+
+  .sentry-domain-list figure,
+  .sentry-domain-icon {
+    min-height: 210px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sentry-domain-list figure img {
+    min-height: 210px;
+    height: 210px;
+  }
+
+  .ground-closing {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 52px;
+  }
+
+  .ground-closing > div:last-child {
+    padding: 18px 0 0;
+    border-top: 2px solid var(--sentry-accent);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .ground-overview-pairs,
+  .ground-tag-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ground-overview-pairs span {
+    justify-content: center;
+  }
+
+  .ground-rail a {
+    grid-template-columns: 24px auto;
+  }
+
+  .ground-rail a > span {
+    display: none;
+  }
+
+  .ground-hero-media {
+    height: 250px;
+  }
+
+  .ground-domain-card > div,
+  .ground-tactic-grid article > div,
+  .sentry-domain-list article > div:last-child {
+    padding: 22px 18px;
+  }
+
+  .ground-growth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ground-growth-grid article {
+    min-height: 180px;
   }
 }

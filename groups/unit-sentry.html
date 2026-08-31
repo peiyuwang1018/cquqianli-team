@@ -69,10 +69,10 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-39" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260831-67" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="organization">
+  <body class="unit-sentry-page" data-page="organization">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -181,14 +181,135 @@
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main>
-      <section class="page-hero"><div><p class="page-label">INFANTRY &amp; SENTRY UNIT</p><h1>步哨组</h1></div><p>步兵与哨兵保留独立兵种目标，在同一项目组中共享研发组织、测试资源和赛场协作接口。</p></section>
-      <section class="section-block unit-role-grid">
-        <article class="unit-role-card"><div><p class="page-label">INFANTRY</p><h2>步兵机器人</h2><p>承担主要地面作战任务，围绕机动、发射、操控体验与整车稳定性持续迭代。</p></div><figure class="unit-role-logo"><img src="assets/images/brand/vector-icons/infantry.svg" alt="步兵机器人图标" /></figure></article>
-        <article class="unit-role-card"><div><p class="page-label">SENTRY</p><h2>哨兵机器人</h2><p>面向自主运行、持续作战与队伍信息协同，组织感知、决策、控制和机械平台的整机联调。</p></div><figure class="unit-role-logo"><img src="assets/images/brand/vector-icons/sentry.svg" alt="哨兵机器人图标" /></figure></article>
+    <main class="ground-main">
+      <section class="ground-overview" aria-labelledby="ground-title">
+        <div>
+          <p class="page-label">INFANTRY &amp; SENTRY UNIT</p>
+          <h1 id="ground-title">步哨组</h1>
+        </div>
+        <div class="ground-overview-copy">
+          <p>步兵负责把机动与火力送到战场关键位置，哨兵负责把感知、决策与自主作战连成闭环。两个兵种共享研发组织与联调资源，也保留各自明确的战术边界。</p>
+          <div class="ground-overview-pairs" aria-label="步哨组兵种构成">
+            <span><img src="assets/images/brand/vector-icons/infantry.svg" alt="" />步兵 · 机动火力</span>
+            <span><img src="assets/images/brand/vector-icons/sentry.svg" alt="" />哨兵 · 自主作战</span>
+          </div>
+        </div>
       </section>
-      <section class="section-block process-grid"><article><span>01</span><h2>共性平台建设</h2><p>沉淀底盘、发射、供电、通信和测试方法等可跨兵种复用的工程能力。</p></article><article><span>02</span><h2>独立目标验证</h2><p>分别围绕步兵操控与哨兵自主能力建立测试条件和验收指标。</p></article><article><span>03</span><h2>赛场协同</h2><p>结合战术需求完成多车联调、状态确认、维护准备和比赛复盘。</p></article></section>
-      <section class="section-block text-stack"><h2>组织关系</h2><p>步哨组是合组管理的赛季项目组织，步兵与哨兵仍保持各自明确的兵种目标。</p><div class="unit-page-links"><a class="text-link" href="about/organization.html?view=unit#unit-sentry">查看组织架构</a><a class="text-link" href="join/index.html#positions">查看技术组别</a></div></section>
+
+      <aside class="ground-rail" aria-label="步哨组兵种快速导航">
+        <a class="is-active" href="#unit-infantry" data-ground-nav="infantry"><span>01</span><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><strong>步兵</strong></a>
+        <a href="#unit-sentry" data-ground-nav="sentry"><span>02</span><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /><strong>哨兵</strong></a>
+      </aside>
+
+      <section class="ground-unit ground-unit--infantry" id="unit-infantry" data-ground-section="infantry" aria-labelledby="infantry-title">
+        <div class="ground-unit-hero">
+          <div class="ground-unit-copy">
+            <div class="ground-unit-index"><span>01 / INFANTRY</span><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /></div>
+            <p class="page-label">MOBILE FIREPOWER</p>
+            <h2 id="infantry-title">步兵 · 把火力送到关键位置</h2>
+            <p class="ground-unit-lead">步兵是 RoboMaster 赛场上的地面作战单位，使用 17 mm 弹丸，是对敌方机器人造成伤害的主要火力来源。它既要保护己方高价值目标、压制敌方高威胁目标，也要完成激活能量机关、占领堡垒与攻击建筑等任务。</p>
+            <div class="ground-tag-row" aria-label="步兵任务标签"><span>17 mm 火力</span><span>复杂地形机动</span><span>能量机关</span><span>堡垒争夺</span></div>
+          </div>
+          <figure class="ground-hero-media">
+            <img src="assets/images/content/groups/unit-sentry/infantry-overview.jpg" alt="千里战队步兵机器人整机" />
+            <figcaption><span>INFANTRY PLATFORM</span><strong>机动、发射与整车稳定共同决定输出上限</strong></figcaption>
+          </figure>
+        </div>
+
+        <section class="ground-mission" aria-labelledby="infantry-mission-title">
+          <div class="ground-heading"><div><p class="page-label">TACTICAL ROLE</p><h2 id="infantry-mission-title">核心作战单位，也承担场地任务</h2></div><p>步兵的价值不只来自弹丸伤害，而来自它在不同战场位置持续制造优势的能力。</p></div>
+          <div class="ground-mission-grid">
+            <article><span>PRIMARY</span><i class="mdi mdi-shield-sword-outline" aria-hidden="true"></i><h3>保护与压制</h3><p>依靠高机动性保护己方高价值目标，并快速处理对局中威胁最高的敌方单位。</p></article>
+            <article><span>SECONDARY</span><i class="mdi mdi-map-marker-path" aria-hidden="true"></i><h3>机关与堡垒</h3><p>激活大、小能量机关为全队提供增益，占领堡垒以解除敌方基地的近战保护，并在窗口期攻击建筑。</p></article>
+          </div>
+        </section>
+
+        <section class="ground-domains" aria-labelledby="infantry-domain-title">
+          <div class="ground-heading"><div><p class="page-label">FOUR TECHNICAL LINES</p><h2 id="infantry-domain-title">四条技术线，共同托住整车表现</h2></div><p>从底盘通过性到自瞄闭环，每一条技术线都直接影响操作手能否稳定完成战术意图。</p></div>
+          <div class="ground-domain-grid">
+            <article class="ground-domain-card">
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/infantry-mechanical.jpg" alt="步兵机器人通过坡道与复杂地形" /></figure>
+              <div><span>01 / MECHANICAL</span><h3>机械 · 轻量、高机动、能越障</h3><p>结构设计围绕轻量化、移动速度和地形跨越能力展开，需要应对台阶、隧道等复杂区域；发射机构则要保证中近距离的良好散布。</p><ul><li>底盘轻量化与高机动布局</li><li>台阶、隧道等复杂地形通过</li><li>中近距离发射一致性</li></ul></div>
+            </article>
+            <article class="ground-domain-card">
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/infantry-control.jpg" alt="赛场中的步兵机器人" /></figure>
+              <div><span>02 / CONTROL</span><h3>电控 · 自由移动与倒地自起</h3><p>电控把机械方案转化为可操控的整车能力：既要实现自由移动、倒地自起与灵活越障，也要与视觉联调，构建稳定的自动瞄准闭环。</p><ul><li>底盘与云台运动控制</li><li>倒地自起和地形机动</li><li>视觉接口与自瞄联调</li></ul></div>
+            </article>
+            <article class="ground-domain-card">
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/infantry-hardware.jpg" alt="多台步兵机器人整车电气系统联调" /></figure>
+              <div><span>03 / HARDWARE</span><h3>硬件 · 把复杂线路做可靠</h3><p>从焊接制线、整车走线到故障排查，硬件成员维护整车电气可靠性；进一步还要完成硬件设计、PCB 绘制，并以嵌入式基础支撑与电控协作。</p><ul><li>焊接、制线和线路维护</li><li>整车故障定位与排障</li><li>原理图、PCB 与嵌入式基础</li></ul></div>
+            </article>
+            <article class="ground-domain-card">
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/infantry-vision.jpg" alt="步兵机器人视觉与运动联调" /></figure>
+              <div><span>04 / VISION</span><h3>视觉 · 持续跟踪，稳定输出</h3><p>视觉需要高速、准确识别能量机关与装甲板，持续估计目标位置并完成角度解算，再把结果交给云台控制。基础 C++ 阅读与编写能力，是进入这条链路的起点。</p><ul><li>能量机关与装甲板识别</li><li>目标跟踪和位置估计</li><li>角度解算与云台控制</li></ul></div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="ground-unit ground-unit--sentry" id="unit-sentry" data-ground-section="sentry" aria-labelledby="sentry-title">
+        <div class="ground-unit-hero ground-unit-hero--sentry">
+          <div class="ground-unit-copy">
+            <div class="ground-unit-index"><span>02 / SENTRY</span><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></div>
+            <p class="page-label">AUTONOMOUS COMBAT NODE</p>
+            <h2 id="sentry-title">哨兵 · 自主感知、决策与作战</h2>
+            <p class="ground-unit-lead">哨兵在开局即拥有满级血量，不同形态还可获得高额攻防增益。车载计算平台结合战场雷达，让自动瞄准射击、自主导航定位乃至战术决策在同一台机器人上持续运行。</p>
+            <div class="ground-tag-row" aria-label="哨兵任务标签"><span>满级开局</span><span>自动瞄准</span><span>自主导航</span><span>战术决策</span></div>
+            <figure class="ground-armor-note"><img loading="lazy" src="assets/images/content/groups/unit-sentry/sentry-armor-test.jpg" alt="哨兵装甲板实机命中测试" /><figcaption>装甲板与实机命中验证</figcaption></figure>
+          </div>
+          <figure class="ground-hero-media">
+            <img src="assets/images/content/groups/unit-sentry/sentry-mechanical.jpg" alt="哨兵机器人整机结构" />
+            <figcaption><span>SENTRY PLATFORM</span><strong>机械平台、嵌入式控制与算法系统长期在线协同</strong></figcaption>
+          </figure>
+        </div>
+
+        <section class="ground-mission" aria-labelledby="sentry-mission-title">
+          <div class="ground-heading"><div><p class="page-label">TACTICAL ROLE</p><h2 id="sentry-mission-title">能前压，也要守得住家</h2></div><p>高水平哨兵既能在开局建立等级与空间优势，也能在后方稳定承担防守和持续输出。</p></div>
+          <div class="ground-tactic-grid">
+            <article>
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/sentry-forward-pressure.jpg" alt="东北大学 TDT 哨兵前压带动多台机器人进入对方半场" /></figure>
+              <div><span>01 / FORWARD PRESSURE</span><h3>前压与反包围</h3><p>强势哨兵可在赛场前期主动前压，利用等级差异打乱对方部署，甚至在短时间内完成以一敌多的反包围，为己方核心地面单位打开推进空间。</p><p class="ground-caption">图中蓝方东北大学 TDT 依靠哨兵前压，将近战英雄与两台步兵推进至对方半场。</p><a class="text-link" href="https://b23.tv/plqhYr0" target="_blank" rel="noopener noreferrer">查看材料中的赛事案例</a></div>
+            </article>
+            <article>
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/sentry-defense.jpg" alt="哨兵在前哨站附近执行攻击与防守任务" /></figure>
+              <div><span>02 / ATTACK &amp; DEFEND</span><h3>推塔与守家</h3><p>快速处理前哨站、稳定守住己方基地，是哨兵的基本战术要求。精准自瞄既服务于防守，也帮助队伍在对局前期拉开优势。</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="ground-domains" aria-labelledby="sentry-domain-title">
+          <div class="ground-heading"><div><p class="page-label">SYSTEM DISCIPLINES</p><h2 id="sentry-domain-title">三条方向，把自主能力落到实机</h2></div><p>哨兵不是单一算法项目：结构、电控、导航与自瞄需要围绕真实赛场持续联合验证。</p></div>
+          <div class="sentry-domain-list">
+            <article>
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/sentry-control.jpg" alt="哨兵机器人与嵌入式控制代码联调" /></figure>
+              <div><span>01 / CONTROL</span><h3>电控 · 运动、发射与通信底座</h3><p>完成底盘运动、云台及发射机构的精准控制，为视觉提供标准接口，并保证裁判系统通信稳定。技术栈覆盖 STM32 外设、CAN、FreeRTOS、串口与 DMA；调试中还会用到 PID、运动学解算、万用表和示波器。</p><ul><li>真实机器人上的功能验证与参数优化</li><li>软硬件问题快速定位和工程排障</li></ul></div>
+            </article>
+            <article class="sentry-domain-card--mechanical">
+              <div class="sentry-domain-icon"><i class="mdi mdi-axis-arrow" aria-hidden="true"></i></div>
+              <div><span>02 / MECHANICAL</span><h3>机械 · 从图纸到整车</h3><p>参与整车结构设计与装配，完成过洞全向轮等特色底盘方案，并打通图纸设计、零件加工到实物装配的完整流程。方向欢迎所有对机器人结构有热情的同学，不以专业背景作为门槛。</p><ul><li>特色底盘与复杂地形通过</li><li>设计、加工、装配全流程</li></ul></div>
+            </article>
+            <article>
+              <figure><img loading="lazy" src="assets/images/content/groups/unit-sentry/sentry-vision.jpg" alt="哨兵激光 SLAM 建图与自主导航调试" /></figure>
+              <div><span>03 / VISION &amp; NAVIGATION</span><h3>视觉算法 · 自瞄与导航双链路</h3><p>自瞄链路由 YOLO 识别、PnP 位姿、EKF 预测延伸至云台控制；导航链路则覆盖 SLAM 建图、路径规划和避障决策。常用工具包括 C++、Python、ROS、OpenCV、激光 SLAM 与点云处理。</p><ul><li>自主路径与战术行为选择</li><li>算法与电控打通并稳定落地</li></ul></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="ground-growth" aria-labelledby="ground-growth-title">
+          <div class="ground-heading"><div><p class="page-label">FROM TASK TO FIELD</p><h2 id="ground-growth-title">成长发生在完整项目周期里</h2></div><p>从预备队员到正式队员，能力通过阶段任务与实机交付逐步形成。</p></div>
+          <div class="ground-growth-grid">
+            <article><span>01</span><i class="mdi mdi-account-arrow-up-outline" aria-hidden="true"></i><h3>阶段晋升</h3><p>沿预备队员、梯队队员、正式队员路径，通过任务验收完成能力进阶。</p></article>
+            <article><span>02</span><i class="mdi mdi-connection" aria-hidden="true"></i><h3>跨组协作</h3><p>在结构适配、通信协议与联调接口中建立系统性工程思维。</p></article>
+            <article><span>03</span><i class="mdi mdi-source-branch" aria-hidden="true"></i><h3>全周期交付</h3><p>经历方案、代码、联调到赛场实战，并养成版本管理与文档习惯。</p></article>
+            <article><span>04</span><i class="mdi mdi-calendar-clock-outline" aria-hidden="true"></i><h3>稳定投入</h3><p>保证赛季研发时长，并在关键备赛阶段参与集中调试。</p></article>
+          </div>
+        </section>
+      </section>
+
+      <section class="ground-closing">
+        <div><p class="page-label">MOVE, SENSE, DECIDE, FIRE</p><h2>两种地面核心，一套协同方法</h2><p>步兵把人的战术判断转化为敏捷可靠的机动火力，哨兵把感知与决策变成自主作战能力；共同目标，是让整车在真实赛场上稳定完成任务。</p></div>
+        <div><a class="text-link" href="about/organization.html?view=unit#unit-sentry">查看组织架构</a><a class="text-link" href="join/index.html#positions">查看岗位信息</a></div>
+      </section>
     </main>
     <footer class="site-footer">
       <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
@@ -197,6 +318,7 @@
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
     <script src="assets/js/core/site.js?v=20260831-82"></script>
+  <script src="assets/js/pages/unit-sentry.js?v=20260831-1"></script>
   <script src="assets/js/data/mascot-config.js?v=20260831-2"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>
   </body>
