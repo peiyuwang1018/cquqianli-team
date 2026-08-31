@@ -5161,9 +5161,9 @@
   width: 64px;
   padding: 12px 10px;
   border: 0;
-  background: color-mix(in srgb, var(--bg) 78%, transparent);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
   transform: translateY(-50%);
 }
 
