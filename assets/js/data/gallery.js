@@ -137,6 +137,30 @@ window.QIANLI_GALLERY = {
         record: "【简介】重庆大学千里战队参加 RM 2024 机甲大师高校联盟赛（西南站）期间的队伍合照。【服役周期】2024 年 · 高校联盟赛（西南站）"
       },
       {
+        title: "RMUC 2023 南部分区赛",
+        meta: "2023 · 长沙贺龙体育馆",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2023-south-division-he-long.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2023-south-division-he-long.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学 MechaX 战队参加 RMUC 2023 南部分区赛期间的队伍与机器人合照。【服役周期】2023 年 · 长沙贺龙体育馆"
+      },
+      {
+        title: "RM 2023 高校联盟赛西南站",
+        meta: "2023 · 高校联盟赛（西南站）",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2023-alliance-southwest-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2023-alliance-southwest-team.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】重庆大学 MechaX 战队参加 RMUL 2023 高校联盟赛（西南站）期间的团队合影。【服役周期】2023 年 · 高校联盟赛（西南站）"
+      },
+      {
+        title: "2023 赛季 MechaX 队伍合照",
+        meta: "2023 · 实验室",
+        preview: "assets/images/content/archive/gallery/team-photos/previews/2023-mechax-lab-team.jpg",
+        photo: "assets/images/content/archive/gallery/team-photos/originals/2023-mechax-lab-team.jpg",
+        serviceLabel: "拍摄时间",
+        record: "【简介】MechaX 战队 2023 赛季在实验室拍摄的队伍与机器人合照。【服役周期】2023 年 · 实验室"
+      },
+      {
         title: "2022 赛季 MechaX 队伍合照",
         meta: "2022 · 实验室",
         preview: "assets/images/content/archive/gallery/team-photos/previews/2022-mechax-team.jpg",
