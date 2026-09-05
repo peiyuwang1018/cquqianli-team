@@ -951,7 +951,10 @@ function initRecruitLetter() {
 
         <footer class="recruit-letter-signature">
           <span>重庆大学千里战队</span>
-          <a href="join/index.html">查看招新信息 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+          <span class="recruit-letter-signature-links">
+            <a href="articles/letter-to-future-members.html">在文章页阅读 <i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i></a>
+            <a href="join/index.html">查看招新信息 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+          </span>
         </footer>
       </article>
       <nav class="recruit-letter-toc" aria-label="信件目录">

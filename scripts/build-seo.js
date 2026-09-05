@@ -14,6 +14,8 @@ const descriptionOverrides = {
   "about/culture.html": "了解重庆大学千里战队的团队精神、工程文化、协作方式与共同记忆，以及队员如何在赛季中共同成长。",
   "about/history.html": "回顾重庆大学千里战队自 2016 年成立以来的队名演变、赛季征程、比赛成绩与重要发展节点。",
   "about/management.html": "了解重庆大学千里战队的规章制度、项目管理、SOP、知识传承、同伴支持与跨组协作方式。",
+  "articles/index.html": "阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。",
+  "articles/letter-to-future-members.html": "写给想加入重庆大学千里战队的同学：了解 RoboMaster、真实工程协作、队伍期待、时间投入与成长选择。",
   "groups/position-members.html": "了解重庆大学千里战队正式队员的赛季职责、项目协作、技术成长与队伍贡献方式。",
   "groups/position-trainees.html": "了解重庆大学千里战队梯队队员的培养阶段、学习任务、项目实践与转正成长路径。",
   "groups/responsibility-management.html": "了解重庆大学千里战队管理层在赛季目标、项目统筹、资源协调、团队建设与风险管理中的职责。",
@@ -37,6 +39,7 @@ const titleOverrides = {
 };
 
 const sectionParents = {
+  articles: ["千里札记", "articles/index.html"],
   about: ["关于千里", "about/index.html"],
   contact: ["合作招商", "contact/index.html"],
   groups: ["团队架构", "about/organization.html"],
@@ -117,6 +120,25 @@ function homeStructuredData(description) {
   };
 }
 
+function articleStructuredData(relative, pageName, description, canonicalUrl) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbData(relative, pageName, canonicalUrl),
+      {
+        "@type": "Article",
+        headline: pageName,
+        description,
+        mainEntityOfPage: canonicalUrl,
+        image: SOCIAL_IMAGE,
+        inLanguage: "zh-CN",
+        author: { "@type": "Organization", name: "重庆大学千里战队", url: `${SITE_ORIGIN}/` },
+        publisher: { "@type": "Organization", name: "重庆大学千里战队", url: `${SITE_ORIGIN}/` },
+      },
+    ],
+  };
+}
+
 const pages = walkHtml(ROOT).sort();
 const sitemapUrls = [];
 
@@ -148,12 +170,17 @@ for (const file of pages) {
   if (!isNoIndex) {
     const canonicalUrl = `${SITE_ORIGIN}${canonicalPath(relative)}`;
     const pageName = title.replace(/\s*[|｜].*$/, "");
-    const structured = relative === "index.html" ? homeStructuredData(description) : breadcrumbData(relative, pageName, canonicalUrl);
+    const isArticle = relative.startsWith("articles/") && relative !== "articles/index.html";
+    const structured = relative === "index.html"
+      ? homeStructuredData(description)
+      : isArticle
+        ? articleStructuredData(relative, pageName, description, canonicalUrl)
+        : breadcrumbData(relative, pageName, canonicalUrl);
     const seoBlock = [
       MANAGED_START,
       `    <link rel="canonical" href="${canonicalUrl}" />`,
       "    <meta property=\"og:locale\" content=\"zh_CN\" />",
-      "    <meta property=\"og:type\" content=\"website\" />",
+      `    <meta property="og:type" content="${isArticle ? "article" : "website"}" />`,
       "    <meta property=\"og:site_name\" content=\"重庆大学千里战队\" />",
       `    <meta property="og:title" content="${htmlEscape(title)}" />`,
       `    <meta property="og:description" content="${htmlEscape(description)}" />`,

@@ -69,7 +69,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260901-80" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260906-95" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="join">
@@ -94,6 +94,7 @@
             <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
@@ -188,43 +189,63 @@
       </section>
 
       <section class="section-block qa-section" aria-label="常见问题">
-        <div class="qa-heading">
-          <div class="qa-filter-grid" aria-label="问题筛选">
-            <div class="qa-filter-set">
-              <span class="qa-filter-name">对象</span>
-              <label class="qa-filter" for="qa-audience-filter">
-                <i class="mdi mdi-account-search-outline" aria-hidden="true"></i>
-                <select id="qa-audience-filter" aria-label="按提问对象筛选">
-                  <option value="all">全部对象</option>
-                  <option value="freshman">大一新生</option>
-                  <option value="nonfreshman">非新生本科生</option>
-                  <option value="graduate">研究生</option>
-                </select>
-                <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
-              </label>
-            </div>
-            <div class="qa-filter-set">
-              <span class="qa-filter-name">技术组</span>
-              <label class="qa-filter" for="qa-group-filter">
-                <i class="mdi mdi-cog-outline" aria-hidden="true"></i>
-                <select id="qa-group-filter" aria-label="按面向技术组筛选">
-                  <option value="all">全部内容</option>
-                  <option value="general">通用 / 不限组别</option>
-                  <option value="mechanical">机械结构组</option>
-                  <option value="control">电气控制组</option>
-                  <option value="vision">视觉算法组</option>
-                  <option value="hardware">硬件开发组</option>
-                </select>
-                <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
-              </label>
-            </div>
-            <div class="qa-filter-meta">
-              <small class="qa-search-hint"><kbd>Ctrl</kbd> + <kbd>F</kbd> 可以搜索关键词</small>
-              <output class="qa-filter-result" data-qa-count aria-live="polite"></output>
+        <div class="qa-controls-row">
+          <div class="qa-view-switch" role="group" aria-label="切换问答浏览方式">
+            <button class="is-active" type="button" data-qa-view="draw" aria-pressed="true"><i class="mdi mdi-cards-outline" aria-hidden="true"></i><span>抽卡浏览</span></button>
+            <button type="button" data-qa-view="list" aria-pressed="false"><i class="mdi mdi-format-list-bulleted" aria-hidden="true"></i><span>条目浏览</span></button>
+          </div>
+          <div class="qa-heading">
+            <div class="qa-filter-grid" aria-label="问题筛选">
+              <div class="qa-filter-set">
+                <span class="qa-filter-name">对象</span>
+                <label class="qa-filter" for="qa-audience-filter">
+                  <i class="mdi mdi-account-search-outline" aria-hidden="true"></i>
+                  <select id="qa-audience-filter" aria-label="按提问对象筛选">
+                    <option value="all">全部对象</option>
+                    <option value="freshman">大一新生</option>
+                    <option value="nonfreshman">非新生本科生</option>
+                    <option value="graduate">研究生</option>
+                  </select>
+                  <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
+                </label>
+              </div>
+              <div class="qa-filter-set">
+                <span class="qa-filter-name">技术组</span>
+                <label class="qa-filter" for="qa-group-filter">
+                  <i class="mdi mdi-cog-outline" aria-hidden="true"></i>
+                  <select id="qa-group-filter" aria-label="按面向技术组筛选">
+                    <option value="all">全部内容</option>
+                    <option value="general">通用 / 不限组别</option>
+                    <option value="mechanical">机械结构组</option>
+                    <option value="control">电气控制组</option>
+                    <option value="vision">视觉算法组</option>
+                    <option value="hardware">硬件开发组</option>
+                  </select>
+                  <i class="mdi mdi-chevron-down qa-filter-chevron" aria-hidden="true"></i>
+                </label>
+              </div>
+              <div class="qa-filter-meta">
+                <small class="qa-search-hint" data-qa-list-hint hidden><kbd>Ctrl</kbd> + <kbd>F</kbd> 可以搜索关键词</small>
+                <small class="qa-search-hint" data-qa-draw-hint>抽卡遵循当前筛选</small>
+                <output class="qa-filter-result" data-qa-count aria-live="polite"></output>
+              </div>
             </div>
           </div>
         </div>
-        <div class="qa-list" data-qa-list>
+        <div class="qa-list" data-qa-list hidden>
+          <details class="qa-item" data-qa-category="general">
+            <summary><span>通用问题</span><strong>什么样的人可以认为更加适合千里战队和 RM 比赛？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
+            <div class="qa-answer">
+              <p>除了人才画像中提到的优秀品质，我们认为 RM 更适合以下几类人：</p>
+              <ol>
+                <li>敢于不走寻常路、突破传统社会期望的桎梏，并且能够建立独特自我价值体系的人。</li>
+                <li>目前仍比较迷茫，但是想要找到一片归属施展拳脚、潜心沉淀，不急功近利，更注重过程所得的人。</li>
+                <li>热衷于在氛围极佳的团队中互帮互助、共同进步，在利群与利他之后利己的人。</li>
+                <li>对自己的能力边界有清晰认知，明确知道自己想要什么，并且深刻审视过比赛经历的人。</li>
+              </ol>
+              <p>但无论如何，我们都希望你拥有热爱之前的兴趣（想走）、坚韧之前的勇气（敢走），以及突破之前的踏实（在走）。在 RM 这条漫漫长路上，真正有所成长的人，往往都是日拱一卒、持之以恒的人。</p>
+            </div>
+          </details>
           <details class="qa-item" data-qa-category="general">
             <summary><span>通用问题</span><strong>我的成绩不是很好，绩点不是很高，有没有机会加入战队？</strong><i class="mdi mdi-chevron-down" aria-hidden="true"></i></summary>
             <div class="qa-answer">
@@ -316,6 +337,54 @@
           </details>
         </div>
         <p class="qa-empty" data-qa-empty hidden>这个分类下的问题正在整理。</p>
+        <section class="qa-draw-view" data-qa-draw-view aria-label="随机抽取问题">
+          <div class="qa-draw-deck" data-qa-draw-deck>
+            <article class="qa-draw-card qa-draw-card--underlay" data-qa-draw-underlay aria-hidden="true">
+              <header class="qa-draw-card-head">
+                <span data-qa-underlay-category>通用问题</span>
+                <span data-qa-underlay-number>CARD 01 / 01</span>
+              </header>
+              <div class="qa-draw-stage">
+                <div class="qa-draw-question">
+                  <span class="qa-draw-emoji" data-qa-underlay-emoji aria-hidden="true">🛤️</span>
+                  <p class="page-label">THINK BEFORE YOU TURN</p>
+                  <h2 data-qa-underlay-question>下一张问题卡</h2>
+                  <p>先给出自己的答案，再翻开队伍的回答。</p>
+                </div>
+              </div>
+              <footer class="qa-draw-actions qa-draw-actions--placeholder" aria-hidden="true">
+                <span class="qa-draw-flip"><i class="mdi mdi-card-account-details-outline" aria-hidden="true"></i><span>查看回答</span></span>
+              </footer>
+            </article>
+            <article class="qa-draw-card qa-draw-card--active" data-qa-draw-card data-side="question" aria-live="polite">
+              <header class="qa-draw-card-head">
+                <span data-qa-draw-category>通用问题</span>
+                <span data-qa-draw-number>CARD 01 / 01</span>
+              </header>
+              <div class="qa-draw-stage" data-qa-draw-stage>
+                <div class="qa-draw-card-inner" data-qa-draw-inner>
+                  <div class="qa-draw-question qa-draw-face qa-draw-face--front" data-qa-draw-question-side aria-hidden="false">
+                  <span class="qa-draw-emoji" data-qa-draw-emoji aria-hidden="true">🛤️</span>
+                  <p class="page-label">THINK BEFORE YOU TURN</p>
+                  <h2 data-qa-draw-question>什么样的人可以认为更加适合千里战队和 RM 比赛？</h2>
+                  <p>先给出自己的答案，再翻开队伍的回答。</p>
+                  </div>
+                  <div class="qa-draw-answer-side qa-draw-face qa-draw-face--back" data-qa-draw-answer-side aria-hidden="true">
+                    <p class="page-label">QIANLI ANSWERS</p>
+                    <div class="qa-draw-answer" data-qa-draw-answer></div>
+                  </div>
+                </div>
+              </div>
+              <footer class="qa-draw-actions">
+                <button class="qa-draw-flip" type="button" data-qa-draw-flip aria-pressed="false"><i class="mdi mdi-card-account-details-outline" aria-hidden="true"></i><span>查看回答</span></button>
+              </footer>
+            </article>
+          </div>
+          <button class="qa-draw-history" type="button" data-qa-draw-history aria-label="回到上一张问题卡" title="上一张" disabled><i class="mdi mdi-undo-variant" aria-hidden="true"></i><span>上一张</span></button>
+          <button class="qa-draw-next" type="button" data-qa-draw-next aria-label="换一张问题卡" title="换一张"><i class="mdi mdi-cards-playing-outline" aria-hidden="true"></i><span>换一张</span></button>
+          <p class="qa-draw-status" data-qa-draw-status aria-live="polite"></p>
+          <p class="qa-empty" data-qa-draw-empty hidden>当前筛选条件下没有可抽取的问题，可以放宽一个条件再试一次。</p>
+        </section>
       </section>
     </main>
     <footer class="site-footer">
@@ -324,10 +393,10 @@
       <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
-    <script src="assets/js/core/site.js?v=20260831-82"></script>
-    <script src="assets/js/data/qa-data.js?v=20260831-3"></script>
-    <script src="assets/js/pages/qa.js?v=20260831-3"></script>
-  <script src="assets/js/data/mascot-config.js?v=20260831-2"></script>
+    <script src="assets/js/core/site.js?v=20260831-84"></script>
+    <script src="assets/js/data/qa-data.js?v=20260905-4"></script>
+    <script src="assets/js/pages/qa.js?v=20260906-8"></script>
+  <script src="assets/js/data/mascot-config.js?v=20260901-3"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>
   </body>
 </html>

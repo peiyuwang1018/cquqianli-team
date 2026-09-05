@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const vm = require("vm");
 
 const root = path.resolve(__dirname, "..");
 const failures = [];
@@ -52,6 +53,39 @@ for (const file of files.filter((item) => item.endsWith(".js") && !/(?:check|res
   const content = fs.readFileSync(file, "utf8");
   for (const match of content.matchAll(/["'](assets\/(?:images|fonts)\/[^"']+)["']/g)) {
     checkReference(file, match[1], root);
+  }
+}
+
+const articleDataPath = path.join(root, "assets", "js", "data", "qianli-articles.js");
+if (fs.existsSync(articleDataPath)) {
+  const context = { window: {} };
+  vm.runInNewContext(fs.readFileSync(articleDataPath, "utf8"), context, { filename: articleDataPath });
+  const articleData = context.window.QIANLI_ARTICLES;
+  const seenSlugs = new Set();
+  const seenUrls = new Set();
+
+  if (!articleData || !Array.isArray(articleData.categories) || !Array.isArray(articleData.items)) {
+    failures.push("assets/js/data/qianli-articles.js -> invalid article collection");
+  } else {
+    for (const article of articleData.items) {
+      const label = article.slug || article.title || "unnamed article";
+      for (const field of ["slug", "url", "category", "title", "summary", "author", "readingTime"]) {
+        if (!article[field]) failures.push(`assets/js/data/qianli-articles.js -> ${label} missing ${field}`);
+      }
+      if (seenSlugs.has(article.slug)) failures.push(`assets/js/data/qianli-articles.js -> duplicate slug ${article.slug}`);
+      if (seenUrls.has(article.url)) failures.push(`assets/js/data/qianli-articles.js -> duplicate url ${article.url}`);
+      seenSlugs.add(article.slug);
+      seenUrls.add(article.url);
+      if (!articleData.categories.includes(article.category)) {
+        failures.push(`assets/js/data/qianli-articles.js -> ${label} uses unknown category ${article.category}`);
+      }
+      const articlePath = path.join(root, article.url || "");
+      if (!article.url || !fs.existsSync(articlePath)) {
+        failures.push(`assets/js/data/qianli-articles.js -> ${label} page not found at ${article.url || "(missing url)"}`);
+      } else if (article.title && !fs.readFileSync(articlePath, "utf8").includes(article.title)) {
+        failures.push(`assets/js/data/qianli-articles.js -> ${label} title not found in article page`);
+      }
+    }
   }
 }
 

@@ -12,23 +12,23 @@
       }
     </script>
     <!-- /Google Analytics (GA4) -->
-<base href="../" />
+    <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="重庆大学千里战队历史比赛档案，按赛季整理 RoboMaster 赛事经历、参赛记录与比赛资料。" />
+    <meta name="description" content="阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。" />
     <!-- SEO: managed by scripts/build-seo.js -->
-    <link rel="canonical" href="https://team.cquqianli.cn/museum/records.html" />
+    <link rel="canonical" href="https://team.cquqianli.cn/articles/index.html" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="重庆大学千里战队" />
-    <meta property="og:title" content="档案馆 | 重庆大学千里战队" />
-    <meta property="og:description" content="重庆大学千里战队历史比赛档案，按赛季整理 RoboMaster 赛事经历、参赛记录与比赛资料。" />
-    <meta property="og:url" content="https://team.cquqianli.cn/museum/records.html" />
+    <meta property="og:title" content="千里札记 | 重庆大学千里战队" />
+    <meta property="og:description" content="阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。" />
+    <meta property="og:url" content="https://team.cquqianli.cn/articles/index.html" />
     <meta property="og:image" content="https://team.cquqianli.cn/assets/images/brand/%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9C%AA%E6%9D%A5.png" />
     <meta property="og:image:alt" content="重庆大学千里战队" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="档案馆 | 重庆大学千里战队" />
-    <meta name="twitter:description" content="重庆大学千里战队历史比赛档案，按赛季整理 RoboMaster 赛事经历、参赛记录与比赛资料。" />
+    <meta name="twitter:title" content="千里札记 | 重庆大学千里战队" />
+    <meta name="twitter:description" content="阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。" />
     <meta name="twitter:image" content="https://team.cquqianli.cn/assets/images/brand/%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9C%AA%E6%9D%A5.png" />
     <script type="application/ld+json">
     {
@@ -44,25 +44,18 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "千里博物馆",
-          "item": "https://team.cquqianli.cn/museum/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "档案馆",
-          "item": "https://team.cquqianli.cn/museum/records.html"
+          "name": "千里札记",
+          "item": "https://team.cquqianli.cn/articles/index.html"
         }
       ]
     }
     </script>
     <!-- /SEO -->
-<title>档案馆 | 重庆大学千里战队</title>
+<title>千里札记 | 重庆大学千里战队</title>
     <script>
       (() => {
         try {
-          const savedTheme = localStorage.getItem("theme");
-          document.documentElement.dataset.theme = savedTheme || "dark";
+          document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
         } catch {
           document.documentElement.dataset.theme = "dark";
         }
@@ -72,7 +65,7 @@
     <link rel="stylesheet" href="assets/css/styles.css?v=20260906-95" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
-  <body data-page="archive">
+  <body data-page="frontline" class="journal-index-page">
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
         <a class="brand" href="index.html" aria-label="返回首页">
@@ -91,7 +84,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a class="is-active" aria-current="page" href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -132,7 +125,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a class="is-active" aria-current="page" href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
             <span class="nav-dropdown nav-dropdown--museum">
               <span class="nav-dropdown-column">
                 <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
@@ -170,47 +163,80 @@
         </div>
         <div class="nav-utilities">
           <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
-        <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
-          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z" /></svg>
-          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
-        </button>
+          <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12-2.12Z" /></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+          </button>
         </div>
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="museum/projects.html" aria-label="返回档案馆" title="返回档案馆">
+      <a class="page-back-link" href="index.html" aria-label="返回主页" title="返回主页">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
-<main class="records-page">
-      <section class="page-hero archive-page-hero">
-        <div><p class="page-label">TEAM ARCHIVE</p><h1>档案馆</h1></div>
-        <p>归档战队的比赛历程、建设项目、历届成员与集体荣誉。</p>
-        <nav class="archive-tabs" aria-label="档案馆分类">
-          <a href="museum/projects.html"><i class="mdi mdi-hammer-wrench" aria-hidden="true"></i>团队项目</a>
-          <a href="museum/alumni.html"><i class="mdi mdi-account-clock-outline" aria-hidden="true"></i>历届成员</a>
-          <a class="is-active" aria-current="page" href="museum/records.html"><i class="mdi mdi-trophy-variant-outline" aria-hidden="true"></i>历史比赛</a>
-          <a href="museum/honors.html"><i class="mdi mdi-medal-outline" aria-hidden="true"></i>荣誉墙</a>
-        </nav>
+<main>
+      <section class="journal-hero">
+        <div>
+          <p class="page-label">QIANLI JOURNAL</p>
+          <h1>千里札记</h1>
+        </div>
+        <p>记录赛季之外更完整的思考：我们怎样做工程、怎样成为队友，也怎样把一支战队的经验和记忆留给后来的人。</p>
       </section>
-      <section class="section-block match-archive" data-match-archive>
-        <header class="match-archive-heading">
-          <div><p class="page-label">HISTORICAL MATCHES</p><h2>历史比赛</h2></div>
-          <p data-match-scope>已收录 RMUC 超级对抗赛与 RMUL 高校联盟赛公开比赛记录。</p>
-          <div class="competition-filter-bar match-filter-bar" aria-label="筛选历史比赛">
-            <label>
-              <span>年份</span>
-              <select data-match-year aria-label="按年份筛选比赛"></select>
+
+      <section class="journal-browser" aria-label="文章列表">
+        <div class="journal-browser-layout">
+          <aside class="journal-sidebar" aria-label="筛选与排序">
+            <h2>筛选与排序</h2>
+            <label class="journal-sort">
+              <span>排序方式</span>
+              <select data-article-sort>
+                <option value="featured">推荐优先</option>
+                <option value="title">按标题排序</option>
+              </select>
             </label>
-            <label>
-              <span>赛段</span>
-              <select data-match-stage aria-label="按赛段筛选比赛"></select>
-            </label>
-            <output data-match-count aria-live="polite">0 场</output>
+            <div class="journal-filter-group">
+              <p>文章类别</p>
+              <div class="journal-filter-list" aria-label="按文章类别筛选">
+                <button class="is-active" type="button" data-article-filter="全部" aria-pressed="true">全部</button>
+                <button type="button" data-article-filter="千里故事" aria-pressed="false">千里故事</button>
+                <button type="button" data-article-filter="赛季日志" aria-pressed="false">赛季日志</button>
+                <button type="button" data-article-filter="工程札记" aria-pressed="false">工程札记</button>
+                <button type="button" data-article-filter="队伍动态" aria-pressed="false">队伍动态</button>
+                <button type="button" data-article-filter="开放资料" aria-pressed="false">开放资料</button>
+              </div>
+            </div>
+          </aside>
+
+          <div class="journal-results">
+            <header class="journal-toolbar">
+              <label class="journal-search">
+                <i class="mdi mdi-magnify" aria-hidden="true"></i>
+                <span class="sr-only">搜索文章</span>
+                <input type="search" placeholder="搜索文章" data-article-search />
+              </label>
+              <div class="journal-results-actions">
+                <span class="journal-count" data-article-count aria-live="polite"></span>
+                <div class="journal-view-toggle" aria-label="切换文章排列方式">
+                  <button class="is-active" type="button" data-article-view="grid" aria-label="网格排列" aria-pressed="true"><i class="mdi mdi-view-grid-outline" aria-hidden="true"></i></button>
+                  <button type="button" data-article-view="list" aria-label="列表排列" aria-pressed="false"><i class="mdi mdi-format-list-bulleted" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </header>
+
+            <div class="journal-grid" data-article-grid></div>
+            <div class="journal-empty" data-article-empty hidden>
+              <i class="mdi mdi-text-search" aria-hidden="true"></i>
+              <h2>没有找到匹配的文章</h2>
+              <p>可以换一个关键词，或回到“全部”继续浏览。</p>
+            </div>
           </div>
-        </header>
-        <section class="match-season-summary" aria-live="polite" data-match-season-summary></section>
-        <div class="match-list" data-match-list></div>
+        </div>
+      </section>
+
+      <section class="journal-principle" aria-label="栏目说明">
+        <p class="page-label">WHY WE WRITE</p>
+        <p>新闻回答“现在发生了什么”，札记讲清来龙去脉、方法与人的感受；不追求频繁更新，只留下值得保留的内容。</p>
       </section>
     </main>
     <footer class="site-footer">
@@ -219,23 +245,10 @@
       <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
-    <script src="assets/js/data/matches.js?v=20260827-2"></script>
+    <script src="assets/js/data/qianli-articles.js?v=20260905-1"></script>
+    <script src="assets/js/pages/qianli-articles.js?v=20260905-2"></script>
     <script src="assets/js/core/site.js?v=20260831-84"></script>
-    <script src="assets/js/pages/records.js?v=20260827-3"></script>
   <script src="assets/js/data/mascot-config.js?v=20260901-3"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
