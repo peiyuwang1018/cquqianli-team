@@ -199,6 +199,22 @@ window.QIANLI_QA = [
     ]
   },
   {
+    emoji: "🖥️", question: "千里机械组使用什么软件做设计？", category: "机械结构组",
+    audiences: ["freshman", "nonfreshman"], groups: ["mechanical"],
+    answer: [
+      "机械组使用 Fusion 进行建模设计，主要原因有三：",
+      {
+        type: "ordered-list",
+        items: [
+          "Autodesk 为高校学生提供免费的教育许可证。教育版 Fusion 几乎可以使用软件的全部功能，包括用于仿真的无限制积分和 Fusion 独有的衍生式设计模块。",
+          "Fusion 拥有集成的协作空间，图纸存储在云空间并对所有团队成员可见，项目进度一目了然，也便于模块引用、移植以及新人读图学习。",
+          "Fusion 的混合设计模式与时间轴两大特性提供了非常自然的自顶向下设计体验：建模流程可以复盘，也让后续修改更加流畅。"
+        ]
+      },
+      "此外，Fusion 还支持插件扩展，集成紧固件库，也方便导入第三方零件库；对新手同样友好，相较其他工业建模软件，其上手曲线更加平缓。主要缺点是需要保持良好的网络环境。"
+    ]
+  },
+  {
     emoji: "🔧", question: "动手能力不强，可以只做机械设计、不做装配吗？", category: "机械结构组",
     audiences: ["freshman", "nonfreshman"], groups: ["mechanical"],
     answer: [
