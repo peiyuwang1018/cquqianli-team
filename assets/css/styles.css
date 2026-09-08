@@ -14678,6 +14678,42 @@ html.has-culture-report {
   grid-column: 2;
 }
 
+.contact-channel-card--lab {
+  grid-template-columns: 30px minmax(0, 1fr) 68px;
+}
+
+.contact-channel-card--lab > .contact-guide-preview {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.contact-guide-preview {
+  align-self: center;
+  width: 68px;
+  aspect-ratio: 3 / 4;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  cursor: zoom-in;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.contact-guide-preview:hover,
+.contact-guide-preview:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent);
+  transform: translateY(-2px);
+}
+
+.contact-guide-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 a.contact-channel-card--direct:hover,
 a.contact-channel-card--direct:focus-visible {
   border-color: color-mix(in srgb, var(--accent) 62%, var(--line));
@@ -14746,6 +14782,22 @@ a.contact-channel-card--direct:focus-visible {
   font-size: 18px;
   font-weight: 500;
   text-align: center;
+}
+
+.contact-qr-lightbox.is-guide-preview {
+  width: min(760px, calc(100% - 24px));
+}
+
+.contact-qr-lightbox.is-guide-preview .contact-qr-lightbox__panel {
+  padding: 52px 30px 28px;
+}
+
+.contact-qr-lightbox.is-guide-preview figure img {
+  width: min(620px, 100%);
+  height: auto;
+  max-height: calc(100vh - 150px);
+  aspect-ratio: auto;
+  padding: 0;
 }
 
 .partner-section,
@@ -28114,6 +28166,44 @@ html.is-home-idle-resting {
   transform: rotate(45deg);
 }
 
+.home-mascot-target-pointer {
+  position: fixed;
+  inset: 0;
+  z-index: 17;
+  width: 100vw;
+  height: 100vh;
+  color: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.home-mascot-target-pointer[hidden] {
+  display: none;
+}
+
+.home-mascot-target-pointer.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.home-mascot-target-pointer svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.home-mascot-target-pointer path[data-home-mascot-pointer-path] {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 7 8;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .28));
+}
+
 .home-mascot-message {
   color: var(--text);
   font-size: 15px;
@@ -28183,7 +28273,8 @@ html.is-home-idle-resting {
   }
 
   .home-mascot-bubble,
-  .home-mascot-prompt {
+  .home-mascot-prompt,
+  .home-mascot-target-pointer {
     transition: none;
   }
 }

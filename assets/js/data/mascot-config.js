@@ -41,6 +41,17 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
         { text: "准备投递前，记得去加入我们页面完成一次自检。", href: "join/guide.html#self-check-title", label: "开始投递自检" },
       ],
     },
+    "join/find-qianli.html": {
+      messages: [
+        { text: "线下参观实验室可以点击此图查看" },
+      ],
+      autoPrompt: {
+        text: "线下参观实验室可以点击此图查看",
+        target: "[data-offline-guide-preview]",
+        visibleMs: 4000,
+        hiddenMs: 6000,
+      },
+    },
     "join/learn-rm.html": {
       messages: [
         { text: "🥚 为什么对于 RM 比赛来说，传承如此重要？" },

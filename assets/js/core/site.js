@@ -152,6 +152,7 @@ qrPreviewButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const image = button.querySelector("img");
     if (!qrLightbox || !qrLightboxImage || !image) return;
+    qrLightbox.classList.toggle("is-guide-preview", button.dataset.previewKind === "guide");
     qrLightboxImage.src = image.src;
     qrLightboxImage.alt = image.alt;
     if (qrLightboxTitle) qrLightboxTitle.textContent = button.dataset.qrTitle || image.alt;
@@ -159,10 +160,16 @@ qrPreviewButtons.forEach((button) => {
   });
 });
 
-qrLightboxClose?.addEventListener("click", () => qrLightbox.close());
+const closeQrLightbox = () => {
+  qrLightbox?.close();
+  qrLightbox?.classList.remove("is-guide-preview");
+};
+
+qrLightboxClose?.addEventListener("click", closeQrLightbox);
 qrLightbox?.addEventListener("click", (event) => {
-  if (event.target === qrLightbox) qrLightbox.close();
+  if (event.target === qrLightbox) closeQrLightbox();
 });
+qrLightbox?.addEventListener("close", () => qrLightbox.classList.remove("is-guide-preview"));
 
 function initBrandWordmarkFlip() {
   document.querySelectorAll(".brand-text small").forEach((wordmark) => {
