@@ -20287,6 +20287,11 @@ a.contact-channel-card--direct:focus-visible {
   border-top: 1px solid var(--line);
 }
 
+.resource-file-group:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
 .resource-file-group-heading {
   display: grid;
   grid-template-columns: minmax(0, .8fr) minmax(280px, 1.2fr);
