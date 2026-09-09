@@ -848,6 +848,25 @@ function initRecruitLetter() {
   trigger.setAttribute("title", "给想加入千里的你");
   trigger.innerHTML = '<i class="mdi mdi-email-heart-outline" aria-hidden="true"></i>';
 
+  let homeShortcuts = null;
+  if (document.body.dataset.page === "home") {
+    homeShortcuts = document.createElement("nav");
+    homeShortcuts.className = "home-side-shortcuts";
+    homeShortcuts.setAttribute("aria-label", "首页快捷入口");
+    homeShortcuts.innerHTML = `
+      <a class="home-side-shortcut" href="season/index.html" aria-label="前往千里要闻" data-shortcut-label="新闻">
+        <i class="mdi mdi-newspaper-variant-outline" aria-hidden="true"></i>
+      </a>
+      <a class="home-side-shortcut" href="articles/index.html" aria-label="前往千里札记" data-shortcut-label="博客">
+        <i class="mdi mdi-book-open-page-variant-outline" aria-hidden="true"></i>
+      </a>
+    `;
+    trigger.classList.add("home-side-shortcut");
+    trigger.dataset.shortcutLabel = "一封信";
+    trigger.removeAttribute("title");
+    homeShortcuts.append(trigger);
+  }
+
   const dialog = document.createElement("dialog");
   dialog.className = "recruit-letter-dialog";
   dialog.setAttribute("aria-labelledby", "recruit-letter-title");
@@ -1047,7 +1066,8 @@ function initRecruitLetter() {
     document.documentElement.classList.remove("has-recruit-letter");
   });
 
-  document.body.append(trigger, dialog);
+  if (homeShortcuts) document.body.append(homeShortcuts, dialog);
+  else document.body.append(trigger, dialog);
 }
 
 function initSiteStats() {

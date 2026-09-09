@@ -9538,7 +9538,50 @@ html.has-recruit-letter {
   outline: 0;
 }
 
+body[data-page="home"] .home-side-shortcuts {
+  position: fixed;
+  top: 50%;
+  right: calc(clamp(30px, 3.2vw, 58px) - 5px);
+  z-index: 19;
+  display: grid;
+  gap: 12px;
+  transform: translateY(-50%);
+}
+
+body[data-page="home"] .home-side-shortcut {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--accent) 72%, var(--line));
+  border-radius: 11px;
+  background: var(--card-bg);
+  color: var(--accent);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  cursor: pointer;
+  transform: none;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+body[data-page="home"] .home-side-shortcut i {
+  font-size: 25px;
+  line-height: 1;
+}
+
+body[data-page="home"] .home-side-shortcut:hover,
+body[data-page="home"] .home-side-shortcut:focus-visible {
+  background: var(--accent);
+  color: #111;
+  transform: translateX(-4px);
+  outline: 0;
+}
+
 body[data-page="home"] .recruit-letter-trigger {
+  position: relative;
+  inset: auto;
   animation: recruit-letter-attention 5s ease-out infinite;
 }
 
@@ -9548,7 +9591,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  body[data-page="home"] .recruit-letter-trigger::before {
+  body[data-page="home"] .home-side-shortcut::before {
     position: absolute;
     top: 50%;
     right: calc(100% + 15px);
@@ -9556,7 +9599,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
     padding: 8px 13px;
     border: 1px solid color-mix(in srgb, var(--accent) 52%, var(--line));
     border-radius: 4px;
-    content: "想要加入？";
+    content: attr(data-shortcut-label);
     background: var(--card-bg);
     color: var(--text);
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
@@ -9570,7 +9613,7 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
     transition: opacity 180ms ease, transform 180ms ease;
   }
 
-  body[data-page="home"] .recruit-letter-trigger::after {
+  body[data-page="home"] .home-side-shortcut::after {
     position: absolute;
     top: 50%;
     right: calc(100% + 8px);
@@ -9586,20 +9629,20 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
     transition: opacity 180ms ease, transform 180ms ease;
   }
 
-  body[data-page="home"] .recruit-letter-trigger:hover::before,
-  body[data-page="home"] .recruit-letter-trigger:hover::after,
-  body[data-page="home"] .recruit-letter-trigger:focus-visible::before,
-  body[data-page="home"] .recruit-letter-trigger:focus-visible::after {
+  body[data-page="home"] .home-side-shortcut:hover::before,
+  body[data-page="home"] .home-side-shortcut:hover::after,
+  body[data-page="home"] .home-side-shortcut:focus-visible::before,
+  body[data-page="home"] .home-side-shortcut:focus-visible::after {
     opacity: 1;
   }
 
-  body[data-page="home"] .recruit-letter-trigger:hover::before,
-  body[data-page="home"] .recruit-letter-trigger:focus-visible::before {
+  body[data-page="home"] .home-side-shortcut:hover::before,
+  body[data-page="home"] .home-side-shortcut:focus-visible::before {
     transform: translate(0, -50%);
   }
 
-  body[data-page="home"] .recruit-letter-trigger:hover::after,
-  body[data-page="home"] .recruit-letter-trigger:focus-visible::after {
+  body[data-page="home"] .home-side-shortcut:hover::after,
+  body[data-page="home"] .home-side-shortcut:focus-visible::after {
     transform: translate(0, -50%) rotate(45deg);
   }
 }
@@ -9948,6 +9991,28 @@ body[data-page="home"] .recruit-letter-trigger:focus-visible {
     width: 48px;
     height: 48px;
     transform: translateY(-50%);
+  }
+
+  body[data-page="home"] .home-side-shortcuts {
+    right: 7px;
+    gap: 10px;
+  }
+
+  body[data-page="home"] .home-side-shortcut {
+    width: 43px;
+    height: 43px;
+    border-radius: 10px;
+  }
+
+  body[data-page="home"] .recruit-letter-trigger {
+    top: auto;
+    right: auto;
+    transform: none;
+  }
+
+  body[data-page="home"] .home-side-shortcut:hover,
+  body[data-page="home"] .home-side-shortcut:focus-visible {
+    transform: translateX(-3px);
   }
 
   .recruit-letter-dialog {
