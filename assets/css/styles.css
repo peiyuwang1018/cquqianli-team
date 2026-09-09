@@ -24060,10 +24060,56 @@ body[data-page="home"] .site-footer a:focus-visible {
 }
 
 .home-snap-section--overview {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px 0;
+}
+
+.home-scroll-cue {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  width: 56px;
+  height: 38px;
+  place-items: center;
+  color: var(--green);
+  transform: translateX(-50%);
+}
+
+.home-scroll-cue i {
+  font-size: 48px;
+  line-height: 1;
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .32) 28%, #000 62%, #000 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .32) 28%, #000 62%, #000 100%);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .home-scroll-cue i {
+    background: linear-gradient(180deg, #38f886 0%, #dfff3f 34%, #5cfc90 68%, #38f886 100%);
+    background-position: 50% 100%;
+    background-size: 100% 260%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: home-scroll-cue-gradient 1.5s linear infinite;
+  }
+}
+
+@keyframes home-scroll-cue-gradient {
+  from { background-position: 50% 100%; }
+  to { background-position: 50% 0%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-scroll-cue i {
+    animation: none;
+    background-position: 50% 50%;
+  }
 }
 
 .home-snap-section--overview .home-hero {
@@ -25042,7 +25088,7 @@ body[data-page="home"] .site-footer a:focus-visible {
   position: relative;
   display: grid;
   align-items: center;
-  padding: 48px 0;
+  padding: 48px 0 68px;
   border-top: 1px solid var(--line);
   overflow: hidden;
 }
@@ -25552,7 +25598,7 @@ body[data-page="home"] .home-snap-section--thanks > .site-footer {
   }
 
   .home-discover {
-    padding: 38px 0;
+    padding: 38px 0 58px;
   }
 
   .home-discover-inner {
