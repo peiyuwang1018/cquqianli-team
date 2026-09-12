@@ -69,7 +69,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260906-95" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260912-2" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="organization">
@@ -91,7 +91,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a href="season/frontline.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -406,7 +406,7 @@
           <div class="mechanical-phase-tabs" role="tablist" aria-label="大一培养阶段" data-mechanical-tabset="phase">
             <button id="mechanical-phase-autumn-tab" type="button" role="tab" aria-selected="true" aria-controls="mechanical-phase-autumn" data-mechanical-tab="mechanical-phase-autumn"><span>01</span><small>入队—寒假前</small><strong>秋季学习期</strong><em>基础课程 + 实训 + 考核</em></button>
             <button id="mechanical-phase-winter-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-winter" data-mechanical-tab="mechanical-phase-winter" tabindex="-1"><span>02</span><small>寒假阶段</small><strong>寒假集训期</strong><em>进阶培训课程</em></button>
-            <button id="mechanical-phase-spring-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-spring" data-mechanical-tab="mechanical-phase-spring" tabindex="-1"><span>03</span><small>3 月开学后</small><strong>研发实习期</strong><em>真实项目贡献</em></button>
+            <button id="mechanical-phase-spring-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-spring" data-mechanical-tab="mechanical-phase-spring" tabindex="-1"><span>03</span><small>3 月开学后</small><strong>梯队研发实习<i class="mdi mdi-star-four-points mechanical-stage-star" aria-hidden="true"></i></strong><em>真实项目贡献</em></button>
             <button id="mechanical-phase-finish-tab" type="button" role="tab" aria-selected="false" aria-controls="mechanical-phase-finish" data-mechanical-tab="mechanical-phase-finish" tabindex="-1"><span>04</span><small>赛季末</small><strong>梯队结业考试</strong><em>贡献换算 + 考试</em></button>
           </div>
 
@@ -432,11 +432,12 @@
                 </div>
               </div>
               <div class="mechanical-parallel-work">
-                <header><span>ECHELON ASSESSMENT</span><h4>上半学期梯队考核 · 满分 100 分</h4><p>考勤论坛、开源学习汇报和 CAD 设计大作业共同组成基础考评，研发参与贡献作为后续任务介入的重要依据。</p></header>
+                <header><span>ECHELON ASSESSMENT</span><h4>上半学期梯队考核 · 满分 100 分</h4><p>四项考核共同组成基础考评；研发参与贡献单独评估，作为后续任务介入的重要依据。</p></header>
                 <div>
                   <article><i class="mdi mdi-calendar-check-outline" aria-hidden="true"></i><small>10 分</small><h5>日常考勤和论坛讨论</h5><p>记录日常参与和论坛讨论表现。</p></article>
-                  <article><i class="mdi mdi-presentation-play" aria-hidden="true"></i><small>40 分</small><h5>文明经典开源学习汇报</h5><p>初定四次、两周一次，每次提交文档总结并完成小组汇报。</p></article>
-                  <article><i class="mdi mdi-cube-scan" aria-hidden="true"></i><small>50 分</small><h5>CAD 设计大作业</h5><p>可选自主设计或复刻两个难度梯度，包括设计和最终答辩。</p></article>
+                  <article><i class="mdi mdi-presentation-play" aria-hidden="true"></i><small>30 分</small><h5>文明经典开源学习汇报</h5><p>共 3 次，每次 10 分；提交文档总结并完成小组汇报。</p></article>
+                  <article><i class="mdi mdi-cube-outline" aria-hidden="true"></i><small>20 分</small><h5>Fusion 设计练习</h5><p>共 4 次，每次 5 分，分阶段检查 Fusion 建模基础。</p></article>
+                  <article><i class="mdi mdi-cube-scan" aria-hidden="true"></i><small>40 分</small><h5>Fusion 设计大作业</h5><p>可选自主设计或复刻两个难度梯度，包括设计和最终答辩。</p></article>
                 </div>
               </div>
             </section>
@@ -544,39 +545,39 @@
 
           <div class="mechanical-recruitment-viewport" aria-live="polite">
             <article class="mechanical-recruitment-case" data-recruitment-case>
-              <div class="mechanical-recruitment-company"><span>CASE 01</span><h4>舞肌 WUJI</h4><p>机械结构工程师</p><div><em>项目交付</em><em>DFM / DFA</em><em>版本管理</em></div></div>
+              <div class="mechanical-recruitment-company"><span>CASE 01</span><h4>DJI 大疆</h4><p>机械结构工程师</p><div><em>系统分析</em><em>产品交付</em><em>技术研究</em></div></div>
+              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>根据产品功能和需求开展系统分析，将目标转化为合理、创新的结构方案。</li><li>完成产品详细设计，并对设计成本、质量和项目计划负责。</li><li>参与基础性技术研究、专题研究和工程难题攻关。</li><li>具备工程力学、机械结构、材料与常见制造工艺基础。</li><li>重视沟通、闭环思维、动手能力、学习能力以及面对挑战的主动性。</li></ol></div>
+              <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RoboMaster、ROBOCON、航模或方程式大赛等赛事经验列为优先条件。</p></div></aside>
+            </article>
+
+            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
+              <div class="mechanical-recruitment-company"><span>CASE 02</span><h4>舞肌 WUJI</h4><p>机械结构工程师</p><div><em>项目交付</em><em>DFM / DFA</em><em>版本管理</em></div></div>
               <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>以项目和版本为单位，按样机、试产与交付节点完成结构模块交付。</li><li>处理零件堆叠、接口定义、公差链和装配路径，解决跨模块集成问题。</li><li>推进 DFM/DFA、模具、工装、试产和装配问题闭环。</li><li>维护三维模型、工程图、BOM、装配资料和工程变更记录。</li><li>识别磨损、变形、振动、异响等风险，并与上下游共同推动结论落地。</li></ol></div>
               <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RM、RC、工程训练大赛经历列为加分项，创始人或队长经历进一步优先。</p></div></aside>
             </article>
 
             <article class="mechanical-recruitment-case" data-recruitment-case hidden>
-              <div class="mechanical-recruitment-company"><span>CASE 02</span><h4>宇树科技</h4><p>机械工程师</p><div><em>机器人结构</em><em>工艺落地</em><em>生产优化</em></div></div>
+              <div class="mechanical-recruitment-company"><span>CASE 03</span><h4>宇树科技</h4><p>机械工程师</p><div><em>机器人结构</em><em>工艺落地</em><em>生产优化</em></div></div>
               <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>开展机器人机械结构设计与新工艺尝试，让方案进入真实产品。</li><li>负责机器人零部件的结构优化、减速器设计及生产问题处理。</li><li>持续提升产品标准化程度、可服务性、交付效率与稳定性。</li><li>具备三维建模、力学分析、材料和机械制造工艺基础。</li><li>重视动手执行、沟通协作、主动学习和对新知识的热情。</li></ol></div>
               <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>公开岗位将参加机械相关竞赛的经历列为优先条件。</p></div></aside>
             </article>
 
             <article class="mechanical-recruitment-case" data-recruitment-case hidden>
-              <div class="mechanical-recruitment-company"><span>CASE 03</span><h4>拓竹科技</h4><p>机械结构工程师</p><div><em>模块开发</em><em>DFX 评审</em><em>供应链协同</em></div></div>
+              <div class="mechanical-recruitment-company"><span>CASE 04</span><h4>拓竹科技</h4><p>机械结构工程师</p><div><em>模块开发</em><em>DFX 评审</em><em>供应链协同</em></div></div>
               <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>从需求拆解到设计落地，承担运动机构、功能机构和外壳等模块的完整开发。</li><li>输出三维、工程图和 BOM，并对成本、质量与交付进度负责。</li><li>开展技术评审与 DFX，识别可制造性、可靠性和结构失效风险。</li><li>制定测试方案，跟进样机验证与生产问题，形成问题闭环。</li><li>与硬件、工艺和供应链紧密协作，推动模块按节奏进入量产。</li></ol></div>
               <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RoboMaster、RMRC 等机器人竞赛经历和真实动手作品列为加分项。</p></div></aside>
             </article>
 
             <article class="mechanical-recruitment-case" data-recruitment-case hidden>
-              <div class="mechanical-recruitment-company"><span>CASE 04</span><h4>极壳科技</h4><p>机器人结构工程师</p><div><em>结构仿真</em><em>装调测试</em><em>技术文档</em></div></div>
+              <div class="mechanical-recruitment-company"><span>CASE 05</span><h4>极壳科技</h4><p>机器人结构工程师</p><div><em>结构仿真</em><em>装调测试</em><em>技术文档</em></div></div>
               <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>完成机器人结构设计与仿真分析，保障强度、刚度和稳定性。</li><li>与电子、软件和控制团队协同，确保结构与整机系统兼容。</li><li>输出结构零件制造与装配指导资料，参与组装、调试与测试。</li><li>针对测试结果持续优化结构，提高产品性能和生产效率。</li><li>编写设计方案、测试报告和操作手册等完整技术文档。</li></ol></div>
               <aside><i class="mdi mdi-target-variant" aria-hidden="true"></i><div><span>岗位信号</span><p>该岗位没有把竞赛单列为必要条件，更集中考察仿真、装调、测试、文档与跨团队协作的完整性。</p></div></aside>
             </article>
 
             <article class="mechanical-recruitment-case" data-recruitment-case hidden>
-              <div class="mechanical-recruitment-company"><span>CASE 05</span><h4>智元机器人</h4><p>人形机器人关节模组工程师</p><div><em>关节模组</em><em>多物理验证</em><em>量产工艺</em></div></div>
+              <div class="mechanical-recruitment-company"><span>CASE 06</span><h4>智元机器人</h4><p>人形机器人关节模组工程师</p><div><em>关节模组</em><em>多物理验证</em><em>量产工艺</em></div></div>
               <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>完成电机、减速器、编码器、传感器、驱动器和轴承等核心器件的选型与集成。</li><li>负责三维建模、零件细化、公差匹配和完整工程资料输出。</li><li>开展静力、动力、疲劳、散热与振动分析，验证关节性能。</li><li>参与样机加工、装配、调试和测试，闭环干涉、卡顿、过热、异响与精度问题。</li><li>衔接整机控制和供应链生产，并跟踪人形关节前沿技术。</li></ol></div>
               <aside><i class="mdi mdi-target-variant" aria-hidden="true"></i><div><span>岗位信号</span><p>岗位把要求推进到专业机器人底层模块，强调跨器件集成、多物理验证和从样机到量产的完整能力。</p></div></aside>
-            </article>
-
-            <article class="mechanical-recruitment-case" data-recruitment-case hidden>
-              <div class="mechanical-recruitment-company"><span>CASE 06</span><h4>DJI 大疆</h4><p>机械结构工程师</p><div><em>系统分析</em><em>产品交付</em><em>技术研究</em></div></div>
-              <div class="mechanical-recruitment-requirements"><h5>岗位要求提炼</h5><ol><li>根据产品功能和需求开展系统分析，将目标转化为合理、创新的结构方案。</li><li>完成产品详细设计，并对设计成本、质量和项目计划负责。</li><li>参与基础性技术研究、专题研究和工程难题攻关。</li><li>具备工程力学、机械结构、材料与常见制造工艺基础。</li><li>重视沟通、闭环思维、动手能力、学习能力以及面对挑战的主动性。</li></ol></div>
-              <aside><i class="mdi mdi-trophy-outline" aria-hidden="true"></i><div><span>竞赛信号</span><p>明确将 RoboMaster、ROBOCON、航模或方程式大赛等赛事经验列为优先条件。</p></div></aside>
             </article>
           </div>
 

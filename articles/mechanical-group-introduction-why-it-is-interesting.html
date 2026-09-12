@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLC8RQ7C9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      if (['team.cquqianli.cn', 'team.cquqian.li'].includes(window.location.hostname)) {
+        gtag('config', 'G-4RLC8RQ7C9');
+      }
+    </script>
+    <!-- /Google Analytics (GA4) -->
+    <base href="../" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="从造物、设计、诊断、直接交互与日常创造力出发，理解机械组为什么有趣，以及机械如何贯穿 RoboMaster 的完整赛季。" />
+    <!-- SEO: managed by scripts/build-seo.js -->
+    <link rel="canonical" href="https://team.cquqianli.cn/articles/mechanical-group-introduction-why-it-is-interesting.html" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="重庆大学千里战队" />
+    <meta property="og:title" content="我为什么觉得机械组有趣？ | 技术组导言 01 | 千里札记" />
+    <meta property="og:description" content="从造物、设计、诊断、直接交互与日常创造力出发，理解机械组为什么有趣，以及机械如何贯穿 RoboMaster 的完整赛季。" />
+    <meta property="og:url" content="https://team.cquqianli.cn/articles/mechanical-group-introduction-why-it-is-interesting.html" />
+    <meta property="og:image" content="https://team.cquqianli.cn/assets/images/articles/technical-group-introduction/technical-group-introduction-01-cover.png" />
+    <meta property="og:image:alt" content="绿色机械线稿封面：机械组导言第一篇，我为什么觉得机械组有趣？" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="我为什么觉得机械组有趣？ | 技术组导言 01 | 千里札记" />
+    <meta name="twitter:description" content="从造物、设计、诊断、直接交互与日常创造力出发，理解机械组为什么有趣，以及机械如何贯穿 RoboMaster 的完整赛季。" />
+    <meta name="twitter:image" content="https://team.cquqianli.cn/assets/images/articles/technical-group-introduction/technical-group-introduction-01-cover.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "首页",
+              "item": "https://team.cquqianli.cn/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "千里札记",
+              "item": "https://team.cquqianli.cn/articles/index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "我为什么觉得机械组有趣？",
+              "item": "https://team.cquqianli.cn/articles/mechanical-group-introduction-why-it-is-interesting.html"
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "headline": "我为什么觉得机械组有趣？",
+          "description": "从造物、设计、诊断、直接交互与日常创造力出发，理解机械组为什么有趣，以及机械如何贯穿 RoboMaster 的完整赛季。",
+          "mainEntityOfPage": "https://team.cquqianli.cn/articles/mechanical-group-introduction-why-it-is-interesting.html",
+          "image": "https://team.cquqianli.cn/assets/images/articles/technical-group-introduction/technical-group-introduction-01-cover.png",
+          "inLanguage": "zh-CN",
+          "datePublished": "2026-09-02",
+          "author": {
+            "@type": "Organization",
+            "name": "重庆大学千里战队",
+            "url": "https://team.cquqianli.cn/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "重庆大学千里战队",
+            "url": "https://team.cquqianli.cn/"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- /SEO -->
+<title>我为什么觉得机械组有趣？ | 技术组导言 01 | 千里札记</title>
+    <script>
+      (() => {
+        try {
+          document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260912-2" />
+    <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
+  </head>
+  <body data-page="frontline" class="journal-article-page">
+    <div class="journal-reading-progress" aria-hidden="true"><span data-reading-progress></span></div>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="index.html" aria-label="返回首页">
+          <span class="brand-logos" aria-hidden="true"><img src="assets/images/brand/千里马头logo.PNG" alt="" /></span>
+          <span class="brand-text"><strong>重庆大学千里战队</strong><small>CQU QIANLI</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links">
+          <span class="nav-menu">
+            <a href="about/index.html" data-nav="about" aria-haspopup="true"><i class="mdi mdi-account-group-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">关于千里</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/history.html"><span class="nav-item-label">发展历程</span><i class="mdi mdi-timeline-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/resources.html"><span class="nav-item-label">团队资源</span><i class="mdi mdi-toolbox-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/culture.html"><span class="nav-item-label">精神和文化</span><i class="mdi mdi-fire nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--about" href="about/management.html"><span class="nav-item-label">管理与协作</span><i class="mdi mdi-account-cog-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a class="is-active" aria-current="page" href="season/frontline.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/members.html"><span class="nav-item-label">战队成员</span><i class="mdi mdi-card-account-details-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/calendar.html"><span class="nav-item-label">备赛日历</span><i class="mdi mdi-calendar-clock-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/events.html"><span class="nav-item-label">活动预告</span><i class="mdi mdi-calendar-star nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--organization">
+            <a href="about/organization.html" data-nav="organization" aria-haspopup="true"><i class="mdi mdi-sitemap-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">团队架构</span></a>
+            <span class="nav-dropdown nav-dropdown--organization">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-cog-outline" aria-hidden="true"></i><strong>技术组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--mechanical" href="groups/mechanical.html"><span class="nav-item-label">机械组</span><span class="nav-item-logo nav-item-logo--mechanical" aria-hidden="true"><img src="assets/images/brand/vector-icons/mechanical.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--control" href="groups/control.html"><span class="nav-item-label">电控组</span><span class="nav-item-logo nav-item-logo--control" aria-hidden="true"><img src="assets/images/brand/vector-icons/control.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--vision" href="groups/vision.html"><span class="nav-item-label">视觉组</span><span class="nav-item-logo nav-item-logo--vision" aria-hidden="true"><img src="assets/images/brand/vector-icons/vision.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--hardware" href="groups/hardware.html"><span class="nav-item-label">硬件组</span><span class="nav-item-logo nav-item-logo--hardware" aria-hidden="true"><img src="assets/images/brand/vector-icons/hardware.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--operations" href="groups/operations.html"><span class="nav-item-label">宣运组</span><span class="nav-item-logo nav-item-logo--operations" aria-hidden="true"><img src="assets/images/brand/vector-icons/operations.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-robot" aria-hidden="true"></i><strong>兵种组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-heavy.html"><span class="nav-item-label">重装组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/hero.svg" alt="" /><img src="assets/images/brand/vector-icons/engineer.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-sentry.html"><span class="nav-item-label">步哨组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/infantry.svg" alt="" /><img src="assets/images/brand/vector-icons/sentry.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--unit" href="groups/unit-aerial-dart.html"><span class="nav-item-label">空中飞镖组</span><span class="nav-item-logo-pair" aria-hidden="true"><img src="assets/images/brand/vector-icons/aerial.svg" alt="" /><img src="assets/images/brand/vector-icons/dart.svg" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-clipboard-account-outline" aria-hidden="true"></i><strong>责任组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-management.html"><span class="nav-item-label">管理层</span><span class="nav-item-logo nav-item-logo--horse" aria-hidden="true"><img src="assets/images/brand/group-icons/horse.png" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-tactics.html"><span class="nav-item-label">竞技战术组</span><span class="nav-item-logo nav-item-logo--robomaster" aria-hidden="true"><img src="assets/images/brand/group-icons/robomaster.svg" alt="" /></span></a>
+                <a class="nav-item-with-icon nav-item-with-icon--responsibility" href="groups/responsibility-infrastructure.html"><span class="nav-item-label">基建效率组</span><span class="nav-item-logo nav-item-logo--infrastructure" aria-hidden="true"><img src="assets/images/brand/group-icons/infrastructure.png" alt="" /></span></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-layers-triple-outline" aria-hidden="true"></i><strong>定位组别</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-advisors.html"><span class="nav-item-label">顾问层</span><i class="mdi mdi-account-tie-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-members.html"><span class="nav-item-label">正式队员层</span><i class="mdi mdi-account-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--position" href="groups/position-trainees.html"><span class="nav-item-label">梯队队员层</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu">
+            <a href="museum/index.html" data-nav="archive" aria-haspopup="true"><i class="mdi mdi-bank-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">千里博物馆</span></a>
+            <span class="nav-dropdown nav-dropdown--museum">
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-road-variant" aria-hidden="true"></i><strong>传承之路</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/resources.html"><span class="nav-item-label">资料站</span><i class="mdi mdi-bookshelf nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/projects.html"><span class="nav-item-label">档案馆</span><i class="mdi mdi-archive-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/gallery.html"><span class="nav-item-label">照片墙</span><i class="mdi mdi-image-multiple-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/hall-of-fame.html"><span class="nav-item-label">名人堂</span><i class="mdi mdi-account-star-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+              <span class="nav-dropdown-column">
+                <span class="nav-dropdown-column-title"><i class="mdi mdi-party-popper" aria-hidden="true"></i><strong>轻松一刻</strong></span>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/shop.html"><span class="nav-item-label">周边橱窗</span><i class="mdi mdi-shopping-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/memes.html"><span class="nav-item-label">梗指南</span><i class="mdi mdi-lightbulb-on-outline nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/stories.html"><span class="nav-item-label">故事会</span><i class="mdi mdi-book-open-variant nav-item-mdi" aria-hidden="true"></i></a>
+                <a class="nav-item-with-icon nav-item-with-icon--archive" href="museum/guestbook.html"><span class="nav-item-label">留言板</span><i class="mdi mdi-message-text-outline nav-item-mdi" aria-hidden="true"></i></a>
+              </span>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--join">
+            <a href="join/index.html" data-nav="join" aria-haspopup="true"><i class="mdi mdi-account-plus-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">纳新通道</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/learn-rm.html"><span class="nav-item-label">了解 RM</span><i class="mdi mdi-robot-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/find-qianli.html"><span class="nav-item-label">找到千里</span><i class="mdi mdi-radar nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join is-current" href="join/guide.html"><span class="nav-item-label">加入我们</span><i class="mdi mdi-clipboard-check-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/persona.html"><span class="nav-item-label">人才画像</span><i class="mdi mdi-account-search-outline nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--join" href="join/qa.html"><span class="nav-item-label">Q&amp;A</span><i class="mdi mdi-help-circle-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+          <span class="nav-menu nav-menu--contact">
+            <a href="contact/index.html" data-nav="contact" aria-haspopup="true"><i class="mdi mdi-handshake-outline nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">合作招商</span></a>
+            <span class="nav-dropdown">
+              <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/sponsorship.html"><span class="nav-item-label">赞助合作</span><i class="mdi mdi-domain nav-item-mdi" aria-hidden="true"></i></a>
+              <a class="nav-item-with-icon nav-item-with-icon--contact" href="contact/outreach.html"><span class="nav-item-label">科创教育活动</span><i class="mdi mdi-school-outline nav-item-mdi" aria-hidden="true"></i></a>
+            </span>
+          </span>
+        </div>
+        <div class="nav-utilities">
+          <a class="nav-map-link" href="https://surl.amap.com/3BY4rZMTgqz" target="_blank" rel="noopener noreferrer" aria-label="在高德地图中导航至千里战队实验室" title="导航至千里战队实验室"><i class="mdi mdi-map-marker-radius-outline" aria-hidden="true"></i></a>
+          <button class="theme-toggle" type="button" aria-label="切换明暗模式" aria-pressed="false">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-2.2a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM3.52 4.93l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12Zm13.43 13.43 1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM3.52 19.07l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM16.95 5.64l2.12-2.12 1.41 1.41-2.12-2.12Z" /></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.1 2.1a8.8 8.8 0 0 0 9.8 9.8A10 10 0 1 1 12.1 2.1Zm-2.5 2.8A7.7 7.7 0 1 0 19.1 14.4 10.8 10.8 0 0 1 9.6 4.9Z" /></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="page-back-nav">
+      <a class="page-back-link" href="articles/index.html" aria-label="返回千里札记" title="返回千里札记">
+        <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
+      </a>
+    </div>
+<main>
+      <header class="journal-article-hero">
+        <div class="journal-article-kicker">
+          <a href="articles/index.html?category=knowledge">工程笔记</a>
+          <a class="journal-department-tag journal-department-tag--amber" href="articles/index.html?department=mechanical">机械组</a>
+          <a href="articles/index.html?series=technical-group-introduction">《机械组导言》01</a>
+          <time data-published-date datetime="2026-09-02">发布于 2026.09.02</time>
+          <span>约 12 分钟</span>
+        </div>
+        <p class="page-label">MECHANICAL GROUP INTRODUCTION 01</p>
+        <h1>我为什么觉得机械组有趣？</h1>
+        <p class="journal-article-dek">造物者、艺术家与医生</p>
+        <nav class="journal-article-tags" aria-label="文章主题标签">
+          <a href="articles/index.html?tag=机械组">#机械组</a>
+          <a href="articles/index.html?tag=机械设计">#机械设计</a>
+          <a href="articles/index.html?tag=工程成长">#工程成长</a>
+          <a href="articles/index.html?tag=故障诊断">#故障诊断</a>
+          <a href="articles/index.html?tag=RoboMaster">#RoboMaster</a>
+        </nav>
+        <div class="journal-article-byline">
+          <span>署名待定</span>
+          <button type="button" data-copy-article-link><i class="mdi mdi-link-variant" aria-hidden="true"></i><span>复制链接</span></button>
+        </div>
+      </header>
+
+      <div class="journal-article-layout">
+        <aside class="journal-article-toc" data-article-toc>
+          <p>本文目录</p>
+          <ol>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-01"><span>01</span>造物者</a></li>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-02"><span>02</span>艺术家</a></li>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-03"><span>03</span>医生</a></li>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-04"><span>04</span>看得见摸得着</a></li>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-05"><span>05</span>重新看日常世界</a></li>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-06"><span>06</span>接力第一棒，战至终章</a></li>
+            <li><a href="articles/mechanical-group-introduction-why-it-is-interesting.html#section-07"><span>07</span>为什么有趣</a></li>
+          </ol>
+        </aside>
+
+        <article class="journal-article-content mechanical-intro-article" data-journal-article>
+          <div class="journal-article-opening">
+            <p>如果只从工作内容去介绍机械组，好像非常简单：画 CAD、出图、加工、装配、测试、修车。</p>
+            <p>但这些词很难解释我为什么一直觉得机械组有趣。</p>
+            <p>我第一次接触 RoboMaster 机械时几乎是从零开始。后来做过机器人项目、机械组管理、项目管理，再以退役队员和顾问的身份重新看这件事，我对机械的兴趣其实也发生过变化。最开始可能只是“把一个东西做出来”的满足感，后来逐渐开始在意为什么某个设计更加合理、为什么一台机器会以某种方式失效，以及为什么一些看起来完全不同的结构，背后其实在解决相似的问题。</p>
+            <p>如果现在让我描述机械工程师这个角色，我大概会想到三个并不严格、但很形象的比喻：</p>
+            <aside class="journal-principle-box" aria-label="机械工程师的三个比喻">
+              <span>三个角色</span>
+              <p>造物者、艺术家，以及医生。</p>
+            </aside>
+            <p>它们分别对应了我在机械设计中觉得最有意思的三件事情：<strong>把东西造出来、把东西做得更好，以及真正弄清楚它为什么会这样。</strong></p>
+          </div>
+
+          <section id="section-01">
+            <h2><span>01</span>造物者：从一句话，到一个真实存在的机器</h2>
+            <p>机械最直观的魅力，是很多原本只存在于脑子里的东西，最后真的会变成实物。</p>
+            <p>一个项目开始时，我们面对的可能只是一句很模糊的需求：“机器人需要跨过这个地形。”或者：“这里需要一个机构，把弹丸从弹仓稳定送到发射机构。”接下来，抽象的需求才会逐渐穿过方案、模型、制造和装配，变成一台真正会动的机器。</p>
+            <div class="journal-logic-flow" aria-label="从需求到机器的实现链">
+              <span>需求</span><i class="mdi mdi-arrow-right"></i><span>方案</span><i class="mdi mdi-arrow-right"></i>
+              <span>CAD</span><i class="mdi mdi-arrow-right"></i><span>零件</span><i class="mdi mdi-arrow-right"></i>
+              <span>装配</span><i class="mdi mdi-arrow-right"></i><strong>机器真正动起来</strong>
+            </div>
+            <p>这条链条很有意思，因为它会把抽象世界里的所有东西强行拉回现实。CAD 里的 2 mm 最后真的就是 2 mm；模型里忘记留出的扳手空间，装车时真的会让你拧不到那颗螺丝；理论上不存在的线束，到了实车里不会凭空消失；一个结构“看起来应该够硬”，第一次急停以后也可能真的开始振。</p>
+            <blockquote><strong>你最终必须为自己画下的每一条线负责。</strong></blockquote>
+            <p>这可能也是我很喜欢机械的一点。最终得到的不是一份只存在于屏幕里的结果，而是一台可以看到、摸到、拆开、撞坏、重新加工、再次装回去的机器。</p>
+            <p>一些自己长期参与设计和维护的机器人，很容易因此产生一种很奇怪的情感联结。某块看起来不起眼的板件背后，可能对应着一次半夜返工；某个最后非常简单的结构，前面可能躺着五六个失败方案；某个后来成为“标准做法”的细节，也可能来自某次比赛现场极其狼狈的故障。机器会把这些过程全部留下痕迹。</p>
+
+            <figure class="journal-technical-figure intro-making-figure">
+              <header><span>VISUAL 01</span><strong>从一个想法，到一个真正存在的机器</strong></header>
+              <div class="intro-making-stages" aria-label="草图、CAD、零件和工作机器的实现过程">
+                <article><i class="mdi mdi-pencil-ruler-outline" aria-hidden="true"></i><span>Sketch</span><p>把模糊需求变成可讨论的结构关系。</p></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article><i class="mdi mdi-cube-outline" aria-hidden="true"></i><span>CAD</span><p>让尺寸、约束、接口和装配顺序变得具体。</p></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article><i class="mdi mdi-cog-outline" aria-hidden="true"></i><span>Parts</span><p>加工误差与制造能力开始进入设计。</p></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article><i class="mdi mdi-robot-outline" aria-hidden="true"></i><span>Robot</span><p>现实工况给出无法回避的反馈。</p></article>
+              </div>
+              <figcaption>图纸只是中间状态；真正的设计结果要到机器进入现实以后才开始显现。</figcaption>
+            </figure>
+          </section>
+
+          <section id="section-02">
+            <h2><span>02</span>艺术家：同样能工作，为什么有的设计就是更漂亮？</h2>
+            <p>这里说的“艺术家”，并不是指机械工程师主要负责把东西做得好看。真正让我觉得机械设计有一点“艺术性”的地方，是：<strong>同一个目标通常存在大量不同的实现方式。</strong></p>
+            <p>例如只是想让一个轴转起来，就可能使用电机直驱、同步带、链条、齿轮或行星减速器；电机可以放在转轴附近，也可以挪到远处，再通过传动把运动送回来。想安装一个轴承，也可以直接使用标准轴承座、单独设计一个轴承座，或者把轴承孔加工进主体结构。这些方案可能全部能够工作。</p>
+            <p>真正有意思的问题于是变成：<strong>为什么在这里选择 A，而不是 B？</strong>不同方案交换的并不是一个抽象的“高级程度”，而是质量、空间、刚度、惯量、成本、加工与装配难度、维护性和可靠性。</p>
+            <ul class="journal-keyword-grid" aria-label="机械方案常见的取舍维度">
+              <li>质量</li><li>空间</li><li>刚度</li><li>惯量</li><li>成本</li>
+              <li>加工难度</li><li>装配难度</li><li>维护性</li><li>可靠性</li>
+            </ul>
+            <p>这也是为什么我一直很喜欢“优雅”这个词。所谓优雅并不是零件越少越好，也不是追求某种统一的机械审美，而更接近一种资源使用上的高效：</p>
+            <aside class="journal-principle-box">
+              <span>设计优雅</span>
+              <p>用尽可能恰当的资源，完成尽可能多的必要功能。</p>
+            </aside>
+            <p>如果一个额外结构确实提高了刚度、可靠性、防护或者可维护性，那它就有自己的功能，不是冗余。真正应该被消灭的，是那些付出了质量、空间、零件、加工步骤或者复杂度，却没有带来足够系统价值的东西。</p>
+            <p>所以机械设计中的“漂亮”，很多时候并不是第一眼看上去多酷炫，而是当你开始追问每一个结构为什么存在时，会发现：<strong>好像没有什么东西是随便放在这里的。</strong></p>
+
+            <div class="journal-visual-module intro-solution-explorer" id="same-function-solutions" data-intro-solution>
+              <header>
+                <span>INTERACTIVE 01</span>
+                <h3>Same Function, Different Solutions</h3>
+                <p>需求固定为“驱动一个需要旋转的关节”。选择方案，观察主要取舍如何变化；这里没有脱离工况的排行榜。</p>
+              </header>
+              <div class="journal-segmented-control intro-solution-controls" role="group" aria-label="选择关节传动方案">
+                <button class="is-active" type="button" data-intro-solution-option="direct" aria-pressed="true">Direct Drive</button>
+                <button type="button" data-intro-solution-option="belt" aria-pressed="false">Timing Belt</button>
+                <button type="button" data-intro-solution-option="chain" aria-pressed="false">Chain</button>
+                <button type="button" data-intro-solution-option="gearbox" aria-pressed="false">Gearbox</button>
+              </div>
+              <div class="intro-solution-readout" aria-live="polite">
+                <div><span>Packaging</span><strong data-intro-solution-metric="packaging">紧凑，但电机位置受转轴约束</strong></div>
+                <div><span>Mass</span><strong data-intro-solution-metric="mass">零件较少，电机质量靠近关节</strong></div>
+                <div><span>Backlash</span><strong data-intro-solution-metric="backlash">传动链短，回差来源少</strong></div>
+                <div><span>Maintenance</span><strong data-intro-solution-metric="maintenance">结构直接，拆装路径短</strong></div>
+                <div><span>Torque density</span><strong data-intro-solution-metric="torque">取决于电机本体，缺少额外减速</strong></div>
+              </div>
+              <footer>There is no best mechanism without a context.</footer>
+            </div>
+          </section>
+
+          <section id="section-03">
+            <h2><span>03</span>医生：机器不会告诉你哪里病了</h2>
+            <p>如果说从零设计结构比较像“造物”，那么真正进入测试和比赛以后，机械工程师经常更像医生。</p>
+            <p>机器不会直接告诉你“我的轴承内圈配合太紧”，它只会表现成“刚开始没问题，跑一段时间以后越来越热”。它也不会告诉你“这个发射机构的关键零件缺乏确定定位”，它只会表现成“昨天五米散布很好，今天拆装一次以后突然不准了”。</p>
+            <div class="journal-logic-flow" aria-label="机械故障诊断流程">
+              <span>观察现象</span><i class="mdi mdi-arrow-right"></i><span>提出假设</span><i class="mdi mdi-arrow-right"></i>
+              <span>寻找证据</span><i class="mdi mdi-arrow-right"></i><span>设计测试</span><i class="mdi mdi-arrow-right"></i>
+              <span>排除原因</span><i class="mdi mdi-arrow-right"></i><span>找到病灶</span><i class="mdi mdi-arrow-right"></i><strong>修改</strong>
+            </div>
+            <p>这个过程可能是机械工作里最考验推理，也最容易产生成就感的部分之一。第一次遇到一个问题时，我们可能只知道“以前这样改好像有用”；但如果愿意继续追问为什么有用，并通过测试逐渐确认背后的机制，那么下一次再遇到一个表面完全不同的问题，就可能发现它们本质上其实是一回事。</p>
+            <p>这时候我们获得的就不再只是一个“维修技巧”，而是一条可以迁移到其他设计中的经验。所以我越来越觉得，一名好的机械设计者不仅应该喜欢“把东西做出来”，也应该喜欢：<strong>看机器如何失败。</strong></p>
+            <p>因为很多真正重要的设计知识，并不是在第一次打开 CAD 时获得的，而是在机器进入现实以后暴露出来的。</p>
+            <aside class="journal-principle-box journal-principle-box--compact">
+              <span>让故障真正变成知识</span>
+              <p>故障 → 根因 → 机制 → 修改 → 下一版在设计阶段提前避免</p>
+            </aside>
+
+            <div class="journal-visual-module intro-diagnosis" id="diagnosis-lab" data-intro-diagnosis>
+              <header>
+                <span>INTERACTIVE 02</span>
+                <h3>Diagnosis：从症状走向病灶</h3>
+                <p>现象固定为“Yaw 轴运行一段时间后温度异常升高”。选择一种可能原因，查看需要怎样用测试和证据继续判断。</p>
+              </header>
+              <div class="intro-diagnosis-symptom"><i class="mdi mdi-thermometer-alert" aria-hidden="true"></i><span>Observation</span><strong>运行一段时间后温度异常升高</strong></div>
+              <div class="intro-diagnosis-controls" role="group" aria-label="选择可能原因">
+                <button class="is-active" type="button" data-diagnosis-cause="preload" aria-pressed="true">Bearing preload</button>
+                <button type="button" data-diagnosis-cause="alignment" aria-pressed="false">Misalignment</button>
+                <button type="button" data-diagnosis-cause="friction" aria-pressed="false">Friction</button>
+                <button type="button" data-diagnosis-cause="motor" aria-pressed="false">Motor heating</button>
+                <button type="button" data-diagnosis-cause="cable" aria-pressed="false">Cable interference</button>
+              </div>
+              <div class="intro-diagnosis-path" aria-live="polite">
+                <article><span>Hypothesis</span><p data-diagnosis-hypothesis>轴承预紧或过盈过大，工作温升进一步压缩内部游隙。</p></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article><span>Test</span><p data-diagnosis-test>拆除外部负载，对比冷态启动扭矩、空载电流与温升曲线。</p></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article><span>Evidence</span><p data-diagnosis-evidence>若空载阻力和电流仍偏高，且温升随运行持续加剧，这一假设获得支持。</p></article>
+                <i class="mdi mdi-arrow-right" aria-hidden="true"></i>
+                <article><span>Conclusion</span><p data-diagnosis-conclusion>复核配合、公差与预紧方案，再用同条件测试确认修改是否有效。</p></article>
+              </div>
+              <footer>诊断不是从候选答案里猜一个，而是让证据逐步排除错误解释。</footer>
+            </div>
+          </section>
+
+          <section id="section-04">
+            <h2><span>04</span>“看得见摸得着”本身就很有意思</h2>
+            <p>机械还有一个很朴素的优点：<strong>它离人的感官非常近。</strong></p>
+            <p>你可以拿起零件感受重量，可以转动轴承感觉阻力，可以听出某个传动开始出现异常噪声，可以摸到电机或者轴承座是不是在发热。很多时候甚至不需要复杂仪器，人的视觉、触觉和听觉，本身就已经是第一轮故障诊断工具。</p>
+            <ul class="journal-article-bullets journal-article-bullets--two-column">
+              <li><strong>视觉</strong><span>观察偏移、松动、磨损、变形与运动轨迹。</span></li>
+              <li><strong>触觉</strong><span>感受重量、阻力、间隙、振动与温升。</span></li>
+              <li><strong>听觉</strong><span>辨别摩擦、碰撞、啮合异常和结构共振。</span></li>
+            </ul>
+            <p>当然，真正定量判断最终仍然需要测量和测试，但这种和机器直接接触的过程是机械非常独特的一部分。我以前把它描述成：<strong>与机器“血肉”的直接交互。</strong>这多少有一点夸张，但我确实很喜欢这种感觉。</p>
+          </section>
+
+          <section id="section-05">
+            <h2><span>05</span>它还会慢慢改变你看日常世界的方式</h2>
+            <p>做机械久了以后，会出现一种很有意思的后遗症：看到一个普通产品，也开始忍不住拆它的设计逻辑。</p>
+            <p>为什么三脚架是三条腿？为什么自行车的辐条这么细？为什么显示器支架可以停在任意位置？为什么相机液压云台转起来有一种特殊的“粘滞感”？为什么有些折叠机构展开以后完全不需要电机持续用力，就可以牢牢保持状态？</p>
+            <p>甚至家里某个东西坏掉以后，第一反应也可能逐渐从“重新买一个”，变成“这里能不能加一个打印件？”或者“这个结构是不是可以换一种连接？”这种能力当然不是什么惊天动地的技能，却会慢慢让人觉得很多生活里的东西不再只是一个“黑箱产品”。它们变成了一堆可以理解、修改和重新组合的机械问题。</p>
+
+            <div class="journal-visual-module intro-daily-vision">
+              <header>
+                <span>VISUAL 02</span>
+                <h3>Mechanical vision in daily life</h3>
+                <p>把鼠标或焦点放到这些日常物件上，看看一个机械设计者会先问什么。</p>
+              </header>
+              <div class="intro-daily-grid">
+                <article tabindex="0"><i class="mdi mdi-monitor-shimmer" aria-hidden="true"></i><strong>显示器支架</strong><span>How does it hold?</span></article>
+                <article tabindex="0"><i class="mdi mdi-bike" aria-hidden="true"></i><strong>自行车轮</strong><span>Why spokes?</span></article>
+                <article tabindex="0"><i class="mdi mdi-camera-control" aria-hidden="true"></i><strong>相机云台</strong><span>Friction or damping?</span></article>
+                <article tabindex="0"><i class="mdi mdi-lock-outline" aria-hidden="true"></i><strong>折叠锁扣</strong><span>What locks it?</span></article>
+                <article tabindex="0"><i class="mdi mdi-printer-3d-nozzle-outline" aria-hidden="true"></i><strong>打印修复件</strong><span>Why this geometry?</span></article>
+              </div>
+              <footer>机械直觉的起点，往往只是对一个熟悉物件多问一句“为什么”。</footer>
+            </div>
+
+            <p>所以机械给人的创造力并不只服务于比赛机器人。机器人更像是一个极高密度的练习场，把结构、材料、传动、制造、装配、测试和故障全部压缩到同一台机器上。</p>
+          </section>
+
+          <section id="section-06">
+            <h2><span>06</span>机械组：接力第一棒，也战至终章</h2>
+            <p>RoboMaster 里的机械还有一个很特别的地方。在一个赛季开始时，机械往往很早就需要进入研发。规则公布以后，要尽快完成需求分析、方案、设计、加工、装配和第一版样机，因为没有硬件，后续很多电控、视觉和整机联调工作都无法真正展开。</p>
+            <p>但机械又不会在“机器人造出来”以后结束。真正漫长的部分经常才刚刚开始：第一次测试会暴露问题，结构需要修改和重新加工，随后继续联调、训练赛、维修与迭代，一直持续到正式比赛。</p>
+            <aside class="journal-principle-box">
+              <span>机械组的赛季跨度</span>
+              <p>接力第一棒 + 战至终章</p>
+            </aside>
+            <p>这意味着机械组会完整经历一个产品从想法到现实、再从现实反馈回到设计的全过程。这件事当然意味着大量反复、繁琐和失败，但它也意味着：<strong>你能真正看到一个设计是怎么逐渐成熟起来的。</strong></p>
+
+            <figure class="journal-technical-figure intro-season-figure">
+              <header><span>VISUAL 03</span><strong>从规则发布到正式比赛</strong></header>
+              <div class="intro-season-scroll" tabindex="0" role="region" aria-label="可横向滚动的赛季协作时间线">
+                <div class="intro-season-timeline">
+                  <ol>
+                    <li>Rule Release</li><li>Requirement</li><li>Concept</li><li>CAD</li><li>Prototype</li>
+                    <li>Assembly</li><li>Integration</li><li>Scrimmage</li><li>Competition</li>
+                  </ol>
+                  <div class="intro-season-track intro-season-track--mechanical"><span>机械</span><i></i></div>
+                  <div class="intro-season-track intro-season-track--control"><span>电控 / 视觉协作</span><i></i></div>
+                </div>
+              </div>
+              <p class="journal-scroll-hint"><i class="mdi mdi-gesture-swipe-horizontal" aria-hidden="true"></i>左右滑动查看完整赛季</p>
+              <figcaption>时间线只说明协作如何逐渐展开，不用于比较组别工作量；机械的反馈与迭代会持续到比赛结束。</figcaption>
+            </figure>
+          </section>
+
+          <section id="section-07">
+            <h2><span>07</span>所以，我为什么觉得机械组有趣？</h2>
+            <p>如果把前面的内容压缩一下，大概就是五件事。</p>
+            <div class="journal-review-grid intro-reasons-grid" aria-label="机械组有趣的五个原因">
+              <article><span>01</span><h3>造物</h3><ul><li>把“我觉得可以这样做”变成真的在那里、真的会动。</li></ul></article>
+              <article><span>02</span><h3>设计</h3><ul><li>面对同一个问题，继续寻找更合理、更高效、更巧妙的解法。</li></ul></article>
+              <article><span>03</span><h3>诊断</h3><ul><li>从真实故障里找到原因，再把失败变成下一版的经验。</li></ul></article>
+              <article><span>04</span><h3>直接交互</h3><ul><li>机器有重量、温度、振动、声音、磨损和碰撞。</li></ul></article>
+              <article><span>05</span><h3>创造力</h3><ul><li>机械逐渐改变我们看待日常产品和结构的方式。</li></ul></article>
+            </div>
+            <p>把这些事情串起来，其实就是一个不断循环的过程：</p>
+            <div class="journal-logic-flow" aria-label="机械设计的认知循环">
+              <span>想法</span><i class="mdi mdi-arrow-right"></i><span>设计</span><i class="mdi mdi-arrow-right"></i>
+              <span>制造</span><i class="mdi mdi-arrow-right"></i><span>测试</span><i class="mdi mdi-arrow-right"></i>
+              <span>失败</span><i class="mdi mdi-arrow-right"></i><span>理解</span><i class="mdi mdi-arrow-right"></i><strong>重新设计</strong>
+            </div>
+            <p>我觉得机械真正有趣的地方，并不只是某一台机器人最后做得多漂亮。而是在这个循环里，原本脑子里一片模糊的东西，会逐渐变成真实的机器；而机器在现实中的每一次反馈，又会反过来让脑子里的理解变得更清楚。</p>
+            <aside class="journal-next-article">
+              <span>NEXT · 机械组导言 02</span>
+              <p>如果你刚刚进入机械组，应该从哪里开始？</p>
+              <a href="articles/technical-group-introduction-newcomer-learning-route.html"><strong>机械组导言（二）｜新人成长建议与学习路线</strong><i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+            </aside>
+          </section>
+
+          <footer class="journal-article-end">
+            <div>
+              <span>《机械组导言》· 第 01 篇</span>
+              <p>从造物、设计与诊断出发，重新理解机械组贯穿一个赛季的工作与乐趣。</p>
+            </div>
+            <a class="button button-primary" href="articles/index.html?series=technical-group-introduction">查看本专栏 <i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+          </footer>
+        </article>
+      </div>
+
+      <nav class="journal-article-return" aria-label="文章后续导航">
+        <a href="articles/index.html"><i class="mdi mdi-arrow-left" aria-hidden="true"></i>返回千里札记</a>
+        <a href="articles/index.html?series=technical-group-introduction">查看《技术组导言》<i class="mdi mdi-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
+      <p>网站建设：重庆大学千里战队 × Codex</p>
+      <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
+      <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
+    </footer>
+    <script src="assets/js/data/qianli-articles.js?v=20260906-14"></script>
+<script src="assets/js/pages/qianli-articles.js?v=20260906-13"></script>
+    <script src="assets/js/pages/mechanical-group-introduction.js?v=20260906-1"></script>
+    <script src="assets/js/core/site.js?v=20260831-84"></script>
+  <script src="assets/js/data/mascot-config.js?v=20260901-3"></script>
+  <script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>
+  </body>
+</html>

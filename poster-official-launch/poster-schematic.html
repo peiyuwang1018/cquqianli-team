@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>重庆大学千里战队官方网站上线预告</title>
+  <style>
+    @font-face {
+      font-family: "DIN Qianli";
+      src: url("./assets/DIN1451-36breit.ttf") format("truetype");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "DIN Display";
+      src: url("./assets/DINishExpanded-Black.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Source Han Sans SC";
+      src: url("./assets/source-han-sans-sc-400-subset.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Source Han Sans SC";
+      src: url("./assets/source-han-sans-sc-500-subset.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Source Han Sans SC";
+      src: url("./assets/source-han-sans-sc-600-subset.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Source Han Serif SC";
+      src: url("./assets/source-han-serif-sc-400-subset.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Source Han Serif SC";
+      src: url("./assets/source-han-serif-sc-500-subset.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Source Han Serif SC";
+      src: url("./assets/source-han-serif-sc-600-subset.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #080a0c;
+      --panel: #111417;
+      --panel-2: #15191d;
+      --ink: #f4f2eb;
+      --muted: #a9adb0;
+      --line: #30353a;
+      --green: #43f58b;
+      --pink: #ef2d7c;
+      --mechanical: #c59a4b;
+      --control: #6e9dca;
+      --vision: #8976b2;
+      --hardware: #62a66f;
+      --operations: #bd6f84;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 1200px;
+      height: 1600px;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      color: var(--ink);
+      font-family: "Source Han Sans SC", "Noto Sans SC", sans-serif;
+      text-rendering: geometricPrecision;
+    }
+
+    .poster {
+      position: relative;
+      isolation: isolate;
+      width: 1200px;
+      height: 1600px;
+      padding: 54px 64px 46px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.085) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,.085) 2px, transparent 2px),
+        var(--bg);
+      background-size: 44px 44px, 44px 44px, auto;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      z-index: -1;
+      border: 1px solid #444a50;
+      pointer-events: none;
+    }
+
+    .poster::after {
+      content: "";
+      position: absolute;
+      top: 214px;
+      right: -50px;
+      bottom: auto;
+      z-index: -2;
+      width: 560px;
+      height: 560px;
+      opacity: .075;
+      background: url("./assets/qianli-mark.svg") center / contain no-repeat;
+      transform: rotate(-8deg);
+    }
+
+    .topbar,
+    .hero,
+    .groups {
+      position: relative;
+      z-index: 2;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      min-height: 102px;
+      border-bottom: 2px solid #464c52;
+    }
+
+    .cqu-lockup {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      min-width: 560px;
+      padding-bottom: 22px;
+    }
+
+    .cqu-plate {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 70px;
+      height: 70px;
+      padding: 0;
+      background: transparent;
+    }
+
+    .cqu-plate img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .92;
+    }
+
+    .team-horse {
+      display: block;
+      flex: 0 0 auto;
+      width: 54px;
+      height: 58px;
+      margin-left: 2px;
+      object-fit: contain;
+    }
+
+    .team-id {
+      display: grid;
+      align-content: center;
+      gap: 5px;
+      line-height: 1;
+    }
+
+    .team-id b {
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 20px;
+      letter-spacing: .14em;
+      color: var(--green);
+    }
+
+    .team-id span {
+      font-family: "Source Han Serif SC", "Noto Serif SC", serif;
+      font-size: 25px;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+
+    .rm-lockup {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 8px 22px 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .rm-lockup span {
+      max-width: 145px;
+      font-family: "DIN Display", "Arial Narrow", sans-serif;
+      font-size: 13px;
+      line-height: 1.35;
+      letter-spacing: .12em;
+      text-align: right;
+      color: #b8bdc1;
+    }
+
+    .rm-lockup img {
+      width: 74px;
+      height: 74px;
+      object-fit: contain;
+      filter: invert(1);
+    }
+
+    .hero {
+      position: relative;
+      padding: 52px 28px 42px;
+    }
+
+    .hero::before {
+      content: "QL2027";
+      position: absolute;
+      top: auto;
+      right: 212px;
+      bottom: -80px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 74px;
+      letter-spacing: .03em;
+      color: rgba(255,255,255,.052);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-bottom: 28px;
+      transform: translateY(-11px);
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 20px;
+      letter-spacing: .15em;
+      color: var(--green);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 32px;
+      background: var(--pink);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Source Han Serif SC", "Noto Serif SC", serif;
+      font-weight: 500;
+      letter-spacing: .015em;
+    }
+
+    .hero h1 .team {
+      display: block;
+      margin-bottom: 16px;
+      transform: translateY(-11px);
+      font-size: 53px;
+      line-height: 1.12;
+      color: #ced2d3;
+    }
+
+    .hero h1 .launch {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      font-size: 144px;
+      line-height: .9;
+    }
+
+    .hero h1 .launch strong {
+      position: relative;
+      font-weight: 500;
+      color: var(--green);
+    }
+
+    .hero h1 .launch strong::after {
+      content: "";
+      position: absolute;
+      left: -64px;
+      right: 0;
+      bottom: -23px;
+      height: 7px;
+      background: linear-gradient(90deg, var(--pink) 0 72%, transparent 100%);
+    }
+
+    .season-row {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 30px;
+      margin-top: 77px;
+    }
+
+    .season-message,
+    .time-card {
+      --card-cut: 12px;
+      position: relative;
+      min-height: 220px;
+      border: 0;
+      clip-path: polygon(
+        var(--card-cut) 0,
+        100% 0,
+        100% calc(100% - var(--card-cut)),
+        calc(100% - var(--card-cut)) 100%,
+        0 100%,
+        0 var(--card-cut)
+      );
+      background: transparent;
+    }
+
+    .season-message {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 24px 36px 22px;
+      overflow: hidden;
+    }
+
+    .season-message::before,
+    .time-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      box-sizing: border-box;
+      border: 1px solid var(--line);
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .season-message::after,
+    .time-card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      z-index: 1;
+      clip-path: polygon(
+        calc(var(--card-cut) - 1px) 0,
+        100% 0,
+        100% calc(100% - var(--card-cut) + 1px),
+        calc(100% - var(--card-cut) + 1px) 100%,
+        0 100%,
+        0 calc(var(--card-cut) - 1px)
+      );
+      background: rgba(17,20,23,.7);
+      pointer-events: none;
+    }
+
+    .season-message > *,
+    .time-card > * {
+      position: relative;
+      z-index: 3;
+    }
+
+    .season-watermark {
+      position: absolute;
+      right: -122px;
+      top: 14px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 38px;
+      letter-spacing: .02em;
+      color: rgba(255,255,255,.048);
+      transform: rotate(90deg);
+      z-index: 2;
+    }
+
+    .season-message .season {
+      margin-bottom: 17px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 7px;
+      color: var(--green);
+    }
+
+    .season-message .season-latin {
+      font-family: "DIN Display", sans-serif;
+      font-size: 36px;
+      line-height: 1;
+      letter-spacing: .045em;
+    }
+
+    .season-message .season-cn {
+      font-family: "Source Han Sans SC", "Noto Sans SC", sans-serif;
+      font-size: 31px;
+      font-weight: 650;
+      line-height: 1;
+      letter-spacing: .06em;
+    }
+
+    .season-message .season-accent {
+      color: var(--pink);
+    }
+
+    .season-message h2 {
+      margin: 0;
+      font-family: "DIN Display", "Source Han Sans SC", "Noto Sans SC", sans-serif;
+      font-size: 46px;
+      font-weight: 500;
+      line-height: 1.22;
+      letter-spacing: .035em;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .season-message p {
+      margin: 23px 0 0;
+      font-size: 18px;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    .time-card {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+    }
+
+    .date-block,
+    .clock-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 30px;
+    }
+
+    .date-block {
+      border-right: 1px solid var(--line);
+    }
+
+    .time-card small {
+      margin-bottom: 14px;
+      font-family: "DIN Display", "Arial Narrow", sans-serif;
+      font-size: 13px;
+      letter-spacing: .16em;
+      color: var(--muted);
+    }
+
+    .date-block strong,
+    .clock-block strong {
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-weight: 900;
+      line-height: .85;
+      letter-spacing: -.02em;
+    }
+
+    .date-block strong {
+      font-size: 80px;
+      color: var(--pink);
+    }
+
+    .date-block span {
+      margin-top: 14px;
+      font-size: 22px;
+      letter-spacing: .18em;
+      color: #d7d9d9;
+    }
+
+    .clock-block strong {
+      font-size: 80px;
+      color: var(--green);
+    }
+
+    .clock-block span {
+      margin-top: 14px;
+      font-size: 22px;
+      letter-spacing: .18em;
+      color: #d7d9d9;
+    }
+
+    .groups {
+      position: relative;
+      margin: 44px 28px 0;
+      border-top: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .groups::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -26px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .groups-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+    }
+
+    .groups-header b {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 17px;
+      letter-spacing: .15em;
+      color: var(--green);
+    }
+
+    .groups-header b::before {
+      content: "";
+      width: 6px;
+      height: 24px;
+      background: var(--pink);
+    }
+
+    .groups-header span {
+      font-size: 15px;
+      letter-spacing: .14em;
+      color: #8f9599;
+    }
+
+    .group-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .group {
+      --tone: #fff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      min-height: 194px;
+      padding: 24px 14px 25px;
+      border: 1px solid var(--line);
+      background: rgba(15,18,21,.94);
+      text-align: center;
+    }
+
+    .group + .group { margin-left: -1px; }
+
+    .group::before {
+      display: none;
+    }
+
+    .group > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .group::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      height: 5px;
+      background: var(--tone);
+    }
+
+    .group-mark {
+      display: block;
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .group b {
+      display: block;
+      margin-bottom: 7px;
+      font-family: "Source Han Serif SC", "Noto Serif SC", serif;
+      font-size: 22px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .group span {
+      display: block;
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      font-size: 10px;
+      line-height: 1.35;
+      letter-spacing: .08em;
+      color: #92979b;
+    }
+
+    .group--mechanical { --tone: var(--mechanical); }
+    .group--control { --tone: var(--control); }
+    .group--vision { --tone: var(--vision); }
+    .group--hardware { --tone: var(--hardware); }
+    .group--operations { --tone: var(--operations); }
+
+    .group-schematic {
+      position: relative;
+      height: 165px;
+      margin: 0 28px;
+      overflow: hidden;
+    }
+
+    .group-schematic canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .footer {
+      position: absolute;
+      left: 92px;
+      right: 92px;
+      bottom: 82px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 46px;
+      margin: 0;
+      z-index: 3;
+    }
+
+    .qianli-signature {
+      display: flex;
+      align-items: center;
+      min-height: 0;
+      transform: translateY(11px);
+    }
+
+    .qianli-signature img {
+      display: block;
+      width: 160px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .status {
+      display: grid;
+      grid-template-columns: 16px auto;
+      align-items: start;
+      gap: 15px;
+      padding-bottom: 4px;
+      transform: translateY(18px);
+      font-family: "DIN Qianli", "Arial Narrow", sans-serif;
+      color: #a5aaad;
+    }
+
+    .status i {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(67,245,139,.09);
+      margin-top: 5px;
+    }
+
+    .status-copy {
+      display: grid;
+      justify-items: end;
+      gap: 9px;
+      text-align: right;
+    }
+
+    .status-copy strong {
+      font-family: "Source Han Serif SC", "Noto Serif SC", serif;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .12em;
+      color: var(--ink);
+    }
+
+    .status-copy span {
+      font-size: 16px;
+      letter-spacing: .14em;
+      color: #a5aaad;
+    }
+
+    .spectrum {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      height: 4px;
+      z-index: 3;
+      background:
+        linear-gradient(90deg, #ff4655 0%, #ff4655 18%, transparent 100%) left center / 48% 4px no-repeat,
+        linear-gradient(270deg, #416ff4 0%, #416ff4 18%, transparent 100%) right center / 48% 4px no-repeat;
+    }
+
+    .spectrum i { display: none; }
+
+  </style>
+</head>
+<body>
+  <main class="poster" role="img" aria-label="重庆大学千里战队官方网站上线预告海报">
+    <header class="topbar">
+      <div class="cqu-lockup">
+        <div class="cqu-plate"><img src="./assets/cqu-logo.svg" alt="重庆大学校徽" /></div>
+        <img class="team-horse" src="./assets/qianli-mark.svg" alt="千里战队马头标志" />
+        <div class="team-id">
+          <b>CQU QIANLI</b>
+          <span>重庆大学千里战队</span>
+        </div>
+      </div>
+      <div class="rm-lockup">
+        <span>ROBOMASTER<br />UNIVERSITY SERIES</span>
+        <img src="./assets/robomaster.svg" alt="RoboMaster 标志" />
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">OFFICIAL WEBSITE · LAUNCH NOTICE</p>
+      <h1>
+        <span class="team">重庆大学千里战队</span>
+        <span class="launch"><span>官方网站</span><strong>上线预告</strong></span>
+      </h1>
+
+      <div class="season-row">
+        <article class="season-message">
+          <span class="season-watermark" aria-hidden="true">RECRUITMENT</span>
+          <span class="season"><span class="season-latin">RM2027</span><span class="season-cn season-accent">战队招新</span></span>
+          <h2>即将开启</h2>
+          <p>以工程为共同语言 · 向真实赛场进发</p>
+        </article>
+        <article class="time-card">
+          <div class="date-block">
+            <small>LAUNCH DATE</small>
+            <strong>09.01</strong>
+            <span>北京时间</span>
+          </div>
+          <div class="clock-block">
+            <small>ONLINE AT</small>
+            <strong>12:00</strong>
+            <span>准时上线</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="groups">
+      <header class="groups-header">
+        <b>FIVE TECHNICAL GROUPS</b>
+        <span>五组同心 · 共赴千里</span>
+      </header>
+      <div class="group-grid">
+        <article class="group group--mechanical">
+          <img class="group-mark" src="./assets/mechanical.svg?v=2" alt="" />
+          <div><b>机械组</b><span>MECHANICAL</span></div>
+        </article>
+        <article class="group group--control">
+          <img class="group-mark" src="./assets/control.svg?v=2" alt="" />
+          <div><b>电控组</b><span>CONTROL</span></div>
+        </article>
+        <article class="group group--vision">
+          <img class="group-mark" src="./assets/vision.svg?v=2" alt="" />
+          <div><b>视觉组</b><span>VISION</span></div>
+        </article>
+        <article class="group group--hardware">
+          <img class="group-mark" src="./assets/hardware.svg?v=2" alt="" />
+          <div><b>硬件组</b><span>HARDWARE</span></div>
+        </article>
+        <article class="group group--operations">
+          <img class="group-mark" src="./assets/operations.svg?v=2" alt="" />
+          <div><b>宣运组</b><span>OPERATIONS</span></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="group-schematic" aria-hidden="true">
+      <canvas data-group-schematic></canvas>
+    </div>
+
+    <footer class="footer">
+      <div class="qianli-signature">
+        <img src="./assets/qianli-text-logo.png" alt="千里战队标志" />
+      </div>
+      <div class="status">
+        <i></i>
+        <div class="status-copy">
+          <strong>运筹帷幄 · 决胜千里</strong>
+          <span>2026.09.01 / READY</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="spectrum" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  </main>
+  <script>
+    (() => {
+      const canvas = document.querySelector("[data-group-schematic]");
+      if (!canvas) return;
+
+      const palette = ["#c59a4b", "#6e9dca", "#8976b2", "#62a66f", "#bd6f84"];
+      const ink = "rgba(238, 242, 241, .4)";
+      const faint = "rgba(214, 220, 220, .18)";
+
+      function draw() {
+        const rect = canvas.getBoundingClientRect();
+        const scale = Math.max(2, window.devicePixelRatio || 1);
+        canvas.width = Math.round(rect.width * scale);
+        canvas.height = Math.round(rect.height * scale);
+        const ctx = canvas.getContext("2d");
+        ctx.setTransform(scale, 0, 0, scale, 0, 0);
+        ctx.clearRect(0, 0, rect.width, rect.height);
+        ctx.lineCap = "butt";
+        ctx.lineJoin = "miter";
+
+        const width = rect.width;
+        const column = width / 5;
+        const baseline = 65;
+
+        function strokePath(points, color = ink, lineWidth = 2.8) {
+          ctx.beginPath();
+          points(ctx);
+          ctx.strokeStyle = color;
+          ctx.lineWidth = lineWidth;
+          ctx.stroke();
+        }
+
+        function arrow(x, y, direction, color = ink, size = 7) {
+          strokePath((path) => {
+            if (direction === "left") {
+              path.moveTo(x + size, y - size * .58);
+              path.lineTo(x, y);
+              path.lineTo(x + size, y + size * .58);
+            } else {
+              path.moveTo(x - size, y - size * .58);
+              path.lineTo(x, y);
+              path.lineTo(x - size, y + size * .58);
+            }
+          }, color, 1.65);
+        }
+
+        function label(text, x, y, color) {
+          ctx.save();
+          ctx.fillStyle = color;
+          ctx.font = '11px "DIN Qianli", "Arial Narrow", sans-serif';
+          ctx.letterSpacing = "1px";
+          ctx.textAlign = "center";
+          ctx.fillText(text, x, y);
+          ctx.restore();
+        }
+
+        // Construction guides quietly bind every card to the same drawing plane.
+        ctx.save();
+        ctx.setLineDash([3, 6]);
+        for (let index = 0; index < 5; index += 1) {
+          const x = column * (index + .5);
+          const guideEnd = index === 3 ? 18 : baseline - 13;
+          strokePath((path) => {
+            path.moveTo(x, 0);
+            path.lineTo(x, guideEnd);
+          }, faint, 1);
+        }
+        ctx.restore();
+
+        // Mechanical: a single-sided dimension arrow with stacked tolerances.
+        const mechStart = 1.5;
+        const mechEnd = column - 8;
+        const dimensionCenter = (mechStart + mechEnd) / 2;
+        const dimensionGap = 54;
+        strokePath((path) => {
+          path.moveTo(mechStart, 0);
+          path.lineTo(mechStart, 84);
+        }, "rgba(197, 154, 75, .45)", 2.5);
+        strokePath((path) => {
+          path.moveTo(mechStart, baseline);
+          path.lineTo(dimensionCenter - dimensionGap / 2, baseline);
+          path.moveTo(dimensionCenter + dimensionGap / 2, baseline);
+          path.lineTo(mechEnd, baseline);
+        }, ink, 2.8);
+        ctx.save();
+        ctx.globalAlpha = .56;
+        ctx.beginPath();
+        ctx.moveTo(mechStart, baseline);
+        ctx.lineTo(mechStart + 14, baseline - 3.5);
+        ctx.lineTo(mechStart + 14, baseline + 3.5);
+        ctx.closePath();
+        ctx.fillStyle = palette[0];
+        ctx.fill();
+        ctx.fillStyle = palette[0];
+        ctx.textBaseline = "middle";
+        ctx.textAlign = "center";
+        ctx.font = '600 12px "DIN 1451", "Arial Narrow", sans-serif';
+        ctx.fillText("27", dimensionCenter - 5, baseline + 1);
+        ctx.textAlign = "left";
+        ctx.font = '600 6px "DIN 1451", "Arial Narrow", sans-serif';
+        ctx.fillText("+0.7", dimensionCenter + 8, baseline - 4);
+        ctx.fillText("−0.3", dimensionCenter + 8, baseline + 6);
+        ctx.restore();
+
+        // Control: one outbound step, one return, and two damped tracking stages.
+        const controlStart = column - 8;
+        const controlEnd = column * 2 - 8;
+        const controlSpan = controlEnd - controlStart;
+        const commandLow = baseline + 34;
+        const firstStep = controlStart + controlSpan * .28;
+        const returnStep = controlStart + controlSpan * .68;
+        strokePath((path) => {
+          path.moveTo(controlStart, baseline);
+          path.lineTo(firstStep, baseline);
+          path.lineTo(firstStep, commandLow);
+          path.lineTo(returnStep, commandLow);
+          path.lineTo(returnStep, baseline);
+          path.lineTo(controlEnd, baseline);
+        }, "rgba(110, 157, 202, .46)", 2.5);
+        const fallPeakX = firstStep + controlSpan * .11;
+        const fallPeakY = commandLow + 8;
+        const fallSettleX = firstStep + controlSpan * .3;
+        const riseStart = returnStep;
+        const risePeakX = returnStep + controlSpan * .1;
+        const risePeakY = baseline - 7;
+        const riseSettleX = returnStep + controlSpan * .3;
+        strokePath((path) => {
+          path.moveTo(controlStart, baseline);
+          path.lineTo(firstStep, baseline);
+          path.bezierCurveTo(
+            firstStep + controlSpan * .035,
+            baseline,
+            fallPeakX - controlSpan * .055,
+            fallPeakY,
+            fallPeakX,
+            fallPeakY
+          );
+          path.bezierCurveTo(
+            fallPeakX + controlSpan * .075,
+            fallPeakY,
+            fallSettleX - controlSpan * .075,
+            commandLow - 3,
+            fallSettleX,
+            commandLow
+          );
+          path.lineTo(riseStart, commandLow);
+          path.bezierCurveTo(
+            riseStart + controlSpan * .035,
+            commandLow,
+            risePeakX - controlSpan * .055,
+            risePeakY,
+            risePeakX,
+            risePeakY
+          );
+          path.bezierCurveTo(
+            risePeakX + controlSpan * .06,
+            risePeakY,
+            riseSettleX - controlSpan * .07,
+            baseline + 3,
+            riseSettleX,
+            baseline
+          );
+          path.lineTo(controlEnd, baseline);
+        }, ink, 2.8);
+
+        // Vision: a point-symmetric route and two directionally opposed radar arcs.
+        const visionStart = column * 2 - 8;
+        const visionEnd = column * 3 - 8;
+        const visionSpan = visionEnd - visionStart;
+        const visionCenter = (visionStart + visionEnd) / 2;
+        const firstApexX = visionStart + visionSpan * .25;
+        const secondApexX = visionStart + visionSpan * .75;
+        const sineControlOffset = 72;
+        strokePath((path) => {
+          path.moveTo(visionStart, baseline);
+          path.bezierCurveTo(
+            visionStart + visionSpan * .17,
+            baseline,
+            visionCenter - visionSpan * .17,
+            baseline - sineControlOffset,
+            visionCenter,
+            baseline
+          );
+          path.bezierCurveTo(
+            visionCenter + visionSpan * .17,
+            baseline + sineControlOffset,
+            visionEnd - visionSpan * .17,
+            baseline,
+            visionEnd,
+            baseline
+          );
+        }, ink, 2.8);
+        const radarRadius = Math.min(22, visionSpan * .115);
+        const radarMarks = Array.from({ length: 15 }, (_, index) => {
+          const signed = (index - 7) / 7;
+          return .5 + .46 * Math.sign(signed) * Math.pow(Math.abs(signed), 1.5);
+        });
+        const drawRadarArc = (centerX, centerY, startAngle, endAngle) => {
+          ctx.save();
+          ctx.lineCap = "round";
+          radarMarks.forEach((position) => {
+            const angle = startAngle + (endAngle - startAngle) * position;
+            const halfMark = .04;
+            strokePath(
+              (path) => path.arc(centerX, centerY, radarRadius, angle - halfMark, angle + halfMark),
+              "rgba(137, 118, 178, .44)",
+              2.6
+            );
+          });
+          ctx.restore();
+        };
+        drawRadarArc(firstApexX + visionSpan * .05 + 4, baseline + 3, Math.PI, Math.PI * 2);
+        drawRadarArc(secondApexX - visionSpan * .05 - 4, baseline - 3, 0, Math.PI);
+
+        // Hardware: two independent 135-degree traces fan out into separate pads.
+        const hardwareStart = column * 3 - 8;
+        const hardwareEnd = column * 4 - 8;
+        const nodeLeft = hardwareStart + 73;
+        const nodeRight = hardwareStart + 125;
+        const leftTraceX = nodeLeft + 18;
+        const rightTraceX = nodeRight - 18;
+        const diagonalStartY = baseline - 18;
+        strokePath((path) => {
+          path.moveTo(hardwareStart, baseline);
+          path.lineTo(nodeLeft - 7, baseline);
+          path.moveTo(nodeRight + 7, baseline);
+          path.lineTo(hardwareEnd, baseline);
+          path.moveTo(leftTraceX, 0);
+          path.lineTo(leftTraceX, diagonalStartY);
+          path.lineTo(nodeLeft, baseline);
+          path.moveTo(rightTraceX, 0);
+          path.lineTo(rightTraceX, diagonalStartY);
+          path.lineTo(nodeRight, baseline);
+        }, ink, 2.8);
+        [nodeLeft, nodeRight].forEach((x) => {
+          ctx.save();
+          ctx.globalAlpha = .48;
+          ctx.beginPath();
+          ctx.arc(x, baseline, 6, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(98, 166, 111, .14)";
+          ctx.fill();
+          ctx.strokeStyle = palette[3];
+          ctx.lineWidth = 2.4;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(x, baseline, 2, 0, Math.PI * 2);
+          ctx.fillStyle = palette[3];
+          ctx.fill();
+          ctx.restore();
+        });
+
+        // Operations: two Bezier distribution paths retain their visible pen handles.
+        const operationsStart = column * 4 - 8;
+        const nodeX = operationsStart + 61;
+        const outputX = width - 17;
+        const upperY = baseline - 32;
+        const lowerY = baseline + 32;
+        const upperControlA = { x: nodeX + 17, y: baseline - 30 };
+        const upperControlB = { x: outputX - 39, y: upperY };
+        const lowerControlA = { x: nodeX + 17, y: baseline + 30 };
+        const lowerControlB = { x: outputX - 39, y: lowerY };
+        strokePath((path) => {
+          path.moveTo(operationsStart, baseline);
+          path.lineTo(nodeX, baseline);
+          path.moveTo(nodeX, baseline);
+          path.bezierCurveTo(upperControlA.x, upperControlA.y, upperControlB.x, upperControlB.y, outputX, upperY);
+          path.moveTo(nodeX, baseline);
+          path.bezierCurveTo(lowerControlA.x, lowerControlA.y, lowerControlB.x, lowerControlB.y, outputX, lowerY);
+        }, ink, 2.8);
+        ctx.save();
+        ctx.globalAlpha = .44;
+        [
+          [nodeX, baseline, upperControlA.x, upperControlA.y],
+          [outputX, upperY, upperControlB.x, upperControlB.y],
+          [nodeX, baseline, lowerControlA.x, lowerControlA.y],
+          [outputX, lowerY, lowerControlB.x, lowerControlB.y],
+        ].forEach(([startX, startY, endX, endY]) => {
+          strokePath((path) => {
+            path.moveTo(startX, startY);
+            path.lineTo(endX, endY);
+          }, palette[4], 1.65);
+        });
+        [upperControlA, upperControlB, lowerControlA, lowerControlB].forEach((point) => {
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
+          ctx.fillStyle = palette[4];
+          ctx.fill();
+        });
+        ctx.beginPath();
+        ctx.arc(nodeX, baseline, 4, 0, Math.PI * 2);
+        ctx.fillStyle = palette[4];
+        ctx.fill();
+        ctx.restore();
+        arrow(outputX, upperY, "right");
+        arrow(outputX, lowerY, "right");
+      }
+
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+      else draw();
+    })();
+  </script>
+</body>
+</html>

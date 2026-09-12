@@ -49,8 +49,7 @@ function getBackTarget(relative) {
   const primaryPages = new Set([
     "about/index.html",
     "about/organization.html",
-    "articles/index.html",
-    "season/index.html",
+    "season/frontline.html",
     "museum/index.html",
     "join/index.html",
     "contact/index.html",
@@ -59,7 +58,8 @@ function getBackTarget(relative) {
   if (primaryPages.has(relative)) return { href: "index.html", label: "返回主页" };
   if (relative.startsWith("groups/")) return { href: "about/organization.html", label: "返回团队架构" };
   if (relative.startsWith("about/")) return { href: "about/index.html", label: "返回关于千里" };
-  if (relative.startsWith("season/")) return { href: "season/index.html", label: "返回赛季一线" };
+  if (relative === "articles/index.html") return { href: "season/frontline.html", label: "返回赛季一线" };
+  if (relative.startsWith("season/")) return { href: "season/frontline.html", label: "返回赛季一线" };
   if (relative.startsWith("articles/")) return { href: "articles/index.html", label: "返回千里札记" };
   if (relative.startsWith("museum/training/")) return { href: "museum/resources.html", label: "返回资料站" };
   if (["museum/records.html", "museum/honors.html"].includes(relative)) {
@@ -103,7 +103,7 @@ function buildNavigation(active, relative) {
             </span>
           </span>
           <span class="nav-menu">
-            <a${activeAttributes(active, "frontline")} href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a${activeAttributes(active, "frontline")} href="season/frontline.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -250,7 +250,7 @@ for (const file of htmlFiles) {
   html = normalizeFooter(html, relative);
   html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260906-95");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260912-2");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260831-84");
   fs.writeFileSync(file, html);
 }

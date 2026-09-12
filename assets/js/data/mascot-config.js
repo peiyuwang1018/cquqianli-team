@@ -35,6 +35,16 @@ window.QIANLI_MASCOT_CONFIG = Object.freeze({
   },
 
   pages: {
+    "articles/index.html": {
+      messages: [
+        { text: "这个页面有很多博客文章" },
+        { text: "有知识干货也有肺腑之言情感流露" },
+        { text: "学无止境" },
+        { text: "千里之行始于足下" },
+        { text: "未经允许禁止于其他社交媒体/博客转载" },
+        { text: "文章问题反馈：peiyuwang1018@gmail.com" },
+      ],
+    },
     "join/index.html": {
       messages: [
         { text: "先看看五个技术组分别在解决什么问题，再决定从哪里开始。", href: "join/index.html#groups", label: "查看组别岗位" },

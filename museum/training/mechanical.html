@@ -69,7 +69,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260906-95" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260912-2" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body class="mechanical-curriculum-page" data-page="archive" data-training-key="mechanical">
@@ -91,7 +91,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a href="season/frontline.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -224,11 +224,13 @@
         </details>
 
         <details class="mechanical-nav-tone--training">
-          <summary><span class="mechanical-course-index">03</span><i class="mdi mdi-clipboard-check-outline mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>梯队考核实习</strong></span></summary>
+          <summary><span class="mechanical-course-index">03</span><i class="mdi mdi-clipboard-check-outline mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>梯队考核实习<i class="mdi mdi-star-four-points mechanical-stage-star" aria-hidden="true"></i></strong></span></summary>
           <div class="mechanical-course-branch mechanical-course-branch--lessons">
+            <button class="mechanical-course-link" id="course-nav-assessment-overview" type="button" data-mechanical-course="assessment-overview" aria-controls="course-assessment-overview" aria-pressed="false"><span><small>考核说明</small>考核构成与评定门槛</span></button>
             <button class="mechanical-course-link" id="course-nav-assessment-attendance" type="button" data-mechanical-course="assessment-attendance" aria-controls="course-assessment-attendance" aria-pressed="false"><span><small>考核一 · 10 分</small>日常考勤和论坛讨论</span></button>
-            <button class="mechanical-course-link" id="course-nav-assessment-opensource" type="button" data-mechanical-course="assessment-opensource" aria-controls="course-assessment-opensource" aria-pressed="false"><span><small>考核二 · 40 分</small>文明经典开源学习汇报</span></button>
-            <button class="mechanical-course-link" id="course-nav-assessment-cad" type="button" data-mechanical-course="assessment-cad" aria-controls="course-assessment-cad" aria-pressed="false"><span><small>考核三 · 50 分</small>CAD 设计大作业</span></button>
+            <button class="mechanical-course-link" id="course-nav-assessment-opensource" type="button" data-mechanical-course="assessment-opensource" aria-controls="course-assessment-opensource" aria-pressed="false"><span><small>考核二 · 30 分</small>文明经典开源学习汇报</span></button>
+            <button class="mechanical-course-link" id="course-nav-assessment-fusion-practice" type="button" data-mechanical-course="assessment-fusion-practice" aria-controls="course-assessment-fusion-practice" aria-pressed="false"><span><small>考核三 · 20 分</small>Fusion 设计练习</span></button>
+            <button class="mechanical-course-link" id="course-nav-assessment-cad" type="button" data-mechanical-course="assessment-cad" aria-controls="course-assessment-cad" aria-pressed="false"><span><small>考核四 · 40 分</small>Fusion 设计大作业</span></button>
             <button class="mechanical-course-link" id="course-nav-assessment-rd" type="button" data-mechanical-course="assessment-rd" aria-controls="course-assessment-rd" aria-pressed="false"><span><small>研发贡献</small>研发进程自主参与贡献</span></button>
           </div>
         </details>
@@ -243,7 +245,7 @@
           </div>
         </details>
 
-        <button class="mechanical-course-link mechanical-course-link--stage mechanical-nav-tone--progress" id="course-nav-internship" type="button" data-mechanical-course="internship" aria-controls="course-internship" aria-pressed="false"><span class="mechanical-course-index">05</span><i class="mdi mdi-robot-industrial-outline mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>研发实习期</strong></span></button>
+        <button class="mechanical-course-link mechanical-course-link--stage mechanical-nav-tone--progress" id="course-nav-internship" type="button" data-mechanical-course="internship" aria-controls="course-internship" aria-pressed="false"><span class="mechanical-course-index">05</span><i class="mdi mdi-robot-industrial-outline mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>梯队研发实习<i class="mdi mdi-star-four-points mechanical-stage-star" aria-hidden="true"></i></strong></span></button>
         <button class="mechanical-course-link mechanical-course-link--stage mechanical-nav-tone--progress" id="course-nav-graduation" type="button" data-mechanical-course="graduation" aria-controls="course-graduation" aria-pressed="false"><span class="mechanical-course-index">06</span><i class="mdi mdi-certificate-outline mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>梯队结业考试</strong></span></button>
         <button class="mechanical-course-link mechanical-course-link--stage mechanical-nav-tone--elective" id="course-nav-product-design" type="button" data-mechanical-course="product-design" aria-controls="course-product-design" aria-pressed="false"><span class="mechanical-course-index">07</span><i class="mdi mdi-lightbulb-on-outline mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>兴趣选修：产品设计研讨</strong></span></button>
         <button class="mechanical-course-link mechanical-course-link--stage mechanical-nav-tone--elective" id="course-nav-robot-intelligence" type="button" data-mechanical-course="robot-intelligence" aria-controls="course-robot-intelligence" aria-pressed="false"><span class="mechanical-course-index">08</span><i class="mdi mdi-brain mechanical-course-nav-icon" aria-hidden="true"></i><span><strong>兴趣选修：机器人智能通识</strong></span></button>
@@ -340,28 +342,38 @@
         <div class="mechanical-outline-stack"><article><span>01</span><div><h3>实训设备</h3><ul><li>CNC 雕刻机</li><li>车床</li></ul></div></article></div>
       </section>
 
+      <section class="mechanical-course-panel" id="course-assessment-overview" data-mechanical-course-panel="assessment-overview" aria-labelledby="course-nav-assessment-overview" hidden>
+        <header class="mechanical-panel-header"><div><p>03 / ASSESSMENT OVERVIEW</p><h2>考核构成与评定门槛</h2><span>四项考核共同组成满分 100 分的基础考评；研发贡献单独评估，用于后续研发任务与正式名额判断。</span></div><span class="mechanical-course-badge">满分 100 分</span></header>
+        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>基础考核构成</h3><ul><li>日常考勤和论坛讨论：10 分</li><li>文明经典开源学习汇报：3 次 × 10 分，共 30 分</li><li>Fusion 设计练习：4 次 × 5 分，共 20 分</li><li>Fusion 设计大作业：40 分</li></ul></div></article><article><span>02</span><div><h3>基础考评门槛</h3><ul><li>总分超过 60 分可获得留队资格，否则在集训期结束后清退</li><li>总分超过 75 分可考虑承担更高阶任务</li></ul></div></article><article><span>03</span><div><h3>研发贡献评估</h3><p>研发贡献不计入基础考评的 100 分。在基础考评达标的前提下，结合研发贡献度，作为 3 月开学后介入正式研发任务并竞争当前赛季正式名额的依据。</p></div></article></div>
+      </section>
+
       <section class="mechanical-course-panel" id="course-assessment-attendance" data-mechanical-course-panel="assessment-attendance" aria-labelledby="course-nav-assessment-attendance" hidden>
         <header class="mechanical-panel-header"><div><p>03.1 / ECHELON ASSESSMENT</p><h2>日常考勤和论坛讨论</h2><span>梯队考核实习计入上半学期主要考评。</span></div><span class="mechanical-course-badge">10 分</span></header>
         <div class="mechanical-outline-stack"><article><span>10</span><div><h3>考评内容</h3><p>日常考勤和论坛讨论，共计 10 分。</p></div></article></div>
       </section>
 
       <section class="mechanical-course-panel" id="course-assessment-opensource" data-mechanical-course-panel="assessment-opensource" aria-labelledby="course-nav-assessment-opensource" hidden>
-        <header class="mechanical-panel-header"><div><p>03.2 / ECHELON ASSESSMENT</p><h2>文明经典开源学习汇报</h2><span>通过周期性学习、文档总结和小组汇报检验理解与表达。</span></div><span class="mechanical-course-badge">40 分</span></header>
-        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>安排</h3><ul><li>初定四次</li><li>两周一次</li></ul></div></article><article><span>02</span><div><h3>提交形式</h3><ul><li>文档总结</li><li>小组汇报</li></ul></div></article><article><span>03</span><div><h3>计分</h3><p>每次 10 分，四次共计 40 分。</p></div></article></div>
+        <header class="mechanical-panel-header"><div><p>03.2 / ECHELON ASSESSMENT</p><h2>文明经典开源学习汇报</h2><span>通过周期性学习、文档总结和小组汇报检验理解与表达。</span></div><span class="mechanical-course-badge">30 分</span></header>
+        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>安排</h3><ul><li>共 3 次</li><li>两周一次</li></ul></div></article><article><span>02</span><div><h3>提交形式</h3><ul><li>文档总结</li><li>小组汇报</li></ul></div></article><article><span>03</span><div><h3>计分</h3><p>每次 10 分，3 次共计 30 分。</p></div></article></div>
+      </section>
+
+      <section class="mechanical-course-panel" id="course-assessment-fusion-practice" data-mechanical-course-panel="assessment-fusion-practice" aria-labelledby="course-nav-assessment-fusion-practice" hidden>
+        <header class="mechanical-panel-header"><div><p>03.3 / ECHELON ASSESSMENT</p><h2>Fusion 设计练习</h2><span>通过分阶段设计练习巩固 Fusion 建模基础，并检查每一阶段的掌握情况。</span></div><span class="mechanical-course-badge">20 分</span></header>
+        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>练习次数</h3><p>共安排 4 次 Fusion 设计练习。</p></div></article><article><span>02</span><div><h3>计分</h3><p>每次 5 分，4 次共计 20 分。</p></div></article></div>
       </section>
 
       <section class="mechanical-course-panel" id="course-assessment-cad" data-mechanical-course-panel="assessment-cad" aria-labelledby="course-nav-assessment-cad" hidden>
-        <header class="mechanical-panel-header"><div><p>03.3 / ECHELON ASSESSMENT</p><h2>CAD 设计大作业</h2><span>提供自主设计与复刻两个难度梯度，考察设计过程和最终表达。</span></div><span class="mechanical-course-badge">50 分</span></header>
-        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>难度梯度</h3><ul><li>自主设计</li><li>复刻</li></ul></div></article><article><span>02</span><div><h3>考核组成</h3><ul><li>设计</li><li>最终答辩</li></ul></div></article><article><span>03</span><div><h3>计分</h3><p>共计 50 分。</p></div></article></div>
+        <header class="mechanical-panel-header"><div><p>03.4 / ECHELON ASSESSMENT</p><h2>Fusion 设计大作业</h2><span>提供自主设计与复刻两个难度梯度，考察设计过程和最终表达。</span></div><span class="mechanical-course-badge">40 分</span></header>
+        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>难度梯度</h3><ul><li>自主设计</li><li>复刻</li></ul></div></article><article><span>02</span><div><h3>考核组成</h3><ul><li>设计</li><li>最终答辩</li></ul></div></article><article><span>03</span><div><h3>计分</h3><p>共计 40 分。</p></div></article></div>
       </section>
 
       <section class="mechanical-course-panel" id="course-assessment-rd" data-mechanical-course-panel="assessment-rd" aria-labelledby="course-nav-assessment-rd" hidden>
-        <header class="mechanical-panel-header"><div><p>03.4 / ECHELON ASSESSMENT</p><h2>研发进程自主参与贡献</h2><span>在基础考评达标后，研发贡献用于判断后续任务介入与正式名额竞争。</span></div><span class="mechanical-course-badge">贡献度评估</span></header>
-        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>任务来源</h3><ul><li>常驻项目参与</li><li>随机任务池</li><li>通常来源为基建组，也有少部分技术研发任务发布</li></ul></div></article><article><span>02</span><div><h3>基础考评门槛</h3><ul><li>总分超过 60 分可获得留队资格，否则在集训期结束后清退</li><li>总分超过 75 分可考虑承担更高阶任务</li></ul></div></article><article><span>03</span><div><h3>研发贡献的用途</h3><p>在基础考评达标的前提下，结合研发贡献度，作为 3 月开学后介入正式研发任务并竞争当前赛季正式名额的依据。</p></div></article></div>
+        <header class="mechanical-panel-header"><div><p>03.RD / R&amp;D CONTRIBUTION</p><h2>研发进程自主参与贡献</h2><span>在基础考评达标后，研发贡献用于判断后续任务介入与正式名额竞争。</span></div><span class="mechanical-course-badge">贡献度评估</span></header>
+        <div class="mechanical-outline-stack"><article><span>01</span><div><h3>任务来源</h3><ul><li>常驻项目参与</li><li>随机任务池</li><li>通常来源为基建组，也有少部分技术研发任务发布</li></ul></div></article><article><span>02</span><div><h3>研发贡献的用途</h3><p>在基础考评达标的前提下，结合研发贡献度，作为 3 月开学后介入正式研发任务并竞争当前赛季正式名额的依据。</p></div></article></div>
       </section>
 
       <section class="mechanical-course-panel" id="course-internship" data-mechanical-course-panel="internship" aria-labelledby="course-nav-internship" hidden>
-        <header class="mechanical-panel-header"><div><p>05 / R&amp;D INTERNSHIP</p><h2>研发实习期</h2><span>进入正式研发任务，在真实赛季项目中持续参与与积累贡献。</span></div><span class="mechanical-course-badge">3 月开学后至赛季结束</span></header>
+        <header class="mechanical-panel-header"><div><p>05 / R&amp;D INTERNSHIP</p><h2>梯队研发实习</h2><span>进入正式研发任务，在真实赛季项目中持续参与与积累贡献。</span></div><span class="mechanical-course-badge">3 月开学后至赛季结束</span></header>
         <div class="mechanical-outline-stack"><article><span>01</span><div><h3>周期</h3><p>从 3 月开学以后计，直到赛季结束。</p></div></article></div>
       </section>
 

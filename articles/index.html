@@ -15,20 +15,20 @@
     <base href="../" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。" />
+    <meta name="description" content="按文章类别、组别归属、专栏与主题标签，阅读重庆大学千里战队的工程笔记、随想录与赛季手记。" />
     <!-- SEO: managed by scripts/build-seo.js -->
     <link rel="canonical" href="https://team.cquqianli.cn/articles/index.html" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="重庆大学千里战队" />
     <meta property="og:title" content="千里札记 | 重庆大学千里战队" />
-    <meta property="og:description" content="阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。" />
+    <meta property="og:description" content="按文章类别、组别归属、专栏与主题标签，阅读重庆大学千里战队的工程笔记、随想录与赛季手记。" />
     <meta property="og:url" content="https://team.cquqianli.cn/articles/index.html" />
     <meta property="og:image" content="https://team.cquqianli.cn/assets/images/brand/%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9C%AA%E6%9D%A5.png" />
     <meta property="og:image:alt" content="重庆大学千里战队" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="千里札记 | 重庆大学千里战队" />
-    <meta name="twitter:description" content="阅读重庆大学千里战队的队伍故事、赛季日志、工程札记、团队动态与公开资料。" />
+    <meta name="twitter:description" content="按文章类别、组别归属、专栏与主题标签，阅读重庆大学千里战队的工程笔记、随想录与赛季手记。" />
     <meta name="twitter:image" content="https://team.cquqianli.cn/assets/images/brand/%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9C%AA%E6%9D%A5.png" />
     <script type="application/ld+json">
     {
@@ -62,7 +62,7 @@
       })();
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260906-95" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260912-2" />
     <link rel="icon" type="image/png" href="assets/images/brand/千里马头logo.PNG" />
   </head>
   <body data-page="frontline" class="journal-index-page">
@@ -84,7 +84,7 @@
             </span>
           </span>
           <span class="nav-menu">
-            <a class="is-active" aria-current="page" href="season/index.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
+            <a class="is-active" aria-current="page" href="season/frontline.html" data-nav="frontline" aria-haspopup="true"><i class="mdi mdi-stadium nav-link-watermark" aria-hidden="true"></i><span class="nav-link-label">赛季一线</span></a>
             <span class="nav-dropdown">
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="season/index.html"><span class="nav-item-label">千里要闻</span><i class="mdi mdi-newspaper-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
               <a class="nav-item-with-icon nav-item-with-icon--frontline" href="articles/index.html"><span class="nav-item-label">千里札记</span><i class="mdi mdi-book-open-page-variant-outline nav-item-mdi" aria-hidden="true"></i></a>
@@ -171,7 +171,7 @@
       </nav>
     </header>
     <div class="page-back-nav">
-      <a class="page-back-link" href="index.html" aria-label="返回主页" title="返回主页">
+      <a class="page-back-link" href="season/frontline.html" aria-label="返回赛季一线" title="返回赛季一线">
         <i class="mdi mdi-arrow-left" aria-hidden="true"></i>
       </a>
     </div>
@@ -181,54 +181,61 @@
           <p class="page-label">QIANLI JOURNAL</p>
           <h1>千里札记</h1>
         </div>
-        <p>记录赛季之外更完整的思考：我们怎样做工程、怎样成为队友，也怎样把一支战队的经验和记忆留给后来的人。</p>
+        <label class="journal-search">
+          <i class="mdi mdi-magnify" aria-hidden="true"></i>
+          <span class="sr-only">搜索文章</span>
+          <input type="search" placeholder="搜索标题、专栏或标签" data-article-search />
+        </label>
+        <div class="journal-results-actions">
+          <span class="journal-count" data-article-count aria-live="polite"></span>
+          <div class="journal-view-toggle" aria-label="切换文章排列方式">
+            <button class="is-active" type="button" data-article-view="grid" aria-label="网格排列" aria-pressed="true"><i class="mdi mdi-view-grid-outline" aria-hidden="true"></i></button>
+            <button type="button" data-article-view="list" aria-label="列表排列" aria-pressed="false"><i class="mdi mdi-format-list-bulleted" aria-hidden="true"></i></button>
+          </div>
+        </div>
       </section>
 
       <section class="journal-browser" aria-label="文章列表">
         <div class="journal-browser-layout">
           <aside class="journal-sidebar" aria-label="筛选与排序">
-            <h2>筛选与排序</h2>
+            <h2>筛选文章</h2>
             <label class="journal-sort">
               <span>排序方式</span>
               <select data-article-sort>
+                <option value="latest">时间倒序</option>
+                <option value="oldest">时间顺序</option>
                 <option value="featured">推荐优先</option>
-                <option value="title">按标题排序</option>
               </select>
             </label>
             <div class="journal-filter-group">
               <p>文章类别</p>
-              <div class="journal-filter-list" aria-label="按文章类别筛选">
-                <button class="is-active" type="button" data-article-filter="全部" aria-pressed="true">全部</button>
-                <button type="button" data-article-filter="千里故事" aria-pressed="false">千里故事</button>
-                <button type="button" data-article-filter="赛季日志" aria-pressed="false">赛季日志</button>
-                <button type="button" data-article-filter="工程札记" aria-pressed="false">工程札记</button>
-                <button type="button" data-article-filter="队伍动态" aria-pressed="false">队伍动态</button>
-                <button type="button" data-article-filter="开放资料" aria-pressed="false">开放资料</button>
-              </div>
+              <div class="journal-filter-list" aria-label="按文章类别筛选" data-article-category-list></div>
             </div>
+            <label class="journal-filter-select">
+              <span>组别归属</span>
+              <span class="journal-filter-select-control" data-article-department-control>
+                <select data-article-department aria-label="按组别归属筛选"></select>
+              </span>
+            </label>
+            <div class="journal-filter-group">
+              <p>专栏</p>
+              <div class="journal-filter-list" aria-label="按专栏筛选" data-article-series-list></div>
+            </div>
+            <div class="journal-filter-group journal-filter-group--tags">
+              <p>主题标签</p>
+              <div class="journal-filter-list" aria-label="按主题标签筛选" data-article-tag-list></div>
+            </div>
+            <button class="journal-clear-filters" type="button" data-article-clear hidden><i class="mdi mdi-filter-off-outline" aria-hidden="true"></i>清除筛选</button>
           </aside>
 
           <div class="journal-results">
-            <header class="journal-toolbar">
-              <label class="journal-search">
-                <i class="mdi mdi-magnify" aria-hidden="true"></i>
-                <span class="sr-only">搜索文章</span>
-                <input type="search" placeholder="搜索文章" data-article-search />
-              </label>
-              <div class="journal-results-actions">
-                <span class="journal-count" data-article-count aria-live="polite"></span>
-                <div class="journal-view-toggle" aria-label="切换文章排列方式">
-                  <button class="is-active" type="button" data-article-view="grid" aria-label="网格排列" aria-pressed="true"><i class="mdi mdi-view-grid-outline" aria-hidden="true"></i></button>
-                  <button type="button" data-article-view="list" aria-label="列表排列" aria-pressed="false"><i class="mdi mdi-format-list-bulleted" aria-hidden="true"></i></button>
-                </div>
-              </div>
-            </header>
-
             <div class="journal-grid" data-article-grid></div>
+            <nav class="journal-pagination" data-article-pagination aria-label="文章分页"></nav>
             <div class="journal-empty" data-article-empty hidden>
               <i class="mdi mdi-text-search" aria-hidden="true"></i>
               <h2>没有找到匹配的文章</h2>
-              <p>可以换一个关键词，或回到“全部”继续浏览。</p>
+              <p>可以减少筛选条件，或清除筛选继续浏览。</p>
+              <button type="button" data-article-clear>清除筛选</button>
             </div>
           </div>
         </div>
@@ -245,8 +252,8 @@
       <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
       <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
     </footer>
-    <script src="assets/js/data/qianli-articles.js?v=20260905-1"></script>
-    <script src="assets/js/pages/qianli-articles.js?v=20260905-2"></script>
+    <script src="assets/js/data/qianli-articles.js?v=20260907-18"></script>
+    <script src="assets/js/pages/qianli-articles.js?v=20260907-15"></script>
     <script src="assets/js/core/site.js?v=20260831-84"></script>
   <script src="assets/js/data/mascot-config.js?v=20260901-3"></script>
   <script src="assets/js/pages/home-mascot.js?v=20260831-10"></script>

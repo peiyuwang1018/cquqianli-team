@@ -285,7 +285,15 @@
     dialog.querySelector("[data-meme-term]").textContent = entry.term;
     dialog.querySelector("[data-meme-short]").textContent = entry.summary;
     dialog.querySelector("[data-meme-years]").textContent = entry.hotYears.map((year) => `${year} 赛季`).join("、");
-    dialog.querySelector("[data-meme-origin]").textContent = entry.origin;
+    const origin = dialog.querySelector("[data-meme-origin]");
+    const redactOrigin = entry.origin.includes("某位指导老师");
+    origin.classList.toggle("is-redacted", redactOrigin);
+    origin.textContent = redactOrigin ? "" : entry.origin;
+    if (redactOrigin) {
+      origin.setAttribute("aria-label", "典故来源已隐藏");
+    } else {
+      origin.removeAttribute("aria-label");
+    }
     dialog.querySelector("[data-meme-meaning]").textContent = entry.meaning;
     dialog.querySelector("[data-meme-example]").textContent = entry.example;
     dots.replaceChildren(...entry.images.map((_, index) => {
