@@ -187,10 +187,15 @@ function normalizeFooter(html, relative) {
   if (!footerPattern.test(html)) throw new Error(`Footer block not found in ${relative}`);
 
   const footer = `<footer class="site-footer">
-      <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
-      <p>网站建设：重庆大学千里战队 × Codex</p>
-      <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
-      <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
+      <div class="site-footer-row">
+        <p>© 2026 重庆大学千里战队. <span lang="en">All Rights Reserved.</span></p>
+        <p>网站建设：重庆大学千里战队 × Codex</p>
+      </div>
+      <div class="site-footer-row">
+        <p class="site-footer-feedback">网站信息反馈（纠错/隐私保护/版权保护）邮箱：<a href="mailto:peiyu.wang@student.kit.edu">peiyu.wang@student.kit.edu</a></p>
+        <p class="site-footer-domains">可用域名：<a href="https://team.cquqianli.cn/">team.cquqianli.cn</a><span aria-hidden="true"> · </span><a href="https://team.cquqian.li/">team.cquqian.li</a></p>
+        <p class="site-footer-icp"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">闽ICP备2026005064号</a></p>
+      </div>
     </footer>`;
 
   return html.replace(footerPattern, footer);
@@ -250,7 +255,7 @@ for (const file of htmlFiles) {
   html = normalizeFooter(html, relative);
   html = normalizeMascotScripts(html);
 
-  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260912-2");
+  html = html.replace(/styles\.css\?v=\d{8}-\d+/g, "styles.css?v=20260912-3");
   html = html.replace(/site\.js\?v=\d{8}-\d+/g, "site.js?v=20260831-84");
   fs.writeFileSync(file, html);
 }

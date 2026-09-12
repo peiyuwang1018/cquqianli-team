@@ -25159,13 +25159,18 @@ body[data-page="home"] .site-footer {
   margin-top: 0;
   margin-right: calc(50% - 50vw);
   margin-left: calc(50% - 50vw);
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 9px 20px 10px;
+  background: var(--bg);
+}
+
+body[data-page="home"] .site-footer-row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2px 0;
-  padding: 9px 20px 10px;
-  background: var(--bg);
 }
 
 body[data-page="home"] .site-footer p {
