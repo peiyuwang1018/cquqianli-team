@@ -200,7 +200,7 @@ window.QIANLI_MEMBERS = {
           members: [
             ["鄢政", "核心成员 · 沟通", "鄢政.png"],
             ["徐锦苑", "正式队员 · 设计", "徐锦苑.jpg"],
-            ["OnlyPupPet", "正式队员 · 设计"]
+            ["OnlyPupPet", "正式队员 · 设计", "OnlyPupPet.png"]
           ]
         },
         {
