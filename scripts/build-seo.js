@@ -7,19 +7,9 @@ const DEFAULT_DESCRIPTION = "重庆大学千里战队队伍主页，展示战队
 const SOCIAL_IMAGE = `${SITE_ORIGIN}/assets/images/brand/%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9C%AA%E6%9D%A5.png`;
 const socialImageOverrides = {
   "articles/letter-to-future-members.html": `${SITE_ORIGIN}/assets/images/articles/letters/letter-to-future-members-cover.png`,
-  "articles/what-makes-good-mechanical-design.html": `${SITE_ORIGIN}/assets/images/articles/designer-perspective/designer-perspective-01-cover.png`,
-  "articles/what-makes-good-mechanical-design-stability.html": `${SITE_ORIGIN}/assets/images/articles/designer-perspective/designer-perspective-02-stability-cover.png`,
-  "articles/how-to-read-open-source-design.html": `${SITE_ORIGIN}/assets/images/articles/designer-perspective/designer-perspective-03-cover.png`,
-  "articles/mechanical-group-introduction-why-it-is-interesting.html": `${SITE_ORIGIN}/assets/images/articles/technical-group-introduction/technical-group-introduction-01-cover.png`,
-  "articles/technical-group-introduction-newcomer-learning-route.html": `${SITE_ORIGIN}/assets/images/articles/technical-group-introduction/technical-group-introduction-02-cover.png`,
 };
 const socialImageAltOverrides = {
   "articles/letter-to-future-members.html": "淡黄色信件封面：带有千里马头圆形红色印章",
-  "articles/what-makes-good-mechanical-design.html": "蓝色机械线稿封面：什么是好的机械设计？（一）",
-  "articles/what-makes-good-mechanical-design-stability.html": "橙色机械线稿封面：什么是好的机械设计？（二）",
-  "articles/how-to-read-open-source-design.html": "玫粉色机械线稿封面：新手小白如何食用开源",
-  "articles/mechanical-group-introduction-why-it-is-interesting.html": "绿色机械线稿封面：机械组导言第一篇，我为什么觉得机械组有趣？",
-  "articles/technical-group-introduction-newcomer-learning-route.html": "紫色机械线稿封面：机械组导言第二篇，新人成长建议与学习路线",
 };
 const socialImageSizeOverrides = {
   "articles/letter-to-future-members.html": [1672, 941],
@@ -35,11 +25,6 @@ const descriptionOverrides = {
   "about/management.html": "了解重庆大学千里战队的规章制度、项目管理、SOP、知识传承、同伴支持与跨组协作方式。",
   "articles/index.html": "按文章类别、组别归属、专栏与主题标签，阅读重庆大学千里战队的工程笔记、随想录与赛季手记。",
   "articles/letter-to-future-members.html": "写给想加入重庆大学千里战队的同学：了解 RoboMaster、真实工程协作、队伍期待、时间投入与成长选择。",
-  "articles/what-makes-good-mechanical-design.html": "从合理、优雅与设计取舍出发，理解机械设计如何在真实需求、系统约束和有限资源之间找到平衡。",
-  "articles/what-makes-good-mechanical-design-stability.html": "把稳定性拆成性能指标、时间尺度和扰动敏感度，从尺寸漂移、动态响应、重复装配、热工况与失效传播理解可靠设计。",
-  "articles/mechanical-group-introduction-why-it-is-interesting.html": "从造物、设计、诊断、直接交互与日常创造力出发，理解机械组为什么有趣，以及机械如何贯穿 RoboMaster 的完整赛季。",
-  "articles/technical-group-introduction-newcomer-learning-route.html": "从 CAD 工具、成熟范式、项目闭环与反馈循环出发，为机械新人建立可持续的工程学习路线。",
-  "articles/how-to-read-open-source-design.html": "从识别零件、功能骨架与设计关系出发，学习如何从开源 CAD 的最终几何中读出设计判断，并建立可迁移的机械范式库。",
   "groups/position-members.html": "了解重庆大学千里战队正式队员的赛季职责、项目协作、技术成长与队伍贡献方式。",
   "groups/position-trainees.html": "了解重庆大学千里战队梯队队员的培养阶段、学习任务、项目实践与转正成长路径。",
   "groups/responsibility-management.html": "了解重庆大学千里战队管理层在赛季目标、项目统筹、资源协调、团队建设与风险管理中的职责。",
@@ -166,7 +151,17 @@ function articleStructuredData(relative, pageName, description, canonicalUrl, im
   };
 }
 
-const pages = walkHtml(ROOT).sort();
+const localOnlyArticlePages = new Set([
+  "articles/how-to-read-open-source-design.html",
+  "articles/mechanical-group-introduction-why-it-is-interesting.html",
+  "articles/technical-group-introduction-newcomer-learning-route.html",
+  "articles/what-makes-good-mechanical-design-stability.html",
+  "articles/what-makes-good-mechanical-design.html",
+  "articles/why-trust-a-design.html",
+]);
+const pages = walkHtml(ROOT)
+  .filter((file) => !localOnlyArticlePages.has(path.relative(ROOT, file).split(path.sep).join("/")))
+  .sort();
 const sitemapUrls = [];
 
 for (const file of pages) {
