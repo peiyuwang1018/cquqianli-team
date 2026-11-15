@@ -159,6 +159,30 @@
         });
         groups.appendChild(group);
       });
+
+      if (Array.isArray(season.roles) && season.roles.length) {
+        const roleBlock = document.createElement("section");
+        roleBlock.className = "past-member-roles-block";
+        const heading = document.createElement("h4");
+        heading.textContent = "主力队员分工";
+        const count = document.createElement("small");
+        count.textContent = String(season.roles.length);
+        heading.appendChild(count);
+        const list = document.createElement("dl");
+        list.className = "past-member-roles";
+        season.roles.forEach(([name, role]) => {
+          const row = document.createElement("div");
+          const term = document.createElement("dt");
+          term.textContent = name;
+          const detail = document.createElement("dd");
+          detail.textContent = role;
+          row.append(term, detail);
+          list.appendChild(row);
+        });
+        roleBlock.append(heading, list);
+        groups.appendChild(roleBlock);
+      }
+
       pastRoot.appendChild(article);
     });
   }

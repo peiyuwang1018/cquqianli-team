@@ -17063,6 +17063,55 @@ a.contact-channel-card--direct:focus-visible {
   --member-tone: #ef4444;
 }
 
+.past-member-roles-block {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.past-member-roles-block > h4 {
+  margin: 0;
+  color: #e5a44b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.past-member-roles-block > h4 small {
+  display: block;
+  margin-top: 2px;
+  color: color-mix(in srgb, #e5a44b 62%, var(--muted));
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.past-member-roles {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.past-member-roles > div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+}
+
+.past-member-roles dt {
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.past-member-roles dd {
+  margin: 0;
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .member-section-rail {
   position: fixed;
   z-index: 18;
@@ -17253,6 +17302,16 @@ a.contact-channel-card--direct:focus-visible {
   .past-member-group {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .past-member-roles-block {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .past-member-roles > div {
+    grid-template-columns: 1fr;
+    gap: 3px;
   }
 }
 
