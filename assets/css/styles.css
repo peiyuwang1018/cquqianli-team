@@ -14341,6 +14341,35 @@ html.has-culture-report {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+/* 2027 赛季支持伙伴 9 家：三列三行，避开总数 13 时必然出现的残行。 */
+.sponsor-grid--triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* 白色字标（留形、艾德斯克 ITECH）保留原图，亮色模式下置于深色底板上以免丢字。 */
+.sponsor-card .thanks-logo-frame.sponsor-logo-plate {
+  background: #12100e;
+  border-radius: 2px;
+}
+
+.partner-more {
+  margin: 18px 0 0;
+  font-size: 13px;
+}
+
+.partner-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.partner-more a:hover,
+.partner-more a:focus-visible {
+  text-decoration: underline;
+}
+
 .sponsor-card .thanks-logo-frame {
   height: 72px;
   padding: 10px 16px;
@@ -14436,6 +14465,18 @@ html.has-culture-report {
 
 @media (max-width: 420px) {
   .thanks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sponsor-grid--triple {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .sponsor-grid--triple {
     grid-template-columns: 1fr;
   }
 }
@@ -17063,55 +17104,6 @@ a.contact-channel-card--direct:focus-visible {
   --member-tone: #ef4444;
 }
 
-.past-member-roles-block {
-  display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
-  gap: 16px;
-}
-
-.past-member-roles-block > h4 {
-  margin: 0;
-  color: #e5a44b;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.past-member-roles-block > h4 small {
-  display: block;
-  margin-top: 2px;
-  color: color-mix(in srgb, #e5a44b 62%, var(--muted));
-  font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-}
-
-.past-member-roles {
-  display: grid;
-  gap: 7px;
-  margin: 0;
-}
-
-.past-member-roles > div {
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 12px;
-  align-items: baseline;
-}
-
-.past-member-roles dt {
-  color: var(--text);
-  font-size: 12.5px;
-  font-weight: 600;
-}
-
-.past-member-roles dd {
-  margin: 0;
-  color: var(--muted);
-  font-family: Arial, "Microsoft YaHei", sans-serif;
-  font-size: 12px;
-  line-height: 1.6;
-}
-
 .member-section-rail {
   position: fixed;
   z-index: 18;
@@ -17302,16 +17294,6 @@ a.contact-channel-card--direct:focus-visible {
   .past-member-group {
     grid-template-columns: 1fr;
     gap: 8px;
-  }
-
-  .past-member-roles-block {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .past-member-roles > div {
-    grid-template-columns: 1fr;
-    gap: 3px;
   }
 }
 
@@ -22994,7 +22976,8 @@ html.has-group-letter {
 
 .legacy-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* 四类功勋（建队、赛场、传承、支持与捐赠）在宽屏一次排满，窄屏由断点降级。 */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 14px;
   margin-top: 28px;
 }
@@ -23028,6 +23011,86 @@ html.has-group-letter {
   margin-top: 24px;
   color: var(--muted);
   font-size: 12px;
+}
+
+/* 支持与捐赠：名人堂条目列表 + 赞助页个人支持者卡片。记录未公开前整块隐藏。 */
+.legacy-supporters[hidden],
+.supporter-section[hidden] {
+  display: none;
+}
+
+.legacy-supporters:not([hidden]) {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.legacy-supporters > article {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.legacy-supporters h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.legacy-supporters p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.supporter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--line));
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: color-mix(in srgb, var(--accent) 78%, var(--text));
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.supporter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.supporter-card {
+  display: grid;
+  gap: 8px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+}
+
+.supporter-card h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.supporter-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* 卡片是 grid，徽标若不定宽会被拉满整行 */
+.supporter-card .supporter-badge {
+  justify-self: start;
 }
 
 .hall-alumni-toolbar {
@@ -39701,4 +39764,54 @@ html.has-heavy-couplet .heavy-couplet--right {
     margin-right: 16px;
     margin-left: 76px;
   }
+}
+
+/* 2023 赛季「主力队员分工」列表（与远端实现保持一致） */
+.past-member-roles-block {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.past-member-roles-block > h4 {
+  margin: 0;
+  color: #e5a44b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.past-member-roles-block > h4 small {
+  display: block;
+  margin-top: 2px;
+  color: color-mix(in srgb, #e5a44b 62%, var(--muted));
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.past-member-roles {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.past-member-roles > div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+}
+
+.past-member-roles dt {
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.past-member-roles dd {
+  margin: 0;
+  color: var(--muted);
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
 }
