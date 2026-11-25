@@ -1,12 +1,35 @@
 name: Deploy to OSS
 
+# 只上传本次真正变化的文件：
+#   1) 优先读取 OSS 上的 .deploy-sha.txt（上次成功部署的提交）
+#   2) 用 GitHub Compare API 算出两者之间的差异文件
+#   3) 没有记录（或手动指定 full）时才全量上传
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "deploy = 增量；full = 全量覆盖"
+        required: false
+        default: deploy
+      base:
+        description: "手动指定对比基准提交 SHA（留空则读取 OSS 上的记录）"
+        required: false
+        default: ""
+
+concurrency:
+  group: deploy-oss
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      BUCKET: oss://qianli-team
+      MARKER: .deploy-sha.txt
+      # 首次迁移用：当 OSS 上还没有 .deploy-sha.txt 时，从这个提交开始对比
+      FALLBACK_BASE: c423706
     steps:
       - uses: actions/checkout@v4
 
@@ -17,11 +40,86 @@ jobs:
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
+      - name: Resolve changed files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODE: ${{ github.event.inputs.mode }}
+          BASE_INPUT: ${{ github.event.inputs.base }}
+        run: |
+          : > /tmp/changed.txt
+          : > /tmp/deleted.txt
+          LAST=""
+          if [ "$MODE" != "full" ]; then
+            LAST="$BASE_INPUT"
+            if [ -z "$LAST" ]; then
+              LAST=$(curl -fsS "https://team.cquqianli.cn/$MARKER" 2>/dev/null | tr -d '[:space:]' || true)
+            fi
+            if [ -z "$LAST" ]; then
+              LAST="$FALLBACK_BASE"
+              echo "OSS 上无部署记录，改用回退基准 $LAST"
+            fi
+          fi
+          echo "对比基准: ${LAST:-无（将全量上传）}"
+          if [ -n "$LAST" ] && [ "$LAST" != "$GITHUB_SHA" ]; then
+            code=$(curl -sS -o /tmp/cmp.json -w '%{http_code}' \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$GITHUB_REPOSITORY/compare/$LAST...$GITHUB_SHA")
+            echo "compare API: $code"
+            if [ "$code" = "200" ]; then
+              python3 - <<'PY'
+              import json
+              d = json.load(open('/tmp/cmp.json'))
+              files = d.get('files', [])
+              changed = [f['filename'] for f in files if f['status'] != 'removed']
+              deleted = [f['filename'] for f in files if f['status'] == 'removed']
+              open('/tmp/changed.txt','w').write('\n'.join(changed) + ('\n' if changed else ''))
+              open('/tmp/deleted.txt','w').write('\n'.join(deleted) + ('\n' if deleted else ''))
+              print(f"变化文件 {len(changed)} 个，删除 {len(deleted)} 个")
+              PY
+            else
+              : > /tmp/changed.txt
+              echo "compare 失败，回退全量"
+            fi
+          fi
+          echo "--- 待上传 ---"
+          head -40 /tmp/changed.txt
+
       - name: Configure static website routing
-        run: ossutil website --method put oss://qianli-team .github/oss-website.xml
+        run: ossutil website --method put "$BUCKET" .github/oss-website.xml
 
-      - name: Remove files not needed for the site
-        run: rm -rf .git .github
+      - name: Upload changed files
+        run: |
+          if [ -s /tmp/changed.txt ]; then
+            fail=0
+            while IFS= read -r f; do
+              if [ -f "$f" ]; then
+                echo "↑ $f"
+                ossutil cp -f "$f" "$BUCKET/$f" || fail=1
+              fi
+            done < /tmp/changed.txt
+            while IFS= read -r f; do
+              if [ -n "$f" ]; then
+                echo "✗ $f"
+                ossutil rm -f "$BUCKET/$f" || true
+              fi
+            done < /tmp/deleted.txt
+            if [ $fail -ne 0 ]; then
+              echo "有文件上传失败，请重试或手动触发 full 模式"
+              exit 1
+            fi
+          else
+            echo "无差异记录，执行全量上传"
+            rm -rf .git .github
+            ossutil cp -rf ./ "$BUCKET/"
+          fi
 
-      - name: Upload to OSS
-        run: ossutil cp -rf ./ oss://qianli-team/
+      - name: Record deployed commit
+        run: |
+          echo "$GITHUB_SHA" > /tmp/marker
+          ossutil cp -f /tmp/marker "$BUCKET/$MARKER"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "本次上传 $(wc -l < /tmp/changed.txt) 个，删除 $(wc -l < /tmp/deleted.txt) 个，记录提交 $GITHUB_SHA"
