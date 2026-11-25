@@ -7,7 +7,14 @@
 
   var MS_DAY = 86400000;
   var statusLabels = { confirmed: "已确认", tentative: "暂定", derived: "倒推" };
-  var monthCursor = parseDate(data.season.defaultMonth + "-01");
+  // 月份默认跟随当前进度：赛期内打开时直接定位到本月，赛期外回退到配置的起始月份。
+  var seasonStartDate = parseDate(data.season.start);
+  var seasonEndDate = parseDate(data.season.end);
+  var todayDate = new Date();
+  var inSeason = todayDate >= seasonStartDate && todayDate <= seasonEndDate;
+  var monthCursor = inSeason
+    ? new Date(todayDate.getFullYear(), todayDate.getMonth(), 1)
+    : parseDate(data.season.defaultMonth + "-01");
   var activeCategories = new Set(Object.keys(data.categories));
   var selectedEvent = null;
   var monthGrid = root.querySelector("[data-calendar-month-grid]");
@@ -16,9 +23,29 @@
   var overviewDetail = root.querySelector("[data-overview-detail]");
   var memoContainer = root.querySelector("[data-season-memo]");
   var tooltip = root.querySelector("[data-season-tooltip]");
-  var progressWindowIndex = 0;
+  var progressWindowIndex = inSeason
+    ? Math.max(0, Math.floor(((todayDate.getFullYear() - seasonStartDate.getFullYear()) * 12 + (todayDate.getMonth() - seasonStartDate.getMonth())) / 3))
+    : 0;
   var viewHashes = { progress: "progress", month: "month", node: "overview", memo: "memo" };
   var hashViews = { progress: "progress", month: "month", overview: "node", memo: "memo" };
+
+  // 默认选中“当前所处阶段”，其次选最近的下一个阶段，最后回退到窗口内第一个，避免永远停在赛季开头的预研一期。
+  function pickDefaultEvent(events) {
+    if (!events.length) return null;
+    if (inSeason) {
+      var current = events.filter(function (event) {
+        return parseDate(event.start) <= todayDate && parseDate(event.end) >= todayDate;
+      })[0];
+      if (current) return current;
+      var upcoming = events.filter(function (event) {
+        return parseDate(event.start) > todayDate;
+      }).sort(function (a, b) {
+        return a.start < b.start ? -1 : 1;
+      })[0];
+      if (upcoming) return upcoming;
+    }
+    return events[0];
+  }
 
   function parseDate(value) {
     var parts = value.split("-").map(Number);
@@ -180,7 +207,7 @@
     var eventsThisMonth = data.events.filter(function (event) {
       return eventVisible(event) && parseDate(event.start) <= monthEnd && parseDate(event.end) >= firstDay;
     });
-    if (!selectedEvent || !eventsThisMonth.some(function (event) { return event.id === selectedEvent.id; })) selectedEvent = eventsThisMonth[0] || null;
+    if (!selectedEvent || !eventsThisMonth.some(function (event) { return event.id === selectedEvent.id; })) selectedEvent = pickDefaultEvent(eventsThisMonth);
     renderDetail(monthDetail, selectedEvent, "本月没有启用的事件分类。可在上方重新打开分类。", eventsThisMonth);
     bindEventTargets(monthGrid, monthDetail);
   }
@@ -470,7 +497,7 @@
     var windowEvents = data.events.filter(function (event) {
       return eventVisible(event) && ["research", "training", "competition"].includes(event.category) && parseDate(event.start) <= windowEnd && parseDate(event.end) >= windowStart;
     });
-    if (!selectedEvent || !windowEvents.some(function (event) { return event.id === selectedEvent.id; })) selectedEvent = windowEvents[0] || null;
+    if (!selectedEvent || !windowEvents.some(function (event) { return event.id === selectedEvent.id; })) selectedEvent = pickDefaultEvent(windowEvents);
     renderDetail(progressDetail, selectedEvent, "这个窗口内没有启用的研发、演练或比赛事件。", windowEvents, "窗口节点");
     bindOverviewTargets(zoom, progressDetail);
     bindMonthJumpTargets(zoom);
