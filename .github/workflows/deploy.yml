@@ -64,22 +64,16 @@ jobs:
             code=$(curl -sS -o /tmp/cmp.json -w '%{http_code}' \
               -H "Authorization: Bearer $GH_TOKEN" \
               -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/$GITHUB_REPOSITORY/compare/$LAST...$GITHUB_SHA")
+              "https://api.github.com/repos/$GITHUB_REPOSITORY/compare/$LAST...$GITHUB_SHA" || echo 000)
             echo "compare API: $code"
-            if [ "$code" = "200" ]; then
-              python3 - <<'PY'
-              import json
-              d = json.load(open('/tmp/cmp.json'))
-              files = d.get('files', [])
-              changed = [f['filename'] for f in files if f['status'] != 'removed']
-              deleted = [f['filename'] for f in files if f['status'] == 'removed']
-              open('/tmp/changed.txt','w').write('\n'.join(changed) + ('\n' if changed else ''))
-              open('/tmp/deleted.txt','w').write('\n'.join(deleted) + ('\n' if deleted else ''))
-              print(f"变化文件 {len(changed)} 个，删除 {len(deleted)} 个")
-              PY
+            if [ "$code" = "200" ] && jq -e '.files' /tmp/cmp.json >/dev/null 2>&1; then
+              jq -r '.files[] | select(.status != "removed") | .filename' /tmp/cmp.json > /tmp/changed.txt
+              jq -r '.files[] | select(.status == "removed") | .filename' /tmp/cmp.json > /tmp/deleted.txt
+              echo "变化文件 $(wc -l < /tmp/changed.txt) 个，删除 $(wc -l < /tmp/deleted.txt) 个"
             else
               : > /tmp/changed.txt
-              echo "compare 失败，回退全量"
+              : > /tmp/deleted.txt
+              echo "compare 结果不可用，改为全量上传"
             fi
           fi
           echo "--- 待上传 ---"
